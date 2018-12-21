@@ -58,6 +58,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             string target = "InspectorService.DescribeRulesPackages";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-16";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

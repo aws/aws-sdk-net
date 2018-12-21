@@ -55,6 +55,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public IRequest Marshall(ReadPresetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/2012-09-25/presets/{Id}";

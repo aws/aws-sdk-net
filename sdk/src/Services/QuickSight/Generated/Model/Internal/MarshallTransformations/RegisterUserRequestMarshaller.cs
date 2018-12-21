@@ -56,6 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users";

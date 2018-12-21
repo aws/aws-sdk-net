@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Inspector.Model;
 using Amazon.Inspector.Model.Internal.MarshallTransformations;
@@ -246,15 +247,16 @@ namespace Amazon.Inspector
 
         #endregion
 
-        
+
         #region  AddAttributesToFindings
 
         internal virtual AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request)
         {
-            var marshaller = AddAttributesToFindingsRequestMarshaller.Instance;
-            var unmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddAttributesToFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<AddAttributesToFindingsRequest,AddAttributesToFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddAttributesToFindingsResponse>(request, options);
         }
 
 
@@ -270,11 +272,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public virtual Task<AddAttributesToFindingsResponse> AddAttributesToFindingsAsync(AddAttributesToFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddAttributesToFindingsRequestMarshaller.Instance;
-            var unmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddAttributesToFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddAttributesToFindingsRequest,AddAttributesToFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddAttributesToFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -283,10 +285,11 @@ namespace Amazon.Inspector
 
         internal virtual CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request)
         {
-            var marshaller = CreateAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssessmentTargetRequest,CreateAssessmentTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssessmentTargetResponse>(request, options);
         }
 
 
@@ -302,11 +305,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public virtual Task<CreateAssessmentTargetResponse> CreateAssessmentTargetAsync(CreateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAssessmentTargetRequest,CreateAssessmentTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAssessmentTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -315,10 +318,11 @@ namespace Amazon.Inspector
 
         internal virtual CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request)
         {
-            var marshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
-            var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssessmentTemplateRequest,CreateAssessmentTemplateResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssessmentTemplateResponse>(request, options);
         }
 
 
@@ -334,11 +338,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public virtual Task<CreateAssessmentTemplateResponse> CreateAssessmentTemplateAsync(CreateAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
-            var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAssessmentTemplateRequest,CreateAssessmentTemplateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAssessmentTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -347,10 +351,11 @@ namespace Amazon.Inspector
 
         internal virtual CreateExclusionsPreviewResponse CreateExclusionsPreview(CreateExclusionsPreviewRequest request)
         {
-            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
-            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
 
-            return Invoke<CreateExclusionsPreviewRequest,CreateExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateExclusionsPreviewResponse>(request, options);
         }
 
 
@@ -366,11 +371,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
         public virtual Task<CreateExclusionsPreviewResponse> CreateExclusionsPreviewAsync(CreateExclusionsPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
-            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateExclusionsPreviewRequest,CreateExclusionsPreviewResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateExclusionsPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -379,10 +384,11 @@ namespace Amazon.Inspector
 
         internal virtual CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
         {
-            var marshaller = CreateResourceGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResourceGroupRequest,CreateResourceGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResourceGroupResponse>(request, options);
         }
 
 
@@ -398,11 +404,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public virtual Task<CreateResourceGroupResponse> CreateResourceGroupAsync(CreateResourceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResourceGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateResourceGroupRequest,CreateResourceGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateResourceGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -411,10 +417,11 @@ namespace Amazon.Inspector
 
         internal virtual DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request)
         {
-            var marshaller = DeleteAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAssessmentRunRequest,DeleteAssessmentRunResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAssessmentRunResponse>(request, options);
         }
 
 
@@ -430,11 +437,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public virtual Task<DeleteAssessmentRunResponse> DeleteAssessmentRunAsync(DeleteAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAssessmentRunRequest,DeleteAssessmentRunResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAssessmentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -443,10 +450,11 @@ namespace Amazon.Inspector
 
         internal virtual DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request)
         {
-            var marshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAssessmentTargetRequest,DeleteAssessmentTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAssessmentTargetResponse>(request, options);
         }
 
 
@@ -462,11 +470,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public virtual Task<DeleteAssessmentTargetResponse> DeleteAssessmentTargetAsync(DeleteAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAssessmentTargetRequest,DeleteAssessmentTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAssessmentTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -475,10 +483,11 @@ namespace Amazon.Inspector
 
         internal virtual DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request)
         {
-            var marshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAssessmentTemplateRequest,DeleteAssessmentTemplateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAssessmentTemplateResponse>(request, options);
         }
 
 
@@ -494,11 +503,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public virtual Task<DeleteAssessmentTemplateResponse> DeleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAssessmentTemplateRequest,DeleteAssessmentTemplateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAssessmentTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -507,10 +516,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request)
         {
-            var marshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssessmentRunsRequest,DescribeAssessmentRunsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssessmentRunsResponse>(request, options);
         }
 
 
@@ -526,11 +536,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public virtual Task<DescribeAssessmentRunsResponse> DescribeAssessmentRunsAsync(DescribeAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAssessmentRunsRequest,DescribeAssessmentRunsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAssessmentRunsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -539,10 +549,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request)
         {
-            var marshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssessmentTargetsRequest,DescribeAssessmentTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssessmentTargetsResponse>(request, options);
         }
 
 
@@ -558,11 +569,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public virtual Task<DescribeAssessmentTargetsResponse> DescribeAssessmentTargetsAsync(DescribeAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAssessmentTargetsRequest,DescribeAssessmentTargetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAssessmentTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -571,10 +582,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request)
         {
-            var marshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssessmentTemplatesRequest,DescribeAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssessmentTemplatesResponse>(request, options);
         }
 
 
@@ -590,11 +602,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public virtual Task<DescribeAssessmentTemplatesResponse> DescribeAssessmentTemplatesAsync(DescribeAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAssessmentTemplatesRequest,DescribeAssessmentTemplatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAssessmentTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -603,10 +615,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request)
         {
-            var marshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
-            var unmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCrossAccountAccessRoleRequest,DescribeCrossAccountAccessRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCrossAccountAccessRoleResponse>(request, options);
         }
 
 
@@ -622,11 +635,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public virtual Task<DescribeCrossAccountAccessRoleResponse> DescribeCrossAccountAccessRoleAsync(DescribeCrossAccountAccessRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
-            var unmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeCrossAccountAccessRoleRequest,DescribeCrossAccountAccessRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeCrossAccountAccessRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -635,10 +648,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeExclusionsResponse DescribeExclusions(DescribeExclusionsRequest request)
         {
-            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeExclusionsRequest,DescribeExclusionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeExclusionsResponse>(request, options);
         }
 
 
@@ -654,11 +668,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">REST API Reference for DescribeExclusions Operation</seealso>
         public virtual Task<DescribeExclusionsResponse> DescribeExclusionsAsync(DescribeExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeExclusionsRequest,DescribeExclusionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeExclusionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -667,10 +681,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
         {
-            var marshaller = DescribeFindingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeFindingsRequest,DescribeFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeFindingsResponse>(request, options);
         }
 
 
@@ -686,11 +701,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public virtual Task<DescribeFindingsResponse> DescribeFindingsAsync(DescribeFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeFindingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeFindingsRequest,DescribeFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -699,10 +714,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request)
         {
-            var marshaller = DescribeResourceGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeResourceGroupsRequest,DescribeResourceGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeResourceGroupsResponse>(request, options);
         }
 
 
@@ -718,11 +734,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public virtual Task<DescribeResourceGroupsResponse> DescribeResourceGroupsAsync(DescribeResourceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeResourceGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeResourceGroupsRequest,DescribeResourceGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeResourceGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -731,10 +747,11 @@ namespace Amazon.Inspector
 
         internal virtual DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request)
         {
-            var marshaller = DescribeRulesPackagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRulesPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRulesPackagesRequest,DescribeRulesPackagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRulesPackagesResponse>(request, options);
         }
 
 
@@ -750,11 +767,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public virtual Task<DescribeRulesPackagesResponse> DescribeRulesPackagesAsync(DescribeRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRulesPackagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRulesPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeRulesPackagesRequest,DescribeRulesPackagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeRulesPackagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -763,10 +780,11 @@ namespace Amazon.Inspector
 
         internal virtual GetAssessmentReportResponse GetAssessmentReport(GetAssessmentReportRequest request)
         {
-            var marshaller = GetAssessmentReportRequestMarshaller.Instance;
-            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssessmentReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
 
-            return Invoke<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAssessmentReportResponse>(request, options);
         }
 
 
@@ -782,11 +800,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
         public virtual Task<GetAssessmentReportResponse> GetAssessmentReportAsync(GetAssessmentReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAssessmentReportRequestMarshaller.Instance;
-            var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAssessmentReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetAssessmentReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -795,10 +813,11 @@ namespace Amazon.Inspector
 
         internal virtual GetExclusionsPreviewResponse GetExclusionsPreview(GetExclusionsPreviewRequest request)
         {
-            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
-            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
 
-            return Invoke<GetExclusionsPreviewRequest,GetExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetExclusionsPreviewResponse>(request, options);
         }
 
 
@@ -814,11 +833,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">REST API Reference for GetExclusionsPreview Operation</seealso>
         public virtual Task<GetExclusionsPreviewResponse> GetExclusionsPreviewAsync(GetExclusionsPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
-            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetExclusionsPreviewRequest,GetExclusionsPreviewResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetExclusionsPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -827,10 +846,11 @@ namespace Amazon.Inspector
 
         internal virtual GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)
         {
-            var marshaller = GetTelemetryMetadataRequestMarshaller.Instance;
-            var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
-            return Invoke<GetTelemetryMetadataRequest,GetTelemetryMetadataResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTelemetryMetadataResponse>(request, options);
         }
 
 
@@ -846,11 +866,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public virtual Task<GetTelemetryMetadataResponse> GetTelemetryMetadataAsync(GetTelemetryMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTelemetryMetadataRequestMarshaller.Instance;
-            var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetTelemetryMetadataRequest,GetTelemetryMetadataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetTelemetryMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -859,10 +879,11 @@ namespace Amazon.Inspector
 
         internal virtual ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request)
         {
-            var marshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssessmentRunAgentsRequest,ListAssessmentRunAgentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssessmentRunAgentsResponse>(request, options);
         }
 
 
@@ -878,11 +899,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public virtual Task<ListAssessmentRunAgentsResponse> ListAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentRunAgentsRequest,ListAssessmentRunAgentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAssessmentRunAgentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -891,10 +912,11 @@ namespace Amazon.Inspector
 
         internal virtual ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request)
         {
-            var marshaller = ListAssessmentRunsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssessmentRunsRequest,ListAssessmentRunsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssessmentRunsResponse>(request, options);
         }
 
 
@@ -910,11 +932,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public virtual Task<ListAssessmentRunsResponse> ListAssessmentRunsAsync(ListAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssessmentRunsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentRunsRequest,ListAssessmentRunsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAssessmentRunsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -923,10 +945,11 @@ namespace Amazon.Inspector
 
         internal virtual ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request)
         {
-            var marshaller = ListAssessmentTargetsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssessmentTargetsRequest,ListAssessmentTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssessmentTargetsResponse>(request, options);
         }
 
 
@@ -942,11 +965,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public virtual Task<ListAssessmentTargetsResponse> ListAssessmentTargetsAsync(ListAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssessmentTargetsRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentTargetsRequest,ListAssessmentTargetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAssessmentTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -955,10 +978,11 @@ namespace Amazon.Inspector
 
         internal virtual ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request)
         {
-            var marshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssessmentTemplatesRequest,ListAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssessmentTemplatesResponse>(request, options);
         }
 
 
@@ -974,11 +998,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public virtual Task<ListAssessmentTemplatesResponse> ListAssessmentTemplatesAsync(ListAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
-            var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentTemplatesRequest,ListAssessmentTemplatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAssessmentTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -987,10 +1011,11 @@ namespace Amazon.Inspector
 
         internal virtual ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request)
         {
-            var marshaller = ListEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEventSubscriptionsResponse>(request, options);
         }
 
 
@@ -1006,11 +1031,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public virtual Task<ListEventSubscriptionsResponse> ListEventSubscriptionsAsync(ListEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListEventSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1019,10 +1044,11 @@ namespace Amazon.Inspector
 
         internal virtual ListExclusionsResponse ListExclusions(ListExclusionsRequest request)
         {
-            var marshaller = ListExclusionsRequestMarshaller.Instance;
-            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExclusionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListExclusionsRequest,ListExclusionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListExclusionsResponse>(request, options);
         }
 
 
@@ -1038,11 +1064,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">REST API Reference for ListExclusions Operation</seealso>
         public virtual Task<ListExclusionsResponse> ListExclusionsAsync(ListExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListExclusionsRequestMarshaller.Instance;
-            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExclusionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListExclusionsRequest,ListExclusionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListExclusionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1051,10 +1077,11 @@ namespace Amazon.Inspector
 
         internal virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var marshaller = ListFindingsRequestMarshaller.Instance;
-            var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListFindingsRequest,ListFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFindingsResponse>(request, options);
         }
 
 
@@ -1070,11 +1097,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListFindingsRequestMarshaller.Instance;
-            var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListFindingsRequest,ListFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1083,10 +1110,11 @@ namespace Amazon.Inspector
 
         internal virtual ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request)
         {
-            var marshaller = ListRulesPackagesRequestMarshaller.Instance;
-            var unmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
 
-            return Invoke<ListRulesPackagesRequest,ListRulesPackagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRulesPackagesResponse>(request, options);
         }
 
 
@@ -1102,11 +1130,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public virtual Task<ListRulesPackagesResponse> ListRulesPackagesAsync(ListRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRulesPackagesRequestMarshaller.Instance;
-            var unmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListRulesPackagesRequest,ListRulesPackagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListRulesPackagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1115,10 +1143,11 @@ namespace Amazon.Inspector
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -1134,11 +1163,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1147,10 +1176,11 @@ namespace Amazon.Inspector
 
         internal virtual PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request)
         {
-            var marshaller = PreviewAgentsRequestMarshaller.Instance;
-            var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PreviewAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
-            return Invoke<PreviewAgentsRequest,PreviewAgentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PreviewAgentsResponse>(request, options);
         }
 
 
@@ -1166,11 +1196,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public virtual Task<PreviewAgentsResponse> PreviewAgentsAsync(PreviewAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PreviewAgentsRequestMarshaller.Instance;
-            var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PreviewAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PreviewAgentsRequest,PreviewAgentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PreviewAgentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1179,10 +1209,11 @@ namespace Amazon.Inspector
 
         internal virtual RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request)
         {
-            var marshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
-            var unmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterCrossAccountAccessRoleRequest,RegisterCrossAccountAccessRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterCrossAccountAccessRoleResponse>(request, options);
         }
 
 
@@ -1198,11 +1229,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public virtual Task<RegisterCrossAccountAccessRoleResponse> RegisterCrossAccountAccessRoleAsync(RegisterCrossAccountAccessRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
-            var unmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterCrossAccountAccessRoleRequest,RegisterCrossAccountAccessRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterCrossAccountAccessRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1211,10 +1242,11 @@ namespace Amazon.Inspector
 
         internal virtual RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request)
         {
-            var marshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveAttributesFromFindingsRequest,RemoveAttributesFromFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveAttributesFromFindingsResponse>(request, options);
         }
 
 
@@ -1230,11 +1262,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public virtual Task<RemoveAttributesFromFindingsResponse> RemoveAttributesFromFindingsAsync(RemoveAttributesFromFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveAttributesFromFindingsRequest,RemoveAttributesFromFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveAttributesFromFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1243,10 +1275,11 @@ namespace Amazon.Inspector
 
         internal virtual SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request)
         {
-            var marshaller = SetTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<SetTagsForResourceRequest,SetTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetTagsForResourceResponse>(request, options);
         }
 
 
@@ -1262,11 +1295,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public virtual Task<SetTagsForResourceResponse> SetTagsForResourceAsync(SetTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetTagsForResourceRequest,SetTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1275,10 +1308,11 @@ namespace Amazon.Inspector
 
         internal virtual StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request)
         {
-            var marshaller = StartAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
-            return Invoke<StartAssessmentRunRequest,StartAssessmentRunResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAssessmentRunResponse>(request, options);
         }
 
 
@@ -1294,11 +1328,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public virtual Task<StartAssessmentRunResponse> StartAssessmentRunAsync(StartAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartAssessmentRunRequest,StartAssessmentRunResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartAssessmentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1307,10 +1341,11 @@ namespace Amazon.Inspector
 
         internal virtual StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request)
         {
-            var marshaller = StopAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
-            return Invoke<StopAssessmentRunRequest,StopAssessmentRunResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopAssessmentRunResponse>(request, options);
         }
 
 
@@ -1326,11 +1361,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public virtual Task<StopAssessmentRunResponse> StopAssessmentRunAsync(StopAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopAssessmentRunRequestMarshaller.Instance;
-            var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAssessmentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopAssessmentRunRequest,StopAssessmentRunResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopAssessmentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1339,10 +1374,11 @@ namespace Amazon.Inspector
 
         internal virtual SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request)
         {
-            var marshaller = SubscribeToEventRequestMarshaller.Instance;
-            var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
-            return Invoke<SubscribeToEventRequest,SubscribeToEventResponse>(request, marshaller, unmarshaller);
+            return Invoke<SubscribeToEventResponse>(request, options);
         }
 
 
@@ -1358,11 +1394,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public virtual Task<SubscribeToEventResponse> SubscribeToEventAsync(SubscribeToEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SubscribeToEventRequestMarshaller.Instance;
-            var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SubscribeToEventRequest,SubscribeToEventResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SubscribeToEventResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1371,10 +1407,11 @@ namespace Amazon.Inspector
 
         internal virtual UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request)
         {
-            var marshaller = UnsubscribeFromEventRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeFromEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
-            return Invoke<UnsubscribeFromEventRequest,UnsubscribeFromEventResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnsubscribeFromEventResponse>(request, options);
         }
 
 
@@ -1390,11 +1427,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public virtual Task<UnsubscribeFromEventResponse> UnsubscribeFromEventAsync(UnsubscribeFromEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UnsubscribeFromEventRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeFromEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UnsubscribeFromEventRequest,UnsubscribeFromEventResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UnsubscribeFromEventResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1403,10 +1440,11 @@ namespace Amazon.Inspector
 
         internal virtual UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request)
         {
-            var marshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssessmentTargetRequest,UpdateAssessmentTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAssessmentTargetResponse>(request, options);
         }
 
 
@@ -1422,11 +1460,11 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public virtual Task<UpdateAssessmentTargetResponse> UpdateAssessmentTargetAsync(UpdateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAssessmentTargetRequest,UpdateAssessmentTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAssessmentTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion

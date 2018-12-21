@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisFirehose.Model;
 using Amazon.KinesisFirehose.Model.Internal.MarshallTransformations;
@@ -241,7 +242,7 @@ namespace Amazon.KinesisFirehose
 
         #endregion
 
-        
+
         #region  CreateDeliveryStream
 
 
@@ -338,10 +339,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public virtual CreateDeliveryStreamResponse CreateDeliveryStream(CreateDeliveryStreamRequest request)
         {
-            var marshaller = CreateDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDeliveryStreamRequest,CreateDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDeliveryStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -356,11 +358,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public virtual Task<CreateDeliveryStreamResponse> CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDeliveryStreamRequest,CreateDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -440,10 +442,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public virtual DeleteDeliveryStreamResponse DeleteDeliveryStream(DeleteDeliveryStreamRequest request)
         {
-            var marshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDeliveryStreamRequest,DeleteDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDeliveryStreamResponse>(request, options);
         }
 
 
@@ -500,11 +503,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public virtual Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDeliveryStreamRequest,DeleteDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -527,10 +530,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public virtual DescribeDeliveryStreamResponse DescribeDeliveryStream(DescribeDeliveryStreamRequest request)
         {
-            var marshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeliveryStreamRequest,DescribeDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeliveryStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -545,11 +549,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public virtual Task<DescribeDeliveryStreamResponse> DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDeliveryStreamRequest,DescribeDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -600,10 +604,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public virtual ListDeliveryStreamsResponse ListDeliveryStreams(ListDeliveryStreamsRequest request)
         {
-            var marshaller = ListDeliveryStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliveryStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeliveryStreamsRequest,ListDeliveryStreamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeliveryStreamsResponse>(request, options);
         }
 
 
@@ -643,11 +648,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public virtual Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDeliveryStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDeliveryStreamsRequest,ListDeliveryStreamsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliveryStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDeliveryStreamsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -674,10 +679,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListTagsForDeliveryStream">REST API Reference for ListTagsForDeliveryStream Operation</seealso>
         public virtual ListTagsForDeliveryStreamResponse ListTagsForDeliveryStream(ListTagsForDeliveryStreamRequest request)
         {
-            var marshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForDeliveryStreamRequest,ListTagsForDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForDeliveryStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -692,11 +698,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListTagsForDeliveryStream">REST API Reference for ListTagsForDeliveryStream Operation</seealso>
         public virtual Task<ListTagsForDeliveryStreamResponse> ListTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsForDeliveryStreamRequest,ListTagsForDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -854,10 +860,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public virtual PutRecordResponse PutRecord(PutRecordRequest request)
         {
-            var marshaller = PutRecordRequestMarshaller.Instance;
-            var unmarshaller = PutRecordResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
 
-            return Invoke<PutRecordRequest,PutRecordResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutRecordResponse>(request, options);
         }
 
 
@@ -954,11 +961,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public virtual Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutRecordRequestMarshaller.Instance;
-            var unmarshaller = PutRecordResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutRecordRequest,PutRecordResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRecordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1180,10 +1187,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public virtual PutRecordBatchResponse PutRecordBatch(PutRecordBatchRequest request)
         {
-            var marshaller = PutRecordBatchRequestMarshaller.Instance;
-            var unmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecordBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
 
-            return Invoke<PutRecordBatchRequest,PutRecordBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutRecordBatchResponse>(request, options);
         }
 
 
@@ -1312,11 +1320,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public virtual Task<PutRecordBatchResponse> PutRecordBatchAsync(PutRecordBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutRecordBatchRequestMarshaller.Instance;
-            var unmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutRecordBatchRequest,PutRecordBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecordBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRecordBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1374,10 +1382,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">REST API Reference for StartDeliveryStreamEncryption Operation</seealso>
         public virtual StartDeliveryStreamEncryptionResponse StartDeliveryStreamEncryption(StartDeliveryStreamEncryptionRequest request)
         {
-            var marshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<StartDeliveryStreamEncryptionRequest,StartDeliveryStreamEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartDeliveryStreamEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1392,11 +1401,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">REST API Reference for StartDeliveryStreamEncryption Operation</seealso>
         public virtual Task<StartDeliveryStreamEncryptionResponse> StartDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartDeliveryStreamEncryptionRequest,StartDeliveryStreamEncryptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDeliveryStreamEncryptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1450,10 +1459,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">REST API Reference for StopDeliveryStreamEncryption Operation</seealso>
         public virtual StopDeliveryStreamEncryptionResponse StopDeliveryStreamEncryption(StopDeliveryStreamEncryptionRequest request)
         {
-            var marshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<StopDeliveryStreamEncryptionRequest,StopDeliveryStreamEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopDeliveryStreamEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1468,11 +1478,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">REST API Reference for StopDeliveryStreamEncryption Operation</seealso>
         public virtual Task<StopDeliveryStreamEncryptionResponse> StopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopDeliveryStreamEncryptionRequest,StopDeliveryStreamEncryptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopDeliveryStreamEncryptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1517,10 +1527,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/TagDeliveryStream">REST API Reference for TagDeliveryStream Operation</seealso>
         public virtual TagDeliveryStreamResponse TagDeliveryStream(TagDeliveryStreamRequest request)
         {
-            var marshaller = TagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<TagDeliveryStreamRequest,TagDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagDeliveryStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -1535,11 +1546,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/TagDeliveryStream">REST API Reference for TagDeliveryStream Operation</seealso>
         public virtual Task<TagDeliveryStreamResponse> TagDeliveryStreamAsync(TagDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagDeliveryStreamRequest,TagDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1578,10 +1589,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UntagDeliveryStream">REST API Reference for UntagDeliveryStream Operation</seealso>
         public virtual UntagDeliveryStreamResponse UntagDeliveryStream(UntagDeliveryStreamRequest request)
         {
-            var marshaller = UntagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
 
-            return Invoke<UntagDeliveryStreamRequest,UntagDeliveryStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagDeliveryStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -1596,11 +1608,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UntagDeliveryStream">REST API Reference for UntagDeliveryStream Operation</seealso>
         public virtual Task<UntagDeliveryStreamResponse> UntagDeliveryStreamAsync(UntagDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagDeliveryStreamRequest,UntagDeliveryStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagDeliveryStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagDeliveryStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1669,10 +1681,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public virtual UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request)
         {
-            var marshaller = UpdateDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDestinationRequest,UpdateDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -1687,11 +1700,11 @@ namespace Amazon.KinesisFirehose
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public virtual Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDestinationRequest,UpdateDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion

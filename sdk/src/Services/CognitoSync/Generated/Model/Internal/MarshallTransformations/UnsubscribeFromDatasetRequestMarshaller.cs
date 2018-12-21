@@ -55,6 +55,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public IRequest Marshall(UnsubscribeFromDatasetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";

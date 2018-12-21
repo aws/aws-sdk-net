@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.EKS.Model;
 using Amazon.EKS.Model.Internal.MarshallTransformations;
@@ -250,7 +251,7 @@ namespace Amazon.EKS
 
         #endregion
 
-        
+
         #region  CreateCluster
 
 
@@ -318,10 +319,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -336,11 +338,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterRequest,CreateClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -385,10 +387,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -403,11 +406,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -453,10 +456,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var marshaller = DescribeClusterRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -471,11 +475,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -514,10 +518,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
         public virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
         {
-            var marshaller = DescribeUpdateRequestMarshaller.Instance;
-            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUpdateRequest,DescribeUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUpdateResponse>(request, options);
         }
 
         /// <summary>
@@ -532,11 +537,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
         public virtual Task<DescribeUpdateResponse> DescribeUpdateAsync(DescribeUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUpdateRequestMarshaller.Instance;
-            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeUpdateRequest,DescribeUpdateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -567,10 +572,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var marshaller = ListClustersRequestMarshaller.Instance;
-            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
-            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListClustersResponse>(request, options);
         }
 
         /// <summary>
@@ -585,11 +591,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListClustersRequestMarshaller.Instance;
-            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -622,10 +628,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
         public virtual ListUpdatesResponse ListUpdates(ListUpdatesRequest request)
         {
-            var marshaller = ListUpdatesRequestMarshaller.Instance;
-            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUpdatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListUpdatesRequest,ListUpdatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUpdatesResponse>(request, options);
         }
 
         /// <summary>
@@ -640,11 +647,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
         public virtual Task<ListUpdatesResponse> ListUpdatesAsync(ListUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUpdatesRequestMarshaller.Instance;
-            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListUpdatesRequest,ListUpdatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUpdatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -694,10 +701,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
         public virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
         {
-            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateClusterVersionRequest,UpdateClusterVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateClusterVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -712,11 +720,11 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
         public virtual Task<UpdateClusterVersionResponse> UpdateClusterVersionAsync(UpdateClusterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateClusterVersionRequest,UpdateClusterVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateClusterVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion

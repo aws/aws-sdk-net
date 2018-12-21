@@ -58,6 +58,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             string target = "AWSSupport_20130415.DescribeCases";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-15";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

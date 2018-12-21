@@ -56,6 +56,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2012-09-25/pipelines/{Id}/notifications";

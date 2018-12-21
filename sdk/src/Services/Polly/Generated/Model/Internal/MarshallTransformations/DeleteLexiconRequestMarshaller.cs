@@ -55,6 +55,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteLexiconRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Polly");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/v1/lexicons/{LexiconName}";

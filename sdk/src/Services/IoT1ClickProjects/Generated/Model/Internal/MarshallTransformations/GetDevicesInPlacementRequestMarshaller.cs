@@ -55,6 +55,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDevicesInPlacementRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickProjects");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/projects/{projectName}/placements/{placementName}/devices";

@@ -58,6 +58,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             string target = "AmazonAthena.ListNamedQueries";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-18";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

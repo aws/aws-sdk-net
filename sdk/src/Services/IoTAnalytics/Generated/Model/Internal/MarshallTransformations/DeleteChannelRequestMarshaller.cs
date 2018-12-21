@@ -55,6 +55,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteChannelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTAnalytics");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/channels/{channelName}";

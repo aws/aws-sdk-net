@@ -58,6 +58,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             string target = "DirectoryService_20150416.AcceptSharedDirectory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-16";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

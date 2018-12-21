@@ -66,6 +66,8 @@ namespace Amazon.Runtime
         private bool useDualstackEndpoint = false;
         private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
+        private bool? endpointDiscoveryEnabled = null;
+        private int endpointDiscoveryCacheLimit = 1000;
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
@@ -192,7 +194,7 @@ namespace Amazon.Runtime
         internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
         {
             var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
+            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;         
             return url;
         }
 
@@ -526,6 +528,40 @@ namespace Amazon.Runtime
         {
             get { return this.disableHostPrefixInjection; }
             set { this.disableHostPrefixInjection = value; }
+        }
+
+        /// <summary>
+        /// Returns the flag indicating if endpoint discovery should be enabled or disabled for operations that are not required to use endpoint discovery.
+        /// </summary>
+        public bool EndpointDiscoveryEnabled
+        {
+            get
+            {
+                if (!this.endpointDiscoveryEnabled.HasValue)
+                {
+                    var endpointDiscoveryEnabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                    if (endpointDiscoveryEnabled != null)
+                    {
+                        return endpointDiscoveryEnabled.Value;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                return this.endpointDiscoveryEnabled.Value;
+            }
+            set { this.endpointDiscoveryEnabled = value; }
+        }
+
+        /// <summary>
+        /// Returns the maximum number of discovered endpoints that can be stored within the cache for the client. The default limit is 1000 cache entries.
+        /// </summary>
+        public int EndpointDiscoveryCacheLimit
+        {
+            get { return this.endpointDiscoveryCacheLimit; }
+            set { this.endpointDiscoveryCacheLimit = value; }
         }
 
         /// <summary>

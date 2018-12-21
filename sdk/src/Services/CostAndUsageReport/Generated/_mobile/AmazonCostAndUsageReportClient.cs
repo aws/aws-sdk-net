@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CostAndUsageReport.Model;
 using Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
 
-        
+
         #region  DeleteReportDefinition
 
         internal virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
-            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReportDefinitionRequest,DeleteReportDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReportDefinitionResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteReportDefinitionRequest,DeleteReportDefinitionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteReportDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -278,10 +280,11 @@ namespace Amazon.CostAndUsageReport
 
         internal virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
-            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReportDefinitionsRequest,DescribeReportDefinitionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReportDefinitionsResponse>(request, options);
         }
 
 
@@ -297,11 +300,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeReportDefinitionsRequest,DescribeReportDefinitionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeReportDefinitionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +313,11 @@ namespace Amazon.CostAndUsageReport
 
         internal virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
-            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<PutReportDefinitionRequest,PutReportDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutReportDefinitionResponse>(request, options);
         }
 
 
@@ -329,11 +333,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutReportDefinitionRequest,PutReportDefinitionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutReportDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion

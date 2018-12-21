@@ -55,6 +55,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public IRequest Marshall(SuggestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/2013-01-01/suggest";

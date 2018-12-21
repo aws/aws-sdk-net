@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SecretsManager.Model;
 using Amazon.SecretsManager.Model.Internal.MarshallTransformations;
@@ -320,7 +321,7 @@ namespace Amazon.SecretsManager
 
         #endregion
 
-        
+
         #region  CancelRotateSecret
 
 
@@ -429,10 +430,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual CancelRotateSecretResponse CancelRotateSecret(CancelRotateSecretRequest request)
         {
-            var marshaller = CancelRotateSecretRequestMarshaller.Instance;
-            var unmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelRotateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
 
-            return Invoke<CancelRotateSecretRequest,CancelRotateSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelRotateSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -447,11 +449,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual Task<CancelRotateSecretResponse> CancelRotateSecretAsync(CancelRotateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelRotateSecretRequestMarshaller.Instance;
-            var unmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelRotateSecretRequest,CancelRotateSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelRotateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelRotateSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -621,10 +623,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual CreateSecretResponse CreateSecret(CreateSecretRequest request)
         {
-            var marshaller = CreateSecretRequestMarshaller.Instance;
-            var unmarshaller = CreateSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecretResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSecretRequest,CreateSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -639,11 +642,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual Task<CreateSecretResponse> CreateSecretAsync(CreateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSecretRequestMarshaller.Instance;
-            var unmarshaller = CreateSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSecretRequest,CreateSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -714,10 +717,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -732,11 +736,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -836,10 +840,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual DeleteSecretResponse DeleteSecret(DeleteSecretRequest request)
         {
-            var marshaller = DeleteSecretRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecretResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSecretRequest,DeleteSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -854,11 +859,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual Task<DeleteSecretResponse> DeleteSecretAsync(DeleteSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSecretRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteSecretRequest,DeleteSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -916,10 +921,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual DescribeSecretResponse DescribeSecret(DescribeSecretRequest request)
         {
-            var marshaller = DescribeSecretRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecretResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSecretRequest,DescribeSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -934,11 +940,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual Task<DescribeSecretResponse> DescribeSecretAsync(DescribeSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSecretRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSecretRequest,DescribeSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -996,10 +1002,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual GetRandomPasswordResponse GetRandomPassword(GetRandomPasswordRequest request)
         {
-            var marshaller = GetRandomPasswordRequestMarshaller.Instance;
-            var unmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRandomPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
 
-            return Invoke<GetRandomPasswordRequest,GetRandomPasswordResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRandomPasswordResponse>(request, options);
         }
 
         /// <summary>
@@ -1014,11 +1021,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual Task<GetRandomPasswordResponse> GetRandomPasswordAsync(GetRandomPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRandomPasswordRequestMarshaller.Instance;
-            var unmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetRandomPasswordRequest,GetRandomPasswordResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRandomPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRandomPasswordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1092,10 +1099,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourcePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1110,11 +1118,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1194,10 +1202,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual GetSecretValueResponse GetSecretValue(GetSecretValueRequest request)
         {
-            var marshaller = GetSecretValueRequestMarshaller.Instance;
-            var unmarshaller = GetSecretValueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecretValueResponseUnmarshaller.Instance;
 
-            return Invoke<GetSecretValueRequest,GetSecretValueResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSecretValueResponse>(request, options);
         }
 
         /// <summary>
@@ -1212,11 +1221,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual Task<GetSecretValueResponse> GetSecretValueAsync(GetSecretValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSecretValueRequestMarshaller.Instance;
-            var unmarshaller = GetSecretValueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetSecretValueRequest,GetSecretValueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecretValueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSecretValueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1275,10 +1284,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual ListSecretsResponse ListSecrets(ListSecretsRequest request)
         {
-            var marshaller = ListSecretsRequestMarshaller.Instance;
-            var unmarshaller = ListSecretsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecretsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecretsRequest,ListSecretsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecretsResponse>(request, options);
         }
 
         /// <summary>
@@ -1293,11 +1303,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual Task<ListSecretsResponse> ListSecretsAsync(ListSecretsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecretsRequestMarshaller.Instance;
-            var unmarshaller = ListSecretsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSecretsRequest,ListSecretsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecretsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSecretsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1356,10 +1366,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual ListSecretVersionIdsResponse ListSecretVersionIds(ListSecretVersionIdsRequest request)
         {
-            var marshaller = ListSecretVersionIdsRequestMarshaller.Instance;
-            var unmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecretVersionIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecretVersionIdsRequest,ListSecretVersionIdsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecretVersionIdsResponse>(request, options);
         }
 
         /// <summary>
@@ -1374,11 +1385,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual Task<ListSecretVersionIdsResponse> ListSecretVersionIdsAsync(ListSecretVersionIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecretVersionIdsRequestMarshaller.Instance;
-            var unmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSecretVersionIdsRequest,ListSecretVersionIdsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecretVersionIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSecretVersionIdsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1463,10 +1474,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutResourcePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1481,11 +1493,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1640,10 +1652,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual PutSecretValueResponse PutSecretValue(PutSecretValueRequest request)
         {
-            var marshaller = PutSecretValueRequestMarshaller.Instance;
-            var unmarshaller = PutSecretValueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSecretValueResponseUnmarshaller.Instance;
 
-            return Invoke<PutSecretValueRequest,PutSecretValueResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutSecretValueResponse>(request, options);
         }
 
         /// <summary>
@@ -1658,11 +1671,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual Task<PutSecretValueResponse> PutSecretValueAsync(PutSecretValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutSecretValueRequestMarshaller.Instance;
-            var unmarshaller = PutSecretValueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutSecretValueRequest,PutSecretValueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSecretValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSecretValueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutSecretValueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1729,10 +1742,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual RestoreSecretResponse RestoreSecret(RestoreSecretRequest request)
         {
-            var marshaller = RestoreSecretRequestMarshaller.Instance;
-            var unmarshaller = RestoreSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSecretResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreSecretRequest,RestoreSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -1747,11 +1761,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual Task<RestoreSecretResponse> RestoreSecretAsync(RestoreSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestoreSecretRequestMarshaller.Instance;
-            var unmarshaller = RestoreSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestoreSecretRequest,RestoreSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1877,10 +1891,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual RotateSecretResponse RotateSecret(RotateSecretRequest request)
         {
-            var marshaller = RotateSecretRequestMarshaller.Instance;
-            var unmarshaller = RotateSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RotateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RotateSecretResponseUnmarshaller.Instance;
 
-            return Invoke<RotateSecretRequest,RotateSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<RotateSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -1895,11 +1910,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual Task<RotateSecretResponse> RotateSecretAsync(RotateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RotateSecretRequestMarshaller.Instance;
-            var unmarshaller = RotateSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RotateSecretRequest,RotateSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RotateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RotateSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RotateSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2012,10 +2027,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2030,11 +2046,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2116,10 +2132,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2134,11 +2151,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2293,10 +2310,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual UpdateSecretResponse UpdateSecret(UpdateSecretRequest request)
         {
-            var marshaller = UpdateSecretRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecretResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecretResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSecretRequest,UpdateSecretResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSecretResponse>(request, options);
         }
 
         /// <summary>
@@ -2311,11 +2329,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual Task<UpdateSecretResponse> UpdateSecretAsync(UpdateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSecretRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecretResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateSecretRequest,UpdateSecretResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecretResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSecretResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2413,10 +2431,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual UpdateSecretVersionStageResponse UpdateSecretVersionStage(UpdateSecretVersionStageRequest request)
         {
-            var marshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSecretVersionStageRequest,UpdateSecretVersionStageResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSecretVersionStageResponse>(request, options);
         }
 
         /// <summary>
@@ -2431,11 +2450,11 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual Task<UpdateSecretVersionStageResponse> UpdateSecretVersionStageAsync(UpdateSecretVersionStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateSecretVersionStageRequest,UpdateSecretVersionStageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSecretVersionStageResponse>(request, options, cancellationToken);
         }
 
         #endregion

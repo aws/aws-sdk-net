@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IotData.Model;
 using Amazon.IotData.Model.Internal.MarshallTransformations;
@@ -83,7 +84,7 @@ namespace Amazon.IotData
 
         #endregion
 
-        
+
         #region  DeleteThingShadow
 
         /// <summary>
@@ -124,10 +125,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -143,11 +145,11 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteThingShadow(DeleteThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteThingShadowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -204,10 +206,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var marshaller = GetThingShadowRequestMarshaller.Instance;
-            var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -223,11 +226,11 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetThingShadow(GetThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetThingShadowRequestMarshaller.Instance;
-            var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetThingShadowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -272,10 +275,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
-            return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
+            return Invoke<PublishResponse>(request, options);
         }
 
         /// <summary>
@@ -291,11 +295,11 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PublishRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -355,10 +359,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -374,11 +379,11 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateThingShadow(UpdateThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateThingShadowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Macie.Model;
 using Amazon.Macie.Model.Internal.MarshallTransformations;
@@ -242,7 +243,7 @@ namespace Amazon.Macie
 
         #endregion
 
-        
+
         #region  AssociateMemberAccount
 
         /// <summary>
@@ -265,10 +266,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">REST API Reference for AssociateMemberAccount Operation</seealso>
         public virtual AssociateMemberAccountResponse AssociateMemberAccount(AssociateMemberAccountRequest request)
         {
-            var marshaller = AssociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateMemberAccountRequest,AssociateMemberAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateMemberAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -285,11 +287,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">REST API Reference for AssociateMemberAccount Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberAccount(AssociateMemberAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateMemberAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -335,10 +337,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">REST API Reference for AssociateS3Resources Operation</seealso>
         public virtual AssociateS3ResourcesResponse AssociateS3Resources(AssociateS3ResourcesRequest request)
         {
-            var marshaller = AssociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateS3ResourcesRequest,AssociateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateS3ResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -355,11 +358,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">REST API Reference for AssociateS3Resources Operation</seealso>
         public virtual IAsyncResult BeginAssociateS3Resources(AssociateS3ResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateS3ResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -395,10 +398,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">REST API Reference for DisassociateMemberAccount Operation</seealso>
         public virtual DisassociateMemberAccountResponse DisassociateMemberAccount(DisassociateMemberAccountRequest request)
         {
-            var marshaller = DisassociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateMemberAccountRequest,DisassociateMemberAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateMemberAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -415,11 +419,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">REST API Reference for DisassociateMemberAccount Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberAccount(DisassociateMemberAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateMemberAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -461,10 +465,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">REST API Reference for DisassociateS3Resources Operation</seealso>
         public virtual DisassociateS3ResourcesResponse DisassociateS3Resources(DisassociateS3ResourcesRequest request)
         {
-            var marshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateS3ResourcesRequest,DisassociateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateS3ResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -481,11 +486,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">REST API Reference for DisassociateS3Resources Operation</seealso>
         public virtual IAsyncResult BeginDisassociateS3Resources(DisassociateS3ResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateS3ResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -521,10 +526,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMemberAccountsResponse>(request, options);
         }
 
         /// <summary>
@@ -541,11 +547,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListMemberAccountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -587,10 +593,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">REST API Reference for ListS3Resources Operation</seealso>
         public virtual ListS3ResourcesResponse ListS3Resources(ListS3ResourcesRequest request)
         {
-            var marshaller = ListS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListS3ResourcesRequest,ListS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListS3ResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -607,11 +614,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">REST API Reference for ListS3Resources Operation</seealso>
         public virtual IAsyncResult BeginListS3Resources(ListS3ResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListS3ResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -654,10 +661,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">REST API Reference for UpdateS3Resources Operation</seealso>
         public virtual UpdateS3ResourcesResponse UpdateS3Resources(UpdateS3ResourcesRequest request)
         {
-            var marshaller = UpdateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateS3ResourcesRequest,UpdateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateS3ResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -674,11 +682,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">REST API Reference for UpdateS3Resources Operation</seealso>
         public virtual IAsyncResult BeginUpdateS3Resources(UpdateS3ResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateS3ResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

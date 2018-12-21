@@ -103,6 +103,23 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Evicts a specific key out of the cache if it exists
+        /// </summary>
+        /// <param name="key">the key to evict from the cache</param>        
+        public void Evict(TKey key)
+        {
+            lock (cacheLock)
+            {
+                LruListItem<TKey, TValue> existingLruListItem;
+                if (cache.TryGetValue(key, out existingLruListItem))
+                {
+                    lruList.Remove(existingLruListItem);
+                    cache.Remove(key);
+                }
+            }
+        }
+
+        /// <summary>
         /// Try to get the value associated with the key.
         /// </summary>
         /// <param name="key">the key to look up</param>

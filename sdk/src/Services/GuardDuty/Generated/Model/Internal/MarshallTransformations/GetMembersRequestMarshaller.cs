@@ -56,6 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/detector/{detectorId}/member/get";

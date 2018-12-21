@@ -21,6 +21,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -38,6 +39,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string ToolkitArtifactGuidField = "toolkit_artifact_guid";
         private const string RegionField = "region";
+        private const string EndpointDiscoveryEnabledField = "endpoint_discovery_enabled";
         private const string ConfigFileName = "config";
         private const string DefaultDirectoryName = ".aws";
         private const string DefaultFileName = "credentials";
@@ -47,7 +49,8 @@ namespace Amazon.Runtime.CredentialManagement
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             ToolkitArtifactGuidField,
-            RegionField
+            RegionField,
+            EndpointDiscoveryEnabledField
         };
 
         /// <summary>
@@ -202,6 +205,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// Update the profile on disk regardless of the profile type.
         /// </summary>
         /// <param name="profile"></param>
+        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         private void RegisterProfileInternal(CredentialProfile profile)
         {
             var reservedProperties = new Dictionary<string, string>();
@@ -211,6 +215,9 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.Region != null)
                 reservedProperties[RegionField] = profile.Region.SystemName;
+
+            if (profile.EndpointDiscoveryEnabled != null)
+                reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -338,12 +345,28 @@ namespace Amazon.Runtime.CredentialManagement
                     region = RegionEndpoint.GetBySystemName(regionString);
                 }
 
+                string endpointDiscoveryEnabledString;
+                bool? endpointDiscoveryEnabled = null;
+                if (reservedProperties.TryGetValue(EndpointDiscoveryEnabledField, out endpointDiscoveryEnabledString))
+                {
+                    bool endpointDiscoveryEnabledOut;
+                    if(!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", endpointDiscoveryEnabledString, EndpointDiscoveryEnabledField, profileName);
+                        profile = null;
+                        return false;
+                    }
+
+                    endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
+                }
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
                     Region = region,
-                    CredentialProfileStore = this
+                    CredentialProfileStore = this,
+                    EndpointDiscoveryEnabled = endpointDiscoveryEnabled
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

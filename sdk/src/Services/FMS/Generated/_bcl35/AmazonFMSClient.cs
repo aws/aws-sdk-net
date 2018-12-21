@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.FMS.Model;
 using Amazon.FMS.Model.Internal.MarshallTransformations;
@@ -241,7 +242,7 @@ namespace Amazon.FMS
 
         #endregion
 
-        
+
         #region  AssociateAdminAccount
 
         /// <summary>
@@ -278,10 +279,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual AssociateAdminAccountResponse AssociateAdminAccount(AssociateAdminAccountRequest request)
         {
-            var marshaller = AssociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateAdminAccountRequest,AssociateAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -298,11 +300,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginAssociateAdminAccount(AssociateAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateAdminAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -344,10 +346,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual DeleteNotificationChannelResponse DeleteNotificationChannel(DeleteNotificationChannelRequest request)
         {
-            var marshaller = DeleteNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotificationChannelRequest,DeleteNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -364,11 +367,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotificationChannel(DeleteNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteNotificationChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -409,10 +412,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -429,11 +433,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -476,10 +480,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual DisassociateAdminAccountResponse DisassociateAdminAccount(DisassociateAdminAccountRequest request)
         {
-            var marshaller = DisassociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateAdminAccountRequest,DisassociateAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -496,11 +501,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAdminAccount(DisassociateAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateAdminAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -542,10 +547,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual GetAdminAccountResponse GetAdminAccount(GetAdminAccountRequest request)
         {
-            var marshaller = GetAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetAdminAccountRequest,GetAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -562,11 +568,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginGetAdminAccount(GetAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAdminAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -604,10 +610,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual GetComplianceDetailResponse GetComplianceDetail(GetComplianceDetailRequest request)
         {
-            var marshaller = GetComplianceDetailRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailRequest,GetComplianceDetailResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailResponse>(request, options);
         }
 
         /// <summary>
@@ -624,11 +631,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetail(GetComplianceDetailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetComplianceDetailRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetComplianceDetailRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -670,10 +677,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual GetNotificationChannelResponse GetNotificationChannel(GetNotificationChannelRequest request)
         {
-            var marshaller = GetNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetNotificationChannelRequest,GetNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -690,11 +698,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginGetNotificationChannel(GetNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetNotificationChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -738,10 +746,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -758,11 +767,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -800,10 +809,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual ListComplianceStatusResponse ListComplianceStatus(ListComplianceStatusRequest request)
         {
-            var marshaller = ListComplianceStatusRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceStatusRequest,ListComplianceStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -820,11 +830,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual IAsyncResult BeginListComplianceStatus(ListComplianceStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListComplianceStatusRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListComplianceStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -867,10 +877,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMemberAccountsResponse>(request, options);
         }
 
         /// <summary>
@@ -887,11 +898,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListMemberAccountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -937,10 +948,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPoliciesResponse>(request, options);
         }
 
         /// <summary>
@@ -957,11 +969,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPoliciesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1003,10 +1015,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual PutNotificationChannelResponse PutNotificationChannel(PutNotificationChannelRequest request)
         {
-            var marshaller = PutNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<PutNotificationChannelRequest,PutNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1023,11 +1036,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginPutNotificationChannel(PutNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutNotificationChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1079,10 +1092,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
         {
-            var marshaller = PutPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutPolicyRequest,PutPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1099,11 +1113,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutPolicy(PutPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

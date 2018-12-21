@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ConfigService.Model;
 using Amazon.ConfigService.Model.Internal.MarshallTransformations;
@@ -257,7 +258,7 @@ namespace Amazon.ConfigService
 
         #endregion
 
-        
+
         #region  BatchGetAggregateResourceConfig
 
         /// <summary>
@@ -288,10 +289,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         public virtual BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request)
         {
-            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetAggregateResourceConfigRequest,BatchGetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetAggregateResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -308,11 +310,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         public virtual IAsyncResult BeginBatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchGetAggregateResourceConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -362,10 +364,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         public virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
         {
-            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -382,11 +385,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         public virtual IAsyncResult BeginBatchGetResourceConfig(BatchGetResourceConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchGetResourceConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -420,10 +423,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual DeleteAggregationAuthorizationResponse DeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request)
         {
-            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAggregationAuthorizationRequest,DeleteAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAggregationAuthorizationResponse>(request, options);
         }
 
         /// <summary>
@@ -440,11 +444,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual IAsyncResult BeginDeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAggregationAuthorizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -492,10 +496,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
         {
-            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -512,11 +517,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigRule(DeleteConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -549,10 +554,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
         public virtual DeleteConfigurationAggregatorResponse DeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request)
         {
-            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationAggregatorRequest,DeleteConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationAggregatorResponse>(request, options);
         }
 
         /// <summary>
@@ -569,11 +575,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationAggregatorRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -618,10 +624,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
         {
-            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -638,11 +645,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationRecorderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -712,10 +719,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
         {
-            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDeliveryChannelRequest,DeleteDeliveryChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDeliveryChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -732,11 +740,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteDeliveryChannel(DeleteDeliveryChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDeliveryChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -776,10 +784,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
         {
-            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
-            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEvaluationResultsResponse>(request, options);
         }
 
         /// <summary>
@@ -796,11 +805,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual IAsyncResult BeginDeleteEvaluationResults(DeleteEvaluationResultsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
-            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEvaluationResultsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -834,10 +843,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual DeletePendingAggregationRequestResponse DeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request)
         {
-            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
-            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePendingAggregationRequestRequest,DeletePendingAggregationRequestResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePendingAggregationRequestResponse>(request, options);
         }
 
         /// <summary>
@@ -854,11 +864,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual IAsyncResult BeginDeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
-            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePendingAggregationRequestRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -894,10 +904,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
         public virtual DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request)
         {
-            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRetentionConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -914,11 +925,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteRetentionConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1014,10 +1025,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
         {
-            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DeliverConfigSnapshotRequest,DeliverConfigSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeliverConfigSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1034,11 +1046,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeliverConfigSnapshot(DeliverConfigSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeliverConfigSnapshotRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1088,10 +1100,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         public virtual DescribeAggregateComplianceByConfigRulesResponse DescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request)
         {
-            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAggregateComplianceByConfigRulesRequest,DescribeAggregateComplianceByConfigRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAggregateComplianceByConfigRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1108,11 +1121,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAggregateComplianceByConfigRulesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1152,10 +1165,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual DescribeAggregationAuthorizationsResponse DescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request)
         {
-            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAggregationAuthorizationsRequest,DescribeAggregationAuthorizationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAggregationAuthorizationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1172,11 +1186,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual IAsyncResult BeginDescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAggregationAuthorizationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1248,10 +1262,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
         {
-            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeComplianceByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -1268,11 +1283,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginDescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeComplianceByConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1343,10 +1358,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
         {
-            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeComplianceByResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1363,11 +1379,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual IAsyncResult BeginDescribeComplianceByResource(DescribeComplianceByResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeComplianceByResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1410,10 +1426,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
         {
-            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigRuleEvaluationStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1430,11 +1447,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigRuleEvaluationStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1471,10 +1488,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
         {
-            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1491,11 +1509,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigRules(DescribeConfigRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigRulesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1540,10 +1558,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
         public virtual DescribeConfigurationAggregatorsResponse DescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request)
         {
-            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationAggregatorsRequest,DescribeConfigurationAggregatorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationAggregatorsResponse>(request, options);
         }
 
         /// <summary>
@@ -1560,11 +1579,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigurationAggregatorsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1609,10 +1628,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
         public virtual DescribeConfigurationAggregatorSourcesStatusResponse DescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request)
         {
-            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationAggregatorSourcesStatusRequest,DescribeConfigurationAggregatorSourcesStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationAggregatorSourcesStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1629,11 +1649,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigurationAggregatorSourcesStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1695,10 +1715,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request)
         {
-            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationRecordersRequest,DescribeConfigurationRecordersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationRecordersResponse>(request, options);
         }
 
         /// <summary>
@@ -1715,11 +1736,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigurationRecordersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1781,10 +1802,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request)
         {
-            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationRecorderStatusRequest,DescribeConfigurationRecorderStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationRecorderStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1801,11 +1823,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConfigurationRecorderStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1867,10 +1889,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request)
         {
-            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeliveryChannelsRequest,DescribeDeliveryChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeliveryChannelsResponse>(request, options);
         }
 
         /// <summary>
@@ -1887,11 +1910,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeliveryChannels(DescribeDeliveryChannelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDeliveryChannelsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1953,10 +1976,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request)
         {
-            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeliveryChannelStatusRequest,DescribeDeliveryChannelStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeliveryChannelStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1973,11 +1997,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDeliveryChannelStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2017,10 +2041,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual DescribePendingAggregationRequestsResponse DescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request)
         {
-            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
-            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePendingAggregationRequestsRequest,DescribePendingAggregationRequestsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePendingAggregationRequestsResponse>(request, options);
         }
 
         /// <summary>
@@ -2037,11 +2062,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual IAsyncResult BeginDescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
-            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribePendingAggregationRequestsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2090,10 +2115,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
         public virtual DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request)
         {
-            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRetentionConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -2110,11 +2136,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeRetentionConfigurationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2166,10 +2192,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request)
         {
-            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateComplianceDetailsByConfigRuleRequest,GetAggregateComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateComplianceDetailsByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2186,11 +2213,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginGetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAggregateComplianceDetailsByConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2240,10 +2267,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         public virtual GetAggregateConfigRuleComplianceSummaryResponse GetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request)
         {
-            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateConfigRuleComplianceSummaryRequest,GetAggregateConfigRuleComplianceSummaryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateConfigRuleComplianceSummaryResponse>(request, options);
         }
 
         /// <summary>
@@ -2260,11 +2288,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         public virtual IAsyncResult BeginGetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAggregateConfigRuleComplianceSummaryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2315,10 +2343,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         public virtual GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request)
         {
-            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateDiscoveredResourceCountsRequest,GetAggregateDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateDiscoveredResourceCountsResponse>(request, options);
         }
 
         /// <summary>
@@ -2335,11 +2364,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         public virtual IAsyncResult BeginGetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAggregateDiscoveredResourceCountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2381,10 +2410,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         public virtual GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request)
         {
-            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateResourceConfigRequest,GetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2401,11 +2431,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         public virtual IAsyncResult BeginGetAggregateResourceConfig(GetAggregateResourceConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAggregateResourceConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2448,10 +2478,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
         {
-            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailsByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2468,11 +2499,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetComplianceDetailsByConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2507,10 +2538,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
         {
-            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailsByResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2527,11 +2559,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetComplianceDetailsByResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2561,10 +2593,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
         {
-            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceSummaryByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2581,11 +2614,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetComplianceSummaryByConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2620,10 +2653,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
         {
-            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceSummaryByResourceTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -2640,11 +2674,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetComplianceSummaryByResourceTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2739,10 +2773,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
         {
-            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDiscoveredResourceCountsRequest,GetDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDiscoveredResourceCountsResponse>(request, options);
         }
 
         /// <summary>
@@ -2759,11 +2794,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual IAsyncResult BeginGetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDiscoveredResourceCountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2832,10 +2867,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
         {
-            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceConfigHistoryResponse>(request, options);
         }
 
         /// <summary>
@@ -2852,11 +2888,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual IAsyncResult BeginGetResourceConfigHistory(GetResourceConfigHistoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResourceConfigHistoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2909,10 +2945,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         public virtual ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request)
         {
-            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAggregateDiscoveredResourcesRequest,ListAggregateDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAggregateDiscoveredResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -2929,11 +2966,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         public virtual IAsyncResult BeginListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAggregateDiscoveredResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2993,10 +3030,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDiscoveredResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -3013,11 +3051,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDiscoveredResourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3051,10 +3089,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual PutAggregationAuthorizationResponse PutAggregationAuthorization(PutAggregationAuthorizationRequest request)
         {
-            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return Invoke<PutAggregationAuthorizationRequest,PutAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAggregationAuthorizationResponse>(request, options);
         }
 
         /// <summary>
@@ -3071,11 +3110,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual IAsyncResult BeginPutAggregationAuthorization(PutAggregationAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutAggregationAuthorizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3185,10 +3224,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
         {
-            var marshaller = PutConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -3205,11 +3245,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual IAsyncResult BeginPutConfigRule(PutConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3279,10 +3319,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual PutConfigurationAggregatorResponse PutConfigurationAggregator(PutConfigurationAggregatorRequest request)
         {
-            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationAggregatorRequest,PutConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationAggregatorResponse>(request, options);
         }
 
         /// <summary>
@@ -3299,11 +3340,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual IAsyncResult BeginPutConfigurationAggregator(PutConfigurationAggregatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationAggregatorRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3362,10 +3403,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
-            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationRecorderRequest,PutConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -3382,11 +3424,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginPutConfigurationRecorder(PutConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationRecorderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3456,10 +3498,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request)
         {
-            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
-            return Invoke<PutDeliveryChannelRequest,PutDeliveryChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDeliveryChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -3476,11 +3519,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual IAsyncResult BeginPutDeliveryChannel(PutDeliveryChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutDeliveryChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3521,10 +3564,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
         {
-            var marshaller = PutEvaluationsRequestMarshaller.Instance;
-            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEvaluationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3541,11 +3585,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual IAsyncResult BeginPutEvaluations(PutEvaluationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEvaluationsRequestMarshaller.Instance;
-            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEvaluationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3593,10 +3637,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         public virtual PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request)
         {
-            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutRetentionConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -3613,11 +3658,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutRetentionConfiguration(PutRetentionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutRetentionConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3718,10 +3763,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
         {
-            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
-            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
-            return Invoke<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartConfigRulesEvaluationResponse>(request, options);
         }
 
         /// <summary>
@@ -3738,11 +3784,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual IAsyncResult BeginStartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
-            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartConfigRulesEvaluationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3812,10 +3858,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request)
         {
-            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<StartConfigurationRecorderRequest,StartConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -3832,11 +3879,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginStartConfigurationRecorder(StartConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartConfigurationRecorderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3888,10 +3935,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request)
         {
-            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<StopConfigurationRecorderRequest,StopConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -3908,11 +3956,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginStopConfigurationRecorder(StopConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopConfigurationRecorderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

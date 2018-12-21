@@ -56,6 +56,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServerlessApplicationRepository");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/applications/{applicationId}/changesets";

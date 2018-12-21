@@ -58,6 +58,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             string target = "AWSEvents.PutRule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

@@ -58,6 +58,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             string target = "AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-06";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

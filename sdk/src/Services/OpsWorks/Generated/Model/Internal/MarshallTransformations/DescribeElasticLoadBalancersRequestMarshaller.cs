@@ -58,6 +58,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             string target = "OpsWorks_20130218.DescribeElasticLoadBalancers";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-02-18";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

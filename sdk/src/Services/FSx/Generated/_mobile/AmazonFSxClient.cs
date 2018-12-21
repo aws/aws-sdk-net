@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.FSx.Model;
 using Amazon.FSx.Model.Internal.MarshallTransformations;
@@ -242,15 +243,16 @@ namespace Amazon.FSx
 
         #endregion
 
-        
+
         #region  CreateBackup
 
         internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
-            var marshaller = CreateBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBackupResponse>(request, options);
         }
 
 
@@ -266,11 +268,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateBackupRequest,CreateBackupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -279,10 +281,11 @@ namespace Amazon.FSx
 
         internal virtual CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request)
         {
-            var marshaller = CreateFileSystemRequestMarshaller.Instance;
-            var unmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFileSystemRequest,CreateFileSystemResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFileSystemResponse>(request, options);
         }
 
 
@@ -298,11 +301,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateFileSystemRequestMarshaller.Instance;
-            var unmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateFileSystemRequest,CreateFileSystemResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateFileSystemResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -311,10 +314,11 @@ namespace Amazon.FSx
 
         internal virtual CreateFileSystemFromBackupResponse CreateFileSystemFromBackup(CreateFileSystemFromBackupRequest request)
         {
-            var marshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFileSystemFromBackupRequest,CreateFileSystemFromBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFileSystemFromBackupResponse>(request, options);
         }
 
 
@@ -330,11 +334,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         public virtual Task<CreateFileSystemFromBackupResponse> CreateFileSystemFromBackupAsync(CreateFileSystemFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateFileSystemFromBackupRequest,CreateFileSystemFromBackupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateFileSystemFromBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -343,10 +347,11 @@ namespace Amazon.FSx
 
         internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBackupResponse>(request, options);
         }
 
 
@@ -362,11 +367,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -375,10 +380,11 @@ namespace Amazon.FSx
 
         internal virtual DeleteFileSystemResponse DeleteFileSystem(DeleteFileSystemRequest request)
         {
-            var marshaller = DeleteFileSystemRequestMarshaller.Instance;
-            var unmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFileSystemRequest,DeleteFileSystemResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFileSystemResponse>(request, options);
         }
 
 
@@ -394,11 +400,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteFileSystemRequestMarshaller.Instance;
-            var unmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteFileSystemRequest,DeleteFileSystemResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteFileSystemResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -407,10 +413,11 @@ namespace Amazon.FSx
 
         internal virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBackupsRequest,DescribeBackupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBackupsResponse>(request, options);
         }
 
 
@@ -426,11 +433,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBackupsRequest,DescribeBackupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBackupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -439,10 +446,11 @@ namespace Amazon.FSx
 
         internal virtual DescribeFileSystemsResponse DescribeFileSystems(DescribeFileSystemsRequest request)
         {
-            var marshaller = DescribeFileSystemsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeFileSystemsRequest,DescribeFileSystemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeFileSystemsResponse>(request, options);
         }
 
 
@@ -458,11 +466,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public virtual Task<DescribeFileSystemsResponse> DescribeFileSystemsAsync(DescribeFileSystemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeFileSystemsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileSystemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeFileSystemsRequest,DescribeFileSystemsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeFileSystemsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -471,10 +479,11 @@ namespace Amazon.FSx
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -490,11 +499,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -503,10 +512,11 @@ namespace Amazon.FSx
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -522,11 +532,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -535,10 +545,11 @@ namespace Amazon.FSx
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -554,11 +565,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -567,10 +578,11 @@ namespace Amazon.FSx
 
         internal virtual UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request)
         {
-            var marshaller = UpdateFileSystemRequestMarshaller.Instance;
-            var unmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFileSystemRequest,UpdateFileSystemResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFileSystemResponse>(request, options);
         }
 
 
@@ -586,11 +598,11 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         public virtual Task<UpdateFileSystemResponse> UpdateFileSystemAsync(UpdateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateFileSystemRequestMarshaller.Instance;
-            var unmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileSystemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateFileSystemRequest,UpdateFileSystemResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateFileSystemResponse>(request, options, cancellationToken);
         }
 
         #endregion

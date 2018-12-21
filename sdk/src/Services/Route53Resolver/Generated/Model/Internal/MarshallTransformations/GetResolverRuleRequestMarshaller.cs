@@ -58,6 +58,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             string target = "Route53Resolver.GetResolverRule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

@@ -55,6 +55,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Amplify");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/apps/{appId}/branches/{branchName}/jobs/{jobId}";

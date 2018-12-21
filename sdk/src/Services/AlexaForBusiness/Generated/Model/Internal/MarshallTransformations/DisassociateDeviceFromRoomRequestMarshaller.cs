@@ -58,6 +58,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             string target = "AlexaForBusiness.DisassociateDeviceFromRoom";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-09";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

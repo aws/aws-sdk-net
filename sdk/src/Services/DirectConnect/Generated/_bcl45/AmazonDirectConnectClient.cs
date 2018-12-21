@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DirectConnect.Model;
 using Amazon.DirectConnect.Model.Internal.MarshallTransformations;
@@ -243,7 +244,7 @@ namespace Amazon.DirectConnect
 
         #endregion
 
-        
+
         #region  AllocateConnectionOnInterconnect
 
 
@@ -278,10 +279,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public virtual AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
-            var marshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
-            var unmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
 
-            return Invoke<AllocateConnectionOnInterconnectRequest,AllocateConnectionOnInterconnectResponse>(request, marshaller, unmarshaller);
+            return Invoke<AllocateConnectionOnInterconnectResponse>(request, options);
         }
 
         /// <summary>
@@ -297,11 +299,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public virtual Task<AllocateConnectionOnInterconnectResponse> AllocateConnectionOnInterconnectAsync(AllocateConnectionOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
-            var unmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AllocateConnectionOnInterconnectRequest,AllocateConnectionOnInterconnectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AllocateConnectionOnInterconnectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -336,10 +338,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
         public virtual AllocateHostedConnectionResponse AllocateHostedConnection(AllocateHostedConnectionRequest request)
         {
-            var marshaller = AllocateHostedConnectionRequestMarshaller.Instance;
-            var unmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateHostedConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<AllocateHostedConnectionRequest,AllocateHostedConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<AllocateHostedConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -354,11 +357,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
         public virtual Task<AllocateHostedConnectionResponse> AllocateHostedConnectionAsync(AllocateHostedConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AllocateHostedConnectionRequestMarshaller.Instance;
-            var unmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AllocateHostedConnectionRequest,AllocateHostedConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateHostedConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AllocateHostedConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -388,10 +391,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
         public virtual AllocatePrivateVirtualInterfaceResponse AllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request)
         {
-            var marshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<AllocatePrivateVirtualInterfaceRequest,AllocatePrivateVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AllocatePrivateVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -406,11 +410,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
         public virtual Task<AllocatePrivateVirtualInterfaceResponse> AllocatePrivateVirtualInterfaceAsync(AllocatePrivateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AllocatePrivateVirtualInterfaceRequest,AllocatePrivateVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AllocatePrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -451,10 +455,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         public virtual AllocatePublicVirtualInterfaceResponse AllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request)
         {
-            var marshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<AllocatePublicVirtualInterfaceRequest,AllocatePublicVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AllocatePublicVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -469,11 +474,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         public virtual Task<AllocatePublicVirtualInterfaceResponse> AllocatePublicVirtualInterfaceAsync(AllocatePublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AllocatePublicVirtualInterfaceRequest,AllocatePublicVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AllocatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -515,10 +520,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
         {
-            var marshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
-            var unmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateConnectionWithLagRequest,AssociateConnectionWithLagResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateConnectionWithLagResponse>(request, options);
         }
 
         /// <summary>
@@ -533,11 +539,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual Task<AssociateConnectionWithLagResponse> AssociateConnectionWithLagAsync(AssociateConnectionWithLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
-            var unmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateConnectionWithLagRequest,AssociateConnectionWithLagResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateConnectionWithLagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -570,10 +576,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
         public virtual AssociateHostedConnectionResponse AssociateHostedConnection(AssociateHostedConnectionRequest request)
         {
-            var marshaller = AssociateHostedConnectionRequestMarshaller.Instance;
-            var unmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateHostedConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateHostedConnectionRequest,AssociateHostedConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateHostedConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -588,11 +595,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
         public virtual Task<AssociateHostedConnectionResponse> AssociateHostedConnectionAsync(AssociateHostedConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateHostedConnectionRequestMarshaller.Instance;
-            var unmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateHostedConnectionRequest,AssociateHostedConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateHostedConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateHostedConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -632,10 +639,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
         public virtual AssociateVirtualInterfaceResponse AssociateVirtualInterface(AssociateVirtualInterfaceRequest request)
         {
-            var marshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateVirtualInterfaceRequest,AssociateVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -650,11 +658,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
         public virtual Task<AssociateVirtualInterfaceResponse> AssociateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateVirtualInterfaceRequest,AssociateVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -683,10 +691,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
         public virtual ConfirmConnectionResponse ConfirmConnection(ConfirmConnectionRequest request)
         {
-            var marshaller = ConfirmConnectionRequestMarshaller.Instance;
-            var unmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<ConfirmConnectionRequest,ConfirmConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConfirmConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -701,11 +710,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
         public virtual Task<ConfirmConnectionResponse> ConfirmConnectionAsync(ConfirmConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ConfirmConnectionRequestMarshaller.Instance;
-            var unmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConfirmConnectionRequest,ConfirmConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfirmConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -735,10 +744,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
         public virtual ConfirmPrivateVirtualInterfaceResponse ConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request)
         {
-            var marshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<ConfirmPrivateVirtualInterfaceRequest,ConfirmPrivateVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConfirmPrivateVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -753,11 +763,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
         public virtual Task<ConfirmPrivateVirtualInterfaceResponse> ConfirmPrivateVirtualInterfaceAsync(ConfirmPrivateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConfirmPrivateVirtualInterfaceRequest,ConfirmPrivateVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfirmPrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -786,10 +796,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
         public virtual ConfirmPublicVirtualInterfaceResponse ConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request)
         {
-            var marshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<ConfirmPublicVirtualInterfaceRequest,ConfirmPublicVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConfirmPublicVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -804,11 +815,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
         public virtual Task<ConfirmPublicVirtualInterfaceResponse> ConfirmPublicVirtualInterfaceAsync(ConfirmPublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConfirmPublicVirtualInterfaceRequest,ConfirmPublicVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfirmPublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -854,10 +865,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
         public virtual CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
         {
-            var marshaller = CreateBGPPeerRequestMarshaller.Instance;
-            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBGPPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBGPPeerResponse>(request, options);
         }
 
         /// <summary>
@@ -872,11 +884,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
         public virtual Task<CreateBGPPeerResponse> CreateBGPPeerAsync(CreateBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBGPPeerRequestMarshaller.Instance;
-            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBGPPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBGPPeerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -918,10 +930,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var marshaller = CreateConnectionRequestMarshaller.Instance;
-            var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConnectionRequest,CreateConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -936,11 +949,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConnectionRequestMarshaller.Instance;
-            var unmarshaller = CreateConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConnectionRequest,CreateConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -969,10 +982,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
         public virtual CreateDirectConnectGatewayResponse CreateDirectConnectGateway(CreateDirectConnectGatewayRequest request)
         {
-            var marshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDirectConnectGatewayRequest,CreateDirectConnectGatewayResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDirectConnectGatewayResponse>(request, options);
         }
 
         /// <summary>
@@ -987,11 +1001,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
         public virtual Task<CreateDirectConnectGatewayResponse> CreateDirectConnectGatewayAsync(CreateDirectConnectGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDirectConnectGatewayRequest,CreateDirectConnectGatewayResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1016,10 +1030,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
         public virtual CreateDirectConnectGatewayAssociationResponse CreateDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request)
         {
-            var marshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDirectConnectGatewayAssociationRequest,CreateDirectConnectGatewayAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDirectConnectGatewayAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -1034,11 +1049,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
         public virtual Task<CreateDirectConnectGatewayAssociationResponse> CreateDirectConnectGatewayAssociationAsync(CreateDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDirectConnectGatewayAssociationRequest,CreateDirectConnectGatewayAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1091,10 +1106,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
         public virtual CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
         {
-            var marshaller = CreateInterconnectRequestMarshaller.Instance;
-            var unmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
 
-            return Invoke<CreateInterconnectRequest,CreateInterconnectResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateInterconnectResponse>(request, options);
         }
 
         /// <summary>
@@ -1109,11 +1125,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
         public virtual Task<CreateInterconnectResponse> CreateInterconnectAsync(CreateInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateInterconnectRequestMarshaller.Instance;
-            var unmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateInterconnectRequest,CreateInterconnectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateInterconnectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1167,10 +1183,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
         public virtual CreateLagResponse CreateLag(CreateLagRequest request)
         {
-            var marshaller = CreateLagRequestMarshaller.Instance;
-            var unmarshaller = CreateLagResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLagResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLagRequest,CreateLagResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLagResponse>(request, options);
         }
 
         /// <summary>
@@ -1185,11 +1202,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
         public virtual Task<CreateLagResponse> CreateLagAsync(CreateLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateLagRequestMarshaller.Instance;
-            var unmarshaller = CreateLagResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateLagRequest,CreateLagResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLagResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1217,10 +1234,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
         public virtual CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
         {
-            var marshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePrivateVirtualInterfaceRequest,CreatePrivateVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePrivateVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -1235,11 +1253,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
         public virtual Task<CreatePrivateVirtualInterfaceResponse> CreatePrivateVirtualInterfaceAsync(CreatePrivateVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePrivateVirtualInterfaceRequest,CreatePrivateVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePrivateVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1271,10 +1289,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         public virtual CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
         {
-            var marshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePublicVirtualInterfaceRequest,CreatePublicVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePublicVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -1289,11 +1308,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         public virtual Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePublicVirtualInterfaceRequest,CreatePublicVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1322,10 +1341,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
         public virtual DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
         {
-            var marshaller = DeleteBGPPeerRequestMarshaller.Instance;
-            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBGPPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBGPPeerResponse>(request, options);
         }
 
         /// <summary>
@@ -1340,11 +1360,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
         public virtual Task<DeleteBGPPeerResponse> DeleteBGPPeerAsync(DeleteBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBGPPeerRequestMarshaller.Instance;
-            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBGPPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBGPPeerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1374,10 +1394,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var marshaller = DeleteConnectionRequestMarshaller.Instance;
-            var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConnectionRequest,DeleteConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -1392,11 +1413,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConnectionRequestMarshaller.Instance;
-            var unmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConnectionRequest,DeleteConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1421,10 +1442,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
         public virtual DeleteDirectConnectGatewayResponse DeleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request)
         {
-            var marshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDirectConnectGatewayRequest,DeleteDirectConnectGatewayResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDirectConnectGatewayResponse>(request, options);
         }
 
         /// <summary>
@@ -1439,11 +1461,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
         public virtual Task<DeleteDirectConnectGatewayResponse> DeleteDirectConnectGatewayAsync(DeleteDirectConnectGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDirectConnectGatewayRequest,DeleteDirectConnectGatewayResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1467,10 +1489,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
         public virtual DeleteDirectConnectGatewayAssociationResponse DeleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request)
         {
-            var marshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDirectConnectGatewayAssociationRequest,DeleteDirectConnectGatewayAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDirectConnectGatewayAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -1485,11 +1508,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
         public virtual Task<DeleteDirectConnectGatewayAssociationResponse> DeleteDirectConnectGatewayAssociationAsync(DeleteDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDirectConnectGatewayAssociationRequest,DeleteDirectConnectGatewayAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1518,10 +1541,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
         public virtual DeleteInterconnectResponse DeleteInterconnect(DeleteInterconnectRequest request)
         {
-            var marshaller = DeleteInterconnectRequestMarshaller.Instance;
-            var unmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInterconnectRequest,DeleteInterconnectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInterconnectResponse>(request, options);
         }
 
         /// <summary>
@@ -1536,11 +1560,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
         public virtual Task<DeleteInterconnectResponse> DeleteInterconnectAsync(DeleteInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteInterconnectRequestMarshaller.Instance;
-            var unmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteInterconnectRequest,DeleteInterconnectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteInterconnectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1564,10 +1588,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
         public virtual DeleteLagResponse DeleteLag(DeleteLagRequest request)
         {
-            var marshaller = DeleteLagRequestMarshaller.Instance;
-            var unmarshaller = DeleteLagResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLagResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLagRequest,DeleteLagResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLagResponse>(request, options);
         }
 
         /// <summary>
@@ -1582,11 +1607,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
         public virtual Task<DeleteLagResponse> DeleteLagAsync(DeleteLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLagRequestMarshaller.Instance;
-            var unmarshaller = DeleteLagResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteLagRequest,DeleteLagResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLagResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1609,10 +1634,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
         public virtual DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
         {
-            var marshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVirtualInterfaceRequest,DeleteVirtualInterfaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVirtualInterfaceResponse>(request, options);
         }
 
         /// <summary>
@@ -1627,11 +1653,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
         public virtual Task<DeleteVirtualInterfaceResponse> DeleteVirtualInterfaceAsync(DeleteVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteVirtualInterfaceRequest,DeleteVirtualInterfaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1668,10 +1694,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
-            var marshaller = DescribeConnectionLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConnectionLoaResponse>(request, options);
         }
 
         /// <summary>
@@ -1687,11 +1714,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual Task<DescribeConnectionLoaResponse> DescribeConnectionLoaAsync(DescribeConnectionLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConnectionLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConnectionLoaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1732,10 +1759,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
-            var marshaller = DescribeConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConnectionsRequest,DescribeConnectionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConnectionsResponse>(request, options);
         }
 
 
@@ -1770,11 +1798,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual Task<DescribeConnectionsResponse> DescribeConnectionsAsync(DescribeConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConnectionsRequest,DescribeConnectionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConnectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1808,10 +1836,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public virtual DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
-            var marshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConnectionsOnInterconnectRequest,DescribeConnectionsOnInterconnectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConnectionsOnInterconnectResponse>(request, options);
         }
 
         /// <summary>
@@ -1827,11 +1856,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public virtual Task<DescribeConnectionsOnInterconnectResponse> DescribeConnectionsOnInterconnectAsync(DescribeConnectionsOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConnectionsOnInterconnectRequest,DescribeConnectionsOnInterconnectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConnectionsOnInterconnectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1860,10 +1889,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
         public virtual DescribeDirectConnectGatewayAssociationsResponse DescribeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request)
         {
-            var marshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDirectConnectGatewayAssociationsRequest,DescribeDirectConnectGatewayAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDirectConnectGatewayAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1878,11 +1908,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
         public virtual Task<DescribeDirectConnectGatewayAssociationsResponse> DescribeDirectConnectGatewayAssociationsAsync(DescribeDirectConnectGatewayAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDirectConnectGatewayAssociationsRequest,DescribeDirectConnectGatewayAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDirectConnectGatewayAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1911,10 +1941,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
         public virtual DescribeDirectConnectGatewayAttachmentsResponse DescribeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request)
         {
-            var marshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDirectConnectGatewayAttachmentsRequest,DescribeDirectConnectGatewayAttachmentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDirectConnectGatewayAttachmentsResponse>(request, options);
         }
 
         /// <summary>
@@ -1929,11 +1960,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
         public virtual Task<DescribeDirectConnectGatewayAttachmentsResponse> DescribeDirectConnectGatewayAttachmentsAsync(DescribeDirectConnectGatewayAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDirectConnectGatewayAttachmentsRequest,DescribeDirectConnectGatewayAttachmentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDirectConnectGatewayAttachmentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1957,10 +1988,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
         public virtual DescribeDirectConnectGatewaysResponse DescribeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request)
         {
-            var marshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDirectConnectGatewaysRequest,DescribeDirectConnectGatewaysResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDirectConnectGatewaysResponse>(request, options);
         }
 
         /// <summary>
@@ -1975,11 +2007,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
         public virtual Task<DescribeDirectConnectGatewaysResponse> DescribeDirectConnectGatewaysAsync(DescribeDirectConnectGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDirectConnectGatewaysRequest,DescribeDirectConnectGatewaysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDirectConnectGatewaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2009,10 +2041,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
         public virtual DescribeHostedConnectionsResponse DescribeHostedConnections(DescribeHostedConnectionsRequest request)
         {
-            var marshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeHostedConnectionsRequest,DescribeHostedConnectionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeHostedConnectionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2027,11 +2060,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
         public virtual Task<DescribeHostedConnectionsResponse> DescribeHostedConnectionsAsync(DescribeHostedConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeHostedConnectionsRequest,DescribeHostedConnectionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeHostedConnectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2068,10 +2101,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
-            var marshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInterconnectLoaResponse>(request, options);
         }
 
         /// <summary>
@@ -2087,11 +2121,11 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual Task<DescribeInterconnectLoaResponse> DescribeInterconnectLoaAsync(DescribeInterconnectLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInterconnectLoaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2132,10 +2166,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
         public virtual DescribeInterconnectsResponse DescribeInterconnects(DescribeInterconnectsRequest request)
         {
-            var marshaller = DescribeInterconnectsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInterconnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInterconnectsRequest,DescribeInterconnectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInterconnectsResponse>(request, options);
         }
 
 
@@ -2170,11 +2205,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
         public virtual Task<DescribeInterconnectsResponse> DescribeInterconnectsAsync(DescribeInterconnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInterconnectsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInterconnectsRequest,DescribeInterconnectsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInterconnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInterconnectsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2197,10 +2232,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
         public virtual DescribeLagsResponse DescribeLags(DescribeLagsRequest request)
         {
-            var marshaller = DescribeLagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLagsRequest,DescribeLagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLagsResponse>(request, options);
         }
 
         /// <summary>
@@ -2215,11 +2251,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
         public virtual Task<DescribeLagsResponse> DescribeLagsAsync(DescribeLagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeLagsRequest,DescribeLagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2251,10 +2287,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
         public virtual DescribeLoaResponse DescribeLoa(DescribeLoaRequest request)
         {
-            var marshaller = DescribeLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoaResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLoaRequest,DescribeLoaResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLoaResponse>(request, options);
         }
 
         /// <summary>
@@ -2269,11 +2306,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
         public virtual Task<DescribeLoaResponse> DescribeLoaAsync(DescribeLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLoaRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoaResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeLoaRequest,DescribeLoaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLoaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2316,10 +2353,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
         public virtual DescribeLocationsResponse DescribeLocations(DescribeLocationsRequest request)
         {
-            var marshaller = DescribeLocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLocationsRequest,DescribeLocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLocationsResponse>(request, options);
         }
 
 
@@ -2355,11 +2393,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
         public virtual Task<DescribeLocationsResponse> DescribeLocationsAsync(DescribeLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeLocationsRequest,DescribeLocationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2382,10 +2420,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -2400,11 +2439,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2457,10 +2496,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
         public virtual DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
         {
-            var marshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVirtualGatewaysRequest,DescribeVirtualGatewaysResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVirtualGatewaysResponse>(request, options);
         }
 
 
@@ -2501,11 +2541,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
         public virtual Task<DescribeVirtualGatewaysResponse> DescribeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeVirtualGatewaysRequest,DescribeVirtualGatewaysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVirtualGatewaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2564,10 +2604,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
         public virtual DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
         {
-            var marshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVirtualInterfacesRequest,DescribeVirtualInterfacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVirtualInterfacesResponse>(request, options);
         }
 
 
@@ -2611,11 +2652,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
         public virtual Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeVirtualInterfacesRequest,DescribeVirtualInterfacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVirtualInterfacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2651,10 +2692,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
         public virtual DisassociateConnectionFromLagResponse DisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request)
         {
-            var marshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateConnectionFromLagRequest,DisassociateConnectionFromLagResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateConnectionFromLagResponse>(request, options);
         }
 
         /// <summary>
@@ -2669,11 +2711,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
         public virtual Task<DisassociateConnectionFromLagResponse> DisassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisassociateConnectionFromLagRequest,DisassociateConnectionFromLagResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateConnectionFromLagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2709,10 +2751,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2727,11 +2770,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2754,10 +2797,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2772,11 +2816,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2821,10 +2865,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
         public virtual UpdateLagResponse UpdateLag(UpdateLagRequest request)
         {
-            var marshaller = UpdateLagRequestMarshaller.Instance;
-            var unmarshaller = UpdateLagResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLagResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateLagRequest,UpdateLagResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateLagResponse>(request, options);
         }
 
         /// <summary>
@@ -2839,11 +2884,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
         public virtual Task<UpdateLagResponse> UpdateLagAsync(UpdateLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateLagRequestMarshaller.Instance;
-            var unmarshaller = UpdateLagResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateLagRequest,UpdateLagResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLagResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2876,10 +2921,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">REST API Reference for UpdateVirtualInterfaceAttributes Operation</seealso>
         public virtual UpdateVirtualInterfaceAttributesResponse UpdateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request)
         {
-            var marshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateVirtualInterfaceAttributesRequest,UpdateVirtualInterfaceAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateVirtualInterfaceAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2894,11 +2940,11 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">REST API Reference for UpdateVirtualInterfaceAttributes Operation</seealso>
         public virtual Task<UpdateVirtualInterfaceAttributesResponse> UpdateVirtualInterfaceAttributesAsync(UpdateVirtualInterfaceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateVirtualInterfaceAttributesRequest,UpdateVirtualInterfaceAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateVirtualInterfaceAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

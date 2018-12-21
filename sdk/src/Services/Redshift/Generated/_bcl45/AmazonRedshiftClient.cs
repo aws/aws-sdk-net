@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Redshift.Model;
 using Amazon.Redshift.Model.Internal.MarshallTransformations;
@@ -270,7 +271,7 @@ namespace Amazon.Redshift
 
         #endregion
 
-        
+
         #region  AcceptReservedNodeExchange
 
 
@@ -306,10 +307,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">REST API Reference for AcceptReservedNodeExchange Operation</seealso>
         public virtual AcceptReservedNodeExchangeResponse AcceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request)
         {
-            var marshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
-            var unmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptReservedNodeExchangeRequest,AcceptReservedNodeExchangeResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptReservedNodeExchangeResponse>(request, options);
         }
 
         /// <summary>
@@ -324,11 +326,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">REST API Reference for AcceptReservedNodeExchange Operation</seealso>
         public virtual Task<AcceptReservedNodeExchangeResponse> AcceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
-            var unmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AcceptReservedNodeExchangeRequest,AcceptReservedNodeExchangeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptReservedNodeExchangeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -382,10 +384,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">REST API Reference for AuthorizeClusterSecurityGroupIngress Operation</seealso>
         public virtual AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request)
         {
-            var marshaller = AuthorizeClusterSecurityGroupIngressRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeClusterSecurityGroupIngressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
 
-            return Invoke<AuthorizeClusterSecurityGroupIngressRequest,AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
+            return Invoke<AuthorizeClusterSecurityGroupIngressResponse>(request, options);
         }
 
         /// <summary>
@@ -400,11 +403,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">REST API Reference for AuthorizeClusterSecurityGroupIngress Operation</seealso>
         public virtual Task<AuthorizeClusterSecurityGroupIngressResponse> AuthorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AuthorizeClusterSecurityGroupIngressRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AuthorizeClusterSecurityGroupIngressRequest,AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeClusterSecurityGroupIngressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AuthorizeClusterSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -448,10 +451,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         public virtual AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request)
         {
-            var marshaller = AuthorizeSnapshotAccessRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeSnapshotAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
 
-            return Invoke<AuthorizeSnapshotAccessRequest,AuthorizeSnapshotAccessResponse>(request, marshaller, unmarshaller);
+            return Invoke<AuthorizeSnapshotAccessResponse>(request, options);
         }
 
         /// <summary>
@@ -466,11 +470,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         public virtual Task<AuthorizeSnapshotAccessResponse> AuthorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AuthorizeSnapshotAccessRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AuthorizeSnapshotAccessRequest,AuthorizeSnapshotAccessResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeSnapshotAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AuthorizeSnapshotAccessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -491,10 +495,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots">REST API Reference for BatchDeleteClusterSnapshots Operation</seealso>
         public virtual BatchDeleteClusterSnapshotsResponse BatchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest request)
         {
-            var marshaller = BatchDeleteClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteClusterSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteClusterSnapshotsResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDeleteClusterSnapshotsRequest,BatchDeleteClusterSnapshotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDeleteClusterSnapshotsResponse>(request, options);
         }
 
         /// <summary>
@@ -509,11 +514,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots">REST API Reference for BatchDeleteClusterSnapshots Operation</seealso>
         public virtual Task<BatchDeleteClusterSnapshotsResponse> BatchDeleteClusterSnapshotsAsync(BatchDeleteClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDeleteClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteClusterSnapshotsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDeleteClusterSnapshotsRequest,BatchDeleteClusterSnapshotsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteClusterSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteClusterSnapshotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -541,10 +546,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots">REST API Reference for BatchModifyClusterSnapshots Operation</seealso>
         public virtual BatchModifyClusterSnapshotsResponse BatchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest request)
         {
-            var marshaller = BatchModifyClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = BatchModifyClusterSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchModifyClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchModifyClusterSnapshotsResponseUnmarshaller.Instance;
 
-            return Invoke<BatchModifyClusterSnapshotsRequest,BatchModifyClusterSnapshotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchModifyClusterSnapshotsResponse>(request, options);
         }
 
         /// <summary>
@@ -559,11 +565,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots">REST API Reference for BatchModifyClusterSnapshots Operation</seealso>
         public virtual Task<BatchModifyClusterSnapshotsResponse> BatchModifyClusterSnapshotsAsync(BatchModifyClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchModifyClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = BatchModifyClusterSnapshotsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchModifyClusterSnapshotsRequest,BatchModifyClusterSnapshotsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchModifyClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchModifyClusterSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchModifyClusterSnapshotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -592,10 +598,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
         public virtual CancelResizeResponse CancelResize(CancelResizeRequest request)
         {
-            var marshaller = CancelResizeRequestMarshaller.Instance;
-            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelResizeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelResizeResponseUnmarshaller.Instance;
 
-            return Invoke<CancelResizeRequest,CancelResizeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelResizeResponse>(request, options);
         }
 
         /// <summary>
@@ -610,11 +617,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
         public virtual Task<CancelResizeResponse> CancelResizeAsync(CancelResizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelResizeRequestMarshaller.Instance;
-            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelResizeRequest,CancelResizeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelResizeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelResizeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelResizeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -667,10 +674,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         public virtual CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
         {
-            var marshaller = CopyClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<CopyClusterSnapshotRequest,CopyClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<CopyClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -685,11 +693,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         public virtual Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CopyClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CopyClusterSnapshotRequest,CopyClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CopyClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -791,10 +799,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -809,11 +818,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterRequest,CreateClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -859,10 +868,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         public virtual CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request)
         {
-            var marshaller = CreateClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterParameterGroupRequest,CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterParameterGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -877,11 +887,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         public virtual Task<CreateClusterParameterGroupResponse> CreateClusterParameterGroupAsync(CreateClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterParameterGroupRequest,CreateClusterParameterGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterParameterGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -920,10 +930,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         public virtual CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request)
         {
-            var marshaller = CreateClusterSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterSecurityGroupRequest,CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -938,11 +949,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         public virtual Task<CreateClusterSecurityGroupResponse> CreateClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterSecurityGroupRequest,CreateClusterSecurityGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterSecurityGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -992,10 +1003,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         public virtual CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request)
         {
-            var marshaller = CreateClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterSnapshotRequest,CreateClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1010,11 +1022,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         public virtual Task<CreateClusterSnapshotResponse> CreateClusterSnapshotAsync(CreateClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterSnapshotRequest,CreateClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1068,10 +1080,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         public virtual CreateClusterSubnetGroupResponse CreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request)
         {
-            var marshaller = CreateClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterSubnetGroupRequest,CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1086,11 +1099,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         public virtual Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateClusterSubnetGroupRequest,CreateClusterSubnetGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1170,10 +1183,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1188,11 +1202,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEventSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1235,10 +1249,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         public virtual CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest request)
         {
-            var marshaller = CreateHsmClientCertificateRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmClientCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<CreateHsmClientCertificateRequest,CreateHsmClientCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateHsmClientCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -1253,11 +1268,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         public virtual Task<CreateHsmClientCertificateResponse> CreateHsmClientCertificateAsync(CreateHsmClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateHsmClientCertificateRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateHsmClientCertificateRequest,CreateHsmClientCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmClientCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHsmClientCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1299,10 +1314,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         public virtual CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest request)
         {
-            var marshaller = CreateHsmConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateHsmConfigurationRequest,CreateHsmConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateHsmConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1317,11 +1333,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         public virtual Task<CreateHsmConfigurationResponse> CreateHsmConfigurationAsync(CreateHsmConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateHsmConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateHsmConfigurationRequest,CreateHsmConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHsmConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1367,10 +1383,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         public virtual CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request)
         {
-            var marshaller = CreateSnapshotCopyGrantRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSnapshotCopyGrantResponse>(request, options);
         }
 
         /// <summary>
@@ -1385,11 +1402,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         public virtual Task<CreateSnapshotCopyGrantResponse> CreateSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSnapshotCopyGrantRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotCopyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSnapshotCopyGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1421,10 +1438,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule">REST API Reference for CreateSnapshotSchedule Operation</seealso>
         public virtual CreateSnapshotScheduleResponse CreateSnapshotSchedule(CreateSnapshotScheduleRequest request)
         {
-            var marshaller = CreateSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSnapshotScheduleRequest,CreateSnapshotScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSnapshotScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -1439,11 +1457,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule">REST API Reference for CreateSnapshotSchedule Operation</seealso>
         public virtual Task<CreateSnapshotScheduleResponse> CreateSnapshotScheduleAsync(CreateSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotScheduleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSnapshotScheduleRequest,CreateSnapshotScheduleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSnapshotScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1480,10 +1498,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1498,11 +1517,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1558,10 +1577,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -1576,11 +1596,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1611,10 +1631,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">REST API Reference for DeleteClusterParameterGroup Operation</seealso>
         public virtual DeleteClusterParameterGroupResponse DeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request)
         {
-            var marshaller = DeleteClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterParameterGroupRequest,DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterParameterGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1629,11 +1650,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">REST API Reference for DeleteClusterParameterGroup Operation</seealso>
         public virtual Task<DeleteClusterParameterGroupResponse> DeleteClusterParameterGroupAsync(DeleteClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterParameterGroupRequest,DeleteClusterParameterGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterParameterGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1668,10 +1689,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">REST API Reference for DeleteClusterSecurityGroup Operation</seealso>
         public virtual DeleteClusterSecurityGroupResponse DeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request)
         {
-            var marshaller = DeleteClusterSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterSecurityGroupRequest,DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1686,11 +1708,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">REST API Reference for DeleteClusterSecurityGroup Operation</seealso>
         public virtual Task<DeleteClusterSecurityGroupResponse> DeleteClusterSecurityGroupAsync(DeleteClusterSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterSecurityGroupRequest,DeleteClusterSecurityGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterSecurityGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1724,10 +1746,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         public virtual DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request)
         {
-            var marshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterSnapshotRequest,DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1742,11 +1765,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         public virtual Task<DeleteClusterSnapshotResponse> DeleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterSnapshotRequest,DeleteClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1772,10 +1795,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         public virtual DeleteClusterSubnetGroupResponse DeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request)
         {
-            var marshaller = DeleteClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterSubnetGroupRequest,DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1790,11 +1814,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         public virtual Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteClusterSubnetGroupRequest,DeleteClusterSubnetGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1819,10 +1843,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1837,11 +1862,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1865,10 +1890,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">REST API Reference for DeleteHsmClientCertificate Operation</seealso>
         public virtual DeleteHsmClientCertificateResponse DeleteHsmClientCertificate(DeleteHsmClientCertificateRequest request)
         {
-            var marshaller = DeleteHsmClientCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmClientCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteHsmClientCertificateRequest,DeleteHsmClientCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteHsmClientCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -1883,11 +1909,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">REST API Reference for DeleteHsmClientCertificate Operation</seealso>
         public virtual Task<DeleteHsmClientCertificateResponse> DeleteHsmClientCertificateAsync(DeleteHsmClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteHsmClientCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteHsmClientCertificateRequest,DeleteHsmClientCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmClientCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHsmClientCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1911,10 +1937,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         public virtual DeleteHsmConfigurationResponse DeleteHsmConfiguration(DeleteHsmConfigurationRequest request)
         {
-            var marshaller = DeleteHsmConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteHsmConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1929,11 +1956,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         public virtual Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteHsmConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHsmConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1957,10 +1984,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">REST API Reference for DeleteSnapshotCopyGrant Operation</seealso>
         public virtual DeleteSnapshotCopyGrantResponse DeleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request)
         {
-            var marshaller = DeleteSnapshotCopyGrantRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSnapshotCopyGrantResponse>(request, options);
         }
 
         /// <summary>
@@ -1975,11 +2003,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">REST API Reference for DeleteSnapshotCopyGrant Operation</seealso>
         public virtual Task<DeleteSnapshotCopyGrantResponse> DeleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSnapshotCopyGrantRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotCopyGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSnapshotCopyGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2002,10 +2030,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public virtual DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
         {
-            var marshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSnapshotScheduleRequest,DeleteSnapshotScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSnapshotScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -2020,11 +2049,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public virtual Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteSnapshotScheduleRequest,DeleteSnapshotScheduleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSnapshotScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2048,10 +2077,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -2066,11 +2096,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2087,10 +2117,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2105,11 +2136,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2132,10 +2163,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
         public virtual DescribeClusterDbRevisionsResponse DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request)
         {
-            var marshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterDbRevisionsRequest,DescribeClusterDbRevisionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterDbRevisionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2150,11 +2182,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
         public virtual Task<DescribeClusterDbRevisionsResponse> DescribeClusterDbRevisionsAsync(DescribeClusterDbRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterDbRevisionsRequest,DescribeClusterDbRevisionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterDbRevisionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2239,10 +2271,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         public virtual DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request)
         {
-            var marshaller = DescribeClusterParameterGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterParameterGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterParameterGroupsRequest,DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterParameterGroupsResponse>(request, options);
         }
 
 
@@ -2299,11 +2332,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         public virtual Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterParameterGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterParameterGroupsRequest,DescribeClusterParameterGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterParameterGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterParameterGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2338,10 +2371,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">REST API Reference for DescribeClusterParameters Operation</seealso>
         public virtual DescribeClusterParametersResponse DescribeClusterParameters(DescribeClusterParametersRequest request)
         {
-            var marshaller = DescribeClusterParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterParametersRequest,DescribeClusterParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -2356,11 +2390,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">REST API Reference for DescribeClusterParameters Operation</seealso>
         public virtual Task<DescribeClusterParametersResponse> DescribeClusterParametersAsync(DescribeClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterParametersRequest,DescribeClusterParametersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterParametersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2437,10 +2471,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var marshaller = DescribeClustersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClustersResponse>(request, options);
         }
 
 
@@ -2493,11 +2528,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClustersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2582,10 +2617,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         public virtual DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request)
         {
-            var marshaller = DescribeClusterSecurityGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSecurityGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterSecurityGroupsRequest,DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterSecurityGroupsResponse>(request, options);
         }
 
 
@@ -2642,11 +2678,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         public virtual Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterSecurityGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterSecurityGroupsRequest,DescribeClusterSecurityGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSecurityGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterSecurityGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2729,10 +2765,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request)
         {
-            var marshaller = DescribeClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterSnapshotsRequest,DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterSnapshotsResponse>(request, options);
         }
 
 
@@ -2788,11 +2825,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterSnapshotsRequest,DescribeClusterSnapshotsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterSnapshotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2865,10 +2902,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         public virtual DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request)
         {
-            var marshaller = DescribeClusterSubnetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSubnetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterSubnetGroupsRequest,DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterSubnetGroupsResponse>(request, options);
         }
 
 
@@ -2919,11 +2957,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         public virtual Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterSubnetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterSubnetGroupsRequest,DescribeClusterSubnetGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSubnetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterSubnetGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2946,10 +2984,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
         public virtual DescribeClusterTracksResponse DescribeClusterTracks(DescribeClusterTracksRequest request)
         {
-            var marshaller = DescribeClusterTracksRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterTracksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterTracksRequest,DescribeClusterTracksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterTracksResponse>(request, options);
         }
 
         /// <summary>
@@ -2964,11 +3003,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
         public virtual Task<DescribeClusterTracksResponse> DescribeClusterTracksAsync(DescribeClusterTracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterTracksRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterTracksRequest,DescribeClusterTracksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterTracksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterTracksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3003,10 +3042,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         public virtual DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request)
         {
-            var marshaller = DescribeClusterVersionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterVersionsRequest,DescribeClusterVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterVersionsResponse>(request, options);
         }
 
 
@@ -3038,11 +3078,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         public virtual Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterVersionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClusterVersionsRequest,DescribeClusterVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3065,10 +3105,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         public virtual DescribeDefaultClusterParametersResponse DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request)
         {
-            var marshaller = DescribeDefaultClusterParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDefaultClusterParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDefaultClusterParametersRequest,DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDefaultClusterParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -3083,11 +3124,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         public virtual Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDefaultClusterParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDefaultClusterParametersRequest,DescribeDefaultClusterParametersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDefaultClusterParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDefaultClusterParametersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3120,10 +3161,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventCategoriesResponse>(request, options);
         }
 
 
@@ -3154,11 +3196,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEventCategoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3193,10 +3235,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventsResponse>(request, options);
         }
 
 
@@ -3228,11 +3271,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3307,10 +3350,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventSubscriptionsResponse>(request, options);
         }
 
 
@@ -3362,11 +3406,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3439,10 +3483,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         public virtual DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request)
         {
-            var marshaller = DescribeHsmClientCertificatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHsmClientCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeHsmClientCertificatesRequest,DescribeHsmClientCertificatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeHsmClientCertificatesResponse>(request, options);
         }
 
 
@@ -3493,11 +3538,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         public virtual Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeHsmClientCertificatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeHsmClientCertificatesRequest,DescribeHsmClientCertificatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHsmClientCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeHsmClientCertificatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3570,10 +3615,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         public virtual DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request)
         {
-            var marshaller = DescribeHsmConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHsmConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeHsmConfigurationsRequest,DescribeHsmConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeHsmConfigurationsResponse>(request, options);
         }
 
 
@@ -3624,11 +3670,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         public virtual Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeHsmConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeHsmConfigurationsRequest,DescribeHsmConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHsmConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeHsmConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3649,10 +3695,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         public virtual DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request)
         {
-            var marshaller = DescribeLoggingStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoggingStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLoggingStatusRequest,DescribeLoggingStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLoggingStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -3667,11 +3714,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         public virtual Task<DescribeLoggingStatusResponse> DescribeLoggingStatusAsync(DescribeLoggingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLoggingStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeLoggingStatusRequest,DescribeLoggingStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoggingStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLoggingStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3714,10 +3761,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         public virtual DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request)
         {
-            var marshaller = DescribeOrderableClusterOptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrderableClusterOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeOrderableClusterOptionsRequest,DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeOrderableClusterOptionsResponse>(request, options);
         }
 
 
@@ -3753,11 +3801,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         public virtual Task<DescribeOrderableClusterOptionsResponse> DescribeOrderableClusterOptionsAsync(DescribeOrderableClusterOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeOrderableClusterOptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeOrderableClusterOptionsRequest,DescribeOrderableClusterOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrderableClusterOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeOrderableClusterOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3828,10 +3876,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         public virtual DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request)
         {
-            var marshaller = DescribeReservedNodeOfferingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodeOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReservedNodeOfferingsRequest,DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReservedNodeOfferingsResponse>(request, options);
         }
 
 
@@ -3881,11 +3930,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         public virtual Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeReservedNodeOfferingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeReservedNodeOfferingsRequest,DescribeReservedNodeOfferingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodeOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReservedNodeOfferingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3928,10 +3977,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         public virtual DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
         {
-            var marshaller = DescribeReservedNodesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReservedNodesRequest,DescribeReservedNodesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReservedNodesResponse>(request, options);
         }
 
 
@@ -3967,11 +4017,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         public virtual Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(DescribeReservedNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeReservedNodesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeReservedNodesRequest,DescribeReservedNodesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReservedNodesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4003,10 +4053,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         public virtual DescribeResizeResponse DescribeResize(DescribeResizeRequest request)
         {
-            var marshaller = DescribeResizeRequestMarshaller.Instance;
-            var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResizeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResizeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeResizeResponse>(request, options);
         }
 
         /// <summary>
@@ -4021,11 +4072,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         public virtual Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeResizeRequestMarshaller.Instance;
-            var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResizeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResizeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeResizeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4057,10 +4108,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">REST API Reference for DescribeSnapshotCopyGrants Operation</seealso>
         public virtual DescribeSnapshotCopyGrantsResponse DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request)
         {
-            var marshaller = DescribeSnapshotCopyGrantsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotCopyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSnapshotCopyGrantsResponse>(request, options);
         }
 
         /// <summary>
@@ -4075,11 +4127,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">REST API Reference for DescribeSnapshotCopyGrants Operation</seealso>
         public virtual Task<DescribeSnapshotCopyGrantsResponse> DescribeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSnapshotCopyGrantsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotCopyGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSnapshotCopyGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4096,10 +4148,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules">REST API Reference for DescribeSnapshotSchedules Operation</seealso>
         public virtual DescribeSnapshotSchedulesResponse DescribeSnapshotSchedules(DescribeSnapshotSchedulesRequest request)
         {
-            var marshaller = DescribeSnapshotSchedulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotSchedulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotSchedulesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSnapshotSchedulesRequest,DescribeSnapshotSchedulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSnapshotSchedulesResponse>(request, options);
         }
 
         /// <summary>
@@ -4114,11 +4167,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules">REST API Reference for DescribeSnapshotSchedules Operation</seealso>
         public virtual Task<DescribeSnapshotSchedulesResponse> DescribeSnapshotSchedulesAsync(DescribeSnapshotSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSnapshotSchedulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotSchedulesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSnapshotSchedulesRequest,DescribeSnapshotSchedulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotSchedulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSnapshotSchedulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4135,10 +4188,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage">REST API Reference for DescribeStorage Operation</seealso>
         public virtual DescribeStorageResponse DescribeStorage(DescribeStorageRequest request)
         {
-            var marshaller = DescribeStorageRequestMarshaller.Instance;
-            var unmarshaller = DescribeStorageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStorageRequest,DescribeStorageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStorageResponse>(request, options);
         }
 
         /// <summary>
@@ -4153,11 +4207,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage">REST API Reference for DescribeStorage Operation</seealso>
         public virtual Task<DescribeStorageResponse> DescribeStorageAsync(DescribeStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeStorageRequestMarshaller.Instance;
-            var unmarshaller = DescribeStorageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeStorageRequest,DescribeStorageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeStorageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4185,10 +4239,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">REST API Reference for DescribeTableRestoreStatus Operation</seealso>
         public virtual DescribeTableRestoreStatusResponse DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request)
         {
-            var marshaller = DescribeTableRestoreStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTableRestoreStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -4203,11 +4258,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">REST API Reference for DescribeTableRestoreStatus Operation</seealso>
         public virtual Task<DescribeTableRestoreStatusResponse> DescribeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTableRestoreStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableRestoreStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTableRestoreStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4264,10 +4319,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -4282,11 +4338,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4307,10 +4363,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         public virtual DisableLoggingResponse DisableLogging(DisableLoggingRequest request)
         {
-            var marshaller = DisableLoggingRequestMarshaller.Instance;
-            var unmarshaller = DisableLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<DisableLoggingRequest,DisableLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -4325,11 +4382,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         public virtual Task<DisableLoggingResponse> DisableLoggingAsync(DisableLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableLoggingRequestMarshaller.Instance;
-            var unmarshaller = DisableLoggingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableLoggingRequest,DisableLoggingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableLoggingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4366,10 +4423,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         public virtual DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest request)
         {
-            var marshaller = DisableSnapshotCopyRequestMarshaller.Instance;
-            var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSnapshotCopyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
 
-            return Invoke<DisableSnapshotCopyRequest,DisableSnapshotCopyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableSnapshotCopyResponse>(request, options);
         }
 
         /// <summary>
@@ -4384,11 +4442,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         public virtual Task<DisableSnapshotCopyResponse> DisableSnapshotCopyAsync(DisableSnapshotCopyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableSnapshotCopyRequestMarshaller.Instance;
-            var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableSnapshotCopyRequest,DisableSnapshotCopyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSnapshotCopyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableSnapshotCopyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4425,10 +4483,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         public virtual EnableLoggingResponse EnableLogging(EnableLoggingRequest request)
         {
-            var marshaller = EnableLoggingRequestMarshaller.Instance;
-            var unmarshaller = EnableLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<EnableLoggingRequest,EnableLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -4443,11 +4502,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         public virtual Task<EnableLoggingResponse> EnableLoggingAsync(EnableLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableLoggingRequestMarshaller.Instance;
-            var unmarshaller = EnableLoggingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableLoggingRequest,EnableLoggingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableLoggingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4505,10 +4564,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">REST API Reference for EnableSnapshotCopy Operation</seealso>
         public virtual EnableSnapshotCopyResponse EnableSnapshotCopy(EnableSnapshotCopyRequest request)
         {
-            var marshaller = EnableSnapshotCopyRequestMarshaller.Instance;
-            var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSnapshotCopyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
 
-            return Invoke<EnableSnapshotCopyRequest,EnableSnapshotCopyResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableSnapshotCopyResponse>(request, options);
         }
 
         /// <summary>
@@ -4523,11 +4583,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">REST API Reference for EnableSnapshotCopy Operation</seealso>
         public virtual Task<EnableSnapshotCopyResponse> EnableSnapshotCopyAsync(EnableSnapshotCopyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableSnapshotCopyRequestMarshaller.Instance;
-            var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableSnapshotCopyRequest,EnableSnapshotCopyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSnapshotCopyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableSnapshotCopyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4582,10 +4642,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">REST API Reference for GetClusterCredentials Operation</seealso>
         public virtual GetClusterCredentialsResponse GetClusterCredentials(GetClusterCredentialsRequest request)
         {
-            var marshaller = GetClusterCredentialsRequestMarshaller.Instance;
-            var unmarshaller = GetClusterCredentialsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterCredentialsResponseUnmarshaller.Instance;
 
-            return Invoke<GetClusterCredentialsRequest,GetClusterCredentialsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetClusterCredentialsResponse>(request, options);
         }
 
         /// <summary>
@@ -4600,11 +4661,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">REST API Reference for GetClusterCredentials Operation</seealso>
         public virtual Task<GetClusterCredentialsResponse> GetClusterCredentialsAsync(GetClusterCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetClusterCredentialsRequestMarshaller.Instance;
-            var unmarshaller = GetClusterCredentialsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetClusterCredentialsRequest,GetClusterCredentialsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterCredentialsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetClusterCredentialsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4641,10 +4702,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">REST API Reference for GetReservedNodeExchangeOfferings Operation</seealso>
         public virtual GetReservedNodeExchangeOfferingsResponse GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request)
         {
-            var marshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
-            var unmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetReservedNodeExchangeOfferingsRequest,GetReservedNodeExchangeOfferingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReservedNodeExchangeOfferingsResponse>(request, options);
         }
 
         /// <summary>
@@ -4659,11 +4721,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">REST API Reference for GetReservedNodeExchangeOfferings Operation</seealso>
         public virtual Task<GetReservedNodeExchangeOfferingsResponse> GetReservedNodeExchangeOfferingsAsync(GetReservedNodeExchangeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
-            var unmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetReservedNodeExchangeOfferingsRequest,GetReservedNodeExchangeOfferingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReservedNodeExchangeOfferingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4759,10 +4821,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         public virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
         {
-            var marshaller = ModifyClusterRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -4777,11 +4840,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         public virtual Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4808,10 +4871,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
         public virtual ModifyClusterDbRevisionResponse ModifyClusterDbRevision(ModifyClusterDbRevisionRequest request)
         {
-            var marshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterDbRevisionRequest,ModifyClusterDbRevisionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterDbRevisionResponse>(request, options);
         }
 
         /// <summary>
@@ -4826,11 +4890,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
         public virtual Task<ModifyClusterDbRevisionResponse> ModifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterDbRevisionRequest,ModifyClusterDbRevisionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterDbRevisionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4859,10 +4923,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">REST API Reference for ModifyClusterIamRoles Operation</seealso>
         public virtual ModifyClusterIamRolesResponse ModifyClusterIamRoles(ModifyClusterIamRolesRequest request)
         {
-            var marshaller = ModifyClusterIamRolesRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterIamRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterIamRolesRequest,ModifyClusterIamRolesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterIamRolesResponse>(request, options);
         }
 
         /// <summary>
@@ -4877,11 +4942,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">REST API Reference for ModifyClusterIamRoles Operation</seealso>
         public virtual Task<ModifyClusterIamRolesResponse> ModifyClusterIamRolesAsync(ModifyClusterIamRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterIamRolesRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterIamRolesRequest,ModifyClusterIamRolesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterIamRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterIamRolesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4902,10 +4967,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
         public virtual ModifyClusterMaintenanceResponse ModifyClusterMaintenance(ModifyClusterMaintenanceRequest request)
         {
-            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterMaintenanceRequest,ModifyClusterMaintenanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterMaintenanceResponse>(request, options);
         }
 
         /// <summary>
@@ -4920,11 +4986,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
         public virtual Task<ModifyClusterMaintenanceResponse> ModifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterMaintenanceRequest,ModifyClusterMaintenanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterMaintenanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4955,10 +5021,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">REST API Reference for ModifyClusterParameterGroup Operation</seealso>
         public virtual ModifyClusterParameterGroupResponse ModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request)
         {
-            var marshaller = ModifyClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterParameterGroupRequest,ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterParameterGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -4973,11 +5040,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">REST API Reference for ModifyClusterParameterGroup Operation</seealso>
         public virtual Task<ModifyClusterParameterGroupResponse> ModifyClusterParameterGroupAsync(ModifyClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterParameterGroupRequest,ModifyClusterParameterGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterParameterGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5009,10 +5076,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot">REST API Reference for ModifyClusterSnapshot Operation</seealso>
         public virtual ModifyClusterSnapshotResponse ModifyClusterSnapshot(ModifyClusterSnapshotRequest request)
         {
-            var marshaller = ModifyClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterSnapshotRequest,ModifyClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -5027,11 +5095,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot">REST API Reference for ModifyClusterSnapshot Operation</seealso>
         public virtual Task<ModifyClusterSnapshotResponse> ModifyClusterSnapshotAsync(ModifyClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterSnapshotRequest,ModifyClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5057,10 +5125,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule">REST API Reference for ModifyClusterSnapshotSchedule Operation</seealso>
         public virtual ModifyClusterSnapshotScheduleResponse ModifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest request)
         {
-            var marshaller = ModifyClusterSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSnapshotScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSnapshotScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterSnapshotScheduleRequest,ModifyClusterSnapshotScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterSnapshotScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -5075,11 +5144,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule">REST API Reference for ModifyClusterSnapshotSchedule Operation</seealso>
         public virtual Task<ModifyClusterSnapshotScheduleResponse> ModifyClusterSnapshotScheduleAsync(ModifyClusterSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterSnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSnapshotScheduleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterSnapshotScheduleRequest,ModifyClusterSnapshotScheduleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSnapshotScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterSnapshotScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5118,10 +5187,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         public virtual ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request)
         {
-            var marshaller = ModifyClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClusterSubnetGroupRequest,ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClusterSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -5136,11 +5206,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         public virtual Task<ModifyClusterSubnetGroupResponse> ModifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClusterSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClusterSubnetGroupRequest,ModifyClusterSubnetGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClusterSubnetGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5190,10 +5260,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -5208,11 +5279,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5255,10 +5326,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">REST API Reference for ModifySnapshotCopyRetentionPeriod Operation</seealso>
         public virtual ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request)
         {
-            var marshaller = ModifySnapshotCopyRetentionPeriodRequestMarshaller.Instance;
-            var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotCopyRetentionPeriodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
 
-            return Invoke<ModifySnapshotCopyRetentionPeriodRequest,ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifySnapshotCopyRetentionPeriodResponse>(request, options);
         }
 
         /// <summary>
@@ -5273,11 +5345,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">REST API Reference for ModifySnapshotCopyRetentionPeriod Operation</seealso>
         public virtual Task<ModifySnapshotCopyRetentionPeriodResponse> ModifySnapshotCopyRetentionPeriodAsync(ModifySnapshotCopyRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifySnapshotCopyRetentionPeriodRequestMarshaller.Instance;
-            var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifySnapshotCopyRetentionPeriodRequest,ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotCopyRetentionPeriodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifySnapshotCopyRetentionPeriodResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5303,10 +5375,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">REST API Reference for ModifySnapshotSchedule Operation</seealso>
         public virtual ModifySnapshotScheduleResponse ModifySnapshotSchedule(ModifySnapshotScheduleRequest request)
         {
-            var marshaller = ModifySnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = ModifySnapshotScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<ModifySnapshotScheduleRequest,ModifySnapshotScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifySnapshotScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -5321,11 +5394,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">REST API Reference for ModifySnapshotSchedule Operation</seealso>
         public virtual Task<ModifySnapshotScheduleResponse> ModifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifySnapshotScheduleRequestMarshaller.Instance;
-            var unmarshaller = ModifySnapshotScheduleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifySnapshotScheduleRequest,ModifySnapshotScheduleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifySnapshotScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5366,10 +5439,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">REST API Reference for PurchaseReservedNodeOffering Operation</seealso>
         public virtual PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request)
         {
-            var marshaller = PurchaseReservedNodeOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedNodeOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
 
-            return Invoke<PurchaseReservedNodeOfferingRequest,PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PurchaseReservedNodeOfferingResponse>(request, options);
         }
 
         /// <summary>
@@ -5384,11 +5458,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">REST API Reference for PurchaseReservedNodeOffering Operation</seealso>
         public virtual Task<PurchaseReservedNodeOfferingResponse> PurchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PurchaseReservedNodeOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PurchaseReservedNodeOfferingRequest,PurchaseReservedNodeOfferingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedNodeOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PurchaseReservedNodeOfferingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5416,10 +5490,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">REST API Reference for RebootCluster Operation</seealso>
         public virtual RebootClusterResponse RebootCluster(RebootClusterRequest request)
         {
-            var marshaller = RebootClusterRequestMarshaller.Instance;
-            var unmarshaller = RebootClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootClusterResponseUnmarshaller.Instance;
 
-            return Invoke<RebootClusterRequest,RebootClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<RebootClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -5434,11 +5509,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">REST API Reference for RebootCluster Operation</seealso>
         public virtual Task<RebootClusterResponse> RebootClusterAsync(RebootClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RebootClusterRequestMarshaller.Instance;
-            var unmarshaller = RebootClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RebootClusterRequest,RebootClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RebootClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5466,10 +5541,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">REST API Reference for ResetClusterParameterGroup Operation</seealso>
         public virtual ResetClusterParameterGroupResponse ResetClusterParameterGroup(ResetClusterParameterGroupRequest request)
         {
-            var marshaller = ResetClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ResetClusterParameterGroupRequest,ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResetClusterParameterGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -5484,11 +5560,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">REST API Reference for ResetClusterParameterGroup Operation</seealso>
         public virtual Task<ResetClusterParameterGroupResponse> ResetClusterParameterGroupAsync(ResetClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResetClusterParameterGroupRequestMarshaller.Instance;
-            var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ResetClusterParameterGroupRequest,ResetClusterParameterGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetClusterParameterGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResetClusterParameterGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5567,10 +5643,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
         public virtual ResizeClusterResponse ResizeCluster(ResizeClusterRequest request)
         {
-            var marshaller = ResizeClusterRequestMarshaller.Instance;
-            var unmarshaller = ResizeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResizeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResizeClusterResponseUnmarshaller.Instance;
 
-            return Invoke<ResizeClusterRequest,ResizeClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResizeClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -5585,11 +5662,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
         public virtual Task<ResizeClusterResponse> ResizeClusterAsync(ResizeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResizeClusterRequestMarshaller.Instance;
-            var unmarshaller = ResizeClusterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ResizeClusterRequest,ResizeClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResizeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResizeClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResizeClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5699,10 +5776,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">REST API Reference for RestoreFromClusterSnapshot Operation</seealso>
         public virtual RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request)
         {
-            var marshaller = RestoreFromClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreFromClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreFromClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -5717,11 +5795,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">REST API Reference for RestoreFromClusterSnapshot Operation</seealso>
         public virtual Task<RestoreFromClusterSnapshotResponse> RestoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestoreFromClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreFromClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreFromClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5777,10 +5855,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         public virtual RestoreTableFromClusterSnapshotResponse RestoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request)
         {
-            var marshaller = RestoreTableFromClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreTableFromClusterSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -5795,11 +5874,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         public virtual Task<RestoreTableFromClusterSnapshotResponse> RestoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestoreTableFromClusterSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreTableFromClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreTableFromClusterSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5830,10 +5909,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         public virtual RevokeClusterSecurityGroupIngressResponse RevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request)
         {
-            var marshaller = RevokeClusterSecurityGroupIngressRequestMarshaller.Instance;
-            var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeClusterSecurityGroupIngressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
 
-            return Invoke<RevokeClusterSecurityGroupIngressRequest,RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
+            return Invoke<RevokeClusterSecurityGroupIngressResponse>(request, options);
         }
 
         /// <summary>
@@ -5848,11 +5928,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         public virtual Task<RevokeClusterSecurityGroupIngressResponse> RevokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RevokeClusterSecurityGroupIngressRequestMarshaller.Instance;
-            var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RevokeClusterSecurityGroupIngressRequest,RevokeClusterSecurityGroupIngressResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeClusterSecurityGroupIngressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeClusterSecurityGroupIngressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5888,10 +5968,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         public virtual RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest request)
         {
-            var marshaller = RevokeSnapshotAccessRequestMarshaller.Instance;
-            var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeSnapshotAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
 
-            return Invoke<RevokeSnapshotAccessRequest,RevokeSnapshotAccessResponse>(request, marshaller, unmarshaller);
+            return Invoke<RevokeSnapshotAccessResponse>(request, options);
         }
 
         /// <summary>
@@ -5906,11 +5987,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         public virtual Task<RevokeSnapshotAccessResponse> RevokeSnapshotAccessAsync(RevokeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RevokeSnapshotAccessRequestMarshaller.Instance;
-            var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RevokeSnapshotAccessRequest,RevokeSnapshotAccessResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeSnapshotAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeSnapshotAccessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5937,10 +6018,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         public virtual RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest request)
         {
-            var marshaller = RotateEncryptionKeyRequestMarshaller.Instance;
-            var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RotateEncryptionKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
 
-            return Invoke<RotateEncryptionKeyRequest,RotateEncryptionKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<RotateEncryptionKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -5955,11 +6037,11 @@ namespace Amazon.Redshift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         public virtual Task<RotateEncryptionKeyResponse> RotateEncryptionKeyAsync(RotateEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RotateEncryptionKeyRequestMarshaller.Instance;
-            var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RotateEncryptionKeyRequest,RotateEncryptionKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RotateEncryptionKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RotateEncryptionKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion

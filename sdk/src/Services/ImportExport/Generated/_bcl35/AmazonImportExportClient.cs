@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ImportExport.Model;
 using Amazon.ImportExport.Model.Internal.MarshallTransformations;
@@ -239,7 +240,7 @@ namespace Amazon.ImportExport
 
         #endregion
 
-        
+
         #region  CancelJob
 
         /// <summary>
@@ -271,10 +272,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
         /// <summary>
@@ -290,11 +292,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -381,10 +383,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -400,11 +403,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -455,10 +458,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
-            var marshaller = GetShippingLabelRequestMarshaller.Instance;
-            var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
 
-            return Invoke<GetShippingLabelRequest,GetShippingLabelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetShippingLabelResponse>(request, options);
         }
 
         /// <summary>
@@ -474,11 +478,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetShippingLabelRequestMarshaller.Instance;
-            var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetShippingLabelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -524,10 +528,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
-            var marshaller = GetStatusRequestMarshaller.Instance;
-            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetStatusRequest,GetStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -543,11 +548,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetStatusRequestMarshaller.Instance;
-            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -612,10 +617,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -631,11 +637,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -725,10 +731,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -744,11 +751,11 @@ namespace Amazon.ImportExport
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

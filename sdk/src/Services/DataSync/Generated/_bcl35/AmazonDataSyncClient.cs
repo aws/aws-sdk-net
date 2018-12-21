@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DataSync.Model;
 using Amazon.DataSync.Model.Internal.MarshallTransformations;
@@ -244,7 +245,7 @@ namespace Amazon.DataSync
 
         #endregion
 
-        
+
         #region  CancelTaskExecution
 
         /// <summary>
@@ -270,10 +271,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">REST API Reference for CancelTaskExecution Operation</seealso>
         public virtual CancelTaskExecutionResponse CancelTaskExecution(CancelTaskExecutionRequest request)
         {
-            var marshaller = CancelTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelTaskExecutionRequest,CancelTaskExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelTaskExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -290,11 +292,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">REST API Reference for CancelTaskExecution Operation</seealso>
         public virtual IAsyncResult BeginCancelTaskExecution(CancelTaskExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelTaskExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -344,10 +346,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual CreateAgentResponse CreateAgent(CreateAgentRequest request)
         {
-            var marshaller = CreateAgentRequestMarshaller.Instance;
-            var unmarshaller = CreateAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAgentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAgentRequest,CreateAgentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAgentResponse>(request, options);
         }
 
         /// <summary>
@@ -364,11 +367,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual IAsyncResult BeginCreateAgent(CreateAgentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAgentRequestMarshaller.Instance;
-            var unmarshaller = CreateAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAgentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAgentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -400,10 +403,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">REST API Reference for CreateLocationEfs Operation</seealso>
         public virtual CreateLocationEfsResponse CreateLocationEfs(CreateLocationEfsRequest request)
         {
-            var marshaller = CreateLocationEfsRequestMarshaller.Instance;
-            var unmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationEfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLocationEfsRequest,CreateLocationEfsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLocationEfsResponse>(request, options);
         }
 
         /// <summary>
@@ -420,11 +424,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">REST API Reference for CreateLocationEfs Operation</seealso>
         public virtual IAsyncResult BeginCreateLocationEfs(CreateLocationEfsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateLocationEfsRequestMarshaller.Instance;
-            var unmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationEfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateLocationEfsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -456,10 +460,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">REST API Reference for CreateLocationNfs Operation</seealso>
         public virtual CreateLocationNfsResponse CreateLocationNfs(CreateLocationNfsRequest request)
         {
-            var marshaller = CreateLocationNfsRequestMarshaller.Instance;
-            var unmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLocationNfsRequest,CreateLocationNfsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLocationNfsResponse>(request, options);
         }
 
         /// <summary>
@@ -476,11 +481,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">REST API Reference for CreateLocationNfs Operation</seealso>
         public virtual IAsyncResult BeginCreateLocationNfs(CreateLocationNfsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateLocationNfsRequestMarshaller.Instance;
-            var unmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateLocationNfsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -522,10 +527,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">REST API Reference for CreateLocationS3 Operation</seealso>
         public virtual CreateLocationS3Response CreateLocationS3(CreateLocationS3Request request)
         {
-            var marshaller = CreateLocationS3RequestMarshaller.Instance;
-            var unmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLocationS3Request,CreateLocationS3Response>(request, marshaller, unmarshaller);
+            return Invoke<CreateLocationS3Response>(request, options);
         }
 
         /// <summary>
@@ -542,11 +548,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">REST API Reference for CreateLocationS3 Operation</seealso>
         public virtual IAsyncResult BeginCreateLocationS3(CreateLocationS3Request request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateLocationS3RequestMarshaller.Instance;
-            var unmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateLocationS3Request>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -599,10 +605,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">REST API Reference for CreateTask Operation</seealso>
         public virtual CreateTaskResponse CreateTask(CreateTaskRequest request)
         {
-            var marshaller = CreateTaskRequestMarshaller.Instance;
-            var unmarshaller = CreateTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTaskRequest,CreateTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -619,11 +626,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">REST API Reference for CreateTask Operation</seealso>
         public virtual IAsyncResult BeginCreateTask(CreateTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateTaskRequestMarshaller.Instance;
-            var unmarshaller = CreateTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -665,10 +672,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual DeleteAgentResponse DeleteAgent(DeleteAgentRequest request)
         {
-            var marshaller = DeleteAgentRequestMarshaller.Instance;
-            var unmarshaller = DeleteAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAgentRequest,DeleteAgentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAgentResponse>(request, options);
         }
 
         /// <summary>
@@ -685,11 +693,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual IAsyncResult BeginDeleteAgent(DeleteAgentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAgentRequestMarshaller.Instance;
-            var unmarshaller = DeleteAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAgentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -721,10 +729,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual DeleteLocationResponse DeleteLocation(DeleteLocationRequest request)
         {
-            var marshaller = DeleteLocationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLocationRequest,DeleteLocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLocationResponse>(request, options);
         }
 
         /// <summary>
@@ -741,11 +750,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocation(DeleteLocationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteLocationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteLocationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -777,10 +786,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">REST API Reference for DeleteTask Operation</seealso>
         public virtual DeleteTaskResponse DeleteTask(DeleteTaskRequest request)
         {
-            var marshaller = DeleteTaskRequestMarshaller.Instance;
-            var unmarshaller = DeleteTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTaskRequest,DeleteTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -797,11 +807,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">REST API Reference for DeleteTask Operation</seealso>
         public virtual IAsyncResult BeginDeleteTask(DeleteTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteTaskRequestMarshaller.Instance;
-            var unmarshaller = DeleteTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -835,10 +845,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         public virtual DescribeAgentResponse DescribeAgent(DescribeAgentRequest request)
         {
-            var marshaller = DescribeAgentRequestMarshaller.Instance;
-            var unmarshaller = DescribeAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgentResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAgentRequest,DescribeAgentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAgentResponse>(request, options);
         }
 
         /// <summary>
@@ -855,11 +866,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         public virtual IAsyncResult BeginDescribeAgent(DescribeAgentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAgentRequestMarshaller.Instance;
-            var unmarshaller = DescribeAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAgentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -891,10 +902,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         public virtual DescribeLocationEfsResponse DescribeLocationEfs(DescribeLocationEfsRequest request)
         {
-            var marshaller = DescribeLocationEfsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationEfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLocationEfsRequest,DescribeLocationEfsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLocationEfsResponse>(request, options);
         }
 
         /// <summary>
@@ -911,11 +923,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocationEfs(DescribeLocationEfsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeLocationEfsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationEfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeLocationEfsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -947,10 +959,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">REST API Reference for DescribeLocationNfs Operation</seealso>
         public virtual DescribeLocationNfsResponse DescribeLocationNfs(DescribeLocationNfsRequest request)
         {
-            var marshaller = DescribeLocationNfsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLocationNfsRequest,DescribeLocationNfsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLocationNfsResponse>(request, options);
         }
 
         /// <summary>
@@ -967,11 +980,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">REST API Reference for DescribeLocationNfs Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocationNfs(DescribeLocationNfsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeLocationNfsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationNfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeLocationNfsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1003,10 +1016,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">REST API Reference for DescribeLocationS3 Operation</seealso>
         public virtual DescribeLocationS3Response DescribeLocationS3(DescribeLocationS3Request request)
         {
-            var marshaller = DescribeLocationS3RequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLocationS3Request,DescribeLocationS3Response>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLocationS3Response>(request, options);
         }
 
         /// <summary>
@@ -1023,11 +1037,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">REST API Reference for DescribeLocationS3 Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocationS3(DescribeLocationS3Request request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeLocationS3RequestMarshaller.Instance;
-            var unmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeLocationS3Request>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1059,10 +1073,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         public virtual DescribeTaskResponse DescribeTask(DescribeTaskRequest request)
         {
-            var marshaller = DescribeTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTaskRequest,DescribeTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -1079,11 +1094,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         public virtual IAsyncResult BeginDescribeTask(DescribeTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1115,10 +1130,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">REST API Reference for DescribeTaskExecution Operation</seealso>
         public virtual DescribeTaskExecutionResponse DescribeTaskExecution(DescribeTaskExecutionRequest request)
         {
-            var marshaller = DescribeTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTaskExecutionRequest,DescribeTaskExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTaskExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -1135,11 +1151,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">REST API Reference for DescribeTaskExecution Operation</seealso>
         public virtual IAsyncResult BeginDescribeTaskExecution(DescribeTaskExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeTaskExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1185,10 +1201,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual ListAgentsResponse ListAgents(ListAgentsRequest request)
         {
-            var marshaller = ListAgentsRequestMarshaller.Instance;
-            var unmarshaller = ListAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAgentsRequest,ListAgentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAgentsResponse>(request, options);
         }
 
         /// <summary>
@@ -1205,11 +1222,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual IAsyncResult BeginListAgents(ListAgentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAgentsRequestMarshaller.Instance;
-            var unmarshaller = ListAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAgentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1248,10 +1265,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual ListLocationsResponse ListLocations(ListLocationsRequest request)
         {
-            var marshaller = ListLocationsRequestMarshaller.Instance;
-            var unmarshaller = ListLocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLocationsRequest,ListLocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLocationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1268,11 +1286,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual IAsyncResult BeginListLocations(ListLocationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListLocationsRequestMarshaller.Instance;
-            var unmarshaller = ListLocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListLocationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1304,10 +1322,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1324,11 +1343,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1360,10 +1379,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">REST API Reference for ListTaskExecutions Operation</seealso>
         public virtual ListTaskExecutionsResponse ListTaskExecutions(ListTaskExecutionsRequest request)
         {
-            var marshaller = ListTaskExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaskExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTaskExecutionsRequest,ListTaskExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTaskExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1380,11 +1400,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">REST API Reference for ListTaskExecutions Operation</seealso>
         public virtual IAsyncResult BeginListTaskExecutions(ListTaskExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTaskExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaskExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTaskExecutionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1416,10 +1436,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var marshaller = ListTasksRequestMarshaller.Instance;
-            var unmarshaller = ListTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
-            return Invoke<ListTasksRequest,ListTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -1436,11 +1457,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTasksRequestMarshaller.Instance;
-            var unmarshaller = ListTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTasksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1485,10 +1506,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         public virtual StartTaskExecutionResponse StartTaskExecution(StartTaskExecutionRequest request)
         {
-            var marshaller = StartTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StartTaskExecutionRequest,StartTaskExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartTaskExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -1505,11 +1527,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         public virtual IAsyncResult BeginStartTaskExecution(StartTaskExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartTaskExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartTaskExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1541,10 +1563,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1561,11 +1584,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1597,10 +1620,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1617,11 +1641,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1653,10 +1677,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual UpdateAgentResponse UpdateAgent(UpdateAgentRequest request)
         {
-            var marshaller = UpdateAgentRequestMarshaller.Instance;
-            var unmarshaller = UpdateAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAgentRequest,UpdateAgentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAgentResponse>(request, options);
         }
 
         /// <summary>
@@ -1673,11 +1698,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual IAsyncResult BeginUpdateAgent(UpdateAgentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAgentRequestMarshaller.Instance;
-            var unmarshaller = UpdateAgentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAgentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1709,10 +1734,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual UpdateTaskResponse UpdateTask(UpdateTaskRequest request)
         {
-            var marshaller = UpdateTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTaskRequest,UpdateTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -1729,11 +1755,11 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual IAsyncResult BeginUpdateTask(UpdateTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -55,6 +55,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteMeshRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppMesh");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-01";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/meshes/{meshName}";

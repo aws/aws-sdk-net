@@ -56,6 +56,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";

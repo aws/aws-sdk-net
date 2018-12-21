@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MediaTailor.Model;
 using Amazon.MediaTailor.Model.Internal.MarshallTransformations;
@@ -242,7 +243,7 @@ namespace Amazon.MediaTailor
 
         #endregion
 
-        
+
         #region  DeletePlaybackConfiguration
 
         /// <summary>
@@ -254,10 +255,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
         public virtual DeletePlaybackConfigurationResponse DeletePlaybackConfiguration(DeletePlaybackConfigurationRequest request)
         {
-            var marshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePlaybackConfigurationRequest,DeletePlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -274,11 +276,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeletePlaybackConfiguration(DeletePlaybackConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePlaybackConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -307,10 +309,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         public virtual GetPlaybackConfigurationResponse GetPlaybackConfiguration(GetPlaybackConfigurationRequest request)
         {
-            var marshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetPlaybackConfigurationRequest,GetPlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -327,11 +330,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetPlaybackConfiguration(GetPlaybackConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPlaybackConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -364,10 +367,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
         public virtual ListPlaybackConfigurationsResponse ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request)
         {
-            var marshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPlaybackConfigurationsRequest,ListPlaybackConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPlaybackConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -384,11 +388,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListPlaybackConfigurations(ListPlaybackConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPlaybackConfigurationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -417,10 +421,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         public virtual PutPlaybackConfigurationResponse PutPlaybackConfiguration(PutPlaybackConfigurationRequest request)
         {
-            var marshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutPlaybackConfigurationRequest,PutPlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -437,11 +442,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutPlaybackConfiguration(PutPlaybackConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutPlaybackConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

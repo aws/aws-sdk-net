@@ -56,6 +56,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackage");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/origin_endpoints/{id}";

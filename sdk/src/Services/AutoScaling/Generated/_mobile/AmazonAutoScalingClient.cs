@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AutoScaling.Model;
 using Amazon.AutoScaling.Model.Internal.MarshallTransformations;
@@ -251,15 +252,16 @@ namespace Amazon.AutoScaling
 
         #endregion
 
-        
+
         #region  AttachInstances
 
         internal virtual AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
-            var marshaller = AttachInstancesRequestMarshaller.Instance;
-            var unmarshaller = AttachInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<AttachInstancesRequest,AttachInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachInstancesResponse>(request, options);
         }
 
 
@@ -275,11 +277,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public virtual Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachInstancesRequestMarshaller.Instance;
-            var unmarshaller = AttachInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachInstancesRequest,AttachInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -288,10 +290,11 @@ namespace Amazon.AutoScaling
 
         internal virtual AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
         {
-            var marshaller = AttachLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
 
-            return Invoke<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachLoadBalancersResponse>(request, options);
         }
 
 
@@ -307,11 +310,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public virtual Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachLoadBalancersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -320,10 +323,11 @@ namespace Amazon.AutoScaling
 
         internal virtual AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request)
         {
-            var marshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<AttachLoadBalancerTargetGroupsRequest,AttachLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachLoadBalancerTargetGroupsResponse>(request, options);
         }
 
 
@@ -339,11 +343,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public virtual Task<AttachLoadBalancerTargetGroupsResponse> AttachLoadBalancerTargetGroupsAsync(AttachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachLoadBalancerTargetGroupsRequest,AttachLoadBalancerTargetGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -352,10 +356,11 @@ namespace Amazon.AutoScaling
 
         internal virtual BatchDeleteScheduledActionResponse BatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request)
         {
-            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDeleteScheduledActionRequest,BatchDeleteScheduledActionResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDeleteScheduledActionResponse>(request, options);
         }
 
 
@@ -371,11 +376,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
         public virtual Task<BatchDeleteScheduledActionResponse> BatchDeleteScheduledActionAsync(BatchDeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchDeleteScheduledActionRequest,BatchDeleteScheduledActionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchDeleteScheduledActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -384,10 +389,11 @@ namespace Amazon.AutoScaling
 
         internal virtual BatchPutScheduledUpdateGroupActionResponse BatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request)
         {
-            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
-            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
-            return Invoke<BatchPutScheduledUpdateGroupActionRequest,BatchPutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchPutScheduledUpdateGroupActionResponse>(request, options);
         }
 
 
@@ -403,11 +409,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
         public virtual Task<BatchPutScheduledUpdateGroupActionResponse> BatchPutScheduledUpdateGroupActionAsync(BatchPutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
-            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchPutScheduledUpdateGroupActionRequest,BatchPutScheduledUpdateGroupActionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchPutScheduledUpdateGroupActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -416,10 +422,11 @@ namespace Amazon.AutoScaling
 
         internal virtual CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
-            var marshaller = CompleteLifecycleActionRequestMarshaller.Instance;
-            var unmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteLifecycleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
 
-            return Invoke<CompleteLifecycleActionRequest,CompleteLifecycleActionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CompleteLifecycleActionResponse>(request, options);
         }
 
 
@@ -435,11 +442,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public virtual Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CompleteLifecycleActionRequestMarshaller.Instance;
-            var unmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteLifecycleActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CompleteLifecycleActionRequest,CompleteLifecycleActionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CompleteLifecycleActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -448,10 +455,11 @@ namespace Amazon.AutoScaling
 
         internal virtual CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
-            var marshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAutoScalingGroupRequest,CreateAutoScalingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAutoScalingGroupResponse>(request, options);
         }
 
 
@@ -467,11 +475,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public virtual Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAutoScalingGroupRequest,CreateAutoScalingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAutoScalingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -480,10 +488,11 @@ namespace Amazon.AutoScaling
 
         internal virtual CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
-            var marshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLaunchConfigurationRequest,CreateLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLaunchConfigurationResponse>(request, options);
         }
 
 
@@ -499,11 +508,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public virtual Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateLaunchConfigurationRequest,CreateLaunchConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateLaunchConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -512,10 +521,11 @@ namespace Amazon.AutoScaling
 
         internal virtual CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
-            var marshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateOrUpdateTagsRequest,CreateOrUpdateTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateOrUpdateTagsResponse>(request, options);
         }
 
 
@@ -531,11 +541,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public virtual Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateOrUpdateTagsRequest,CreateOrUpdateTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateOrUpdateTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -544,10 +554,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
-            var marshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAutoScalingGroupRequest,DeleteAutoScalingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAutoScalingGroupResponse>(request, options);
         }
 
 
@@ -563,11 +574,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public virtual Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAutoScalingGroupRequest,DeleteAutoScalingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAutoScalingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -576,10 +587,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
-            var marshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLaunchConfigurationRequest,DeleteLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLaunchConfigurationResponse>(request, options);
         }
 
 
@@ -595,11 +607,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public virtual Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteLaunchConfigurationRequest,DeleteLaunchConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteLaunchConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -608,10 +620,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
-            var marshaller = DeleteLifecycleHookRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecycleHookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLifecycleHookRequest,DeleteLifecycleHookResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLifecycleHookResponse>(request, options);
         }
 
 
@@ -627,11 +640,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public virtual Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLifecycleHookRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecycleHookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteLifecycleHookRequest,DeleteLifecycleHookResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteLifecycleHookResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -640,10 +653,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
-            var marshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotificationConfigurationRequest,DeleteNotificationConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotificationConfigurationResponse>(request, options);
         }
 
 
@@ -659,11 +673,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public virtual Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteNotificationConfigurationRequest,DeleteNotificationConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteNotificationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -672,10 +686,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyResponse>(request, options);
         }
 
 
@@ -691,11 +706,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -704,10 +719,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
-            var marshaller = DeleteScheduledActionRequestMarshaller.Instance;
-            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteScheduledActionRequest,DeleteScheduledActionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteScheduledActionResponse>(request, options);
         }
 
 
@@ -723,11 +739,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteScheduledActionRequestMarshaller.Instance;
-            var unmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteScheduledActionRequest,DeleteScheduledActionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteScheduledActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -736,10 +752,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsResponse>(request, options);
         }
 
 
@@ -755,11 +772,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -772,10 +789,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var marshaller = DescribeAccountLimitsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountLimitsResponse>(request, options);
         }
 
 
@@ -816,11 +834,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountLimitsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAccountLimitsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -833,10 +851,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
-            var marshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAdjustmentTypesRequest,DescribeAdjustmentTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAdjustmentTypesResponse>(request, options);
         }
 
 
@@ -871,11 +890,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public virtual Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAdjustmentTypesRequest,DescribeAdjustmentTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAdjustmentTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -888,10 +907,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
-            var marshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutoScalingGroupsRequest,DescribeAutoScalingGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutoScalingGroupsResponse>(request, options);
         }
 
 
@@ -929,11 +949,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public virtual Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAutoScalingGroupsRequest,DescribeAutoScalingGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAutoScalingGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -946,10 +966,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
-            var marshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutoScalingInstancesRequest,DescribeAutoScalingInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutoScalingInstancesResponse>(request, options);
         }
 
 
@@ -987,11 +1008,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public virtual Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAutoScalingInstancesRequest,DescribeAutoScalingInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAutoScalingInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1004,10 +1025,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
-            var marshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutoScalingNotificationTypesRequest,DescribeAutoScalingNotificationTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutoScalingNotificationTypesResponse>(request, options);
         }
 
 
@@ -1042,11 +1064,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public virtual Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAutoScalingNotificationTypesRequest,DescribeAutoScalingNotificationTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAutoScalingNotificationTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1059,10 +1081,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
-            var marshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLaunchConfigurationsRequest,DescribeLaunchConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLaunchConfigurationsResponse>(request, options);
         }
 
 
@@ -1100,11 +1123,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public virtual Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLaunchConfigurationsRequest,DescribeLaunchConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLaunchConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1113,10 +1136,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
-            var marshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
-            var unmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLifecycleHooksRequest,DescribeLifecycleHooksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLifecycleHooksResponse>(request, options);
         }
 
 
@@ -1132,11 +1156,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public virtual Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
-            var unmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLifecycleHooksRequest,DescribeLifecycleHooksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLifecycleHooksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1145,10 +1169,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
-            var marshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLifecycleHookTypesRequest,DescribeLifecycleHookTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLifecycleHookTypesResponse>(request, options);
         }
 
 
@@ -1164,11 +1189,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public virtual Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLifecycleHookTypesRequest,DescribeLifecycleHookTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLifecycleHookTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1177,10 +1202,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
-            var marshaller = DescribeLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLoadBalancersResponse>(request, options);
         }
 
 
@@ -1196,11 +1222,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLoadBalancersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1209,10 +1235,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DescribeLoadBalancerTargetGroupsResponse DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request)
         {
-            var marshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLoadBalancerTargetGroupsRequest,DescribeLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLoadBalancerTargetGroupsResponse>(request, options);
         }
 
 
@@ -1228,11 +1255,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public virtual Task<DescribeLoadBalancerTargetGroupsResponse> DescribeLoadBalancerTargetGroupsAsync(DescribeLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLoadBalancerTargetGroupsRequest,DescribeLoadBalancerTargetGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1245,10 +1272,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
-            var marshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMetricCollectionTypesRequest,DescribeMetricCollectionTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMetricCollectionTypesResponse>(request, options);
         }
 
 
@@ -1289,11 +1317,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public virtual Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeMetricCollectionTypesRequest,DescribeMetricCollectionTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeMetricCollectionTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1306,10 +1334,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
-            var marshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeNotificationConfigurationsRequest,DescribeNotificationConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeNotificationConfigurationsResponse>(request, options);
         }
 
 
@@ -1347,11 +1376,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public virtual Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeNotificationConfigurationsRequest,DescribeNotificationConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeNotificationConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1364,10 +1393,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
-            var marshaller = DescribePoliciesRequestMarshaller.Instance;
-            var unmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePoliciesRequest,DescribePoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePoliciesResponse>(request, options);
         }
 
 
@@ -1408,11 +1438,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public virtual Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePoliciesRequestMarshaller.Instance;
-            var unmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribePoliciesRequest,DescribePoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribePoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1425,10 +1455,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
-            var marshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScalingActivitiesRequest,DescribeScalingActivitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScalingActivitiesResponse>(request, options);
         }
 
 
@@ -1466,11 +1497,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public virtual Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScalingActivitiesRequest,DescribeScalingActivitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScalingActivitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1483,10 +1514,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
-            var marshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScalingProcessTypesRequest,DescribeScalingProcessTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScalingProcessTypesResponse>(request, options);
         }
 
 
@@ -1521,11 +1553,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public virtual Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScalingProcessTypesRequest,DescribeScalingProcessTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScalingProcessTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1538,10 +1570,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
-            var marshaller = DescribeScheduledActionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScheduledActionsRequest,DescribeScheduledActionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScheduledActionsResponse>(request, options);
         }
 
 
@@ -1580,11 +1613,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public virtual Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScheduledActionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScheduledActionsRequest,DescribeScheduledActionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScheduledActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1597,10 +1630,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTagsResponse>(request, options);
         }
 
 
@@ -1651,11 +1685,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1668,10 +1702,11 @@ namespace Amazon.AutoScaling
         }
         internal virtual DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
-            var marshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTerminationPolicyTypesRequest,DescribeTerminationPolicyTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTerminationPolicyTypesResponse>(request, options);
         }
 
 
@@ -1713,11 +1748,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public virtual Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeTerminationPolicyTypesRequest,DescribeTerminationPolicyTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeTerminationPolicyTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1726,10 +1761,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
-            var marshaller = DetachInstancesRequestMarshaller.Instance;
-            var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DetachInstancesRequest,DetachInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachInstancesResponse>(request, options);
         }
 
 
@@ -1745,11 +1781,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public virtual Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachInstancesRequestMarshaller.Instance;
-            var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachInstancesRequest,DetachInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1758,10 +1794,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
         {
-            var marshaller = DetachLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
 
-            return Invoke<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachLoadBalancersResponse>(request, options);
         }
 
 
@@ -1777,11 +1814,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public virtual Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachLoadBalancersRequestMarshaller.Instance;
-            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachLoadBalancersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachLoadBalancersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1790,10 +1827,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DetachLoadBalancerTargetGroupsResponse DetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request)
         {
-            var marshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DetachLoadBalancerTargetGroupsRequest,DetachLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachLoadBalancerTargetGroupsResponse>(request, options);
         }
 
 
@@ -1809,11 +1847,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public virtual Task<DetachLoadBalancerTargetGroupsResponse> DetachLoadBalancerTargetGroupsAsync(DetachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachLoadBalancerTargetGroupsRequest,DetachLoadBalancerTargetGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachLoadBalancerTargetGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1822,10 +1860,11 @@ namespace Amazon.AutoScaling
 
         internal virtual DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
-            var marshaller = DisableMetricsCollectionRequestMarshaller.Instance;
-            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableMetricsCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
 
-            return Invoke<DisableMetricsCollectionRequest,DisableMetricsCollectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableMetricsCollectionResponse>(request, options);
         }
 
 
@@ -1841,11 +1880,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public virtual Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableMetricsCollectionRequestMarshaller.Instance;
-            var unmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableMetricsCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisableMetricsCollectionRequest,DisableMetricsCollectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisableMetricsCollectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1854,10 +1893,11 @@ namespace Amazon.AutoScaling
 
         internal virtual EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
-            var marshaller = EnableMetricsCollectionRequestMarshaller.Instance;
-            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableMetricsCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
 
-            return Invoke<EnableMetricsCollectionRequest,EnableMetricsCollectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableMetricsCollectionResponse>(request, options);
         }
 
 
@@ -1873,11 +1913,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public virtual Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableMetricsCollectionRequestMarshaller.Instance;
-            var unmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableMetricsCollectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableMetricsCollectionRequest,EnableMetricsCollectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnableMetricsCollectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1886,10 +1926,11 @@ namespace Amazon.AutoScaling
 
         internal virtual EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
-            var marshaller = EnterStandbyRequestMarshaller.Instance;
-            var unmarshaller = EnterStandbyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnterStandbyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnterStandbyResponseUnmarshaller.Instance;
 
-            return Invoke<EnterStandbyRequest,EnterStandbyResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnterStandbyResponse>(request, options);
         }
 
 
@@ -1905,11 +1946,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public virtual Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnterStandbyRequestMarshaller.Instance;
-            var unmarshaller = EnterStandbyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnterStandbyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnterStandbyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnterStandbyRequest,EnterStandbyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnterStandbyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1918,10 +1959,11 @@ namespace Amazon.AutoScaling
 
         internal virtual ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
         {
-            var marshaller = ExecutePolicyRequestMarshaller.Instance;
-            var unmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecutePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<ExecutePolicyRequest,ExecutePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExecutePolicyResponse>(request, options);
         }
 
 
@@ -1937,11 +1979,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public virtual Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ExecutePolicyRequestMarshaller.Instance;
-            var unmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecutePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ExecutePolicyRequest,ExecutePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ExecutePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1950,10 +1992,11 @@ namespace Amazon.AutoScaling
 
         internal virtual ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
-            var marshaller = ExitStandbyRequestMarshaller.Instance;
-            var unmarshaller = ExitStandbyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExitStandbyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExitStandbyResponseUnmarshaller.Instance;
 
-            return Invoke<ExitStandbyRequest,ExitStandbyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExitStandbyResponse>(request, options);
         }
 
 
@@ -1969,11 +2012,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public virtual Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ExitStandbyRequestMarshaller.Instance;
-            var unmarshaller = ExitStandbyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExitStandbyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExitStandbyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ExitStandbyRequest,ExitStandbyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ExitStandbyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1982,10 +2025,11 @@ namespace Amazon.AutoScaling
 
         internal virtual PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
-            var marshaller = PutLifecycleHookRequestMarshaller.Instance;
-            var unmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleHookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
 
-            return Invoke<PutLifecycleHookRequest,PutLifecycleHookResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLifecycleHookResponse>(request, options);
         }
 
 
@@ -2001,11 +2045,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public virtual Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutLifecycleHookRequestMarshaller.Instance;
-            var unmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleHookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutLifecycleHookRequest,PutLifecycleHookResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutLifecycleHookResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2014,10 +2058,11 @@ namespace Amazon.AutoScaling
 
         internal virtual PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
-            var marshaller = PutNotificationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutNotificationConfigurationRequest,PutNotificationConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutNotificationConfigurationResponse>(request, options);
         }
 
 
@@ -2033,11 +2078,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public virtual Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutNotificationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutNotificationConfigurationRequest,PutNotificationConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutNotificationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2046,10 +2091,11 @@ namespace Amazon.AutoScaling
 
         internal virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
-            var marshaller = PutScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutScalingPolicyRequest,PutScalingPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutScalingPolicyResponse>(request, options);
         }
 
 
@@ -2065,11 +2111,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutScalingPolicyRequest,PutScalingPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutScalingPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2078,10 +2124,11 @@ namespace Amazon.AutoScaling
 
         internal virtual PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
-            var marshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
-            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
-            return Invoke<PutScheduledUpdateGroupActionRequest,PutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutScheduledUpdateGroupActionResponse>(request, options);
         }
 
 
@@ -2097,11 +2144,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public virtual Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
-            var unmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutScheduledUpdateGroupActionRequest,PutScheduledUpdateGroupActionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutScheduledUpdateGroupActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2110,10 +2157,11 @@ namespace Amazon.AutoScaling
 
         internal virtual RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
-            var marshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
-            var unmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
 
-            return Invoke<RecordLifecycleActionHeartbeatRequest,RecordLifecycleActionHeartbeatResponse>(request, marshaller, unmarshaller);
+            return Invoke<RecordLifecycleActionHeartbeatResponse>(request, options);
         }
 
 
@@ -2129,11 +2177,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public virtual Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
-            var unmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RecordLifecycleActionHeartbeatRequest,RecordLifecycleActionHeartbeatResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RecordLifecycleActionHeartbeatResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2142,10 +2190,11 @@ namespace Amazon.AutoScaling
 
         internal virtual ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
-            var marshaller = ResumeProcessesRequestMarshaller.Instance;
-            var unmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeProcessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
 
-            return Invoke<ResumeProcessesRequest,ResumeProcessesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResumeProcessesResponse>(request, options);
         }
 
 
@@ -2161,11 +2210,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public virtual Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResumeProcessesRequestMarshaller.Instance;
-            var unmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeProcessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ResumeProcessesRequest,ResumeProcessesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ResumeProcessesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2174,10 +2223,11 @@ namespace Amazon.AutoScaling
 
         internal virtual SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
         {
-            var marshaller = SetDesiredCapacityRequestMarshaller.Instance;
-            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDesiredCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
 
-            return Invoke<SetDesiredCapacityRequest,SetDesiredCapacityResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetDesiredCapacityResponse>(request, options);
         }
 
 
@@ -2193,11 +2243,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public virtual Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetDesiredCapacityRequestMarshaller.Instance;
-            var unmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDesiredCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetDesiredCapacityRequest,SetDesiredCapacityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetDesiredCapacityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2206,10 +2256,11 @@ namespace Amazon.AutoScaling
 
         internal virtual SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
-            var marshaller = SetInstanceHealthRequestMarshaller.Instance;
-            var unmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetInstanceHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
 
-            return Invoke<SetInstanceHealthRequest,SetInstanceHealthResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetInstanceHealthResponse>(request, options);
         }
 
 
@@ -2225,11 +2276,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public virtual Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetInstanceHealthRequestMarshaller.Instance;
-            var unmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetInstanceHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetInstanceHealthRequest,SetInstanceHealthResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetInstanceHealthResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2238,10 +2289,11 @@ namespace Amazon.AutoScaling
 
         internal virtual SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
         {
-            var marshaller = SetInstanceProtectionRequestMarshaller.Instance;
-            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetInstanceProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
 
-            return Invoke<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetInstanceProtectionResponse>(request, options);
         }
 
 
@@ -2257,11 +2309,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public virtual Task<SetInstanceProtectionResponse> SetInstanceProtectionAsync(SetInstanceProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetInstanceProtectionRequestMarshaller.Instance;
-            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetInstanceProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetInstanceProtectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2270,10 +2322,11 @@ namespace Amazon.AutoScaling
 
         internal virtual SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
-            var marshaller = SuspendProcessesRequestMarshaller.Instance;
-            var unmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SuspendProcessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
 
-            return Invoke<SuspendProcessesRequest,SuspendProcessesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SuspendProcessesResponse>(request, options);
         }
 
 
@@ -2289,11 +2342,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public virtual Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SuspendProcessesRequestMarshaller.Instance;
-            var unmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SuspendProcessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SuspendProcessesRequest,SuspendProcessesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SuspendProcessesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2302,10 +2355,11 @@ namespace Amazon.AutoScaling
 
         internal virtual TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
-            var marshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateInstanceInAutoScalingGroupRequest,TerminateInstanceInAutoScalingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateInstanceInAutoScalingGroupResponse>(request, options);
         }
 
 
@@ -2321,11 +2375,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public virtual Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TerminateInstanceInAutoScalingGroupRequest,TerminateInstanceInAutoScalingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TerminateInstanceInAutoScalingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2334,10 +2388,11 @@ namespace Amazon.AutoScaling
 
         internal virtual UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
-            var marshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAutoScalingGroupRequest,UpdateAutoScalingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAutoScalingGroupResponse>(request, options);
         }
 
 
@@ -2353,11 +2408,11 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public virtual Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAutoScalingGroupRequest,UpdateAutoScalingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAutoScalingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

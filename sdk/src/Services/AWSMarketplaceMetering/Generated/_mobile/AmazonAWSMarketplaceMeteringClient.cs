@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AWSMarketplaceMetering.Model;
 using Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations;
@@ -297,15 +298,16 @@ namespace Amazon.AWSMarketplaceMetering
 
         #endregion
 
-        
+
         #region  BatchMeterUsage
 
         internal virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
-            var marshaller = BatchMeterUsageRequestMarshaller.Instance;
-            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
-            return Invoke<BatchMeterUsageRequest,BatchMeterUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchMeterUsageResponse>(request, options);
         }
 
 
@@ -321,11 +323,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchMeterUsageRequestMarshaller.Instance;
-            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchMeterUsageRequest,BatchMeterUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchMeterUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -334,10 +336,11 @@ namespace Amazon.AWSMarketplaceMetering
 
         internal virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
-            var marshaller = MeterUsageRequestMarshaller.Instance;
-            var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
-            return Invoke<MeterUsageRequest,MeterUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<MeterUsageResponse>(request, options);
         }
 
 
@@ -353,11 +356,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = MeterUsageRequestMarshaller.Instance;
-            var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<MeterUsageRequest,MeterUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<MeterUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -366,10 +369,11 @@ namespace Amazon.AWSMarketplaceMetering
 
         internal virtual RegisterUsageResponse RegisterUsage(RegisterUsageRequest request)
         {
-            var marshaller = RegisterUsageRequestMarshaller.Instance;
-            var unmarshaller = RegisterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterUsageRequest,RegisterUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterUsageResponse>(request, options);
         }
 
 
@@ -385,11 +389,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual Task<RegisterUsageResponse> RegisterUsageAsync(RegisterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterUsageRequestMarshaller.Instance;
-            var unmarshaller = RegisterUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterUsageRequest,RegisterUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -398,10 +402,11 @@ namespace Amazon.AWSMarketplaceMetering
 
         internal virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
-            var marshaller = ResolveCustomerRequestMarshaller.Instance;
-            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 
-            return Invoke<ResolveCustomerRequest,ResolveCustomerResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResolveCustomerResponse>(request, options);
         }
 
 
@@ -417,11 +422,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResolveCustomerRequestMarshaller.Instance;
-            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ResolveCustomerRequest,ResolveCustomerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ResolveCustomerResponse>(request, options, cancellationToken);
         }
 
         #endregion

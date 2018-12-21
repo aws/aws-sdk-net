@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DirectoryService.Model;
 using Amazon.DirectoryService.Model.Internal.MarshallTransformations;
@@ -254,7 +255,7 @@ namespace Amazon.DirectoryService
 
         #endregion
 
-        
+
         #region  AcceptSharedDirectory
 
 
@@ -282,10 +283,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         public virtual AcceptSharedDirectoryResponse AcceptSharedDirectory(AcceptSharedDirectoryRequest request)
         {
-            var marshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
-            var unmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptSharedDirectoryRequest,AcceptSharedDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptSharedDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -300,11 +302,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         public virtual Task<AcceptSharedDirectoryResponse> AcceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
-            var unmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AcceptSharedDirectoryRequest,AcceptSharedDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptSharedDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -355,10 +357,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
         {
-            var marshaller = AddIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
 
-            return Invoke<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddIpRoutesResponse>(request, options);
         }
 
         /// <summary>
@@ -373,11 +376,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddIpRoutesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -411,10 +414,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsToResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -429,11 +433,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -462,10 +466,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
         {
-            var marshaller = CancelSchemaExtensionRequestMarshaller.Instance;
-            var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSchemaExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelSchemaExtensionRequest,CancelSchemaExtensionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelSchemaExtensionResponse>(request, options);
         }
 
         /// <summary>
@@ -480,11 +485,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual Task<CancelSchemaExtensionResponse> CancelSchemaExtensionAsync(CancelSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelSchemaExtensionRequestMarshaller.Instance;
-            var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelSchemaExtensionRequest,CancelSchemaExtensionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSchemaExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelSchemaExtensionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -522,10 +527,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
-            var marshaller = ConnectDirectoryRequestMarshaller.Instance;
-            var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<ConnectDirectoryRequest,ConnectDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConnectDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -540,11 +546,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ConnectDirectoryRequestMarshaller.Instance;
-            var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConnectDirectoryRequest,ConnectDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConnectDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -584,10 +590,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = CreateAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAliasResponse>(request, options);
         }
 
         /// <summary>
@@ -602,11 +609,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAliasRequest,CreateAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -648,10 +655,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
-            var marshaller = CreateComputerRequestMarshaller.Instance;
-            var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateComputerRequest,CreateComputerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateComputerResponse>(request, options);
         }
 
         /// <summary>
@@ -666,11 +674,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateComputerRequestMarshaller.Instance;
-            var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateComputerRequest,CreateComputerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateComputerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -710,10 +718,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
         {
-            var marshaller = CreateConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConditionalForwarderRequest,CreateConditionalForwarderResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConditionalForwarderResponse>(request, options);
         }
 
         /// <summary>
@@ -728,11 +737,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual Task<CreateConditionalForwarderResponse> CreateConditionalForwarderAsync(CreateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConditionalForwarderRequest,CreateConditionalForwarderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConditionalForwarderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -770,10 +779,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
-            var marshaller = CreateDirectoryRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -788,11 +798,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDirectoryRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -828,10 +838,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
         public virtual CreateLogSubscriptionResponse CreateLogSubscription(CreateLogSubscriptionRequest request)
         {
-            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLogSubscriptionRequest,CreateLogSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLogSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -846,11 +857,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
         public virtual Task<CreateLogSubscriptionResponse> CreateLogSubscriptionAsync(CreateLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateLogSubscriptionRequest,CreateLogSubscriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLogSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -891,10 +902,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
         {
-            var marshaller = CreateMicrosoftADRequestMarshaller.Instance;
-            var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMicrosoftADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
 
-            return Invoke<CreateMicrosoftADRequest,CreateMicrosoftADResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateMicrosoftADResponse>(request, options);
         }
 
         /// <summary>
@@ -909,11 +921,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateMicrosoftADRequestMarshaller.Instance;
-            var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateMicrosoftADRequest,CreateMicrosoftADResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMicrosoftADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMicrosoftADResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -953,10 +965,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var marshaller = CreateSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -971,11 +984,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1021,10 +1034,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual CreateTrustResponse CreateTrust(CreateTrustRequest request)
         {
-            var marshaller = CreateTrustRequestMarshaller.Instance;
-            var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTrustRequest,CreateTrustResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTrustResponse>(request, options);
         }
 
         /// <summary>
@@ -1039,11 +1053,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTrustRequestMarshaller.Instance;
-            var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateTrustRequest,CreateTrustResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTrustResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1078,10 +1092,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
         {
-            var marshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConditionalForwarderRequest,DeleteConditionalForwarderResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConditionalForwarderResponse>(request, options);
         }
 
         /// <summary>
@@ -1096,11 +1111,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual Task<DeleteConditionalForwarderResponse> DeleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConditionalForwarderRequest,DeleteConditionalForwarderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConditionalForwarderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1134,10 +1149,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
-            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -1152,11 +1168,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1185,10 +1201,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
         public virtual DeleteLogSubscriptionResponse DeleteLogSubscription(DeleteLogSubscriptionRequest request)
         {
-            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLogSubscriptionRequest,DeleteLogSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLogSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1203,11 +1220,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
         public virtual Task<DeleteLogSubscriptionResponse> DeleteLogSubscriptionAsync(DeleteLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteLogSubscriptionRequest,DeleteLogSubscriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLogSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1236,10 +1253,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var marshaller = DeleteSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSnapshotRequest,DeleteSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1254,11 +1272,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteSnapshotRequest,DeleteSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1291,10 +1309,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
         {
-            var marshaller = DeleteTrustRequestMarshaller.Instance;
-            var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTrustRequest,DeleteTrustResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTrustResponse>(request, options);
         }
 
         /// <summary>
@@ -1309,11 +1328,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTrustRequestMarshaller.Instance;
-            var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteTrustRequest,DeleteTrustResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTrustResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1342,10 +1361,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
         {
-            var marshaller = DeregisterEventTopicRequestMarshaller.Instance;
-            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterEventTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterEventTopicResponse>(request, options);
         }
 
         /// <summary>
@@ -1360,11 +1380,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterEventTopicRequestMarshaller.Instance;
-            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterEventTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterEventTopicResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1405,10 +1425,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
         {
-            var marshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConditionalForwardersRequest,DescribeConditionalForwardersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConditionalForwardersResponse>(request, options);
         }
 
         /// <summary>
@@ -1423,11 +1444,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual Task<DescribeConditionalForwardersResponse> DescribeConditionalForwardersAsync(DescribeConditionalForwardersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConditionalForwardersRequest,DescribeConditionalForwardersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConditionalForwardersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1524,10 +1545,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
-            var marshaller = DescribeDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDirectoriesResponse>(request, options);
         }
 
 
@@ -1590,11 +1612,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDirectoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1629,10 +1651,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
         {
-            var marshaller = DescribeDomainControllersRequestMarshaller.Instance;
-            var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainControllersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDomainControllersRequest,DescribeDomainControllersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDomainControllersResponse>(request, options);
         }
 
         /// <summary>
@@ -1647,11 +1670,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual Task<DescribeDomainControllersResponse> DescribeDomainControllersAsync(DescribeDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDomainControllersRequestMarshaller.Instance;
-            var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDomainControllersRequest,DescribeDomainControllersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainControllersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDomainControllersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1687,10 +1710,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
         {
-            var marshaller = DescribeEventTopicsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventTopicsResponse>(request, options);
         }
 
         /// <summary>
@@ -1705,11 +1729,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventTopicsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEventTopicsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1744,10 +1768,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">REST API Reference for DescribeSharedDirectories Operation</seealso>
         public virtual DescribeSharedDirectoriesResponse DescribeSharedDirectories(DescribeSharedDirectoriesRequest request)
         {
-            var marshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSharedDirectoriesRequest,DescribeSharedDirectoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSharedDirectoriesResponse>(request, options);
         }
 
         /// <summary>
@@ -1762,11 +1787,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">REST API Reference for DescribeSharedDirectories Operation</seealso>
         public virtual Task<DescribeSharedDirectoriesResponse> DescribeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSharedDirectoriesRequest,DescribeSharedDirectoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSharedDirectoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1810,10 +1835,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var marshaller = DescribeSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSnapshotsResponse>(request, options);
         }
 
         /// <summary>
@@ -1828,11 +1854,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSnapshotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1873,10 +1899,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
         {
-            var marshaller = DescribeTrustsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTrustsRequest,DescribeTrustsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTrustsResponse>(request, options);
         }
 
         /// <summary>
@@ -1891,11 +1918,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTrustsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTrustsRequest,DescribeTrustsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTrustsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1922,10 +1949,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
-            var marshaller = DisableRadiusRequestMarshaller.Instance;
-            var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableRadiusResponseUnmarshaller.Instance;
 
-            return Invoke<DisableRadiusRequest,DisableRadiusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableRadiusResponse>(request, options);
         }
 
         /// <summary>
@@ -1940,11 +1968,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableRadiusRequestMarshaller.Instance;
-            var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableRadiusRequest,DisableRadiusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableRadiusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableRadiusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1976,10 +2004,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
-            var marshaller = DisableSsoRequestMarshaller.Instance;
-            var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSsoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSsoResponseUnmarshaller.Instance;
 
-            return Invoke<DisableSsoRequest,DisableSsoResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableSsoResponse>(request, options);
         }
 
         /// <summary>
@@ -1994,11 +2023,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableSsoRequestMarshaller.Instance;
-            var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableSsoRequest,DisableSsoResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSsoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSsoResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableSsoResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2031,10 +2060,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
-            var marshaller = EnableRadiusRequestMarshaller.Instance;
-            var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableRadiusResponseUnmarshaller.Instance;
 
-            return Invoke<EnableRadiusRequest,EnableRadiusResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableRadiusResponse>(request, options);
         }
 
         /// <summary>
@@ -2049,11 +2079,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableRadiusRequestMarshaller.Instance;
-            var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableRadiusRequest,EnableRadiusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableRadiusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableRadiusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2085,10 +2115,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
-            var marshaller = EnableSsoRequestMarshaller.Instance;
-            var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSsoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSsoResponseUnmarshaller.Instance;
 
-            return Invoke<EnableSsoRequest,EnableSsoResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableSsoResponse>(request, options);
         }
 
         /// <summary>
@@ -2103,11 +2134,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableSsoRequestMarshaller.Instance;
-            var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableSsoRequest,EnableSsoResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSsoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSsoResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableSsoResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2154,10 +2185,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
-            var marshaller = GetDirectoryLimitsRequestMarshaller.Instance;
-            var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDirectoryLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDirectoryLimitsRequest,GetDirectoryLimitsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDirectoryLimitsResponse>(request, options);
         }
 
 
@@ -2195,11 +2227,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDirectoryLimitsRequestMarshaller.Instance;
-            var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDirectoryLimitsRequest,GetDirectoryLimitsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDirectoryLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDirectoryLimitsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2225,10 +2257,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
-            var marshaller = GetSnapshotLimitsRequestMarshaller.Instance;
-            var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSnapshotLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSnapshotLimitsResponse>(request, options);
         }
 
         /// <summary>
@@ -2243,11 +2276,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSnapshotLimitsRequestMarshaller.Instance;
-            var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSnapshotLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSnapshotLimitsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2279,10 +2312,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
         {
-            var marshaller = ListIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
-            return Invoke<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListIpRoutesResponse>(request, options);
         }
 
         /// <summary>
@@ -2297,11 +2331,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIpRoutesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2330,10 +2364,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         public virtual ListLogSubscriptionsResponse ListLogSubscriptions(ListLogSubscriptionsRequest request)
         {
-            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLogSubscriptionsRequest,ListLogSubscriptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLogSubscriptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2348,11 +2383,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         public virtual Task<ListLogSubscriptionsResponse> ListLogSubscriptionsAsync(ListLogSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListLogSubscriptionsRequest,ListLogSubscriptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLogSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2381,10 +2416,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
         {
-            var marshaller = ListSchemaExtensionsRequestMarshaller.Instance;
-            var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemaExtensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSchemaExtensionsRequest,ListSchemaExtensionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSchemaExtensionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2399,11 +2435,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual Task<ListSchemaExtensionsResponse> ListSchemaExtensionsAsync(ListSchemaExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSchemaExtensionsRequestMarshaller.Instance;
-            var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSchemaExtensionsRequest,ListSchemaExtensionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemaExtensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSchemaExtensionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2435,10 +2471,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2453,11 +2490,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2490,10 +2527,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
         {
-            var marshaller = RegisterEventTopicRequestMarshaller.Instance;
-            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterEventTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterEventTopicResponse>(request, options);
         }
 
         /// <summary>
@@ -2508,11 +2546,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterEventTopicRequestMarshaller.Instance;
-            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterEventTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterEventTopicResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2544,10 +2582,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         public virtual RejectSharedDirectoryResponse RejectSharedDirectory(RejectSharedDirectoryRequest request)
         {
-            var marshaller = RejectSharedDirectoryRequestMarshaller.Instance;
-            var unmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectSharedDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<RejectSharedDirectoryRequest,RejectSharedDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<RejectSharedDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -2562,11 +2601,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         public virtual Task<RejectSharedDirectoryResponse> RejectSharedDirectoryAsync(RejectSharedDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RejectSharedDirectoryRequestMarshaller.Instance;
-            var unmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RejectSharedDirectoryRequest,RejectSharedDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectSharedDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RejectSharedDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2598,10 +2637,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
         {
-            var marshaller = RemoveIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveIpRoutesResponse>(request, options);
         }
 
         /// <summary>
@@ -2616,11 +2656,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveIpRoutesRequestMarshaller.Instance;
-            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveIpRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveIpRoutesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2649,10 +2689,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsFromResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2667,11 +2708,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2710,10 +2751,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
         public virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
         {
-            var marshaller = ResetUserPasswordRequestMarshaller.Instance;
-            var unmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
 
-            return Invoke<ResetUserPasswordRequest,ResetUserPasswordResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResetUserPasswordResponse>(request, options);
         }
 
         /// <summary>
@@ -2728,11 +2770,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
         public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResetUserPasswordRequestMarshaller.Instance;
-            var unmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ResetUserPasswordRequest,ResetUserPasswordResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResetUserPasswordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2774,10 +2816,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
-            var marshaller = RestoreFromSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreFromSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -2792,11 +2835,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestoreFromSnapshotRequestMarshaller.Instance;
-            var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreFromSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2866,10 +2909,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory">REST API Reference for ShareDirectory Operation</seealso>
         public virtual ShareDirectoryResponse ShareDirectory(ShareDirectoryRequest request)
         {
-            var marshaller = ShareDirectoryRequestMarshaller.Instance;
-            var unmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ShareDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<ShareDirectoryRequest,ShareDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<ShareDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -2884,11 +2928,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory">REST API Reference for ShareDirectory Operation</seealso>
         public virtual Task<ShareDirectoryResponse> ShareDirectoryAsync(ShareDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ShareDirectoryRequestMarshaller.Instance;
-            var unmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ShareDirectoryRequest,ShareDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ShareDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ShareDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2925,10 +2969,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
         {
-            var marshaller = StartSchemaExtensionRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
 
-            return Invoke<StartSchemaExtensionRequest,StartSchemaExtensionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSchemaExtensionResponse>(request, options);
         }
 
         /// <summary>
@@ -2943,11 +2988,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual Task<StartSchemaExtensionResponse> StartSchemaExtensionAsync(StartSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSchemaExtensionRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartSchemaExtensionRequest,StartSchemaExtensionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSchemaExtensionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2979,10 +3024,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         public virtual UnshareDirectoryResponse UnshareDirectory(UnshareDirectoryRequest request)
         {
-            var marshaller = UnshareDirectoryRequestMarshaller.Instance;
-            var unmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnshareDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
 
-            return Invoke<UnshareDirectoryRequest,UnshareDirectoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnshareDirectoryResponse>(request, options);
         }
 
         /// <summary>
@@ -2997,11 +3043,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         public virtual Task<UnshareDirectoryResponse> UnshareDirectoryAsync(UnshareDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UnshareDirectoryRequestMarshaller.Instance;
-            var unmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UnshareDirectoryRequest,UnshareDirectoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnshareDirectoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UnshareDirectoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3036,10 +3082,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
         {
-            var marshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateConditionalForwarderResponse>(request, options);
         }
 
         /// <summary>
@@ -3054,11 +3101,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual Task<UpdateConditionalForwarderResponse> UpdateConditionalForwarderAsync(UpdateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
-            var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConditionalForwarderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3101,10 +3148,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
         {
-            var marshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
-            var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateNumberOfDomainControllersRequest,UpdateNumberOfDomainControllersResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateNumberOfDomainControllersResponse>(request, options);
         }
 
         /// <summary>
@@ -3119,11 +3167,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual Task<UpdateNumberOfDomainControllersResponse> UpdateNumberOfDomainControllersAsync(UpdateNumberOfDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
-            var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateNumberOfDomainControllersRequest,UpdateNumberOfDomainControllersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNumberOfDomainControllersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3153,10 +3201,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {
-            var marshaller = UpdateRadiusRequestMarshaller.Instance;
-            var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRadiusRequest,UpdateRadiusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRadiusResponse>(request, options);
         }
 
         /// <summary>
@@ -3171,11 +3220,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRadiusRequestMarshaller.Instance;
-            var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateRadiusRequest,UpdateRadiusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRadiusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRadiusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3205,10 +3254,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         public virtual UpdateTrustResponse UpdateTrust(UpdateTrustRequest request)
         {
-            var marshaller = UpdateTrustRequestMarshaller.Instance;
-            var unmarshaller = UpdateTrustResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTrustRequest,UpdateTrustResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTrustResponse>(request, options);
         }
 
         /// <summary>
@@ -3223,11 +3273,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         public virtual Task<UpdateTrustResponse> UpdateTrustAsync(UpdateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateTrustRequestMarshaller.Instance;
-            var unmarshaller = UpdateTrustResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateTrustRequest,UpdateTrustResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTrustResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3266,10 +3316,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
         {
-            var marshaller = VerifyTrustRequestMarshaller.Instance;
-            var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyTrustResponseUnmarshaller.Instance;
 
-            return Invoke<VerifyTrustRequest,VerifyTrustResponse>(request, marshaller, unmarshaller);
+            return Invoke<VerifyTrustResponse>(request, options);
         }
 
         /// <summary>
@@ -3284,11 +3335,11 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = VerifyTrustRequestMarshaller.Instance;
-            var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
-
-            return InvokeAsync<VerifyTrustRequest,VerifyTrustResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyTrustRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyTrustResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<VerifyTrustResponse>(request, options, cancellationToken);
         }
 
         #endregion

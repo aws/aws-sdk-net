@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CloudHSMV2.Model;
 using Amazon.CloudHSMV2.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.CloudHSMV2
 
         #endregion
 
-        
+
         #region  CopyBackupToRegion
 
         /// <summary>
@@ -265,10 +266,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
         public virtual CopyBackupToRegionResponse CopyBackupToRegion(CopyBackupToRegionRequest request)
         {
-            var marshaller = CopyBackupToRegionRequestMarshaller.Instance;
-            var unmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyBackupToRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
 
-            return Invoke<CopyBackupToRegionRequest,CopyBackupToRegionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CopyBackupToRegionResponse>(request, options);
         }
 
         /// <summary>
@@ -285,11 +287,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
         public virtual IAsyncResult BeginCopyBackupToRegion(CopyBackupToRegionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CopyBackupToRegionRequestMarshaller.Instance;
-            var unmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyBackupToRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CopyBackupToRegionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -335,10 +337,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
-            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -355,11 +358,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateClusterRequestMarshaller.Instance;
-            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateClusterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -405,10 +408,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         public virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
-            var marshaller = CreateHsmRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
-            return Invoke<CreateHsmRequest,CreateHsmResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateHsmResponse>(request, options);
         }
 
         /// <summary>
@@ -425,11 +429,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         public virtual IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateHsmRequestMarshaller.Instance;
-            var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHsmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateHsmRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -476,10 +480,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBackupResponse>(request, options);
         }
 
         /// <summary>
@@ -496,11 +501,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBackupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -548,10 +553,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -568,11 +574,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteClusterRequestMarshaller.Instance;
-            var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteClusterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -620,10 +626,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         public virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
-            var marshaller = DeleteHsmRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteHsmRequest,DeleteHsmResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteHsmResponse>(request, options);
         }
 
         /// <summary>
@@ -640,11 +647,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         public virtual IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteHsmRequestMarshaller.Instance;
-            var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHsmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteHsmRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -699,10 +706,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBackupsRequest,DescribeBackupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBackupsResponse>(request, options);
         }
 
         /// <summary>
@@ -719,11 +727,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeBackupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -775,10 +783,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var marshaller = DescribeClustersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClustersResponse>(request, options);
         }
 
         /// <summary>
@@ -795,11 +804,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeClustersRequestMarshaller.Instance;
-            var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeClustersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -848,10 +857,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
         public virtual InitializeClusterResponse InitializeCluster(InitializeClusterRequest request)
         {
-            var marshaller = InitializeClusterRequestMarshaller.Instance;
-            var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitializeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitializeClusterResponseUnmarshaller.Instance;
 
-            return Invoke<InitializeClusterRequest,InitializeClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitializeClusterResponse>(request, options);
         }
 
         /// <summary>
@@ -868,11 +878,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">REST API Reference for InitializeCluster Operation</seealso>
         public virtual IAsyncResult BeginInitializeCluster(InitializeClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InitializeClusterRequestMarshaller.Instance;
-            var unmarshaller = InitializeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitializeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitializeClusterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InitializeClusterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -927,10 +937,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -947,11 +958,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -998,10 +1009,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
         public virtual RestoreBackupResponse RestoreBackup(RestoreBackupRequest request)
         {
-            var marshaller = RestoreBackupRequestMarshaller.Instance;
-            var unmarshaller = RestoreBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreBackupResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreBackupRequest,RestoreBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreBackupResponse>(request, options);
         }
 
         /// <summary>
@@ -1018,11 +1030,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
         public virtual IAsyncResult BeginRestoreBackup(RestoreBackupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RestoreBackupRequestMarshaller.Instance;
-            var unmarshaller = RestoreBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreBackupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RestoreBackupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1068,10 +1080,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1088,11 +1101,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1138,10 +1151,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1158,11 +1172,11 @@ namespace Amazon.CloudHSMV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

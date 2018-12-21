@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AutoScalingPlans.Model;
 using Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations;
@@ -256,15 +257,16 @@ namespace Amazon.AutoScalingPlans
 
         #endregion
 
-        
+
         #region  CreateScalingPlan
 
         internal virtual CreateScalingPlanResponse CreateScalingPlan(CreateScalingPlanRequest request)
         {
-            var marshaller = CreateScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = CreateScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScalingPlanResponseUnmarshaller.Instance;
 
-            return Invoke<CreateScalingPlanRequest,CreateScalingPlanResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateScalingPlanResponse>(request, options);
         }
 
 
@@ -280,11 +282,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">REST API Reference for CreateScalingPlan Operation</seealso>
         public virtual Task<CreateScalingPlanResponse> CreateScalingPlanAsync(CreateScalingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = CreateScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScalingPlanResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateScalingPlanRequest,CreateScalingPlanResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateScalingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -293,10 +295,11 @@ namespace Amazon.AutoScalingPlans
 
         internal virtual DeleteScalingPlanResponse DeleteScalingPlan(DeleteScalingPlanRequest request)
         {
-            var marshaller = DeleteScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = DeleteScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScalingPlanResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteScalingPlanRequest,DeleteScalingPlanResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteScalingPlanResponse>(request, options);
         }
 
 
@@ -312,11 +315,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DeleteScalingPlan">REST API Reference for DeleteScalingPlan Operation</seealso>
         public virtual Task<DeleteScalingPlanResponse> DeleteScalingPlanAsync(DeleteScalingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = DeleteScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScalingPlanResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteScalingPlanRequest,DeleteScalingPlanResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteScalingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -325,10 +328,11 @@ namespace Amazon.AutoScalingPlans
 
         internal virtual DescribeScalingPlanResourcesResponse DescribeScalingPlanResources(DescribeScalingPlanResourcesRequest request)
         {
-            var marshaller = DescribeScalingPlanResourcesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingPlanResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingPlanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingPlanResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScalingPlanResourcesRequest,DescribeScalingPlanResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScalingPlanResourcesResponse>(request, options);
         }
 
 
@@ -344,11 +348,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlanResources">REST API Reference for DescribeScalingPlanResources Operation</seealso>
         public virtual Task<DescribeScalingPlanResourcesResponse> DescribeScalingPlanResourcesAsync(DescribeScalingPlanResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScalingPlanResourcesRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingPlanResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingPlanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingPlanResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScalingPlanResourcesRequest,DescribeScalingPlanResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScalingPlanResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -357,10 +361,11 @@ namespace Amazon.AutoScalingPlans
 
         internal virtual DescribeScalingPlansResponse DescribeScalingPlans(DescribeScalingPlansRequest request)
         {
-            var marshaller = DescribeScalingPlansRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingPlansResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingPlansResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScalingPlansRequest,DescribeScalingPlansResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScalingPlansResponse>(request, options);
         }
 
 
@@ -376,11 +381,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">REST API Reference for DescribeScalingPlans Operation</seealso>
         public virtual Task<DescribeScalingPlansResponse> DescribeScalingPlansAsync(DescribeScalingPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScalingPlansRequestMarshaller.Instance;
-            var unmarshaller = DescribeScalingPlansResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScalingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScalingPlansResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScalingPlansRequest,DescribeScalingPlansResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScalingPlansResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -389,10 +394,11 @@ namespace Amazon.AutoScalingPlans
 
         internal virtual GetScalingPlanResourceForecastDataResponse GetScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request)
         {
-            var marshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
-            var unmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
 
-            return Invoke<GetScalingPlanResourceForecastDataRequest,GetScalingPlanResourceForecastDataResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetScalingPlanResourceForecastDataResponse>(request, options);
         }
 
 
@@ -408,11 +414,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">REST API Reference for GetScalingPlanResourceForecastData Operation</seealso>
         public virtual Task<GetScalingPlanResourceForecastDataResponse> GetScalingPlanResourceForecastDataAsync(GetScalingPlanResourceForecastDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
-            var unmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetScalingPlanResourceForecastDataRequest,GetScalingPlanResourceForecastDataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetScalingPlanResourceForecastDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -421,10 +427,11 @@ namespace Amazon.AutoScalingPlans
 
         internal virtual UpdateScalingPlanResponse UpdateScalingPlan(UpdateScalingPlanRequest request)
         {
-            var marshaller = UpdateScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = UpdateScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScalingPlanResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateScalingPlanRequest,UpdateScalingPlanResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateScalingPlanResponse>(request, options);
         }
 
 
@@ -440,11 +447,11 @@ namespace Amazon.AutoScalingPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">REST API Reference for UpdateScalingPlan Operation</seealso>
         public virtual Task<UpdateScalingPlanResponse> UpdateScalingPlanAsync(UpdateScalingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateScalingPlanRequestMarshaller.Instance;
-            var unmarshaller = UpdateScalingPlanResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScalingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScalingPlanResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateScalingPlanRequest,UpdateScalingPlanResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateScalingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion

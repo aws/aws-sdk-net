@@ -55,6 +55,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteVaultRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}";

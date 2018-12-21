@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IoT.Model;
 using Amazon.IoT.Model.Internal.MarshallTransformations;
@@ -259,15 +260,16 @@ namespace Amazon.IoT
 
         #endregion
 
-        
+
         #region  AcceptCertificateTransfer
 
         internal virtual AcceptCertificateTransferResponse AcceptCertificateTransfer(AcceptCertificateTransferRequest request)
         {
-            var marshaller = AcceptCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptCertificateTransferRequest,AcceptCertificateTransferResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptCertificateTransferResponse>(request, options);
         }
 
 
@@ -283,11 +285,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AcceptCertificateTransfer">REST API Reference for AcceptCertificateTransfer Operation</seealso>
         public virtual Task<AcceptCertificateTransferResponse> AcceptCertificateTransferAsync(AcceptCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AcceptCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptCertificateTransferResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AcceptCertificateTransferRequest,AcceptCertificateTransferResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AcceptCertificateTransferResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -296,10 +298,11 @@ namespace Amazon.IoT
 
         internal virtual AddThingToBillingGroupResponse AddThingToBillingGroup(AddThingToBillingGroupRequest request)
         {
-            var marshaller = AddThingToBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddThingToBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<AddThingToBillingGroupRequest,AddThingToBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddThingToBillingGroupResponse>(request, options);
         }
 
 
@@ -315,11 +318,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">REST API Reference for AddThingToBillingGroup Operation</seealso>
         public virtual Task<AddThingToBillingGroupResponse> AddThingToBillingGroupAsync(AddThingToBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddThingToBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddThingToBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddThingToBillingGroupRequest,AddThingToBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddThingToBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -328,10 +331,11 @@ namespace Amazon.IoT
 
         internal virtual AddThingToThingGroupResponse AddThingToThingGroup(AddThingToThingGroupRequest request)
         {
-            var marshaller = AddThingToThingGroupRequestMarshaller.Instance;
-            var unmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddThingToThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<AddThingToThingGroupRequest,AddThingToThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddThingToThingGroupResponse>(request, options);
         }
 
 
@@ -347,11 +351,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">REST API Reference for AddThingToThingGroup Operation</seealso>
         public virtual Task<AddThingToThingGroupResponse> AddThingToThingGroupAsync(AddThingToThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddThingToThingGroupRequestMarshaller.Instance;
-            var unmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddThingToThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddThingToThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddThingToThingGroupRequest,AddThingToThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddThingToThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -360,10 +364,11 @@ namespace Amazon.IoT
 
         internal virtual AssociateTargetsWithJobResponse AssociateTargetsWithJob(AssociateTargetsWithJobRequest request)
         {
-            var marshaller = AssociateTargetsWithJobRequestMarshaller.Instance;
-            var unmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTargetsWithJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateTargetsWithJobRequest,AssociateTargetsWithJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateTargetsWithJobResponse>(request, options);
         }
 
 
@@ -379,11 +384,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateTargetsWithJob">REST API Reference for AssociateTargetsWithJob Operation</seealso>
         public virtual Task<AssociateTargetsWithJobResponse> AssociateTargetsWithJobAsync(AssociateTargetsWithJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateTargetsWithJobRequestMarshaller.Instance;
-            var unmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTargetsWithJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTargetsWithJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateTargetsWithJobRequest,AssociateTargetsWithJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateTargetsWithJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -392,10 +397,11 @@ namespace Amazon.IoT
 
         internal virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
-            var marshaller = AttachPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachPolicyResponse>(request, options);
         }
 
 
@@ -411,11 +417,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -425,10 +431,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of AttachPolicy.")]
         internal virtual AttachPrincipalPolicyResponse AttachPrincipalPolicy(AttachPrincipalPolicyRequest request)
         {
-            var marshaller = AttachPrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPrincipalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<AttachPrincipalPolicyRequest,AttachPrincipalPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachPrincipalPolicyResponse>(request, options);
         }
 
 
@@ -492,11 +499,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of AttachPolicy.")]
         public virtual Task<AttachPrincipalPolicyResponse> AttachPrincipalPolicyAsync(AttachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachPrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPrincipalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPrincipalPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachPrincipalPolicyRequest,AttachPrincipalPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachPrincipalPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -505,10 +512,11 @@ namespace Amazon.IoT
 
         internal virtual AttachSecurityProfileResponse AttachSecurityProfile(AttachSecurityProfileRequest request)
         {
-            var marshaller = AttachSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<AttachSecurityProfileRequest,AttachSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachSecurityProfileResponse>(request, options);
         }
 
 
@@ -524,11 +532,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachSecurityProfile">REST API Reference for AttachSecurityProfile Operation</seealso>
         public virtual Task<AttachSecurityProfileResponse> AttachSecurityProfileAsync(AttachSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachSecurityProfileRequest,AttachSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -537,10 +545,11 @@ namespace Amazon.IoT
 
         internal virtual AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request)
         {
-            var marshaller = AttachThingPrincipalRequestMarshaller.Instance;
-            var unmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachThingPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
 
-            return Invoke<AttachThingPrincipalRequest,AttachThingPrincipalResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachThingPrincipalResponse>(request, options);
         }
 
 
@@ -594,11 +603,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">REST API Reference for AttachThingPrincipal Operation</seealso>
         public virtual Task<AttachThingPrincipalResponse> AttachThingPrincipalAsync(AttachThingPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AttachThingPrincipalRequestMarshaller.Instance;
-            var unmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachThingPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachThingPrincipalRequest,AttachThingPrincipalResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AttachThingPrincipalResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -607,10 +616,11 @@ namespace Amazon.IoT
 
         internal virtual CancelAuditTaskResponse CancelAuditTask(CancelAuditTaskRequest request)
         {
-            var marshaller = CancelAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
 
-            return Invoke<CancelAuditTaskRequest,CancelAuditTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelAuditTaskResponse>(request, options);
         }
 
 
@@ -626,11 +636,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditTask">REST API Reference for CancelAuditTask Operation</seealso>
         public virtual Task<CancelAuditTaskResponse> CancelAuditTaskAsync(CancelAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelAuditTaskRequest,CancelAuditTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelAuditTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -639,10 +649,11 @@ namespace Amazon.IoT
 
         internal virtual CancelCertificateTransferResponse CancelCertificateTransfer(CancelCertificateTransferRequest request)
         {
-            var marshaller = CancelCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
 
-            return Invoke<CancelCertificateTransferRequest,CancelCertificateTransferResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelCertificateTransferResponse>(request, options);
         }
 
 
@@ -710,11 +721,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         public virtual Task<CancelCertificateTransferResponse> CancelCertificateTransferAsync(CancelCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelCertificateTransferRequest,CancelCertificateTransferResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelCertificateTransferResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -723,10 +734,11 @@ namespace Amazon.IoT
 
         internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
 
@@ -742,11 +754,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -755,10 +767,11 @@ namespace Amazon.IoT
 
         internal virtual CancelJobExecutionResponse CancelJobExecution(CancelJobExecutionRequest request)
         {
-            var marshaller = CancelJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobExecutionRequest,CancelJobExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobExecutionResponse>(request, options);
         }
 
 
@@ -774,11 +787,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
         public virtual Task<CancelJobExecutionResponse> CancelJobExecutionAsync(CancelJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelJobExecutionRequest,CancelJobExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelJobExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -787,10 +800,11 @@ namespace Amazon.IoT
 
         internal virtual ClearDefaultAuthorizerResponse ClearDefaultAuthorizer(ClearDefaultAuthorizerRequest request)
         {
-            var marshaller = ClearDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClearDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<ClearDefaultAuthorizerRequest,ClearDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<ClearDefaultAuthorizerResponse>(request, options);
         }
 
 
@@ -806,11 +820,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">REST API Reference for ClearDefaultAuthorizer Operation</seealso>
         public virtual Task<ClearDefaultAuthorizerResponse> ClearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ClearDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClearDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClearDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ClearDefaultAuthorizerRequest,ClearDefaultAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ClearDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -819,10 +833,11 @@ namespace Amazon.IoT
 
         internal virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
-            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAuthorizerResponse>(request, options);
         }
 
 
@@ -838,11 +853,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -851,10 +866,11 @@ namespace Amazon.IoT
 
         internal virtual CreateBillingGroupResponse CreateBillingGroup(CreateBillingGroupRequest request)
         {
-            var marshaller = CreateBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBillingGroupRequest,CreateBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBillingGroupResponse>(request, options);
         }
 
 
@@ -870,11 +886,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         public virtual Task<CreateBillingGroupResponse> CreateBillingGroupAsync(CreateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateBillingGroupRequest,CreateBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -883,10 +899,11 @@ namespace Amazon.IoT
 
         internal virtual CreateCertificateFromCsrResponse CreateCertificateFromCsr(CreateCertificateFromCsrRequest request)
         {
-            var marshaller = CreateCertificateFromCsrRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateFromCsrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCertificateFromCsrRequest,CreateCertificateFromCsrResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCertificateFromCsrResponse>(request, options);
         }
 
 
@@ -1104,11 +1121,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         public virtual Task<CreateCertificateFromCsrResponse> CreateCertificateFromCsrAsync(CreateCertificateFromCsrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateCertificateFromCsrRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateFromCsrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateCertificateFromCsrRequest,CreateCertificateFromCsrResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateCertificateFromCsrResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1117,10 +1134,11 @@ namespace Amazon.IoT
 
         internal virtual CreateDynamicThingGroupResponse CreateDynamicThingGroup(CreateDynamicThingGroupRequest request)
         {
-            var marshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDynamicThingGroupRequest,CreateDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDynamicThingGroupResponse>(request, options);
         }
 
 
@@ -1136,11 +1154,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">REST API Reference for CreateDynamicThingGroup Operation</seealso>
         public virtual Task<CreateDynamicThingGroupResponse> CreateDynamicThingGroupAsync(CreateDynamicThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateDynamicThingGroupRequest,CreateDynamicThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateDynamicThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1149,10 +1167,11 @@ namespace Amazon.IoT
 
         internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobResponse>(request, options);
         }
 
 
@@ -1168,11 +1187,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1181,10 +1200,11 @@ namespace Amazon.IoT
 
         internal virtual CreateKeysAndCertificateResponse CreateKeysAndCertificate(CreateKeysAndCertificateRequest request)
         {
-            var marshaller = CreateKeysAndCertificateRequestMarshaller.Instance;
-            var unmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeysAndCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<CreateKeysAndCertificateRequest,CreateKeysAndCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateKeysAndCertificateResponse>(request, options);
         }
 
 
@@ -1278,11 +1298,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">REST API Reference for CreateKeysAndCertificate Operation</seealso>
         public virtual Task<CreateKeysAndCertificateResponse> CreateKeysAndCertificateAsync(CreateKeysAndCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateKeysAndCertificateRequestMarshaller.Instance;
-            var unmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeysAndCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeysAndCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateKeysAndCertificateRequest,CreateKeysAndCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateKeysAndCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1291,10 +1311,11 @@ namespace Amazon.IoT
 
         internal virtual CreateOTAUpdateResponse CreateOTAUpdate(CreateOTAUpdateRequest request)
         {
-            var marshaller = CreateOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateOTAUpdateResponse>(request, options);
         }
 
 
@@ -1310,11 +1331,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
         public virtual Task<CreateOTAUpdateResponse> CreateOTAUpdateAsync(CreateOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateOTAUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1323,10 +1344,11 @@ namespace Amazon.IoT
 
         internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
-            var marshaller = CreatePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePolicyResponse>(request, options);
         }
 
 
@@ -1390,11 +1412,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1403,10 +1425,11 @@ namespace Amazon.IoT
 
         internal virtual CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
         {
-            var marshaller = CreatePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePolicyVersionResponse>(request, options);
         }
 
 
@@ -1532,11 +1555,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public virtual Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1545,10 +1568,11 @@ namespace Amazon.IoT
 
         internal virtual CreateRoleAliasResponse CreateRoleAlias(CreateRoleAliasRequest request)
         {
-            var marshaller = CreateRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRoleAliasResponse>(request, options);
         }
 
 
@@ -1564,11 +1588,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">REST API Reference for CreateRoleAlias Operation</seealso>
         public virtual Task<CreateRoleAliasResponse> CreateRoleAliasAsync(CreateRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateRoleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1577,10 +1601,11 @@ namespace Amazon.IoT
 
         internal virtual CreateScheduledAuditResponse CreateScheduledAudit(CreateScheduledAuditRequest request)
         {
-            var marshaller = CreateScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
 
-            return Invoke<CreateScheduledAuditRequest,CreateScheduledAuditResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateScheduledAuditResponse>(request, options);
         }
 
 
@@ -1596,11 +1621,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateScheduledAudit">REST API Reference for CreateScheduledAudit Operation</seealso>
         public virtual Task<CreateScheduledAuditResponse> CreateScheduledAuditAsync(CreateScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateScheduledAuditRequest,CreateScheduledAuditResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateScheduledAuditResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1609,10 +1634,11 @@ namespace Amazon.IoT
 
         internal virtual CreateSecurityProfileResponse CreateSecurityProfile(CreateSecurityProfileRequest request)
         {
-            var marshaller = CreateSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSecurityProfileRequest,CreateSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSecurityProfileResponse>(request, options);
         }
 
 
@@ -1628,11 +1654,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateSecurityProfile">REST API Reference for CreateSecurityProfile Operation</seealso>
         public virtual Task<CreateSecurityProfileResponse> CreateSecurityProfileAsync(CreateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateSecurityProfileRequest,CreateSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1641,10 +1667,11 @@ namespace Amazon.IoT
 
         internal virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
-            var marshaller = CreateStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStreamResponse>(request, options);
         }
 
 
@@ -1660,11 +1687,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateStreamRequest,CreateStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1673,10 +1700,11 @@ namespace Amazon.IoT
 
         internal virtual CreateThingResponse CreateThing(CreateThingRequest request)
         {
-            var marshaller = CreateThingRequestMarshaller.Instance;
-            var unmarshaller = CreateThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingResponseUnmarshaller.Instance;
 
-            return Invoke<CreateThingRequest,CreateThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateThingResponse>(request, options);
         }
 
 
@@ -1692,11 +1720,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">REST API Reference for CreateThing Operation</seealso>
         public virtual Task<CreateThingResponse> CreateThingAsync(CreateThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateThingRequestMarshaller.Instance;
-            var unmarshaller = CreateThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateThingRequest,CreateThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1705,10 +1733,11 @@ namespace Amazon.IoT
 
         internal virtual CreateThingGroupResponse CreateThingGroup(CreateThingGroupRequest request)
         {
-            var marshaller = CreateThingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateThingGroupRequest,CreateThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateThingGroupResponse>(request, options);
         }
 
 
@@ -1724,11 +1753,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">REST API Reference for CreateThingGroup Operation</seealso>
         public virtual Task<CreateThingGroupResponse> CreateThingGroupAsync(CreateThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateThingGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateThingGroupRequest,CreateThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1737,10 +1766,11 @@ namespace Amazon.IoT
 
         internal virtual CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
         {
-            var marshaller = CreateThingTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
 
-            return Invoke<CreateThingTypeRequest,CreateThingTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateThingTypeResponse>(request, options);
         }
 
 
@@ -1756,11 +1786,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">REST API Reference for CreateThingType Operation</seealso>
         public virtual Task<CreateThingTypeResponse> CreateThingTypeAsync(CreateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateThingTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateThingTypeRequest,CreateThingTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateThingTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1769,10 +1799,11 @@ namespace Amazon.IoT
 
         internal virtual CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request)
         {
-            var marshaller = CreateTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTopicRuleRequest,CreateTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTopicRuleResponse>(request, options);
         }
 
 
@@ -1788,11 +1819,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         public virtual Task<CreateTopicRuleResponse> CreateTopicRuleAsync(CreateTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateTopicRuleRequest,CreateTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1801,10 +1832,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteAccountAuditConfigurationResponse DeleteAccountAuditConfiguration(DeleteAccountAuditConfigurationRequest request)
         {
-            var marshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAccountAuditConfigurationRequest,DeleteAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAccountAuditConfigurationResponse>(request, options);
         }
 
 
@@ -1820,11 +1852,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">REST API Reference for DeleteAccountAuditConfiguration Operation</seealso>
         public virtual Task<DeleteAccountAuditConfigurationResponse> DeleteAccountAuditConfigurationAsync(DeleteAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAccountAuditConfigurationRequest,DeleteAccountAuditConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1833,10 +1865,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
-            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAuthorizerResponse>(request, options);
         }
 
 
@@ -1852,11 +1885,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1865,10 +1898,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteBillingGroupResponse DeleteBillingGroup(DeleteBillingGroupRequest request)
         {
-            var marshaller = DeleteBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBillingGroupRequest,DeleteBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBillingGroupResponse>(request, options);
         }
 
 
@@ -1884,11 +1918,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         public virtual Task<DeleteBillingGroupResponse> DeleteBillingGroupAsync(DeleteBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteBillingGroupRequest,DeleteBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1897,10 +1931,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
         {
-            var marshaller = DeleteCACertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCACertificateResponse>(request, options);
         }
 
 
@@ -1916,11 +1951,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCACertificate">REST API Reference for DeleteCACertificate Operation</seealso>
         public virtual Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteCACertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteCACertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1929,10 +1964,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var marshaller = DeleteCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCertificateResponse>(request, options);
         }
 
 
@@ -1998,11 +2034,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2011,10 +2047,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteDynamicThingGroupResponse DeleteDynamicThingGroup(DeleteDynamicThingGroupRequest request)
         {
-            var marshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDynamicThingGroupRequest,DeleteDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDynamicThingGroupResponse>(request, options);
         }
 
 
@@ -2030,11 +2067,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">REST API Reference for DeleteDynamicThingGroup Operation</seealso>
         public virtual Task<DeleteDynamicThingGroupResponse> DeleteDynamicThingGroupAsync(DeleteDynamicThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteDynamicThingGroupRequest,DeleteDynamicThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteDynamicThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2043,10 +2080,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var marshaller = DeleteJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteJobRequest,DeleteJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteJobResponse>(request, options);
         }
 
 
@@ -2062,11 +2100,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteJobRequest,DeleteJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2075,10 +2113,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteJobExecutionResponse DeleteJobExecution(DeleteJobExecutionRequest request)
         {
-            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteJobExecutionResponse>(request, options);
         }
 
 
@@ -2094,11 +2133,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
         public virtual Task<DeleteJobExecutionResponse> DeleteJobExecutionAsync(DeleteJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteJobExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2107,10 +2146,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteOTAUpdateResponse DeleteOTAUpdate(DeleteOTAUpdateRequest request)
         {
-            var marshaller = DeleteOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteOTAUpdateResponse>(request, options);
         }
 
 
@@ -2126,11 +2166,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
         public virtual Task<DeleteOTAUpdateResponse> DeleteOTAUpdateAsync(DeleteOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteOTAUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2139,10 +2179,11 @@ namespace Amazon.IoT
 
         internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyResponse>(request, options);
         }
 
 
@@ -2213,11 +2254,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2226,10 +2267,11 @@ namespace Amazon.IoT
 
         internal virtual DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
         {
-            var marshaller = DeletePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyVersionResponse>(request, options);
         }
 
 
@@ -2289,11 +2331,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public virtual Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeletePolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2302,10 +2344,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
         {
-            var marshaller = DeleteRegistrationCodeRequestMarshaller.Instance;
-            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRegistrationCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRegistrationCodeResponse>(request, options);
         }
 
 
@@ -2321,11 +2364,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">REST API Reference for DeleteRegistrationCode Operation</seealso>
         public virtual Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRegistrationCodeRequestMarshaller.Instance;
-            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRegistrationCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteRegistrationCodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2334,10 +2377,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteRoleAliasResponse DeleteRoleAlias(DeleteRoleAliasRequest request)
         {
-            var marshaller = DeleteRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRoleAliasResponse>(request, options);
         }
 
 
@@ -2353,11 +2397,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">REST API Reference for DeleteRoleAlias Operation</seealso>
         public virtual Task<DeleteRoleAliasResponse> DeleteRoleAliasAsync(DeleteRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteRoleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2366,10 +2410,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteScheduledAuditResponse DeleteScheduledAudit(DeleteScheduledAuditRequest request)
         {
-            var marshaller = DeleteScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteScheduledAuditRequest,DeleteScheduledAuditResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteScheduledAuditResponse>(request, options);
         }
 
 
@@ -2385,11 +2430,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteScheduledAudit">REST API Reference for DeleteScheduledAudit Operation</seealso>
         public virtual Task<DeleteScheduledAuditResponse> DeleteScheduledAuditAsync(DeleteScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteScheduledAuditRequest,DeleteScheduledAuditResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteScheduledAuditResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2398,10 +2443,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteSecurityProfileResponse DeleteSecurityProfile(DeleteSecurityProfileRequest request)
         {
-            var marshaller = DeleteSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSecurityProfileRequest,DeleteSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSecurityProfileResponse>(request, options);
         }
 
 
@@ -2417,11 +2463,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteSecurityProfile">REST API Reference for DeleteSecurityProfile Operation</seealso>
         public virtual Task<DeleteSecurityProfileResponse> DeleteSecurityProfileAsync(DeleteSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSecurityProfileRequest,DeleteSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2430,10 +2476,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
-            var marshaller = DeleteStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteStreamResponse>(request, options);
         }
 
 
@@ -2449,11 +2496,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2462,10 +2509,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteThingResponse DeleteThing(DeleteThingRequest request)
         {
-            var marshaller = DeleteThingRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteThingRequest,DeleteThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteThingResponse>(request, options);
         }
 
 
@@ -2522,11 +2570,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public virtual Task<DeleteThingResponse> DeleteThingAsync(DeleteThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteThingRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteThingRequest,DeleteThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2535,10 +2583,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteThingGroupResponse DeleteThingGroup(DeleteThingGroupRequest request)
         {
-            var marshaller = DeleteThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteThingGroupRequest,DeleteThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteThingGroupResponse>(request, options);
         }
 
 
@@ -2554,11 +2603,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">REST API Reference for DeleteThingGroup Operation</seealso>
         public virtual Task<DeleteThingGroupResponse> DeleteThingGroupAsync(DeleteThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteThingGroupRequest,DeleteThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2567,10 +2616,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
         {
-            var marshaller = DeleteThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteThingTypeRequest,DeleteThingTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteThingTypeResponse>(request, options);
         }
 
 
@@ -2586,11 +2636,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingType">REST API Reference for DeleteThingType Operation</seealso>
         public virtual Task<DeleteThingTypeResponse> DeleteThingTypeAsync(DeleteThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteThingTypeRequest,DeleteThingTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteThingTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2599,10 +2649,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteTopicRuleResponse DeleteTopicRule(DeleteTopicRuleRequest request)
         {
-            var marshaller = DeleteTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTopicRuleResponse>(request, options);
         }
 
 
@@ -2652,11 +2703,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteTopicRule">REST API Reference for DeleteTopicRule Operation</seealso>
         public virtual Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2665,10 +2716,11 @@ namespace Amazon.IoT
 
         internal virtual DeleteV2LoggingLevelResponse DeleteV2LoggingLevel(DeleteV2LoggingLevelRequest request)
         {
-            var marshaller = DeleteV2LoggingLevelRequestMarshaller.Instance;
-            var unmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteV2LoggingLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteV2LoggingLevelRequest,DeleteV2LoggingLevelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteV2LoggingLevelResponse>(request, options);
         }
 
 
@@ -2684,11 +2736,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteV2LoggingLevel">REST API Reference for DeleteV2LoggingLevel Operation</seealso>
         public virtual Task<DeleteV2LoggingLevelResponse> DeleteV2LoggingLevelAsync(DeleteV2LoggingLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteV2LoggingLevelRequestMarshaller.Instance;
-            var unmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteV2LoggingLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteV2LoggingLevelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteV2LoggingLevelRequest,DeleteV2LoggingLevelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteV2LoggingLevelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2697,10 +2749,11 @@ namespace Amazon.IoT
 
         internal virtual DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
         {
-            var marshaller = DeprecateThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeprecateThingTypeResponse>(request, options);
         }
 
 
@@ -2716,11 +2769,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingType">REST API Reference for DeprecateThingType Operation</seealso>
         public virtual Task<DeprecateThingTypeResponse> DeprecateThingTypeAsync(DeprecateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeprecateThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeprecateThingTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2729,10 +2782,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeAccountAuditConfigurationResponse DescribeAccountAuditConfiguration(DescribeAccountAuditConfigurationRequest request)
         {
-            var marshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountAuditConfigurationRequest,DescribeAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountAuditConfigurationResponse>(request, options);
         }
 
 
@@ -2748,11 +2802,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">REST API Reference for DescribeAccountAuditConfiguration Operation</seealso>
         public virtual Task<DescribeAccountAuditConfigurationResponse> DescribeAccountAuditConfigurationAsync(DescribeAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAccountAuditConfigurationRequest,DescribeAccountAuditConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2761,10 +2815,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeAuditTaskResponse DescribeAuditTask(DescribeAuditTaskRequest request)
         {
-            var marshaller = DescribeAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAuditTaskRequest,DescribeAuditTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAuditTaskResponse>(request, options);
         }
 
 
@@ -2780,11 +2835,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditTask">REST API Reference for DescribeAuditTask Operation</seealso>
         public virtual Task<DescribeAuditTaskResponse> DescribeAuditTaskAsync(DescribeAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAuditTaskRequest,DescribeAuditTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAuditTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2793,10 +2848,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeAuthorizerResponse DescribeAuthorizer(DescribeAuthorizerRequest request)
         {
-            var marshaller = DescribeAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAuthorizerRequest,DescribeAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAuthorizerResponse>(request, options);
         }
 
 
@@ -2812,11 +2868,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuthorizer">REST API Reference for DescribeAuthorizer Operation</seealso>
         public virtual Task<DescribeAuthorizerResponse> DescribeAuthorizerAsync(DescribeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAuthorizerRequest,DescribeAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2825,10 +2881,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeBillingGroupResponse DescribeBillingGroup(DescribeBillingGroupRequest request)
         {
-            var marshaller = DescribeBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBillingGroupRequest,DescribeBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBillingGroupResponse>(request, options);
         }
 
 
@@ -2844,11 +2901,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">REST API Reference for DescribeBillingGroup Operation</seealso>
         public virtual Task<DescribeBillingGroupResponse> DescribeBillingGroupAsync(DescribeBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBillingGroupRequest,DescribeBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2857,10 +2914,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
         {
-            var marshaller = DescribeCACertificateRequestMarshaller.Instance;
-            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCACertificateResponse>(request, options);
         }
 
 
@@ -2876,11 +2934,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificate">REST API Reference for DescribeCACertificate Operation</seealso>
         public virtual Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCACertificateRequestMarshaller.Instance;
-            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeCACertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2889,10 +2947,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
-            var marshaller = DescribeCertificateRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCertificateRequest,DescribeCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCertificateResponse>(request, options);
         }
 
 
@@ -2944,11 +3003,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCertificateRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeCertificateRequest,DescribeCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2957,10 +3016,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeDefaultAuthorizerResponse DescribeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request)
         {
-            var marshaller = DescribeDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDefaultAuthorizerRequest,DescribeDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDefaultAuthorizerResponse>(request, options);
         }
 
 
@@ -2976,11 +3036,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">REST API Reference for DescribeDefaultAuthorizer Operation</seealso>
         public virtual Task<DescribeDefaultAuthorizerResponse> DescribeDefaultAuthorizerAsync(DescribeDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeDefaultAuthorizerRequest,DescribeDefaultAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2989,10 +3049,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
-            var marshaller = DescribeEndpointRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointResponse>(request, options);
         }
 
 
@@ -3036,11 +3097,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual Task<DescribeEndpointResponse> DescribeEndpointAsync(DescribeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEndpointRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3049,10 +3110,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeEventConfigurationsResponse DescribeEventConfigurations(DescribeEventConfigurationsRequest request)
         {
-            var marshaller = DescribeEventConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventConfigurationsRequest,DescribeEventConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventConfigurationsResponse>(request, options);
         }
 
 
@@ -3068,11 +3130,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">REST API Reference for DescribeEventConfigurations Operation</seealso>
         public virtual Task<DescribeEventConfigurationsResponse> DescribeEventConfigurationsAsync(DescribeEventConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEventConfigurationsRequest,DescribeEventConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEventConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3081,10 +3143,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeIndexResponse DescribeIndex(DescribeIndexRequest request)
         {
-            var marshaller = DescribeIndexRequestMarshaller.Instance;
-            var unmarshaller = DescribeIndexResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIndexResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIndexRequest,DescribeIndexResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIndexResponse>(request, options);
         }
 
 
@@ -3100,11 +3163,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         public virtual Task<DescribeIndexResponse> DescribeIndexAsync(DescribeIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeIndexRequestMarshaller.Instance;
-            var unmarshaller = DescribeIndexResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIndexResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeIndexRequest,DescribeIndexResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3113,10 +3176,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var marshaller = DescribeJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobResponse>(request, options);
         }
 
 
@@ -3132,11 +3196,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeJobRequest,DescribeJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3145,10 +3209,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeJobExecutionResponse DescribeJobExecution(DescribeJobExecutionRequest request)
         {
-            var marshaller = DescribeJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobExecutionRequest,DescribeJobExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobExecutionResponse>(request, options);
         }
 
 
@@ -3164,11 +3229,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         public virtual Task<DescribeJobExecutionResponse> DescribeJobExecutionAsync(DescribeJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeJobExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeJobExecutionRequest,DescribeJobExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeJobExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3177,10 +3242,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeRoleAliasResponse DescribeRoleAlias(DescribeRoleAliasRequest request)
         {
-            var marshaller = DescribeRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRoleAliasRequest,DescribeRoleAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRoleAliasResponse>(request, options);
         }
 
 
@@ -3196,11 +3262,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeRoleAlias">REST API Reference for DescribeRoleAlias Operation</seealso>
         public virtual Task<DescribeRoleAliasResponse> DescribeRoleAliasAsync(DescribeRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRoleAliasResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeRoleAliasRequest,DescribeRoleAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeRoleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3209,10 +3275,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeScheduledAuditResponse DescribeScheduledAudit(DescribeScheduledAuditRequest request)
         {
-            var marshaller = DescribeScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScheduledAuditRequest,DescribeScheduledAuditResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScheduledAuditResponse>(request, options);
         }
 
 
@@ -3228,11 +3295,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeScheduledAudit">REST API Reference for DescribeScheduledAudit Operation</seealso>
         public virtual Task<DescribeScheduledAuditResponse> DescribeScheduledAuditAsync(DescribeScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeScheduledAuditRequest,DescribeScheduledAuditResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeScheduledAuditResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3241,10 +3308,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeSecurityProfileResponse DescribeSecurityProfile(DescribeSecurityProfileRequest request)
         {
-            var marshaller = DescribeSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSecurityProfileRequest,DescribeSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSecurityProfileResponse>(request, options);
         }
 
 
@@ -3260,11 +3328,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile">REST API Reference for DescribeSecurityProfile Operation</seealso>
         public virtual Task<DescribeSecurityProfileResponse> DescribeSecurityProfileAsync(DescribeSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeSecurityProfileRequest,DescribeSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3273,10 +3341,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStreamResponse>(request, options);
         }
 
 
@@ -3292,11 +3361,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3305,10 +3374,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeThingResponse DescribeThing(DescribeThingRequest request)
         {
-            var marshaller = DescribeThingRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeThingRequest,DescribeThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeThingResponse>(request, options);
         }
 
 
@@ -3360,11 +3430,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThing">REST API Reference for DescribeThing Operation</seealso>
         public virtual Task<DescribeThingResponse> DescribeThingAsync(DescribeThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeThingRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeThingRequest,DescribeThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3373,10 +3443,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeThingGroupResponse DescribeThingGroup(DescribeThingGroupRequest request)
         {
-            var marshaller = DescribeThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeThingGroupRequest,DescribeThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeThingGroupResponse>(request, options);
         }
 
 
@@ -3392,11 +3463,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingGroup">REST API Reference for DescribeThingGroup Operation</seealso>
         public virtual Task<DescribeThingGroupResponse> DescribeThingGroupAsync(DescribeThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeThingGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeThingGroupRequest,DescribeThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3405,10 +3476,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeThingRegistrationTaskResponse DescribeThingRegistrationTask(DescribeThingRegistrationTaskRequest request)
         {
-            var marshaller = DescribeThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeThingRegistrationTaskRequest,DescribeThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeThingRegistrationTaskResponse>(request, options);
         }
 
 
@@ -3424,11 +3496,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingRegistrationTask">REST API Reference for DescribeThingRegistrationTask Operation</seealso>
         public virtual Task<DescribeThingRegistrationTaskResponse> DescribeThingRegistrationTaskAsync(DescribeThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeThingRegistrationTaskRequest,DescribeThingRegistrationTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3437,10 +3509,11 @@ namespace Amazon.IoT
 
         internal virtual DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
         {
-            var marshaller = DescribeThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeThingTypeRequest,DescribeThingTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeThingTypeResponse>(request, options);
         }
 
 
@@ -3456,11 +3529,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingType">REST API Reference for DescribeThingType Operation</seealso>
         public virtual Task<DescribeThingTypeResponse> DescribeThingTypeAsync(DescribeThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeThingTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThingTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeThingTypeRequest,DescribeThingTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeThingTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3469,10 +3542,11 @@ namespace Amazon.IoT
 
         internal virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
-            var marshaller = DetachPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachPolicyResponse>(request, options);
         }
 
 
@@ -3488,11 +3562,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3502,10 +3576,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of DetachPolicy.")]
         internal virtual DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
         {
-            var marshaller = DetachPrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPrincipalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DetachPrincipalPolicyRequest,DetachPrincipalPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachPrincipalPolicyResponse>(request, options);
         }
 
 
@@ -3566,11 +3641,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of DetachPolicy.")]
         public virtual Task<DetachPrincipalPolicyResponse> DetachPrincipalPolicyAsync(DetachPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachPrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPrincipalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachPrincipalPolicyRequest,DetachPrincipalPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachPrincipalPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3579,10 +3654,11 @@ namespace Amazon.IoT
 
         internal virtual DetachSecurityProfileResponse DetachSecurityProfile(DetachSecurityProfileRequest request)
         {
-            var marshaller = DetachSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DetachSecurityProfileRequest,DetachSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachSecurityProfileResponse>(request, options);
         }
 
 
@@ -3598,11 +3674,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachSecurityProfile">REST API Reference for DetachSecurityProfile Operation</seealso>
         public virtual Task<DetachSecurityProfileResponse> DetachSecurityProfileAsync(DetachSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachSecurityProfileRequest,DetachSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3611,10 +3687,11 @@ namespace Amazon.IoT
 
         internal virtual DetachThingPrincipalResponse DetachThingPrincipal(DetachThingPrincipalRequest request)
         {
-            var marshaller = DetachThingPrincipalRequestMarshaller.Instance;
-            var unmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachThingPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
 
-            return Invoke<DetachThingPrincipalRequest,DetachThingPrincipalResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachThingPrincipalResponse>(request, options);
         }
 
 
@@ -3674,11 +3751,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">REST API Reference for DetachThingPrincipal Operation</seealso>
         public virtual Task<DetachThingPrincipalResponse> DetachThingPrincipalAsync(DetachThingPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetachThingPrincipalRequestMarshaller.Instance;
-            var unmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachThingPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachThingPrincipalResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachThingPrincipalRequest,DetachThingPrincipalResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DetachThingPrincipalResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3687,10 +3764,11 @@ namespace Amazon.IoT
 
         internal virtual DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request)
         {
-            var marshaller = DisableTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DisableTopicRuleRequest,DisableTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableTopicRuleResponse>(request, options);
         }
 
 
@@ -3706,11 +3784,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisableTopicRule">REST API Reference for DisableTopicRule Operation</seealso>
         public virtual Task<DisableTopicRuleResponse> DisableTopicRuleAsync(DisableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisableTopicRuleRequest,DisableTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisableTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3719,10 +3797,11 @@ namespace Amazon.IoT
 
         internal virtual EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
         {
-            var marshaller = EnableTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<EnableTopicRuleRequest,EnableTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableTopicRuleResponse>(request, options);
         }
 
 
@@ -3738,11 +3817,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         public virtual Task<EnableTopicRuleResponse> EnableTopicRuleAsync(EnableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableTopicRuleRequest,EnableTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnableTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3751,10 +3830,11 @@ namespace Amazon.IoT
 
         internal virtual GetEffectivePoliciesResponse GetEffectivePolicies(GetEffectivePoliciesRequest request)
         {
-            var marshaller = GetEffectivePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectivePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<GetEffectivePoliciesRequest,GetEffectivePoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEffectivePoliciesResponse>(request, options);
         }
 
 
@@ -3770,11 +3850,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">REST API Reference for GetEffectivePolicies Operation</seealso>
         public virtual Task<GetEffectivePoliciesResponse> GetEffectivePoliciesAsync(GetEffectivePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEffectivePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectivePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectivePoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEffectivePoliciesRequest,GetEffectivePoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEffectivePoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3783,10 +3863,11 @@ namespace Amazon.IoT
 
         internal virtual GetIndexingConfigurationResponse GetIndexingConfiguration(GetIndexingConfigurationRequest request)
         {
-            var marshaller = GetIndexingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIndexingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetIndexingConfigurationRequest,GetIndexingConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIndexingConfigurationResponse>(request, options);
         }
 
 
@@ -3802,11 +3883,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">REST API Reference for GetIndexingConfiguration Operation</seealso>
         public virtual Task<GetIndexingConfigurationResponse> GetIndexingConfigurationAsync(GetIndexingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIndexingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIndexingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexingConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetIndexingConfigurationRequest,GetIndexingConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetIndexingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3815,10 +3896,11 @@ namespace Amazon.IoT
 
         internal virtual GetJobDocumentResponse GetJobDocument(GetJobDocumentRequest request)
         {
-            var marshaller = GetJobDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<GetJobDocumentRequest,GetJobDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetJobDocumentResponse>(request, options);
         }
 
 
@@ -3834,11 +3916,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetJobDocument">REST API Reference for GetJobDocument Operation</seealso>
         public virtual Task<GetJobDocumentResponse> GetJobDocumentAsync(GetJobDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetJobDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobDocumentResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetJobDocumentRequest,GetJobDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetJobDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3847,10 +3929,11 @@ namespace Amazon.IoT
 
         internal virtual GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request)
         {
-            var marshaller = GetLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetLoggingOptionsRequest,GetLoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLoggingOptionsResponse>(request, options);
         }
 
 
@@ -3866,11 +3949,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         public virtual Task<GetLoggingOptionsResponse> GetLoggingOptionsAsync(GetLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetLoggingOptionsRequest,GetLoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetLoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3879,10 +3962,11 @@ namespace Amazon.IoT
 
         internal virtual GetOTAUpdateResponse GetOTAUpdate(GetOTAUpdateRequest request)
         {
-            var marshaller = GetOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetOTAUpdateResponse>(request, options);
         }
 
 
@@ -3898,11 +3982,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
         public virtual Task<GetOTAUpdateResponse> GetOTAUpdateAsync(GetOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetOTAUpdateRequestMarshaller.Instance;
-            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOTAUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetOTAUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3911,10 +3995,11 @@ namespace Amazon.IoT
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPolicyResponse>(request, options);
         }
 
 
@@ -3967,11 +4052,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetPolicyRequest,GetPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3980,10 +4065,11 @@ namespace Amazon.IoT
 
         internal virtual GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
         {
-            var marshaller = GetPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
 
-            return Invoke<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPolicyVersionResponse>(request, options);
         }
 
 
@@ -4037,11 +4123,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public virtual Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetPolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4050,10 +4136,11 @@ namespace Amazon.IoT
 
         internal virtual GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
         {
-            var marshaller = GetRegistrationCodeRequestMarshaller.Instance;
-            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistrationCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
 
-            return Invoke<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRegistrationCodeResponse>(request, options);
         }
 
 
@@ -4069,11 +4156,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         public virtual Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRegistrationCodeRequestMarshaller.Instance;
-            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistrationCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetRegistrationCodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4082,10 +4169,11 @@ namespace Amazon.IoT
 
         internal virtual GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request)
         {
-            var marshaller = GetTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetTopicRuleRequest,GetTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTopicRuleResponse>(request, options);
         }
 
 
@@ -4131,11 +4219,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">REST API Reference for GetTopicRule Operation</seealso>
         public virtual Task<GetTopicRuleResponse> GetTopicRuleAsync(GetTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetTopicRuleRequest,GetTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4144,10 +4232,11 @@ namespace Amazon.IoT
 
         internal virtual GetV2LoggingOptionsResponse GetV2LoggingOptions(GetV2LoggingOptionsRequest request)
         {
-            var marshaller = GetV2LoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetV2LoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetV2LoggingOptionsRequest,GetV2LoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetV2LoggingOptionsResponse>(request, options);
         }
 
 
@@ -4163,11 +4252,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">REST API Reference for GetV2LoggingOptions Operation</seealso>
         public virtual Task<GetV2LoggingOptionsResponse> GetV2LoggingOptionsAsync(GetV2LoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetV2LoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetV2LoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetV2LoggingOptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetV2LoggingOptionsRequest,GetV2LoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetV2LoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4176,10 +4265,11 @@ namespace Amazon.IoT
 
         internal virtual ListActiveViolationsResponse ListActiveViolations(ListActiveViolationsRequest request)
         {
-            var marshaller = ListActiveViolationsRequestMarshaller.Instance;
-            var unmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActiveViolationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListActiveViolationsRequest,ListActiveViolationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListActiveViolationsResponse>(request, options);
         }
 
 
@@ -4195,11 +4285,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">REST API Reference for ListActiveViolations Operation</seealso>
         public virtual Task<ListActiveViolationsResponse> ListActiveViolationsAsync(ListActiveViolationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListActiveViolationsRequestMarshaller.Instance;
-            var unmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActiveViolationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListActiveViolationsRequest,ListActiveViolationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListActiveViolationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4208,10 +4298,11 @@ namespace Amazon.IoT
 
         internal virtual ListAttachedPoliciesResponse ListAttachedPolicies(ListAttachedPoliciesRequest request)
         {
-            var marshaller = ListAttachedPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachedPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAttachedPoliciesRequest,ListAttachedPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAttachedPoliciesResponse>(request, options);
         }
 
 
@@ -4227,11 +4318,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAttachedPolicies">REST API Reference for ListAttachedPolicies Operation</seealso>
         public virtual Task<ListAttachedPoliciesResponse> ListAttachedPoliciesAsync(ListAttachedPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAttachedPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachedPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAttachedPoliciesRequest,ListAttachedPoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAttachedPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4240,10 +4331,11 @@ namespace Amazon.IoT
 
         internal virtual ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request)
         {
-            var marshaller = ListAuditFindingsRequestMarshaller.Instance;
-            var unmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAuditFindingsRequest,ListAuditFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAuditFindingsResponse>(request, options);
         }
 
 
@@ -4259,11 +4351,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
         public virtual Task<ListAuditFindingsResponse> ListAuditFindingsAsync(ListAuditFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAuditFindingsRequestMarshaller.Instance;
-            var unmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAuditFindingsRequest,ListAuditFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAuditFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4272,10 +4364,11 @@ namespace Amazon.IoT
 
         internal virtual ListAuditTasksResponse ListAuditTasks(ListAuditTasksRequest request)
         {
-            var marshaller = ListAuditTasksRequestMarshaller.Instance;
-            var unmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
 
-            return Invoke<ListAuditTasksRequest,ListAuditTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAuditTasksResponse>(request, options);
         }
 
 
@@ -4291,11 +4384,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">REST API Reference for ListAuditTasks Operation</seealso>
         public virtual Task<ListAuditTasksResponse> ListAuditTasksAsync(ListAuditTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAuditTasksRequestMarshaller.Instance;
-            var unmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuditTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAuditTasksRequest,ListAuditTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAuditTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4304,10 +4397,11 @@ namespace Amazon.IoT
 
         internal virtual ListAuthorizersResponse ListAuthorizers(ListAuthorizersRequest request)
         {
-            var marshaller = ListAuthorizersRequestMarshaller.Instance;
-            var unmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuthorizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
 
-            return Invoke<ListAuthorizersRequest,ListAuthorizersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAuthorizersResponse>(request, options);
         }
 
 
@@ -4323,11 +4417,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">REST API Reference for ListAuthorizers Operation</seealso>
         public virtual Task<ListAuthorizersResponse> ListAuthorizersAsync(ListAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAuthorizersRequestMarshaller.Instance;
-            var unmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuthorizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuthorizersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAuthorizersRequest,ListAuthorizersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAuthorizersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4336,10 +4430,11 @@ namespace Amazon.IoT
 
         internal virtual ListBillingGroupsResponse ListBillingGroups(ListBillingGroupsRequest request)
         {
-            var marshaller = ListBillingGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBillingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBillingGroupsRequest,ListBillingGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBillingGroupsResponse>(request, options);
         }
 
 
@@ -4355,11 +4450,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         public virtual Task<ListBillingGroupsResponse> ListBillingGroupsAsync(ListBillingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListBillingGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBillingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListBillingGroupsRequest,ListBillingGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListBillingGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4368,10 +4463,11 @@ namespace Amazon.IoT
 
         internal virtual ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
         {
-            var marshaller = ListCACertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCACertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCACertificatesResponse>(request, options);
         }
 
 
@@ -4387,11 +4483,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">REST API Reference for ListCACertificates Operation</seealso>
         public virtual Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCACertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCACertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListCACertificatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4400,10 +4496,11 @@ namespace Amazon.IoT
 
         internal virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
-            var marshaller = ListCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCertificatesResponse>(request, options);
         }
 
 
@@ -4456,11 +4553,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListCertificatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4469,10 +4566,11 @@ namespace Amazon.IoT
 
         internal virtual ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
         {
-            var marshaller = ListCertificatesByCARequestMarshaller.Instance;
-            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesByCARequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
 
-            return Invoke<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCertificatesByCAResponse>(request, options);
         }
 
 
@@ -4488,11 +4586,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         public virtual Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCertificatesByCARequestMarshaller.Instance;
-            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesByCARequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListCertificatesByCAResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4501,10 +4599,11 @@ namespace Amazon.IoT
 
         internal virtual ListIndicesResponse ListIndices(ListIndicesRequest request)
         {
-            var marshaller = ListIndicesRequestMarshaller.Instance;
-            var unmarshaller = ListIndicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
 
-            return Invoke<ListIndicesRequest,ListIndicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListIndicesResponse>(request, options);
         }
 
 
@@ -4520,11 +4619,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListIndicesRequestMarshaller.Instance;
-            var unmarshaller = ListIndicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListIndicesRequest,ListIndicesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListIndicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4533,10 +4632,11 @@ namespace Amazon.IoT
 
         internal virtual ListJobExecutionsForJobResponse ListJobExecutionsForJob(ListJobExecutionsForJobRequest request)
         {
-            var marshaller = ListJobExecutionsForJobRequestMarshaller.Instance;
-            var unmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobExecutionsForJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobExecutionsForJobRequest,ListJobExecutionsForJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobExecutionsForJobResponse>(request, options);
         }
 
 
@@ -4552,11 +4652,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForJob">REST API Reference for ListJobExecutionsForJob Operation</seealso>
         public virtual Task<ListJobExecutionsForJobResponse> ListJobExecutionsForJobAsync(ListJobExecutionsForJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobExecutionsForJobRequestMarshaller.Instance;
-            var unmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobExecutionsForJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobExecutionsForJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListJobExecutionsForJobRequest,ListJobExecutionsForJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListJobExecutionsForJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4565,10 +4665,11 @@ namespace Amazon.IoT
 
         internal virtual ListJobExecutionsForThingResponse ListJobExecutionsForThing(ListJobExecutionsForThingRequest request)
         {
-            var marshaller = ListJobExecutionsForThingRequestMarshaller.Instance;
-            var unmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobExecutionsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobExecutionsForThingRequest,ListJobExecutionsForThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobExecutionsForThingResponse>(request, options);
         }
 
 
@@ -4584,11 +4685,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing">REST API Reference for ListJobExecutionsForThing Operation</seealso>
         public virtual Task<ListJobExecutionsForThingResponse> ListJobExecutionsForThingAsync(ListJobExecutionsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobExecutionsForThingRequestMarshaller.Instance;
-            var unmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobExecutionsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobExecutionsForThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListJobExecutionsForThingRequest,ListJobExecutionsForThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListJobExecutionsForThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4597,10 +4698,11 @@ namespace Amazon.IoT
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
 
@@ -4616,11 +4718,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4629,10 +4731,11 @@ namespace Amazon.IoT
 
         internal virtual ListOTAUpdatesResponse ListOTAUpdates(ListOTAUpdatesRequest request)
         {
-            var marshaller = ListOTAUpdatesRequestMarshaller.Instance;
-            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOTAUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOTAUpdatesResponse>(request, options);
         }
 
 
@@ -4648,11 +4751,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
         public virtual Task<ListOTAUpdatesResponse> ListOTAUpdatesAsync(ListOTAUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListOTAUpdatesRequestMarshaller.Instance;
-            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOTAUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListOTAUpdatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4661,10 +4764,11 @@ namespace Amazon.IoT
 
         internal virtual ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
         {
-            var marshaller = ListOutgoingCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutgoingCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
 
-            return Invoke<ListOutgoingCertificatesRequest,ListOutgoingCertificatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOutgoingCertificatesResponse>(request, options);
         }
 
 
@@ -4680,11 +4784,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">REST API Reference for ListOutgoingCertificates Operation</seealso>
         public virtual Task<ListOutgoingCertificatesResponse> ListOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListOutgoingCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutgoingCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListOutgoingCertificatesRequest,ListOutgoingCertificatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListOutgoingCertificatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4693,10 +4797,11 @@ namespace Amazon.IoT
 
         internal virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPoliciesResponse>(request, options);
         }
 
 
@@ -4743,11 +4848,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4757,10 +4862,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of ListTargetsForPolicy.")]
         internal virtual ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
         {
-            var marshaller = ListPolicyPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPolicyPrincipalsRequest,ListPolicyPrincipalsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPolicyPrincipalsResponse>(request, options);
         }
 
 
@@ -4777,11 +4883,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of ListTargetsForPolicy.")]
         public virtual Task<ListPolicyPrincipalsResponse> ListPolicyPrincipalsAsync(ListPolicyPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPolicyPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPolicyPrincipalsRequest,ListPolicyPrincipalsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPolicyPrincipalsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4790,10 +4896,11 @@ namespace Amazon.IoT
 
         internal virtual ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
         {
-            var marshaller = ListPolicyVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPolicyVersionsResponse>(request, options);
         }
 
 
@@ -4845,11 +4952,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public virtual Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPolicyVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPolicyVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4859,10 +4966,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         internal virtual ListPrincipalPoliciesResponse ListPrincipalPolicies(ListPrincipalPoliciesRequest request)
         {
-            var marshaller = ListPrincipalPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPrincipalPoliciesRequest,ListPrincipalPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPrincipalPoliciesResponse>(request, options);
         }
 
 
@@ -4923,11 +5031,11 @@ namespace Amazon.IoT
         [Obsolete("Deprecated in favor of ListAttachedPolicies.")]
         public virtual Task<ListPrincipalPoliciesResponse> ListPrincipalPoliciesAsync(ListPrincipalPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPrincipalPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalPoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPrincipalPoliciesRequest,ListPrincipalPoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPrincipalPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4936,10 +5044,11 @@ namespace Amazon.IoT
 
         internal virtual ListPrincipalThingsResponse ListPrincipalThings(ListPrincipalThingsRequest request)
         {
-            var marshaller = ListPrincipalThingsRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalThingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPrincipalThingsRequest,ListPrincipalThingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPrincipalThingsResponse>(request, options);
         }
 
 
@@ -4991,11 +5100,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThings">REST API Reference for ListPrincipalThings Operation</seealso>
         public virtual Task<ListPrincipalThingsResponse> ListPrincipalThingsAsync(ListPrincipalThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPrincipalThingsRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalThingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalThingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPrincipalThingsRequest,ListPrincipalThingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPrincipalThingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5004,10 +5113,11 @@ namespace Amazon.IoT
 
         internal virtual ListRoleAliasesResponse ListRoleAliases(ListRoleAliasesRequest request)
         {
-            var marshaller = ListRoleAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
 
-            return Invoke<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRoleAliasesResponse>(request, options);
         }
 
 
@@ -5023,11 +5133,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">REST API Reference for ListRoleAliases Operation</seealso>
         public virtual Task<ListRoleAliasesResponse> ListRoleAliasesAsync(ListRoleAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRoleAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListRoleAliasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5036,10 +5146,11 @@ namespace Amazon.IoT
 
         internal virtual ListScheduledAuditsResponse ListScheduledAudits(ListScheduledAuditsRequest request)
         {
-            var marshaller = ListScheduledAuditsRequestMarshaller.Instance;
-            var unmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledAuditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
 
-            return Invoke<ListScheduledAuditsRequest,ListScheduledAuditsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListScheduledAuditsResponse>(request, options);
         }
 
 
@@ -5055,11 +5166,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">REST API Reference for ListScheduledAudits Operation</seealso>
         public virtual Task<ListScheduledAuditsResponse> ListScheduledAuditsAsync(ListScheduledAuditsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListScheduledAuditsRequestMarshaller.Instance;
-            var unmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledAuditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListScheduledAuditsRequest,ListScheduledAuditsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListScheduledAuditsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5068,10 +5179,11 @@ namespace Amazon.IoT
 
         internal virtual ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest request)
         {
-            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecurityProfilesResponse>(request, options);
         }
 
 
@@ -5087,11 +5199,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">REST API Reference for ListSecurityProfiles Operation</seealso>
         public virtual Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(ListSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSecurityProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5100,10 +5212,11 @@ namespace Amazon.IoT
 
         internal virtual ListSecurityProfilesForTargetResponse ListSecurityProfilesForTarget(ListSecurityProfilesForTargetRequest request)
         {
-            var marshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecurityProfilesForTargetRequest,ListSecurityProfilesForTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecurityProfilesForTargetResponse>(request, options);
         }
 
 
@@ -5119,11 +5232,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfilesForTarget">REST API Reference for ListSecurityProfilesForTarget Operation</seealso>
         public virtual Task<ListSecurityProfilesForTargetResponse> ListSecurityProfilesForTargetAsync(ListSecurityProfilesForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSecurityProfilesForTargetRequest,ListSecurityProfilesForTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSecurityProfilesForTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5132,10 +5245,11 @@ namespace Amazon.IoT
 
         internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListStreamsResponse>(request, options);
         }
 
 
@@ -5151,11 +5265,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListStreamsRequest,ListStreamsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5164,10 +5278,11 @@ namespace Amazon.IoT
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -5183,11 +5298,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5196,10 +5311,11 @@ namespace Amazon.IoT
 
         internal virtual ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request)
         {
-            var marshaller = ListTargetsForPolicyRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTargetsForPolicyResponse>(request, options);
         }
 
 
@@ -5215,11 +5331,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
         public virtual Task<ListTargetsForPolicyResponse> ListTargetsForPolicyAsync(ListTargetsForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTargetsForPolicyRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTargetsForPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5228,10 +5344,11 @@ namespace Amazon.IoT
 
         internal virtual ListTargetsForSecurityProfileResponse ListTargetsForSecurityProfile(ListTargetsForSecurityProfileRequest request)
         {
-            var marshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<ListTargetsForSecurityProfileRequest,ListTargetsForSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTargetsForSecurityProfileResponse>(request, options);
         }
 
 
@@ -5247,11 +5364,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForSecurityProfile">REST API Reference for ListTargetsForSecurityProfile Operation</seealso>
         public virtual Task<ListTargetsForSecurityProfileResponse> ListTargetsForSecurityProfileAsync(ListTargetsForSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTargetsForSecurityProfileRequest,ListTargetsForSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTargetsForSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5260,10 +5377,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingGroupsResponse ListThingGroups(ListThingGroupsRequest request)
         {
-            var marshaller = ListThingGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingGroupsRequest,ListThingGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingGroupsResponse>(request, options);
         }
 
 
@@ -5279,11 +5397,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">REST API Reference for ListThingGroups Operation</seealso>
         public virtual Task<ListThingGroupsResponse> ListThingGroupsAsync(ListThingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingGroupsRequest,ListThingGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5292,10 +5410,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingGroupsForThingResponse ListThingGroupsForThing(ListThingGroupsForThingRequest request)
         {
-            var marshaller = ListThingGroupsForThingRequestMarshaller.Instance;
-            var unmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingGroupsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingGroupsForThingRequest,ListThingGroupsForThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingGroupsForThingResponse>(request, options);
         }
 
 
@@ -5311,11 +5430,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">REST API Reference for ListThingGroupsForThing Operation</seealso>
         public virtual Task<ListThingGroupsForThingResponse> ListThingGroupsForThingAsync(ListThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingGroupsForThingRequestMarshaller.Instance;
-            var unmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingGroupsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingGroupsForThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingGroupsForThingRequest,ListThingGroupsForThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingGroupsForThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5324,10 +5443,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingPrincipalsResponse ListThingPrincipals(ListThingPrincipalsRequest request)
         {
-            var marshaller = ListThingPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingPrincipalsRequest,ListThingPrincipalsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingPrincipalsResponse>(request, options);
         }
 
 
@@ -5379,11 +5499,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         public virtual Task<ListThingPrincipalsResponse> ListThingPrincipalsAsync(ListThingPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingPrincipalsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingPrincipalsRequest,ListThingPrincipalsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingPrincipalsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5392,10 +5512,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingRegistrationTaskReportsResponse ListThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request)
         {
-            var marshaller = ListThingRegistrationTaskReportsRequestMarshaller.Instance;
-            var unmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingRegistrationTaskReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingRegistrationTaskReportsRequest,ListThingRegistrationTaskReportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingRegistrationTaskReportsResponse>(request, options);
         }
 
 
@@ -5411,11 +5532,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTaskReports">REST API Reference for ListThingRegistrationTaskReports Operation</seealso>
         public virtual Task<ListThingRegistrationTaskReportsResponse> ListThingRegistrationTaskReportsAsync(ListThingRegistrationTaskReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingRegistrationTaskReportsRequestMarshaller.Instance;
-            var unmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingRegistrationTaskReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingRegistrationTaskReportsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingRegistrationTaskReportsRequest,ListThingRegistrationTaskReportsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingRegistrationTaskReportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5424,10 +5545,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingRegistrationTasksResponse ListThingRegistrationTasks(ListThingRegistrationTasksRequest request)
         {
-            var marshaller = ListThingRegistrationTasksRequestMarshaller.Instance;
-            var unmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingRegistrationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingRegistrationTasksRequest,ListThingRegistrationTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingRegistrationTasksResponse>(request, options);
         }
 
 
@@ -5443,11 +5565,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">REST API Reference for ListThingRegistrationTasks Operation</seealso>
         public virtual Task<ListThingRegistrationTasksResponse> ListThingRegistrationTasksAsync(ListThingRegistrationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingRegistrationTasksRequestMarshaller.Instance;
-            var unmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingRegistrationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingRegistrationTasksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingRegistrationTasksRequest,ListThingRegistrationTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingRegistrationTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5456,10 +5578,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingsResponse ListThings(ListThingsRequest request)
         {
-            var marshaller = ListThingsRequestMarshaller.Instance;
-            var unmarshaller = ListThingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingsRequest,ListThingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingsResponse>(request, options);
         }
 
 
@@ -5509,11 +5632,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">REST API Reference for ListThings Operation</seealso>
         public virtual Task<ListThingsResponse> ListThingsAsync(ListThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingsRequestMarshaller.Instance;
-            var unmarshaller = ListThingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingsRequest,ListThingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5522,10 +5645,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingsInBillingGroupResponse ListThingsInBillingGroup(ListThingsInBillingGroupRequest request)
         {
-            var marshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingsInBillingGroupRequest,ListThingsInBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingsInBillingGroupResponse>(request, options);
         }
 
 
@@ -5541,11 +5665,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">REST API Reference for ListThingsInBillingGroup Operation</seealso>
         public virtual Task<ListThingsInBillingGroupResponse> ListThingsInBillingGroupAsync(ListThingsInBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingsInBillingGroupRequest,ListThingsInBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingsInBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5554,10 +5678,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingsInThingGroupResponse ListThingsInThingGroup(ListThingsInThingGroupRequest request)
         {
-            var marshaller = ListThingsInThingGroupRequestMarshaller.Instance;
-            var unmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsInThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingsInThingGroupRequest,ListThingsInThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingsInThingGroupResponse>(request, options);
         }
 
 
@@ -5573,11 +5698,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">REST API Reference for ListThingsInThingGroup Operation</seealso>
         public virtual Task<ListThingsInThingGroupResponse> ListThingsInThingGroupAsync(ListThingsInThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingsInThingGroupRequestMarshaller.Instance;
-            var unmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingsInThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingsInThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingsInThingGroupRequest,ListThingsInThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingsInThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5586,10 +5711,11 @@ namespace Amazon.IoT
 
         internal virtual ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
         {
-            var marshaller = ListThingTypesRequestMarshaller.Instance;
-            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListThingTypesRequest,ListThingTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListThingTypesResponse>(request, options);
         }
 
 
@@ -5605,11 +5731,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">REST API Reference for ListThingTypes Operation</seealso>
         public virtual Task<ListThingTypesResponse> ListThingTypesAsync(ListThingTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListThingTypesRequestMarshaller.Instance;
-            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThingTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThingTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListThingTypesRequest,ListThingTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListThingTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5618,10 +5744,11 @@ namespace Amazon.IoT
 
         internal virtual ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request)
         {
-            var marshaller = ListTopicRulesRequestMarshaller.Instance;
-            var unmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
 
-            return Invoke<ListTopicRulesRequest,ListTopicRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTopicRulesResponse>(request, options);
         }
 
 
@@ -5664,11 +5791,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         public virtual Task<ListTopicRulesResponse> ListTopicRulesAsync(ListTopicRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTopicRulesRequestMarshaller.Instance;
-            var unmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicRulesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTopicRulesRequest,ListTopicRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTopicRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5677,10 +5804,11 @@ namespace Amazon.IoT
 
         internal virtual ListV2LoggingLevelsResponse ListV2LoggingLevels(ListV2LoggingLevelsRequest request)
         {
-            var marshaller = ListV2LoggingLevelsRequestMarshaller.Instance;
-            var unmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListV2LoggingLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
 
-            return Invoke<ListV2LoggingLevelsRequest,ListV2LoggingLevelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListV2LoggingLevelsResponse>(request, options);
         }
 
 
@@ -5696,11 +5824,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">REST API Reference for ListV2LoggingLevels Operation</seealso>
         public virtual Task<ListV2LoggingLevelsResponse> ListV2LoggingLevelsAsync(ListV2LoggingLevelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListV2LoggingLevelsRequestMarshaller.Instance;
-            var unmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListV2LoggingLevelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListV2LoggingLevelsRequest,ListV2LoggingLevelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListV2LoggingLevelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5709,10 +5837,11 @@ namespace Amazon.IoT
 
         internal virtual ListViolationEventsResponse ListViolationEvents(ListViolationEventsRequest request)
         {
-            var marshaller = ListViolationEventsRequestMarshaller.Instance;
-            var unmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViolationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
 
-            return Invoke<ListViolationEventsRequest,ListViolationEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListViolationEventsResponse>(request, options);
         }
 
 
@@ -5728,11 +5857,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListViolationEvents">REST API Reference for ListViolationEvents Operation</seealso>
         public virtual Task<ListViolationEventsResponse> ListViolationEventsAsync(ListViolationEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListViolationEventsRequestMarshaller.Instance;
-            var unmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViolationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListViolationEventsRequest,ListViolationEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListViolationEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5741,10 +5870,11 @@ namespace Amazon.IoT
 
         internal virtual RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
         {
-            var marshaller = RegisterCACertificateRequestMarshaller.Instance;
-            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterCACertificateResponse>(request, options);
         }
 
 
@@ -5760,11 +5890,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificate">REST API Reference for RegisterCACertificate Operation</seealso>
         public virtual Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterCACertificateRequestMarshaller.Instance;
-            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterCACertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5773,10 +5903,11 @@ namespace Amazon.IoT
 
         internal virtual RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
         {
-            var marshaller = RegisterCertificateRequestMarshaller.Instance;
-            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterCertificateResponse>(request, options);
         }
 
 
@@ -5792,11 +5923,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         public virtual Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterCertificateRequestMarshaller.Instance;
-            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5805,10 +5936,11 @@ namespace Amazon.IoT
 
         internal virtual RegisterThingResponse RegisterThing(RegisterThingRequest request)
         {
-            var marshaller = RegisterThingRequestMarshaller.Instance;
-            var unmarshaller = RegisterThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterThingResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterThingRequest,RegisterThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterThingResponse>(request, options);
         }
 
 
@@ -5824,11 +5956,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">REST API Reference for RegisterThing Operation</seealso>
         public virtual Task<RegisterThingResponse> RegisterThingAsync(RegisterThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterThingRequestMarshaller.Instance;
-            var unmarshaller = RegisterThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterThingRequest,RegisterThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5837,10 +5969,11 @@ namespace Amazon.IoT
 
         internal virtual RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request)
         {
-            var marshaller = RejectCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
 
-            return Invoke<RejectCertificateTransferRequest,RejectCertificateTransferResponse>(request, marshaller, unmarshaller);
+            return Invoke<RejectCertificateTransferResponse>(request, options);
         }
 
 
@@ -5907,11 +6040,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RejectCertificateTransfer">REST API Reference for RejectCertificateTransfer Operation</seealso>
         public virtual Task<RejectCertificateTransferResponse> RejectCertificateTransferAsync(RejectCertificateTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RejectCertificateTransferRequestMarshaller.Instance;
-            var unmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectCertificateTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectCertificateTransferResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RejectCertificateTransferRequest,RejectCertificateTransferResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RejectCertificateTransferResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5920,10 +6053,11 @@ namespace Amazon.IoT
 
         internal virtual RemoveThingFromBillingGroupResponse RemoveThingFromBillingGroup(RemoveThingFromBillingGroupRequest request)
         {
-            var marshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveThingFromBillingGroupRequest,RemoveThingFromBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveThingFromBillingGroupResponse>(request, options);
         }
 
 
@@ -5939,11 +6073,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">REST API Reference for RemoveThingFromBillingGroup Operation</seealso>
         public virtual Task<RemoveThingFromBillingGroupResponse> RemoveThingFromBillingGroupAsync(RemoveThingFromBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveThingFromBillingGroupRequest,RemoveThingFromBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveThingFromBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5952,10 +6086,11 @@ namespace Amazon.IoT
 
         internal virtual RemoveThingFromThingGroupResponse RemoveThingFromThingGroup(RemoveThingFromThingGroupRequest request)
         {
-            var marshaller = RemoveThingFromThingGroupRequestMarshaller.Instance;
-            var unmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveThingFromThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveThingFromThingGroupRequest,RemoveThingFromThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveThingFromThingGroupResponse>(request, options);
         }
 
 
@@ -5971,11 +6106,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">REST API Reference for RemoveThingFromThingGroup Operation</seealso>
         public virtual Task<RemoveThingFromThingGroupResponse> RemoveThingFromThingGroupAsync(RemoveThingFromThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveThingFromThingGroupRequestMarshaller.Instance;
-            var unmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveThingFromThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveThingFromThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveThingFromThingGroupRequest,RemoveThingFromThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveThingFromThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5984,10 +6119,11 @@ namespace Amazon.IoT
 
         internal virtual ReplaceTopicRuleResponse ReplaceTopicRule(ReplaceTopicRuleRequest request)
         {
-            var marshaller = ReplaceTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplaceTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
 
-            return Invoke<ReplaceTopicRuleRequest,ReplaceTopicRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReplaceTopicRuleResponse>(request, options);
         }
 
 
@@ -6003,11 +6139,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRule">REST API Reference for ReplaceTopicRule Operation</seealso>
         public virtual Task<ReplaceTopicRuleResponse> ReplaceTopicRuleAsync(ReplaceTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReplaceTopicRuleRequestMarshaller.Instance;
-            var unmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplaceTopicRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceTopicRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ReplaceTopicRuleRequest,ReplaceTopicRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ReplaceTopicRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6016,10 +6152,11 @@ namespace Amazon.IoT
 
         internal virtual SearchIndexResponse SearchIndex(SearchIndexRequest request)
         {
-            var marshaller = SearchIndexRequestMarshaller.Instance;
-            var unmarshaller = SearchIndexResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchIndexResponseUnmarshaller.Instance;
 
-            return Invoke<SearchIndexRequest,SearchIndexResponse>(request, marshaller, unmarshaller);
+            return Invoke<SearchIndexResponse>(request, options);
         }
 
 
@@ -6035,11 +6172,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SearchIndex">REST API Reference for SearchIndex Operation</seealso>
         public virtual Task<SearchIndexResponse> SearchIndexAsync(SearchIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SearchIndexRequestMarshaller.Instance;
-            var unmarshaller = SearchIndexResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchIndexResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SearchIndexRequest,SearchIndexResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SearchIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6048,10 +6185,11 @@ namespace Amazon.IoT
 
         internal virtual SetDefaultAuthorizerResponse SetDefaultAuthorizer(SetDefaultAuthorizerRequest request)
         {
-            var marshaller = SetDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<SetDefaultAuthorizerRequest,SetDefaultAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetDefaultAuthorizerResponse>(request, options);
         }
 
 
@@ -6067,11 +6205,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultAuthorizer">REST API Reference for SetDefaultAuthorizer Operation</seealso>
         public virtual Task<SetDefaultAuthorizerResponse> SetDefaultAuthorizerAsync(SetDefaultAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetDefaultAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetDefaultAuthorizerRequest,SetDefaultAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetDefaultAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6080,10 +6218,11 @@ namespace Amazon.IoT
 
         internal virtual SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
         {
-            var marshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
-            return Invoke<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetDefaultPolicyVersionResponse>(request, options);
         }
 
 
@@ -6139,11 +6278,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public virtual Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetDefaultPolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6152,10 +6291,11 @@ namespace Amazon.IoT
 
         internal virtual SetLoggingOptionsResponse SetLoggingOptions(SetLoggingOptionsRequest request)
         {
-            var marshaller = SetLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<SetLoggingOptionsRequest,SetLoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetLoggingOptionsResponse>(request, options);
         }
 
 
@@ -6171,11 +6311,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetLoggingOptions">REST API Reference for SetLoggingOptions Operation</seealso>
         public virtual Task<SetLoggingOptionsResponse> SetLoggingOptionsAsync(SetLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetLoggingOptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetLoggingOptionsRequest,SetLoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetLoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6184,10 +6324,11 @@ namespace Amazon.IoT
 
         internal virtual SetV2LoggingLevelResponse SetV2LoggingLevel(SetV2LoggingLevelRequest request)
         {
-            var marshaller = SetV2LoggingLevelRequestMarshaller.Instance;
-            var unmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetV2LoggingLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
 
-            return Invoke<SetV2LoggingLevelRequest,SetV2LoggingLevelResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetV2LoggingLevelResponse>(request, options);
         }
 
 
@@ -6203,11 +6344,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingLevel">REST API Reference for SetV2LoggingLevel Operation</seealso>
         public virtual Task<SetV2LoggingLevelResponse> SetV2LoggingLevelAsync(SetV2LoggingLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetV2LoggingLevelRequestMarshaller.Instance;
-            var unmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetV2LoggingLevelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetV2LoggingLevelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetV2LoggingLevelRequest,SetV2LoggingLevelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetV2LoggingLevelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6216,10 +6357,11 @@ namespace Amazon.IoT
 
         internal virtual SetV2LoggingOptionsResponse SetV2LoggingOptions(SetV2LoggingOptionsRequest request)
         {
-            var marshaller = SetV2LoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetV2LoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<SetV2LoggingOptionsRequest,SetV2LoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetV2LoggingOptionsResponse>(request, options);
         }
 
 
@@ -6235,11 +6377,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">REST API Reference for SetV2LoggingOptions Operation</seealso>
         public virtual Task<SetV2LoggingOptionsResponse> SetV2LoggingOptionsAsync(SetV2LoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetV2LoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetV2LoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetV2LoggingOptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetV2LoggingOptionsRequest,SetV2LoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetV2LoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6248,10 +6390,11 @@ namespace Amazon.IoT
 
         internal virtual StartOnDemandAuditTaskResponse StartOnDemandAuditTask(StartOnDemandAuditTaskRequest request)
         {
-            var marshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartOnDemandAuditTaskRequest,StartOnDemandAuditTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartOnDemandAuditTaskResponse>(request, options);
         }
 
 
@@ -6267,11 +6410,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartOnDemandAuditTask">REST API Reference for StartOnDemandAuditTask Operation</seealso>
         public virtual Task<StartOnDemandAuditTaskResponse> StartOnDemandAuditTaskAsync(StartOnDemandAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
-            var unmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartOnDemandAuditTaskRequest,StartOnDemandAuditTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartOnDemandAuditTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6280,10 +6423,11 @@ namespace Amazon.IoT
 
         internal virtual StartThingRegistrationTaskResponse StartThingRegistrationTask(StartThingRegistrationTaskRequest request)
         {
-            var marshaller = StartThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartThingRegistrationTaskRequest,StartThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartThingRegistrationTaskResponse>(request, options);
         }
 
 
@@ -6299,11 +6443,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartThingRegistrationTask">REST API Reference for StartThingRegistrationTask Operation</seealso>
         public virtual Task<StartThingRegistrationTaskResponse> StartThingRegistrationTaskAsync(StartThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartThingRegistrationTaskRequest,StartThingRegistrationTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6312,10 +6456,11 @@ namespace Amazon.IoT
 
         internal virtual StopThingRegistrationTaskResponse StopThingRegistrationTask(StopThingRegistrationTaskRequest request)
         {
-            var marshaller = StopThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StopThingRegistrationTaskRequest,StopThingRegistrationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopThingRegistrationTaskResponse>(request, options);
         }
 
 
@@ -6331,11 +6476,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StopThingRegistrationTask">REST API Reference for StopThingRegistrationTask Operation</seealso>
         public virtual Task<StopThingRegistrationTaskResponse> StopThingRegistrationTaskAsync(StopThingRegistrationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopThingRegistrationTaskRequestMarshaller.Instance;
-            var unmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopThingRegistrationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopThingRegistrationTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopThingRegistrationTaskRequest,StopThingRegistrationTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopThingRegistrationTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6344,10 +6489,11 @@ namespace Amazon.IoT
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -6363,11 +6509,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6376,10 +6522,11 @@ namespace Amazon.IoT
 
         internal virtual TestAuthorizationResponse TestAuthorization(TestAuthorizationRequest request)
         {
-            var marshaller = TestAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
 
-            return Invoke<TestAuthorizationRequest,TestAuthorizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestAuthorizationResponse>(request, options);
         }
 
 
@@ -6395,11 +6542,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">REST API Reference for TestAuthorization Operation</seealso>
         public virtual Task<TestAuthorizationResponse> TestAuthorizationAsync(TestAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TestAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAuthorizationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TestAuthorizationRequest,TestAuthorizationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TestAuthorizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6408,10 +6555,11 @@ namespace Amazon.IoT
 
         internal virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
-            var marshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestInvokeAuthorizerResponse>(request, options);
         }
 
 
@@ -6427,11 +6575,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TestInvokeAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6440,10 +6588,11 @@ namespace Amazon.IoT
 
         internal virtual TransferCertificateResponse TransferCertificate(TransferCertificateRequest request)
         {
-            var marshaller = TransferCertificateRequestMarshaller.Instance;
-            var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<TransferCertificateRequest,TransferCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<TransferCertificateResponse>(request, options);
         }
 
 
@@ -6523,11 +6672,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">REST API Reference for TransferCertificate Operation</seealso>
         public virtual Task<TransferCertificateResponse> TransferCertificateAsync(TransferCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TransferCertificateRequestMarshaller.Instance;
-            var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TransferCertificateRequest,TransferCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TransferCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6536,10 +6685,11 @@ namespace Amazon.IoT
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -6555,11 +6705,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6568,10 +6718,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateAccountAuditConfigurationResponse UpdateAccountAuditConfiguration(UpdateAccountAuditConfigurationRequest request)
         {
-            var marshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAccountAuditConfigurationRequest,UpdateAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAccountAuditConfigurationResponse>(request, options);
         }
 
 
@@ -6587,11 +6738,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">REST API Reference for UpdateAccountAuditConfiguration Operation</seealso>
         public virtual Task<UpdateAccountAuditConfigurationResponse> UpdateAccountAuditConfigurationAsync(UpdateAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAccountAuditConfigurationRequest,UpdateAccountAuditConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAccountAuditConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6600,10 +6751,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
-            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAuthorizerResponse>(request, options);
         }
 
 
@@ -6619,11 +6771,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6632,10 +6784,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateBillingGroupResponse UpdateBillingGroup(UpdateBillingGroupRequest request)
         {
-            var marshaller = UpdateBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateBillingGroupRequest,UpdateBillingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateBillingGroupResponse>(request, options);
         }
 
 
@@ -6651,11 +6804,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         public virtual Task<UpdateBillingGroupResponse> UpdateBillingGroupAsync(UpdateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateBillingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBillingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateBillingGroupRequest,UpdateBillingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateBillingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6664,10 +6817,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
         {
-            var marshaller = UpdateCACertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCACertificateResponse>(request, options);
         }
 
 
@@ -6683,11 +6837,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificate">REST API Reference for UpdateCACertificate Operation</seealso>
         public virtual Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateCACertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCACertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateCACertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6696,10 +6850,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
         {
-            var marshaller = UpdateCertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCertificateRequest,UpdateCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCertificateResponse>(request, options);
         }
 
 
@@ -6767,11 +6922,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public virtual Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateCertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateCertificateRequest,UpdateCertificateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateCertificateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6780,10 +6935,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateDynamicThingGroupResponse UpdateDynamicThingGroup(UpdateDynamicThingGroupRequest request)
         {
-            var marshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDynamicThingGroupRequest,UpdateDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDynamicThingGroupResponse>(request, options);
         }
 
 
@@ -6799,11 +6955,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">REST API Reference for UpdateDynamicThingGroup Operation</seealso>
         public virtual Task<UpdateDynamicThingGroupResponse> UpdateDynamicThingGroupAsync(UpdateDynamicThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateDynamicThingGroupRequest,UpdateDynamicThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateDynamicThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6812,10 +6968,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateEventConfigurationsResponse UpdateEventConfigurations(UpdateEventConfigurationsRequest request)
         {
-            var marshaller = UpdateEventConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEventConfigurationsRequest,UpdateEventConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEventConfigurationsResponse>(request, options);
         }
 
 
@@ -6831,11 +6988,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">REST API Reference for UpdateEventConfigurations Operation</seealso>
         public virtual Task<UpdateEventConfigurationsResponse> UpdateEventConfigurationsAsync(UpdateEventConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEventConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEventConfigurationsRequest,UpdateEventConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEventConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6844,10 +7001,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateIndexingConfigurationResponse UpdateIndexingConfiguration(UpdateIndexingConfigurationRequest request)
         {
-            var marshaller = UpdateIndexingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIndexingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateIndexingConfigurationRequest,UpdateIndexingConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateIndexingConfigurationResponse>(request, options);
         }
 
 
@@ -6863,11 +7021,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">REST API Reference for UpdateIndexingConfiguration Operation</seealso>
         public virtual Task<UpdateIndexingConfigurationResponse> UpdateIndexingConfigurationAsync(UpdateIndexingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateIndexingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIndexingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexingConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateIndexingConfigurationRequest,UpdateIndexingConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateIndexingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6876,10 +7034,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateJobResponse>(request, options);
         }
 
 
@@ -6895,11 +7054,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateJobRequest,UpdateJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6908,10 +7067,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateRoleAliasResponse UpdateRoleAlias(UpdateRoleAliasRequest request)
         {
-            var marshaller = UpdateRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRoleAliasResponse>(request, options);
         }
 
 
@@ -6927,11 +7087,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">REST API Reference for UpdateRoleAlias Operation</seealso>
         public virtual Task<UpdateRoleAliasResponse> UpdateRoleAliasAsync(UpdateRoleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRoleAliasRequestMarshaller.Instance;
-            var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRoleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateRoleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6940,10 +7100,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateScheduledAuditResponse UpdateScheduledAudit(UpdateScheduledAuditRequest request)
         {
-            var marshaller = UpdateScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateScheduledAuditRequest,UpdateScheduledAuditResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateScheduledAuditResponse>(request, options);
         }
 
 
@@ -6959,11 +7120,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateScheduledAudit">REST API Reference for UpdateScheduledAudit Operation</seealso>
         public virtual Task<UpdateScheduledAuditResponse> UpdateScheduledAuditAsync(UpdateScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateScheduledAuditRequestMarshaller.Instance;
-            var unmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledAuditRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateScheduledAuditRequest,UpdateScheduledAuditResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateScheduledAuditResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6972,10 +7133,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateSecurityProfileResponse UpdateSecurityProfile(UpdateSecurityProfileRequest request)
         {
-            var marshaller = UpdateSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSecurityProfileRequest,UpdateSecurityProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSecurityProfileResponse>(request, options);
         }
 
 
@@ -6991,11 +7153,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateSecurityProfile">REST API Reference for UpdateSecurityProfile Operation</seealso>
         public virtual Task<UpdateSecurityProfileResponse> UpdateSecurityProfileAsync(UpdateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSecurityProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateSecurityProfileRequest,UpdateSecurityProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateSecurityProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7004,10 +7166,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
         {
-            var marshaller = UpdateStreamRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateStreamResponse>(request, options);
         }
 
 
@@ -7023,11 +7186,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateStreamRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7036,10 +7199,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateThingResponse UpdateThing(UpdateThingRequest request)
         {
-            var marshaller = UpdateThingRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateThingRequest,UpdateThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateThingResponse>(request, options);
         }
 
 
@@ -7055,11 +7219,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         public virtual Task<UpdateThingResponse> UpdateThingAsync(UpdateThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateThingRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateThingRequest,UpdateThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7068,10 +7232,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateThingGroupResponse UpdateThingGroup(UpdateThingGroupRequest request)
         {
-            var marshaller = UpdateThingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateThingGroupRequest,UpdateThingGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateThingGroupResponse>(request, options);
         }
 
 
@@ -7087,11 +7252,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">REST API Reference for UpdateThingGroup Operation</seealso>
         public virtual Task<UpdateThingGroupResponse> UpdateThingGroupAsync(UpdateThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateThingGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateThingGroupRequest,UpdateThingGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateThingGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7100,10 +7265,11 @@ namespace Amazon.IoT
 
         internal virtual UpdateThingGroupsForThingResponse UpdateThingGroupsForThing(UpdateThingGroupsForThingRequest request)
         {
-            var marshaller = UpdateThingGroupsForThingRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingGroupsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateThingGroupsForThingRequest,UpdateThingGroupsForThingResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateThingGroupsForThingResponse>(request, options);
         }
 
 
@@ -7119,11 +7285,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">REST API Reference for UpdateThingGroupsForThing Operation</seealso>
         public virtual Task<UpdateThingGroupsForThingResponse> UpdateThingGroupsForThingAsync(UpdateThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateThingGroupsForThingRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingGroupsForThingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateThingGroupsForThingRequest,UpdateThingGroupsForThingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateThingGroupsForThingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7132,10 +7298,11 @@ namespace Amazon.IoT
 
         internal virtual ValidateSecurityProfileBehaviorsResponse ValidateSecurityProfileBehaviors(ValidateSecurityProfileBehaviorsRequest request)
         {
-            var marshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
-            var unmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
 
-            return Invoke<ValidateSecurityProfileBehaviorsRequest,ValidateSecurityProfileBehaviorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ValidateSecurityProfileBehaviorsResponse>(request, options);
         }
 
 
@@ -7151,11 +7318,11 @@ namespace Amazon.IoT
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidateSecurityProfileBehaviors">REST API Reference for ValidateSecurityProfileBehaviors Operation</seealso>
         public virtual Task<ValidateSecurityProfileBehaviorsResponse> ValidateSecurityProfileBehaviorsAsync(ValidateSecurityProfileBehaviorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
-            var unmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ValidateSecurityProfileBehaviorsRequest,ValidateSecurityProfileBehaviorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ValidateSecurityProfileBehaviorsResponse>(request, options, cancellationToken);
         }
 
         #endregion

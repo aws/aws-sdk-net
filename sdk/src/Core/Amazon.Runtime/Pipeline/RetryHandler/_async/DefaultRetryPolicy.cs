@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>Return true if the request should be retried.</returns>
         public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
-            return Task.FromResult(RetryForExceptionSync(exception));
+            return Task.FromResult(RetryForExceptionSync(exception, executionContext));
         }
 
         /// <summary>

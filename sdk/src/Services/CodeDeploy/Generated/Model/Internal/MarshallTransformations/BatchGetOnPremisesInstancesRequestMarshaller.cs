@@ -58,6 +58,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             string target = "CodeDeploy_20141006.BatchGetOnPremisesInstances";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

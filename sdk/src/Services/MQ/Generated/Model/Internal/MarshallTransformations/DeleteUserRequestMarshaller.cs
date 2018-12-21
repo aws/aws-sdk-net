@@ -55,6 +55,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteUserRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/v1/brokers/{broker-id}/users/{username}";

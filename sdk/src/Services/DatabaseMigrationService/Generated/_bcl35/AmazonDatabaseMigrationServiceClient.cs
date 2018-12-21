@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DatabaseMigrationService.Model;
 using Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations;
@@ -248,7 +249,7 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
 
-        
+
         #region  AddTagsToResource
 
         /// <summary>
@@ -266,10 +267,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsToResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -286,11 +288,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -337,10 +339,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var marshaller = CreateEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEndpointRequest,CreateEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -357,11 +360,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -426,10 +429,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -446,11 +450,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateEventSubscriptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -510,10 +514,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public virtual CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
         {
-            var marshaller = CreateReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateReplicationInstanceRequest,CreateReplicationInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateReplicationInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -530,11 +535,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicationInstance(CreateReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateReplicationInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -582,10 +587,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public virtual CreateReplicationSubnetGroupResponse CreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request)
         {
-            var marshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateReplicationSubnetGroupRequest,CreateReplicationSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateReplicationSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -602,11 +608,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateReplicationSubnetGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -653,10 +659,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public virtual CreateReplicationTaskResponse CreateReplicationTask(CreateReplicationTaskRequest request)
         {
-            var marshaller = CreateReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<CreateReplicationTaskRequest,CreateReplicationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateReplicationTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -673,11 +680,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicationTask(CreateReplicationTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateReplicationTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -712,10 +719,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var marshaller = DeleteCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -732,11 +740,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -777,10 +785,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -797,11 +806,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -836,10 +845,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -856,11 +866,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEventSubscriptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -902,10 +912,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public virtual DeleteReplicationInstanceResponse DeleteReplicationInstance(DeleteReplicationInstanceRequest request)
         {
-            var marshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReplicationInstanceRequest,DeleteReplicationInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReplicationInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -922,11 +933,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicationInstance(DeleteReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteReplicationInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -961,10 +972,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public virtual DeleteReplicationSubnetGroupResponse DeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request)
         {
-            var marshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReplicationSubnetGroupRequest,DeleteReplicationSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReplicationSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -981,11 +993,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteReplicationSubnetGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1020,10 +1032,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public virtual DeleteReplicationTaskResponse DeleteReplicationTask(DeleteReplicationTaskRequest request)
         {
-            var marshaller = DeleteReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReplicationTaskRequest,DeleteReplicationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReplicationTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -1040,11 +1053,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicationTask(DeleteReplicationTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteReplicationTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1081,10 +1094,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1101,11 +1115,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAccountAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1137,10 +1151,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
         {
-            var marshaller = DescribeCertificatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCertificatesResponse>(request, options);
         }
 
         /// <summary>
@@ -1157,11 +1172,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual IAsyncResult BeginDescribeCertificates(DescribeCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeCertificatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeCertificatesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1194,10 +1209,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
-            var marshaller = DescribeConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConnectionsRequest,DescribeConnectionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConnectionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1214,11 +1230,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnections(DescribeConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeConnectionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeConnectionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1250,10 +1266,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointsResponse>(request, options);
         }
 
         /// <summary>
@@ -1270,11 +1287,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEndpointsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1303,10 +1320,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public virtual DescribeEndpointTypesResponse DescribeEndpointTypes(DescribeEndpointTypesRequest request)
         {
-            var marshaller = DescribeEndpointTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointTypesRequest,DescribeEndpointTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointTypesResponse>(request, options);
         }
 
         /// <summary>
@@ -1323,11 +1341,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpointTypes(DescribeEndpointTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEndpointTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEndpointTypesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1358,10 +1376,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventCategoriesResponse>(request, options);
         }
 
         /// <summary>
@@ -1378,11 +1397,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventCategoriesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1413,10 +1432,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventsResponse>(request, options);
         }
 
         /// <summary>
@@ -1433,11 +1453,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1478,10 +1498,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventSubscriptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1498,11 +1519,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventSubscriptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1532,10 +1553,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public virtual DescribeOrderableReplicationInstancesResponse DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request)
         {
-            var marshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeOrderableReplicationInstancesRequest,DescribeOrderableReplicationInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeOrderableReplicationInstancesResponse>(request, options);
         }
 
         /// <summary>
@@ -1552,11 +1574,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeOrderableReplicationInstancesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1591,10 +1613,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public virtual DescribeRefreshSchemasStatusResponse DescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request)
         {
-            var marshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRefreshSchemasStatusRequest,DescribeRefreshSchemasStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRefreshSchemasStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1611,11 +1634,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeRefreshSchemasStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1647,10 +1670,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public virtual DescribeReplicationInstancesResponse DescribeReplicationInstances(DescribeReplicationInstancesRequest request)
         {
-            var marshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReplicationInstancesRequest,DescribeReplicationInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReplicationInstancesResponse>(request, options);
         }
 
         /// <summary>
@@ -1667,11 +1691,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationInstances(DescribeReplicationInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReplicationInstancesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1706,10 +1730,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
         public virtual DescribeReplicationInstanceTaskLogsResponse DescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request)
         {
-            var marshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReplicationInstanceTaskLogsRequest,DescribeReplicationInstanceTaskLogsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReplicationInstanceTaskLogsResponse>(request, options);
         }
 
         /// <summary>
@@ -1726,11 +1751,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReplicationInstanceTaskLogsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1762,10 +1787,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public virtual DescribeReplicationSubnetGroupsResponse DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request)
         {
-            var marshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReplicationSubnetGroupsRequest,DescribeReplicationSubnetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReplicationSubnetGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -1782,11 +1808,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReplicationSubnetGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1819,10 +1845,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">REST API Reference for DescribeReplicationTaskAssessmentResults Operation</seealso>
         public virtual DescribeReplicationTaskAssessmentResultsResponse DescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request)
         {
-            var marshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReplicationTaskAssessmentResultsRequest,DescribeReplicationTaskAssessmentResultsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReplicationTaskAssessmentResultsResponse>(request, options);
         }
 
         /// <summary>
@@ -1839,11 +1866,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">REST API Reference for DescribeReplicationTaskAssessmentResults Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReplicationTaskAssessmentResultsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1875,10 +1902,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public virtual DescribeReplicationTasksResponse DescribeReplicationTasks(DescribeReplicationTasksRequest request)
         {
-            var marshaller = DescribeReplicationTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReplicationTasksRequest,DescribeReplicationTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReplicationTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -1895,11 +1923,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationTasks(DescribeReplicationTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReplicationTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReplicationTasksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1934,10 +1962,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public virtual DescribeSchemasResponse DescribeSchemas(DescribeSchemasRequest request)
         {
-            var marshaller = DescribeSchemasRequestMarshaller.Instance;
-            var unmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSchemasRequest,DescribeSchemasResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSchemasResponse>(request, options);
         }
 
         /// <summary>
@@ -1954,11 +1983,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public virtual IAsyncResult BeginDescribeSchemas(DescribeSchemasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeSchemasRequestMarshaller.Instance;
-            var unmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeSchemasRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2001,10 +2030,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public virtual DescribeTableStatisticsResponse DescribeTableStatistics(DescribeTableStatisticsRequest request)
         {
-            var marshaller = DescribeTableStatisticsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTableStatisticsRequest,DescribeTableStatisticsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTableStatisticsResponse>(request, options);
         }
 
         /// <summary>
@@ -2021,11 +2051,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public virtual IAsyncResult BeginDescribeTableStatistics(DescribeTableStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeTableStatisticsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeTableStatisticsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2063,10 +2093,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
-            var marshaller = ImportCertificateRequestMarshaller.Instance;
-            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -2083,11 +2114,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual IAsyncResult BeginImportCertificate(ImportCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ImportCertificateRequestMarshaller.Instance;
-            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ImportCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2119,10 +2150,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2139,11 +2171,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2187,10 +2219,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public virtual ModifyEndpointResponse ModifyEndpoint(ModifyEndpointRequest request)
         {
-            var marshaller = ModifyEndpointRequestMarshaller.Instance;
-            var unmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyEndpointRequest,ModifyEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -2207,11 +2240,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public virtual IAsyncResult BeginModifyEndpoint(ModifyEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyEndpointRequestMarshaller.Instance;
-            var unmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2252,10 +2285,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyEventSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -2272,11 +2306,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyEventSubscriptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2329,10 +2363,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public virtual ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request)
         {
-            var marshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyReplicationInstanceRequest,ModifyReplicationInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyReplicationInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -2349,11 +2384,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public virtual IAsyncResult BeginModifyReplicationInstance(ModifyReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyReplicationInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2401,10 +2436,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public virtual ModifyReplicationSubnetGroupResponse ModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request)
         {
-            var marshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyReplicationSubnetGroupRequest,ModifyReplicationSubnetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyReplicationSubnetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -2421,11 +2457,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyReplicationSubnetGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2477,10 +2513,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
         public virtual ModifyReplicationTaskResponse ModifyReplicationTask(ModifyReplicationTaskRequest request)
         {
-            var marshaller = ModifyReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyReplicationTaskRequest,ModifyReplicationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyReplicationTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -2497,11 +2534,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
         public virtual IAsyncResult BeginModifyReplicationTask(ModifyReplicationTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyReplicationTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2537,10 +2574,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
         public virtual RebootReplicationInstanceResponse RebootReplicationInstance(RebootReplicationInstanceRequest request)
         {
-            var marshaller = RebootReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<RebootReplicationInstanceRequest,RebootReplicationInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RebootReplicationInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -2557,11 +2595,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
         public virtual IAsyncResult BeginRebootReplicationInstance(RebootReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RebootReplicationInstanceRequestMarshaller.Instance;
-            var unmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootReplicationInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RebootReplicationInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2604,10 +2642,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public virtual RefreshSchemasResponse RefreshSchemas(RefreshSchemasRequest request)
         {
-            var marshaller = RefreshSchemasRequestMarshaller.Instance;
-            var unmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RefreshSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
 
-            return Invoke<RefreshSchemasRequest,RefreshSchemasResponse>(request, marshaller, unmarshaller);
+            return Invoke<RefreshSchemasResponse>(request, options);
         }
 
         /// <summary>
@@ -2624,11 +2663,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public virtual IAsyncResult BeginRefreshSchemas(RefreshSchemasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RefreshSchemasRequestMarshaller.Instance;
-            var unmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RefreshSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RefreshSchemasRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2663,10 +2702,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
         public virtual ReloadTablesResponse ReloadTables(ReloadTablesRequest request)
         {
-            var marshaller = ReloadTablesRequestMarshaller.Instance;
-            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadTablesResponseUnmarshaller.Instance;
 
-            return Invoke<ReloadTablesRequest,ReloadTablesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReloadTablesResponse>(request, options);
         }
 
         /// <summary>
@@ -2683,11 +2723,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
         public virtual IAsyncResult BeginReloadTables(ReloadTablesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ReloadTablesRequestMarshaller.Instance;
-            var unmarshaller = ReloadTablesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadTablesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ReloadTablesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2719,10 +2759,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsFromResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2739,11 +2780,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2788,10 +2829,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public virtual StartReplicationTaskResponse StartReplicationTask(StartReplicationTaskRequest request)
         {
-            var marshaller = StartReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartReplicationTaskRequest,StartReplicationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartReplicationTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -2808,11 +2850,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public virtual IAsyncResult BeginStartReplicationTask(StartReplicationTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartReplicationTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2847,10 +2889,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">REST API Reference for StartReplicationTaskAssessment Operation</seealso>
         public virtual StartReplicationTaskAssessmentResponse StartReplicationTaskAssessment(StartReplicationTaskAssessmentRequest request)
         {
-            var marshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
-            var unmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
 
-            return Invoke<StartReplicationTaskAssessmentRequest,StartReplicationTaskAssessmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartReplicationTaskAssessmentResponse>(request, options);
         }
 
         /// <summary>
@@ -2867,11 +2910,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">REST API Reference for StartReplicationTaskAssessment Operation</seealso>
         public virtual IAsyncResult BeginStartReplicationTaskAssessment(StartReplicationTaskAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
-            var unmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartReplicationTaskAssessmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2906,10 +2949,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public virtual StopReplicationTaskResponse StopReplicationTask(StopReplicationTaskRequest request)
         {
-            var marshaller = StopReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StopReplicationTaskRequest,StopReplicationTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopReplicationTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -2926,11 +2970,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public virtual IAsyncResult BeginStopReplicationTask(StopReplicationTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopReplicationTaskRequestMarshaller.Instance;
-            var unmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopReplicationTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2971,10 +3015,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public virtual TestConnectionResponse TestConnection(TestConnectionRequest request)
         {
-            var marshaller = TestConnectionRequestMarshaller.Instance;
-            var unmarshaller = TestConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<TestConnectionRequest,TestConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -2991,11 +3036,11 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public virtual IAsyncResult BeginTestConnection(TestConnectionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TestConnectionRequestMarshaller.Instance;
-            var unmarshaller = TestConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TestConnectionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

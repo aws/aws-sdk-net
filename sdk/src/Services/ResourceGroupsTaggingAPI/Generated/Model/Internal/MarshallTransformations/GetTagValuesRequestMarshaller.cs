@@ -58,6 +58,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             string target = "ResourceGroupsTaggingAPI_20170126.GetTagValues";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-26";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

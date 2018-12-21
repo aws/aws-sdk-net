@@ -89,6 +89,25 @@ namespace AWSSDK.UnitTests
             AssertCache(cache, 1, 5);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestEviction()
+        {
+            RegionEndpoint regionEndpoint;
+            var lru = new LruCache<string, RegionEndpoint>(5);
+
+            lru.AddOrUpdate("my-bucket-us-west-2", RegionEndpoint.USWest2);
+
+            lru.TryGetValue("my-bucket-us-west-2", out regionEndpoint);
+            Assert.AreEqual(RegionEndpoint.USWest2, regionEndpoint);
+
+            lru.Evict("my-bucket-us-west-2");
+
+            var found = lru.TryGetValue("my-bucket-us-west-2", out regionEndpoint);
+            Assert.IsFalse(found, "Cache entry was not evicted");
+        }
+
         private LruCache<string, string> GetCache(int maxItems, int count)
         {
             var cache = new LruCache<string, string>(maxItems);

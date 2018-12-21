@@ -56,6 +56,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/console/accounts/{accountId}/users";

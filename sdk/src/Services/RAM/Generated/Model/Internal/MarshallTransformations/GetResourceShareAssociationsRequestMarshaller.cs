@@ -56,6 +56,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RAM");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/getresourceshareassociations";

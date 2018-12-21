@@ -56,6 +56,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lex");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/content";

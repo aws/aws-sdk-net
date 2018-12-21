@@ -58,6 +58,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             string target = "AWSShield_20160616.AssociateDRTLogBucket";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

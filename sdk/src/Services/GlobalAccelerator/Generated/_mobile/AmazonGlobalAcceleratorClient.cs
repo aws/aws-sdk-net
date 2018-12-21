@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.GlobalAccelerator.Model;
 using Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations;
@@ -326,15 +327,16 @@ namespace Amazon.GlobalAccelerator
 
         #endregion
 
-        
+
         #region  CreateAccelerator
 
         internal virtual CreateAcceleratorResponse CreateAccelerator(CreateAcceleratorRequest request)
         {
-            var marshaller = CreateAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAcceleratorRequest,CreateAcceleratorResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAcceleratorResponse>(request, options);
         }
 
 
@@ -350,11 +352,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual Task<CreateAcceleratorResponse> CreateAcceleratorAsync(CreateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAcceleratorRequest,CreateAcceleratorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAcceleratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -363,10 +365,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual CreateEndpointGroupResponse CreateEndpointGroup(CreateEndpointGroupRequest request)
         {
-            var marshaller = CreateEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEndpointGroupRequest,CreateEndpointGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEndpointGroupResponse>(request, options);
         }
 
 
@@ -382,11 +385,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">REST API Reference for CreateEndpointGroup Operation</seealso>
         public virtual Task<CreateEndpointGroupResponse> CreateEndpointGroupAsync(CreateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateEndpointGroupRequest,CreateEndpointGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateEndpointGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -395,10 +398,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual CreateListenerResponse CreateListener(CreateListenerRequest request)
         {
-            var marshaller = CreateListenerRequestMarshaller.Instance;
-            var unmarshaller = CreateListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateListenerRequest,CreateListenerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateListenerResponse>(request, options);
         }
 
 
@@ -414,11 +418,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateListenerRequestMarshaller.Instance;
-            var unmarshaller = CreateListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateListenerRequest,CreateListenerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateListenerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -427,10 +431,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DeleteAcceleratorResponse DeleteAccelerator(DeleteAcceleratorRequest request)
         {
-            var marshaller = DeleteAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAcceleratorRequest,DeleteAcceleratorResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAcceleratorResponse>(request, options);
         }
 
 
@@ -446,11 +451,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual Task<DeleteAcceleratorResponse> DeleteAcceleratorAsync(DeleteAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAcceleratorRequest,DeleteAcceleratorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAcceleratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -459,10 +464,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DeleteEndpointGroupResponse DeleteEndpointGroup(DeleteEndpointGroupRequest request)
         {
-            var marshaller = DeleteEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointGroupRequest,DeleteEndpointGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointGroupResponse>(request, options);
         }
 
 
@@ -478,11 +484,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteEndpointGroup">REST API Reference for DeleteEndpointGroup Operation</seealso>
         public virtual Task<DeleteEndpointGroupResponse> DeleteEndpointGroupAsync(DeleteEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEndpointGroupRequest,DeleteEndpointGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEndpointGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -491,10 +497,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
         {
-            var marshaller = DeleteListenerRequestMarshaller.Instance;
-            var unmarshaller = DeleteListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteListenerRequest,DeleteListenerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteListenerResponse>(request, options);
         }
 
 
@@ -510,11 +517,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteListenerRequestMarshaller.Instance;
-            var unmarshaller = DeleteListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteListenerRequest,DeleteListenerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteListenerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -523,10 +530,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DescribeAcceleratorResponse DescribeAccelerator(DescribeAcceleratorRequest request)
         {
-            var marshaller = DescribeAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAcceleratorRequest,DescribeAcceleratorResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAcceleratorResponse>(request, options);
         }
 
 
@@ -542,11 +550,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAccelerator">REST API Reference for DescribeAccelerator Operation</seealso>
         public virtual Task<DescribeAcceleratorResponse> DescribeAcceleratorAsync(DescribeAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAcceleratorRequest,DescribeAcceleratorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAcceleratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -555,10 +563,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DescribeAcceleratorAttributesResponse DescribeAcceleratorAttributes(DescribeAcceleratorAttributesRequest request)
         {
-            var marshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAcceleratorAttributesRequest,DescribeAcceleratorAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAcceleratorAttributesResponse>(request, options);
         }
 
 
@@ -574,11 +583,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAcceleratorAttributes">REST API Reference for DescribeAcceleratorAttributes Operation</seealso>
         public virtual Task<DescribeAcceleratorAttributesResponse> DescribeAcceleratorAttributesAsync(DescribeAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAcceleratorAttributesRequest,DescribeAcceleratorAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -587,10 +596,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DescribeEndpointGroupResponse DescribeEndpointGroup(DescribeEndpointGroupRequest request)
         {
-            var marshaller = DescribeEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointGroupRequest,DescribeEndpointGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointGroupResponse>(request, options);
         }
 
 
@@ -606,11 +616,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">REST API Reference for DescribeEndpointGroup Operation</seealso>
         public virtual Task<DescribeEndpointGroupResponse> DescribeEndpointGroupAsync(DescribeEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEndpointGroupRequest,DescribeEndpointGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEndpointGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -619,10 +629,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual DescribeListenerResponse DescribeListener(DescribeListenerRequest request)
         {
-            var marshaller = DescribeListenerRequestMarshaller.Instance;
-            var unmarshaller = DescribeListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeListenerResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeListenerRequest,DescribeListenerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeListenerResponse>(request, options);
         }
 
 
@@ -638,11 +649,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeListener">REST API Reference for DescribeListener Operation</seealso>
         public virtual Task<DescribeListenerResponse> DescribeListenerAsync(DescribeListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeListenerRequestMarshaller.Instance;
-            var unmarshaller = DescribeListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeListenerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeListenerRequest,DescribeListenerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeListenerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -651,10 +662,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual ListAcceleratorsResponse ListAccelerators(ListAcceleratorsRequest request)
         {
-            var marshaller = ListAcceleratorsRequestMarshaller.Instance;
-            var unmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAcceleratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAcceleratorsRequest,ListAcceleratorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAcceleratorsResponse>(request, options);
         }
 
 
@@ -670,11 +682,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListAccelerators">REST API Reference for ListAccelerators Operation</seealso>
         public virtual Task<ListAcceleratorsResponse> ListAcceleratorsAsync(ListAcceleratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAcceleratorsRequestMarshaller.Instance;
-            var unmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAcceleratorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAcceleratorsRequest,ListAcceleratorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAcceleratorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -683,10 +695,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual ListEndpointGroupsResponse ListEndpointGroups(ListEndpointGroupsRequest request)
         {
-            var marshaller = ListEndpointGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEndpointGroupsRequest,ListEndpointGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEndpointGroupsResponse>(request, options);
         }
 
 
@@ -702,11 +715,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListEndpointGroups">REST API Reference for ListEndpointGroups Operation</seealso>
         public virtual Task<ListEndpointGroupsResponse> ListEndpointGroupsAsync(ListEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEndpointGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEndpointGroupsRequest,ListEndpointGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListEndpointGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -715,10 +728,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual ListListenersResponse ListListeners(ListListenersRequest request)
         {
-            var marshaller = ListListenersRequestMarshaller.Instance;
-            var unmarshaller = ListListenersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
 
-            return Invoke<ListListenersRequest,ListListenersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListListenersResponse>(request, options);
         }
 
 
@@ -734,11 +748,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual Task<ListListenersResponse> ListListenersAsync(ListListenersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListListenersRequestMarshaller.Instance;
-            var unmarshaller = ListListenersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListListenersRequest,ListListenersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListListenersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -747,10 +761,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual UpdateAcceleratorResponse UpdateAccelerator(UpdateAcceleratorRequest request)
         {
-            var marshaller = UpdateAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAcceleratorRequest,UpdateAcceleratorResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAcceleratorResponse>(request, options);
         }
 
 
@@ -766,11 +781,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual Task<UpdateAcceleratorResponse> UpdateAcceleratorAsync(UpdateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAcceleratorRequestMarshaller.Instance;
-            var unmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAcceleratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAcceleratorRequest,UpdateAcceleratorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAcceleratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -779,10 +794,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual UpdateAcceleratorAttributesResponse UpdateAcceleratorAttributes(UpdateAcceleratorAttributesRequest request)
         {
-            var marshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAcceleratorAttributesRequest,UpdateAcceleratorAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAcceleratorAttributesResponse>(request, options);
         }
 
 
@@ -798,11 +814,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateAcceleratorAttributesResponse> UpdateAcceleratorAttributesAsync(UpdateAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAcceleratorAttributesRequest,UpdateAcceleratorAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAcceleratorAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -811,10 +827,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual UpdateEndpointGroupResponse UpdateEndpointGroup(UpdateEndpointGroupRequest request)
         {
-            var marshaller = UpdateEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointGroupRequest,UpdateEndpointGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointGroupResponse>(request, options);
         }
 
 
@@ -830,11 +847,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">REST API Reference for UpdateEndpointGroup Operation</seealso>
         public virtual Task<UpdateEndpointGroupResponse> UpdateEndpointGroupAsync(UpdateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEndpointGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEndpointGroupRequest,UpdateEndpointGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEndpointGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -843,10 +860,11 @@ namespace Amazon.GlobalAccelerator
 
         internal virtual UpdateListenerResponse UpdateListener(UpdateListenerRequest request)
         {
-            var marshaller = UpdateListenerRequestMarshaller.Instance;
-            var unmarshaller = UpdateListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateListenerRequest,UpdateListenerResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateListenerResponse>(request, options);
         }
 
 
@@ -862,11 +880,11 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateListenerRequestMarshaller.Instance;
-            var unmarshaller = UpdateListenerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateListenerRequest,UpdateListenerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateListenerResponse>(request, options, cancellationToken);
         }
 
         #endregion

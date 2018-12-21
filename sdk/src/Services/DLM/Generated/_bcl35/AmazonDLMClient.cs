@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DLM.Model;
 using Amazon.DLM.Model.Internal.MarshallTransformations;
@@ -245,7 +246,7 @@ namespace Amazon.DLM
 
         #endregion
 
-        
+
         #region  CreateLifecyclePolicy
 
         /// <summary>
@@ -267,10 +268,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual CreateLifecyclePolicyResponse CreateLifecyclePolicy(CreateLifecyclePolicyRequest request)
         {
-            var marshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLifecyclePolicyRequest,CreateLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLifecyclePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -287,11 +289,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateLifecyclePolicy(CreateLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateLifecyclePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -330,10 +332,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var marshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLifecyclePolicyRequest,DeleteLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLifecyclePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -350,11 +353,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteLifecyclePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -400,10 +403,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">REST API Reference for GetLifecyclePolicies Operation</seealso>
         public virtual GetLifecyclePoliciesResponse GetLifecyclePolicies(GetLifecyclePoliciesRequest request)
         {
-            var marshaller = GetLifecyclePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<GetLifecyclePoliciesRequest,GetLifecyclePoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLifecyclePoliciesResponse>(request, options);
         }
 
         /// <summary>
@@ -420,11 +424,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">REST API Reference for GetLifecyclePolicies Operation</seealso>
         public virtual IAsyncResult BeginGetLifecyclePolicies(GetLifecyclePoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetLifecyclePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePoliciesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetLifecyclePoliciesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -462,10 +466,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
         {
-            var marshaller = GetLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetLifecyclePolicyRequest,GetLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLifecyclePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -482,11 +487,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetLifecyclePolicy(GetLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetLifecyclePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -527,10 +532,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual UpdateLifecyclePolicyResponse UpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request)
         {
-            var marshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateLifecyclePolicyRequest,UpdateLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateLifecyclePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -547,11 +553,11 @@ namespace Amazon.DLM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateLifecyclePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

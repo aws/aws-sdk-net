@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ElasticTranscoder.Model;
 using Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations;
@@ -245,7 +246,7 @@ namespace Amazon.ElasticTranscoder
 
         #endregion
 
-        
+
         #region  CancelJob
 
         /// <summary>
@@ -285,10 +286,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
         /// <summary>
@@ -304,11 +306,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -364,10 +366,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -383,11 +386,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -435,10 +438,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -454,11 +458,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePipelineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -521,10 +525,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
-            var marshaller = CreatePresetRequestMarshaller.Instance;
-            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePresetRequest,CreatePresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePresetResponse>(request, options);
         }
 
         /// <summary>
@@ -540,11 +545,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePresetRequestMarshaller.Instance;
-            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePresetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -599,10 +604,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -618,11 +624,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePipelineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -672,10 +678,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
-            var marshaller = DeletePresetRequestMarshaller.Instance;
-            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePresetRequest,DeletePresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePresetResponse>(request, options);
         }
 
         /// <summary>
@@ -691,11 +698,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePresetRequestMarshaller.Instance;
-            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePresetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -745,10 +752,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
-            var marshaller = ListJobsByPipelineRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsByPipelineRequest,ListJobsByPipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsByPipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -764,11 +772,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListJobsByPipelineRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListJobsByPipelineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -813,10 +821,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
-            var marshaller = ListJobsByStatusRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsByStatusRequest,ListJobsByStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsByStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -832,11 +841,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListJobsByStatusRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListJobsByStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -901,10 +910,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPipelinesResponse>(request, options);
         }
 
         /// <summary>
@@ -920,11 +930,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPipelinesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -989,10 +999,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
-            var marshaller = ListPresetsRequestMarshaller.Instance;
-            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPresetsRequest,ListPresetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPresetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1008,11 +1019,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPresetsRequestMarshaller.Instance;
-            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPresetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1056,10 +1067,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
-            var marshaller = ReadJobRequestMarshaller.Instance;
-            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
 
-            return Invoke<ReadJobRequest,ReadJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1075,11 +1087,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginReadJob(ReadJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ReadJobRequestMarshaller.Instance;
-            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ReadJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1123,10 +1135,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
-            var marshaller = ReadPipelineRequestMarshaller.Instance;
-            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
 
-            return Invoke<ReadPipelineRequest,ReadPipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadPipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -1142,11 +1155,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ReadPipelineRequestMarshaller.Instance;
-            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ReadPipelineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1190,10 +1203,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
-            var marshaller = ReadPresetRequestMarshaller.Instance;
-            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
 
-            return Invoke<ReadPresetRequest,ReadPresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadPresetResponse>(request, options);
         }
 
         /// <summary>
@@ -1209,11 +1223,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginReadPreset(ReadPresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ReadPresetRequestMarshaller.Instance;
-            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ReadPresetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1267,10 +1281,11 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
-            var marshaller = TestRoleRequestMarshaller.Instance;
-            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
 
-            return Invoke<TestRoleRequest,TestRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -1287,11 +1302,11 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual IAsyncResult BeginTestRole(TestRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TestRoleRequestMarshaller.Instance;
-            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TestRoleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1348,10 +1363,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -1367,11 +1383,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePipelineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1426,10 +1442,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
-            var marshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineNotificationsRequest,UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineNotificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1445,11 +1462,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePipelineNotificationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1506,10 +1523,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
-            var marshaller = UpdatePipelineStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineStatusRequest,UpdatePipelineStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1525,11 +1543,11 @@ namespace Amazon.ElasticTranscoder
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePipelineStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePipelineStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

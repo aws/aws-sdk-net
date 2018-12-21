@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Polly.Model;
 using Amazon.Polly.Model.Internal.MarshallTransformations;
@@ -241,7 +242,7 @@ namespace Amazon.Polly
 
         #endregion
 
-        
+
         #region  DeleteLexicon
 
         /// <summary>
@@ -275,10 +276,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request)
         {
-            var marshaller = DeleteLexiconRequestMarshaller.Instance;
-            var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLexiconRequest,DeleteLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -295,11 +297,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual IAsyncResult BeginDeleteLexicon(DeleteLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteLexiconRequestMarshaller.Instance;
-            var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteLexiconRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -359,10 +361,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request)
         {
-            var marshaller = DescribeVoicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVoicesRequest,DescribeVoicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVoicesResponse>(request, options);
         }
 
         /// <summary>
@@ -379,11 +382,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual IAsyncResult BeginDescribeVoices(DescribeVoicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeVoicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeVoicesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -428,10 +431,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual GetLexiconResponse GetLexicon(GetLexiconRequest request)
         {
-            var marshaller = GetLexiconRequestMarshaller.Instance;
-            var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<GetLexiconRequest,GetLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -448,11 +452,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual IAsyncResult BeginGetLexicon(GetLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetLexiconRequestMarshaller.Instance;
-            var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetLexiconRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -492,10 +496,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
         public virtual GetSpeechSynthesisTaskResponse GetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request)
         {
-            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSpeechSynthesisTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -512,11 +517,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
         public virtual IAsyncResult BeginGetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSpeechSynthesisTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -553,10 +558,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
         {
-            var marshaller = ListLexiconsRequestMarshaller.Instance;
-            var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLexiconsRequest,ListLexiconsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLexiconsResponse>(request, options);
         }
 
         /// <summary>
@@ -573,11 +579,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual IAsyncResult BeginListLexicons(ListLexiconsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListLexiconsRequestMarshaller.Instance;
-            var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListLexiconsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -614,10 +620,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
         public virtual ListSpeechSynthesisTasksResponse ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request)
         {
-            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
-            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
 
-            return Invoke<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSpeechSynthesisTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -634,11 +641,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
         public virtual IAsyncResult BeginListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
-            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListSpeechSynthesisTasksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -701,10 +708,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual PutLexiconResponse PutLexicon(PutLexiconRequest request)
         {
-            var marshaller = PutLexiconRequestMarshaller.Instance;
-            var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<PutLexiconRequest,PutLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -721,11 +729,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual IAsyncResult BeginPutLexicon(PutLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutLexiconRequestMarshaller.Instance;
-            var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutLexiconRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -809,10 +817,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         public virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
         {
-            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSpeechSynthesisTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -829,11 +838,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         public virtual IAsyncResult BeginStartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartSpeechSynthesisTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -904,10 +913,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)
         {
-            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
-            var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
-            return Invoke<SynthesizeSpeechRequest,SynthesizeSpeechResponse>(request, marshaller, unmarshaller);
+            return Invoke<SynthesizeSpeechResponse>(request, options);
         }
 
         /// <summary>
@@ -924,11 +934,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual IAsyncResult BeginSynthesizeSpeech(SynthesizeSpeechRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
-            var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SynthesizeSpeechRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

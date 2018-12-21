@@ -226,6 +226,7 @@ namespace ServiceClientGenerator
                 GenerateResponse(operation);
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
+                GenerateEndpointDiscoveryMarshaller(operation);
                 GenerateExceptions(operation);
             }
 
@@ -251,6 +252,13 @@ namespace ServiceClientGenerator
             }
             else if (Configuration.ServiceModel.Type == ServiceType.Rest_Xml || Configuration.ServiceModel.Type == ServiceType.Rest_Json)
                 ExecuteTestGenerator(new RestMarshallingTests(), fileName);
+
+            //Generate endpoint discovery tests for classes that have an endpoint operation
+            if(Configuration.ServiceModel.FindEndpointOperation() != null)
+            {
+                fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
+                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName);
+            }            
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
@@ -634,6 +642,25 @@ namespace ServiceClientGenerator
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Generates the endpoint discovery marshaller for the specified operation.
+        /// </summary>
+        /// <param name="operation">The operation to generate endpoint discovery marshaller for</param>
+        void GenerateEndpointDiscoveryMarshaller(Operation operation)
+        {            
+            if(operation.IsEndpointOperation || !operation.EndpointDiscoveryEnabled)
+            {
+                return;
+            }
+
+            var generator = new EndpointDiscoveryMarshaller
+            {
+                Operation = operation
+            };
+
+            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");                        
         }
 
         public static void GenerateCoreProjects(GenerationManifest generationManifest,
@@ -1312,7 +1339,7 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
-        }
+        }                
 
         void GenerateCodeAnalysisProject()
         {

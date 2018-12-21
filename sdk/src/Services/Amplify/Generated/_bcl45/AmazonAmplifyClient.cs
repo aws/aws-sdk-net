@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Amplify.Model;
 using Amazon.Amplify.Model.Internal.MarshallTransformations;
@@ -237,7 +238,7 @@ namespace Amazon.Amplify
 
         #endregion
 
-        
+
         #region  CreateApp
 
 
@@ -266,10 +267,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -284,11 +286,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAppRequest,CreateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -324,10 +326,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual CreateBranchResponse CreateBranch(CreateBranchRequest request)
         {
-            var marshaller = CreateBranchRequestMarshaller.Instance;
-            var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBranchResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBranchRequest,CreateBranchResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBranchResponse>(request, options);
         }
 
         /// <summary>
@@ -342,11 +345,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBranchRequestMarshaller.Instance;
-            var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateBranchRequest,CreateBranchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBranchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBranchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -382,10 +385,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         public virtual CreateDomainAssociationResponse CreateDomainAssociation(CreateDomainAssociationRequest request)
         {
-            var marshaller = CreateDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDomainAssociationRequest,CreateDomainAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDomainAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -400,11 +404,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         public virtual Task<CreateDomainAssociationResponse> CreateDomainAssociationAsync(CreateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDomainAssociationRequest,CreateDomainAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -437,10 +441,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppResponse>(request, options);
         }
 
         /// <summary>
@@ -455,11 +460,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAppRequest,DeleteAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -492,10 +497,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual DeleteBranchResponse DeleteBranch(DeleteBranchRequest request)
         {
-            var marshaller = DeleteBranchRequestMarshaller.Instance;
-            var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBranchResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBranchResponse>(request, options);
         }
 
         /// <summary>
@@ -510,11 +516,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBranchRequestMarshaller.Instance;
-            var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBranchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBranchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -547,10 +553,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">REST API Reference for DeleteDomainAssociation Operation</seealso>
         public virtual DeleteDomainAssociationResponse DeleteDomainAssociation(DeleteDomainAssociationRequest request)
         {
-            var marshaller = DeleteDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDomainAssociationRequest,DeleteDomainAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDomainAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -565,11 +572,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">REST API Reference for DeleteDomainAssociation Operation</seealso>
         public virtual Task<DeleteDomainAssociationResponse> DeleteDomainAssociationAsync(DeleteDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDomainAssociationRequest,DeleteDomainAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -602,10 +609,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var marshaller = DeleteJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteJobRequest,DeleteJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteJobResponse>(request, options);
         }
 
         /// <summary>
@@ -620,11 +628,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteJobRequest,DeleteJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -654,10 +662,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual GetAppResponse GetApp(GetAppRequest request)
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppResponse>(request, options);
         }
 
         /// <summary>
@@ -672,11 +681,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAppRequest,GetAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -706,10 +715,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual GetBranchResponse GetBranch(GetBranchRequest request)
         {
-            var marshaller = GetBranchRequestMarshaller.Instance;
-            var unmarshaller = GetBranchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBranchResponseUnmarshaller.Instance;
 
-            return Invoke<GetBranchRequest,GetBranchResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBranchResponse>(request, options);
         }
 
         /// <summary>
@@ -724,11 +734,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetBranchRequestMarshaller.Instance;
-            var unmarshaller = GetBranchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetBranchRequest,GetBranchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBranchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBranchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -758,10 +768,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">REST API Reference for GetDomainAssociation Operation</seealso>
         public virtual GetDomainAssociationResponse GetDomainAssociation(GetDomainAssociationRequest request)
         {
-            var marshaller = GetDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetDomainAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainAssociationRequest,GetDomainAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -776,11 +787,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">REST API Reference for GetDomainAssociation Operation</seealso>
         public virtual Task<GetDomainAssociationResponse> GetDomainAssociationAsync(GetDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetDomainAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDomainAssociationRequest,GetDomainAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -813,10 +824,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var marshaller = GetJobRequestMarshaller.Instance;
-            var unmarshaller = GetJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
-            return Invoke<GetJobRequest,GetJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetJobResponse>(request, options);
         }
 
         /// <summary>
@@ -831,11 +843,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetJobRequestMarshaller.Instance;
-            var unmarshaller = GetJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetJobRequest,GetJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -862,10 +874,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual ListAppsResponse ListApps(ListAppsRequest request)
         {
-            var marshaller = ListAppsRequestMarshaller.Instance;
-            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAppsRequest,ListAppsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAppsResponse>(request, options);
         }
 
         /// <summary>
@@ -880,11 +893,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAppsRequestMarshaller.Instance;
-            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAppsRequest,ListAppsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -911,10 +924,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual ListBranchesResponse ListBranches(ListBranchesRequest request)
         {
-            var marshaller = ListBranchesRequestMarshaller.Instance;
-            var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBranchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBranchesResponseUnmarshaller.Instance;
 
-            return Invoke<ListBranchesRequest,ListBranchesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBranchesResponse>(request, options);
         }
 
         /// <summary>
@@ -929,11 +943,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListBranchesRequestMarshaller.Instance;
-            var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListBranchesRequest,ListBranchesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBranchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBranchesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListBranchesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -960,10 +974,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">REST API Reference for ListDomainAssociations Operation</seealso>
         public virtual ListDomainAssociationsResponse ListDomainAssociations(ListDomainAssociationsRequest request)
         {
-            var marshaller = ListDomainAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDomainAssociationsRequest,ListDomainAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDomainAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -978,11 +993,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">REST API Reference for ListDomainAssociations Operation</seealso>
         public virtual Task<ListDomainAssociationsResponse> ListDomainAssociationsAsync(ListDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDomainAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainAssociationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDomainAssociationsRequest,ListDomainAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDomainAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1012,10 +1027,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1030,11 +1046,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1067,10 +1083,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         public virtual StartJobResponse StartJob(StartJobRequest request)
         {
-            var marshaller = StartJobRequestMarshaller.Instance;
-            var unmarshaller = StartJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartJobRequest,StartJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1085,11 +1102,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         public virtual Task<StartJobResponse> StartJobAsync(StartJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartJobRequestMarshaller.Instance;
-            var unmarshaller = StartJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartJobRequest,StartJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1122,10 +1139,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         public virtual StopJobResponse StopJob(StopJobRequest request)
         {
-            var marshaller = StopJobRequestMarshaller.Instance;
-            var unmarshaller = StopJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopJobRequest,StopJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1140,11 +1158,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         public virtual Task<StopJobResponse> StopJobAsync(StopJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopJobRequestMarshaller.Instance;
-            var unmarshaller = StopJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopJobRequest,StopJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1174,10 +1192,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
-            var marshaller = UpdateAppRequestMarshaller.Instance;
-            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -1192,11 +1211,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAppRequestMarshaller.Instance;
-            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAppRequest,UpdateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1229,10 +1248,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch">REST API Reference for UpdateBranch Operation</seealso>
         public virtual UpdateBranchResponse UpdateBranch(UpdateBranchRequest request)
         {
-            var marshaller = UpdateBranchRequestMarshaller.Instance;
-            var unmarshaller = UpdateBranchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBranchResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateBranchRequest,UpdateBranchResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateBranchResponse>(request, options);
         }
 
         /// <summary>
@@ -1247,11 +1267,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch">REST API Reference for UpdateBranch Operation</seealso>
         public virtual Task<UpdateBranchResponse> UpdateBranchAsync(UpdateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateBranchRequestMarshaller.Instance;
-            var unmarshaller = UpdateBranchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateBranchRequest,UpdateBranchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBranchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBranchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBranchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1284,10 +1304,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         public virtual UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request)
         {
-            var marshaller = UpdateDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDomainAssociationRequest,UpdateDomainAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDomainAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -1302,11 +1323,11 @@ namespace Amazon.Amplify
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         public virtual Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDomainAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDomainAssociationRequest,UpdateDomainAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

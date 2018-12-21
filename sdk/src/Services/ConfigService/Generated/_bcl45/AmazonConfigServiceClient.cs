@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ConfigService.Model;
 using Amazon.ConfigService.Model.Internal.MarshallTransformations;
@@ -259,7 +260,7 @@ namespace Amazon.ConfigService
 
         #endregion
 
-        
+
         #region  BatchGetAggregateResourceConfig
 
 
@@ -291,10 +292,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         public virtual BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request)
         {
-            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetAggregateResourceConfigRequest,BatchGetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetAggregateResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -309,11 +311,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         public virtual Task<BatchGetAggregateResourceConfigResponse> BatchGetAggregateResourceConfigAsync(BatchGetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchGetAggregateResourceConfigRequest,BatchGetAggregateResourceConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetAggregateResourceConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -351,10 +353,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         public virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
         {
-            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -369,11 +372,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         public virtual Task<BatchGetResourceConfigResponse> BatchGetResourceConfigAsync(BatchGetResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetResourceConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -395,10 +398,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual DeleteAggregationAuthorizationResponse DeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request)
         {
-            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAggregationAuthorizationRequest,DeleteAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAggregationAuthorizationResponse>(request, options);
         }
 
         /// <summary>
@@ -413,11 +417,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual Task<DeleteAggregationAuthorizationResponse> DeleteAggregationAuthorizationAsync(DeleteAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAggregationAuthorizationRequest,DeleteAggregationAuthorizationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAggregationAuthorizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -453,10 +457,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
         {
-            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -471,11 +476,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -496,10 +501,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
         public virtual DeleteConfigurationAggregatorResponse DeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request)
         {
-            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationAggregatorRequest,DeleteConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationAggregatorResponse>(request, options);
         }
 
         /// <summary>
@@ -514,11 +520,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
         public virtual Task<DeleteConfigurationAggregatorResponse> DeleteConfigurationAggregatorAsync(DeleteConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationAggregatorRequest,DeleteConfigurationAggregatorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationAggregatorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -551,10 +557,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
         {
-            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -569,11 +576,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationRecorderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -631,10 +638,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
         {
-            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDeliveryChannelRequest,DeleteDeliveryChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDeliveryChannelResponse>(request, options);
         }
 
 
@@ -680,11 +688,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDeliveryChannelRequest,DeleteDeliveryChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDeliveryChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -712,10 +720,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
         {
-            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
-            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEvaluationResultsResponse>(request, options);
         }
 
         /// <summary>
@@ -730,11 +739,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
-            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEvaluationResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -756,10 +765,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual DeletePendingAggregationRequestResponse DeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request)
         {
-            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
-            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePendingAggregationRequestRequest,DeletePendingAggregationRequestResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePendingAggregationRequestResponse>(request, options);
         }
 
         /// <summary>
@@ -774,11 +784,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual Task<DeletePendingAggregationRequestResponse> DeletePendingAggregationRequestAsync(DeletePendingAggregationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
-            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePendingAggregationRequestRequest,DeletePendingAggregationRequestResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePendingAggregationRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -802,10 +812,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
         public virtual DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request)
         {
-            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRetentionConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -820,11 +831,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
         public virtual Task<DeleteRetentionConfigurationResponse> DeleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRetentionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -908,10 +919,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
         {
-            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DeliverConfigSnapshotRequest,DeliverConfigSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeliverConfigSnapshotResponse>(request, options);
         }
 
 
@@ -970,11 +982,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(DeliverConfigSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeliverConfigSnapshotRequest,DeliverConfigSnapshotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeliverConfigSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1012,10 +1024,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         public virtual DescribeAggregateComplianceByConfigRulesResponse DescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request)
         {
-            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAggregateComplianceByConfigRulesRequest,DescribeAggregateComplianceByConfigRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAggregateComplianceByConfigRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1030,11 +1043,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         public virtual Task<DescribeAggregateComplianceByConfigRulesResponse> DescribeAggregateComplianceByConfigRulesAsync(DescribeAggregateComplianceByConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAggregateComplianceByConfigRulesRequest,DescribeAggregateComplianceByConfigRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAggregateComplianceByConfigRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1062,10 +1075,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual DescribeAggregationAuthorizationsResponse DescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request)
         {
-            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAggregationAuthorizationsRequest,DescribeAggregationAuthorizationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAggregationAuthorizationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1080,11 +1094,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual Task<DescribeAggregationAuthorizationsResponse> DescribeAggregationAuthorizationsAsync(DescribeAggregationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAggregationAuthorizationsRequest,DescribeAggregationAuthorizationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAggregationAuthorizationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1144,10 +1158,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
         {
-            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeComplianceByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -1162,11 +1177,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeComplianceByConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1225,10 +1240,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
         {
-            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeComplianceByResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1243,11 +1259,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
-            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeComplianceByResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1278,10 +1294,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
         {
-            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigRuleEvaluationStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1296,11 +1313,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigRuleEvaluationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1325,10 +1342,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
         {
-            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1343,11 +1361,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1380,10 +1398,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
         public virtual DescribeConfigurationAggregatorsResponse DescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request)
         {
-            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationAggregatorsRequest,DescribeConfigurationAggregatorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationAggregatorsResponse>(request, options);
         }
 
         /// <summary>
@@ -1398,11 +1417,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
         public virtual Task<DescribeConfigurationAggregatorsResponse> DescribeConfigurationAggregatorsAsync(DescribeConfigurationAggregatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigurationAggregatorsRequest,DescribeConfigurationAggregatorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigurationAggregatorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1435,10 +1454,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
         public virtual DescribeConfigurationAggregatorSourcesStatusResponse DescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request)
         {
-            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationAggregatorSourcesStatusRequest,DescribeConfigurationAggregatorSourcesStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationAggregatorSourcesStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1453,11 +1473,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
         public virtual Task<DescribeConfigurationAggregatorSourcesStatusResponse> DescribeConfigurationAggregatorSourcesStatusAsync(DescribeConfigurationAggregatorSourcesStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigurationAggregatorSourcesStatusRequest,DescribeConfigurationAggregatorSourcesStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigurationAggregatorSourcesStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1508,10 +1528,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request)
         {
-            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationRecordersRequest,DescribeConfigurationRecordersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationRecordersResponse>(request, options);
         }
 
 
@@ -1551,11 +1572,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigurationRecordersRequest,DescribeConfigurationRecordersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigurationRecordersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1606,10 +1627,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request)
         {
-            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationRecorderStatusRequest,DescribeConfigurationRecorderStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationRecorderStatusResponse>(request, options);
         }
 
 
@@ -1649,11 +1671,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeConfigurationRecorderStatusRequest,DescribeConfigurationRecorderStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConfigurationRecorderStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1704,10 +1726,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request)
         {
-            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeliveryChannelsRequest,DescribeDeliveryChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeliveryChannelsResponse>(request, options);
         }
 
 
@@ -1747,11 +1770,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDeliveryChannelsRequest,DescribeDeliveryChannelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDeliveryChannelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1802,10 +1825,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request)
         {
-            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeliveryChannelStatusRequest,DescribeDeliveryChannelStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeliveryChannelStatusResponse>(request, options);
         }
 
 
@@ -1845,11 +1869,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDeliveryChannelStatusRequest,DescribeDeliveryChannelStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDeliveryChannelStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1877,10 +1901,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual DescribePendingAggregationRequestsResponse DescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request)
         {
-            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
-            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePendingAggregationRequestsRequest,DescribePendingAggregationRequestsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePendingAggregationRequestsResponse>(request, options);
         }
 
         /// <summary>
@@ -1895,11 +1920,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual Task<DescribePendingAggregationRequestsResponse> DescribePendingAggregationRequestsAsync(DescribePendingAggregationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
-            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribePendingAggregationRequestsRequest,DescribePendingAggregationRequestsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePendingAggregationRequestsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1936,10 +1961,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
         public virtual DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request)
         {
-            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRetentionConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1954,11 +1980,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
         public virtual Task<DescribeRetentionConfigurationsResponse> DescribeRetentionConfigurationsAsync(DescribeRetentionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRetentionConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1998,10 +2024,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request)
         {
-            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateComplianceDetailsByConfigRuleRequest,GetAggregateComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateComplianceDetailsByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2016,11 +2043,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetAggregateComplianceDetailsByConfigRuleResponse> GetAggregateComplianceDetailsByConfigRuleAsync(GetAggregateComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAggregateComplianceDetailsByConfigRuleRequest,GetAggregateComplianceDetailsByConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAggregateComplianceDetailsByConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2058,10 +2085,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         public virtual GetAggregateConfigRuleComplianceSummaryResponse GetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request)
         {
-            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateConfigRuleComplianceSummaryRequest,GetAggregateConfigRuleComplianceSummaryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateConfigRuleComplianceSummaryResponse>(request, options);
         }
 
         /// <summary>
@@ -2076,11 +2104,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         public virtual Task<GetAggregateConfigRuleComplianceSummaryResponse> GetAggregateConfigRuleComplianceSummaryAsync(GetAggregateConfigRuleComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAggregateConfigRuleComplianceSummaryRequest,GetAggregateConfigRuleComplianceSummaryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAggregateConfigRuleComplianceSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2119,10 +2147,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         public virtual GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request)
         {
-            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateDiscoveredResourceCountsRequest,GetAggregateDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateDiscoveredResourceCountsResponse>(request, options);
         }
 
         /// <summary>
@@ -2137,11 +2166,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         public virtual Task<GetAggregateDiscoveredResourceCountsResponse> GetAggregateDiscoveredResourceCountsAsync(GetAggregateDiscoveredResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAggregateDiscoveredResourceCountsRequest,GetAggregateDiscoveredResourceCountsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAggregateDiscoveredResourceCountsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2171,10 +2200,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         public virtual GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request)
         {
-            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetAggregateResourceConfigRequest,GetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAggregateResourceConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2189,11 +2219,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         public virtual Task<GetAggregateResourceConfigResponse> GetAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
-            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAggregateResourceConfigRequest,GetAggregateResourceConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAggregateResourceConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2224,10 +2254,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
         {
-            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailsByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2242,11 +2273,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetComplianceDetailsByConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2269,10 +2300,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
         {
-            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailsByResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2287,11 +2319,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetComplianceDetailsByResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2309,10 +2341,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
         {
-            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceSummaryByConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2327,11 +2360,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual Task<GetComplianceSummaryByConfigRuleResponse> GetComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetComplianceSummaryByConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2354,10 +2387,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
         {
-            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceSummaryByResourceTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -2372,11 +2406,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetComplianceSummaryByResourceTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2459,10 +2493,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
         {
-            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDiscoveredResourceCountsRequest,GetDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDiscoveredResourceCountsResponse>(request, options);
         }
 
         /// <summary>
@@ -2477,11 +2512,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual Task<GetDiscoveredResourceCountsResponse> GetDiscoveredResourceCountsAsync(GetDiscoveredResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDiscoveredResourceCountsRequest,GetDiscoveredResourceCountsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDiscoveredResourceCountsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2538,10 +2573,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
         {
-            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceConfigHistoryResponse>(request, options);
         }
 
         /// <summary>
@@ -2556,11 +2592,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourceConfigHistoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2601,10 +2637,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         public virtual ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request)
         {
-            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAggregateDiscoveredResourcesRequest,ListAggregateDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAggregateDiscoveredResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -2619,11 +2656,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         public virtual Task<ListAggregateDiscoveredResourcesResponse> ListAggregateDiscoveredResourcesAsync(ListAggregateDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAggregateDiscoveredResourcesRequest,ListAggregateDiscoveredResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAggregateDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2671,10 +2708,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDiscoveredResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -2689,11 +2727,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDiscoveredResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2715,10 +2753,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual PutAggregationAuthorizationResponse PutAggregationAuthorization(PutAggregationAuthorizationRequest request)
         {
-            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
 
-            return Invoke<PutAggregationAuthorizationRequest,PutAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAggregationAuthorizationResponse>(request, options);
         }
 
         /// <summary>
@@ -2733,11 +2772,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual Task<PutAggregationAuthorizationResponse> PutAggregationAuthorizationAsync(PutAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
-            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAggregationAuthorizationRequest,PutAggregationAuthorizationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAggregationAuthorizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2835,10 +2874,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
         {
-            var marshaller = PutConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -2853,11 +2893,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigRuleRequestMarshaller.Instance;
-            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2915,10 +2955,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual PutConfigurationAggregatorResponse PutConfigurationAggregator(PutConfigurationAggregatorRequest request)
         {
-            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationAggregatorRequest,PutConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationAggregatorResponse>(request, options);
         }
 
         /// <summary>
@@ -2933,11 +2974,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual Task<PutConfigurationAggregatorResponse> PutConfigurationAggregatorAsync(PutConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationAggregatorRequest,PutConfigurationAggregatorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationAggregatorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2984,10 +3025,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
-            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationRecorderRequest,PutConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationRecorderResponse>(request, options);
         }
 
         /// <summary>
@@ -3002,11 +3044,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationRecorderRequest,PutConfigurationRecorderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationRecorderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3064,10 +3106,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request)
         {
-            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
-            return Invoke<PutDeliveryChannelRequest,PutDeliveryChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDeliveryChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -3082,11 +3125,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
-            var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutDeliveryChannelRequest,PutDeliveryChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDeliveryChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3115,10 +3158,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
         {
-            var marshaller = PutEvaluationsRequestMarshaller.Instance;
-            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEvaluationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3133,11 +3177,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEvaluationsRequestMarshaller.Instance;
-            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEvaluationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3173,10 +3217,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         public virtual PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request)
         {
-            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutRetentionConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -3191,11 +3236,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         public virtual Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRetentionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3284,10 +3329,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
         {
-            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
-            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
-            return Invoke<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartConfigRulesEvaluationResponse>(request, options);
         }
 
         /// <summary>
@@ -3302,11 +3348,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
-            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartConfigRulesEvaluationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3364,10 +3410,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request)
         {
-            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<StartConfigurationRecorderRequest,StartConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartConfigurationRecorderResponse>(request, options);
         }
 
 
@@ -3413,11 +3460,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(StartConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartConfigurationRecorderRequest,StartConfigurationRecorderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartConfigurationRecorderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3457,10 +3504,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request)
         {
-            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
-            return Invoke<StopConfigurationRecorderRequest,StopConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopConfigurationRecorderResponse>(request, options);
         }
 
 
@@ -3497,11 +3545,11 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(StopConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
-            var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopConfigurationRecorderRequest,StopConfigurationRecorderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopConfigurationRecorderResponse>(request, options, cancellationToken);
         }
 
         #endregion

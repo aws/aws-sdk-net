@@ -48,6 +48,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#
 	}
 #>
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion#>";            
 			request.HttpMethod = "<#=this.Operation.HttpMethod #>";
 
 <#

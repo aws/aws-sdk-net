@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.WorkSpaces.Model;
 using Amazon.WorkSpaces.Model.Internal.MarshallTransformations;
@@ -240,7 +241,7 @@ namespace Amazon.WorkSpaces
 
         #endregion
 
-        
+
         #region  AssociateIpGroups
 
 
@@ -271,10 +272,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
         public virtual AssociateIpGroupsResponse AssociateIpGroups(AssociateIpGroupsRequest request)
         {
-            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateIpGroupsRequest,AssociateIpGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateIpGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -289,11 +291,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
         public virtual Task<AssociateIpGroupsResponse> AssociateIpGroupsAsync(AssociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateIpGroupsRequest,AssociateIpGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateIpGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -331,10 +333,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
         public virtual AuthorizeIpRulesResponse AuthorizeIpRules(AuthorizeIpRulesRequest request)
         {
-            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
 
-            return Invoke<AuthorizeIpRulesRequest,AuthorizeIpRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<AuthorizeIpRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -349,11 +352,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
         public virtual Task<AuthorizeIpRulesResponse> AuthorizeIpRulesAsync(AuthorizeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
-            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AuthorizeIpRulesRequest,AuthorizeIpRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AuthorizeIpRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -401,10 +404,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
         public virtual CreateIpGroupResponse CreateIpGroup(CreateIpGroupRequest request)
         {
-            var marshaller = CreateIpGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateIpGroupRequest,CreateIpGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateIpGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -419,11 +423,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
         public virtual Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateIpGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateIpGroupRequest,CreateIpGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIpGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -449,10 +453,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -467,11 +472,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -499,10 +504,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public virtual CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
         {
-            var marshaller = CreateWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<CreateWorkspacesRequest,CreateWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -517,11 +523,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public virtual Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateWorkspacesRequest,CreateWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -555,10 +561,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
         public virtual DeleteIpGroupResponse DeleteIpGroup(DeleteIpGroupRequest request)
         {
-            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteIpGroupRequest,DeleteIpGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteIpGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -573,11 +580,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
         public virtual Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteIpGroupRequest,DeleteIpGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIpGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -600,10 +607,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -618,11 +626,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -649,10 +657,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
         public virtual DeleteWorkspaceImageResponse DeleteWorkspaceImage(DeleteWorkspaceImageRequest request)
         {
-            var marshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
-            var unmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteWorkspaceImageRequest,DeleteWorkspaceImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteWorkspaceImageResponse>(request, options);
         }
 
         /// <summary>
@@ -667,11 +676,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
         public virtual Task<DeleteWorkspaceImageResponse> DeleteWorkspaceImageAsync(DeleteWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
-            var unmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteWorkspaceImageRequest,DeleteWorkspaceImageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteWorkspaceImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -692,10 +701,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         public virtual DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
         {
-            var marshaller = DescribeAccountRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountRequest,DescribeAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -710,11 +720,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         public virtual Task<DescribeAccountResponse> DescribeAccountAsync(DescribeAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAccountRequest,DescribeAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -735,10 +745,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
         public virtual DescribeAccountModificationsResponse DescribeAccountModifications(DescribeAccountModificationsRequest request)
         {
-            var marshaller = DescribeAccountModificationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountModificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountModificationsRequest,DescribeAccountModificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountModificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -753,11 +764,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
         public virtual Task<DescribeAccountModificationsResponse> DescribeAccountModificationsAsync(DescribeAccountModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountModificationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAccountModificationsRequest,DescribeAccountModificationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountModificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAccountModificationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -783,10 +794,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         public virtual DescribeClientPropertiesResponse DescribeClientProperties(DescribeClientPropertiesRequest request)
         {
-            var marshaller = DescribeClientPropertiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClientPropertiesRequest,DescribeClientPropertiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClientPropertiesResponse>(request, options);
         }
 
         /// <summary>
@@ -801,11 +813,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         public virtual Task<DescribeClientPropertiesResponse> DescribeClientPropertiesAsync(DescribeClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClientPropertiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeClientPropertiesRequest,DescribeClientPropertiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClientPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -828,10 +840,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
         public virtual DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request)
         {
-            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIpGroupsRequest,DescribeIpGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIpGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -846,11 +859,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
         public virtual Task<DescribeIpGroupsResponse> DescribeIpGroupsAsync(DescribeIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeIpGroupsRequest,DescribeIpGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeIpGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -870,10 +883,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -888,11 +902,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -938,10 +952,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public virtual DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request)
         {
-            var marshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkspaceBundlesRequest,DescribeWorkspaceBundlesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkspaceBundlesResponse>(request, options);
         }
 
 
@@ -980,11 +995,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public virtual Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(DescribeWorkspaceBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeWorkspaceBundlesRequest,DescribeWorkspaceBundlesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceBundlesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1022,10 +1037,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public virtual DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request)
         {
-            var marshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkspaceDirectoriesRequest,DescribeWorkspaceDirectoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkspaceDirectoriesResponse>(request, options);
         }
 
 
@@ -1060,11 +1076,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public virtual Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(DescribeWorkspaceDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeWorkspaceDirectoriesRequest,DescribeWorkspaceDirectoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceDirectoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1085,10 +1101,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
         public virtual DescribeWorkspaceImagesResponse DescribeWorkspaceImages(DescribeWorkspaceImagesRequest request)
         {
-            var marshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkspaceImagesRequest,DescribeWorkspaceImagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkspaceImagesResponse>(request, options);
         }
 
         /// <summary>
@@ -1103,11 +1120,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
         public virtual Task<DescribeWorkspaceImagesResponse> DescribeWorkspaceImagesAsync(DescribeWorkspaceImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeWorkspaceImagesRequest,DescribeWorkspaceImagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceImagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1161,10 +1178,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public virtual DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request)
         {
-            var marshaller = DescribeWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkspacesRequest,DescribeWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkspacesResponse>(request, options);
         }
 
 
@@ -1207,11 +1225,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public virtual Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(DescribeWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeWorkspacesRequest,DescribeWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1231,10 +1249,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public virtual DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
         {
-            var marshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkspacesConnectionStatusRequest,DescribeWorkspacesConnectionStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkspacesConnectionStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1249,11 +1268,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public virtual Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeWorkspacesConnectionStatusRequest,DescribeWorkspacesConnectionStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspacesConnectionStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1282,10 +1301,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
         public virtual DisassociateIpGroupsResponse DisassociateIpGroups(DisassociateIpGroupsRequest request)
         {
-            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateIpGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -1300,11 +1320,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
         public virtual Task<DisassociateIpGroupsResponse> DisassociateIpGroupsAsync(DisassociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
-            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateIpGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1338,10 +1358,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
         public virtual ImportWorkspaceImageResponse ImportWorkspaceImage(ImportWorkspaceImageRequest request)
         {
-            var marshaller = ImportWorkspaceImageRequestMarshaller.Instance;
-            var unmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
 
-            return Invoke<ImportWorkspaceImageRequest,ImportWorkspaceImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportWorkspaceImageResponse>(request, options);
         }
 
         /// <summary>
@@ -1356,11 +1377,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
         public virtual Task<ImportWorkspaceImageResponse> ImportWorkspaceImageAsync(ImportWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ImportWorkspaceImageRequestMarshaller.Instance;
-            var unmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ImportWorkspaceImageRequest,ImportWorkspaceImageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportWorkspaceImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1392,10 +1413,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
         public virtual ListAvailableManagementCidrRangesResponse ListAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request)
         {
-            var marshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
-            var unmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAvailableManagementCidrRangesRequest,ListAvailableManagementCidrRangesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAvailableManagementCidrRangesResponse>(request, options);
         }
 
         /// <summary>
@@ -1410,11 +1432,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
         public virtual Task<ListAvailableManagementCidrRangesResponse> ListAvailableManagementCidrRangesAsync(ListAvailableManagementCidrRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
-            var unmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAvailableManagementCidrRangesRequest,ListAvailableManagementCidrRangesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAvailableManagementCidrRangesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1446,10 +1468,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
         public virtual ModifyAccountResponse ModifyAccount(ModifyAccountRequest request)
         {
-            var marshaller = ModifyAccountRequestMarshaller.Instance;
-            var unmarshaller = ModifyAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAccountResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyAccountRequest,ModifyAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -1464,11 +1487,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
         public virtual Task<ModifyAccountResponse> ModifyAccountAsync(ModifyAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyAccountRequestMarshaller.Instance;
-            var unmarshaller = ModifyAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyAccountRequest,ModifyAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1494,10 +1517,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
         public virtual ModifyClientPropertiesResponse ModifyClientProperties(ModifyClientPropertiesRequest request)
         {
-            var marshaller = ModifyClientPropertiesRequestMarshaller.Instance;
-            var unmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClientPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyClientPropertiesRequest,ModifyClientPropertiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyClientPropertiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1512,11 +1536,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
         public virtual Task<ModifyClientPropertiesResponse> ModifyClientPropertiesAsync(ModifyClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyClientPropertiesRequestMarshaller.Instance;
-            var unmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyClientPropertiesRequest,ModifyClientPropertiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClientPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClientPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1556,10 +1580,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public virtual ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
         {
-            var marshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
-            var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyWorkspacePropertiesRequest,ModifyWorkspacePropertiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyWorkspacePropertiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1574,11 +1599,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public virtual Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
-            var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyWorkspacePropertiesRequest,ModifyWorkspacePropertiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyWorkspacePropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1612,10 +1637,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
         public virtual ModifyWorkspaceStateResponse ModifyWorkspaceState(ModifyWorkspaceStateRequest request)
         {
-            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
-            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyWorkspaceStateRequest,ModifyWorkspaceStateResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyWorkspaceStateResponse>(request, options);
         }
 
         /// <summary>
@@ -1630,11 +1656,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
         public virtual Task<ModifyWorkspaceStateResponse> ModifyWorkspaceStateAsync(ModifyWorkspaceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
-            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyWorkspaceStateRequest,ModifyWorkspaceStateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyWorkspaceStateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1660,10 +1686,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public virtual RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
         {
-            var marshaller = RebootWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<RebootWorkspacesRequest,RebootWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RebootWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -1678,11 +1705,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public virtual Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RebootWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RebootWorkspacesRequest,RebootWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RebootWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1716,10 +1743,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public virtual RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
         {
-            var marshaller = RebuildWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebuildWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<RebuildWorkspacesRequest,RebuildWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RebuildWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -1734,11 +1762,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public virtual Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RebuildWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RebuildWorkspacesRequest,RebuildWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebuildWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RebuildWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1767,10 +1795,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
         public virtual RevokeIpRulesResponse RevokeIpRules(RevokeIpRulesRequest request)
         {
-            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
-            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeIpRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
 
-            return Invoke<RevokeIpRulesRequest,RevokeIpRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RevokeIpRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1785,11 +1814,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
         public virtual Task<RevokeIpRulesResponse> RevokeIpRulesAsync(RevokeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
-            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RevokeIpRulesRequest,RevokeIpRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeIpRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeIpRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1812,10 +1841,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public virtual StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
         {
-            var marshaller = StartWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<StartWorkspacesRequest,StartWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -1830,11 +1860,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public virtual Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartWorkspacesRequest,StartWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1858,10 +1888,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public virtual StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
         {
-            var marshaller = StopWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<StopWorkspacesRequest,StopWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -1876,11 +1907,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public virtual Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopWorkspacesRequest,StopWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1913,10 +1944,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public virtual TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request)
         {
-            var marshaller = TerminateWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateWorkspacesRequest,TerminateWorkspacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateWorkspacesResponse>(request, options);
         }
 
         /// <summary>
@@ -1931,11 +1963,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public virtual Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateWorkspacesRequestMarshaller.Instance;
-            var unmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TerminateWorkspacesRequest,TerminateWorkspacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TerminateWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1968,10 +2000,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
         public virtual UpdateRulesOfIpGroupResponse UpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request)
         {
-            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRulesOfIpGroupRequest,UpdateRulesOfIpGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRulesOfIpGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1986,11 +2019,11 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
         public virtual Task<UpdateRulesOfIpGroupResponse> UpdateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateRulesOfIpGroupRequest,UpdateRulesOfIpGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRulesOfIpGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

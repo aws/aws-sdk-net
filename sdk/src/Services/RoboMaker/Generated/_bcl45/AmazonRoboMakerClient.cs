@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.RoboMaker.Model;
 using Amazon.RoboMaker.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.RoboMaker
 
         #endregion
 
-        
+
         #region  BatchDescribeSimulationJob
 
 
@@ -262,10 +263,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDescribeSimulationJob">REST API Reference for BatchDescribeSimulationJob Operation</seealso>
         public virtual BatchDescribeSimulationJobResponse BatchDescribeSimulationJob(BatchDescribeSimulationJobRequest request)
         {
-            var marshaller = BatchDescribeSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = BatchDescribeSimulationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeSimulationJobResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDescribeSimulationJobRequest,BatchDescribeSimulationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDescribeSimulationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -280,11 +282,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchDescribeSimulationJob">REST API Reference for BatchDescribeSimulationJob Operation</seealso>
         public virtual Task<BatchDescribeSimulationJobResponse> BatchDescribeSimulationJobAsync(BatchDescribeSimulationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDescribeSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = BatchDescribeSimulationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDescribeSimulationJobRequest,BatchDescribeSimulationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeSimulationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDescribeSimulationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -314,10 +316,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJob">REST API Reference for CancelSimulationJob Operation</seealso>
         public virtual CancelSimulationJobResponse CancelSimulationJob(CancelSimulationJobRequest request)
         {
-            var marshaller = CancelSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = CancelSimulationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSimulationJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelSimulationJobRequest,CancelSimulationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelSimulationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -332,11 +335,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJob">REST API Reference for CancelSimulationJob Operation</seealso>
         public virtual Task<CancelSimulationJobResponse> CancelSimulationJobAsync(CancelSimulationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = CancelSimulationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelSimulationJobRequest,CancelSimulationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSimulationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelSimulationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -377,10 +380,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">REST API Reference for CreateDeploymentJob Operation</seealso>
         public virtual CreateDeploymentJobResponse CreateDeploymentJob(CreateDeploymentJobRequest request)
         {
-            var marshaller = CreateDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = CreateDeploymentJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeploymentJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDeploymentJobRequest,CreateDeploymentJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDeploymentJobResponse>(request, options);
         }
 
         /// <summary>
@@ -395,11 +399,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">REST API Reference for CreateDeploymentJob Operation</seealso>
         public virtual Task<CreateDeploymentJobResponse> CreateDeploymentJobAsync(CreateDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = CreateDeploymentJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDeploymentJobRequest,CreateDeploymentJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeploymentJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDeploymentJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -430,10 +434,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var marshaller = CreateFleetRequestMarshaller.Instance;
-            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFleetRequest,CreateFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -448,11 +453,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateFleetRequestMarshaller.Instance;
-            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateFleetRequest,CreateFleetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -486,10 +491,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot">REST API Reference for CreateRobot Operation</seealso>
         public virtual CreateRobotResponse CreateRobot(CreateRobotRequest request)
         {
-            var marshaller = CreateRobotRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRobotRequest,CreateRobotResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRobotResponse>(request, options);
         }
 
         /// <summary>
@@ -504,11 +510,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot">REST API Reference for CreateRobot Operation</seealso>
         public virtual Task<CreateRobotResponse> CreateRobotAsync(CreateRobotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRobotRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateRobotRequest,CreateRobotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRobotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -546,10 +552,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobotApplication">REST API Reference for CreateRobotApplication Operation</seealso>
         public virtual CreateRobotApplicationResponse CreateRobotApplication(CreateRobotApplicationRequest request)
         {
-            var marshaller = CreateRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRobotApplicationRequest,CreateRobotApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRobotApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -564,11 +571,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobotApplication">REST API Reference for CreateRobotApplication Operation</seealso>
         public virtual Task<CreateRobotApplicationResponse> CreateRobotApplicationAsync(CreateRobotApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateRobotApplicationRequest,CreateRobotApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRobotApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -603,10 +610,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobotApplicationVersion">REST API Reference for CreateRobotApplicationVersion Operation</seealso>
         public virtual CreateRobotApplicationVersionResponse CreateRobotApplicationVersion(CreateRobotApplicationVersionRequest request)
         {
-            var marshaller = CreateRobotApplicationVersionRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotApplicationVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotApplicationVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotApplicationVersionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRobotApplicationVersionRequest,CreateRobotApplicationVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRobotApplicationVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -621,11 +629,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobotApplicationVersion">REST API Reference for CreateRobotApplicationVersion Operation</seealso>
         public virtual Task<CreateRobotApplicationVersionResponse> CreateRobotApplicationVersionAsync(CreateRobotApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRobotApplicationVersionRequestMarshaller.Instance;
-            var unmarshaller = CreateRobotApplicationVersionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateRobotApplicationVersionRequest,CreateRobotApplicationVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRobotApplicationVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRobotApplicationVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRobotApplicationVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -663,10 +671,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationApplication">REST API Reference for CreateSimulationApplication Operation</seealso>
         public virtual CreateSimulationApplicationResponse CreateSimulationApplication(CreateSimulationApplicationRequest request)
         {
-            var marshaller = CreateSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSimulationApplicationRequest,CreateSimulationApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSimulationApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -681,11 +690,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationApplication">REST API Reference for CreateSimulationApplication Operation</seealso>
         public virtual Task<CreateSimulationApplicationResponse> CreateSimulationApplicationAsync(CreateSimulationApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSimulationApplicationRequest,CreateSimulationApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSimulationApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -720,10 +729,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationApplicationVersion">REST API Reference for CreateSimulationApplicationVersion Operation</seealso>
         public virtual CreateSimulationApplicationVersionResponse CreateSimulationApplicationVersion(CreateSimulationApplicationVersionRequest request)
         {
-            var marshaller = CreateSimulationApplicationVersionRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationApplicationVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationApplicationVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationApplicationVersionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSimulationApplicationVersionRequest,CreateSimulationApplicationVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSimulationApplicationVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -738,11 +748,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationApplicationVersion">REST API Reference for CreateSimulationApplicationVersion Operation</seealso>
         public virtual Task<CreateSimulationApplicationVersionResponse> CreateSimulationApplicationVersionAsync(CreateSimulationApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSimulationApplicationVersionRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationApplicationVersionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSimulationApplicationVersionRequest,CreateSimulationApplicationVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationApplicationVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationApplicationVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSimulationApplicationVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -780,10 +790,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">REST API Reference for CreateSimulationJob Operation</seealso>
         public virtual CreateSimulationJobResponse CreateSimulationJob(CreateSimulationJobRequest request)
         {
-            var marshaller = CreateSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSimulationJobRequest,CreateSimulationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSimulationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -798,11 +809,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">REST API Reference for CreateSimulationJob Operation</seealso>
         public virtual Task<CreateSimulationJobResponse> CreateSimulationJobAsync(CreateSimulationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateSimulationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateSimulationJobRequest,CreateSimulationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSimulationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSimulationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -829,10 +840,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var marshaller = DeleteFleetRequestMarshaller.Instance;
-            var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -847,11 +859,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteFleetRequestMarshaller.Instance;
-            var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -878,10 +890,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobot">REST API Reference for DeleteRobot Operation</seealso>
         public virtual DeleteRobotResponse DeleteRobot(DeleteRobotRequest request)
         {
-            var marshaller = DeleteRobotRequestMarshaller.Instance;
-            var unmarshaller = DeleteRobotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRobotResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRobotRequest,DeleteRobotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRobotResponse>(request, options);
         }
 
         /// <summary>
@@ -896,11 +909,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobot">REST API Reference for DeleteRobot Operation</seealso>
         public virtual Task<DeleteRobotResponse> DeleteRobotAsync(DeleteRobotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRobotRequestMarshaller.Instance;
-            var unmarshaller = DeleteRobotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteRobotRequest,DeleteRobotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRobotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRobotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -927,10 +940,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobotApplication">REST API Reference for DeleteRobotApplication Operation</seealso>
         public virtual DeleteRobotApplicationResponse DeleteRobotApplication(DeleteRobotApplicationRequest request)
         {
-            var marshaller = DeleteRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRobotApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRobotApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRobotApplicationRequest,DeleteRobotApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRobotApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -945,11 +959,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobotApplication">REST API Reference for DeleteRobotApplication Operation</seealso>
         public virtual Task<DeleteRobotApplicationResponse> DeleteRobotApplicationAsync(DeleteRobotApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteRobotApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteRobotApplicationRequest,DeleteRobotApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRobotApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRobotApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -976,10 +990,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteSimulationApplication">REST API Reference for DeleteSimulationApplication Operation</seealso>
         public virtual DeleteSimulationApplicationResponse DeleteSimulationApplication(DeleteSimulationApplicationRequest request)
         {
-            var marshaller = DeleteSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteSimulationApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSimulationApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSimulationApplicationRequest,DeleteSimulationApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSimulationApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -994,11 +1009,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteSimulationApplication">REST API Reference for DeleteSimulationApplication Operation</seealso>
         public virtual Task<DeleteSimulationApplicationResponse> DeleteSimulationApplicationAsync(DeleteSimulationApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteSimulationApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteSimulationApplicationRequest,DeleteSimulationApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSimulationApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSimulationApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1028,10 +1043,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeregisterRobot">REST API Reference for DeregisterRobot Operation</seealso>
         public virtual DeregisterRobotResponse DeregisterRobot(DeregisterRobotRequest request)
         {
-            var marshaller = DeregisterRobotRequestMarshaller.Instance;
-            var unmarshaller = DeregisterRobotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterRobotResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterRobotRequest,DeregisterRobotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterRobotResponse>(request, options);
         }
 
         /// <summary>
@@ -1046,11 +1062,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeregisterRobot">REST API Reference for DeregisterRobot Operation</seealso>
         public virtual Task<DeregisterRobotResponse> DeregisterRobotAsync(DeregisterRobotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterRobotRequestMarshaller.Instance;
-            var unmarshaller = DeregisterRobotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterRobotRequest,DeregisterRobotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterRobotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterRobotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1080,10 +1096,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">REST API Reference for DescribeDeploymentJob Operation</seealso>
         public virtual DescribeDeploymentJobResponse DescribeDeploymentJob(DescribeDeploymentJobRequest request)
         {
-            var marshaller = DescribeDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeploymentJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeploymentJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeploymentJobRequest,DescribeDeploymentJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeploymentJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1098,11 +1115,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">REST API Reference for DescribeDeploymentJob Operation</seealso>
         public virtual Task<DescribeDeploymentJobResponse> DescribeDeploymentJobAsync(DescribeDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeploymentJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDeploymentJobRequest,DescribeDeploymentJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeploymentJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDeploymentJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1132,10 +1149,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeFleet">REST API Reference for DescribeFleet Operation</seealso>
         public virtual DescribeFleetResponse DescribeFleet(DescribeFleetRequest request)
         {
-            var marshaller = DescribeFleetRequestMarshaller.Instance;
-            var unmarshaller = DescribeFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeFleetRequest,DescribeFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -1150,11 +1168,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeFleet">REST API Reference for DescribeFleet Operation</seealso>
         public virtual Task<DescribeFleetResponse> DescribeFleetAsync(DescribeFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeFleetRequestMarshaller.Instance;
-            var unmarshaller = DescribeFleetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeFleetRequest,DescribeFleetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1184,10 +1202,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobot">REST API Reference for DescribeRobot Operation</seealso>
         public virtual DescribeRobotResponse DescribeRobot(DescribeRobotRequest request)
         {
-            var marshaller = DescribeRobotRequestMarshaller.Instance;
-            var unmarshaller = DescribeRobotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRobotResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRobotRequest,DescribeRobotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRobotResponse>(request, options);
         }
 
         /// <summary>
@@ -1202,11 +1221,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobot">REST API Reference for DescribeRobot Operation</seealso>
         public virtual Task<DescribeRobotResponse> DescribeRobotAsync(DescribeRobotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRobotRequestMarshaller.Instance;
-            var unmarshaller = DescribeRobotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeRobotRequest,DescribeRobotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRobotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRobotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1236,10 +1255,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobotApplication">REST API Reference for DescribeRobotApplication Operation</seealso>
         public virtual DescribeRobotApplicationResponse DescribeRobotApplication(DescribeRobotApplicationRequest request)
         {
-            var marshaller = DescribeRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeRobotApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRobotApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRobotApplicationRequest,DescribeRobotApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRobotApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1254,11 +1274,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobotApplication">REST API Reference for DescribeRobotApplication Operation</seealso>
         public virtual Task<DescribeRobotApplicationResponse> DescribeRobotApplicationAsync(DescribeRobotApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeRobotApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeRobotApplicationRequest,DescribeRobotApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRobotApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRobotApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1288,10 +1308,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationApplication">REST API Reference for DescribeSimulationApplication Operation</seealso>
         public virtual DescribeSimulationApplicationResponse DescribeSimulationApplication(DescribeSimulationApplicationRequest request)
         {
-            var marshaller = DescribeSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSimulationApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSimulationApplicationRequest,DescribeSimulationApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSimulationApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1306,11 +1327,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationApplication">REST API Reference for DescribeSimulationApplication Operation</seealso>
         public virtual Task<DescribeSimulationApplicationResponse> DescribeSimulationApplicationAsync(DescribeSimulationApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSimulationApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSimulationApplicationRequest,DescribeSimulationApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSimulationApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1340,10 +1361,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJob">REST API Reference for DescribeSimulationJob Operation</seealso>
         public virtual DescribeSimulationJobResponse DescribeSimulationJob(DescribeSimulationJobRequest request)
         {
-            var marshaller = DescribeSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSimulationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSimulationJobRequest,DescribeSimulationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSimulationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1358,11 +1380,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJob">REST API Reference for DescribeSimulationJob Operation</seealso>
         public virtual Task<DescribeSimulationJobResponse> DescribeSimulationJobAsync(DescribeSimulationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSimulationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSimulationJobRequest,DescribeSimulationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSimulationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSimulationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1393,10 +1415,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">REST API Reference for ListDeploymentJobs Operation</seealso>
         public virtual ListDeploymentJobsResponse ListDeploymentJobs(ListDeploymentJobsRequest request)
         {
-            var marshaller = ListDeploymentJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDeploymentJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeploymentJobsRequest,ListDeploymentJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeploymentJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1411,11 +1434,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">REST API Reference for ListDeploymentJobs Operation</seealso>
         public virtual Task<ListDeploymentJobsResponse> ListDeploymentJobsAsync(ListDeploymentJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDeploymentJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDeploymentJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDeploymentJobsRequest,ListDeploymentJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDeploymentJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1446,10 +1469,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var marshaller = ListFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListFleetsRequest,ListFleetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFleetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1464,11 +1488,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListFleetsRequest,ListFleetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1496,10 +1520,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobotApplications">REST API Reference for ListRobotApplications Operation</seealso>
         public virtual ListRobotApplicationsResponse ListRobotApplications(ListRobotApplicationsRequest request)
         {
-            var marshaller = ListRobotApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListRobotApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRobotApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRobotApplicationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListRobotApplicationsRequest,ListRobotApplicationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRobotApplicationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1514,11 +1539,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobotApplications">REST API Reference for ListRobotApplications Operation</seealso>
         public virtual Task<ListRobotApplicationsResponse> ListRobotApplicationsAsync(ListRobotApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRobotApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListRobotApplicationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListRobotApplicationsRequest,ListRobotApplicationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRobotApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRobotApplicationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRobotApplicationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1549,10 +1574,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobots">REST API Reference for ListRobots Operation</seealso>
         public virtual ListRobotsResponse ListRobots(ListRobotsRequest request)
         {
-            var marshaller = ListRobotsRequestMarshaller.Instance;
-            var unmarshaller = ListRobotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRobotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRobotsResponseUnmarshaller.Instance;
 
-            return Invoke<ListRobotsRequest,ListRobotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRobotsResponse>(request, options);
         }
 
         /// <summary>
@@ -1567,11 +1593,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobots">REST API Reference for ListRobots Operation</seealso>
         public virtual Task<ListRobotsResponse> ListRobotsAsync(ListRobotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRobotsRequestMarshaller.Instance;
-            var unmarshaller = ListRobotsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListRobotsRequest,ListRobotsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRobotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRobotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRobotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1599,10 +1625,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">REST API Reference for ListSimulationApplications Operation</seealso>
         public virtual ListSimulationApplicationsResponse ListSimulationApplications(ListSimulationApplicationsRequest request)
         {
-            var marshaller = ListSimulationApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListSimulationApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationApplicationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSimulationApplicationsRequest,ListSimulationApplicationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSimulationApplicationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1617,11 +1644,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">REST API Reference for ListSimulationApplications Operation</seealso>
         public virtual Task<ListSimulationApplicationsResponse> ListSimulationApplicationsAsync(ListSimulationApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSimulationApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListSimulationApplicationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSimulationApplicationsRequest,ListSimulationApplicationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationApplicationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSimulationApplicationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1649,10 +1676,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">REST API Reference for ListSimulationJobs Operation</seealso>
         public virtual ListSimulationJobsResponse ListSimulationJobs(ListSimulationJobsRequest request)
         {
-            var marshaller = ListSimulationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSimulationJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSimulationJobsRequest,ListSimulationJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSimulationJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1667,11 +1695,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">REST API Reference for ListSimulationJobs Operation</seealso>
         public virtual Task<ListSimulationJobsResponse> ListSimulationJobsAsync(ListSimulationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSimulationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSimulationJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSimulationJobsRequest,ListSimulationJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSimulationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSimulationJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSimulationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1705,10 +1733,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">REST API Reference for RegisterRobot Operation</seealso>
         public virtual RegisterRobotResponse RegisterRobot(RegisterRobotRequest request)
         {
-            var marshaller = RegisterRobotRequestMarshaller.Instance;
-            var unmarshaller = RegisterRobotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterRobotResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterRobotRequest,RegisterRobotResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterRobotResponse>(request, options);
         }
 
         /// <summary>
@@ -1723,11 +1752,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">REST API Reference for RegisterRobot Operation</seealso>
         public virtual Task<RegisterRobotResponse> RegisterRobotAsync(RegisterRobotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterRobotRequestMarshaller.Instance;
-            var unmarshaller = RegisterRobotResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterRobotRequest,RegisterRobotResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterRobotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterRobotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterRobotResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1761,10 +1790,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RestartSimulationJob">REST API Reference for RestartSimulationJob Operation</seealso>
         public virtual RestartSimulationJobResponse RestartSimulationJob(RestartSimulationJobRequest request)
         {
-            var marshaller = RestartSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestartSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
 
-            return Invoke<RestartSimulationJobRequest,RestartSimulationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestartSimulationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1779,11 +1809,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RestartSimulationJob">REST API Reference for RestartSimulationJob Operation</seealso>
         public virtual Task<RestartSimulationJobResponse> RestartSimulationJobAsync(RestartSimulationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestartSimulationJobRequestMarshaller.Instance;
-            var unmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestartSimulationJobRequest,RestartSimulationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestartSimulationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartSimulationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestartSimulationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1825,10 +1855,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
         public virtual SyncDeploymentJobResponse SyncDeploymentJob(SyncDeploymentJobRequest request)
         {
-            var marshaller = SyncDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = SyncDeploymentJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SyncDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SyncDeploymentJobResponseUnmarshaller.Instance;
 
-            return Invoke<SyncDeploymentJobRequest,SyncDeploymentJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<SyncDeploymentJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1843,11 +1874,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
         public virtual Task<SyncDeploymentJobResponse> SyncDeploymentJobAsync(SyncDeploymentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SyncDeploymentJobRequestMarshaller.Instance;
-            var unmarshaller = SyncDeploymentJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SyncDeploymentJobRequest,SyncDeploymentJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SyncDeploymentJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SyncDeploymentJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SyncDeploymentJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1881,10 +1912,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateRobotApplication">REST API Reference for UpdateRobotApplication Operation</seealso>
         public virtual UpdateRobotApplicationResponse UpdateRobotApplication(UpdateRobotApplicationRequest request)
         {
-            var marshaller = UpdateRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateRobotApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRobotApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRobotApplicationRequest,UpdateRobotApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRobotApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1899,11 +1931,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateRobotApplication">REST API Reference for UpdateRobotApplication Operation</seealso>
         public virtual Task<UpdateRobotApplicationResponse> UpdateRobotApplicationAsync(UpdateRobotApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRobotApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateRobotApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateRobotApplicationRequest,UpdateRobotApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRobotApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRobotApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRobotApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1937,10 +1969,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateSimulationApplication">REST API Reference for UpdateSimulationApplication Operation</seealso>
         public virtual UpdateSimulationApplicationResponse UpdateSimulationApplication(UpdateSimulationApplicationRequest request)
         {
-            var marshaller = UpdateSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateSimulationApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSimulationApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSimulationApplicationRequest,UpdateSimulationApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSimulationApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1955,11 +1988,11 @@ namespace Amazon.RoboMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UpdateSimulationApplication">REST API Reference for UpdateSimulationApplication Operation</seealso>
         public virtual Task<UpdateSimulationApplicationResponse> UpdateSimulationApplicationAsync(UpdateSimulationApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSimulationApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateSimulationApplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateSimulationApplicationRequest,UpdateSimulationApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSimulationApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSimulationApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSimulationApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion

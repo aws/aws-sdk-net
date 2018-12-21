@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Organizations.Model;
 using Amazon.Organizations.Model.Internal.MarshallTransformations;
@@ -392,7 +393,7 @@ namespace Amazon.Organizations
 
         #endregion
 
-        
+
         #region  AcceptHandshake
 
         /// <summary>
@@ -636,10 +637,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">REST API Reference for AcceptHandshake Operation</seealso>
         public virtual AcceptHandshakeResponse AcceptHandshake(AcceptHandshakeRequest request)
         {
-            var marshaller = AcceptHandshakeRequestMarshaller.Instance;
-            var unmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptHandshakeRequest,AcceptHandshakeResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptHandshakeResponse>(request, options);
         }
 
         /// <summary>
@@ -656,11 +658,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">REST API Reference for AcceptHandshake Operation</seealso>
         public virtual IAsyncResult BeginAcceptHandshake(AcceptHandshakeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AcceptHandshakeRequestMarshaller.Instance;
-            var unmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptHandshakeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AcceptHandshakeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -998,10 +1000,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
-            var marshaller = AttachPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<AttachPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1018,11 +1021,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual IAsyncResult BeginAttachPolicy(AttachPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AttachPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AttachPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1188,10 +1191,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">REST API Reference for CancelHandshake Operation</seealso>
         public virtual CancelHandshakeResponse CancelHandshake(CancelHandshakeRequest request)
         {
-            var marshaller = CancelHandshakeRequestMarshaller.Instance;
-            var unmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
 
-            return Invoke<CancelHandshakeRequest,CancelHandshakeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelHandshakeResponse>(request, options);
         }
 
         /// <summary>
@@ -1208,11 +1212,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">REST API Reference for CancelHandshake Operation</seealso>
         public virtual IAsyncResult BeginCancelHandshake(CancelHandshakeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelHandshakeRequestMarshaller.Instance;
-            var unmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelHandshakeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelHandshakeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1573,10 +1577,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
         public virtual CreateAccountResponse CreateAccount(CreateAccountRequest request)
         {
-            var marshaller = CreateAccountRequestMarshaller.Instance;
-            var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAccountRequest,CreateAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -1593,11 +1598,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
         public virtual IAsyncResult BeginCreateAccount(CreateAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAccountRequestMarshaller.Instance;
-            var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1891,10 +1896,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         public virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
         {
-            var marshaller = CreateOrganizationRequestMarshaller.Instance;
-            var unmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateOrganizationRequest,CreateOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -1911,11 +1917,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         public virtual IAsyncResult BeginCreateOrganization(CreateOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateOrganizationRequestMarshaller.Instance;
-            var unmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2206,10 +2212,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">REST API Reference for CreateOrganizationalUnit Operation</seealso>
         public virtual CreateOrganizationalUnitResponse CreateOrganizationalUnit(CreateOrganizationalUnitRequest request)
         {
-            var marshaller = CreateOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return Invoke<CreateOrganizationalUnitRequest,CreateOrganizationalUnitResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateOrganizationalUnitResponse>(request, options);
         }
 
         /// <summary>
@@ -2226,11 +2233,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">REST API Reference for CreateOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginCreateOrganizationalUnit(CreateOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateOrganizationalUnitRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2527,10 +2534,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
-            var marshaller = CreatePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -2547,11 +2555,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2717,10 +2725,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">REST API Reference for DeclineHandshake Operation</seealso>
         public virtual DeclineHandshakeResponse DeclineHandshake(DeclineHandshakeRequest request)
         {
-            var marshaller = DeclineHandshakeRequestMarshaller.Instance;
-            var unmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeclineHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
 
-            return Invoke<DeclineHandshakeRequest,DeclineHandshakeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeclineHandshakeResponse>(request, options);
         }
 
         /// <summary>
@@ -2737,11 +2746,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">REST API Reference for DeclineHandshake Operation</seealso>
         public virtual IAsyncResult BeginDeclineHandshake(DeclineHandshakeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeclineHandshakeRequestMarshaller.Instance;
-            var unmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeclineHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeclineHandshakeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeclineHandshakeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2890,10 +2899,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
         public virtual DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request)
         {
-            var marshaller = DeleteOrganizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteOrganizationRequest,DeleteOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -2910,11 +2920,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
         public virtual IAsyncResult BeginDeleteOrganization(DeleteOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteOrganizationRequestMarshaller.Instance;
-            var unmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3071,10 +3081,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">REST API Reference for DeleteOrganizationalUnit Operation</seealso>
         public virtual DeleteOrganizationalUnitResponse DeleteOrganizationalUnit(DeleteOrganizationalUnitRequest request)
         {
-            var marshaller = DeleteOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteOrganizationalUnitRequest,DeleteOrganizationalUnitResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteOrganizationalUnitResponse>(request, options);
         }
 
         /// <summary>
@@ -3091,11 +3102,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">REST API Reference for DeleteOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginDeleteOrganizationalUnit(DeleteOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteOrganizationalUnitRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3252,10 +3263,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -3272,11 +3284,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3426,10 +3438,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         public virtual DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
         {
-            var marshaller = DescribeAccountRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountRequest,DescribeAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -3446,11 +3459,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccount(DescribeAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAccountRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3599,10 +3612,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">REST API Reference for DescribeCreateAccountStatus Operation</seealso>
         public virtual DescribeCreateAccountStatusResponse DescribeCreateAccountStatus(DescribeCreateAccountStatusRequest request)
         {
-            var marshaller = DescribeCreateAccountStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCreateAccountStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCreateAccountStatusRequest,DescribeCreateAccountStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCreateAccountStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -3619,11 +3633,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">REST API Reference for DescribeCreateAccountStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeCreateAccountStatus(DescribeCreateAccountStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeCreateAccountStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCreateAccountStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCreateAccountStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeCreateAccountStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3778,10 +3792,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">REST API Reference for DescribeHandshake Operation</seealso>
         public virtual DescribeHandshakeResponse DescribeHandshake(DescribeHandshakeRequest request)
         {
-            var marshaller = DescribeHandshakeRequestMarshaller.Instance;
-            var unmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeHandshakeRequest,DescribeHandshakeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeHandshakeResponse>(request, options);
         }
 
         /// <summary>
@@ -3798,11 +3813,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">REST API Reference for DescribeHandshake Operation</seealso>
         public virtual IAsyncResult BeginDescribeHandshake(DescribeHandshakeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeHandshakeRequestMarshaller.Instance;
-            var unmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHandshakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHandshakeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeHandshakeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3865,10 +3880,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
         {
-            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeOrganizationRequest,DescribeOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -3885,11 +3901,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganization(DescribeOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4037,10 +4053,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">REST API Reference for DescribeOrganizationalUnit Operation</seealso>
         public virtual DescribeOrganizationalUnitResponse DescribeOrganizationalUnit(DescribeOrganizationalUnitRequest request)
         {
-            var marshaller = DescribeOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeOrganizationalUnitRequest,DescribeOrganizationalUnitResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeOrganizationalUnitResponse>(request, options);
         }
 
         /// <summary>
@@ -4057,11 +4074,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">REST API Reference for DescribeOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganizationalUnit(DescribeOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeOrganizationalUnitRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4209,10 +4226,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">REST API Reference for DescribePolicy Operation</seealso>
         public virtual DescribePolicyResponse DescribePolicy(DescribePolicyRequest request)
         {
-            var marshaller = DescribePolicyRequestMarshaller.Instance;
-            var unmarshaller = DescribePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePolicyRequest,DescribePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -4229,11 +4247,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">REST API Reference for DescribePolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribePolicy(DescribePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribePolicyRequestMarshaller.Instance;
-            var unmarshaller = DescribePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4532,10 +4550,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
-            var marshaller = DetachPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetachPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -4552,11 +4571,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual IAsyncResult BeginDetachPolicy(DetachPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DetachPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DetachPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4860,10 +4879,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
         public virtual DisableAWSServiceAccessResponse DisableAWSServiceAccess(DisableAWSServiceAccessRequest request)
         {
-            var marshaller = DisableAWSServiceAccessRequestMarshaller.Instance;
-            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAWSServiceAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
 
-            return Invoke<DisableAWSServiceAccessRequest,DisableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableAWSServiceAccessResponse>(request, options);
         }
 
         /// <summary>
@@ -4880,11 +4900,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
         public virtual IAsyncResult BeginDisableAWSServiceAccess(DisableAWSServiceAccessRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisableAWSServiceAccessRequestMarshaller.Instance;
-            var unmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAWSServiceAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAWSServiceAccessResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisableAWSServiceAccessRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5181,10 +5201,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">REST API Reference for DisablePolicyType Operation</seealso>
         public virtual DisablePolicyTypeResponse DisablePolicyType(DisablePolicyTypeRequest request)
         {
-            var marshaller = DisablePolicyTypeRequestMarshaller.Instance;
-            var unmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisablePolicyTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DisablePolicyTypeRequest,DisablePolicyTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisablePolicyTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -5201,11 +5222,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">REST API Reference for DisablePolicyType Operation</seealso>
         public virtual IAsyncResult BeginDisablePolicyType(DisablePolicyTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisablePolicyTypeRequestMarshaller.Instance;
-            var unmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisablePolicyTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisablePolicyTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisablePolicyTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5448,10 +5469,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
         public virtual EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request)
         {
-            var marshaller = EnableAllFeaturesRequestMarshaller.Instance;
-            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAllFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return Invoke<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableAllFeaturesResponse>(request, options);
         }
 
         /// <summary>
@@ -5468,11 +5490,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
         public virtual IAsyncResult BeginEnableAllFeatures(EnableAllFeaturesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnableAllFeaturesRequestMarshaller.Instance;
-            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAllFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnableAllFeaturesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5769,10 +5791,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
         public virtual EnableAWSServiceAccessResponse EnableAWSServiceAccess(EnableAWSServiceAccessRequest request)
         {
-            var marshaller = EnableAWSServiceAccessRequestMarshaller.Instance;
-            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAWSServiceAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
 
-            return Invoke<EnableAWSServiceAccessRequest,EnableAWSServiceAccessResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableAWSServiceAccessResponse>(request, options);
         }
 
         /// <summary>
@@ -5789,11 +5812,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
         public virtual IAsyncResult BeginEnableAWSServiceAccess(EnableAWSServiceAccessRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnableAWSServiceAccessRequestMarshaller.Instance;
-            var unmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAWSServiceAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAWSServiceAccessResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnableAWSServiceAccessRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6093,10 +6116,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">REST API Reference for EnablePolicyType Operation</seealso>
         public virtual EnablePolicyTypeResponse EnablePolicyType(EnablePolicyTypeRequest request)
         {
-            var marshaller = EnablePolicyTypeRequestMarshaller.Instance;
-            var unmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnablePolicyTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
 
-            return Invoke<EnablePolicyTypeRequest,EnablePolicyTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnablePolicyTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -6113,11 +6137,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">REST API Reference for EnablePolicyType Operation</seealso>
         public virtual IAsyncResult BeginEnablePolicyType(EnablePolicyTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnablePolicyTypeRequestMarshaller.Instance;
-            var unmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnablePolicyTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnablePolicyTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnablePolicyTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6365,10 +6389,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">REST API Reference for InviteAccountToOrganization Operation</seealso>
         public virtual InviteAccountToOrganizationResponse InviteAccountToOrganization(InviteAccountToOrganizationRequest request)
         {
-            var marshaller = InviteAccountToOrganizationRequestMarshaller.Instance;
-            var unmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteAccountToOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<InviteAccountToOrganizationRequest,InviteAccountToOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<InviteAccountToOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -6385,11 +6410,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">REST API Reference for InviteAccountToOrganization Operation</seealso>
         public virtual IAsyncResult BeginInviteAccountToOrganization(InviteAccountToOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InviteAccountToOrganizationRequestMarshaller.Instance;
-            var unmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteAccountToOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteAccountToOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InviteAccountToOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6706,10 +6731,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">REST API Reference for LeaveOrganization Operation</seealso>
         public virtual LeaveOrganizationResponse LeaveOrganization(LeaveOrganizationRequest request)
         {
-            var marshaller = LeaveOrganizationRequestMarshaller.Instance;
-            var unmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LeaveOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<LeaveOrganizationRequest,LeaveOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<LeaveOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -6726,11 +6752,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">REST API Reference for LeaveOrganization Operation</seealso>
         public virtual IAsyncResult BeginLeaveOrganization(LeaveOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = LeaveOrganizationRequestMarshaller.Instance;
-            var unmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LeaveOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LeaveOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<LeaveOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6884,10 +6910,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual ListAccountsResponse ListAccounts(ListAccountsRequest request)
         {
-            var marshaller = ListAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAccountsRequest,ListAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAccountsResponse>(request, options);
         }
 
         /// <summary>
@@ -6904,11 +6931,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual IAsyncResult BeginListAccounts(ListAccountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAccountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7068,10 +7095,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">REST API Reference for ListAccountsForParent Operation</seealso>
         public virtual ListAccountsForParentResponse ListAccountsForParent(ListAccountsForParentRequest request)
         {
-            var marshaller = ListAccountsForParentRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
 
-            return Invoke<ListAccountsForParentRequest,ListAccountsForParentResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAccountsForParentResponse>(request, options);
         }
 
         /// <summary>
@@ -7088,11 +7116,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">REST API Reference for ListAccountsForParent Operation</seealso>
         public virtual IAsyncResult BeginListAccountsForParent(ListAccountsForParentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAccountsForParentRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsForParentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAccountsForParentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7372,10 +7400,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
         public virtual ListAWSServiceAccessForOrganizationResponse ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request)
         {
-            var marshaller = ListAWSServiceAccessForOrganizationRequestMarshaller.Instance;
-            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAWSServiceAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<ListAWSServiceAccessForOrganizationRequest,ListAWSServiceAccessForOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAWSServiceAccessForOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -7392,11 +7421,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAWSServiceAccessForOrganizationRequestMarshaller.Instance;
-            var unmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAWSServiceAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAWSServiceAccessForOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAWSServiceAccessForOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7554,10 +7583,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">REST API Reference for ListChildren Operation</seealso>
         public virtual ListChildrenResponse ListChildren(ListChildrenRequest request)
         {
-            var marshaller = ListChildrenRequestMarshaller.Instance;
-            var unmarshaller = ListChildrenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChildrenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildrenResponseUnmarshaller.Instance;
 
-            return Invoke<ListChildrenRequest,ListChildrenResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListChildrenResponse>(request, options);
         }
 
         /// <summary>
@@ -7574,11 +7604,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">REST API Reference for ListChildren Operation</seealso>
         public virtual IAsyncResult BeginListChildren(ListChildrenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListChildrenRequestMarshaller.Instance;
-            var unmarshaller = ListChildrenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChildrenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildrenResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListChildrenRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7732,10 +7762,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">REST API Reference for ListCreateAccountStatus Operation</seealso>
         public virtual ListCreateAccountStatusResponse ListCreateAccountStatus(ListCreateAccountStatusRequest request)
         {
-            var marshaller = ListCreateAccountStatusRequestMarshaller.Instance;
-            var unmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCreateAccountStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
 
-            return Invoke<ListCreateAccountStatusRequest,ListCreateAccountStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCreateAccountStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -7752,11 +7783,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">REST API Reference for ListCreateAccountStatus Operation</seealso>
         public virtual IAsyncResult BeginListCreateAccountStatus(ListCreateAccountStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListCreateAccountStatusRequestMarshaller.Instance;
-            var unmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCreateAccountStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCreateAccountStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListCreateAccountStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7916,10 +7947,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">REST API Reference for ListHandshakesForAccount Operation</seealso>
         public virtual ListHandshakesForAccountResponse ListHandshakesForAccount(ListHandshakesForAccountRequest request)
         {
-            var marshaller = ListHandshakesForAccountRequestMarshaller.Instance;
-            var unmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHandshakesForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
 
-            return Invoke<ListHandshakesForAccountRequest,ListHandshakesForAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListHandshakesForAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -7936,11 +7968,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">REST API Reference for ListHandshakesForAccount Operation</seealso>
         public virtual IAsyncResult BeginListHandshakesForAccount(ListHandshakesForAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListHandshakesForAccountRequestMarshaller.Instance;
-            var unmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHandshakesForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHandshakesForAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListHandshakesForAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8106,10 +8138,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">REST API Reference for ListHandshakesForOrganization Operation</seealso>
         public virtual ListHandshakesForOrganizationResponse ListHandshakesForOrganization(ListHandshakesForOrganizationRequest request)
         {
-            var marshaller = ListHandshakesForOrganizationRequestMarshaller.Instance;
-            var unmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHandshakesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<ListHandshakesForOrganizationRequest,ListHandshakesForOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListHandshakesForOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -8126,11 +8159,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">REST API Reference for ListHandshakesForOrganization Operation</seealso>
         public virtual IAsyncResult BeginListHandshakesForOrganization(ListHandshakesForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListHandshakesForOrganizationRequestMarshaller.Instance;
-            var unmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHandshakesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHandshakesForOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListHandshakesForOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8286,10 +8319,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">REST API Reference for ListOrganizationalUnitsForParent Operation</seealso>
         public virtual ListOrganizationalUnitsForParentResponse ListOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request)
         {
-            var marshaller = ListOrganizationalUnitsForParentRequestMarshaller.Instance;
-            var unmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationalUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
 
-            return Invoke<ListOrganizationalUnitsForParentRequest,ListOrganizationalUnitsForParentResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOrganizationalUnitsForParentResponse>(request, options);
         }
 
         /// <summary>
@@ -8306,11 +8340,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">REST API Reference for ListOrganizationalUnitsForParent Operation</seealso>
         public virtual IAsyncResult BeginListOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListOrganizationalUnitsForParentRequestMarshaller.Instance;
-            var unmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationalUnitsForParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationalUnitsForParentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListOrganizationalUnitsForParentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8474,10 +8508,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">REST API Reference for ListParents Operation</seealso>
         public virtual ListParentsResponse ListParents(ListParentsRequest request)
         {
-            var marshaller = ListParentsRequestMarshaller.Instance;
-            var unmarshaller = ListParentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListParentsRequest,ListParentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListParentsResponse>(request, options);
         }
 
         /// <summary>
@@ -8494,11 +8529,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">REST API Reference for ListParents Operation</seealso>
         public virtual IAsyncResult BeginListParents(ListParentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListParentsRequestMarshaller.Instance;
-            var unmarshaller = ListParentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListParentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8651,10 +8686,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPoliciesResponse>(request, options);
         }
 
         /// <summary>
@@ -8671,11 +8707,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPoliciesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8833,10 +8869,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">REST API Reference for ListPoliciesForTarget Operation</seealso>
         public virtual ListPoliciesForTargetResponse ListPoliciesForTarget(ListPoliciesForTargetRequest request)
         {
-            var marshaller = ListPoliciesForTargetRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
 
-            return Invoke<ListPoliciesForTargetRequest,ListPoliciesForTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPoliciesForTargetResponse>(request, options);
         }
 
         /// <summary>
@@ -8853,11 +8890,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">REST API Reference for ListPoliciesForTarget Operation</seealso>
         public virtual IAsyncResult BeginListPoliciesForTarget(ListPoliciesForTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPoliciesForTargetRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesForTargetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPoliciesForTargetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9019,10 +9056,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">REST API Reference for ListRoots Operation</seealso>
         public virtual ListRootsResponse ListRoots(ListRootsRequest request)
         {
-            var marshaller = ListRootsRequestMarshaller.Instance;
-            var unmarshaller = ListRootsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRootsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRootsResponseUnmarshaller.Instance;
 
-            return Invoke<ListRootsRequest,ListRootsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRootsResponse>(request, options);
         }
 
         /// <summary>
@@ -9039,11 +9077,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">REST API Reference for ListRoots Operation</seealso>
         public virtual IAsyncResult BeginListRoots(ListRootsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListRootsRequestMarshaller.Instance;
-            var unmarshaller = ListRootsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRootsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRootsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListRootsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9200,10 +9238,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
         public virtual ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request)
         {
-            var marshaller = ListTargetsForPolicyRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTargetsForPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -9220,11 +9259,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
         public virtual IAsyncResult BeginListTargetsForPolicy(ListTargetsForPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTargetsForPolicyRequestMarshaller.Instance;
-            var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetsForPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTargetsForPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9389,10 +9428,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">REST API Reference for MoveAccount Operation</seealso>
         public virtual MoveAccountResponse MoveAccount(MoveAccountRequest request)
         {
-            var marshaller = MoveAccountRequestMarshaller.Instance;
-            var unmarshaller = MoveAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveAccountResponseUnmarshaller.Instance;
 
-            return Invoke<MoveAccountRequest,MoveAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<MoveAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -9409,11 +9449,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">REST API Reference for MoveAccount Operation</seealso>
         public virtual IAsyncResult BeginMoveAccount(MoveAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = MoveAccountRequestMarshaller.Instance;
-            var unmarshaller = MoveAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<MoveAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9723,10 +9763,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">REST API Reference for RemoveAccountFromOrganization Operation</seealso>
         public virtual RemoveAccountFromOrganizationResponse RemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest request)
         {
-            var marshaller = RemoveAccountFromOrganizationRequestMarshaller.Instance;
-            var unmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAccountFromOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveAccountFromOrganizationRequest,RemoveAccountFromOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveAccountFromOrganizationResponse>(request, options);
         }
 
         /// <summary>
@@ -9743,11 +9784,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">REST API Reference for RemoveAccountFromOrganization Operation</seealso>
         public virtual IAsyncResult BeginRemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveAccountFromOrganizationRequestMarshaller.Instance;
-            var unmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAccountFromOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAccountFromOrganizationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveAccountFromOrganizationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9904,10 +9945,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">REST API Reference for UpdateOrganizationalUnit Operation</seealso>
         public virtual UpdateOrganizationalUnitResponse UpdateOrganizationalUnit(UpdateOrganizationalUnitRequest request)
         {
-            var marshaller = UpdateOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateOrganizationalUnitRequest,UpdateOrganizationalUnitResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateOrganizationalUnitResponse>(request, options);
         }
 
         /// <summary>
@@ -9924,11 +9966,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">REST API Reference for UpdateOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginUpdateOrganizationalUnit(UpdateOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateOrganizationalUnitRequestMarshaller.Instance;
-            var unmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrganizationalUnitRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrganizationalUnitResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateOrganizationalUnitRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -10218,10 +10260,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
         public virtual UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request)
         {
-            var marshaller = UpdatePolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePolicyRequest,UpdatePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -10238,11 +10281,11 @@ namespace Amazon.Organizations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdatePolicy(UpdatePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

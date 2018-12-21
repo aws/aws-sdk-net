@@ -58,6 +58,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
             string target = "CodeStar_20170419.ListUserProfiles";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

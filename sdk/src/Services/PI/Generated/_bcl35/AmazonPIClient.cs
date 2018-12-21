@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.PI.Model;
 using Amazon.PI.Model.Internal.MarshallTransformations;
@@ -251,7 +252,7 @@ namespace Amazon.PI
 
         #endregion
 
-        
+
         #region  DescribeDimensionKeys
 
         /// <summary>
@@ -272,10 +273,11 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DescribeDimensionKeys">REST API Reference for DescribeDimensionKeys Operation</seealso>
         public virtual DescribeDimensionKeysResponse DescribeDimensionKeys(DescribeDimensionKeysRequest request)
         {
-            var marshaller = DescribeDimensionKeysRequestMarshaller.Instance;
-            var unmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDimensionKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDimensionKeysRequest,DescribeDimensionKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDimensionKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -292,11 +294,11 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DescribeDimensionKeys">REST API Reference for DescribeDimensionKeys Operation</seealso>
         public virtual IAsyncResult BeginDescribeDimensionKeys(DescribeDimensionKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDimensionKeysRequestMarshaller.Instance;
-            var unmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDimensionKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDimensionKeysRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -336,10 +338,11 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics">REST API Reference for GetResourceMetrics Operation</seealso>
         public virtual GetResourceMetricsResponse GetResourceMetrics(GetResourceMetricsRequest request)
         {
-            var marshaller = GetResourceMetricsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceMetricsRequest,GetResourceMetricsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceMetricsResponse>(request, options);
         }
 
         /// <summary>
@@ -356,11 +359,11 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics">REST API Reference for GetResourceMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetResourceMetrics(GetResourceMetricsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResourceMetricsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResourceMetricsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AppStream.Model;
 using Amazon.AppStream.Model.Internal.MarshallTransformations;
@@ -238,7 +239,7 @@ namespace Amazon.AppStream
 
         #endregion
 
-        
+
         #region  AssociateFleet
 
         /// <summary>
@@ -269,10 +270,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         public virtual AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
         {
-            var marshaller = AssociateFleetRequestMarshaller.Instance;
-            var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFleetResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateFleetRequest,AssociateFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -289,11 +291,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         public virtual IAsyncResult BeginAssociateFleet(AssociateFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateFleetRequestMarshaller.Instance;
-            var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -326,10 +328,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
         public virtual BatchAssociateUserStackResponse BatchAssociateUserStack(BatchAssociateUserStackRequest request)
         {
-            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
-            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
 
-            return Invoke<BatchAssociateUserStackRequest,BatchAssociateUserStackResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchAssociateUserStackResponse>(request, options);
         }
 
         /// <summary>
@@ -346,11 +349,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
         public virtual IAsyncResult BeginBatchAssociateUserStack(BatchAssociateUserStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
-            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchAssociateUserStackRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -379,10 +382,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
         public virtual BatchDisassociateUserStackResponse BatchDisassociateUserStack(BatchDisassociateUserStackRequest request)
         {
-            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
-            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDisassociateUserStackRequest,BatchDisassociateUserStackResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDisassociateUserStackResponse>(request, options);
         }
 
         /// <summary>
@@ -399,11 +403,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
         public virtual IAsyncResult BeginBatchDisassociateUserStack(BatchDisassociateUserStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
-            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchDisassociateUserStackRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -452,10 +456,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public virtual CopyImageResponse CopyImage(CopyImageRequest request)
         {
-            var marshaller = CopyImageRequestMarshaller.Instance;
-            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
-            return Invoke<CopyImageRequest,CopyImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<CopyImageResponse>(request, options);
         }
 
         /// <summary>
@@ -472,11 +477,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public virtual IAsyncResult BeginCopyImage(CopyImageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CopyImageRequestMarshaller.Instance;
-            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CopyImageRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -516,10 +521,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         public virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
         {
-            var marshaller = CreateDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDirectoryConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -536,11 +542,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectoryConfig(CreateDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDirectoryConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -600,10 +606,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var marshaller = CreateFleetRequestMarshaller.Instance;
-            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFleetRequest,CreateFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -620,11 +627,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateFleetRequestMarshaller.Instance;
-            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -691,10 +698,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
         public virtual CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
         {
-            var marshaller = CreateImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
 
-            return Invoke<CreateImageBuilderRequest,CreateImageBuilderResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateImageBuilderResponse>(request, options);
         }
 
         /// <summary>
@@ -711,11 +719,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
         public virtual IAsyncResult BeginCreateImageBuilder(CreateImageBuilderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateImageBuilderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -750,10 +758,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
         public virtual CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
         {
-            var marshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
-            var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
 
-            return Invoke<CreateImageBuilderStreamingURLRequest,CreateImageBuilderStreamingURLResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateImageBuilderStreamingURLResponse>(request, options);
         }
 
         /// <summary>
@@ -770,11 +779,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
         public virtual IAsyncResult BeginCreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
-            var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateImageBuilderStreamingURLRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -826,10 +835,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            var marshaller = CreateStackRequestMarshaller.Instance;
-            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStackResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStackResponse>(request, options);
         }
 
         /// <summary>
@@ -846,11 +856,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateStackRequestMarshaller.Instance;
-            var unmarshaller = CreateStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStackResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateStackRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -892,10 +902,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         public virtual CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
         {
-            var marshaller = CreateStreamingURLRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStreamingURLRequest,CreateStreamingURLResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStreamingURLResponse>(request, options);
         }
 
         /// <summary>
@@ -912,11 +923,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamingURL(CreateStreamingURLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateStreamingURLRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateStreamingURLRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -961,10 +972,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateUserResponse>(request, options);
         }
 
         /// <summary>
@@ -981,11 +993,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1021,10 +1033,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
         public virtual DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
         {
-            var marshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDirectoryConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -1041,11 +1054,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectoryConfig(DeleteDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDirectoryConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1083,10 +1096,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var marshaller = DeleteFleetRequestMarshaller.Instance;
-            var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -1103,11 +1117,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteFleetRequestMarshaller.Instance;
-            var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1149,10 +1163,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
         {
-            var marshaller = DeleteImageRequestMarshaller.Instance;
-            var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteImageRequest,DeleteImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteImageResponse>(request, options);
         }
 
         /// <summary>
@@ -1169,11 +1184,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual IAsyncResult BeginDeleteImage(DeleteImageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteImageRequestMarshaller.Instance;
-            var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteImageRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1211,10 +1226,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
         public virtual DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
         {
-            var marshaller = DeleteImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteImageBuilderRequest,DeleteImageBuilderResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteImageBuilderResponse>(request, options);
         }
 
         /// <summary>
@@ -1231,11 +1247,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
         public virtual IAsyncResult BeginDeleteImageBuilder(DeleteImageBuilderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteImageBuilderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1272,10 +1288,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
         public virtual DeleteImagePermissionsResponse DeleteImagePermissions(DeleteImagePermissionsRequest request)
         {
-            var marshaller = DeleteImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteImagePermissionsRequest,DeleteImagePermissionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteImagePermissionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1292,11 +1309,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
         public virtual IAsyncResult BeginDeleteImagePermissions(DeleteImagePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteImagePermissionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1336,10 +1353,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            var marshaller = DeleteStackRequestMarshaller.Instance;
-            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteStackResponse>(request, options);
         }
 
         /// <summary>
@@ -1356,11 +1374,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteStackRequestMarshaller.Instance;
-            var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteStackRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1392,10 +1410,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserResponse>(request, options);
         }
 
         /// <summary>
@@ -1412,11 +1431,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1457,10 +1476,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
         public virtual DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
         {
-            var marshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDirectoryConfigsResponse>(request, options);
         }
 
         /// <summary>
@@ -1477,11 +1497,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
-            var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDirectoryConfigsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1514,10 +1534,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
-            var marshaller = DescribeFleetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeFleetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1534,11 +1555,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeFleetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeFleetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1571,10 +1592,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
         public virtual DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
         {
-            var marshaller = DescribeImageBuildersRequestMarshaller.Instance;
-            var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeImageBuildersResponse>(request, options);
         }
 
         /// <summary>
@@ -1591,11 +1613,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageBuilders(DescribeImageBuildersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeImageBuildersRequestMarshaller.Instance;
-            var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeImageBuildersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1628,10 +1650,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
         public virtual DescribeImagePermissionsResponse DescribeImagePermissions(DescribeImagePermissionsRequest request)
         {
-            var marshaller = DescribeImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeImagePermissionsRequest,DescribeImagePermissionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeImagePermissionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1648,11 +1671,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribeImagePermissions(DescribeImagePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeImagePermissionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1688,10 +1711,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var marshaller = DescribeImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeImagesResponse>(request, options);
         }
 
         /// <summary>
@@ -1708,11 +1732,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeImagesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1747,10 +1771,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSessionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1767,11 +1792,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeSessionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1804,10 +1829,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
-            var marshaller = DescribeStacksRequestMarshaller.Instance;
-            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStacksResponse>(request, options);
         }
 
         /// <summary>
@@ -1824,11 +1850,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeStacksRequestMarshaller.Instance;
-            var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeStacksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1864,10 +1890,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
-            var marshaller = DescribeUsersRequestMarshaller.Instance;
-            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUsersResponse>(request, options);
         }
 
         /// <summary>
@@ -1884,11 +1911,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeUsersRequestMarshaller.Instance;
-            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeUsersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1932,10 +1959,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
         public virtual DescribeUserStackAssociationsResponse DescribeUserStackAssociations(DescribeUserStackAssociationsRequest request)
         {
-            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserStackAssociationsRequest,DescribeUserStackAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserStackAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1952,11 +1980,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeUserStackAssociations(DescribeUserStackAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeUserStackAssociationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1989,10 +2017,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
         public virtual DisableUserResponse DisableUser(DisableUserRequest request)
         {
-            var marshaller = DisableUserRequestMarshaller.Instance;
-            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
-            return Invoke<DisableUserRequest,DisableUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableUserResponse>(request, options);
         }
 
         /// <summary>
@@ -2009,11 +2038,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
         public virtual IAsyncResult BeginDisableUser(DisableUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisableUserRequestMarshaller.Instance;
-            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisableUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2051,10 +2080,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         public virtual DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
         {
-            var marshaller = DisassociateFleetRequestMarshaller.Instance;
-            var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateFleetRequest,DisassociateFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -2071,11 +2101,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         public virtual IAsyncResult BeginDisassociateFleet(DisassociateFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateFleetRequestMarshaller.Instance;
-            var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2112,10 +2142,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
         public virtual EnableUserResponse EnableUser(EnableUserRequest request)
         {
-            var marshaller = EnableUserRequestMarshaller.Instance;
-            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
 
-            return Invoke<EnableUserRequest,EnableUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableUserResponse>(request, options);
         }
 
         /// <summary>
@@ -2132,11 +2163,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
         public virtual IAsyncResult BeginEnableUser(EnableUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnableUserRequestMarshaller.Instance;
-            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnableUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2165,10 +2196,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         public virtual ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
         {
-            var marshaller = ExpireSessionRequestMarshaller.Instance;
-            var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExpireSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExpireSessionResponseUnmarshaller.Instance;
 
-            return Invoke<ExpireSessionRequest,ExpireSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExpireSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -2185,11 +2217,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         public virtual IAsyncResult BeginExpireSession(ExpireSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ExpireSessionRequestMarshaller.Instance;
-            var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExpireSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExpireSessionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ExpireSessionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2218,10 +2250,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         public virtual ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
         {
-            var marshaller = ListAssociatedFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociatedFleetsRequest,ListAssociatedFleetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociatedFleetsResponse>(request, options);
         }
 
         /// <summary>
@@ -2238,11 +2271,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedFleets(ListAssociatedFleetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAssociatedFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAssociatedFleetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2271,10 +2304,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         public virtual ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
         {
-            var marshaller = ListAssociatedStacksRequestMarshaller.Instance;
-            var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociatedStacksRequest,ListAssociatedStacksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociatedStacksResponse>(request, options);
         }
 
         /// <summary>
@@ -2291,11 +2325,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedStacks(ListAssociatedStacksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAssociatedStacksRequestMarshaller.Instance;
-            var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAssociatedStacksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2334,10 +2368,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2354,11 +2389,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2403,10 +2438,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         public virtual StartFleetResponse StartFleet(StartFleetRequest request)
         {
-            var marshaller = StartFleetRequestMarshaller.Instance;
-            var unmarshaller = StartFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFleetResponseUnmarshaller.Instance;
 
-            return Invoke<StartFleetRequest,StartFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -2423,11 +2459,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         public virtual IAsyncResult BeginStartFleet(StartFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartFleetRequestMarshaller.Instance;
-            var unmarshaller = StartFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2472,10 +2508,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
         public virtual StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
         {
-            var marshaller = StartImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
 
-            return Invoke<StartImageBuilderRequest,StartImageBuilderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartImageBuilderResponse>(request, options);
         }
 
         /// <summary>
@@ -2492,11 +2529,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
         public virtual IAsyncResult BeginStartImageBuilder(StartImageBuilderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartImageBuilderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2531,10 +2568,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         public virtual StopFleetResponse StopFleet(StopFleetRequest request)
         {
-            var marshaller = StopFleetRequestMarshaller.Instance;
-            var unmarshaller = StopFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopFleetResponseUnmarshaller.Instance;
 
-            return Invoke<StopFleetRequest,StopFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -2551,11 +2589,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         public virtual IAsyncResult BeginStopFleet(StopFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopFleetRequestMarshaller.Instance;
-            var unmarshaller = StopFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2593,10 +2631,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
         public virtual StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
         {
-            var marshaller = StopImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
 
-            return Invoke<StopImageBuilderRequest,StopImageBuilderResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopImageBuilderResponse>(request, options);
         }
 
         /// <summary>
@@ -2613,11 +2652,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
         public virtual IAsyncResult BeginStopImageBuilder(StopImageBuilderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopImageBuilderRequestMarshaller.Instance;
-            var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopImageBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopImageBuilderRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2673,10 +2712,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2693,11 +2733,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2739,10 +2779,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2759,11 +2800,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2802,10 +2843,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
         public virtual UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
         {
-            var marshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDirectoryConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2822,11 +2864,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateDirectoryConfig(UpdateDirectoryConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDirectoryConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2894,10 +2936,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
-            var marshaller = UpdateFleetRequestMarshaller.Instance;
-            var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFleetRequest,UpdateFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFleetResponse>(request, options);
         }
 
         /// <summary>
@@ -2914,11 +2957,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateFleetRequestMarshaller.Instance;
-            var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateFleetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2956,10 +2999,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
         public virtual UpdateImagePermissionsResponse UpdateImagePermissions(UpdateImagePermissionsRequest request)
         {
-            var marshaller = UpdateImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateImagePermissionsRequest,UpdateImagePermissionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateImagePermissionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2976,11 +3020,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
         public virtual IAsyncResult BeginUpdateImagePermissions(UpdateImagePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateImagePermissionsRequestMarshaller.Instance;
-            var unmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImagePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateImagePermissionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3034,10 +3078,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            var marshaller = UpdateStackRequestMarshaller.Instance;
-            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateStackResponse>(request, options);
         }
 
         /// <summary>
@@ -3054,11 +3099,11 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateStackRequestMarshaller.Instance;
-            var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateStackRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -234,6 +234,15 @@ namespace Amazon.Runtime
         /// </summary>
         bool DisableHostPrefixInjection { get; }
 
+        /// <summary>
+        /// Returns the flag indicating if endpoint discovery should be enabled or disabled for operations that are not required to use endpoint discovery.
+        /// </summary>
+        bool EndpointDiscoveryEnabled { get; }
+
+        /// <summary>
+        /// Returns the maximum number of discovered endpoints that can be stored within the cache for the client. The default limit is 1000 cache entries.
+        /// </summary>
+        int EndpointDiscoveryCacheLimit { get; }
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

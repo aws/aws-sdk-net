@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations;
@@ -251,7 +252,7 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
 
-        
+
         #region  AddPermission
 
         /// <summary>
@@ -310,10 +311,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddPermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -330,11 +332,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddPermissionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -384,10 +386,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
         {
-            var marshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
-            var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
-            return Invoke<CheckIfPhoneNumberIsOptedOutRequest,CheckIfPhoneNumberIsOptedOutResponse>(request, marshaller, unmarshaller);
+            return Invoke<CheckIfPhoneNumberIsOptedOutResponse>(request, options);
         }
 
         /// <summary>
@@ -404,11 +407,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual IAsyncResult BeginCheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
-            var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CheckIfPhoneNumberIsOptedOutRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -530,10 +533,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
-            var marshaller = ConfirmSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<ConfirmSubscriptionRequest,ConfirmSubscriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConfirmSubscriptionResponse>(request, options);
         }
 
         /// <summary>
@@ -550,11 +554,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual IAsyncResult BeginConfirmSubscription(ConfirmSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ConfirmSubscriptionRequestMarshaller.Instance;
-            var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ConfirmSubscriptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -619,10 +623,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
         {
-            var marshaller = CreatePlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePlatformApplicationRequest,CreatePlatformApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePlatformApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -639,11 +644,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginCreatePlatformApplication(CreatePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePlatformApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -701,10 +706,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
         {
-            var marshaller = CreatePlatformEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlatformEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePlatformEndpointRequest,CreatePlatformEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePlatformEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -721,11 +727,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreatePlatformEndpoint(CreatePlatformEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePlatformEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlatformEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePlatformEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -807,10 +813,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
-            var marshaller = CreateTopicRequestMarshaller.Instance;
-            var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTopicRequest,CreateTopicResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTopicResponse>(request, options);
         }
 
         /// <summary>
@@ -827,11 +834,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual IAsyncResult BeginCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateTopicRequestMarshaller.Instance;
-            var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateTopicRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -877,10 +884,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -897,11 +905,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -941,10 +949,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
         {
-            var marshaller = DeletePlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePlatformApplicationRequest,DeletePlatformApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePlatformApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -961,11 +970,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginDeletePlatformApplication(DeletePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePlatformApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1037,10 +1046,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
-            var marshaller = DeleteTopicRequestMarshaller.Instance;
-            var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTopicRequest,DeleteTopicResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTopicResponse>(request, options);
         }
 
         /// <summary>
@@ -1057,11 +1067,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual IAsyncResult BeginDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteTopicRequestMarshaller.Instance;
-            var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteTopicRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1104,10 +1114,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
         {
-            var marshaller = GetEndpointAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetEndpointAttributesRequest,GetEndpointAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEndpointAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1124,11 +1135,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetEndpointAttributes(GetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEndpointAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEndpointAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1171,10 +1182,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
         {
-            var marshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetPlatformApplicationAttributesRequest,GetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPlatformApplicationAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1191,11 +1203,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPlatformApplicationAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1242,10 +1254,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
         {
-            var marshaller = GetSMSAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSMSAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetSMSAttributesRequest,GetSMSAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSMSAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1262,11 +1275,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetSMSAttributes(GetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSMSAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSMSAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSMSAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1334,10 +1347,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
-            var marshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetSubscriptionAttributesRequest,GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSubscriptionAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1354,11 +1368,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetSubscriptionAttributes(GetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSubscriptionAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1436,10 +1450,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
-            var marshaller = GetTopicAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetTopicAttributesRequest,GetTopicAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTopicAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1456,11 +1471,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetTopicAttributes(GetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetTopicAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTopicAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetTopicAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1513,10 +1528,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
         {
-            var marshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<ListEndpointsByPlatformApplicationRequest,ListEndpointsByPlatformApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEndpointsByPlatformApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1533,11 +1549,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListEndpointsByPlatformApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1590,10 +1606,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
         {
-            var marshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
-            var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
-            return Invoke<ListPhoneNumbersOptedOutRequest,ListPhoneNumbersOptedOutResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPhoneNumbersOptedOutResponse>(request, options);
         }
 
         /// <summary>
@@ -1610,11 +1627,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual IAsyncResult BeginListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
-            var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPhoneNumbersOptedOutRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1696,10 +1713,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
         {
-            var marshaller = ListPlatformApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlatformApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPlatformApplicationsRequest,ListPlatformApplicationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPlatformApplicationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1716,11 +1734,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual IAsyncResult BeginListPlatformApplications(ListPlatformApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPlatformApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlatformApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPlatformApplicationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1826,10 +1844,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            var marshaller = ListSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSubscriptionsRequest,ListSubscriptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSubscriptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1846,11 +1865,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListSubscriptions(ListSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListSubscriptionsRequestMarshaller.Instance;
-            var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListSubscriptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1971,10 +1990,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
-            var marshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
-            var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
-            return Invoke<ListSubscriptionsByTopicRequest,ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSubscriptionsByTopicResponse>(request, options);
         }
 
         /// <summary>
@@ -1991,11 +2011,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual IAsyncResult BeginListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
-            var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListSubscriptionsByTopicRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2101,10 +2121,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
-            var marshaller = ListTopicsRequestMarshaller.Instance;
-            var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTopicsRequest,ListTopicsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTopicsResponse>(request, options);
         }
 
         /// <summary>
@@ -2121,11 +2142,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual IAsyncResult BeginListTopics(ListTopicsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTopicsRequestMarshaller.Instance;
-            var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTopicsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2173,10 +2194,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
         {
-            var marshaller = OptInPhoneNumberRequestMarshaller.Instance;
-            var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = OptInPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
-            return Invoke<OptInPhoneNumberRequest,OptInPhoneNumberResponse>(request, marshaller, unmarshaller);
+            return Invoke<OptInPhoneNumberResponse>(request, options);
         }
 
         /// <summary>
@@ -2193,11 +2215,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginOptInPhoneNumber(OptInPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = OptInPhoneNumberRequestMarshaller.Instance;
-            var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = OptInPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
-            return BeginInvoke<OptInPhoneNumberRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2481,10 +2503,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
-            return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
+            return Invoke<PublishResponse>(request, options);
         }
 
         /// <summary>
@@ -2501,11 +2524,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PublishRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2575,10 +2598,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemovePermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -2595,11 +2619,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemovePermissionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2642,10 +2666,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
         {
-            var marshaller = SetEndpointAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetEndpointAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetEndpointAttributesRequest,SetEndpointAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetEndpointAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2662,11 +2687,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetEndpointAttributes(SetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetEndpointAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetEndpointAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetEndpointAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2711,10 +2736,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
         {
-            var marshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetPlatformApplicationAttributesRequest,SetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetPlatformApplicationAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2731,11 +2757,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetPlatformApplicationAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2786,10 +2812,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
         {
-            var marshaller = SetSMSAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSMSAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetSMSAttributesRequest,SetSMSAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetSMSAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2806,11 +2833,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetSMSAttributes(SetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetSMSAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSMSAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetSMSAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2890,10 +2917,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
-            var marshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetSubscriptionAttributesRequest,SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetSubscriptionAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2910,11 +2938,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetSubscriptionAttributes(SetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetSubscriptionAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2994,10 +3022,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
-            var marshaller = SetTopicAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTopicAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetTopicAttributesRequest,SetTopicAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetTopicAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -3014,11 +3043,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetTopicAttributes(SetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetTopicAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTopicAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetTopicAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3128,10 +3157,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual SubscribeResponse Subscribe(SubscribeRequest request)
         {
-            var marshaller = SubscribeRequestMarshaller.Instance;
-            var unmarshaller = SubscribeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
 
-            return Invoke<SubscribeRequest,SubscribeResponse>(request, marshaller, unmarshaller);
+            return Invoke<SubscribeResponse>(request, options);
         }
 
         /// <summary>
@@ -3148,11 +3178,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual IAsyncResult BeginSubscribe(SubscribeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SubscribeRequestMarshaller.Instance;
-            var unmarshaller = SubscribeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SubscribeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3248,10 +3278,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
-            var marshaller = UnsubscribeRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
-            return Invoke<UnsubscribeRequest,UnsubscribeResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnsubscribeResponse>(request, options);
         }
 
         /// <summary>
@@ -3268,11 +3299,11 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual IAsyncResult BeginUnsubscribe(UnsubscribeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UnsubscribeRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UnsubscribeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

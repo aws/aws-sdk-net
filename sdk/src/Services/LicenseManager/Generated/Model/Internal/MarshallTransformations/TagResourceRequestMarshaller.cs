@@ -58,6 +58,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             string target = "AWSLicenseManager.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

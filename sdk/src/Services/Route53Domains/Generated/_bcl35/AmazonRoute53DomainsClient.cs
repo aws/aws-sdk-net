@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Route53Domains.Model;
 using Amazon.Route53Domains.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.Route53Domains
 
         #endregion
 
-        
+
         #region  CheckDomainAvailability
 
         /// <summary>
@@ -256,10 +257,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         public virtual CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request)
         {
-            var marshaller = CheckDomainAvailabilityRequestMarshaller.Instance;
-            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDomainAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
 
-            return Invoke<CheckDomainAvailabilityRequest,CheckDomainAvailabilityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CheckDomainAvailabilityResponse>(request, options);
         }
 
         /// <summary>
@@ -276,11 +278,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         public virtual IAsyncResult BeginCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CheckDomainAvailabilityRequestMarshaller.Instance;
-            var unmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDomainAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDomainAvailabilityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CheckDomainAvailabilityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -317,10 +319,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
         public virtual CheckDomainTransferabilityResponse CheckDomainTransferability(CheckDomainTransferabilityRequest request)
         {
-            var marshaller = CheckDomainTransferabilityRequestMarshaller.Instance;
-            var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDomainTransferabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
 
-            return Invoke<CheckDomainTransferabilityRequest,CheckDomainTransferabilityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CheckDomainTransferabilityResponse>(request, options);
         }
 
         /// <summary>
@@ -337,11 +340,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">REST API Reference for CheckDomainTransferability Operation</seealso>
         public virtual IAsyncResult BeginCheckDomainTransferability(CheckDomainTransferabilityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CheckDomainTransferabilityRequestMarshaller.Instance;
-            var unmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckDomainTransferabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckDomainTransferabilityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CheckDomainTransferabilityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -421,10 +424,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         public virtual DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request)
         {
-            var marshaller = DeleteTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsForDomainRequest,DeleteTagsForDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsForDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -441,11 +445,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteTagsForDomain(DeleteTagsForDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsForDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteTagsForDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -483,10 +487,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         public virtual DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request)
         {
-            var marshaller = DisableDomainAutoRenewRequestMarshaller.Instance;
-            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDomainAutoRenewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
 
-            return Invoke<DisableDomainAutoRenewRequest,DisableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableDomainAutoRenewResponse>(request, options);
         }
 
         /// <summary>
@@ -503,11 +508,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         public virtual IAsyncResult BeginDisableDomainAutoRenew(DisableDomainAutoRenewRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisableDomainAutoRenewRequestMarshaller.Instance;
-            var unmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDomainAutoRenewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDomainAutoRenewResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisableDomainAutoRenewRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -558,10 +563,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         public virtual DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request)
         {
-            var marshaller = DisableDomainTransferLockRequestMarshaller.Instance;
-            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDomainTransferLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
 
-            return Invoke<DisableDomainTransferLockRequest,DisableDomainTransferLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableDomainTransferLockResponse>(request, options);
         }
 
         /// <summary>
@@ -578,11 +584,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         public virtual IAsyncResult BeginDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisableDomainTransferLockRequestMarshaller.Instance;
-            var unmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDomainTransferLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDomainTransferLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisableDomainTransferLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -633,10 +639,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         public virtual EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request)
         {
-            var marshaller = EnableDomainAutoRenewRequestMarshaller.Instance;
-            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDomainAutoRenewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
 
-            return Invoke<EnableDomainAutoRenewRequest,EnableDomainAutoRenewResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableDomainAutoRenewResponse>(request, options);
         }
 
         /// <summary>
@@ -653,11 +660,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         public virtual IAsyncResult BeginEnableDomainAutoRenew(EnableDomainAutoRenewRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnableDomainAutoRenewRequestMarshaller.Instance;
-            var unmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDomainAutoRenewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDomainAutoRenewResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnableDomainAutoRenewRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -706,10 +713,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         public virtual EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request)
         {
-            var marshaller = EnableDomainTransferLockRequestMarshaller.Instance;
-            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDomainTransferLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
 
-            return Invoke<EnableDomainTransferLockRequest,EnableDomainTransferLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableDomainTransferLockResponse>(request, options);
         }
 
         /// <summary>
@@ -726,11 +734,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         public virtual IAsyncResult BeginEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = EnableDomainTransferLockRequestMarshaller.Instance;
-            var unmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDomainTransferLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDomainTransferLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<EnableDomainTransferLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -778,10 +786,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         public virtual GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request)
         {
-            var marshaller = GetContactReachabilityStatusRequestMarshaller.Instance;
-            var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactReachabilityStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetContactReachabilityStatusRequest,GetContactReachabilityStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetContactReachabilityStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -798,11 +807,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         public virtual IAsyncResult BeginGetContactReachabilityStatus(GetContactReachabilityStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetContactReachabilityStatusRequestMarshaller.Instance;
-            var unmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactReachabilityStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactReachabilityStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetContactReachabilityStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -841,10 +850,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         public virtual GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request)
         {
-            var marshaller = GetDomainDetailRequestMarshaller.Instance;
-            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainDetailRequest,GetDomainDetailResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainDetailResponse>(request, options);
         }
 
         /// <summary>
@@ -861,11 +871,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         public virtual IAsyncResult BeginGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDomainDetailRequestMarshaller.Instance;
-            var unmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainDetailResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDomainDetailRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -903,10 +913,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         public virtual GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
         {
-            var marshaller = GetDomainSuggestionsRequestMarshaller.Instance;
-            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainSuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainSuggestionsRequest,GetDomainSuggestionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainSuggestionsResponse>(request, options);
         }
 
         /// <summary>
@@ -923,11 +934,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         public virtual IAsyncResult BeginGetDomainSuggestions(GetDomainSuggestionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDomainSuggestionsRequestMarshaller.Instance;
-            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainSuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDomainSuggestionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -961,10 +972,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         public virtual GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
         {
-            var marshaller = GetOperationDetailRequestMarshaller.Instance;
-            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOperationDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
 
-            return Invoke<GetOperationDetailRequest,GetOperationDetailResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetOperationDetailResponse>(request, options);
         }
 
         /// <summary>
@@ -981,11 +993,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         public virtual IAsyncResult BeginGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetOperationDetailRequestMarshaller.Instance;
-            var unmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOperationDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOperationDetailResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetOperationDetailRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1037,10 +1049,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDomainsResponse>(request, options);
         }
 
         /// <summary>
@@ -1057,11 +1070,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDomainsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1111,10 +1124,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            var marshaller = ListOperationsRequestMarshaller.Instance;
-            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListOperationsRequest,ListOperationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOperationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1131,11 +1145,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListOperationsRequestMarshaller.Instance;
-            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListOperationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1213,10 +1227,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         public virtual ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request)
         {
-            var marshaller = ListTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForDomainRequest,ListTagsForDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -1233,11 +1248,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         public virtual IAsyncResult BeginListTagsForDomain(ListTagsForDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1325,10 +1340,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         public virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
-            var marshaller = RegisterDomainRequestMarshaller.Instance;
-            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -1345,11 +1361,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         public virtual IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterDomainRequestMarshaller.Instance;
-            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1405,10 +1421,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         public virtual RenewDomainResponse RenewDomain(RenewDomainRequest request)
         {
-            var marshaller = RenewDomainRequestMarshaller.Instance;
-            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenewDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenewDomainResponseUnmarshaller.Instance;
 
-            return Invoke<RenewDomainRequest,RenewDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<RenewDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -1425,11 +1442,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         public virtual IAsyncResult BeginRenewDomain(RenewDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RenewDomainRequestMarshaller.Instance;
-            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenewDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenewDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RenewDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1471,10 +1488,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         public virtual ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request)
         {
-            var marshaller = ResendContactReachabilityEmailRequestMarshaller.Instance;
-            var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendContactReachabilityEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
 
-            return Invoke<ResendContactReachabilityEmailRequest,ResendContactReachabilityEmailResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResendContactReachabilityEmailResponse>(request, options);
         }
 
         /// <summary>
@@ -1491,11 +1509,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         public virtual IAsyncResult BeginResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ResendContactReachabilityEmailRequestMarshaller.Instance;
-            var unmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendContactReachabilityEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendContactReachabilityEmailResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ResendContactReachabilityEmailRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1533,10 +1551,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         public virtual RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request)
         {
-            var marshaller = RetrieveDomainAuthCodeRequestMarshaller.Instance;
-            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetrieveDomainAuthCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
 
-            return Invoke<RetrieveDomainAuthCodeRequest,RetrieveDomainAuthCodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<RetrieveDomainAuthCodeResponse>(request, options);
         }
 
         /// <summary>
@@ -1553,11 +1572,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         public virtual IAsyncResult BeginRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RetrieveDomainAuthCodeRequestMarshaller.Instance;
-            var unmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetrieveDomainAuthCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveDomainAuthCodeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RetrieveDomainAuthCodeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1638,10 +1657,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         public virtual TransferDomainResponse TransferDomain(TransferDomainRequest request)
         {
-            var marshaller = TransferDomainRequestMarshaller.Instance;
-            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferDomainResponseUnmarshaller.Instance;
 
-            return Invoke<TransferDomainRequest,TransferDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<TransferDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -1658,11 +1678,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         public virtual IAsyncResult BeginTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TransferDomainRequestMarshaller.Instance;
-            var unmarshaller = TransferDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TransferDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1716,10 +1736,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         public virtual UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request)
         {
-            var marshaller = UpdateDomainContactRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDomainContactRequest,UpdateDomainContactResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDomainContactResponse>(request, options);
         }
 
         /// <summary>
@@ -1736,11 +1757,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDomainContactRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainContactResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDomainContactRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1798,10 +1819,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         public virtual UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request)
         {
-            var marshaller = UpdateDomainContactPrivacyRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainContactPrivacyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDomainContactPrivacyRequest,UpdateDomainContactPrivacyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDomainContactPrivacyResponse>(request, options);
         }
 
         /// <summary>
@@ -1818,11 +1840,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDomainContactPrivacyRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainContactPrivacyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainContactPrivacyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDomainContactPrivacyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1877,10 +1899,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         public virtual UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request)
         {
-            var marshaller = UpdateDomainNameserversRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainNameserversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDomainNameserversRequest,UpdateDomainNameserversResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDomainNameserversResponse>(request, options);
         }
 
         /// <summary>
@@ -1897,11 +1920,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDomainNameserversRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainNameserversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainNameserversResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDomainNameserversRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1981,10 +2004,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         public virtual UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request)
         {
-            var marshaller = UpdateTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTagsForDomainRequest,UpdateTagsForDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTagsForDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -2001,11 +2025,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         public virtual IAsyncResult BeginUpdateTagsForDomain(UpdateTagsForDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateTagsForDomainRequestMarshaller.Instance;
-            var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTagsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateTagsForDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2040,10 +2064,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         public virtual ViewBillingResponse ViewBilling(ViewBillingRequest request)
         {
-            var marshaller = ViewBillingRequestMarshaller.Instance;
-            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ViewBillingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ViewBillingResponseUnmarshaller.Instance;
 
-            return Invoke<ViewBillingRequest,ViewBillingResponse>(request, marshaller, unmarshaller);
+            return Invoke<ViewBillingResponse>(request, options);
         }
 
         /// <summary>
@@ -2060,11 +2085,11 @@ namespace Amazon.Route53Domains
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         public virtual IAsyncResult BeginViewBilling(ViewBillingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ViewBillingRequestMarshaller.Instance;
-            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ViewBillingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ViewBillingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ViewBillingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

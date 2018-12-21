@@ -56,6 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/v1/apps/{application-id}/segments";

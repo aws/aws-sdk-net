@@ -145,6 +145,16 @@ namespace AWSSDK.UnitTests
             .AppendLine("region=us-east-1")
             .ToString();
 
+        private static readonly string EndpointDiscoveryEnabledOnlyProfileText = new StringBuilder()
+            .AppendLine("[endpoint_discovery_enabled_only_profile]")
+            .Append("endpoint_discovery_enabled=true")
+            .ToString();
+
+        private static readonly string EndpointDiscoveryEnabledOnlyProfileText_Invalid = new StringBuilder()
+            .AppendLine("[endpoint_discovery_enabled_only_profile]")
+            .AppendLine("endpoint_discovery_enabled=notvalid")
+            .ToString();
+
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
         {
             EndpointName = "endpoint_name",
@@ -230,6 +240,8 @@ namespace AWSSDK.UnitTests
         };
 
         private static readonly CredentialProfileOptions RegionOnlyProfileOptions = new CredentialProfileOptions();
+
+        private static readonly CredentialProfileOptions EndpointDiscoveryEnabledOnlyProfileOptions = new CredentialProfileOptions();
 
         private static readonly string OtherProfileTextForCopyAndRename = new StringBuilder()
             .AppendLine("[other_profile]")
@@ -363,6 +375,34 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture(RegionOnlyProfileText))
             {
                 tester.AssertWriteProfile("region_only_profile", RegionOnlyProfileOptions, RegionOnlyProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadEndpointDiscoveryEnabledOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(EndpointDiscoveryEnabledOnlyProfileText))
+            {
+                tester.TestTryGetProfile("endpoint_discovery_enabled_only_profile", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteEndpointDiscoveryEnabledOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {                
+                tester.AssertWriteProfile("endpoint_discovery_enabled_only_profile", EndpointDiscoveryEnabledOnlyProfileOptions, true, EndpointDiscoveryEnabledOnlyProfileText);             
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidEndpointDiscoveryEnabledOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(EndpointDiscoveryEnabledOnlyProfileText_Invalid))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("endpoint_discovery_enabled_only_profile", out profile1));
             }
         }
 

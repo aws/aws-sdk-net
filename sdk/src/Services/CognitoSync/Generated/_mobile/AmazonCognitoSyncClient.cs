@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CognitoSync.Model;
 using Amazon.CognitoSync.Model.Internal.MarshallTransformations;
@@ -274,15 +275,16 @@ namespace Amazon.CognitoSync
 
         #endregion
 
-        
+
         #region  BulkPublish
 
         internal virtual BulkPublishResponse BulkPublish(BulkPublishRequest request)
         {
-            var marshaller = BulkPublishRequestMarshaller.Instance;
-            var unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BulkPublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BulkPublishResponseUnmarshaller.Instance;
 
-            return Invoke<BulkPublishRequest,BulkPublishResponse>(request, marshaller, unmarshaller);
+            return Invoke<BulkPublishResponse>(request, options);
         }
 
 
@@ -298,11 +300,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublish">REST API Reference for BulkPublish Operation</seealso>
         public virtual Task<BulkPublishResponse> BulkPublishAsync(BulkPublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BulkPublishRequestMarshaller.Instance;
-            var unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BulkPublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BulkPublishResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BulkPublishRequest,BulkPublishResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BulkPublishResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -311,10 +313,11 @@ namespace Amazon.CognitoSync
 
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var marshaller = DeleteDatasetRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDatasetResponse>(request, options);
         }
 
 
@@ -330,11 +333,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDatasetRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -343,10 +346,11 @@ namespace Amazon.CognitoSync
 
         internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var marshaller = DescribeDatasetRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDatasetResponse>(request, options);
         }
 
 
@@ -362,11 +366,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDatasetRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -375,10 +379,11 @@ namespace Amazon.CognitoSync
 
         internal virtual DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request)
         {
-            var marshaller = DescribeIdentityPoolUsageRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIdentityPoolUsageRequest,DescribeIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIdentityPoolUsageResponse>(request, options);
         }
 
 
@@ -433,11 +438,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsage">REST API Reference for DescribeIdentityPoolUsage Operation</seealso>
         public virtual Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeIdentityPoolUsageRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeIdentityPoolUsageRequest,DescribeIdentityPoolUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeIdentityPoolUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -446,10 +451,11 @@ namespace Amazon.CognitoSync
 
         internal virtual DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request)
         {
-            var marshaller = DescribeIdentityUsageRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIdentityUsageResponse>(request, options);
         }
 
 
@@ -465,11 +471,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsage">REST API Reference for DescribeIdentityUsage Operation</seealso>
         public virtual Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeIdentityUsageRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeIdentityUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -478,10 +484,11 @@ namespace Amazon.CognitoSync
 
         internal virtual GetBulkPublishDetailsResponse GetBulkPublishDetails(GetBulkPublishDetailsRequest request)
         {
-            var marshaller = GetBulkPublishDetailsRequestMarshaller.Instance;
-            var unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBulkPublishDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
 
-            return Invoke<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBulkPublishDetailsResponse>(request, options);
         }
 
 
@@ -497,11 +504,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails">REST API Reference for GetBulkPublishDetails Operation</seealso>
         public virtual Task<GetBulkPublishDetailsResponse> GetBulkPublishDetailsAsync(GetBulkPublishDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetBulkPublishDetailsRequestMarshaller.Instance;
-            var unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBulkPublishDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetBulkPublishDetailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -510,10 +517,11 @@ namespace Amazon.CognitoSync
 
         internal virtual GetCognitoEventsResponse GetCognitoEvents(GetCognitoEventsRequest request)
         {
-            var marshaller = GetCognitoEventsRequestMarshaller.Instance;
-            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCognitoEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCognitoEventsResponse>(request, options);
         }
 
 
@@ -529,11 +537,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEvents">REST API Reference for GetCognitoEvents Operation</seealso>
         public virtual Task<GetCognitoEventsResponse> GetCognitoEventsAsync(GetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCognitoEventsRequestMarshaller.Instance;
-            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCognitoEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCognitoEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -542,10 +550,11 @@ namespace Amazon.CognitoSync
 
         internal virtual GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request)
         {
-            var marshaller = GetIdentityPoolConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityPoolConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIdentityPoolConfigurationResponse>(request, options);
         }
 
 
@@ -600,11 +609,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfiguration">REST API Reference for GetIdentityPoolConfiguration Operation</seealso>
         public virtual Task<GetIdentityPoolConfigurationResponse> GetIdentityPoolConfigurationAsync(GetIdentityPoolConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIdentityPoolConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityPoolConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetIdentityPoolConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -613,10 +622,11 @@ namespace Amazon.CognitoSync
 
         internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var marshaller = ListDatasetsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDatasetsResponse>(request, options);
         }
 
 
@@ -632,11 +642,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDatasetsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -645,10 +655,11 @@ namespace Amazon.CognitoSync
 
         internal virtual ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request)
         {
-            var marshaller = ListIdentityPoolUsageRequestMarshaller.Instance;
-            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
 
-            return Invoke<ListIdentityPoolUsageRequest,ListIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListIdentityPoolUsageResponse>(request, options);
         }
 
 
@@ -664,11 +675,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">REST API Reference for ListIdentityPoolUsage Operation</seealso>
         public virtual Task<ListIdentityPoolUsageResponse> ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListIdentityPoolUsageRequestMarshaller.Instance;
-            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityPoolUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListIdentityPoolUsageRequest,ListIdentityPoolUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListIdentityPoolUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -677,10 +688,11 @@ namespace Amazon.CognitoSync
 
         internal virtual ListRecordsResponse ListRecords(ListRecordsRequest request)
         {
-            var marshaller = ListRecordsRequestMarshaller.Instance;
-            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordsResponseUnmarshaller.Instance;
 
-            return Invoke<ListRecordsRequest,ListRecordsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRecordsResponse>(request, options);
         }
 
 
@@ -696,11 +708,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecords">REST API Reference for ListRecords Operation</seealso>
         public virtual Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRecordsRequestMarshaller.Instance;
-            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListRecordsRequest,ListRecordsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListRecordsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -709,10 +721,11 @@ namespace Amazon.CognitoSync
 
         internal virtual RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
         {
-            var marshaller = RegisterDeviceRequestMarshaller.Instance;
-            var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterDeviceResponse>(request, options);
         }
 
 
@@ -728,11 +741,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDevice">REST API Reference for RegisterDevice Operation</seealso>
         public virtual Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterDeviceRequestMarshaller.Instance;
-            var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -741,10 +754,11 @@ namespace Amazon.CognitoSync
 
         internal virtual SetCognitoEventsResponse SetCognitoEvents(SetCognitoEventsRequest request)
         {
-            var marshaller = SetCognitoEventsRequestMarshaller.Instance;
-            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetCognitoEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
 
-            return Invoke<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetCognitoEventsResponse>(request, options);
         }
 
 
@@ -760,11 +774,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetCognitoEvents">REST API Reference for SetCognitoEvents Operation</seealso>
         public virtual Task<SetCognitoEventsResponse> SetCognitoEventsAsync(SetCognitoEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetCognitoEventsRequestMarshaller.Instance;
-            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetCognitoEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetCognitoEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -773,10 +787,11 @@ namespace Amazon.CognitoSync
 
         internal virtual SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request)
         {
-            var marshaller = SetIdentityPoolConfigurationRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetIdentityPoolConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetIdentityPoolConfigurationResponse>(request, options);
         }
 
 
@@ -792,11 +807,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfiguration">REST API Reference for SetIdentityPoolConfiguration Operation</seealso>
         public virtual Task<SetIdentityPoolConfigurationResponse> SetIdentityPoolConfigurationAsync(SetIdentityPoolConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetIdentityPoolConfigurationRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetIdentityPoolConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetIdentityPoolConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -805,10 +820,11 @@ namespace Amazon.CognitoSync
 
         internal virtual SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request)
         {
-            var marshaller = SubscribeToDatasetRequestMarshaller.Instance;
-            var unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<SubscribeToDatasetResponse>(request, options);
         }
 
 
@@ -824,11 +840,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDataset">REST API Reference for SubscribeToDataset Operation</seealso>
         public virtual Task<SubscribeToDatasetResponse> SubscribeToDatasetAsync(SubscribeToDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SubscribeToDatasetRequestMarshaller.Instance;
-            var unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubscribeToDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SubscribeToDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -837,10 +853,11 @@ namespace Amazon.CognitoSync
 
         internal virtual UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request)
         {
-            var marshaller = UnsubscribeFromDatasetRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeFromDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnsubscribeFromDatasetResponse>(request, options);
         }
 
 
@@ -856,11 +873,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDataset">REST API Reference for UnsubscribeFromDataset Operation</seealso>
         public virtual Task<UnsubscribeFromDatasetResponse> UnsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UnsubscribeFromDatasetRequestMarshaller.Instance;
-            var unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnsubscribeFromDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UnsubscribeFromDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -869,10 +886,11 @@ namespace Amazon.CognitoSync
 
         internal virtual UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request)
         {
-            var marshaller = UpdateRecordsRequestMarshaller.Instance;
-            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRecordsRequest,UpdateRecordsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRecordsResponse>(request, options);
         }
 
 
@@ -888,11 +906,11 @@ namespace Amazon.CognitoSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecords">REST API Reference for UpdateRecords Operation</seealso>
         public virtual Task<UpdateRecordsResponse> UpdateRecordsAsync(UpdateRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRecordsRequestMarshaller.Instance;
-            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateRecordsRequest,UpdateRecordsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateRecordsResponse>(request, options, cancellationToken);
         }
 
         #endregion

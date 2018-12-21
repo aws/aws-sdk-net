@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
@@ -244,15 +245,16 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
 
-        
+
         #region  AddInstanceFleet
 
         internal virtual AddInstanceFleetResponse AddInstanceFleet(AddInstanceFleetRequest request)
         {
-            var marshaller = AddInstanceFleetRequestMarshaller.Instance;
-            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddInstanceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
 
-            return Invoke<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddInstanceFleetResponse>(request, options);
         }
 
 
@@ -268,11 +270,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
         public virtual Task<AddInstanceFleetResponse> AddInstanceFleetAsync(AddInstanceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddInstanceFleetRequestMarshaller.Instance;
-            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddInstanceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddInstanceFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -281,10 +283,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
-            var marshaller = AddInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddInstanceGroupsResponse>(request, options);
         }
 
 
@@ -300,11 +303,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public virtual Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddInstanceGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -313,10 +316,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
-            var marshaller = AddJobFlowStepsRequestMarshaller.Instance;
-            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddJobFlowStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
 
-            return Invoke<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddJobFlowStepsResponse>(request, options);
         }
 
 
@@ -332,11 +336,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public virtual Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddJobFlowStepsRequestMarshaller.Instance;
-            var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddJobFlowStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddJobFlowStepsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -345,10 +349,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsResponse>(request, options);
         }
 
 
@@ -364,11 +369,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -377,10 +382,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual CancelStepsResponse CancelSteps(CancelStepsRequest request)
         {
-            var marshaller = CancelStepsRequestMarshaller.Instance;
-            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStepsResponseUnmarshaller.Instance;
 
-            return Invoke<CancelStepsRequest,CancelStepsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelStepsResponse>(request, options);
         }
 
 
@@ -396,11 +402,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public virtual Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelStepsRequestMarshaller.Instance;
-            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStepsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelStepsRequest,CancelStepsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelStepsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -409,10 +415,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
-            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSecurityConfigurationResponse>(request, options);
         }
 
 
@@ -428,11 +435,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateSecurityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -441,10 +448,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
         {
-            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSecurityConfigurationResponse>(request, options);
         }
 
 
@@ -460,11 +468,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public virtual Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -477,10 +485,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var marshaller = DescribeClusterRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeClusterResponse>(request, options);
         }
 
 
@@ -518,11 +527,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeClusterRequestMarshaller.Instance;
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -537,10 +546,11 @@ namespace Amazon.ElasticMapReduce
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         internal virtual DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
-            var marshaller = DescribeJobFlowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobFlowsResponse>(request, options);
         }
 
 
@@ -610,11 +620,11 @@ namespace Amazon.ElasticMapReduce
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public virtual Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeJobFlowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeJobFlowsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -623,10 +633,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
         {
-            var marshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSecurityConfigurationResponse>(request, options);
         }
 
 
@@ -642,11 +653,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public virtual Task<DescribeSecurityConfigurationResponse> DescribeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeSecurityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -659,10 +670,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
-            var marshaller = DescribeStepRequestMarshaller.Instance;
-            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStepRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStepResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStepRequest,DescribeStepResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStepResponse>(request, options);
         }
 
 
@@ -699,11 +711,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public virtual Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeStepRequestMarshaller.Instance;
-            var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStepRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStepResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeStepRequest,DescribeStepResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeStepResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -716,10 +728,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
-            var marshaller = ListBootstrapActionsRequestMarshaller.Instance;
-            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBootstrapActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBootstrapActionsResponse>(request, options);
         }
 
 
@@ -756,11 +769,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public virtual Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListBootstrapActionsRequestMarshaller.Instance;
-            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBootstrapActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListBootstrapActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -773,10 +786,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var marshaller = ListClustersRequestMarshaller.Instance;
-            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
-            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListClustersResponse>(request, options);
         }
 
 
@@ -817,11 +831,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListClustersRequestMarshaller.Instance;
-            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -830,10 +844,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual ListInstanceFleetsResponse ListInstanceFleets(ListInstanceFleetsRequest request)
         {
-            var marshaller = ListInstanceFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInstanceFleetsResponse>(request, options);
         }
 
 
@@ -849,11 +864,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
         public virtual Task<ListInstanceFleetsResponse> ListInstanceFleetsAsync(ListInstanceFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInstanceFleetsRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListInstanceFleetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -866,10 +881,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
-            var marshaller = ListInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInstanceGroupsResponse>(request, options);
         }
 
 
@@ -906,11 +922,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public virtual Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListInstanceGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -923,10 +939,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var marshaller = ListInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInstancesResponse>(request, options);
         }
 
 
@@ -965,11 +982,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListInstancesRequest,ListInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -978,10 +995,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
         {
-            var marshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecurityConfigurationsResponse>(request, options);
         }
 
 
@@ -997,11 +1015,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public virtual Task<ListSecurityConfigurationsResponse> ListSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSecurityConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1014,10 +1032,11 @@ namespace Amazon.ElasticMapReduce
         }
         internal virtual ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            var marshaller = ListStepsRequestMarshaller.Instance;
-            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
-            return Invoke<ListStepsRequest,ListStepsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListStepsResponse>(request, options);
         }
 
 
@@ -1055,11 +1074,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListStepsRequestMarshaller.Instance;
-            var unmarshaller = ListStepsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListStepsRequest,ListStepsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListStepsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1068,10 +1087,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual ModifyInstanceFleetResponse ModifyInstanceFleet(ModifyInstanceFleetRequest request)
         {
-            var marshaller = ModifyInstanceFleetRequestMarshaller.Instance;
-            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyInstanceFleetResponse>(request, options);
         }
 
 
@@ -1087,11 +1107,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
         public virtual Task<ModifyInstanceFleetResponse> ModifyInstanceFleetAsync(ModifyInstanceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyInstanceFleetRequestMarshaller.Instance;
-            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ModifyInstanceFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1100,10 +1120,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
-            var marshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyInstanceGroupsResponse>(request, options);
         }
 
 
@@ -1119,11 +1140,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public virtual Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
-            var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ModifyInstanceGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1132,10 +1153,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
         {
-            var marshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAutoScalingPolicyResponse>(request, options);
         }
 
 
@@ -1151,11 +1173,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public virtual Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutAutoScalingPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1164,10 +1186,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
         {
-            var marshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveAutoScalingPolicyResponse>(request, options);
         }
 
 
@@ -1183,11 +1206,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public virtual Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
-            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveAutoScalingPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1196,10 +1219,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsResponse>(request, options);
         }
 
 
@@ -1215,11 +1239,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1228,10 +1252,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
-            var marshaller = RunJobFlowRequestMarshaller.Instance;
-            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunJobFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunJobFlowResponseUnmarshaller.Instance;
 
-            return Invoke<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, unmarshaller);
+            return Invoke<RunJobFlowResponse>(request, options);
         }
 
 
@@ -1247,11 +1272,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public virtual Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RunJobFlowRequestMarshaller.Instance;
-            var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunJobFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunJobFlowResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RunJobFlowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1260,10 +1285,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
-            var marshaller = SetTerminationProtectionRequestMarshaller.Instance;
-            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTerminationProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
 
-            return Invoke<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetTerminationProtectionResponse>(request, options);
         }
 
 
@@ -1279,11 +1305,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public virtual Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetTerminationProtectionRequestMarshaller.Instance;
-            var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetTerminationProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetTerminationProtectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1292,10 +1318,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
-            var marshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
-            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
 
-            return Invoke<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetVisibleToAllUsersResponse>(request, options);
         }
 
 
@@ -1311,11 +1338,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public virtual Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
-            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetVisibleToAllUsersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1324,10 +1351,11 @@ namespace Amazon.ElasticMapReduce
 
         internal virtual TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
-            var marshaller = TerminateJobFlowsRequestMarshaller.Instance;
-            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateJobFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateJobFlowsResponse>(request, options);
         }
 
 
@@ -1343,11 +1371,11 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public virtual Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateJobFlowsRequestMarshaller.Instance;
-            var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateJobFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TerminateJobFlowsResponse>(request, options, cancellationToken);
         }
 
         #endregion

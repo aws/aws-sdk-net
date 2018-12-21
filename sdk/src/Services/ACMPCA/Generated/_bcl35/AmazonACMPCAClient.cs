@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ACMPCA.Model;
 using Amazon.ACMPCA.Model.Internal.MarshallTransformations;
@@ -269,7 +270,7 @@ namespace Amazon.ACMPCA
 
         #endregion
 
-        
+
         #region  CreateCertificateAuthority
 
         /// <summary>
@@ -300,10 +301,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthority">REST API Reference for CreateCertificateAuthority Operation</seealso>
         public virtual CreateCertificateAuthorityResponse CreateCertificateAuthority(CreateCertificateAuthorityRequest request)
         {
-            var marshaller = CreateCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCertificateAuthorityRequest,CreateCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -320,11 +322,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthority">REST API Reference for CreateCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginCreateCertificateAuthority(CreateCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -375,10 +377,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthorityAuditReport">REST API Reference for CreateCertificateAuthorityAuditReport Operation</seealso>
         public virtual CreateCertificateAuthorityAuditReportResponse CreateCertificateAuthorityAuditReport(CreateCertificateAuthorityAuditReportRequest request)
         {
-            var marshaller = CreateCertificateAuthorityAuditReportRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateAuthorityAuditReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCertificateAuthorityAuditReportRequest,CreateCertificateAuthorityAuditReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCertificateAuthorityAuditReportResponse>(request, options);
         }
 
         /// <summary>
@@ -395,11 +398,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthorityAuditReport">REST API Reference for CreateCertificateAuthorityAuditReport Operation</seealso>
         public virtual IAsyncResult BeginCreateCertificateAuthorityAuditReport(CreateCertificateAuthorityAuditReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateCertificateAuthorityAuditReportRequestMarshaller.Instance;
-            var unmarshaller = CreateCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCertificateAuthorityAuditReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateCertificateAuthorityAuditReportRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -464,10 +467,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority">REST API Reference for DeleteCertificateAuthority Operation</seealso>
         public virtual DeleteCertificateAuthorityResponse DeleteCertificateAuthority(DeleteCertificateAuthorityRequest request)
         {
-            var marshaller = DeleteCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCertificateAuthorityRequest,DeleteCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -484,11 +488,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority">REST API Reference for DeleteCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginDeleteCertificateAuthority(DeleteCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -562,10 +566,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">REST API Reference for DescribeCertificateAuthority Operation</seealso>
         public virtual DescribeCertificateAuthorityResponse DescribeCertificateAuthority(DescribeCertificateAuthorityRequest request)
         {
-            var marshaller = DescribeCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCertificateAuthorityRequest,DescribeCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -582,11 +587,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">REST API Reference for DescribeCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginDescribeCertificateAuthority(DescribeCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -628,10 +633,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthorityAuditReport">REST API Reference for DescribeCertificateAuthorityAuditReport Operation</seealso>
         public virtual DescribeCertificateAuthorityAuditReportResponse DescribeCertificateAuthorityAuditReport(DescribeCertificateAuthorityAuditReportRequest request)
         {
-            var marshaller = DescribeCertificateAuthorityAuditReportRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateAuthorityAuditReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCertificateAuthorityAuditReportRequest,DescribeCertificateAuthorityAuditReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCertificateAuthorityAuditReportResponse>(request, options);
         }
 
         /// <summary>
@@ -648,11 +654,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthorityAuditReport">REST API Reference for DescribeCertificateAuthorityAuditReport Operation</seealso>
         public virtual IAsyncResult BeginDescribeCertificateAuthorityAuditReport(DescribeCertificateAuthorityAuditReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeCertificateAuthorityAuditReportRequestMarshaller.Instance;
-            var unmarshaller = DescribeCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateAuthorityAuditReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateAuthorityAuditReportResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeCertificateAuthorityAuditReportRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -703,10 +709,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public virtual GetCertificateResponse GetCertificate(GetCertificateRequest request)
         {
-            var marshaller = GetCertificateRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<GetCertificateRequest,GetCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -723,11 +730,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public virtual IAsyncResult BeginGetCertificate(GetCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCertificateRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -768,10 +775,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCertificate">REST API Reference for GetCertificateAuthorityCertificate Operation</seealso>
         public virtual GetCertificateAuthorityCertificateResponse GetCertificateAuthorityCertificate(GetCertificateAuthorityCertificateRequest request)
         {
-            var marshaller = GetCertificateAuthorityCertificateRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateAuthorityCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateAuthorityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAuthorityCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<GetCertificateAuthorityCertificateRequest,GetCertificateAuthorityCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCertificateAuthorityCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -788,11 +796,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCertificate">REST API Reference for GetCertificateAuthorityCertificate Operation</seealso>
         public virtual IAsyncResult BeginGetCertificateAuthorityCertificate(GetCertificateAuthorityCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCertificateAuthorityCertificateRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateAuthorityCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateAuthorityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAuthorityCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCertificateAuthorityCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -842,10 +850,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCsr">REST API Reference for GetCertificateAuthorityCsr Operation</seealso>
         public virtual GetCertificateAuthorityCsrResponse GetCertificateAuthorityCsr(GetCertificateAuthorityCsrRequest request)
         {
-            var marshaller = GetCertificateAuthorityCsrRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateAuthorityCsrResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateAuthorityCsrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAuthorityCsrResponseUnmarshaller.Instance;
 
-            return Invoke<GetCertificateAuthorityCsrRequest,GetCertificateAuthorityCsrResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCertificateAuthorityCsrResponse>(request, options);
         }
 
         /// <summary>
@@ -862,11 +871,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCsr">REST API Reference for GetCertificateAuthorityCsr Operation</seealso>
         public virtual IAsyncResult BeginGetCertificateAuthorityCsr(GetCertificateAuthorityCsrRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCertificateAuthorityCsrRequestMarshaller.Instance;
-            var unmarshaller = GetCertificateAuthorityCsrResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateAuthorityCsrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAuthorityCsrResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCertificateAuthorityCsrRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -944,10 +953,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">REST API Reference for ImportCertificateAuthorityCertificate Operation</seealso>
         public virtual ImportCertificateAuthorityCertificateResponse ImportCertificateAuthorityCertificate(ImportCertificateAuthorityCertificateRequest request)
         {
-            var marshaller = ImportCertificateAuthorityCertificateRequestMarshaller.Instance;
-            var unmarshaller = ImportCertificateAuthorityCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateAuthorityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateAuthorityCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<ImportCertificateAuthorityCertificateRequest,ImportCertificateAuthorityCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportCertificateAuthorityCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -964,11 +974,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">REST API Reference for ImportCertificateAuthorityCertificate Operation</seealso>
         public virtual IAsyncResult BeginImportCertificateAuthorityCertificate(ImportCertificateAuthorityCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ImportCertificateAuthorityCertificateRequestMarshaller.Instance;
-            var unmarshaller = ImportCertificateAuthorityCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateAuthorityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateAuthorityCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ImportCertificateAuthorityCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1026,10 +1036,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">REST API Reference for IssueCertificate Operation</seealso>
         public virtual IssueCertificateResponse IssueCertificate(IssueCertificateRequest request)
         {
-            var marshaller = IssueCertificateRequestMarshaller.Instance;
-            var unmarshaller = IssueCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = IssueCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IssueCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<IssueCertificateRequest,IssueCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<IssueCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -1046,11 +1057,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">REST API Reference for IssueCertificate Operation</seealso>
         public virtual IAsyncResult BeginIssueCertificate(IssueCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = IssueCertificateRequestMarshaller.Instance;
-            var unmarshaller = IssueCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = IssueCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IssueCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<IssueCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1084,10 +1095,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
         public virtual ListCertificateAuthoritiesResponse ListCertificateAuthorities(ListCertificateAuthoritiesRequest request)
         {
-            var marshaller = ListCertificateAuthoritiesRequestMarshaller.Instance;
-            var unmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificateAuthoritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListCertificateAuthoritiesRequest,ListCertificateAuthoritiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCertificateAuthoritiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1104,11 +1116,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
         public virtual IAsyncResult BeginListCertificateAuthorities(ListCertificateAuthoritiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListCertificateAuthoritiesRequestMarshaller.Instance;
-            var unmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificateAuthoritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListCertificateAuthoritiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1148,10 +1160,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1168,11 +1181,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1223,10 +1236,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RestoreCertificateAuthority">REST API Reference for RestoreCertificateAuthority Operation</seealso>
         public virtual RestoreCertificateAuthorityResponse RestoreCertificateAuthority(RestoreCertificateAuthorityRequest request)
         {
-            var marshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreCertificateAuthorityRequest,RestoreCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -1243,11 +1257,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RestoreCertificateAuthority">REST API Reference for RestoreCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginRestoreCertificateAuthority(RestoreCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RestoreCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1303,10 +1317,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevokeCertificate">REST API Reference for RevokeCertificate Operation</seealso>
         public virtual RevokeCertificateResponse RevokeCertificate(RevokeCertificateRequest request)
         {
-            var marshaller = RevokeCertificateRequestMarshaller.Instance;
-            var unmarshaller = RevokeCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeCertificateResponseUnmarshaller.Instance;
 
-            return Invoke<RevokeCertificateRequest,RevokeCertificateResponse>(request, marshaller, unmarshaller);
+            return Invoke<RevokeCertificateResponse>(request, options);
         }
 
         /// <summary>
@@ -1323,11 +1338,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevokeCertificate">REST API Reference for RevokeCertificate Operation</seealso>
         public virtual IAsyncResult BeginRevokeCertificate(RevokeCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RevokeCertificateRequestMarshaller.Instance;
-            var unmarshaller = RevokeCertificateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeCertificateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RevokeCertificateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1381,10 +1396,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/TagCertificateAuthority">REST API Reference for TagCertificateAuthority Operation</seealso>
         public virtual TagCertificateAuthorityResponse TagCertificateAuthority(TagCertificateAuthorityRequest request)
         {
-            var marshaller = TagCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = TagCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<TagCertificateAuthorityRequest,TagCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -1401,11 +1417,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/TagCertificateAuthority">REST API Reference for TagCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginTagCertificateAuthority(TagCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = TagCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1453,10 +1469,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/UntagCertificateAuthority">REST API Reference for UntagCertificateAuthority Operation</seealso>
         public virtual UntagCertificateAuthorityResponse UntagCertificateAuthority(UntagCertificateAuthorityRequest request)
         {
-            var marshaller = UntagCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = UntagCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<UntagCertificateAuthorityRequest,UntagCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -1473,11 +1490,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/UntagCertificateAuthority">REST API Reference for UntagCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginUntagCertificateAuthority(UntagCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = UntagCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1529,10 +1546,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/UpdateCertificateAuthority">REST API Reference for UpdateCertificateAuthority Operation</seealso>
         public virtual UpdateCertificateAuthorityResponse UpdateCertificateAuthority(UpdateCertificateAuthorityRequest request)
         {
-            var marshaller = UpdateCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = UpdateCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCertificateAuthorityRequest,UpdateCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCertificateAuthorityResponse>(request, options);
         }
 
         /// <summary>
@@ -1549,11 +1567,11 @@ namespace Amazon.ACMPCA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/UpdateCertificateAuthority">REST API Reference for UpdateCertificateAuthority Operation</seealso>
         public virtual IAsyncResult BeginUpdateCertificateAuthority(UpdateCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateCertificateAuthorityRequestMarshaller.Instance;
-            var unmarshaller = UpdateCertificateAuthorityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateAuthorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateAuthorityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateCertificateAuthorityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

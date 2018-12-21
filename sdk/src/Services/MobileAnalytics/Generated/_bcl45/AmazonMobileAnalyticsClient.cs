@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MobileAnalytics.Model;
 using Amazon.MobileAnalytics.Model.Internal.MarshallTransformations;
@@ -237,7 +238,7 @@ namespace Amazon.MobileAnalytics
 
         #endregion
 
-        
+
         #region  PutEvents
 
 
@@ -254,10 +255,11 @@ namespace Amazon.MobileAnalytics
         /// </exception>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventsResponse>(request, options);
         }
 
         /// <summary>
@@ -271,11 +273,11 @@ namespace Amazon.MobileAnalytics
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEventsRequest,PutEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion

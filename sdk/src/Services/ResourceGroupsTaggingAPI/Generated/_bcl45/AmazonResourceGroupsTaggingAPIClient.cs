@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ResourceGroupsTaggingAPI.Model;
 using Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations;
@@ -293,7 +294,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         #endregion
 
-        
+
         #region  GetResources
 
 
@@ -325,10 +326,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
-            var marshaller = GetResourcesRequestMarshaller.Instance;
-            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourcesRequest,GetResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -343,11 +345,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourcesRequestMarshaller.Instance;
-            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetResourcesRequest,GetResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -379,10 +381,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
         public virtual GetTagKeysResponse GetTagKeys(GetTagKeysRequest request)
         {
-            var marshaller = GetTagKeysRequestMarshaller.Instance;
-            var unmarshaller = GetTagKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
 
-            return Invoke<GetTagKeysRequest,GetTagKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTagKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -397,11 +400,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
         public virtual Task<GetTagKeysResponse> GetTagKeysAsync(GetTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTagKeysRequestMarshaller.Instance;
-            var unmarshaller = GetTagKeysResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetTagKeysRequest,GetTagKeysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTagKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -433,10 +436,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
         public virtual GetTagValuesResponse GetTagValues(GetTagValuesRequest request)
         {
-            var marshaller = GetTagValuesRequestMarshaller.Instance;
-            var unmarshaller = GetTagValuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
 
-            return Invoke<GetTagValuesRequest,GetTagValuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTagValuesResponse>(request, options);
         }
 
         /// <summary>
@@ -451,11 +455,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
         public virtual Task<GetTagValuesResponse> GetTagValuesAsync(GetTagValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTagValuesRequestMarshaller.Instance;
-            var unmarshaller = GetTagValuesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetTagValuesRequest,GetTagValuesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTagValuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -507,10 +511,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
         public virtual TagResourcesResponse TagResources(TagResourcesRequest request)
         {
-            var marshaller = TagResourcesRequestMarshaller.Instance;
-            var unmarshaller = TagResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourcesRequest,TagResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -525,11 +530,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
         public virtual Task<TagResourcesResponse> TagResourcesAsync(TagResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourcesRequestMarshaller.Instance;
-            var unmarshaller = TagResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagResourcesRequest,TagResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -573,10 +578,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
         public virtual UntagResourcesResponse UntagResources(UntagResourcesRequest request)
         {
-            var marshaller = UntagResourcesRequestMarshaller.Instance;
-            var unmarshaller = UntagResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourcesRequest,UntagResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -591,11 +597,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
         public virtual Task<UntagResourcesResponse> UntagResourcesAsync(UntagResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourcesRequestMarshaller.Instance;
-            var unmarshaller = UntagResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagResourcesRequest,UntagResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion

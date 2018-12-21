@@ -55,6 +55,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConfigurationSetEventDestinationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoice");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations";

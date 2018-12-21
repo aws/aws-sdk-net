@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ServiceDiscovery.Model;
 using Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations;
@@ -247,15 +248,16 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
 
-        
+
         #region  CreateHttpNamespace
 
         internal virtual CreateHttpNamespaceResponse CreateHttpNamespace(CreateHttpNamespaceRequest request)
         {
-            var marshaller = CreateHttpNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreateHttpNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHttpNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHttpNamespaceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateHttpNamespaceRequest,CreateHttpNamespaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateHttpNamespaceResponse>(request, options);
         }
 
 
@@ -271,11 +273,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">REST API Reference for CreateHttpNamespace Operation</seealso>
         public virtual Task<CreateHttpNamespaceResponse> CreateHttpNamespaceAsync(CreateHttpNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateHttpNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreateHttpNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHttpNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHttpNamespaceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateHttpNamespaceRequest,CreateHttpNamespaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateHttpNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -284,10 +286,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual CreatePrivateDnsNamespaceResponse CreatePrivateDnsNamespace(CreatePrivateDnsNamespaceRequest request)
         {
-            var marshaller = CreatePrivateDnsNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePrivateDnsNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrivateDnsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateDnsNamespaceResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePrivateDnsNamespaceRequest,CreatePrivateDnsNamespaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePrivateDnsNamespaceResponse>(request, options);
         }
 
 
@@ -303,11 +306,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">REST API Reference for CreatePrivateDnsNamespace Operation</seealso>
         public virtual Task<CreatePrivateDnsNamespaceResponse> CreatePrivateDnsNamespaceAsync(CreatePrivateDnsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePrivateDnsNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePrivateDnsNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrivateDnsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateDnsNamespaceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePrivateDnsNamespaceRequest,CreatePrivateDnsNamespaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePrivateDnsNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -316,10 +319,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual CreatePublicDnsNamespaceResponse CreatePublicDnsNamespace(CreatePublicDnsNamespaceRequest request)
         {
-            var marshaller = CreatePublicDnsNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicDnsNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicDnsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicDnsNamespaceResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePublicDnsNamespaceRequest,CreatePublicDnsNamespaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePublicDnsNamespaceResponse>(request, options);
         }
 
 
@@ -335,11 +339,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">REST API Reference for CreatePublicDnsNamespace Operation</seealso>
         public virtual Task<CreatePublicDnsNamespaceResponse> CreatePublicDnsNamespaceAsync(CreatePublicDnsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePublicDnsNamespaceRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicDnsNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicDnsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicDnsNamespaceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePublicDnsNamespaceRequest,CreatePublicDnsNamespaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePublicDnsNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -348,10 +352,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var marshaller = CreateServiceRequestMarshaller.Instance;
-            var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateServiceRequest,CreateServiceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateServiceResponse>(request, options);
         }
 
 
@@ -367,11 +372,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateServiceRequestMarshaller.Instance;
-            var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateServiceRequest,CreateServiceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -380,10 +385,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
-            var marshaller = DeleteNamespaceRequestMarshaller.Instance;
-            var unmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNamespaceRequest,DeleteNamespaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNamespaceResponse>(request, options);
         }
 
 
@@ -399,11 +405,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNamespaceRequestMarshaller.Instance;
-            var unmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteNamespaceRequest,DeleteNamespaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -412,10 +418,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var marshaller = DeleteServiceRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteServiceResponse>(request, options);
         }
 
 
@@ -431,11 +438,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteServiceRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -444,10 +451,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
         {
-            var marshaller = DeregisterInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterInstanceResponse>(request, options);
         }
 
 
@@ -463,11 +471,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         public virtual Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeregisterInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -476,10 +484,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual DiscoverInstancesResponse DiscoverInstances(DiscoverInstancesRequest request)
         {
-            var marshaller = DiscoverInstancesRequestMarshaller.Instance;
-            var unmarshaller = DiscoverInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DiscoverInstancesRequest,DiscoverInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DiscoverInstancesResponse>(request, options);
         }
 
 
@@ -495,11 +504,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstances">REST API Reference for DiscoverInstances Operation</seealso>
         public virtual Task<DiscoverInstancesResponse> DiscoverInstancesAsync(DiscoverInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DiscoverInstancesRequestMarshaller.Instance;
-            var unmarshaller = DiscoverInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DiscoverInstancesRequest,DiscoverInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DiscoverInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -508,10 +517,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
         {
-            var marshaller = GetInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<GetInstanceRequest,GetInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInstanceResponse>(request, options);
         }
 
 
@@ -527,11 +537,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetInstanceRequest,GetInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -540,10 +550,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual GetInstancesHealthStatusResponse GetInstancesHealthStatus(GetInstancesHealthStatusRequest request)
         {
-            var marshaller = GetInstancesHealthStatusRequestMarshaller.Instance;
-            var unmarshaller = GetInstancesHealthStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstancesHealthStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstancesHealthStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetInstancesHealthStatusRequest,GetInstancesHealthStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInstancesHealthStatusResponse>(request, options);
         }
 
 
@@ -559,11 +570,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">REST API Reference for GetInstancesHealthStatus Operation</seealso>
         public virtual Task<GetInstancesHealthStatusResponse> GetInstancesHealthStatusAsync(GetInstancesHealthStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInstancesHealthStatusRequestMarshaller.Instance;
-            var unmarshaller = GetInstancesHealthStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstancesHealthStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstancesHealthStatusResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetInstancesHealthStatusRequest,GetInstancesHealthStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetInstancesHealthStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -572,10 +583,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual GetNamespaceResponse GetNamespace(GetNamespaceRequest request)
         {
-            var marshaller = GetNamespaceRequestMarshaller.Instance;
-            var unmarshaller = GetNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
-            return Invoke<GetNamespaceRequest,GetNamespaceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetNamespaceResponse>(request, options);
         }
 
 
@@ -591,11 +603,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         public virtual Task<GetNamespaceResponse> GetNamespaceAsync(GetNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetNamespaceRequestMarshaller.Instance;
-            var unmarshaller = GetNamespaceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetNamespaceRequest,GetNamespaceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -604,10 +616,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
-            var marshaller = GetOperationRequestMarshaller.Instance;
-            var unmarshaller = GetOperationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
-            return Invoke<GetOperationRequest,GetOperationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetOperationResponse>(request, options);
         }
 
 
@@ -623,11 +636,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetOperationRequestMarshaller.Instance;
-            var unmarshaller = GetOperationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetOperationRequest,GetOperationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -636,10 +649,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual GetServiceResponse GetService(GetServiceRequest request)
         {
-            var marshaller = GetServiceRequestMarshaller.Instance;
-            var unmarshaller = GetServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
-            return Invoke<GetServiceRequest,GetServiceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetServiceResponse>(request, options);
         }
 
 
@@ -655,11 +669,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetService">REST API Reference for GetService Operation</seealso>
         public virtual Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetServiceRequestMarshaller.Instance;
-            var unmarshaller = GetServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetServiceRequest,GetServiceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -668,10 +682,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var marshaller = ListInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInstancesResponse>(request, options);
         }
 
 
@@ -687,11 +702,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListInstancesRequest,ListInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -700,10 +715,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
         {
-            var marshaller = ListNamespacesRequestMarshaller.Instance;
-            var unmarshaller = ListNamespacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
-            return Invoke<ListNamespacesRequest,ListNamespacesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListNamespacesResponse>(request, options);
         }
 
 
@@ -719,11 +735,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListNamespacesRequestMarshaller.Instance;
-            var unmarshaller = ListNamespacesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListNamespacesRequest,ListNamespacesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -732,10 +748,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            var marshaller = ListOperationsRequestMarshaller.Instance;
-            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListOperationsRequest,ListOperationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOperationsResponse>(request, options);
         }
 
 
@@ -751,11 +768,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListOperationsRequestMarshaller.Instance;
-            var unmarshaller = ListOperationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListOperationsRequest,ListOperationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -764,10 +781,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var marshaller = ListServicesRequestMarshaller.Instance;
-            var unmarshaller = ListServicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
-            return Invoke<ListServicesRequest,ListServicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListServicesResponse>(request, options);
         }
 
 
@@ -783,11 +801,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListServicesRequestMarshaller.Instance;
-            var unmarshaller = ListServicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListServicesRequest,ListServicesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListServicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -796,10 +814,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
         {
-            var marshaller = RegisterInstanceRequestMarshaller.Instance;
-            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterInstanceResponse>(request, options);
         }
 
 
@@ -815,11 +834,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         public virtual Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterInstanceRequestMarshaller.Instance;
-            var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -828,10 +847,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual UpdateInstanceCustomHealthStatusResponse UpdateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request)
         {
-            var marshaller = UpdateInstanceCustomHealthStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceCustomHealthStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateInstanceCustomHealthStatusRequest,UpdateInstanceCustomHealthStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateInstanceCustomHealthStatusResponse>(request, options);
         }
 
 
@@ -847,11 +867,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus">REST API Reference for UpdateInstanceCustomHealthStatus Operation</seealso>
         public virtual Task<UpdateInstanceCustomHealthStatusResponse> UpdateInstanceCustomHealthStatusAsync(UpdateInstanceCustomHealthStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateInstanceCustomHealthStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceCustomHealthStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateInstanceCustomHealthStatusRequest,UpdateInstanceCustomHealthStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateInstanceCustomHealthStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -860,10 +880,11 @@ namespace Amazon.ServiceDiscovery
 
         internal virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var marshaller = UpdateServiceRequestMarshaller.Instance;
-            var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateServiceResponse>(request, options);
         }
 
 
@@ -879,11 +900,11 @@ namespace Amazon.ServiceDiscovery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateServiceRequestMarshaller.Instance;
-            var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion

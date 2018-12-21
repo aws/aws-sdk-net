@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.PinpointEmail.Model;
 using Amazon.PinpointEmail.Model.Internal.MarshallTransformations;
@@ -260,7 +261,7 @@ namespace Amazon.PinpointEmail
 
         #endregion
 
-        
+
         #region  CreateConfigurationSet
 
 
@@ -291,10 +292,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -308,11 +310,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -353,10 +355,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -370,11 +373,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -405,10 +408,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateDedicatedIpPoolResponse CreateDedicatedIpPool(CreateDedicatedIpPoolRequest request)
         {
-            var marshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDedicatedIpPoolRequest,CreateDedicatedIpPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDedicatedIpPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -422,11 +426,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDedicatedIpPoolResponse> CreateDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDedicatedIpPoolRequest,CreateDedicatedIpPoolResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -475,10 +479,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request)
         {
-            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDeliverabilityTestReportResponse>(request, options);
         }
 
         /// <summary>
@@ -492,11 +497,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDeliverabilityTestReportResponse> CreateDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -540,10 +545,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateEmailIdentityResponse CreateEmailIdentity(CreateEmailIdentityRequest request)
         {
-            var marshaller = CreateEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEmailIdentityRequest,CreateEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -557,11 +563,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateEmailIdentityResponse> CreateEmailIdentityAsync(CreateEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateEmailIdentityRequest,CreateEmailIdentityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEmailIdentityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -594,10 +600,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -611,11 +618,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -649,10 +656,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -666,11 +674,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -695,10 +703,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteDedicatedIpPoolResponse DeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request)
         {
-            var marshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDedicatedIpPoolRequest,DeleteDedicatedIpPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDedicatedIpPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -712,11 +721,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteDedicatedIpPoolResponse> DeleteDedicatedIpPoolAsync(DeleteDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDedicatedIpPoolRequest,DeleteDedicatedIpPoolResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDedicatedIpPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -742,10 +751,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteEmailIdentityResponse DeleteEmailIdentity(DeleteEmailIdentityRequest request)
         {
-            var marshaller = DeleteEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEmailIdentityRequest,DeleteEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -759,11 +769,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteEmailIdentityResponse> DeleteEmailIdentityAsync(DeleteEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteEmailIdentityRequest,DeleteEmailIdentityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEmailIdentityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -786,10 +796,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetAccountRequest,GetAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -803,11 +814,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAccountRequest,GetAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -832,10 +843,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request)
         {
-            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
-            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
 
-            return Invoke<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBlacklistReportsResponse>(request, options);
         }
 
         /// <summary>
@@ -849,11 +861,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBlacklistReportsResponse> GetBlacklistReportsAsync(GetBlacklistReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
-            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBlacklistReportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -887,10 +899,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetConfigurationSetResponse GetConfigurationSet(GetConfigurationSetRequest request)
         {
-            var marshaller = GetConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetRequest,GetConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -904,11 +917,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetConfigurationSetResponse> GetConfigurationSetAsync(GetConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConfigurationSetRequest,GetConfigurationSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -942,10 +955,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetEventDestinationsResponse>(request, options);
         }
 
         /// <summary>
@@ -959,11 +973,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -990,10 +1004,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDedicatedIpResponse GetDedicatedIp(GetDedicatedIpRequest request)
         {
-            var marshaller = GetDedicatedIpRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
 
-            return Invoke<GetDedicatedIpRequest,GetDedicatedIpResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDedicatedIpResponse>(request, options);
         }
 
         /// <summary>
@@ -1007,11 +1022,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDedicatedIpResponse> GetDedicatedIpAsync(GetDedicatedIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDedicatedIpRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDedicatedIpRequest,GetDedicatedIpResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDedicatedIpResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1036,10 +1051,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDedicatedIpsResponse GetDedicatedIps(GetDedicatedIpsRequest request)
         {
-            var marshaller = GetDedicatedIpsRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDedicatedIpsRequest,GetDedicatedIpsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDedicatedIpsResponse>(request, options);
         }
 
         /// <summary>
@@ -1053,11 +1069,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDedicatedIpsResponse> GetDedicatedIpsAsync(GetDedicatedIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDedicatedIpsRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDedicatedIpsRequest,GetDedicatedIpsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDedicatedIpsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1093,10 +1109,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request)
         {
-            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeliverabilityDashboardOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1110,11 +1127,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDeliverabilityDashboardOptionsResponse> GetDeliverabilityDashboardOptionsAsync(GetDeliverabilityDashboardOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeliverabilityDashboardOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1139,10 +1156,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request)
         {
-            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeliverabilityTestReportResponse>(request, options);
         }
 
         /// <summary>
@@ -1156,11 +1174,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDeliverabilityTestReportResponse> GetDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeliverabilityTestReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1186,10 +1204,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
         {
-            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
-            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainStatisticsReportResponse>(request, options);
         }
 
         /// <summary>
@@ -1203,11 +1222,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDomainStatisticsReportResponse> GetDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
-            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDomainStatisticsReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1234,10 +1253,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request)
         {
-            var marshaller = GetEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetEmailIdentityRequest,GetEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1251,11 +1271,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetEmailIdentityResponse> GetEmailIdentityAsync(GetEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetEmailIdentityRequest,GetEmailIdentityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEmailIdentityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1286,10 +1306,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListConfigurationSetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1303,11 +1324,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1330,10 +1351,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListDedicatedIpPoolsResponse ListDedicatedIpPools(ListDedicatedIpPoolsRequest request)
         {
-            var marshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDedicatedIpPoolsRequest,ListDedicatedIpPoolsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDedicatedIpPoolsResponse>(request, options);
         }
 
         /// <summary>
@@ -1347,11 +1369,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListDedicatedIpPoolsResponse> ListDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDedicatedIpPoolsRequest,ListDedicatedIpPoolsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDedicatedIpPoolsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1378,10 +1400,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request)
         {
-            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeliverabilityTestReportsResponse>(request, options);
         }
 
         /// <summary>
@@ -1395,11 +1418,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListDeliverabilityTestReportsResponse> ListDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDeliverabilityTestReportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1423,10 +1446,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListEmailIdentitiesResponse ListEmailIdentities(ListEmailIdentitiesRequest request)
         {
-            var marshaller = ListEmailIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListEmailIdentitiesRequest,ListEmailIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEmailIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1440,11 +1464,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListEmailIdentitiesResponse> ListEmailIdentitiesAsync(ListEmailIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEmailIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListEmailIdentitiesRequest,ListEmailIdentitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEmailIdentitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1466,10 +1490,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutAccountDedicatedIpWarmupAttributesResponse PutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request)
         {
-            var marshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutAccountDedicatedIpWarmupAttributesRequest,PutAccountDedicatedIpWarmupAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAccountDedicatedIpWarmupAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1483,11 +1508,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutAccountDedicatedIpWarmupAttributesResponse> PutAccountDedicatedIpWarmupAttributesAsync(PutAccountDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAccountDedicatedIpWarmupAttributesRequest,PutAccountDedicatedIpWarmupAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAccountDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1509,10 +1534,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutAccountSendingAttributesResponse PutAccountSendingAttributes(PutAccountSendingAttributesRequest request)
         {
-            var marshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutAccountSendingAttributesRequest,PutAccountSendingAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAccountSendingAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1526,11 +1552,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutAccountSendingAttributesResponse> PutAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAccountSendingAttributesRequest,PutAccountSendingAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAccountSendingAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1556,10 +1582,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetDeliveryOptionsRequest,PutConfigurationSetDeliveryOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetDeliveryOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1573,11 +1600,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutConfigurationSetDeliveryOptionsResponse> PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationSetDeliveryOptionsRequest,PutConfigurationSetDeliveryOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationSetDeliveryOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1603,10 +1630,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetReputationOptionsResponse PutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetReputationOptionsRequest,PutConfigurationSetReputationOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetReputationOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1620,11 +1648,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutConfigurationSetReputationOptionsResponse> PutConfigurationSetReputationOptionsAsync(PutConfigurationSetReputationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationSetReputationOptionsRequest,PutConfigurationSetReputationOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationSetReputationOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1650,10 +1678,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetSendingOptionsResponse PutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetSendingOptionsRequest,PutConfigurationSetSendingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetSendingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1667,11 +1696,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutConfigurationSetSendingOptionsResponse> PutConfigurationSetSendingOptionsAsync(PutConfigurationSetSendingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationSetSendingOptionsRequest,PutConfigurationSetSendingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationSetSendingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1697,10 +1726,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetTrackingOptionsResponse PutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetTrackingOptionsRequest,PutConfigurationSetTrackingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetTrackingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1714,11 +1744,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutConfigurationSetTrackingOptionsResponse> PutConfigurationSetTrackingOptionsAsync(PutConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutConfigurationSetTrackingOptionsRequest,PutConfigurationSetTrackingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1755,10 +1785,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDedicatedIpInPoolResponse PutDedicatedIpInPool(PutDedicatedIpInPoolRequest request)
         {
-            var marshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
 
-            return Invoke<PutDedicatedIpInPoolRequest,PutDedicatedIpInPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDedicatedIpInPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -1772,11 +1803,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutDedicatedIpInPoolResponse> PutDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutDedicatedIpInPoolRequest,PutDedicatedIpInPoolResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDedicatedIpInPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1801,10 +1832,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDedicatedIpWarmupAttributesResponse PutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request)
         {
-            var marshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutDedicatedIpWarmupAttributesRequest,PutDedicatedIpWarmupAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDedicatedIpWarmupAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1818,11 +1850,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutDedicatedIpWarmupAttributesResponse> PutDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutDedicatedIpWarmupAttributesRequest,PutDedicatedIpWarmupAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDedicatedIpWarmupAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1864,10 +1896,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request)
         {
-            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
-            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
 
-            return Invoke<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDeliverabilityDashboardOptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1881,11 +1914,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutDeliverabilityDashboardOptionResponse> PutDeliverabilityDashboardOptionAsync(PutDeliverabilityDashboardOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
-            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDeliverabilityDashboardOptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1910,10 +1943,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityDkimAttributesResponse PutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityDkimAttributesRequest,PutEmailIdentityDkimAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityDkimAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1927,11 +1961,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEmailIdentityDkimAttributesResponse> PutEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEmailIdentityDkimAttributesRequest,PutEmailIdentityDkimAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEmailIdentityDkimAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1973,10 +2007,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityFeedbackAttributesResponse PutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityFeedbackAttributesRequest,PutEmailIdentityFeedbackAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityFeedbackAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1990,11 +2025,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEmailIdentityFeedbackAttributesResponse> PutEmailIdentityFeedbackAttributesAsync(PutEmailIdentityFeedbackAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEmailIdentityFeedbackAttributesRequest,PutEmailIdentityFeedbackAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEmailIdentityFeedbackAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2019,10 +2054,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityMailFromAttributesResponse PutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityMailFromAttributesRequest,PutEmailIdentityMailFromAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityMailFromAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2036,11 +2072,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEmailIdentityMailFromAttributesResponse> PutEmailIdentityMailFromAttributesAsync(PutEmailIdentityMailFromAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEmailIdentityMailFromAttributesRequest,PutEmailIdentityMailFromAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEmailIdentityMailFromAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2098,10 +2134,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var marshaller = SendEmailRequestMarshaller.Instance;
-            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
-            return Invoke<SendEmailRequest,SendEmailResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendEmailResponse>(request, options);
         }
 
         /// <summary>
@@ -2115,11 +2152,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendEmailRequestMarshaller.Instance;
-            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendEmailRequest,SendEmailResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendEmailResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2153,10 +2190,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -2170,11 +2208,11 @@ namespace Amazon.PinpointEmail
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion

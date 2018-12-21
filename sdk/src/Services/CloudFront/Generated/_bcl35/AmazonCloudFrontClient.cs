@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CloudFront.Model;
 using Amazon.CloudFront.Model.Internal.MarshallTransformations;
@@ -240,7 +241,7 @@ namespace Amazon.CloudFront
 
         #endregion
 
-        
+
         #region  CreateCloudFrontOriginAccessIdentity
 
         /// <summary>
@@ -276,10 +277,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
-            var marshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCloudFrontOriginAccessIdentityRequest,CreateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCloudFrontOriginAccessIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -296,11 +298,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -493,10 +495,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
-            var marshaller = CreateDistributionRequestMarshaller.Instance;
-            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDistributionRequest,CreateDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -513,11 +516,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDistributionRequestMarshaller.Instance;
-            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -694,10 +697,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
         {
-            var marshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDistributionWithTagsRequest,CreateDistributionWithTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDistributionWithTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -714,11 +718,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual IAsyncResult BeginCreateDistributionWithTags(CreateDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDistributionWithTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -771,10 +775,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
         public virtual CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request)
         {
-            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFieldLevelEncryptionConfigRequest,CreateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFieldLevelEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -791,11 +796,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -848,10 +853,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
         public virtual CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request)
         {
-            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFieldLevelEncryptionProfileRequest,CreateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFieldLevelEncryptionProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -868,11 +874,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -924,10 +930,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
-            var marshaller = CreateInvalidationRequestMarshaller.Instance;
-            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInvalidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateInvalidationRequest,CreateInvalidationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateInvalidationResponse>(request, options);
         }
 
         /// <summary>
@@ -944,11 +951,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateInvalidationRequestMarshaller.Instance;
-            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInvalidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateInvalidationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -988,10 +995,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
         public virtual CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request)
         {
-            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePublicKeyRequest,CreatePublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePublicKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -1008,11 +1016,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
         public virtual IAsyncResult BeginCreatePublicKey(CreatePublicKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePublicKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1114,10 +1122,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
-            var marshaller = CreateStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStreamingDistributionRequest,CreateStreamingDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStreamingDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -1134,11 +1143,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateStreamingDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1208,10 +1217,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
         {
-            var marshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStreamingDistributionWithTagsRequest,CreateStreamingDistributionWithTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStreamingDistributionWithTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1228,11 +1238,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateStreamingDistributionWithTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1302,10 +1312,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
-            var marshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCloudFrontOriginAccessIdentityRequest,DeleteCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCloudFrontOriginAccessIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1322,11 +1333,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1396,10 +1407,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
-            var marshaller = DeleteDistributionRequestMarshaller.Instance;
-            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDistributionRequest,DeleteDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -1416,11 +1428,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDistributionRequestMarshaller.Instance;
-            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1464,10 +1476,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         public virtual DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request)
         {
-            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFieldLevelEncryptionConfigRequest,DeleteFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFieldLevelEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -1484,11 +1497,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1532,10 +1545,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         public virtual DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request)
         {
-            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFieldLevelEncryptionProfileRequest,DeleteFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFieldLevelEncryptionProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -1552,11 +1566,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1600,10 +1614,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         public virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
         {
-            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePublicKeyRequest,DeletePublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePublicKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -1620,11 +1635,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         public virtual IAsyncResult BeginDeletePublicKey(DeletePublicKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePublicKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1810,10 +1825,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
-            var marshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteStreamingDistributionRequest,DeleteStreamingDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteStreamingDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -1830,11 +1846,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteStreamingDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1886,10 +1902,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
-            var marshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetCloudFrontOriginAccessIdentityRequest,GetCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCloudFrontOriginAccessIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1906,11 +1923,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1962,10 +1979,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
-            var marshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
-            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetCloudFrontOriginAccessIdentityConfigRequest,GetCloudFrontOriginAccessIdentityConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCloudFrontOriginAccessIdentityConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -1982,11 +2000,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
-            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCloudFrontOriginAccessIdentityConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2038,10 +2056,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
-            var marshaller = GetDistributionRequestMarshaller.Instance;
-            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<GetDistributionRequest,GetDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -2058,11 +2077,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDistributionRequestMarshaller.Instance;
-            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2114,10 +2133,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
-            var marshaller = GetDistributionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetDistributionConfigRequest,GetDistributionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDistributionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2134,11 +2154,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDistributionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDistributionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDistributionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2173,10 +2193,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
         public virtual GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request)
         {
-            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<GetFieldLevelEncryptionRequest,GetFieldLevelEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFieldLevelEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -2193,11 +2214,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
         public virtual IAsyncResult BeginGetFieldLevelEncryption(GetFieldLevelEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetFieldLevelEncryptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2232,10 +2253,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
         public virtual GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request)
         {
-            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetFieldLevelEncryptionConfigRequest,GetFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFieldLevelEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2252,11 +2274,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2291,10 +2313,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
         public virtual GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request)
         {
-            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return Invoke<GetFieldLevelEncryptionProfileRequest,GetFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFieldLevelEncryptionProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -2311,11 +2334,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
         public virtual IAsyncResult BeginGetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2350,10 +2373,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
         public virtual GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request)
         {
-            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetFieldLevelEncryptionProfileConfigRequest,GetFieldLevelEncryptionProfileConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFieldLevelEncryptionProfileConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2370,11 +2394,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
-            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetFieldLevelEncryptionProfileConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2412,10 +2436,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
-            var marshaller = GetInvalidationRequestMarshaller.Instance;
-            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvalidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvalidationResponseUnmarshaller.Instance;
 
-            return Invoke<GetInvalidationRequest,GetInvalidationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInvalidationResponse>(request, options);
         }
 
         /// <summary>
@@ -2432,11 +2457,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetInvalidationRequestMarshaller.Instance;
-            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvalidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvalidationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetInvalidationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2471,10 +2496,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
         {
-            var marshaller = GetPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<GetPublicKeyRequest,GetPublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPublicKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -2491,11 +2517,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual IAsyncResult BeginGetPublicKey(GetPublicKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPublicKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2530,10 +2556,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
         public virtual GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request)
         {
-            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
-            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetPublicKeyConfigRequest,GetPublicKeyConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPublicKeyConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2550,11 +2577,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
         public virtual IAsyncResult BeginGetPublicKeyConfig(GetPublicKeyConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
-            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPublicKeyConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2606,10 +2633,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
-            var marshaller = GetStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<GetStreamingDistributionRequest,GetStreamingDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStreamingDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -2626,11 +2654,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetStreamingDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2682,10 +2710,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
-            var marshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetStreamingDistributionConfigRequest,GetStreamingDistributionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStreamingDistributionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -2702,11 +2731,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetStreamingDistributionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2752,10 +2781,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
-            var marshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListCloudFrontOriginAccessIdentitiesRequest,ListCloudFrontOriginAccessIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCloudFrontOriginAccessIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -2772,11 +2802,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListCloudFrontOriginAccessIdentitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2822,10 +2852,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
-            var marshaller = ListDistributionsRequestMarshaller.Instance;
-            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDistributionsRequest,ListDistributionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDistributionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2842,11 +2873,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDistributionsRequestMarshaller.Instance;
-            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDistributionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2881,10 +2912,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
         {
-            var marshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
-            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
 
-            return Invoke<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDistributionsByWebACLIdResponse>(request, options);
         }
 
         /// <summary>
@@ -2901,11 +2933,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
-            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDistributionsByWebACLIdRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2938,10 +2970,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
         public virtual ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request)
         {
-            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
 
-            return Invoke<ListFieldLevelEncryptionConfigsRequest,ListFieldLevelEncryptionConfigsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFieldLevelEncryptionConfigsResponse>(request, options);
         }
 
         /// <summary>
@@ -2958,11 +2991,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
         public virtual IAsyncResult BeginListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListFieldLevelEncryptionConfigsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2995,10 +3028,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
         public virtual ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request)
         {
-            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListFieldLevelEncryptionProfilesRequest,ListFieldLevelEncryptionProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFieldLevelEncryptionProfilesResponse>(request, options);
         }
 
         /// <summary>
@@ -3015,11 +3049,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
         public virtual IAsyncResult BeginListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListFieldLevelEncryptionProfilesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3057,10 +3091,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
-            var marshaller = ListInvalidationsRequestMarshaller.Instance;
-            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvalidationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInvalidationsRequest,ListInvalidationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInvalidationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3077,11 +3112,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListInvalidationsRequestMarshaller.Instance;
-            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvalidationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListInvalidationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3113,10 +3148,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
-            var marshaller = ListPublicKeysRequestMarshaller.Instance;
-            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
-            return Invoke<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPublicKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -3133,11 +3169,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPublicKeysRequestMarshaller.Instance;
-            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPublicKeysRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3183,10 +3219,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
-            var marshaller = ListStreamingDistributionsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamingDistributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListStreamingDistributionsRequest,ListStreamingDistributionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListStreamingDistributionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3203,11 +3240,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListStreamingDistributionsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamingDistributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListStreamingDistributionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3248,10 +3285,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -3268,11 +3306,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3313,10 +3351,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -3333,11 +3372,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3378,10 +3417,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -3398,11 +3438,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3456,10 +3496,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
-            var marshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCloudFrontOriginAccessIdentityRequest,UpdateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCloudFrontOriginAccessIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -3476,11 +3517,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
-            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateCloudFrontOriginAccessIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3746,10 +3787,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
-            var marshaller = UpdateDistributionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDistributionRequest,UpdateDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -3766,11 +3808,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDistributionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3832,10 +3874,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
         public virtual UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request)
         {
-            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFieldLevelEncryptionConfigRequest,UpdateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFieldLevelEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -3852,11 +3895,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3921,10 +3964,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
         public virtual UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request)
         {
-            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFieldLevelEncryptionProfileRequest,UpdateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFieldLevelEncryptionProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -3941,11 +3985,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3995,10 +4039,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         public virtual UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request)
         {
-            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePublicKeyRequest,UpdatePublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePublicKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -4015,11 +4060,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         public virtual IAsyncResult BeginUpdatePublicKey(UpdatePublicKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePublicKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4088,10 +4133,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
-            var marshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateStreamingDistributionRequest,UpdateStreamingDistributionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateStreamingDistributionResponse>(request, options);
         }
 
         /// <summary>
@@ -4108,11 +4154,11 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateStreamingDistributionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

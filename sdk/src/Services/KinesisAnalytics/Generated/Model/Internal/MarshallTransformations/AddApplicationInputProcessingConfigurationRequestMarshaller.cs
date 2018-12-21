@@ -58,6 +58,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             string target = "KinesisAnalytics_20150814.AddApplicationInputProcessingConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-14";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

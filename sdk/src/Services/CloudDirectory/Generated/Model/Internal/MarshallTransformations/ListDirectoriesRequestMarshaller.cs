@@ -56,6 +56,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudDirectory");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/amazonclouddirectory/2017-01-11/directory/list";

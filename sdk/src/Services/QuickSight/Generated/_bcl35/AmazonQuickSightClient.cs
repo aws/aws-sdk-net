@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.QuickSight.Model;
 using Amazon.QuickSight.Model.Internal.MarshallTransformations;
@@ -240,7 +241,7 @@ namespace Amazon.QuickSight
 
         #endregion
 
-        
+
         #region  CreateGroup
 
         /// <summary>
@@ -302,10 +303,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = CreateGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -322,11 +324,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -406,10 +408,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
         public virtual CreateGroupMembershipResponse CreateGroupMembership(CreateGroupMembershipRequest request)
         {
-            var marshaller = CreateGroupMembershipRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGroupMembershipRequest,CreateGroupMembershipResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGroupMembershipResponse>(request, options);
         }
 
         /// <summary>
@@ -426,11 +429,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
         public virtual IAsyncResult BeginCreateGroupMembership(CreateGroupMembershipRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateGroupMembershipRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateGroupMembershipRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -498,10 +501,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = DeleteGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -518,11 +522,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -598,10 +602,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
         public virtual DeleteGroupMembershipResponse DeleteGroupMembership(DeleteGroupMembershipRequest request)
         {
-            var marshaller = DeleteGroupMembershipRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGroupMembershipRequest,DeleteGroupMembershipResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGroupMembershipResponse>(request, options);
         }
 
         /// <summary>
@@ -618,11 +623,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroupMembership(DeleteGroupMembershipRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteGroupMembershipRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteGroupMembershipRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -689,10 +694,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserResponse>(request, options);
         }
 
         /// <summary>
@@ -709,11 +715,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -785,10 +791,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var marshaller = DescribeGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeGroupRequest,DescribeGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -805,11 +812,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeGroup(DescribeGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -879,10 +886,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserResponse>(request, options);
         }
 
         /// <summary>
@@ -899,11 +907,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual IAsyncResult BeginDescribeUser(DescribeUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1026,10 +1034,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">REST API Reference for GetDashboardEmbedUrl Operation</seealso>
         public virtual GetDashboardEmbedUrlResponse GetDashboardEmbedUrl(GetDashboardEmbedUrlRequest request)
         {
-            var marshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
-            var unmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
 
-            return Invoke<GetDashboardEmbedUrlRequest,GetDashboardEmbedUrlResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDashboardEmbedUrlResponse>(request, options);
         }
 
         /// <summary>
@@ -1046,11 +1055,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">REST API Reference for GetDashboardEmbedUrl Operation</seealso>
         public virtual IAsyncResult BeginGetDashboardEmbedUrl(GetDashboardEmbedUrlRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
-            var unmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDashboardEmbedUrlRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1125,10 +1134,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
         public virtual ListGroupMembershipsResponse ListGroupMemberships(ListGroupMembershipsRequest request)
         {
-            var marshaller = ListGroupMembershipsRequestMarshaller.Instance;
-            var unmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
 
-            return Invoke<ListGroupMembershipsRequest,ListGroupMembershipsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListGroupMembershipsResponse>(request, options);
         }
 
         /// <summary>
@@ -1145,11 +1155,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
         public virtual IAsyncResult BeginListGroupMemberships(ListGroupMembershipsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListGroupMembershipsRequestMarshaller.Instance;
-            var unmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListGroupMembershipsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1223,10 +1233,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = ListGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -1243,11 +1254,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1316,10 +1327,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">REST API Reference for ListUserGroups Operation</seealso>
         public virtual ListUserGroupsResponse ListUserGroups(ListUserGroupsRequest request)
         {
-            var marshaller = ListUserGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListUserGroupsRequest,ListUserGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUserGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -1336,11 +1348,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">REST API Reference for ListUserGroups Operation</seealso>
         public virtual IAsyncResult BeginListUserGroups(ListUserGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListUserGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListUserGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1413,10 +1425,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUsersResponse>(request, options);
         }
 
         /// <summary>
@@ -1433,11 +1446,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1523,10 +1536,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">REST API Reference for RegisterUser Operation</seealso>
         public virtual RegisterUserResponse RegisterUser(RegisterUserRequest request)
         {
-            var marshaller = RegisterUserRequestMarshaller.Instance;
-            var unmarshaller = RegisterUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterUserResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterUserRequest,RegisterUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterUserResponse>(request, options);
         }
 
         /// <summary>
@@ -1543,11 +1557,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">REST API Reference for RegisterUser Operation</seealso>
         public virtual IAsyncResult BeginRegisterUser(RegisterUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterUserRequestMarshaller.Instance;
-            var unmarshaller = RegisterUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1619,10 +1633,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var marshaller = UpdateGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1639,11 +1654,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1714,10 +1729,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserResponse>(request, options);
         }
 
         /// <summary>
@@ -1734,11 +1750,11 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

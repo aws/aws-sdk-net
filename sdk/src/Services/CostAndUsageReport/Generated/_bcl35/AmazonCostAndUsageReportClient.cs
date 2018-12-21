@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CostAndUsageReport.Model;
 using Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
 
-        
+
         #region  DeleteReportDefinition
 
         /// <summary>
@@ -253,10 +254,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
-            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReportDefinitionRequest,DeleteReportDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReportDefinitionResponse>(request, options);
         }
 
         /// <summary>
@@ -273,11 +275,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeleteReportDefinition(DeleteReportDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteReportDefinitionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -309,10 +311,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
-            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReportDefinitionsRequest,DescribeReportDefinitionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReportDefinitionsResponse>(request, options);
         }
 
         /// <summary>
@@ -329,11 +332,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual IAsyncResult BeginDescribeReportDefinitions(DescribeReportDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReportDefinitionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -377,10 +380,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
-            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<PutReportDefinitionRequest,PutReportDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutReportDefinitionResponse>(request, options);
         }
 
         /// <summary>
@@ -397,11 +401,11 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual IAsyncResult BeginPutReportDefinition(PutReportDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
-            var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutReportDefinitionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IoTAnalytics.Model;
 using Amazon.IoTAnalytics.Model.Internal.MarshallTransformations;
@@ -262,7 +263,7 @@ namespace Amazon.IoTAnalytics
 
         #endregion
 
-        
+
         #region  BatchPutMessage
 
 
@@ -290,10 +291,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/BatchPutMessage">REST API Reference for BatchPutMessage Operation</seealso>
         public virtual BatchPutMessageResponse BatchPutMessage(BatchPutMessageRequest request)
         {
-            var marshaller = BatchPutMessageRequestMarshaller.Instance;
-            var unmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
 
-            return Invoke<BatchPutMessageRequest,BatchPutMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchPutMessageResponse>(request, options);
         }
 
         /// <summary>
@@ -308,11 +310,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/BatchPutMessage">REST API Reference for BatchPutMessage Operation</seealso>
         public virtual Task<BatchPutMessageResponse> BatchPutMessageAsync(BatchPutMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchPutMessageRequestMarshaller.Instance;
-            var unmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchPutMessageRequest,BatchPutMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchPutMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -344,10 +346,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CancelPipelineReprocessing">REST API Reference for CancelPipelineReprocessing Operation</seealso>
         public virtual CancelPipelineReprocessingResponse CancelPipelineReprocessing(CancelPipelineReprocessingRequest request)
         {
-            var marshaller = CancelPipelineReprocessingRequestMarshaller.Instance;
-            var unmarshaller = CancelPipelineReprocessingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelPipelineReprocessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelPipelineReprocessingResponseUnmarshaller.Instance;
 
-            return Invoke<CancelPipelineReprocessingRequest,CancelPipelineReprocessingResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelPipelineReprocessingResponse>(request, options);
         }
 
         /// <summary>
@@ -362,11 +365,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CancelPipelineReprocessing">REST API Reference for CancelPipelineReprocessing Operation</seealso>
         public virtual Task<CancelPipelineReprocessingResponse> CancelPipelineReprocessingAsync(CancelPipelineReprocessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelPipelineReprocessingRequestMarshaller.Instance;
-            var unmarshaller = CancelPipelineReprocessingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelPipelineReprocessingRequest,CancelPipelineReprocessingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelPipelineReprocessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelPipelineReprocessingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelPipelineReprocessingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -402,10 +405,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var marshaller = CreateChannelRequestMarshaller.Instance;
-            var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
-            return Invoke<CreateChannelRequest,CreateChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -420,11 +424,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateChannelRequestMarshaller.Instance;
-            var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateChannelRequest,CreateChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -462,10 +466,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var marshaller = CreateDatasetRequestMarshaller.Instance;
-            var unmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDatasetRequest,CreateDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDatasetResponse>(request, options);
         }
 
         /// <summary>
@@ -480,11 +485,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDatasetRequestMarshaller.Instance;
-            var unmarshaller = CreateDatasetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDatasetRequest,CreateDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -516,10 +521,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">REST API Reference for CreateDatasetContent Operation</seealso>
         public virtual CreateDatasetContentResponse CreateDatasetContent(CreateDatasetContentRequest request)
         {
-            var marshaller = CreateDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = CreateDatasetContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetContentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDatasetContentRequest,CreateDatasetContentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDatasetContentResponse>(request, options);
         }
 
         /// <summary>
@@ -534,11 +540,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">REST API Reference for CreateDatasetContent Operation</seealso>
         public virtual Task<CreateDatasetContentResponse> CreateDatasetContentAsync(CreateDatasetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = CreateDatasetContentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDatasetContentRequest,CreateDatasetContentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetContentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDatasetContentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -573,10 +579,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">REST API Reference for CreateDatastore Operation</seealso>
         public virtual CreateDatastoreResponse CreateDatastore(CreateDatastoreRequest request)
         {
-            var marshaller = CreateDatastoreRequestMarshaller.Instance;
-            var unmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDatastoreRequest,CreateDatastoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDatastoreResponse>(request, options);
         }
 
         /// <summary>
@@ -591,11 +598,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">REST API Reference for CreateDatastore Operation</seealso>
         public virtual Task<CreateDatastoreResponse> CreateDatastoreAsync(CreateDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDatastoreRequestMarshaller.Instance;
-            var unmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDatastoreRequest,CreateDatastoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDatastoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -631,10 +638,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -649,11 +657,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -685,10 +693,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var marshaller = DeleteChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -703,11 +712,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -744,10 +753,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var marshaller = DeleteDatasetRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDatasetResponse>(request, options);
         }
 
         /// <summary>
@@ -762,11 +772,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDatasetRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -798,10 +808,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatasetContent">REST API Reference for DeleteDatasetContent Operation</seealso>
         public virtual DeleteDatasetContentResponse DeleteDatasetContent(DeleteDatasetContentRequest request)
         {
-            var marshaller = DeleteDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetContentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatasetContentRequest,DeleteDatasetContentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDatasetContentResponse>(request, options);
         }
 
         /// <summary>
@@ -816,11 +827,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatasetContent">REST API Reference for DeleteDatasetContent Operation</seealso>
         public virtual Task<DeleteDatasetContentResponse> DeleteDatasetContentAsync(DeleteDatasetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatasetContentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDatasetContentRequest,DeleteDatasetContentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetContentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDatasetContentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -852,10 +863,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatastore">REST API Reference for DeleteDatastore Operation</seealso>
         public virtual DeleteDatastoreResponse DeleteDatastore(DeleteDatastoreRequest request)
         {
-            var marshaller = DeleteDatastoreRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatastoreRequest,DeleteDatastoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDatastoreResponse>(request, options);
         }
 
         /// <summary>
@@ -870,11 +882,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatastore">REST API Reference for DeleteDatastore Operation</seealso>
         public virtual Task<DeleteDatastoreResponse> DeleteDatastoreAsync(DeleteDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDatastoreRequestMarshaller.Instance;
-            var unmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDatastoreRequest,DeleteDatastoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDatastoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -906,10 +918,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -924,11 +937,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -960,10 +973,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var marshaller = DescribeChannelRequestMarshaller.Instance;
-            var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -978,11 +992,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeChannelRequestMarshaller.Instance;
-            var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1014,10 +1028,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var marshaller = DescribeDatasetRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDatasetResponse>(request, options);
         }
 
         /// <summary>
@@ -1032,11 +1047,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDatasetRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1068,10 +1083,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDatastore">REST API Reference for DescribeDatastore Operation</seealso>
         public virtual DescribeDatastoreResponse DescribeDatastore(DescribeDatastoreRequest request)
         {
-            var marshaller = DescribeDatastoreRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatastoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatastoreResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDatastoreRequest,DescribeDatastoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDatastoreResponse>(request, options);
         }
 
         /// <summary>
@@ -1086,11 +1102,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDatastore">REST API Reference for DescribeDatastore Operation</seealso>
         public virtual Task<DescribeDatastoreResponse> DescribeDatastoreAsync(DescribeDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDatastoreRequestMarshaller.Instance;
-            var unmarshaller = DescribeDatastoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDatastoreRequest,DescribeDatastoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatastoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDatastoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1122,10 +1138,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual DescribeLoggingOptionsResponse DescribeLoggingOptions(DescribeLoggingOptionsRequest request)
         {
-            var marshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLoggingOptionsRequest,DescribeLoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLoggingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1140,11 +1157,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual Task<DescribeLoggingOptionsResponse> DescribeLoggingOptionsAsync(DescribeLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeLoggingOptionsRequest,DescribeLoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1176,10 +1193,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
         public virtual DescribePipelineResponse DescribePipeline(DescribePipelineRequest request)
         {
-            var marshaller = DescribePipelineRequestMarshaller.Instance;
-            var unmarshaller = DescribePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePipelineRequest,DescribePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -1194,11 +1212,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
         public virtual Task<DescribePipelineResponse> DescribePipelineAsync(DescribePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePipelineRequestMarshaller.Instance;
-            var unmarshaller = DescribePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribePipelineRequest,DescribePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1230,10 +1248,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">REST API Reference for GetDatasetContent Operation</seealso>
         public virtual GetDatasetContentResponse GetDatasetContent(GetDatasetContentRequest request)
         {
-            var marshaller = GetDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = GetDatasetContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetContentResponseUnmarshaller.Instance;
 
-            return Invoke<GetDatasetContentRequest,GetDatasetContentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDatasetContentResponse>(request, options);
         }
 
         /// <summary>
@@ -1248,11 +1267,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">REST API Reference for GetDatasetContent Operation</seealso>
         public virtual Task<GetDatasetContentResponse> GetDatasetContentAsync(GetDatasetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDatasetContentRequestMarshaller.Instance;
-            var unmarshaller = GetDatasetContentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDatasetContentRequest,GetDatasetContentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetContentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDatasetContentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1281,10 +1300,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var marshaller = ListChannelsRequestMarshaller.Instance;
-            var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<ListChannelsRequest,ListChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListChannelsResponse>(request, options);
         }
 
         /// <summary>
@@ -1299,11 +1319,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListChannelsRequestMarshaller.Instance;
-            var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListChannelsRequest,ListChannelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1335,10 +1355,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">REST API Reference for ListDatasetContents Operation</seealso>
         public virtual ListDatasetContentsResponse ListDatasetContents(ListDatasetContentsRequest request)
         {
-            var marshaller = ListDatasetContentsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetContentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDatasetContentsRequest,ListDatasetContentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDatasetContentsResponse>(request, options);
         }
 
         /// <summary>
@@ -1353,11 +1374,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">REST API Reference for ListDatasetContents Operation</seealso>
         public virtual Task<ListDatasetContentsResponse> ListDatasetContentsAsync(ListDatasetContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDatasetContentsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDatasetContentsRequest,ListDatasetContentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetContentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDatasetContentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1386,10 +1407,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var marshaller = ListDatasetsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDatasetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1404,11 +1426,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDatasetsRequestMarshaller.Instance;
-            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1437,10 +1459,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatastores">REST API Reference for ListDatastores Operation</seealso>
         public virtual ListDatastoresResponse ListDatastores(ListDatastoresRequest request)
         {
-            var marshaller = ListDatastoresRequestMarshaller.Instance;
-            var unmarshaller = ListDatastoresResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatastoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatastoresResponseUnmarshaller.Instance;
 
-            return Invoke<ListDatastoresRequest,ListDatastoresResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDatastoresResponse>(request, options);
         }
 
         /// <summary>
@@ -1455,11 +1478,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatastores">REST API Reference for ListDatastores Operation</seealso>
         public virtual Task<ListDatastoresResponse> ListDatastoresAsync(ListDatastoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDatastoresRequestMarshaller.Instance;
-            var unmarshaller = ListDatastoresResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDatastoresRequest,ListDatastoresResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatastoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatastoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDatastoresResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1488,10 +1511,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPipelinesResponse>(request, options);
         }
 
         /// <summary>
@@ -1506,11 +1530,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1545,10 +1569,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1563,11 +1588,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1604,10 +1629,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request)
         {
-            var marshaller = PutLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutLoggingOptionsRequest,PutLoggingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLoggingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1622,11 +1648,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual Task<PutLoggingOptionsResponse> PutLoggingOptionsAsync(PutLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutLoggingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutLoggingOptionsRequest,PutLoggingOptionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutLoggingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1655,10 +1681,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/RunPipelineActivity">REST API Reference for RunPipelineActivity Operation</seealso>
         public virtual RunPipelineActivityResponse RunPipelineActivity(RunPipelineActivityRequest request)
         {
-            var marshaller = RunPipelineActivityRequestMarshaller.Instance;
-            var unmarshaller = RunPipelineActivityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunPipelineActivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunPipelineActivityResponseUnmarshaller.Instance;
 
-            return Invoke<RunPipelineActivityRequest,RunPipelineActivityResponse>(request, marshaller, unmarshaller);
+            return Invoke<RunPipelineActivityResponse>(request, options);
         }
 
         /// <summary>
@@ -1673,11 +1700,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/RunPipelineActivity">REST API Reference for RunPipelineActivity Operation</seealso>
         public virtual Task<RunPipelineActivityResponse> RunPipelineActivityAsync(RunPipelineActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RunPipelineActivityRequestMarshaller.Instance;
-            var unmarshaller = RunPipelineActivityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RunPipelineActivityRequest,RunPipelineActivityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunPipelineActivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunPipelineActivityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RunPipelineActivityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1710,10 +1737,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/SampleChannelData">REST API Reference for SampleChannelData Operation</seealso>
         public virtual SampleChannelDataResponse SampleChannelData(SampleChannelDataRequest request)
         {
-            var marshaller = SampleChannelDataRequestMarshaller.Instance;
-            var unmarshaller = SampleChannelDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SampleChannelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SampleChannelDataResponseUnmarshaller.Instance;
 
-            return Invoke<SampleChannelDataRequest,SampleChannelDataResponse>(request, marshaller, unmarshaller);
+            return Invoke<SampleChannelDataResponse>(request, options);
         }
 
         /// <summary>
@@ -1728,11 +1756,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/SampleChannelData">REST API Reference for SampleChannelData Operation</seealso>
         public virtual Task<SampleChannelDataResponse> SampleChannelDataAsync(SampleChannelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SampleChannelDataRequestMarshaller.Instance;
-            var unmarshaller = SampleChannelDataResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SampleChannelDataRequest,SampleChannelDataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SampleChannelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SampleChannelDataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SampleChannelDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1767,10 +1795,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/StartPipelineReprocessing">REST API Reference for StartPipelineReprocessing Operation</seealso>
         public virtual StartPipelineReprocessingResponse StartPipelineReprocessing(StartPipelineReprocessingRequest request)
         {
-            var marshaller = StartPipelineReprocessingRequestMarshaller.Instance;
-            var unmarshaller = StartPipelineReprocessingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPipelineReprocessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPipelineReprocessingResponseUnmarshaller.Instance;
 
-            return Invoke<StartPipelineReprocessingRequest,StartPipelineReprocessingResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartPipelineReprocessingResponse>(request, options);
         }
 
         /// <summary>
@@ -1785,11 +1814,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/StartPipelineReprocessing">REST API Reference for StartPipelineReprocessing Operation</seealso>
         public virtual Task<StartPipelineReprocessingResponse> StartPipelineReprocessingAsync(StartPipelineReprocessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartPipelineReprocessingRequestMarshaller.Instance;
-            var unmarshaller = StartPipelineReprocessingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartPipelineReprocessingRequest,StartPipelineReprocessingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPipelineReprocessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPipelineReprocessingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartPipelineReprocessingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1825,10 +1854,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1843,11 +1873,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1882,10 +1912,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1900,11 +1931,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1936,10 +1967,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var marshaller = UpdateChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1954,11 +1986,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1990,10 +2022,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var marshaller = UpdateDatasetRequestMarshaller.Instance;
-            var unmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDatasetRequest,UpdateDatasetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDatasetResponse>(request, options);
         }
 
         /// <summary>
@@ -2008,11 +2041,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDatasetRequestMarshaller.Instance;
-            var unmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDatasetRequest,UpdateDatasetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2044,10 +2077,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDatastore">REST API Reference for UpdateDatastore Operation</seealso>
         public virtual UpdateDatastoreResponse UpdateDatastore(UpdateDatastoreRequest request)
         {
-            var marshaller = UpdateDatastoreRequestMarshaller.Instance;
-            var unmarshaller = UpdateDatastoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatastoreResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDatastoreRequest,UpdateDatastoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDatastoreResponse>(request, options);
         }
 
         /// <summary>
@@ -2062,11 +2096,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDatastore">REST API Reference for UpdateDatastore Operation</seealso>
         public virtual Task<UpdateDatastoreResponse> UpdateDatastoreAsync(UpdateDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDatastoreRequestMarshaller.Instance;
-            var unmarshaller = UpdateDatastoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDatastoreRequest,UpdateDatastoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatastoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDatastoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2101,10 +2135,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -2119,11 +2154,11 @@ namespace Amazon.IoTAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion

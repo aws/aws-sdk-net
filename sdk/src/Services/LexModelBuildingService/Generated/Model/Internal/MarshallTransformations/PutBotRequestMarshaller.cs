@@ -56,6 +56,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/bots/{name}/versions/$LATEST";

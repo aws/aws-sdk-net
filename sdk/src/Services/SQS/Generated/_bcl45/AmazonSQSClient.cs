@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SQS.Model;
 using Amazon.SQS.Model.Internal.MarshallTransformations;
@@ -320,7 +321,7 @@ namespace Amazon.SQS
 
         #endregion
 
-        
+
         #region  AddPermission
 
 
@@ -452,10 +453,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddPermissionResponse>(request, options);
         }
 
 
@@ -543,11 +545,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddPermissionRequest,AddPermissionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddPermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -681,10 +683,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public virtual ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
-            var marshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
 
-            return Invoke<ChangeMessageVisibilityRequest,ChangeMessageVisibilityResponse>(request, marshaller, unmarshaller);
+            return Invoke<ChangeMessageVisibilityResponse>(request, options);
         }
 
 
@@ -770,11 +773,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public virtual Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ChangeMessageVisibilityRequest,ChangeMessageVisibilityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ChangeMessageVisibilityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -880,10 +883,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public virtual ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
-            var marshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
 
-            return Invoke<ChangeMessageVisibilityBatchRequest,ChangeMessageVisibilityBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<ChangeMessageVisibilityBatchResponse>(request, options);
         }
 
 
@@ -954,11 +958,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public virtual Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ChangeMessageVisibilityBatchRequest,ChangeMessageVisibilityBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ChangeMessageVisibilityBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1148,10 +1152,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var marshaller = CreateQueueRequestMarshaller.Instance;
-            var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
-            return Invoke<CreateQueueRequest,CreateQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateQueueResponse>(request, options);
         }
 
 
@@ -1263,11 +1268,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateQueueRequestMarshaller.Instance;
-            var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateQueueRequest,CreateQueueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1361,10 +1366,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
-            var marshaller = DeleteMessageRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMessageRequest,DeleteMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMessageResponse>(request, options);
         }
 
 
@@ -1429,11 +1435,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteMessageRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteMessageRequest,DeleteMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1537,10 +1543,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public virtual DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
         {
-            var marshaller = DeleteMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMessageBatchRequest,DeleteMessageBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMessageBatchResponse>(request, options);
         }
 
 
@@ -1610,11 +1617,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public virtual Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteMessageBatchRequest,DeleteMessageBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMessageBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1700,10 +1707,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var marshaller = DeleteQueueRequestMarshaller.Instance;
-            var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteQueueRequest,DeleteQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteQueueResponse>(request, options);
         }
 
 
@@ -1763,11 +1771,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteQueueRequestMarshaller.Instance;
-            var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteQueueRequest,DeleteQueueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1847,10 +1855,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public virtual GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
-            var marshaller = GetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueueAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetQueueAttributesRequest,GetQueueAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetQueueAttributesResponse>(request, options);
         }
 
 
@@ -1908,11 +1917,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public virtual Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetQueueAttributesRequest,GetQueueAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueueAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetQueueAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1970,10 +1979,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public virtual GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
-            var marshaller = GetQueueUrlRequestMarshaller.Instance;
-            var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueueUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
 
-            return Invoke<GetQueueUrlRequest,GetQueueUrlResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetQueueUrlResponse>(request, options);
         }
 
 
@@ -2019,11 +2029,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public virtual Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetQueueUrlRequestMarshaller.Instance;
-            var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetQueueUrlRequest,GetQueueUrlResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueueUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetQueueUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2051,10 +2061,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public virtual ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
         {
-            var marshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeadLetterSourceQueuesRequest,ListDeadLetterSourceQueuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeadLetterSourceQueuesResponse>(request, options);
         }
 
         /// <summary>
@@ -2069,11 +2080,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public virtual Task<ListDeadLetterSourceQueuesResponse> ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDeadLetterSourceQueuesRequest,ListDeadLetterSourceQueuesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDeadLetterSourceQueuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2127,10 +2138,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var marshaller = ListQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
-            return Invoke<ListQueuesRequest,ListQueuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListQueuesResponse>(request, options);
         }
 
 
@@ -2174,11 +2186,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListQueuesRequest,ListQueuesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2238,10 +2250,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         public virtual ListQueueTagsResponse ListQueueTags(ListQueueTagsRequest request)
         {
-            var marshaller = ListQueueTagsRequestMarshaller.Instance;
-            var unmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQueueTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListQueueTagsRequest,ListQueueTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListQueueTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -2256,11 +2269,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         public virtual Task<ListQueueTagsResponse> ListQueueTagsAsync(ListQueueTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListQueueTagsRequestMarshaller.Instance;
-            var unmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListQueueTagsRequest,ListQueueTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQueueTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListQueueTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2348,10 +2361,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public virtual PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
         {
-            var marshaller = PurgeQueueRequestMarshaller.Instance;
-            var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurgeQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurgeQueueResponseUnmarshaller.Instance;
 
-            return Invoke<PurgeQueueRequest,PurgeQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<PurgeQueueResponse>(request, options);
         }
 
 
@@ -2412,11 +2426,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public virtual Task<PurgeQueueResponse> PurgeQueueAsync(PurgeQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PurgeQueueRequestMarshaller.Instance;
-            var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PurgeQueueRequest,PurgeQueueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurgeQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurgeQueueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PurgeQueueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2592,10 +2606,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public virtual ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
-            var marshaller = ReceiveMessageRequestMarshaller.Instance;
-            var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReceiveMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
 
-            return Invoke<ReceiveMessageRequest,ReceiveMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReceiveMessageResponse>(request, options);
         }
 
 
@@ -2700,11 +2715,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public virtual Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReceiveMessageRequestMarshaller.Instance;
-            var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ReceiveMessageRequest,ReceiveMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReceiveMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReceiveMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2766,10 +2781,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
-            return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemovePermissionResponse>(request, options);
         }
 
 
@@ -2818,11 +2834,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemovePermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2904,10 +2920,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            var marshaller = SendMessageRequestMarshaller.Instance;
-            var unmarshaller = SendMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
-            return Invoke<SendMessageRequest,SendMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendMessageResponse>(request, options);
         }
 
 
@@ -2966,11 +2983,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendMessageRequestMarshaller.Instance;
-            var unmarshaller = SendMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendMessageRequest,SendMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3142,10 +3159,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public virtual SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
-            var marshaller = SendMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
 
-            return Invoke<SendMessageBatchRequest,SendMessageBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendMessageBatchResponse>(request, options);
         }
 
 
@@ -3249,11 +3267,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public virtual Task<SendMessageBatchResponse> SendMessageBatchAsync(SendMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendMessageBatchRequest,SendMessageBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendMessageBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3327,10 +3345,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public virtual SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
-            var marshaller = SetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetQueueAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<SetQueueAttributesRequest,SetQueueAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetQueueAttributesResponse>(request, options);
         }
 
 
@@ -3385,11 +3404,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public virtual Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SetQueueAttributesRequest,SetQueueAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetQueueAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SetQueueAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3449,10 +3468,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         public virtual TagQueueResponse TagQueue(TagQueueRequest request)
         {
-            var marshaller = TagQueueRequestMarshaller.Instance;
-            var unmarshaller = TagQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagQueueResponseUnmarshaller.Instance;
 
-            return Invoke<TagQueueRequest,TagQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagQueueResponse>(request, options);
         }
 
         /// <summary>
@@ -3467,11 +3487,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         public virtual Task<TagQueueResponse> TagQueueAsync(TagQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagQueueRequestMarshaller.Instance;
-            var unmarshaller = TagQueueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagQueueRequest,TagQueueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagQueueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagQueueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3531,10 +3551,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         public virtual UntagQueueResponse UntagQueue(UntagQueueRequest request)
         {
-            var marshaller = UntagQueueRequestMarshaller.Instance;
-            var unmarshaller = UntagQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagQueueResponseUnmarshaller.Instance;
 
-            return Invoke<UntagQueueRequest,UntagQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagQueueResponse>(request, options);
         }
 
         /// <summary>
@@ -3549,11 +3570,11 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         public virtual Task<UntagQueueResponse> UntagQueueAsync(UntagQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagQueueRequestMarshaller.Instance;
-            var unmarshaller = UntagQueueResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagQueueRequest,UntagQueueResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagQueueResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagQueueResponse>(request, options, cancellationToken);
         }
 
         #endregion

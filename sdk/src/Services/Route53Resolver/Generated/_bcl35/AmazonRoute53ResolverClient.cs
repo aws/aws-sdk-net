@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Route53Resolver.Model;
 using Amazon.Route53Resolver.Model.Internal.MarshallTransformations;
@@ -296,7 +297,7 @@ namespace Amazon.Route53Resolver
 
         #endregion
 
-        
+
         #region  AssociateResolverEndpointIpAddress
 
         /// <summary>
@@ -336,10 +337,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverEndpointIpAddress">REST API Reference for AssociateResolverEndpointIpAddress Operation</seealso>
         public virtual AssociateResolverEndpointIpAddressResponse AssociateResolverEndpointIpAddress(AssociateResolverEndpointIpAddressRequest request)
         {
-            var marshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateResolverEndpointIpAddressRequest,AssociateResolverEndpointIpAddressResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateResolverEndpointIpAddressResponse>(request, options);
         }
 
         /// <summary>
@@ -356,11 +358,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverEndpointIpAddress">REST API Reference for AssociateResolverEndpointIpAddress Operation</seealso>
         public virtual IAsyncResult BeginAssociateResolverEndpointIpAddress(AssociateResolverEndpointIpAddressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateResolverEndpointIpAddressRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -413,10 +415,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverRule">REST API Reference for AssociateResolverRule Operation</seealso>
         public virtual AssociateResolverRuleResponse AssociateResolverRule(AssociateResolverRuleRequest request)
         {
-            var marshaller = AssociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateResolverRuleRequest,AssociateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -433,11 +436,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverRule">REST API Reference for AssociateResolverRule Operation</seealso>
         public virtual IAsyncResult BeginAssociateResolverRule(AssociateResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AssociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AssociateResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -500,10 +503,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverEndpoint">REST API Reference for CreateResolverEndpoint Operation</seealso>
         public virtual CreateResolverEndpointResponse CreateResolverEndpoint(CreateResolverEndpointRequest request)
         {
-            var marshaller = CreateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverEndpointRequest,CreateResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -520,11 +524,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverEndpoint">REST API Reference for CreateResolverEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateResolverEndpoint(CreateResolverEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateResolverEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -579,10 +583,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverRule">REST API Reference for CreateResolverRule Operation</seealso>
         public virtual CreateResolverRuleResponse CreateResolverRule(CreateResolverRuleRequest request)
         {
-            var marshaller = CreateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverRuleRequest,CreateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -599,11 +604,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverRule">REST API Reference for CreateResolverRule Operation</seealso>
         public virtual IAsyncResult BeginCreateResolverRule(CreateResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -660,10 +665,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverEndpoint">REST API Reference for DeleteResolverEndpoint Operation</seealso>
         public virtual DeleteResolverEndpointResponse DeleteResolverEndpoint(DeleteResolverEndpointRequest request)
         {
-            var marshaller = DeleteResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverEndpointRequest,DeleteResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -680,11 +686,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverEndpoint">REST API Reference for DeleteResolverEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteResolverEndpoint(DeleteResolverEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteResolverEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -730,10 +736,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverRule">REST API Reference for DeleteResolverRule Operation</seealso>
         public virtual DeleteResolverRuleResponse DeleteResolverRule(DeleteResolverRuleRequest request)
         {
-            var marshaller = DeleteResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverRuleRequest,DeleteResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -750,11 +757,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverRule">REST API Reference for DeleteResolverRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteResolverRule(DeleteResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -808,10 +815,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverEndpointIpAddress">REST API Reference for DisassociateResolverEndpointIpAddress Operation</seealso>
         public virtual DisassociateResolverEndpointIpAddressResponse DisassociateResolverEndpointIpAddress(DisassociateResolverEndpointIpAddressRequest request)
         {
-            var marshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateResolverEndpointIpAddressRequest,DisassociateResolverEndpointIpAddressResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateResolverEndpointIpAddressResponse>(request, options);
         }
 
         /// <summary>
@@ -828,11 +836,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverEndpointIpAddress">REST API Reference for DisassociateResolverEndpointIpAddress Operation</seealso>
         public virtual IAsyncResult BeginDisassociateResolverEndpointIpAddress(DisassociateResolverEndpointIpAddressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateResolverEndpointIpAddressRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -880,10 +888,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">REST API Reference for DisassociateResolverRule Operation</seealso>
         public virtual DisassociateResolverRuleResponse DisassociateResolverRule(DisassociateResolverRuleRequest request)
         {
-            var marshaller = DisassociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateResolverRuleRequest,DisassociateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -900,11 +909,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">REST API Reference for DisassociateResolverRule Operation</seealso>
         public virtual IAsyncResult BeginDisassociateResolverRule(DisassociateResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DisassociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DisassociateResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -946,10 +955,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverEndpoint">REST API Reference for GetResolverEndpoint Operation</seealso>
         public virtual GetResolverEndpointResponse GetResolverEndpoint(GetResolverEndpointRequest request)
         {
-            var marshaller = GetResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverEndpointRequest,GetResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -966,11 +976,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverEndpoint">REST API Reference for GetResolverEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetResolverEndpoint(GetResolverEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResolverEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1013,10 +1023,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRule">REST API Reference for GetResolverRule Operation</seealso>
         public virtual GetResolverRuleResponse GetResolverRule(GetResolverRuleRequest request)
         {
-            var marshaller = GetResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRuleRequest,GetResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -1033,11 +1044,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRule">REST API Reference for GetResolverRule Operation</seealso>
         public virtual IAsyncResult BeginGetResolverRule(GetResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1079,10 +1090,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRuleAssociation">REST API Reference for GetResolverRuleAssociation Operation</seealso>
         public virtual GetResolverRuleAssociationResponse GetResolverRuleAssociation(GetResolverRuleAssociationRequest request)
         {
-            var marshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRuleAssociationRequest,GetResolverRuleAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRuleAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -1099,11 +1111,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRuleAssociation">REST API Reference for GetResolverRuleAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetResolverRuleAssociation(GetResolverRuleAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResolverRuleAssociationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1143,10 +1155,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy">REST API Reference for GetResolverRulePolicy Operation</seealso>
         public virtual GetResolverRulePolicyResponse GetResolverRulePolicy(GetResolverRulePolicyRequest request)
         {
-            var marshaller = GetResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRulePolicyRequest,GetResolverRulePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRulePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1163,11 +1176,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy">REST API Reference for GetResolverRulePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResolverRulePolicy(GetResolverRulePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResolverRulePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1212,10 +1225,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpointIpAddresses">REST API Reference for ListResolverEndpointIpAddresses Operation</seealso>
         public virtual ListResolverEndpointIpAddressesResponse ListResolverEndpointIpAddresses(ListResolverEndpointIpAddressesRequest request)
         {
-            var marshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverEndpointIpAddressesRequest,ListResolverEndpointIpAddressesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverEndpointIpAddressesResponse>(request, options);
         }
 
         /// <summary>
@@ -1232,11 +1246,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpointIpAddresses">REST API Reference for ListResolverEndpointIpAddresses Operation</seealso>
         public virtual IAsyncResult BeginListResolverEndpointIpAddresses(ListResolverEndpointIpAddressesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolverEndpointIpAddressesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1281,10 +1295,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">REST API Reference for ListResolverEndpoints Operation</seealso>
         public virtual ListResolverEndpointsResponse ListResolverEndpoints(ListResolverEndpointsRequest request)
         {
-            var marshaller = ListResolverEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverEndpointsRequest,ListResolverEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverEndpointsResponse>(request, options);
         }
 
         /// <summary>
@@ -1301,11 +1316,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">REST API Reference for ListResolverEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListResolverEndpoints(ListResolverEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolverEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolverEndpointsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1351,10 +1366,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">REST API Reference for ListResolverRuleAssociations Operation</seealso>
         public virtual ListResolverRuleAssociationsResponse ListResolverRuleAssociations(ListResolverRuleAssociationsRequest request)
         {
-            var marshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverRuleAssociationsRequest,ListResolverRuleAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverRuleAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1371,11 +1387,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">REST API Reference for ListResolverRuleAssociations Operation</seealso>
         public virtual IAsyncResult BeginListResolverRuleAssociations(ListResolverRuleAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolverRuleAssociationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1420,10 +1436,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">REST API Reference for ListResolverRules Operation</seealso>
         public virtual ListResolverRulesResponse ListResolverRules(ListResolverRulesRequest request)
         {
-            var marshaller = ListResolverRulesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverRulesRequest,ListResolverRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -1440,11 +1457,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">REST API Reference for ListResolverRules Operation</seealso>
         public virtual IAsyncResult BeginListResolverRules(ListResolverRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolverRulesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolverRulesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1492,10 +1509,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1512,11 +1530,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1558,10 +1576,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">REST API Reference for PutResolverRulePolicy Operation</seealso>
         public virtual PutResolverRulePolicyResponse PutResolverRulePolicy(PutResolverRulePolicyRequest request)
         {
-            var marshaller = PutResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutResolverRulePolicyRequest,PutResolverRulePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutResolverRulePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1578,11 +1597,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">REST API Reference for PutResolverRulePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResolverRulePolicy(PutResolverRulePolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutResolverRulePolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1629,10 +1648,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1649,11 +1669,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1694,10 +1714,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1714,11 +1735,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1762,10 +1783,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">REST API Reference for UpdateResolverEndpoint Operation</seealso>
         public virtual UpdateResolverEndpointResponse UpdateResolverEndpoint(UpdateResolverEndpointRequest request)
         {
-            var marshaller = UpdateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverEndpointRequest,UpdateResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -1782,11 +1804,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">REST API Reference for UpdateResolverEndpoint Operation</seealso>
         public virtual IAsyncResult BeginUpdateResolverEndpoint(UpdateResolverEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateResolverEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1838,10 +1860,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverRule">REST API Reference for UpdateResolverRule Operation</seealso>
         public virtual UpdateResolverRuleResponse UpdateResolverRule(UpdateResolverRuleRequest request)
         {
-            var marshaller = UpdateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverRuleRequest,UpdateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -1858,11 +1881,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverRule">REST API Reference for UpdateResolverRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateResolverRule(UpdateResolverRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateResolverRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

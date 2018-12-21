@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Comprehend.Model;
 using Amazon.Comprehend.Model.Internal.MarshallTransformations;
@@ -239,7 +240,7 @@ namespace Amazon.Comprehend
 
         #endregion
 
-        
+
         #region  BatchDetectDominantLanguage
 
 
@@ -267,10 +268,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage">REST API Reference for BatchDetectDominantLanguage Operation</seealso>
         public virtual BatchDetectDominantLanguageResponse BatchDetectDominantLanguage(BatchDetectDominantLanguageRequest request)
         {
-            var marshaller = BatchDetectDominantLanguageRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectDominantLanguageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectDominantLanguageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectDominantLanguageResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDetectDominantLanguageRequest,BatchDetectDominantLanguageResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDetectDominantLanguageResponse>(request, options);
         }
 
         /// <summary>
@@ -285,11 +287,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage">REST API Reference for BatchDetectDominantLanguage Operation</seealso>
         public virtual Task<BatchDetectDominantLanguageResponse> BatchDetectDominantLanguageAsync(BatchDetectDominantLanguageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDetectDominantLanguageRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectDominantLanguageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDetectDominantLanguageRequest,BatchDetectDominantLanguageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectDominantLanguageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectDominantLanguageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDetectDominantLanguageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -325,10 +327,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         public virtual BatchDetectEntitiesResponse BatchDetectEntities(BatchDetectEntitiesRequest request)
         {
-            var marshaller = BatchDetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectEntitiesResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDetectEntitiesRequest,BatchDetectEntitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDetectEntitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -343,11 +346,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         public virtual Task<BatchDetectEntitiesResponse> BatchDetectEntitiesAsync(BatchDetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectEntitiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDetectEntitiesRequest,BatchDetectEntitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDetectEntitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -382,10 +385,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         public virtual BatchDetectKeyPhrasesResponse BatchDetectKeyPhrases(BatchDetectKeyPhrasesRequest request)
         {
-            var marshaller = BatchDetectKeyPhrasesRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectKeyPhrasesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectKeyPhrasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectKeyPhrasesResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDetectKeyPhrasesRequest,BatchDetectKeyPhrasesResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDetectKeyPhrasesResponse>(request, options);
         }
 
         /// <summary>
@@ -400,11 +404,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         public virtual Task<BatchDetectKeyPhrasesResponse> BatchDetectKeyPhrasesAsync(BatchDetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDetectKeyPhrasesRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectKeyPhrasesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDetectKeyPhrasesRequest,BatchDetectKeyPhrasesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectKeyPhrasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectKeyPhrasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDetectKeyPhrasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -441,10 +445,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         public virtual BatchDetectSentimentResponse BatchDetectSentiment(BatchDetectSentimentRequest request)
         {
-            var marshaller = BatchDetectSentimentRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectSentimentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectSentimentResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDetectSentimentRequest,BatchDetectSentimentResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDetectSentimentResponse>(request, options);
         }
 
         /// <summary>
@@ -459,11 +464,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         public virtual Task<BatchDetectSentimentResponse> BatchDetectSentimentAsync(BatchDetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDetectSentimentRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectSentimentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDetectSentimentRequest,BatchDetectSentimentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectSentimentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDetectSentimentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -500,10 +505,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         public virtual BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request)
         {
-            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDetectSyntaxResponse>(request, options);
         }
 
         /// <summary>
@@ -518,11 +524,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         public virtual Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
-            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDetectSyntaxResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -563,10 +569,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         public virtual CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request)
         {
-            var marshaller = CreateDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDocumentClassifierRequest,CreateDocumentClassifierResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDocumentClassifierResponse>(request, options);
         }
 
         /// <summary>
@@ -581,11 +588,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         public virtual Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDocumentClassifierRequest,CreateDocumentClassifierResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDocumentClassifierResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -624,10 +631,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         public virtual CreateEntityRecognizerResponse CreateEntityRecognizer(CreateEntityRecognizerRequest request)
         {
-            var marshaller = CreateEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEntityRecognizerRequest,CreateEntityRecognizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEntityRecognizerResponse>(request, options);
         }
 
         /// <summary>
@@ -642,11 +650,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         public virtual Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateEntityRecognizerRequest,CreateEntityRecognizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEntityRecognizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -695,10 +703,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
         public virtual DeleteDocumentClassifierResponse DeleteDocumentClassifier(DeleteDocumentClassifierRequest request)
         {
-            var marshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDocumentClassifierRequest,DeleteDocumentClassifierResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDocumentClassifierResponse>(request, options);
         }
 
         /// <summary>
@@ -713,11 +722,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
         public virtual Task<DeleteDocumentClassifierResponse> DeleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDocumentClassifierRequest,DeleteDocumentClassifierResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDocumentClassifierResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -766,10 +775,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer">REST API Reference for DeleteEntityRecognizer Operation</seealso>
         public virtual DeleteEntityRecognizerResponse DeleteEntityRecognizer(DeleteEntityRecognizerRequest request)
         {
-            var marshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEntityRecognizerRequest,DeleteEntityRecognizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEntityRecognizerResponse>(request, options);
         }
 
         /// <summary>
@@ -784,11 +794,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer">REST API Reference for DeleteEntityRecognizer Operation</seealso>
         public virtual Task<DeleteEntityRecognizerResponse> DeleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteEntityRecognizerRequest,DeleteEntityRecognizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEntityRecognizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -818,10 +828,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob">REST API Reference for DescribeDocumentClassificationJob Operation</seealso>
         public virtual DescribeDocumentClassificationJobResponse DescribeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request)
         {
-            var marshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentClassificationJobRequest,DescribeDocumentClassificationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentClassificationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -836,11 +847,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob">REST API Reference for DescribeDocumentClassificationJob Operation</seealso>
         public virtual Task<DescribeDocumentClassificationJobResponse> DescribeDocumentClassificationJobAsync(DescribeDocumentClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDocumentClassificationJobRequest,DescribeDocumentClassificationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDocumentClassificationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -869,10 +880,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier">REST API Reference for DescribeDocumentClassifier Operation</seealso>
         public virtual DescribeDocumentClassifierResponse DescribeDocumentClassifier(DescribeDocumentClassifierRequest request)
         {
-            var marshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentClassifierRequest,DescribeDocumentClassifierResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentClassifierResponse>(request, options);
         }
 
         /// <summary>
@@ -887,11 +899,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier">REST API Reference for DescribeDocumentClassifier Operation</seealso>
         public virtual Task<DescribeDocumentClassifierResponse> DescribeDocumentClassifierAsync(DescribeDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDocumentClassifierRequest,DescribeDocumentClassifierResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDocumentClassifierResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -921,10 +933,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob">REST API Reference for DescribeDominantLanguageDetectionJob Operation</seealso>
         public virtual DescribeDominantLanguageDetectionJobResponse DescribeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request)
         {
-            var marshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDominantLanguageDetectionJobRequest,DescribeDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDominantLanguageDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -939,11 +952,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob">REST API Reference for DescribeDominantLanguageDetectionJob Operation</seealso>
         public virtual Task<DescribeDominantLanguageDetectionJobResponse> DescribeDominantLanguageDetectionJobAsync(DescribeDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDominantLanguageDetectionJobRequest,DescribeDominantLanguageDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -973,10 +986,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob">REST API Reference for DescribeEntitiesDetectionJob Operation</seealso>
         public virtual DescribeEntitiesDetectionJobResponse DescribeEntitiesDetectionJob(DescribeEntitiesDetectionJobRequest request)
         {
-            var marshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEntitiesDetectionJobRequest,DescribeEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEntitiesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -991,11 +1005,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob">REST API Reference for DescribeEntitiesDetectionJob Operation</seealso>
         public virtual Task<DescribeEntitiesDetectionJobResponse> DescribeEntitiesDetectionJobAsync(DescribeEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEntitiesDetectionJobRequest,DescribeEntitiesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1025,10 +1039,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer">REST API Reference for DescribeEntityRecognizer Operation</seealso>
         public virtual DescribeEntityRecognizerResponse DescribeEntityRecognizer(DescribeEntityRecognizerRequest request)
         {
-            var marshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEntityRecognizerRequest,DescribeEntityRecognizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEntityRecognizerResponse>(request, options);
         }
 
         /// <summary>
@@ -1043,11 +1058,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer">REST API Reference for DescribeEntityRecognizer Operation</seealso>
         public virtual Task<DescribeEntityRecognizerResponse> DescribeEntityRecognizerAsync(DescribeEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEntityRecognizerRequest,DescribeEntityRecognizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEntityRecognizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1077,10 +1092,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob">REST API Reference for DescribeKeyPhrasesDetectionJob Operation</seealso>
         public virtual DescribeKeyPhrasesDetectionJobResponse DescribeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request)
         {
-            var marshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeKeyPhrasesDetectionJobRequest,DescribeKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeKeyPhrasesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1095,11 +1111,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob">REST API Reference for DescribeKeyPhrasesDetectionJob Operation</seealso>
         public virtual Task<DescribeKeyPhrasesDetectionJobResponse> DescribeKeyPhrasesDetectionJobAsync(DescribeKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeKeyPhrasesDetectionJobRequest,DescribeKeyPhrasesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1129,10 +1145,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob">REST API Reference for DescribeSentimentDetectionJob Operation</seealso>
         public virtual DescribeSentimentDetectionJobResponse DescribeSentimentDetectionJob(DescribeSentimentDetectionJobRequest request)
         {
-            var marshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSentimentDetectionJobRequest,DescribeSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSentimentDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1147,11 +1164,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob">REST API Reference for DescribeSentimentDetectionJob Operation</seealso>
         public virtual Task<DescribeSentimentDetectionJobResponse> DescribeSentimentDetectionJobAsync(DescribeSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSentimentDetectionJobRequest,DescribeSentimentDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1181,10 +1198,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTopicsDetectionJob">REST API Reference for DescribeTopicsDetectionJob Operation</seealso>
         public virtual DescribeTopicsDetectionJobResponse DescribeTopicsDetectionJob(DescribeTopicsDetectionJobRequest request)
         {
-            var marshaller = DescribeTopicsDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTopicsDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTopicsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicsDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTopicsDetectionJobRequest,DescribeTopicsDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTopicsDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1199,11 +1217,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTopicsDetectionJob">REST API Reference for DescribeTopicsDetectionJob Operation</seealso>
         public virtual Task<DescribeTopicsDetectionJobResponse> DescribeTopicsDetectionJobAsync(DescribeTopicsDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTopicsDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTopicsDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTopicsDetectionJobRequest,DescribeTopicsDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTopicsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicsDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTopicsDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1231,10 +1249,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage">REST API Reference for DetectDominantLanguage Operation</seealso>
         public virtual DetectDominantLanguageResponse DetectDominantLanguage(DetectDominantLanguageRequest request)
         {
-            var marshaller = DetectDominantLanguageRequestMarshaller.Instance;
-            var unmarshaller = DetectDominantLanguageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectDominantLanguageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectDominantLanguageResponseUnmarshaller.Instance;
 
-            return Invoke<DetectDominantLanguageRequest,DetectDominantLanguageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectDominantLanguageResponse>(request, options);
         }
 
         /// <summary>
@@ -1249,11 +1268,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage">REST API Reference for DetectDominantLanguage Operation</seealso>
         public virtual Task<DetectDominantLanguageResponse> DetectDominantLanguageAsync(DetectDominantLanguageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectDominantLanguageRequestMarshaller.Instance;
-            var unmarshaller = DetectDominantLanguageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectDominantLanguageRequest,DetectDominantLanguageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectDominantLanguageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectDominantLanguageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectDominantLanguageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1285,10 +1304,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request)
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DetectEntitiesRequest,DetectEntitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectEntitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1303,11 +1323,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectEntitiesRequest,DetectEntitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectEntitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1338,10 +1358,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         public virtual DetectKeyPhrasesResponse DetectKeyPhrases(DetectKeyPhrasesRequest request)
         {
-            var marshaller = DetectKeyPhrasesRequestMarshaller.Instance;
-            var unmarshaller = DetectKeyPhrasesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectKeyPhrasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectKeyPhrasesResponseUnmarshaller.Instance;
 
-            return Invoke<DetectKeyPhrasesRequest,DetectKeyPhrasesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectKeyPhrasesResponse>(request, options);
         }
 
         /// <summary>
@@ -1356,11 +1377,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         public virtual Task<DetectKeyPhrasesResponse> DetectKeyPhrasesAsync(DetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectKeyPhrasesRequestMarshaller.Instance;
-            var unmarshaller = DetectKeyPhrasesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectKeyPhrasesRequest,DetectKeyPhrasesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectKeyPhrasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectKeyPhrasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectKeyPhrasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1392,10 +1413,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         public virtual DetectSentimentResponse DetectSentiment(DetectSentimentRequest request)
         {
-            var marshaller = DetectSentimentRequestMarshaller.Instance;
-            var unmarshaller = DetectSentimentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectSentimentResponseUnmarshaller.Instance;
 
-            return Invoke<DetectSentimentRequest,DetectSentimentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectSentimentResponse>(request, options);
         }
 
         /// <summary>
@@ -1410,11 +1432,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         public virtual Task<DetectSentimentResponse> DetectSentimentAsync(DetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectSentimentRequestMarshaller.Instance;
-            var unmarshaller = DetectSentimentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectSentimentRequest,DetectSentimentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectSentimentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectSentimentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1446,10 +1468,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         public virtual DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request)
         {
-            var marshaller = DetectSyntaxRequestMarshaller.Instance;
-            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectSyntaxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
 
-            return Invoke<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectSyntaxResponse>(request, options);
         }
 
         /// <summary>
@@ -1464,11 +1487,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         public virtual Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectSyntaxRequestMarshaller.Instance;
-            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectSyntaxRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectSyntaxResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1498,10 +1521,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">REST API Reference for ListDocumentClassificationJobs Operation</seealso>
         public virtual ListDocumentClassificationJobsResponse ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request)
         {
-            var marshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentClassificationJobsRequest,ListDocumentClassificationJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentClassificationJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1516,11 +1540,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">REST API Reference for ListDocumentClassificationJobs Operation</seealso>
         public virtual Task<ListDocumentClassificationJobsResponse> ListDocumentClassificationJobsAsync(ListDocumentClassificationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDocumentClassificationJobsRequest,ListDocumentClassificationJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDocumentClassificationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1550,10 +1574,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">REST API Reference for ListDocumentClassifiers Operation</seealso>
         public virtual ListDocumentClassifiersResponse ListDocumentClassifiers(ListDocumentClassifiersRequest request)
         {
-            var marshaller = ListDocumentClassifiersRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifiersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentClassifiersRequest,ListDocumentClassifiersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentClassifiersResponse>(request, options);
         }
 
         /// <summary>
@@ -1568,11 +1593,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">REST API Reference for ListDocumentClassifiers Operation</seealso>
         public virtual Task<ListDocumentClassifiersResponse> ListDocumentClassifiersAsync(ListDocumentClassifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDocumentClassifiersRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDocumentClassifiersRequest,ListDocumentClassifiersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifiersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDocumentClassifiersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1602,10 +1627,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs">REST API Reference for ListDominantLanguageDetectionJobs Operation</seealso>
         public virtual ListDominantLanguageDetectionJobsResponse ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request)
         {
-            var marshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDominantLanguageDetectionJobsRequest,ListDominantLanguageDetectionJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDominantLanguageDetectionJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1620,11 +1646,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs">REST API Reference for ListDominantLanguageDetectionJobs Operation</seealso>
         public virtual Task<ListDominantLanguageDetectionJobsResponse> ListDominantLanguageDetectionJobsAsync(ListDominantLanguageDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDominantLanguageDetectionJobsRequest,ListDominantLanguageDetectionJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDominantLanguageDetectionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1654,10 +1680,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs">REST API Reference for ListEntitiesDetectionJobs Operation</seealso>
         public virtual ListEntitiesDetectionJobsResponse ListEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest request)
         {
-            var marshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEntitiesDetectionJobsRequest,ListEntitiesDetectionJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEntitiesDetectionJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1672,11 +1699,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs">REST API Reference for ListEntitiesDetectionJobs Operation</seealso>
         public virtual Task<ListEntitiesDetectionJobsResponse> ListEntitiesDetectionJobsAsync(ListEntitiesDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListEntitiesDetectionJobsRequest,ListEntitiesDetectionJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEntitiesDetectionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1715,10 +1742,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
         public virtual ListEntityRecognizersResponse ListEntityRecognizers(ListEntityRecognizersRequest request)
         {
-            var marshaller = ListEntityRecognizersRequestMarshaller.Instance;
-            var unmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
 
-            return Invoke<ListEntityRecognizersRequest,ListEntityRecognizersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEntityRecognizersResponse>(request, options);
         }
 
         /// <summary>
@@ -1733,11 +1761,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
         public virtual Task<ListEntityRecognizersResponse> ListEntityRecognizersAsync(ListEntityRecognizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEntityRecognizersRequestMarshaller.Instance;
-            var unmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListEntityRecognizersRequest,ListEntityRecognizersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEntityRecognizersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1767,10 +1795,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">REST API Reference for ListKeyPhrasesDetectionJobs Operation</seealso>
         public virtual ListKeyPhrasesDetectionJobsResponse ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request)
         {
-            var marshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListKeyPhrasesDetectionJobsRequest,ListKeyPhrasesDetectionJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListKeyPhrasesDetectionJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1785,11 +1814,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">REST API Reference for ListKeyPhrasesDetectionJobs Operation</seealso>
         public virtual Task<ListKeyPhrasesDetectionJobsResponse> ListKeyPhrasesDetectionJobsAsync(ListKeyPhrasesDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListKeyPhrasesDetectionJobsRequest,ListKeyPhrasesDetectionJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKeyPhrasesDetectionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1819,10 +1848,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs">REST API Reference for ListSentimentDetectionJobs Operation</seealso>
         public virtual ListSentimentDetectionJobsResponse ListSentimentDetectionJobs(ListSentimentDetectionJobsRequest request)
         {
-            var marshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSentimentDetectionJobsRequest,ListSentimentDetectionJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSentimentDetectionJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1837,11 +1867,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs">REST API Reference for ListSentimentDetectionJobs Operation</seealso>
         public virtual Task<ListSentimentDetectionJobsResponse> ListSentimentDetectionJobsAsync(ListSentimentDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSentimentDetectionJobsRequest,ListSentimentDetectionJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSentimentDetectionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1871,10 +1901,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs">REST API Reference for ListTopicsDetectionJobs Operation</seealso>
         public virtual ListTopicsDetectionJobsResponse ListTopicsDetectionJobs(ListTopicsDetectionJobsRequest request)
         {
-            var marshaller = ListTopicsDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTopicsDetectionJobsRequest,ListTopicsDetectionJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTopicsDetectionJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1889,11 +1920,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs">REST API Reference for ListTopicsDetectionJobs Operation</seealso>
         public virtual Task<ListTopicsDetectionJobsResponse> ListTopicsDetectionJobsAsync(ListTopicsDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTopicsDetectionJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTopicsDetectionJobsRequest,ListTopicsDetectionJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTopicsDetectionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1927,10 +1958,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
         public virtual StartDocumentClassificationJobResponse StartDocumentClassificationJob(StartDocumentClassificationJobRequest request)
         {
-            var marshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
-            var unmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartDocumentClassificationJobRequest,StartDocumentClassificationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartDocumentClassificationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1945,11 +1977,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
         public virtual Task<StartDocumentClassificationJobResponse> StartDocumentClassificationJobAsync(StartDocumentClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
-            var unmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartDocumentClassificationJobRequest,StartDocumentClassificationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDocumentClassificationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1976,10 +2008,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
         public virtual StartDominantLanguageDetectionJobResponse StartDominantLanguageDetectionJob(StartDominantLanguageDetectionJobRequest request)
         {
-            var marshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartDominantLanguageDetectionJobRequest,StartDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartDominantLanguageDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1994,11 +2027,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
         public virtual Task<StartDominantLanguageDetectionJobResponse> StartDominantLanguageDetectionJobAsync(StartDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartDominantLanguageDetectionJobRequest,StartDominantLanguageDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2040,10 +2073,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
         public virtual StartEntitiesDetectionJobResponse StartEntitiesDetectionJob(StartEntitiesDetectionJobRequest request)
         {
-            var marshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartEntitiesDetectionJobRequest,StartEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartEntitiesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2058,11 +2092,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
         public virtual Task<StartEntitiesDetectionJobResponse> StartEntitiesDetectionJobAsync(StartEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartEntitiesDetectionJobRequest,StartEntitiesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2089,10 +2123,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
         public virtual StartKeyPhrasesDetectionJobResponse StartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request)
         {
-            var marshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartKeyPhrasesDetectionJobRequest,StartKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartKeyPhrasesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2107,11 +2142,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
         public virtual Task<StartKeyPhrasesDetectionJobResponse> StartKeyPhrasesDetectionJobAsync(StartKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartKeyPhrasesDetectionJobRequest,StartKeyPhrasesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2138,10 +2173,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
         public virtual StartSentimentDetectionJobResponse StartSentimentDetectionJob(StartSentimentDetectionJobRequest request)
         {
-            var marshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartSentimentDetectionJobRequest,StartSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSentimentDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2156,11 +2192,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
         public virtual Task<StartSentimentDetectionJobResponse> StartSentimentDetectionJobAsync(StartSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartSentimentDetectionJobRequest,StartSentimentDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2187,10 +2223,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob">REST API Reference for StartTopicsDetectionJob Operation</seealso>
         public virtual StartTopicsDetectionJobResponse StartTopicsDetectionJob(StartTopicsDetectionJobRequest request)
         {
-            var marshaller = StartTopicsDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartTopicsDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTopicsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTopicsDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartTopicsDetectionJobRequest,StartTopicsDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartTopicsDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2205,11 +2242,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob">REST API Reference for StartTopicsDetectionJob Operation</seealso>
         public virtual Task<StartTopicsDetectionJobResponse> StartTopicsDetectionJobAsync(StartTopicsDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartTopicsDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StartTopicsDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartTopicsDetectionJobRequest,StartTopicsDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTopicsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTopicsDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartTopicsDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2253,10 +2290,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">REST API Reference for StopDominantLanguageDetectionJob Operation</seealso>
         public virtual StopDominantLanguageDetectionJobResponse StopDominantLanguageDetectionJob(StopDominantLanguageDetectionJobRequest request)
         {
-            var marshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopDominantLanguageDetectionJobRequest,StopDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopDominantLanguageDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2271,11 +2309,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">REST API Reference for StopDominantLanguageDetectionJob Operation</seealso>
         public virtual Task<StopDominantLanguageDetectionJobResponse> StopDominantLanguageDetectionJobAsync(StopDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopDominantLanguageDetectionJobRequest,StopDominantLanguageDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopDominantLanguageDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2319,10 +2357,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">REST API Reference for StopEntitiesDetectionJob Operation</seealso>
         public virtual StopEntitiesDetectionJobResponse StopEntitiesDetectionJob(StopEntitiesDetectionJobRequest request)
         {
-            var marshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopEntitiesDetectionJobRequest,StopEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopEntitiesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2337,11 +2376,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">REST API Reference for StopEntitiesDetectionJob Operation</seealso>
         public virtual Task<StopEntitiesDetectionJobResponse> StopEntitiesDetectionJobAsync(StopEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopEntitiesDetectionJobRequest,StopEntitiesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopEntitiesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2385,10 +2424,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">REST API Reference for StopKeyPhrasesDetectionJob Operation</seealso>
         public virtual StopKeyPhrasesDetectionJobResponse StopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest request)
         {
-            var marshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopKeyPhrasesDetectionJobRequest,StopKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopKeyPhrasesDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2403,11 +2443,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">REST API Reference for StopKeyPhrasesDetectionJob Operation</seealso>
         public virtual Task<StopKeyPhrasesDetectionJobResponse> StopKeyPhrasesDetectionJobAsync(StopKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopKeyPhrasesDetectionJobRequest,StopKeyPhrasesDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopKeyPhrasesDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2451,10 +2491,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">REST API Reference for StopSentimentDetectionJob Operation</seealso>
         public virtual StopSentimentDetectionJobResponse StopSentimentDetectionJob(StopSentimentDetectionJobRequest request)
         {
-            var marshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopSentimentDetectionJobRequest,StopSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopSentimentDetectionJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2469,11 +2510,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">REST API Reference for StopSentimentDetectionJob Operation</seealso>
         public virtual Task<StopSentimentDetectionJobResponse> StopSentimentDetectionJobAsync(StopSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
-            var unmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopSentimentDetectionJobRequest,StopSentimentDetectionJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2511,10 +2552,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">REST API Reference for StopTrainingDocumentClassifier Operation</seealso>
         public virtual StopTrainingDocumentClassifierResponse StopTrainingDocumentClassifier(StopTrainingDocumentClassifierRequest request)
         {
-            var marshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
 
-            return Invoke<StopTrainingDocumentClassifierRequest,StopTrainingDocumentClassifierResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopTrainingDocumentClassifierResponse>(request, options);
         }
 
         /// <summary>
@@ -2529,11 +2571,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">REST API Reference for StopTrainingDocumentClassifier Operation</seealso>
         public virtual Task<StopTrainingDocumentClassifierResponse> StopTrainingDocumentClassifierAsync(StopTrainingDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopTrainingDocumentClassifierRequest,StopTrainingDocumentClassifierResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopTrainingDocumentClassifierResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2571,10 +2613,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">REST API Reference for StopTrainingEntityRecognizer Operation</seealso>
         public virtual StopTrainingEntityRecognizerResponse StopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest request)
         {
-            var marshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
 
-            return Invoke<StopTrainingEntityRecognizerRequest,StopTrainingEntityRecognizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopTrainingEntityRecognizerResponse>(request, options);
         }
 
         /// <summary>
@@ -2589,11 +2632,11 @@ namespace Amazon.Comprehend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">REST API Reference for StopTrainingEntityRecognizer Operation</seealso>
         public virtual Task<StopTrainingEntityRecognizerResponse> StopTrainingEntityRecognizerAsync(StopTrainingEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopTrainingEntityRecognizerRequest,StopTrainingEntityRecognizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopTrainingEntityRecognizerResponse>(request, options, cancellationToken);
         }
 
         #endregion

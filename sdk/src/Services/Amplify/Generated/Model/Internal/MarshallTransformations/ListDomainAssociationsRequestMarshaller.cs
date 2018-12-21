@@ -55,6 +55,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDomainAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Amplify");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/apps/{appId}/domains";

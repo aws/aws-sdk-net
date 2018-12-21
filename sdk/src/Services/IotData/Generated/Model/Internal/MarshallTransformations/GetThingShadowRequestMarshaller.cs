@@ -55,6 +55,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetThingShadowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/things/{thingName}/shadow";

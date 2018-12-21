@@ -55,6 +55,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteThreatIntelSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/detector/{detectorId}/threatintelset/{threatIntelSetId}";

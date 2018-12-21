@@ -472,6 +472,102 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// The endpointoperation flag marking if this is the operation to use for endpoint discovery.
+        /// </summary>
+        public bool IsEndpointOperation
+        {
+            get
+            {
+                return (bool)(this.data[ServiceModel.EndpointOperationKey] ?? false);                
+            }
+        }
+
+        /// <summary>
+        /// The endpointdiscovery flag specifying if this operation is to use endpoint discovery.
+        /// </summary>
+        public bool EndpointDiscoveryEnabled
+        {
+            get
+            {
+                return this.data[ServiceModel.EndpointDiscoveryKey] != null ? true : false;                
+            }
+        }
+
+        /// <summary>
+        /// The endpointdiscovery required flag specifying if this operation is required use endpoint discovery.
+        /// </summary>
+        public bool IsEndpointDiscoveryRequired
+        {
+            get
+            {
+                JsonData endpointDiscovery = this.data[ServiceModel.EndpointDiscoveryKey];
+                if (endpointDiscovery == null)
+                    return false;
+
+                JsonData required = endpointDiscovery[ServiceModel.RequiredKey];
+                if (required == null)
+                    return false;
+
+                if (required.IsBoolean)
+                    return (bool)(required ?? false);
+                return Convert.ToBoolean((string)required);
+            }
+        }
+
+        /// <summary>
+        /// Members that are marked with the "endpointdiscoveryid" = true trait
+        /// </summary>
+        public IList<Member> RequestEndpointDiscoveryIdMembers
+        {
+            get
+            {
+                if (this.RequestStructure == null)
+                    return new List<Member>();
+                                
+                return this.RequestStructure.Members.Where(m => m.IsEndpointDiscoveryId && m.GetPrimitiveType() == "String").ToList();
+            }
+        }
+                
+        /// <summary>
+        /// Determines if the structure has any members that are marked with the "endpointdiscoveryid" = true trait
+        /// </summary>
+        public bool RequestHasEndpointDiscoveryIdMembers
+        {
+            get
+            {                
+                return (this.RequestEndpointDiscoveryIdMembers.Count > 0);
+            }
+        }
+
+        /// <summary>
+        /// Determines if there is an Operation member for the operation with the request structure marked with "endpointoperation" = true.
+        /// </summary>
+        public bool RequestHasOperationEndpointOperationMember
+        {
+            get
+            {
+                if (this.RequestStructure == null)
+                    return false;
+
+                return this.RequestStructure.Members.FirstOrDefault(m => m.PropertyName == "Operation") != null;
+            }
+        }
+
+        /// <summary>
+        /// Determines if there is an Identifiers member for the operation with the request structure marked with "endpointoperation" = true.
+        /// </summary>
+        public bool RequestHasIdentifiersEndpointOperationMember
+        {
+            get
+            {
+                if (this.RequestStructure == null)
+                    return false;
+
+                return this.RequestStructure.Members.FirstOrDefault(m => m.PropertyName == "Operation") != null;
+            }
+        }
+
+        /// <summary>
         /// Returns the Request URI without any query parameters.
         /// </summary>
         public string RequestUri

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ComprehendMedical.Model;
 using Amazon.ComprehendMedical.Model.Internal.MarshallTransformations;
@@ -237,7 +238,7 @@ namespace Amazon.ComprehendMedical
 
         #endregion
 
-        
+
         #region  DetectEntities
 
 
@@ -276,10 +277,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request)
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DetectEntitiesRequest,DetectEntitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectEntitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -294,11 +296,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectEntitiesRequest,DetectEntitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectEntitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -340,10 +342,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         public virtual DetectPHIResponse DetectPHI(DetectPHIRequest request)
         {
-            var marshaller = DetectPHIRequestMarshaller.Instance;
-            var unmarshaller = DetectPHIResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
 
-            return Invoke<DetectPHIRequest,DetectPHIResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectPHIResponse>(request, options);
         }
 
         /// <summary>
@@ -358,11 +361,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         public virtual Task<DetectPHIResponse> DetectPHIAsync(DetectPHIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DetectPHIRequestMarshaller.Instance;
-            var unmarshaller = DetectPHIResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DetectPHIRequest,DetectPHIResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetectPHIResponse>(request, options, cancellationToken);
         }
 
         #endregion

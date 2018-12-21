@@ -55,6 +55,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeBundleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Mobile");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/bundles/{bundleId}";

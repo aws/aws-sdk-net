@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Glacier.Model;
 using Amazon.Glacier.Model.Internal.MarshallTransformations;
@@ -284,7 +285,7 @@ namespace Amazon.Glacier
 
         #endregion
 
-        
+
         #region  AbortMultipartUpload
 
         /// <summary>
@@ -335,10 +336,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<AbortMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -354,11 +356,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AbortMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -418,10 +420,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
-            var marshaller = AbortVaultLockRequestMarshaller.Instance;
-            var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
-            return Invoke<AbortVaultLockRequest,AbortVaultLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<AbortVaultLockResponse>(request, options);
         }
 
         /// <summary>
@@ -437,11 +440,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AbortVaultLockRequestMarshaller.Instance;
-            var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AbortVaultLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -489,10 +492,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
-            var marshaller = AddTagsToVaultRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsToVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -508,11 +512,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddTagsToVaultRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddTagsToVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -602,10 +606,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<CompleteMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -621,11 +626,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CompleteMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -685,10 +690,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
-            var marshaller = CompleteVaultLockRequestMarshaller.Instance;
-            var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
-            return Invoke<CompleteVaultLockRequest,CompleteVaultLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<CompleteVaultLockResponse>(request, options);
         }
 
         /// <summary>
@@ -704,11 +710,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CompleteVaultLockRequestMarshaller.Instance;
-            var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CompleteVaultLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -780,10 +786,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
-            var marshaller = CreateVaultRequestMarshaller.Instance;
-            var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
-            return Invoke<CreateVaultRequest,CreateVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -799,11 +806,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateVault(CreateVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateVaultRequestMarshaller.Instance;
-            var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -877,10 +884,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var marshaller = DeleteArchiveRequestMarshaller.Instance;
-            var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteArchiveRequest,DeleteArchiveResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteArchiveResponse>(request, options);
         }
 
         /// <summary>
@@ -896,11 +904,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteArchiveRequestMarshaller.Instance;
-            var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteArchiveRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -967,10 +975,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
-            var marshaller = DeleteVaultRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVaultRequest,DeleteVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -986,11 +995,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteVault(DeleteVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVaultRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1041,10 +1050,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
-            var marshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVaultAccessPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1060,11 +1070,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1122,10 +1132,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
-            var marshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVaultNotificationsRequest,DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVaultNotificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1141,11 +1152,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteVaultNotifications(DeleteVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVaultNotificationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1214,10 +1225,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var marshaller = DescribeJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1233,11 +1245,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1300,10 +1312,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
-            var marshaller = DescribeVaultRequestMarshaller.Instance;
-            var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVaultRequest,DescribeVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -1319,11 +1332,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeVault(DescribeVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeVaultRequestMarshaller.Instance;
-            var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1362,10 +1375,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
-            var marshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDataRetrievalPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1381,11 +1395,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDataRetrievalPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1481,10 +1495,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
-            var marshaller = GetJobOutputRequestMarshaller.Instance;
-            var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
-            return Invoke<GetJobOutputRequest,GetJobOutputResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetJobOutputResponse>(request, options);
         }
 
         /// <summary>
@@ -1500,11 +1515,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetJobOutput(GetJobOutputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetJobOutputRequestMarshaller.Instance;
-            var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetJobOutputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1549,10 +1564,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
-            var marshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetVaultAccessPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -1568,11 +1584,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1644,10 +1660,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
-            var marshaller = GetVaultLockRequestMarshaller.Instance;
-            var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
-            return Invoke<GetVaultLockRequest,GetVaultLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetVaultLockResponse>(request, options);
         }
 
         /// <summary>
@@ -1663,11 +1680,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetVaultLockRequestMarshaller.Instance;
-            var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetVaultLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1731,10 +1748,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
-            var marshaller = GetVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetVaultNotificationsRequest,GetVaultNotificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetVaultNotificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1750,11 +1768,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVaultNotifications(GetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetVaultNotificationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1805,10 +1823,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
-            var marshaller = InitiateJobRequestMarshaller.Instance;
-            var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateJobRequest,InitiateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1824,11 +1843,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginInitiateJob(InitiateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InitiateJobRequestMarshaller.Instance;
-            var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InitiateJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1912,10 +1931,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -1931,11 +1951,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InitiateMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2022,10 +2042,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
-            var marshaller = InitiateVaultLockRequestMarshaller.Instance;
-            var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateVaultLockRequest,InitiateVaultLockResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateVaultLockResponse>(request, options);
         }
 
         /// <summary>
@@ -2041,11 +2062,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InitiateVaultLockRequestMarshaller.Instance;
-            var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InitiateVaultLockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2131,10 +2152,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -2150,11 +2172,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2230,10 +2252,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
-            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMultipartUploadsResponse>(request, options);
         }
 
         /// <summary>
@@ -2249,11 +2272,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
-            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListMultipartUploadsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2322,10 +2345,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var marshaller = ListPartsRequestMarshaller.Instance;
-            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPartsResponse>(request, options);
         }
 
         /// <summary>
@@ -2341,11 +2365,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPartsRequestMarshaller.Instance;
-            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPartsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2381,10 +2405,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
-            var marshaller = ListProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
-            return Invoke<ListProvisionedCapacityRequest,ListProvisionedCapacityResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListProvisionedCapacityResponse>(request, options);
         }
 
         /// <summary>
@@ -2400,11 +2425,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListProvisionedCapacityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2446,10 +2471,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
-            var marshaller = ListTagsForVaultRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -2465,11 +2491,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForVaultRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2584,10 +2610,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
-            var marshaller = ListVaultsRequestMarshaller.Instance;
-            var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
-            return Invoke<ListVaultsRequest,ListVaultsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListVaultsResponse>(request, options);
         }
 
         /// <summary>
@@ -2603,11 +2630,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginListVaults(ListVaultsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListVaultsRequestMarshaller.Instance;
-            var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListVaultsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2646,10 +2673,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
-            var marshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
-            return Invoke<PurchaseProvisionedCapacityRequest,PurchaseProvisionedCapacityResponse>(request, marshaller, unmarshaller);
+            return Invoke<PurchaseProvisionedCapacityResponse>(request, options);
         }
 
         /// <summary>
@@ -2665,11 +2693,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PurchaseProvisionedCapacityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2712,10 +2740,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
-            var marshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsFromVaultResponse>(request, options);
         }
 
         /// <summary>
@@ -2731,11 +2760,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveTagsFromVaultRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2781,10 +2810,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
-            var marshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetDataRetrievalPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -2800,11 +2830,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetDataRetrievalPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2849,10 +2879,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
-            var marshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetVaultAccessPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -2868,11 +2899,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetVaultAccessPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2956,10 +2987,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
-            var marshaller = SetVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
-            return Invoke<SetVaultNotificationsRequest,SetVaultNotificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetVaultNotificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -2975,11 +3007,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginSetVaultNotifications(SetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetVaultNotificationsRequestMarshaller.Instance;
-            var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetVaultNotificationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3070,10 +3102,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
-            var marshaller = UploadArchiveRequestMarshaller.Instance;
-            var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
-            return Invoke<UploadArchiveRequest,UploadArchiveResponse>(request, marshaller, unmarshaller);
+            return Invoke<UploadArchiveResponse>(request, options);
         }
 
         /// <summary>
@@ -3089,11 +3122,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginUploadArchive(UploadArchiveRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UploadArchiveRequestMarshaller.Instance;
-            var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UploadArchiveRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3195,10 +3228,11 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
-            var marshaller = UploadMultipartPartRequestMarshaller.Instance;
-            var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
-            return Invoke<UploadMultipartPartRequest,UploadMultipartPartResponse>(request, marshaller, unmarshaller);
+            return Invoke<UploadMultipartPartResponse>(request, options);
         }
 
         /// <summary>
@@ -3214,11 +3248,11 @@ namespace Amazon.Glacier
         ///         operation.</returns>
         public virtual IAsyncResult BeginUploadMultipartPart(UploadMultipartPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UploadMultipartPartRequestMarshaller.Instance;
-            var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UploadMultipartPartRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

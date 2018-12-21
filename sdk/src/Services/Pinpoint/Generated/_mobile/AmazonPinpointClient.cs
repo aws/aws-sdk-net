@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Pinpoint.Model;
 using Amazon.Pinpoint.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.Pinpoint
 
         #endregion
 
-        
+
         #region  CreateApp
 
         internal virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAppResponse>(request, options);
         }
 
 
@@ -264,11 +266,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAppRequest,CreateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -277,10 +279,11 @@ namespace Amazon.Pinpoint
 
         internal virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var marshaller = CreateCampaignRequestMarshaller.Instance;
-            var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCampaignRequest,CreateCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCampaignResponse>(request, options);
         }
 
 
@@ -295,11 +298,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateCampaignRequestMarshaller.Instance;
-            var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateCampaignRequest,CreateCampaignResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -308,10 +311,11 @@ namespace Amazon.Pinpoint
 
         internal virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
         {
-            var marshaller = CreateExportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateExportJobResponse>(request, options);
         }
 
 
@@ -326,11 +330,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateExportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateExportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -339,10 +343,11 @@ namespace Amazon.Pinpoint
 
         internal virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
         {
-            var marshaller = CreateImportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateImportJobRequest,CreateImportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateImportJobResponse>(request, options);
         }
 
 
@@ -357,11 +362,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateImportJobResponse> CreateImportJobAsync(CreateImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateImportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateImportJobRequest,CreateImportJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateImportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -370,10 +375,11 @@ namespace Amazon.Pinpoint
 
         internal virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
-            var marshaller = CreateSegmentRequestMarshaller.Instance;
-            var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSegmentRequest,CreateSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSegmentResponse>(request, options);
         }
 
 
@@ -388,11 +394,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateSegmentResponse> CreateSegmentAsync(CreateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSegmentRequestMarshaller.Instance;
-            var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateSegmentRequest,CreateSegmentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -401,10 +407,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
         {
-            var marshaller = DeleteAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAdmChannelRequest,DeleteAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAdmChannelResponse>(request, options);
         }
 
 
@@ -419,11 +426,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteAdmChannelResponse> DeleteAdmChannelAsync(DeleteAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAdmChannelRequest,DeleteAdmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAdmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -432,10 +439,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
         {
-            var marshaller = DeleteApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsChannelRequest,DeleteApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsChannelResponse>(request, options);
         }
 
 
@@ -450,11 +458,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApnsChannelResponse> DeleteApnsChannelAsync(DeleteApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApnsChannelRequest,DeleteApnsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApnsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -463,10 +471,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
         {
-            var marshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsSandboxChannelResponse>(request, options);
         }
 
 
@@ -481,11 +490,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApnsSandboxChannelResponse> DeleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -494,10 +503,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteApnsVoipChannelResponse DeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request)
         {
-            var marshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsVoipChannelRequest,DeleteApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsVoipChannelResponse>(request, options);
         }
 
 
@@ -512,11 +522,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApnsVoipChannelResponse> DeleteApnsVoipChannelAsync(DeleteApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApnsVoipChannelRequest,DeleteApnsVoipChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApnsVoipChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -525,10 +535,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteApnsVoipSandboxChannelResponse DeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsVoipSandboxChannelRequest,DeleteApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsVoipSandboxChannelResponse>(request, options);
         }
 
 
@@ -543,11 +554,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApnsVoipSandboxChannelResponse> DeleteApnsVoipSandboxChannelAsync(DeleteApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApnsVoipSandboxChannelRequest,DeleteApnsVoipSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -556,10 +567,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppResponse>(request, options);
         }
 
 
@@ -574,11 +586,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAppRequest,DeleteAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -587,10 +599,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
         {
-            var marshaller = DeleteBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBaiduChannelRequest,DeleteBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBaiduChannelResponse>(request, options);
         }
 
 
@@ -605,11 +618,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBaiduChannelResponse> DeleteBaiduChannelAsync(DeleteBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteBaiduChannelRequest,DeleteBaiduChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteBaiduChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -618,10 +631,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var marshaller = DeleteCampaignRequestMarshaller.Instance;
-            var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCampaignRequest,DeleteCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCampaignResponse>(request, options);
         }
 
 
@@ -636,11 +650,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteCampaignResponse> DeleteCampaignAsync(DeleteCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteCampaignRequestMarshaller.Instance;
-            var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteCampaignRequest,DeleteCampaignResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteCampaignResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -649,10 +663,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
         {
-            var marshaller = DeleteEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEmailChannelResponse>(request, options);
         }
 
 
@@ -667,11 +682,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteEmailChannelResponse> DeleteEmailChannelAsync(DeleteEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEmailChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -680,10 +695,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointResponse>(request, options);
         }
 
 
@@ -698,11 +714,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -711,10 +727,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
-            var marshaller = DeleteEventStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEventStreamResponse>(request, options);
         }
 
 
@@ -729,11 +746,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEventStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEventStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -742,10 +759,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
         {
-            var marshaller = DeleteGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGcmChannelRequest,DeleteGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGcmChannelResponse>(request, options);
         }
 
 
@@ -760,11 +778,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteGcmChannelResponse> DeleteGcmChannelAsync(DeleteGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteGcmChannelRequest,DeleteGcmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteGcmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -773,10 +791,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
-            var marshaller = DeleteSegmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSegmentRequest,DeleteSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSegmentResponse>(request, options);
         }
 
 
@@ -791,11 +810,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteSegmentResponse> DeleteSegmentAsync(DeleteSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSegmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSegmentRequest,DeleteSegmentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -804,10 +823,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
         {
-            var marshaller = DeleteSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSmsChannelResponse>(request, options);
         }
 
 
@@ -822,11 +842,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteSmsChannelResponse> DeleteSmsChannelAsync(DeleteSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSmsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -835,10 +855,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request)
         {
-            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserEndpointsResponse>(request, options);
         }
 
 
@@ -853,11 +874,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteUserEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -866,10 +887,11 @@ namespace Amazon.Pinpoint
 
         internal virtual DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request)
         {
-            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVoiceChannelResponse>(request, options);
         }
 
 
@@ -884,11 +906,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(DeleteVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteVoiceChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -897,10 +919,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
         {
-            var marshaller = GetAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetAdmChannelRequest,GetAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAdmChannelResponse>(request, options);
         }
 
 
@@ -915,11 +938,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAdmChannelResponse> GetAdmChannelAsync(GetAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAdmChannelRequest,GetAdmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetAdmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -928,10 +951,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
         {
-            var marshaller = GetApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsChannelRequest,GetApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsChannelResponse>(request, options);
         }
 
 
@@ -946,11 +970,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApnsChannelResponse> GetApnsChannelAsync(GetApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetApnsChannelRequest,GetApnsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetApnsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -959,10 +983,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
         {
-            var marshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsSandboxChannelResponse>(request, options);
         }
 
 
@@ -977,11 +1002,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApnsSandboxChannelResponse> GetApnsSandboxChannelAsync(GetApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -990,10 +1015,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetApnsVoipChannelResponse GetApnsVoipChannel(GetApnsVoipChannelRequest request)
         {
-            var marshaller = GetApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsVoipChannelRequest,GetApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsVoipChannelResponse>(request, options);
         }
 
 
@@ -1008,11 +1034,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApnsVoipChannelResponse> GetApnsVoipChannelAsync(GetApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetApnsVoipChannelRequest,GetApnsVoipChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetApnsVoipChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1021,10 +1047,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetApnsVoipSandboxChannelResponse GetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsVoipSandboxChannelRequest,GetApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsVoipSandboxChannelResponse>(request, options);
         }
 
 
@@ -1039,11 +1066,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApnsVoipSandboxChannelResponse> GetApnsVoipSandboxChannelAsync(GetApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetApnsVoipSandboxChannelRequest,GetApnsVoipSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1052,10 +1079,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetAppResponse GetApp(GetAppRequest request)
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppResponse>(request, options);
         }
 
 
@@ -1070,11 +1098,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAppRequest,GetAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1083,10 +1111,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
         {
-            var marshaller = GetApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetApplicationSettingsRequest,GetApplicationSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApplicationSettingsResponse>(request, options);
         }
 
 
@@ -1101,11 +1130,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApplicationSettingsResponse> GetApplicationSettingsAsync(GetApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetApplicationSettingsRequest,GetApplicationSettingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetApplicationSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1114,10 +1143,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetAppsResponse GetApps(GetAppsRequest request)
         {
-            var marshaller = GetAppsRequestMarshaller.Instance;
-            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppsRequest,GetAppsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppsResponse>(request, options);
         }
 
 
@@ -1132,11 +1162,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAppsResponse> GetAppsAsync(GetAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppsRequestMarshaller.Instance;
-            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAppsRequest,GetAppsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetAppsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1145,10 +1175,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
         {
-            var marshaller = GetBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetBaiduChannelRequest,GetBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBaiduChannelResponse>(request, options);
         }
 
 
@@ -1163,11 +1194,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBaiduChannelResponse> GetBaiduChannelAsync(GetBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetBaiduChannelRequest,GetBaiduChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetBaiduChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1176,10 +1207,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
-            var marshaller = GetCampaignRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignRequest,GetCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignResponse>(request, options);
         }
 
 
@@ -1194,11 +1226,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCampaignResponse> GetCampaignAsync(GetCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCampaignRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCampaignRequest,GetCampaignResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCampaignResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1207,10 +1239,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
         {
-            var marshaller = GetCampaignActivitiesRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignActivitiesRequest,GetCampaignActivitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignActivitiesResponse>(request, options);
         }
 
 
@@ -1225,11 +1258,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCampaignActivitiesResponse> GetCampaignActivitiesAsync(GetCampaignActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCampaignActivitiesRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCampaignActivitiesRequest,GetCampaignActivitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCampaignActivitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1238,10 +1271,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
         {
-            var marshaller = GetCampaignsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignsRequest,GetCampaignsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignsResponse>(request, options);
         }
 
 
@@ -1256,11 +1290,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCampaignsResponse> GetCampaignsAsync(GetCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCampaignsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCampaignsRequest,GetCampaignsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCampaignsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1269,10 +1303,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
         {
-            var marshaller = GetCampaignVersionRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignVersionRequest,GetCampaignVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignVersionResponse>(request, options);
         }
 
 
@@ -1287,11 +1322,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCampaignVersionResponse> GetCampaignVersionAsync(GetCampaignVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCampaignVersionRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCampaignVersionRequest,GetCampaignVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCampaignVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1300,10 +1335,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
         {
-            var marshaller = GetCampaignVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignVersionsRequest,GetCampaignVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignVersionsResponse>(request, options);
         }
 
 
@@ -1318,11 +1354,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCampaignVersionsResponse> GetCampaignVersionsAsync(GetCampaignVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCampaignVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCampaignVersionsRequest,GetCampaignVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCampaignVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1331,10 +1367,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetChannelsResponse GetChannels(GetChannelsRequest request)
         {
-            var marshaller = GetChannelsRequestMarshaller.Instance;
-            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<GetChannelsRequest,GetChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetChannelsResponse>(request, options);
         }
 
 
@@ -1349,11 +1386,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetChannelsRequestMarshaller.Instance;
-            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetChannelsRequest,GetChannelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetChannelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1362,10 +1399,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
         {
-            var marshaller = GetEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEmailChannelResponse>(request, options);
         }
 
 
@@ -1380,11 +1418,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetEmailChannelResponse> GetEmailChannelAsync(GetEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEmailChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1393,10 +1431,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
-            var marshaller = GetEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<GetEndpointRequest,GetEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEndpointResponse>(request, options);
         }
 
 
@@ -1411,11 +1450,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetEndpointResponse> GetEndpointAsync(GetEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEndpointRequest,GetEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1424,10 +1463,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
-            var marshaller = GetEventStreamRequestMarshaller.Instance;
-            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEventStreamResponse>(request, options);
         }
 
 
@@ -1442,11 +1482,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEventStreamRequestMarshaller.Instance;
-            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEventStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1455,10 +1495,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
         {
-            var marshaller = GetExportJobRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
 
-            return Invoke<GetExportJobRequest,GetExportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetExportJobResponse>(request, options);
         }
 
 
@@ -1473,11 +1514,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetExportJobRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetExportJobRequest,GetExportJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetExportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1486,10 +1527,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetExportJobsResponse GetExportJobs(GetExportJobsRequest request)
         {
-            var marshaller = GetExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetExportJobsResponse>(request, options);
         }
 
 
@@ -1504,11 +1546,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetExportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1517,10 +1559,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
         {
-            var marshaller = GetGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetGcmChannelRequest,GetGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGcmChannelResponse>(request, options);
         }
 
 
@@ -1535,11 +1578,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetGcmChannelResponse> GetGcmChannelAsync(GetGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetGcmChannelRequest,GetGcmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetGcmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1548,10 +1591,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
-            var marshaller = GetImportJobRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
-            return Invoke<GetImportJobRequest,GetImportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetImportJobResponse>(request, options);
         }
 
 
@@ -1566,11 +1610,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetImportJobRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetImportJobRequest,GetImportJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetImportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1579,10 +1623,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
         {
-            var marshaller = GetImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetImportJobsRequest,GetImportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetImportJobsResponse>(request, options);
         }
 
 
@@ -1597,11 +1642,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetImportJobsResponse> GetImportJobsAsync(GetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetImportJobsRequest,GetImportJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetImportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1610,10 +1655,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
-            var marshaller = GetSegmentRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentRequest,GetSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentResponse>(request, options);
         }
 
 
@@ -1628,11 +1674,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentRequest,GetSegmentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1641,10 +1687,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request)
         {
-            var marshaller = GetSegmentExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentExportJobsResponse>(request, options);
         }
 
 
@@ -1659,11 +1706,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentExportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1672,10 +1719,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
         {
-            var marshaller = GetSegmentImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentImportJobsRequest,GetSegmentImportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentImportJobsResponse>(request, options);
         }
 
 
@@ -1690,11 +1738,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentImportJobsResponse> GetSegmentImportJobsAsync(GetSegmentImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentImportJobsRequest,GetSegmentImportJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentImportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1703,10 +1751,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentsResponse GetSegments(GetSegmentsRequest request)
         {
-            var marshaller = GetSegmentsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentsRequest,GetSegmentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentsResponse>(request, options);
         }
 
 
@@ -1721,11 +1770,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentsResponse> GetSegmentsAsync(GetSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentsRequest,GetSegmentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1734,10 +1783,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
         {
-            var marshaller = GetSegmentVersionRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentVersionRequest,GetSegmentVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentVersionResponse>(request, options);
         }
 
 
@@ -1752,11 +1802,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentVersionResponse> GetSegmentVersionAsync(GetSegmentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentVersionRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentVersionRequest,GetSegmentVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1765,10 +1815,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
         {
-            var marshaller = GetSegmentVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentVersionsRequest,GetSegmentVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentVersionsResponse>(request, options);
         }
 
 
@@ -1783,11 +1834,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSegmentVersionsResponse> GetSegmentVersionsAsync(GetSegmentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSegmentVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSegmentVersionsRequest,GetSegmentVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSegmentVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1796,10 +1847,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
         {
-            var marshaller = GetSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSmsChannelResponse>(request, options);
         }
 
 
@@ -1814,11 +1866,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetSmsChannelResponse> GetSmsChannelAsync(GetSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSmsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1827,10 +1879,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request)
         {
-            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetUserEndpointsResponse>(request, options);
         }
 
 
@@ -1845,11 +1898,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetUserEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1858,10 +1911,11 @@ namespace Amazon.Pinpoint
 
         internal virtual GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request)
         {
-            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetVoiceChannelResponse>(request, options);
         }
 
 
@@ -1876,11 +1930,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetVoiceChannelResponse> GetVoiceChannelAsync(GetVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetVoiceChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1889,10 +1943,11 @@ namespace Amazon.Pinpoint
 
         internal virtual PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request)
         {
-            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
-            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
 
-            return Invoke<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, unmarshaller);
+            return Invoke<PhoneNumberValidateResponse>(request, options);
         }
 
 
@@ -1907,11 +1962,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
-            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PhoneNumberValidateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1920,10 +1975,11 @@ namespace Amazon.Pinpoint
 
         internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventsResponse>(request, options);
         }
 
 
@@ -1938,11 +1994,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutEventsRequest,PutEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1951,10 +2007,11 @@ namespace Amazon.Pinpoint
 
         internal virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
         {
-            var marshaller = PutEventStreamRequestMarshaller.Instance;
-            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventStreamResponse>(request, options);
         }
 
 
@@ -1969,11 +2026,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEventStreamRequestMarshaller.Instance;
-            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutEventStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1982,10 +2039,11 @@ namespace Amazon.Pinpoint
 
         internal virtual RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request)
         {
-            var marshaller = RemoveAttributesRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveAttributesResponse>(request, options);
         }
 
 
@@ -2000,11 +2058,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveAttributesRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RemoveAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2013,10 +2071,11 @@ namespace Amazon.Pinpoint
 
         internal virtual SendMessagesResponse SendMessages(SendMessagesRequest request)
         {
-            var marshaller = SendMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
 
-            return Invoke<SendMessagesRequest,SendMessagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendMessagesResponse>(request, options);
         }
 
 
@@ -2031,11 +2090,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SendMessagesResponse> SendMessagesAsync(SendMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SendMessagesRequest,SendMessagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SendMessagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2044,10 +2103,11 @@ namespace Amazon.Pinpoint
 
         internal virtual SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
         {
-            var marshaller = SendUsersMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
 
-            return Invoke<SendUsersMessagesRequest,SendUsersMessagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendUsersMessagesResponse>(request, options);
         }
 
 
@@ -2062,11 +2122,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SendUsersMessagesResponse> SendUsersMessagesAsync(SendUsersMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendUsersMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SendUsersMessagesRequest,SendUsersMessagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SendUsersMessagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2075,10 +2135,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
         {
-            var marshaller = UpdateAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAdmChannelRequest,UpdateAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAdmChannelResponse>(request, options);
         }
 
 
@@ -2093,11 +2154,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateAdmChannelResponse> UpdateAdmChannelAsync(UpdateAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAdmChannelRequest,UpdateAdmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateAdmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2106,10 +2167,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
         {
-            var marshaller = UpdateApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsChannelRequest,UpdateApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsChannelResponse>(request, options);
         }
 
 
@@ -2124,11 +2186,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApnsChannelResponse> UpdateApnsChannelAsync(UpdateApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApnsChannelRequest,UpdateApnsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApnsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2137,10 +2199,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
         {
-            var marshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsSandboxChannelResponse>(request, options);
         }
 
 
@@ -2155,11 +2218,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApnsSandboxChannelResponse> UpdateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApnsSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2168,10 +2231,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateApnsVoipChannelResponse UpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request)
         {
-            var marshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsVoipChannelRequest,UpdateApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsVoipChannelResponse>(request, options);
         }
 
 
@@ -2186,11 +2250,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApnsVoipChannelResponse> UpdateApnsVoipChannelAsync(UpdateApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApnsVoipChannelRequest,UpdateApnsVoipChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApnsVoipChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2199,10 +2263,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateApnsVoipSandboxChannelResponse UpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsVoipSandboxChannelRequest,UpdateApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsVoipSandboxChannelResponse>(request, options);
         }
 
 
@@ -2217,11 +2282,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApnsVoipSandboxChannelResponse> UpdateApnsVoipSandboxChannelAsync(UpdateApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApnsVoipSandboxChannelRequest,UpdateApnsVoipSandboxChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApnsVoipSandboxChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2230,10 +2295,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
-            var marshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApplicationSettingsRequest,UpdateApplicationSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApplicationSettingsResponse>(request, options);
         }
 
 
@@ -2248,11 +2314,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApplicationSettingsResponse> UpdateApplicationSettingsAsync(UpdateApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApplicationSettingsRequest,UpdateApplicationSettingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApplicationSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2261,10 +2327,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
         {
-            var marshaller = UpdateBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateBaiduChannelRequest,UpdateBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateBaiduChannelResponse>(request, options);
         }
 
 
@@ -2279,11 +2346,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateBaiduChannelResponse> UpdateBaiduChannelAsync(UpdateBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateBaiduChannelRequest,UpdateBaiduChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateBaiduChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2292,10 +2359,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
-            var marshaller = UpdateCampaignRequestMarshaller.Instance;
-            var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCampaignRequest,UpdateCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCampaignResponse>(request, options);
         }
 
 
@@ -2310,11 +2378,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateCampaignRequestMarshaller.Instance;
-            var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateCampaignRequest,UpdateCampaignResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateCampaignResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2323,10 +2391,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
         {
-            var marshaller = UpdateEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEmailChannelResponse>(request, options);
         }
 
 
@@ -2341,11 +2410,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateEmailChannelResponse> UpdateEmailChannelAsync(UpdateEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEmailChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2354,10 +2423,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointResponse>(request, options);
         }
 
 
@@ -2372,11 +2442,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2385,10 +2455,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
         {
-            var marshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointsBatchRequest,UpdateEndpointsBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointsBatchResponse>(request, options);
         }
 
 
@@ -2403,11 +2474,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateEndpointsBatchResponse> UpdateEndpointsBatchAsync(UpdateEndpointsBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEndpointsBatchRequest,UpdateEndpointsBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEndpointsBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2416,10 +2487,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
         {
-            var marshaller = UpdateGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGcmChannelRequest,UpdateGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGcmChannelResponse>(request, options);
         }
 
 
@@ -2434,11 +2506,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateGcmChannelResponse> UpdateGcmChannelAsync(UpdateGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateGcmChannelRequest,UpdateGcmChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateGcmChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2447,10 +2519,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
         {
-            var marshaller = UpdateSegmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSegmentRequest,UpdateSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSegmentResponse>(request, options);
         }
 
 
@@ -2465,11 +2538,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateSegmentResponse> UpdateSegmentAsync(UpdateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSegmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateSegmentRequest,UpdateSegmentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2478,10 +2551,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
         {
-            var marshaller = UpdateSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSmsChannelResponse>(request, options);
         }
 
 
@@ -2496,11 +2570,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateSmsChannelResponse> UpdateSmsChannelAsync(UpdateSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateSmsChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2509,10 +2583,11 @@ namespace Amazon.Pinpoint
 
         internal virtual UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request)
         {
-            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateVoiceChannelResponse>(request, options);
         }
 
 
@@ -2527,11 +2602,11 @@ namespace Amazon.Pinpoint
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(UpdateVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateVoiceChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion

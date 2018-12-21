@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AWSHealth.Model;
 using Amazon.AWSHealth.Model.Internal.MarshallTransformations;
@@ -301,7 +302,7 @@ namespace Amazon.AWSHealth
 
         #endregion
 
-        
+
         #region  DescribeAffectedEntities
 
         /// <summary>
@@ -329,10 +330,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
         {
-            var marshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAffectedEntitiesRequest,DescribeAffectedEntitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAffectedEntitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -349,11 +351,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual IAsyncResult BeginDescribeAffectedEntities(DescribeAffectedEntitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAffectedEntitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -383,10 +385,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request)
         {
-            var marshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEntityAggregatesRequest,DescribeEntityAggregatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEntityAggregatesResponse>(request, options);
         }
 
         /// <summary>
@@ -403,11 +406,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual IAsyncResult BeginDescribeEntityAggregates(DescribeEntityAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEntityAggregatesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -441,10 +444,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
         {
-            var marshaller = DescribeEventAggregatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventAggregatesRequest,DescribeEventAggregatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventAggregatesResponse>(request, options);
         }
 
         /// <summary>
@@ -461,11 +465,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventAggregates(DescribeEventAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventAggregatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventAggregatesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -506,10 +510,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
         {
-            var marshaller = DescribeEventDetailsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventDetailsRequest,DescribeEventDetailsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventDetailsResponse>(request, options);
         }
 
         /// <summary>
@@ -526,11 +531,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventDetails(DescribeEventDetailsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventDetailsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventDetailsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -575,10 +580,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventsResponse>(request, options);
         }
 
         /// <summary>
@@ -595,11 +601,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -635,10 +641,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)
         {
-            var marshaller = DescribeEventTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventTypesRequest,DescribeEventTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventTypesResponse>(request, options);
         }
 
         /// <summary>
@@ -655,11 +662,11 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventTypes(DescribeEventTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEventTypesRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEventTypesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

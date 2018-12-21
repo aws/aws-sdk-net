@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SageMakerRuntime.Model;
 using Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.SageMakerRuntime
 
         #endregion
 
-        
+
         #region  InvokeEndpoint
 
         /// <summary>
@@ -285,10 +286,11 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">REST API Reference for InvokeEndpoint Operation</seealso>
         public virtual InvokeEndpointResponse InvokeEndpoint(InvokeEndpointRequest request)
         {
-            var marshaller = InvokeEndpointRequestMarshaller.Instance;
-            var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<InvokeEndpointRequest,InvokeEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<InvokeEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -305,11 +307,11 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">REST API Reference for InvokeEndpoint Operation</seealso>
         public virtual IAsyncResult BeginInvokeEndpoint(InvokeEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InvokeEndpointRequestMarshaller.Instance;
-            var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InvokeEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

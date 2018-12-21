@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CostExplorer.Model;
 using Amazon.CostExplorer.Model.Internal.MarshallTransformations;
@@ -262,15 +263,16 @@ namespace Amazon.CostExplorer
 
         #endregion
 
-        
+
         #region  GetCostAndUsage
 
         internal virtual GetCostAndUsageResponse GetCostAndUsage(GetCostAndUsageRequest request)
         {
-            var marshaller = GetCostAndUsageRequestMarshaller.Instance;
-            var unmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostAndUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
 
-            return Invoke<GetCostAndUsageRequest,GetCostAndUsageResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCostAndUsageResponse>(request, options);
         }
 
 
@@ -286,11 +288,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual Task<GetCostAndUsageResponse> GetCostAndUsageAsync(GetCostAndUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCostAndUsageRequestMarshaller.Instance;
-            var unmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostAndUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCostAndUsageRequest,GetCostAndUsageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCostAndUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -299,10 +301,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetCostForecastResponse GetCostForecast(GetCostForecastRequest request)
         {
-            var marshaller = GetCostForecastRequestMarshaller.Instance;
-            var unmarshaller = GetCostForecastResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostForecastResponseUnmarshaller.Instance;
 
-            return Invoke<GetCostForecastRequest,GetCostForecastResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCostForecastResponse>(request, options);
         }
 
 
@@ -318,11 +321,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
         public virtual Task<GetCostForecastResponse> GetCostForecastAsync(GetCostForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCostForecastRequestMarshaller.Instance;
-            var unmarshaller = GetCostForecastResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostForecastResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCostForecastRequest,GetCostForecastResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCostForecastResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -331,10 +334,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetDimensionValuesResponse GetDimensionValues(GetDimensionValuesRequest request)
         {
-            var marshaller = GetDimensionValuesRequestMarshaller.Instance;
-            var unmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDimensionValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
 
-            return Invoke<GetDimensionValuesRequest,GetDimensionValuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDimensionValuesResponse>(request, options);
         }
 
 
@@ -350,11 +354,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual Task<GetDimensionValuesResponse> GetDimensionValuesAsync(GetDimensionValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDimensionValuesRequestMarshaller.Instance;
-            var unmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDimensionValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDimensionValuesRequest,GetDimensionValuesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDimensionValuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -363,10 +367,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetReservationCoverageResponse GetReservationCoverage(GetReservationCoverageRequest request)
         {
-            var marshaller = GetReservationCoverageRequestMarshaller.Instance;
-            var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
 
-            return Invoke<GetReservationCoverageRequest,GetReservationCoverageResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReservationCoverageResponse>(request, options);
         }
 
 
@@ -382,11 +387,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
         public virtual Task<GetReservationCoverageResponse> GetReservationCoverageAsync(GetReservationCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReservationCoverageRequestMarshaller.Instance;
-            var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationCoverageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetReservationCoverageRequest,GetReservationCoverageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetReservationCoverageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -395,10 +400,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetReservationPurchaseRecommendationResponse GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request)
         {
-            var marshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
-            var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
 
-            return Invoke<GetReservationPurchaseRecommendationRequest,GetReservationPurchaseRecommendationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReservationPurchaseRecommendationResponse>(request, options);
         }
 
 
@@ -414,11 +420,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
         public virtual Task<GetReservationPurchaseRecommendationResponse> GetReservationPurchaseRecommendationAsync(GetReservationPurchaseRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
-            var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetReservationPurchaseRecommendationRequest,GetReservationPurchaseRecommendationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetReservationPurchaseRecommendationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -427,10 +433,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetReservationUtilizationResponse GetReservationUtilization(GetReservationUtilizationRequest request)
         {
-            var marshaller = GetReservationUtilizationRequestMarshaller.Instance;
-            var unmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationUtilizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
 
-            return Invoke<GetReservationUtilizationRequest,GetReservationUtilizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReservationUtilizationResponse>(request, options);
         }
 
 
@@ -446,11 +453,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">REST API Reference for GetReservationUtilization Operation</seealso>
         public virtual Task<GetReservationUtilizationResponse> GetReservationUtilizationAsync(GetReservationUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReservationUtilizationRequestMarshaller.Instance;
-            var unmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReservationUtilizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetReservationUtilizationRequest,GetReservationUtilizationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetReservationUtilizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -459,10 +466,11 @@ namespace Amazon.CostExplorer
 
         internal virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var marshaller = GetTagsRequestMarshaller.Instance;
-            var unmarshaller = GetTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
-            return Invoke<GetTagsRequest,GetTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTagsResponse>(request, options);
         }
 
 
@@ -478,11 +486,11 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTagsRequestMarshaller.Instance;
-            var unmarshaller = GetTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetTagsRequest,GetTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion

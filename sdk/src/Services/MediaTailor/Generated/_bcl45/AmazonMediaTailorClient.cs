@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MediaTailor.Model;
 using Amazon.MediaTailor.Model.Internal.MarshallTransformations;
@@ -244,7 +245,7 @@ namespace Amazon.MediaTailor
 
         #endregion
 
-        
+
         #region  DeletePlaybackConfiguration
 
 
@@ -257,10 +258,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
         public virtual DeletePlaybackConfigurationResponse DeletePlaybackConfiguration(DeletePlaybackConfigurationRequest request)
         {
-            var marshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePlaybackConfigurationRequest,DeletePlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -275,11 +277,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
         public virtual Task<DeletePlaybackConfigurationResponse> DeletePlaybackConfigurationAsync(DeletePlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePlaybackConfigurationRequest,DeletePlaybackConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePlaybackConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -296,10 +298,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         public virtual GetPlaybackConfigurationResponse GetPlaybackConfiguration(GetPlaybackConfigurationRequest request)
         {
-            var marshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetPlaybackConfigurationRequest,GetPlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -314,11 +317,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         public virtual Task<GetPlaybackConfigurationResponse> GetPlaybackConfigurationAsync(GetPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPlaybackConfigurationRequest,GetPlaybackConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPlaybackConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -339,10 +342,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
         public virtual ListPlaybackConfigurationsResponse ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request)
         {
-            var marshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPlaybackConfigurationsRequest,ListPlaybackConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPlaybackConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -357,11 +361,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
         public virtual Task<ListPlaybackConfigurationsResponse> ListPlaybackConfigurationsAsync(ListPlaybackConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPlaybackConfigurationsRequest,ListPlaybackConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPlaybackConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -378,10 +382,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         public virtual PutPlaybackConfigurationResponse PutPlaybackConfiguration(PutPlaybackConfigurationRequest request)
         {
-            var marshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutPlaybackConfigurationRequest,PutPlaybackConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPlaybackConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -396,11 +401,11 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         public virtual Task<PutPlaybackConfigurationResponse> PutPlaybackConfigurationAsync(PutPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutPlaybackConfigurationRequest,PutPlaybackConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutPlaybackConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

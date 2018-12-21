@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleSystemsManagement.Model;
 using Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations;
@@ -263,7 +264,7 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
 
-        
+
         #region  AddTagsToResource
 
 
@@ -318,10 +319,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsToResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -336,11 +338,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -491,10 +493,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public virtual CancelCommandResponse CancelCommand(CancelCommandRequest request)
         {
-            var marshaller = CancelCommandRequestMarshaller.Instance;
-            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCommandResponseUnmarshaller.Instance;
 
-            return Invoke<CancelCommandRequest,CancelCommandResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelCommandResponse>(request, options);
         }
 
 
@@ -615,11 +618,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public virtual Task<CancelCommandResponse> CancelCommandAsync(CancelCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelCommandRequestMarshaller.Instance;
-            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelCommandRequest,CancelCommandResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCommandResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelCommandResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -651,10 +654,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">REST API Reference for CancelMaintenanceWindowExecution Operation</seealso>
         public virtual CancelMaintenanceWindowExecutionResponse CancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request)
         {
-            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelMaintenanceWindowExecutionRequest,CancelMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelMaintenanceWindowExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -669,11 +673,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">REST API Reference for CancelMaintenanceWindowExecution Operation</seealso>
         public virtual Task<CancelMaintenanceWindowExecutionResponse> CancelMaintenanceWindowExecutionAsync(CancelMaintenanceWindowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelMaintenanceWindowExecutionRequest,CancelMaintenanceWindowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelMaintenanceWindowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -697,10 +701,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual CreateActivationResponse CreateActivation(CreateActivationRequest request)
         {
-            var marshaller = CreateActivationRequestMarshaller.Instance;
-            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActivationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateActivationRequest,CreateActivationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateActivationResponse>(request, options);
         }
 
         /// <summary>
@@ -715,11 +720,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual Task<CreateActivationResponse> CreateActivationAsync(CreateActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateActivationRequestMarshaller.Instance;
-            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateActivationRequest,CreateActivationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActivationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateActivationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -893,10 +898,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public virtual CreateAssociationResponse CreateAssociation(CreateAssociationRequest request)
         {
-            var marshaller = CreateAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssociationRequest,CreateAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssociationResponse>(request, options);
         }
 
 
@@ -1001,11 +1007,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public virtual Task<CreateAssociationResponse> CreateAssociationAsync(CreateAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAssociationRequest,CreateAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1092,10 +1098,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public virtual CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request)
         {
-            var marshaller = CreateAssociationBatchRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssociationBatchRequest,CreateAssociationBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssociationBatchResponse>(request, options);
         }
 
         /// <summary>
@@ -1110,11 +1117,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public virtual Task<CreateAssociationBatchResponse> CreateAssociationBatchAsync(CreateAssociationBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAssociationBatchRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAssociationBatchRequest,CreateAssociationBatchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAssociationBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1196,10 +1203,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public virtual CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
         {
-            var marshaller = CreateDocumentRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDocumentRequest,CreateDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDocumentResponse>(request, options);
         }
 
 
@@ -1258,11 +1266,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public virtual Task<CreateDocumentResponse> CreateDocumentAsync(CreateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDocumentRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDocumentRequest,CreateDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1296,10 +1304,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public virtual CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request)
         {
-            var marshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<CreateMaintenanceWindowRequest,CreateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -1314,11 +1323,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public virtual Task<CreateMaintenanceWindowResponse> CreateMaintenanceWindowAsync(CreateMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateMaintenanceWindowRequest,CreateMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1359,10 +1368,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public virtual CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
         {
-            var marshaller = CreatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -1377,11 +1387,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public virtual Task<CreatePatchBaselineResponse> CreatePatchBaselineAsync(CreatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1423,10 +1433,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
         public virtual CreateResourceDataSyncResponse CreateResourceDataSync(CreateResourceDataSyncRequest request)
         {
-            var marshaller = CreateResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResourceDataSyncRequest,CreateResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -1441,11 +1452,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
         public virtual Task<CreateResourceDataSyncResponse> CreateResourceDataSyncAsync(CreateResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateResourceDataSyncRequest,CreateResourceDataSyncResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateResourceDataSyncResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1479,10 +1490,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public virtual DeleteActivationResponse DeleteActivation(DeleteActivationRequest request)
         {
-            var marshaller = DeleteActivationRequestMarshaller.Instance;
-            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteActivationRequest,DeleteActivationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteActivationResponse>(request, options);
         }
 
         /// <summary>
@@ -1497,11 +1509,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public virtual Task<DeleteActivationResponse> DeleteActivationAsync(DeleteActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteActivationRequestMarshaller.Instance;
-            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteActivationRequest,DeleteActivationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteActivationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1623,10 +1635,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
         {
-            var marshaller = DeleteAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAssociationRequest,DeleteAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAssociationResponse>(request, options);
         }
 
 
@@ -1705,11 +1718,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual Task<DeleteAssociationResponse> DeleteAssociationAsync(DeleteAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAssociationRequest,DeleteAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1779,10 +1792,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
-            var marshaller = DeleteDocumentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDocumentResponse>(request, options);
         }
 
 
@@ -1834,11 +1848,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDocumentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1873,10 +1887,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         public virtual DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request)
         {
-            var marshaller = DeleteInventoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -1891,11 +1906,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         public virtual Task<DeleteInventoryResponse> DeleteInventoryAsync(DeleteInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteInventoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteInventoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1915,10 +1930,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public virtual DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request)
         {
-            var marshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMaintenanceWindowRequest,DeleteMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -1933,11 +1949,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public virtual Task<DeleteMaintenanceWindowResponse> DeleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteMaintenanceWindowRequest,DeleteMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1960,10 +1976,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual DeleteParameterResponse DeleteParameter(DeleteParameterRequest request)
         {
-            var marshaller = DeleteParameterRequestMarshaller.Instance;
-            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParameterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -1978,11 +1995,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual Task<DeleteParameterResponse> DeleteParameterAsync(DeleteParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteParameterRequestMarshaller.Instance;
-            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteParameterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2003,10 +2020,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
         public virtual DeleteParametersResponse DeleteParameters(DeleteParametersRequest request)
         {
-            var marshaller = DeleteParametersRequestMarshaller.Instance;
-            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteParametersRequest,DeleteParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -2021,11 +2039,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
         public virtual Task<DeleteParametersResponse> DeleteParametersAsync(DeleteParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteParametersRequestMarshaller.Instance;
-            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteParametersRequest,DeleteParametersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteParametersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2049,10 +2067,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public virtual DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
         {
-            var marshaller = DeletePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -2067,11 +2086,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public virtual Task<DeletePatchBaselineResponse> DeletePatchBaselineAsync(DeletePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2097,10 +2116,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         public virtual DeleteResourceDataSyncResponse DeleteResourceDataSync(DeleteResourceDataSyncRequest request)
         {
-            var marshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResourceDataSyncRequest,DeleteResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -2115,11 +2135,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         public virtual Task<DeleteResourceDataSyncResponse> DeleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteResourceDataSyncRequest,DeleteResourceDataSyncResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourceDataSyncResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2165,10 +2185,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public virtual DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
         {
-            var marshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterManagedInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -2183,11 +2204,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public virtual Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterManagedInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2210,10 +2231,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -2228,11 +2250,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual Task<DeregisterPatchBaselineForPatchGroupResponse> DeregisterPatchBaselineForPatchGroupAsync(DeregisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2266,10 +2288,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public virtual DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request)
         {
-            var marshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterTargetFromMaintenanceWindowRequest,DeregisterTargetFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterTargetFromMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -2284,11 +2307,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public virtual Task<DeregisterTargetFromMaintenanceWindowResponse> DeregisterTargetFromMaintenanceWindowAsync(DeregisterTargetFromMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterTargetFromMaintenanceWindowRequest,DeregisterTargetFromMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterTargetFromMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2318,10 +2341,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public virtual DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request)
         {
-            var marshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterTaskFromMaintenanceWindowRequest,DeregisterTaskFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterTaskFromMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -2336,11 +2360,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public virtual Task<DeregisterTaskFromMaintenanceWindowResponse> DeregisterTaskFromMaintenanceWindowAsync(DeregisterTaskFromMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeregisterTaskFromMaintenanceWindowRequest,DeregisterTaskFromMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterTaskFromMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2368,10 +2392,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public virtual DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request)
         {
-            var marshaller = DescribeActivationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeActivationsRequest,DescribeActivationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeActivationsResponse>(request, options);
         }
 
         /// <summary>
@@ -2386,11 +2411,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public virtual Task<DescribeActivationsResponse> DescribeActivationsAsync(DescribeActivationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeActivationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeActivationsRequest,DescribeActivationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeActivationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2508,10 +2533,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public virtual DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request)
         {
-            var marshaller = DescribeAssociationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationRequest,DescribeAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationResponse>(request, options);
         }
 
 
@@ -2588,11 +2614,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public virtual Task<DescribeAssociationResponse> DescribeAssociationAsync(DescribeAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssociationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAssociationRequest,DescribeAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2618,10 +2644,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         public virtual DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request)
         {
-            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2636,11 +2663,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         public virtual Task<DescribeAssociationExecutionsResponse> DescribeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAssociationExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2669,10 +2696,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         public virtual DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request)
         {
-            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationExecutionTargetsResponse>(request, options);
         }
 
         /// <summary>
@@ -2687,11 +2715,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         public virtual Task<DescribeAssociationExecutionTargetsResponse> DescribeAssociationExecutionTargetsAsync(DescribeAssociationExecutionTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAssociationExecutionTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2720,10 +2748,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public virtual DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request)
         {
-            var marshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutomationExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2738,11 +2767,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public virtual Task<DescribeAutomationExecutionsResponse> DescribeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAutomationExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2775,10 +2804,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         public virtual DescribeAutomationStepExecutionsResponse DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request)
         {
-            var marshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutomationStepExecutionsRequest,DescribeAutomationStepExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutomationStepExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2793,11 +2823,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         public virtual Task<DescribeAutomationStepExecutionsResponse> DescribeAutomationStepExecutionsAsync(DescribeAutomationStepExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAutomationStepExecutionsRequest,DescribeAutomationStepExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAutomationStepExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2817,10 +2847,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public virtual DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
         {
-            var marshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAvailablePatchesResponse>(request, options);
         }
 
         /// <summary>
@@ -2835,11 +2866,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public virtual Task<DescribeAvailablePatchesResponse> DescribeAvailablePatchesAsync(DescribeAvailablePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAvailablePatchesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2889,10 +2920,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public virtual DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
         {
-            var marshaller = DescribeDocumentRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentRequest,DescribeDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentResponse>(request, options);
         }
 
 
@@ -2934,11 +2966,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public virtual Task<DescribeDocumentResponse> DescribeDocumentAsync(DescribeDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDocumentRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDocumentRequest,DescribeDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2967,10 +2999,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public virtual DescribeDocumentPermissionResponse DescribeDocumentPermission(DescribeDocumentPermissionRequest request)
         {
-            var marshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentPermissionRequest,DescribeDocumentPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentPermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -2985,11 +3018,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public virtual Task<DescribeDocumentPermissionResponse> DescribeDocumentPermissionAsync(DescribeDocumentPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeDocumentPermissionRequest,DescribeDocumentPermissionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDocumentPermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3036,10 +3069,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public virtual DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request)
         {
-            var marshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEffectiveInstanceAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3054,11 +3088,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public virtual Task<DescribeEffectiveInstanceAssociationsResponse> DescribeEffectiveInstanceAssociationsAsync(DescribeEffectiveInstanceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEffectiveInstanceAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3097,10 +3131,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public virtual DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
         {
-            var marshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEffectivePatchesForPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -3115,11 +3150,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public virtual Task<DescribeEffectivePatchesForPatchBaselineResponse> DescribeEffectivePatchesForPatchBaselineAsync(DescribeEffectivePatchesForPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEffectivePatchesForPatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3166,10 +3201,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public virtual DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request)
         {
-            var marshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstanceAssociationsStatusRequest,DescribeInstanceAssociationsStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstanceAssociationsStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -3184,11 +3220,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public virtual Task<DescribeInstanceAssociationsStatusResponse> DescribeInstanceAssociationsStatusAsync(DescribeInstanceAssociationsStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInstanceAssociationsStatusRequest,DescribeInstanceAssociationsStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceAssociationsStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3315,10 +3351,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public virtual DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request)
         {
-            var marshaller = DescribeInstanceInformationRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstanceInformationResponse>(request, options);
         }
 
 
@@ -3396,11 +3433,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public virtual Task<DescribeInstanceInformationResponse> DescribeInstanceInformationAsync(DescribeInstanceInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInstanceInformationRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceInformationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3451,10 +3488,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public virtual DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
         {
-            var marshaller = DescribeInstancePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchesResponse>(request, options);
         }
 
         /// <summary>
@@ -3469,11 +3507,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public virtual Task<DescribeInstancePatchesResponse> DescribeInstancePatchesAsync(DescribeInstancePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInstancePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstancePatchesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3496,10 +3534,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public virtual DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
         {
-            var marshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchStatesResponse>(request, options);
         }
 
         /// <summary>
@@ -3514,11 +3553,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public virtual Task<DescribeInstancePatchStatesResponse> DescribeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstancePatchStatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3544,10 +3583,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public virtual DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
         {
-            var marshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchStatesForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -3562,11 +3602,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public virtual Task<DescribeInstancePatchStatesForPatchGroupResponse> DescribeInstancePatchStatesForPatchGroupAsync(DescribeInstancePatchStatesForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstancePatchStatesForPatchGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3593,10 +3633,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         public virtual DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request)
         {
-            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInventoryDeletionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3611,11 +3652,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         public virtual Task<DescribeInventoryDeletionsResponse> DescribeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInventoryDeletionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3637,10 +3678,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionsRequest,DescribeMaintenanceWindowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3655,11 +3697,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowExecutionsResponse> DescribeMaintenanceWindowExecutionsAsync(DescribeMaintenanceWindowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowExecutionsRequest,DescribeMaintenanceWindowExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3690,10 +3732,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionTaskInvocationsRequest,DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3708,11 +3751,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowExecutionTaskInvocationsResponse> DescribeMaintenanceWindowExecutionTaskInvocationsAsync(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowExecutionTaskInvocationsRequest,DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3742,10 +3785,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionTasksRequest,DescribeMaintenanceWindowExecutionTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -3760,11 +3804,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowExecutionTasksResponse> DescribeMaintenanceWindowExecutionTasksAsync(DescribeMaintenanceWindowExecutionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowExecutionTasksRequest,DescribeMaintenanceWindowExecutionTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowExecutionTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3784,10 +3828,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public virtual DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowsResponse>(request, options);
         }
 
         /// <summary>
@@ -3802,11 +3847,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowsResponse> DescribeMaintenanceWindowsAsync(DescribeMaintenanceWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3836,10 +3881,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">REST API Reference for DescribeMaintenanceWindowSchedule Operation</seealso>
         public virtual DescribeMaintenanceWindowScheduleResponse DescribeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowScheduleRequest,DescribeMaintenanceWindowScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -3854,11 +3900,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">REST API Reference for DescribeMaintenanceWindowSchedule Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowScheduleResponse> DescribeMaintenanceWindowScheduleAsync(DescribeMaintenanceWindowScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowScheduleRequest,DescribeMaintenanceWindowScheduleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3879,10 +3925,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">REST API Reference for DescribeMaintenanceWindowsForTarget Operation</seealso>
         public virtual DescribeMaintenanceWindowsForTargetResponse DescribeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowsForTargetRequest,DescribeMaintenanceWindowsForTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowsForTargetResponse>(request, options);
         }
 
         /// <summary>
@@ -3897,11 +3944,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">REST API Reference for DescribeMaintenanceWindowsForTarget Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowsForTargetResponse> DescribeMaintenanceWindowsForTargetAsync(DescribeMaintenanceWindowsForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowsForTargetRequest,DescribeMaintenanceWindowsForTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowsForTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3931,10 +3978,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public virtual DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowTargetsRequest,DescribeMaintenanceWindowTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowTargetsResponse>(request, options);
         }
 
         /// <summary>
@@ -3949,11 +3997,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowTargetsResponse> DescribeMaintenanceWindowTargetsAsync(DescribeMaintenanceWindowTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowTargetsRequest,DescribeMaintenanceWindowTargetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowTargetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3983,10 +4031,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public virtual DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowTasksRequest,DescribeMaintenanceWindowTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -4001,11 +4050,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public virtual Task<DescribeMaintenanceWindowTasksResponse> DescribeMaintenanceWindowTasksAsync(DescribeMaintenanceWindowTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeMaintenanceWindowTasksRequest,DescribeMaintenanceWindowTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMaintenanceWindowTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4049,10 +4098,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
-            var marshaller = DescribeParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -4067,11 +4117,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeParametersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4091,10 +4141,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public virtual DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
         {
-            var marshaller = DescribePatchBaselinesRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchBaselinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchBaselinesResponse>(request, options);
         }
 
         /// <summary>
@@ -4109,11 +4160,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public virtual Task<DescribePatchBaselinesResponse> DescribePatchBaselinesAsync(DescribePatchBaselinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePatchBaselinesRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchBaselinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePatchBaselinesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4133,10 +4184,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public virtual DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
         {
-            var marshaller = DescribePatchGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -4151,11 +4203,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public virtual Task<DescribePatchGroupsResponse> DescribePatchGroupsAsync(DescribePatchGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePatchGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePatchGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4178,10 +4230,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public virtual DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
         {
-            var marshaller = DescribePatchGroupStateRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchGroupStateResponse>(request, options);
         }
 
         /// <summary>
@@ -4196,11 +4249,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public virtual Task<DescribePatchGroupStateResponse> DescribePatchGroupStateAsync(DescribePatchGroupStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePatchGroupStateRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePatchGroupStateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4227,10 +4280,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSessionsResponse>(request, options);
         }
 
         /// <summary>
@@ -4245,11 +4299,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSessionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4273,10 +4327,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public virtual GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
         {
-            var marshaller = GetAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<GetAutomationExecutionRequest,GetAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -4291,11 +4346,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public virtual Task<GetAutomationExecutionResponse> GetAutomationExecutionAsync(GetAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAutomationExecutionRequest,GetAutomationExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomationExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4349,10 +4404,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public virtual GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request)
         {
-            var marshaller = GetCommandInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommandInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
-            return Invoke<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCommandInvocationResponse>(request, options);
         }
 
         /// <summary>
@@ -4367,11 +4423,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public virtual Task<GetCommandInvocationResponse> GetCommandInvocationAsync(GetCommandInvocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCommandInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommandInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCommandInvocationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4392,10 +4448,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
         public virtual GetConnectionStatusResponse GetConnectionStatus(GetConnectionStatusRequest request)
         {
-            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetConnectionStatusRequest,GetConnectionStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConnectionStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -4410,11 +4467,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
         public virtual Task<GetConnectionStatusResponse> GetConnectionStatusAsync(GetConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConnectionStatusRequest,GetConnectionStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConnectionStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4442,10 +4499,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public virtual GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
         {
-            var marshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDefaultPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -4460,11 +4518,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public virtual Task<GetDefaultPatchBaselineResponse> GetDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDefaultPatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4490,10 +4548,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public virtual GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
         {
-            var marshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeployablePatchSnapshotForInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -4508,11 +4567,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public virtual Task<GetDeployablePatchSnapshotForInstanceResponse> GetDeployablePatchSnapshotForInstanceAsync(GetDeployablePatchSnapshotForInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeployablePatchSnapshotForInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4562,10 +4621,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
-            var marshaller = GetDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<GetDocumentRequest,GetDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDocumentResponse>(request, options);
         }
 
 
@@ -4607,11 +4667,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDocumentRequest,GetDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4650,10 +4710,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public virtual GetInventoryResponse GetInventory(GetInventoryRequest request)
         {
-            var marshaller = GetInventoryRequestMarshaller.Instance;
-            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetInventoryRequest,GetInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -4668,11 +4729,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public virtual Task<GetInventoryResponse> GetInventoryAsync(GetInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInventoryRequestMarshaller.Instance;
-            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetInventoryRequest,GetInventoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetInventoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4699,10 +4760,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public virtual GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request)
         {
-            var marshaller = GetInventorySchemaRequestMarshaller.Instance;
-            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventorySchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
 
-            return Invoke<GetInventorySchemaRequest,GetInventorySchemaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInventorySchemaResponse>(request, options);
         }
 
         /// <summary>
@@ -4717,11 +4779,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public virtual Task<GetInventorySchemaResponse> GetInventorySchemaAsync(GetInventorySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInventorySchemaRequestMarshaller.Instance;
-            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetInventorySchemaRequest,GetInventorySchemaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventorySchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetInventorySchemaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4751,10 +4813,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public virtual GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request)
         {
-            var marshaller = GetMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowRequest,GetMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -4769,11 +4832,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public virtual Task<GetMaintenanceWindowResponse> GetMaintenanceWindowAsync(GetMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetMaintenanceWindowRequest,GetMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4803,10 +4866,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public virtual GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionRequest,GetMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -4821,11 +4885,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public virtual Task<GetMaintenanceWindowExecutionResponse> GetMaintenanceWindowExecutionAsync(GetMaintenanceWindowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetMaintenanceWindowExecutionRequest,GetMaintenanceWindowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMaintenanceWindowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4856,10 +4920,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public virtual GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionTaskRequest,GetMaintenanceWindowExecutionTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -4874,11 +4939,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public virtual Task<GetMaintenanceWindowExecutionTaskResponse> GetMaintenanceWindowExecutionTaskAsync(GetMaintenanceWindowExecutionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetMaintenanceWindowExecutionTaskRequest,GetMaintenanceWindowExecutionTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMaintenanceWindowExecutionTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4909,10 +4974,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
         public virtual GetMaintenanceWindowExecutionTaskInvocationResponse GetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionTaskInvocationResponse>(request, options);
         }
 
         /// <summary>
@@ -4927,11 +4993,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
         public virtual Task<GetMaintenanceWindowExecutionTaskInvocationResponse> GetMaintenanceWindowExecutionTaskInvocationAsync(GetMaintenanceWindowExecutionTaskInvocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMaintenanceWindowExecutionTaskInvocationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4961,10 +5027,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
         public virtual GetMaintenanceWindowTaskResponse GetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request)
         {
-            var marshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -4979,11 +5046,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
         public virtual Task<GetMaintenanceWindowTaskResponse> GetMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMaintenanceWindowTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5014,10 +5081,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
         public virtual GetParameterResponse GetParameter(GetParameterRequest request)
         {
-            var marshaller = GetParameterRequestMarshaller.Instance;
-            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterResponseUnmarshaller.Instance;
 
-            return Invoke<GetParameterRequest,GetParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -5032,11 +5100,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
         public virtual Task<GetParameterResponse> GetParameterAsync(GetParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetParameterRequestMarshaller.Instance;
-            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetParameterRequest,GetParameterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetParameterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5065,10 +5133,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
         {
-            var marshaller = GetParameterHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetParameterHistoryRequest,GetParameterHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParameterHistoryResponse>(request, options);
         }
 
         /// <summary>
@@ -5083,11 +5152,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual Task<GetParameterHistoryResponse> GetParameterHistoryAsync(GetParameterHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetParameterHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetParameterHistoryRequest,GetParameterHistoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetParameterHistoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5111,10 +5180,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public virtual GetParametersResponse GetParameters(GetParametersRequest request)
         {
-            var marshaller = GetParametersRequestMarshaller.Instance;
-            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersResponseUnmarshaller.Instance;
 
-            return Invoke<GetParametersRequest,GetParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -5129,11 +5199,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public virtual Task<GetParametersResponse> GetParametersAsync(GetParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetParametersRequestMarshaller.Instance;
-            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetParametersRequest,GetParametersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetParametersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5187,10 +5257,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         public virtual GetParametersByPathResponse GetParametersByPath(GetParametersByPathRequest request)
         {
-            var marshaller = GetParametersByPathRequestMarshaller.Instance;
-            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersByPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
 
-            return Invoke<GetParametersByPathRequest,GetParametersByPathResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParametersByPathResponse>(request, options);
         }
 
         /// <summary>
@@ -5205,11 +5276,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         public virtual Task<GetParametersByPathResponse> GetParametersByPathAsync(GetParametersByPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetParametersByPathRequestMarshaller.Instance;
-            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetParametersByPathRequest,GetParametersByPathResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersByPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetParametersByPathResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5242,10 +5313,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public virtual GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
         {
-            var marshaller = GetPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -5260,11 +5332,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public virtual Task<GetPatchBaselineResponse> GetPatchBaselineAsync(GetPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5284,10 +5356,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public virtual GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -5302,11 +5375,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public virtual Task<GetPatchBaselineForPatchGroupResponse> GetPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5387,10 +5460,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
         public virtual LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request)
         {
-            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
-            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
 
-            return Invoke<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<LabelParameterVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -5405,11 +5479,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
         public virtual Task<LabelParameterVersionResponse> LabelParameterVersionAsync(LabelParameterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
-            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<LabelParameterVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5432,10 +5506,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
         {
-            var marshaller = ListAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociationsRequest,ListAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -5450,11 +5525,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAssociationsRequest,ListAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5480,10 +5555,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         public virtual ListAssociationVersionsResponse ListAssociationVersions(ListAssociationVersionsRequest request)
         {
-            var marshaller = ListAssociationVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociationVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -5498,11 +5574,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         public virtual Task<ListAssociationVersionsResponse> ListAssociationVersionsAsync(ListAssociationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssociationVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAssociationVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5666,10 +5742,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public virtual ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request)
         {
-            var marshaller = ListCommandInvocationsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListCommandInvocationsRequest,ListCommandInvocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCommandInvocationsResponse>(request, options);
         }
 
 
@@ -5796,11 +5873,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public virtual Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(ListCommandInvocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCommandInvocationsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListCommandInvocationsRequest,ListCommandInvocationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCommandInvocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5952,10 +6029,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public virtual ListCommandsResponse ListCommands(ListCommandsRequest request)
         {
-            var marshaller = ListCommandsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandsResponseUnmarshaller.Instance;
 
-            return Invoke<ListCommandsRequest,ListCommandsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCommandsResponse>(request, options);
         }
 
 
@@ -6074,11 +6152,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public virtual Task<ListCommandsResponse> ListCommandsAsync(ListCommandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCommandsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListCommandsRequest,ListCommandsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCommandsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6113,10 +6191,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
         public virtual ListComplianceItemsResponse ListComplianceItems(ListComplianceItemsRequest request)
         {
-            var marshaller = ListComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceItemsResponse>(request, options);
         }
 
         /// <summary>
@@ -6131,11 +6210,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
         public virtual Task<ListComplianceItemsResponse> ListComplianceItemsAsync(ListComplianceItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComplianceItemsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6163,10 +6242,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         public virtual ListComplianceSummariesResponse ListComplianceSummaries(ListComplianceSummariesRequest request)
         {
-            var marshaller = ListComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -6181,11 +6261,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         public virtual Task<ListComplianceSummariesResponse> ListComplianceSummariesAsync(ListComplianceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComplianceSummariesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6232,10 +6312,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public virtual ListDocumentsResponse ListDocuments(ListDocumentsRequest request)
         {
-            var marshaller = ListDocumentsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentsRequest,ListDocumentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentsResponse>(request, options);
         }
 
 
@@ -6273,11 +6354,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public virtual Task<ListDocumentsResponse> ListDocumentsAsync(ListDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDocumentsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDocumentsRequest,ListDocumentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDocumentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6303,10 +6384,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public virtual ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request)
         {
-            var marshaller = ListDocumentVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentVersionsRequest,ListDocumentVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -6321,11 +6403,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public virtual Task<ListDocumentVersionsResponse> ListDocumentVersionsAsync(ListDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDocumentVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDocumentVersionsRequest,ListDocumentVersionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDocumentVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6378,10 +6460,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public virtual ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request)
         {
-            var marshaller = ListInventoryEntriesRequestMarshaller.Instance;
-            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInventoryEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
 
-            return Invoke<ListInventoryEntriesRequest,ListInventoryEntriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInventoryEntriesResponse>(request, options);
         }
 
         /// <summary>
@@ -6396,11 +6479,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public virtual Task<ListInventoryEntriesResponse> ListInventoryEntriesAsync(ListInventoryEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInventoryEntriesRequestMarshaller.Instance;
-            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListInventoryEntriesRequest,ListInventoryEntriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInventoryEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInventoryEntriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6428,10 +6511,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         public virtual ListResourceComplianceSummariesResponse ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request)
         {
-            var marshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceComplianceSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -6446,11 +6530,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         public virtual Task<ListResourceComplianceSummariesResponse> ListResourceComplianceSummariesAsync(ListResourceComplianceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceComplianceSummariesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6486,10 +6570,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         public virtual ListResourceDataSyncResponse ListResourceDataSync(ListResourceDataSyncRequest request)
         {
-            var marshaller = ListResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceDataSyncRequest,ListResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -6504,11 +6589,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         public virtual Task<ListResourceDataSyncResponse> ListResourceDataSyncAsync(ListResourceDataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListResourceDataSyncRequest,ListResourceDataSyncResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceDataSyncResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6535,10 +6620,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -6553,11 +6639,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6594,10 +6680,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public virtual ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request)
         {
-            var marshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyDocumentPermissionRequest,ModifyDocumentPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyDocumentPermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -6612,11 +6699,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public virtual Task<ModifyDocumentPermissionResponse> ModifyDocumentPermissionAsync(ModifyDocumentPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyDocumentPermissionRequest,ModifyDocumentPermissionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyDocumentPermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6729,10 +6816,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
         public virtual PutComplianceItemsResponse PutComplianceItems(PutComplianceItemsRequest request)
         {
-            var marshaller = PutComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
 
-            return Invoke<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutComplianceItemsResponse>(request, options);
         }
 
         /// <summary>
@@ -6747,11 +6835,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
         public virtual Task<PutComplianceItemsResponse> PutComplianceItemsAsync(PutComplianceItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutComplianceItemsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6831,10 +6919,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public virtual PutInventoryResponse PutInventory(PutInventoryRequest request)
         {
-            var marshaller = PutInventoryRequestMarshaller.Instance;
-            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<PutInventoryRequest,PutInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -6849,11 +6938,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public virtual Task<PutInventoryResponse> PutInventoryAsync(PutInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutInventoryRequestMarshaller.Instance;
-            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutInventoryRequest,PutInventoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInventoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutInventoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6907,10 +6996,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public virtual PutParameterResponse PutParameter(PutParameterRequest request)
         {
-            var marshaller = PutParameterRequestMarshaller.Instance;
-            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutParameterResponseUnmarshaller.Instance;
 
-            return Invoke<PutParameterRequest,PutParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -6925,11 +7015,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public virtual Task<PutParameterResponse> PutParameterAsync(PutParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutParameterRequestMarshaller.Instance;
-            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutParameterRequest,PutParameterResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutParameterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutParameterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6962,10 +7052,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public virtual RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
         {
-            var marshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterDefaultPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -6980,11 +7071,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public virtual Task<RegisterDefaultPatchBaselineResponse> RegisterDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterDefaultPatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7031,10 +7122,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -7049,11 +7141,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual Task<RegisterPatchBaselineForPatchGroupResponse> RegisterPatchBaselineForPatchGroupAsync(RegisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterPatchBaselineForPatchGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7097,10 +7189,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public virtual RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request)
         {
-            var marshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterTargetWithMaintenanceWindowRequest,RegisterTargetWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterTargetWithMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -7115,11 +7208,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public virtual Task<RegisterTargetWithMaintenanceWindowResponse> RegisterTargetWithMaintenanceWindowAsync(RegisterTargetWithMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterTargetWithMaintenanceWindowRequest,RegisterTargetWithMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterTargetWithMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7167,10 +7260,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public virtual RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request)
         {
-            var marshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterTaskWithMaintenanceWindowRequest,RegisterTaskWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterTaskWithMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -7185,11 +7279,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public virtual Task<RegisterTaskWithMaintenanceWindowResponse> RegisterTaskWithMaintenanceWindowAsync(RegisterTaskWithMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RegisterTaskWithMaintenanceWindowRequest,RegisterTaskWithMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterTaskWithMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7219,10 +7313,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsFromResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -7237,11 +7332,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7279,10 +7374,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
         public virtual ResumeSessionResponse ResumeSession(ResumeSessionRequest request)
         {
-            var marshaller = ResumeSessionRequestMarshaller.Instance;
-            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeSessionResponseUnmarshaller.Instance;
 
-            return Invoke<ResumeSessionRequest,ResumeSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResumeSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -7297,11 +7393,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
         public virtual Task<ResumeSessionResponse> ResumeSessionAsync(ResumeSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ResumeSessionRequestMarshaller.Instance;
-            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ResumeSessionRequest,ResumeSessionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResumeSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7333,10 +7429,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         public virtual SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request)
         {
-            var marshaller = SendAutomationSignalRequestMarshaller.Instance;
-            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAutomationSignalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
 
-            return Invoke<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendAutomationSignalResponse>(request, options);
         }
 
         /// <summary>
@@ -7351,11 +7448,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         public virtual Task<SendAutomationSignalResponse> SendAutomationSignalAsync(SendAutomationSignalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendAutomationSignalRequestMarshaller.Instance;
-            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAutomationSignalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendAutomationSignalResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7509,10 +7606,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public virtual SendCommandResponse SendCommand(SendCommandRequest request)
         {
-            var marshaller = SendCommandRequestMarshaller.Instance;
-            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
 
-            return Invoke<SendCommandRequest,SendCommandResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendCommandResponse>(request, options);
         }
 
 
@@ -7607,11 +7705,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public virtual Task<SendCommandResponse> SendCommandAsync(SendCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendCommandRequestMarshaller.Instance;
-            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendCommandRequest,SendCommandResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendCommandResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7635,10 +7733,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         public virtual StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request)
         {
-            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
-            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
 
-            return Invoke<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAssociationsOnceResponse>(request, options);
         }
 
         /// <summary>
@@ -7653,11 +7752,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         public virtual Task<StartAssociationsOnceResponse> StartAssociationsOnceAsync(StartAssociationsOnceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
-            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAssociationsOnceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7700,10 +7799,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public virtual StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request)
         {
-            var marshaller = StartAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StartAutomationExecutionRequest,StartAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -7718,11 +7818,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public virtual Task<StartAutomationExecutionResponse> StartAutomationExecutionAsync(StartAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartAutomationExecutionRequest,StartAutomationExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAutomationExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7762,10 +7862,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual StartSessionResponse StartSession(StartSessionRequest request)
         {
-            var marshaller = StartSessionRequestMarshaller.Instance;
-            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
-            return Invoke<StartSessionRequest,StartSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -7780,11 +7881,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSessionRequestMarshaller.Instance;
-            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartSessionRequest,StartSessionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7811,10 +7912,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public virtual StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request)
         {
-            var marshaller = StopAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -7829,11 +7931,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public virtual Task<StopAutomationExecutionResponse> StopAutomationExecutionAsync(StopAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAutomationExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7864,10 +7966,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
         {
-            var marshaller = TerminateSessionRequestMarshaller.Instance;
-            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateSessionRequest,TerminateSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -7882,11 +7985,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateSessionRequestMarshaller.Instance;
-            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TerminateSessionRequest,TerminateSessionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TerminateSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7945,10 +8048,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public virtual UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request)
         {
-            var marshaller = UpdateAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssociationRequest,UpdateAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -7963,11 +8067,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public virtual Task<UpdateAssociationResponse> UpdateAssociationAsync(UpdateAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAssociationRequest,UpdateAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8023,10 +8127,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public virtual UpdateAssociationStatusResponse UpdateAssociationStatus(UpdateAssociationStatusRequest request)
         {
-            var marshaller = UpdateAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssociationStatusRequest,UpdateAssociationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAssociationStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -8041,11 +8146,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public virtual Task<UpdateAssociationStatusResponse> UpdateAssociationStatusAsync(UpdateAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAssociationStatusRequest,UpdateAssociationStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAssociationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8095,10 +8200,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
-            var marshaller = UpdateDocumentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -8113,11 +8219,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDocumentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDocumentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8146,10 +8252,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public virtual UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request)
         {
-            var marshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDocumentDefaultVersionRequest,UpdateDocumentDefaultVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDocumentDefaultVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -8164,11 +8271,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public virtual Task<UpdateDocumentDefaultVersionResponse> UpdateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDocumentDefaultVersionRequest,UpdateDocumentDefaultVersionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDocumentDefaultVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8198,10 +8305,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public virtual UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -8216,11 +8324,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public virtual Task<UpdateMaintenanceWindowResponse> UpdateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMaintenanceWindowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8280,10 +8388,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
         public virtual UpdateMaintenanceWindowTargetResponse UpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowTargetResponse>(request, options);
         }
 
         /// <summary>
@@ -8298,11 +8407,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
         public virtual Task<UpdateMaintenanceWindowTargetResponse> UpdateMaintenanceWindowTargetAsync(UpdateMaintenanceWindowTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMaintenanceWindowTargetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8366,10 +8475,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
         public virtual UpdateMaintenanceWindowTaskResponse UpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -8384,11 +8494,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
         public virtual Task<UpdateMaintenanceWindowTaskResponse> UpdateMaintenanceWindowTaskAsync(UpdateMaintenanceWindowTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMaintenanceWindowTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8433,10 +8543,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public virtual UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request)
         {
-            var marshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
-            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateManagedInstanceRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -8451,11 +8562,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public virtual Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
-            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateManagedInstanceRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8493,10 +8604,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public virtual UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
         {
-            var marshaller = UpdatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -8511,11 +8623,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public virtual Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePatchBaselineResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleDB.Model;
 using Amazon.SimpleDB.Model.Internal.MarshallTransformations;
@@ -253,7 +254,7 @@ namespace Amazon.SimpleDB
 
         #endregion
 
-        
+
         #region  BatchDeleteAttributes
 
 
@@ -273,10 +274,11 @@ namespace Amazon.SimpleDB
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
         public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
-            var marshaller = BatchDeleteAttributesRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDeleteAttributesRequest,BatchDeleteAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDeleteAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -290,11 +292,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDeleteAttributesRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchDeleteAttributesRequest,BatchDeleteAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -387,10 +389,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
-            var marshaller = BatchPutAttributesRequestMarshaller.Instance;
-            var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<BatchPutAttributesRequest,BatchPutAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchPutAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -404,11 +407,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchPutAttributesRequestMarshaller.Instance;
-            var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<BatchPutAttributesRequest,BatchPutAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchPutAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -445,10 +448,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = CreateDomainRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -462,11 +466,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDomainRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDomainRequest,CreateDomainResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -508,10 +512,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var marshaller = DeleteAttributesRequestMarshaller.Instance;
-            var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAttributesRequest,DeleteAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -525,11 +530,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAttributesRequestMarshaller.Instance;
-            var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAttributesRequest,DeleteAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -550,10 +555,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = DeleteDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -567,11 +573,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -595,10 +601,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
-            var marshaller = DomainMetadataRequestMarshaller.Instance;
-            var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DomainMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DomainMetadataResponseUnmarshaller.Instance;
 
-            return Invoke<DomainMetadataRequest,DomainMetadataResponse>(request, marshaller, unmarshaller);
+            return Invoke<DomainMetadataResponse>(request, options);
         }
 
         /// <summary>
@@ -612,11 +619,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DomainMetadataRequestMarshaller.Instance;
-            var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DomainMetadataRequest,DomainMetadataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DomainMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DomainMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DomainMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -650,10 +657,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
-            var marshaller = GetAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetAttributesRequest,GetAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -667,11 +675,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAttributesRequest,GetAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -720,10 +728,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDomainsResponse>(request, options);
         }
 
 
@@ -761,11 +770,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListDomainsRequest,ListDomainsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -844,10 +853,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var marshaller = PutAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutAttributesRequest,PutAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -861,11 +871,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAttributesRequest,PutAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -925,10 +935,11 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual SelectResponse Select(SelectRequest request)
         {
-            var marshaller = SelectRequestMarshaller.Instance;
-            var unmarshaller = SelectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectResponseUnmarshaller.Instance;
 
-            return Invoke<SelectRequest,SelectResponse>(request, marshaller, unmarshaller);
+            return Invoke<SelectResponse>(request, options);
         }
 
         /// <summary>
@@ -942,11 +953,11 @@ namespace Amazon.SimpleDB
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SelectRequestMarshaller.Instance;
-            var unmarshaller = SelectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SelectRequest,SelectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SelectResponse>(request, options, cancellationToken);
         }
 
         #endregion

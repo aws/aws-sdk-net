@@ -55,6 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteGroupMembershipRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}";

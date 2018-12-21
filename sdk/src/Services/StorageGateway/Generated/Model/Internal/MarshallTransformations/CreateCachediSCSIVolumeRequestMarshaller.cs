@@ -58,6 +58,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             string target = "StorageGateway_20130630.CreateCachediSCSIVolume";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

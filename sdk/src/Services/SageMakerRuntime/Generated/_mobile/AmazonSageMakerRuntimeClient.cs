@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SageMakerRuntime.Model;
 using Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.SageMakerRuntime
 
         #endregion
 
-        
+
         #region  InvokeEndpoint
 
         internal virtual InvokeEndpointResponse InvokeEndpoint(InvokeEndpointRequest request)
         {
-            var marshaller = InvokeEndpointRequestMarshaller.Instance;
-            var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<InvokeEndpointRequest,InvokeEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<InvokeEndpointResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">REST API Reference for InvokeEndpoint Operation</seealso>
         public virtual Task<InvokeEndpointResponse> InvokeEndpointAsync(InvokeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = InvokeEndpointRequestMarshaller.Instance;
-            var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<InvokeEndpointRequest,InvokeEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<InvokeEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion

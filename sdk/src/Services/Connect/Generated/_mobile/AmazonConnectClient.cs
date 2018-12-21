@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Connect.Model;
 using Amazon.Connect.Model.Internal.MarshallTransformations;
@@ -264,15 +265,16 @@ namespace Amazon.Connect
 
         #endregion
 
-        
+
         #region  CreateUser
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateUserResponse>(request, options);
         }
 
 
@@ -288,11 +290,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -301,10 +303,11 @@ namespace Amazon.Connect
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserResponse>(request, options);
         }
 
 
@@ -320,11 +323,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -333,10 +336,11 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserResponse>(request, options);
         }
 
 
@@ -352,11 +356,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeUserRequest,DescribeUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -365,10 +369,11 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserHierarchyGroupResponse DescribeUserHierarchyGroup(DescribeUserHierarchyGroupRequest request)
         {
-            var marshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserHierarchyGroupRequest,DescribeUserHierarchyGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserHierarchyGroupResponse>(request, options);
         }
 
 
@@ -384,11 +389,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup">REST API Reference for DescribeUserHierarchyGroup Operation</seealso>
         public virtual Task<DescribeUserHierarchyGroupResponse> DescribeUserHierarchyGroupAsync(DescribeUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeUserHierarchyGroupRequest,DescribeUserHierarchyGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeUserHierarchyGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -397,10 +402,11 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserHierarchyStructureResponse DescribeUserHierarchyStructure(DescribeUserHierarchyStructureRequest request)
         {
-            var marshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserHierarchyStructureRequest,DescribeUserHierarchyStructureResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserHierarchyStructureResponse>(request, options);
         }
 
 
@@ -416,11 +422,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">REST API Reference for DescribeUserHierarchyStructure Operation</seealso>
         public virtual Task<DescribeUserHierarchyStructureResponse> DescribeUserHierarchyStructureAsync(DescribeUserHierarchyStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeUserHierarchyStructureRequest,DescribeUserHierarchyStructureResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeUserHierarchyStructureResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -429,10 +435,11 @@ namespace Amazon.Connect
 
         internal virtual GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request)
         {
-            var marshaller = GetContactAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<GetContactAttributesRequest,GetContactAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetContactAttributesResponse>(request, options);
         }
 
 
@@ -448,11 +455,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
         public virtual Task<GetContactAttributesResponse> GetContactAttributesAsync(GetContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetContactAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetContactAttributesRequest,GetContactAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetContactAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -461,10 +468,11 @@ namespace Amazon.Connect
 
         internal virtual GetCurrentMetricDataResponse GetCurrentMetricData(GetCurrentMetricDataRequest request)
         {
-            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
-            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
 
-            return Invoke<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCurrentMetricDataResponse>(request, options);
         }
 
 
@@ -480,11 +488,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">REST API Reference for GetCurrentMetricData Operation</seealso>
         public virtual Task<GetCurrentMetricDataResponse> GetCurrentMetricDataAsync(GetCurrentMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
-            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetCurrentMetricDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -493,10 +501,11 @@ namespace Amazon.Connect
 
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var marshaller = GetFederationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
-            return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFederationTokenResponse>(request, options);
         }
 
 
@@ -512,11 +521,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetFederationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetFederationTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -525,10 +534,11 @@ namespace Amazon.Connect
 
         internal virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
         {
-            var marshaller = GetMetricDataRequestMarshaller.Instance;
-            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
-            return Invoke<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMetricDataResponse>(request, options);
         }
 
 
@@ -544,11 +554,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMetricDataRequestMarshaller.Instance;
-            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetMetricDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -557,10 +567,11 @@ namespace Amazon.Connect
 
         internal virtual ListRoutingProfilesResponse ListRoutingProfiles(ListRoutingProfilesRequest request)
         {
-            var marshaller = ListRoutingProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListRoutingProfilesRequest,ListRoutingProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRoutingProfilesResponse>(request, options);
         }
 
 
@@ -576,11 +587,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">REST API Reference for ListRoutingProfiles Operation</seealso>
         public virtual Task<ListRoutingProfilesResponse> ListRoutingProfilesAsync(ListRoutingProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRoutingProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListRoutingProfilesRequest,ListRoutingProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListRoutingProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -589,10 +600,11 @@ namespace Amazon.Connect
 
         internal virtual ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest request)
         {
-            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSecurityProfilesResponse>(request, options);
         }
 
 
@@ -608,11 +620,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">REST API Reference for ListSecurityProfiles Operation</seealso>
         public virtual Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(ListSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSecurityProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -621,10 +633,11 @@ namespace Amazon.Connect
 
         internal virtual ListUserHierarchyGroupsResponse ListUserHierarchyGroups(ListUserHierarchyGroupsRequest request)
         {
-            var marshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListUserHierarchyGroupsRequest,ListUserHierarchyGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUserHierarchyGroupsResponse>(request, options);
         }
 
 
@@ -640,11 +653,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">REST API Reference for ListUserHierarchyGroups Operation</seealso>
         public virtual Task<ListUserHierarchyGroupsResponse> ListUserHierarchyGroupsAsync(ListUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListUserHierarchyGroupsRequest,ListUserHierarchyGroupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListUserHierarchyGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -653,10 +666,11 @@ namespace Amazon.Connect
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUsersResponse>(request, options);
         }
 
 
@@ -672,11 +686,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -685,10 +699,11 @@ namespace Amazon.Connect
 
         internal virtual StartOutboundVoiceContactResponse StartOutboundVoiceContact(StartOutboundVoiceContactRequest request)
         {
-            var marshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
-            var unmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
 
-            return Invoke<StartOutboundVoiceContactRequest,StartOutboundVoiceContactResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartOutboundVoiceContactResponse>(request, options);
         }
 
 
@@ -704,11 +719,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">REST API Reference for StartOutboundVoiceContact Operation</seealso>
         public virtual Task<StartOutboundVoiceContactResponse> StartOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
-            var unmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartOutboundVoiceContactRequest,StartOutboundVoiceContactResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartOutboundVoiceContactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -717,10 +732,11 @@ namespace Amazon.Connect
 
         internal virtual StopContactResponse StopContact(StopContactRequest request)
         {
-            var marshaller = StopContactRequestMarshaller.Instance;
-            var unmarshaller = StopContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
 
-            return Invoke<StopContactRequest,StopContactResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopContactResponse>(request, options);
         }
 
 
@@ -736,11 +752,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">REST API Reference for StopContact Operation</seealso>
         public virtual Task<StopContactResponse> StopContactAsync(StopContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopContactRequestMarshaller.Instance;
-            var unmarshaller = StopContactResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopContactRequest,StopContactResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopContactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -749,10 +765,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactAttributesResponse UpdateContactAttributes(UpdateContactAttributesRequest request)
         {
-            var marshaller = UpdateContactAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateContactAttributesRequest,UpdateContactAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateContactAttributesResponse>(request, options);
         }
 
 
@@ -768,11 +785,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">REST API Reference for UpdateContactAttributes Operation</seealso>
         public virtual Task<UpdateContactAttributesResponse> UpdateContactAttributesAsync(UpdateContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateContactAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateContactAttributesRequest,UpdateContactAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateContactAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -781,10 +798,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserHierarchyResponse UpdateUserHierarchy(UpdateUserHierarchyRequest request)
         {
-            var marshaller = UpdateUserHierarchyRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserHierarchyRequest,UpdateUserHierarchyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserHierarchyResponse>(request, options);
         }
 
 
@@ -800,11 +818,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">REST API Reference for UpdateUserHierarchy Operation</seealso>
         public virtual Task<UpdateUserHierarchyResponse> UpdateUserHierarchyAsync(UpdateUserHierarchyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserHierarchyRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserHierarchyRequest,UpdateUserHierarchyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserHierarchyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -813,10 +831,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserIdentityInfoResponse UpdateUserIdentityInfo(UpdateUserIdentityInfoRequest request)
         {
-            var marshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserIdentityInfoRequest,UpdateUserIdentityInfoResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserIdentityInfoResponse>(request, options);
         }
 
 
@@ -832,11 +851,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">REST API Reference for UpdateUserIdentityInfo Operation</seealso>
         public virtual Task<UpdateUserIdentityInfoResponse> UpdateUserIdentityInfoAsync(UpdateUserIdentityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserIdentityInfoRequest,UpdateUserIdentityInfoResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserIdentityInfoResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -845,10 +864,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserPhoneConfigResponse UpdateUserPhoneConfig(UpdateUserPhoneConfigRequest request)
         {
-            var marshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserPhoneConfigRequest,UpdateUserPhoneConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserPhoneConfigResponse>(request, options);
         }
 
 
@@ -864,11 +884,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig">REST API Reference for UpdateUserPhoneConfig Operation</seealso>
         public virtual Task<UpdateUserPhoneConfigResponse> UpdateUserPhoneConfigAsync(UpdateUserPhoneConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserPhoneConfigRequest,UpdateUserPhoneConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserPhoneConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -877,10 +897,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserRoutingProfileResponse UpdateUserRoutingProfile(UpdateUserRoutingProfileRequest request)
         {
-            var marshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserRoutingProfileRequest,UpdateUserRoutingProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserRoutingProfileResponse>(request, options);
         }
 
 
@@ -896,11 +917,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserRoutingProfile">REST API Reference for UpdateUserRoutingProfile Operation</seealso>
         public virtual Task<UpdateUserRoutingProfileResponse> UpdateUserRoutingProfileAsync(UpdateUserRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserRoutingProfileRequest,UpdateUserRoutingProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserRoutingProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -909,10 +930,11 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserSecurityProfilesResponse UpdateUserSecurityProfiles(UpdateUserSecurityProfilesRequest request)
         {
-            var marshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserSecurityProfilesRequest,UpdateUserSecurityProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserSecurityProfilesResponse>(request, options);
         }
 
 
@@ -928,11 +950,11 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles">REST API Reference for UpdateUserSecurityProfiles Operation</seealso>
         public virtual Task<UpdateUserSecurityProfilesResponse> UpdateUserSecurityProfilesAsync(UpdateUserSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserSecurityProfilesRequest,UpdateUserSecurityProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserSecurityProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion

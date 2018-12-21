@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.PinpointSMSVoice.Model;
 using Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.PinpointSMSVoice
 
         #endregion
 
-        
+
         #region  CreateConfigurationSet
 
         /// <summary>
@@ -263,10 +264,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -282,11 +284,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateConfigurationSetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -333,10 +335,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -352,11 +355,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -397,10 +400,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -416,11 +420,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationSetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -461,10 +465,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -480,11 +485,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -526,10 +531,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetEventDestinationsResponse>(request, options);
         }
 
         /// <summary>
@@ -545,11 +551,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetConfigurationSetEventDestinationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -587,10 +593,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request)
         {
-            var marshaller = SendVoiceMessageRequestMarshaller.Instance;
-            var unmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
-            return Invoke<SendVoiceMessageRequest,SendVoiceMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendVoiceMessageResponse>(request, options);
         }
 
         /// <summary>
@@ -606,11 +613,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginSendVoiceMessage(SendVoiceMessageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendVoiceMessageRequestMarshaller.Instance;
-            var unmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendVoiceMessageRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -653,10 +660,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -672,11 +680,11 @@ namespace Amazon.PinpointSMSVoice
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

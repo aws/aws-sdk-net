@@ -55,6 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisableImportFindingsForProductRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityHub");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/productSubscriptions/{ProductSubscriptionArn+}";

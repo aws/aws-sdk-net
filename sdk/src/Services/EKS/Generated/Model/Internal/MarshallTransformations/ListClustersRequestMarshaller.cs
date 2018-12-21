@@ -55,6 +55,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListClustersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/clusters";

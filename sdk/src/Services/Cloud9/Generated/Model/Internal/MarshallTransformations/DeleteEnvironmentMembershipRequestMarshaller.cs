@@ -58,6 +58,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             string target = "AWSCloud9WorkspaceManagementService.DeleteEnvironmentMembership";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-23";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

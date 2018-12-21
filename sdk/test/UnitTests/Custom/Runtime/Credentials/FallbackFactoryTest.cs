@@ -37,11 +37,17 @@ namespace AWSSDK.UnitTests
             .AppendLine("[default]")
             .AppendLine("region=us-west-2")
             .AppendLine("aws_access_key_id=default_aws_access_key_id")
-            .AppendLine("aws_secret_access_key=default_aws_secret_access_key")
+            .AppendLine("aws_secret_access_key=default_aws_secret_access_key")            
             .AppendLine("[other]")
             .AppendLine("region=us-west-1")
             .AppendLine("aws_access_key_id=other_aws_access_key_id")
             .AppendLine("aws_secret_access_key=other_aws_secret_access_key")
+            .AppendLine("endpoint_discovery_enabled=false")
+            .AppendLine("[other2]")
+            .AppendLine("region=us-west-1")
+            .AppendLine("aws_access_key_id=other2_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=other2_aws_secret_access_key")
+            .AppendLine("endpoint_discovery_enabled=true")
             .ToString();
 
         [TestMethod]
@@ -54,8 +60,11 @@ namespace AWSSDK.UnitTests
 
                 var region = FallbackRegionFactory.GetRegionEndpoint(false);
                 Assert.AreEqual(RegionEndpoint.USWest2, region);
+
+                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                Assert.IsFalse(enabled.HasValue);                
             }
-        }
+        }               
 
         [TestMethod]
         public void TestOtherProfile()
@@ -67,23 +76,52 @@ namespace AWSSDK.UnitTests
 
                 var region = FallbackRegionFactory.GetRegionEndpoint(false);
                 Assert.AreEqual(RegionEndpoint.USWest1, region);
+
+                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsFalse(enabled.Value);
+            }
+        }
+
+        [TestMethod]
+        public void TestOther2Profile()
+        {
+            using (new FallbackFactoryTestFixture(ProfileText, "other2"))
+            {                
+                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsTrue(enabled.Value);
+            }
+        }
+
+        [TestMethod]
+        public void TestEnableEndpointDiscoveryEnvVariable()
+        {
+            using (new FallbackFactoryTestFixture(ProfileText, "other2", "false"))
+            {
+                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
+                Assert.IsTrue(enabled.HasValue);
+                Assert.IsFalse(enabled.Value);
             }
         }
 
         public class FallbackFactoryTestFixture : IDisposable
         {
             private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
+            private const string AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE = "AWS_ENABLE_ENDPOINT_DISCOVERY";
 
             private SharedCredentialsFileTestFixture sharedFixture;
             private NetSDKCredentialsFileTestFixture netSdkFixture;
 
             private CredentialProfileStoreChain originalCredsChain;
             private CredentialProfileStoreChain originalRegionChain;
+            private CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
 
             private string originalAWSProfileValue;
-            private string testAWSProfileValue;
+            private string originalAWSEnableEndpointDiscoveryValue;
+            
 
-            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue)
+            public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, string enableEndpointDiscoveryValue = null)
             {
                 sharedFixture = new SharedCredentialsFileTestFixture(sharedCredsFileContent);
                 netSdkFixture = new NetSDKCredentialsFileTestFixture();
@@ -94,28 +132,36 @@ namespace AWSSDK.UnitTests
                 originalRegionChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain");
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
-                testAWSProfileValue = awsProfileValue;
-                originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
-                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, testAWSProfileValue);
+                originalEndpointDiscoveryEnabledChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain");
+                ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
+                originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, awsProfileValue);
+
+                originalAWSEnableEndpointDiscoveryValue = Environment.GetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
+                Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, enableEndpointDiscoveryValue);
 
                 // reset before use to ensure the new credentialProfileChains are used.
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
+                FallbackEndpointDiscoveryEnabledFactory.Reset();
             }
 
             public void Dispose()
             {
                 Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
+                Environment.SetEnvironmentVariable(AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE, originalAWSEnableEndpointDiscoveryValue);
 
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", originalRegionChain);
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
+                ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", originalEndpointDiscoveryEnabledChain);
 
                 netSdkFixture.Dispose();
                 sharedFixture.Dispose();
 
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
+                FallbackEndpointDiscoveryEnabledFactory.Reset();
             }
         }
     }

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.Model.Internal.MarshallTransformations;
@@ -298,7 +299,7 @@ namespace Amazon.SecurityToken
 
         #endregion
 
-        
+
         #region  AssumeRole
 
 
@@ -449,10 +450,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            var marshaller = AssumeRoleRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
-            return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssumeRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -467,11 +469,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssumeRoleRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssumeRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -621,10 +623,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
-            return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssumeRoleWithSAMLResponse>(request, options);
         }
 
         /// <summary>
@@ -639,11 +642,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssumeRoleWithSAMLResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -824,10 +827,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssumeRoleWithWebIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -842,11 +846,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
-            var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssumeRoleWithWebIdentityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -917,10 +921,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
-            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
-            return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DecodeAuthorizationMessageResponse>(request, options);
         }
 
         /// <summary>
@@ -935,11 +940,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
-            var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DecodeAuthorizationMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -956,10 +961,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {
-            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallerIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCallerIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -974,11 +980,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual Task<GetCallerIdentityResponse> GetCallerIdentityAsync(GetCallerIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCallerIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCallerIdentityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1112,10 +1118,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var marshaller = GetFederationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
-            return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFederationTokenResponse>(request, options);
         }
 
         /// <summary>
@@ -1130,11 +1137,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetFederationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetFederationTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1293,10 +1300,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            var marshaller = GetSessionTokenRequestMarshaller.Instance;
-            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
-            return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSessionTokenResponse>(request, options);
         }
 
 
@@ -1390,11 +1398,11 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSessionTokenRequestMarshaller.Instance;
-            var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSessionTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion

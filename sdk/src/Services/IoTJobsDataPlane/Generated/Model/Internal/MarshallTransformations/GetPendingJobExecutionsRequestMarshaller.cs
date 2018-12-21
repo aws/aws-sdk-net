@@ -55,6 +55,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetPendingJobExecutionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTJobsDataPlane");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-29";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/things/{thingName}/jobs";

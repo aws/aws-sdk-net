@@ -22,14 +22,15 @@ namespace AWSSDK.UnitTests
     public class RetryHandlerTests : RuntimePipelineTestBase<RetryHandler>
     {
         const int MAX_RETRIES = 2;
+        const int MAX_INVALID_ENDPOINT_RETRIES = 2;
 
         [ClassInitialize]
         public static void Initialize(TestContext t)
-        {
+        {        
             ClientConfig config = new AmazonS3Config
             {
-                    ServiceURL = @"https://s3.amazonaws.com",
-                    MaxErrorRetry = MAX_RETRIES
+                ServiceURL = @"https://s3.amazonaws.com",
+                MaxErrorRetry = MAX_RETRIES
             };
             Handler = new RetryHandler(new DefaultRetryPolicy(config));
             RuntimePipeline.AddHandler(Handler);
@@ -38,7 +39,7 @@ namespace AWSSDK.UnitTests
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void RetryForIOException()
-        {
+        {         
             Tester.Reset();
             Tester.Action = (int callCount) =>
             {
@@ -111,6 +112,26 @@ namespace AWSSDK.UnitTests
             },
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForHttpStatus421()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException("Invalid Endpoint Exception",
+                    new WebException(), (HttpStatusCode)421);
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                RuntimePipeline.InvokeSync(request);
+            },
+            typeof(AmazonServiceException));
+            Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
 
         [TestMethod]
@@ -264,7 +285,29 @@ namespace AWSSDK.UnitTests
             },
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }  
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async45")]
+        public async Task RetryForHttpStatus421Async()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException("Invalid Endpoint Exception",
+                    new WebException(), (HttpStatusCode)421);
+            };
+
+            await Utils.AssertExceptionExpectedAsync(() =>
+            {
+                var request = CreateTestContext();
+                return RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(request);
+            },
+            typeof(AmazonServiceException));
+            Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
+        }
 #elif !BCL45 && BCL
 
         [TestMethod][TestCategory("UnitTest")]
@@ -323,6 +366,26 @@ namespace AWSSDK.UnitTests
 
             Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestCategory(@"Runtime\Async35")]
+        public void RetryForHttpStatus421Async()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException("Invalid Endpoint Exception",
+                    new WebException(), (HttpStatusCode)421);
+            };
+
+            var request = CreateAsyncTestContext();
+            var asyncResult = RuntimePipeline.InvokeAsync(request);
+            asyncResult.AsyncWaitHandle.WaitOne();
+
+            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
+            Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
 
 #endif        

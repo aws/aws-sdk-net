@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SageMaker.Model;
 using Amazon.SageMaker.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.SageMaker
 
         #endregion
 
-        
+
         #region  AddTags
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -278,10 +280,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateAlgorithmResponse CreateAlgorithm(CreateAlgorithmRequest request)
         {
-            var marshaller = CreateAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAlgorithmRequest,CreateAlgorithmResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAlgorithmResponse>(request, options);
         }
 
 
@@ -297,11 +300,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">REST API Reference for CreateAlgorithm Operation</seealso>
         public virtual Task<CreateAlgorithmResponse> CreateAlgorithmAsync(CreateAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateAlgorithmRequest,CreateAlgorithmResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateAlgorithmResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +313,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateCodeRepositoryResponse CreateCodeRepository(CreateCodeRepositoryRequest request)
         {
-            var marshaller = CreateCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCodeRepositoryRequest,CreateCodeRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCodeRepositoryResponse>(request, options);
         }
 
 
@@ -329,11 +333,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">REST API Reference for CreateCodeRepository Operation</seealso>
         public virtual Task<CreateCodeRepositoryResponse> CreateCodeRepositoryAsync(CreateCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateCodeRepositoryRequest,CreateCodeRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateCodeRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -342,10 +346,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateCompilationJobResponse CreateCompilationJob(CreateCompilationJobRequest request)
         {
-            var marshaller = CreateCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCompilationJobRequest,CreateCompilationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCompilationJobResponse>(request, options);
         }
 
 
@@ -361,11 +366,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">REST API Reference for CreateCompilationJob Operation</seealso>
         public virtual Task<CreateCompilationJobResponse> CreateCompilationJobAsync(CreateCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateCompilationJobRequest,CreateCompilationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateCompilationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +379,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var marshaller = CreateEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEndpointRequest,CreateEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEndpointResponse>(request, options);
         }
 
 
@@ -393,11 +399,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateEndpointRequest,CreateEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -406,10 +412,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateEndpointConfigResponse CreateEndpointConfig(CreateEndpointConfigRequest request)
         {
-            var marshaller = CreateEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEndpointConfigRequest,CreateEndpointConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEndpointConfigResponse>(request, options);
         }
 
 
@@ -425,11 +432,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">REST API Reference for CreateEndpointConfig Operation</seealso>
         public virtual Task<CreateEndpointConfigResponse> CreateEndpointConfigAsync(CreateEndpointConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateEndpointConfigRequest,CreateEndpointConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateEndpointConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -438,10 +445,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateHyperParameterTuningJobResponse CreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request)
         {
-            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateHyperParameterTuningJobRequest,CreateHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateHyperParameterTuningJobResponse>(request, options);
         }
 
 
@@ -457,11 +465,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
         public virtual Task<CreateHyperParameterTuningJobResponse> CreateHyperParameterTuningJobAsync(CreateHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateHyperParameterTuningJobRequest,CreateHyperParameterTuningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -470,10 +478,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateLabelingJobResponse CreateLabelingJob(CreateLabelingJobRequest request)
         {
-            var marshaller = CreateLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLabelingJobRequest,CreateLabelingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLabelingJobResponse>(request, options);
         }
 
 
@@ -489,11 +498,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateLabelingJob">REST API Reference for CreateLabelingJob Operation</seealso>
         public virtual Task<CreateLabelingJobResponse> CreateLabelingJobAsync(CreateLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateLabelingJobRequest,CreateLabelingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateLabelingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -502,10 +511,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var marshaller = CreateModelRequestMarshaller.Instance;
-            var unmarshaller = CreateModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
-            return Invoke<CreateModelRequest,CreateModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateModelResponse>(request, options);
         }
 
 
@@ -521,11 +531,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateModelRequestMarshaller.Instance;
-            var unmarshaller = CreateModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateModelRequest,CreateModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -534,10 +544,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateModelPackageResponse CreateModelPackage(CreateModelPackageRequest request)
         {
-            var marshaller = CreateModelPackageRequestMarshaller.Instance;
-            var unmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
 
-            return Invoke<CreateModelPackageRequest,CreateModelPackageResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateModelPackageResponse>(request, options);
         }
 
 
@@ -553,11 +564,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
         public virtual Task<CreateModelPackageResponse> CreateModelPackageAsync(CreateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateModelPackageRequestMarshaller.Instance;
-            var unmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateModelPackageRequest,CreateModelPackageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateModelPackageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -566,10 +577,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateNotebookInstanceResponse CreateNotebookInstance(CreateNotebookInstanceRequest request)
         {
-            var marshaller = CreateNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateNotebookInstanceRequest,CreateNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateNotebookInstanceResponse>(request, options);
         }
 
 
@@ -585,11 +597,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">REST API Reference for CreateNotebookInstance Operation</seealso>
         public virtual Task<CreateNotebookInstanceResponse> CreateNotebookInstanceAsync(CreateNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateNotebookInstanceRequest,CreateNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -598,10 +610,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateNotebookInstanceLifecycleConfigResponse CreateNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request)
         {
-            var marshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return Invoke<CreateNotebookInstanceLifecycleConfigRequest,CreateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateNotebookInstanceLifecycleConfigResponse>(request, options);
         }
 
 
@@ -617,11 +630,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<CreateNotebookInstanceLifecycleConfigResponse> CreateNotebookInstanceLifecycleConfigAsync(CreateNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateNotebookInstanceLifecycleConfigRequest,CreateNotebookInstanceLifecycleConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -630,10 +643,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreatePresignedNotebookInstanceUrlResponse CreatePresignedNotebookInstanceUrl(CreatePresignedNotebookInstanceUrlRequest request)
         {
-            var marshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
-            var unmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePresignedNotebookInstanceUrlRequest,CreatePresignedNotebookInstanceUrlResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePresignedNotebookInstanceUrlResponse>(request, options);
         }
 
 
@@ -649,11 +663,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">REST API Reference for CreatePresignedNotebookInstanceUrl Operation</seealso>
         public virtual Task<CreatePresignedNotebookInstanceUrlResponse> CreatePresignedNotebookInstanceUrlAsync(CreatePresignedNotebookInstanceUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
-            var unmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePresignedNotebookInstanceUrlRequest,CreatePresignedNotebookInstanceUrlResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePresignedNotebookInstanceUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -662,10 +676,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateTrainingJobResponse CreateTrainingJob(CreateTrainingJobRequest request)
         {
-            var marshaller = CreateTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTrainingJobRequest,CreateTrainingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTrainingJobResponse>(request, options);
         }
 
 
@@ -681,11 +696,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         public virtual Task<CreateTrainingJobResponse> CreateTrainingJobAsync(CreateTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateTrainingJobRequest,CreateTrainingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateTrainingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -694,10 +709,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request)
         {
-            var marshaller = CreateTransformJobRequestMarshaller.Instance;
-            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTransformJobResponse>(request, options);
         }
 
 
@@ -713,11 +729,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
         public virtual Task<CreateTransformJobResponse> CreateTransformJobAsync(CreateTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTransformJobRequestMarshaller.Instance;
-            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateTransformJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -726,10 +742,11 @@ namespace Amazon.SageMaker
 
         internal virtual CreateWorkteamResponse CreateWorkteam(CreateWorkteamRequest request)
         {
-            var marshaller = CreateWorkteamRequestMarshaller.Instance;
-            var unmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<CreateWorkteamRequest,CreateWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateWorkteamResponse>(request, options);
         }
 
 
@@ -745,11 +762,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkteam">REST API Reference for CreateWorkteam Operation</seealso>
         public virtual Task<CreateWorkteamResponse> CreateWorkteamAsync(CreateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateWorkteamRequestMarshaller.Instance;
-            var unmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateWorkteamRequest,CreateWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -758,10 +775,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteAlgorithmResponse DeleteAlgorithm(DeleteAlgorithmRequest request)
         {
-            var marshaller = DeleteAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAlgorithmRequest,DeleteAlgorithmResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAlgorithmResponse>(request, options);
         }
 
 
@@ -777,11 +795,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAlgorithm">REST API Reference for DeleteAlgorithm Operation</seealso>
         public virtual Task<DeleteAlgorithmResponse> DeleteAlgorithmAsync(DeleteAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAlgorithmRequest,DeleteAlgorithmResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteAlgorithmResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -790,10 +808,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteCodeRepositoryResponse DeleteCodeRepository(DeleteCodeRepositoryRequest request)
         {
-            var marshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCodeRepositoryRequest,DeleteCodeRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCodeRepositoryResponse>(request, options);
         }
 
 
@@ -809,11 +828,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">REST API Reference for DeleteCodeRepository Operation</seealso>
         public virtual Task<DeleteCodeRepositoryResponse> DeleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteCodeRepositoryRequest,DeleteCodeRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteCodeRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -822,10 +841,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointResponse>(request, options);
         }
 
 
@@ -841,11 +861,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -854,10 +874,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteEndpointConfigResponse DeleteEndpointConfig(DeleteEndpointConfigRequest request)
         {
-            var marshaller = DeleteEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointConfigRequest,DeleteEndpointConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointConfigResponse>(request, options);
         }
 
 
@@ -873,11 +894,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">REST API Reference for DeleteEndpointConfig Operation</seealso>
         public virtual Task<DeleteEndpointConfigResponse> DeleteEndpointConfigAsync(DeleteEndpointConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteEndpointConfigRequest,DeleteEndpointConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteEndpointConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -886,10 +907,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var marshaller = DeleteModelRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteModelRequest,DeleteModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteModelResponse>(request, options);
         }
 
 
@@ -905,11 +927,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteModelRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteModelRequest,DeleteModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -918,10 +940,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteModelPackageResponse DeleteModelPackage(DeleteModelPackageRequest request)
         {
-            var marshaller = DeleteModelPackageRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteModelPackageRequest,DeleteModelPackageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteModelPackageResponse>(request, options);
         }
 
 
@@ -937,11 +960,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">REST API Reference for DeleteModelPackage Operation</seealso>
         public virtual Task<DeleteModelPackageResponse> DeleteModelPackageAsync(DeleteModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteModelPackageRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteModelPackageRequest,DeleteModelPackageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteModelPackageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -950,10 +973,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteNotebookInstanceResponse DeleteNotebookInstance(DeleteNotebookInstanceRequest request)
         {
-            var marshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotebookInstanceRequest,DeleteNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotebookInstanceResponse>(request, options);
         }
 
 
@@ -969,11 +993,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">REST API Reference for DeleteNotebookInstance Operation</seealso>
         public virtual Task<DeleteNotebookInstanceResponse> DeleteNotebookInstanceAsync(DeleteNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteNotebookInstanceRequest,DeleteNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -982,10 +1006,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteNotebookInstanceLifecycleConfigResponse DeleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request)
         {
-            var marshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotebookInstanceLifecycleConfigRequest,DeleteNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotebookInstanceLifecycleConfigResponse>(request, options);
         }
 
 
@@ -1001,11 +1026,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<DeleteNotebookInstanceLifecycleConfigResponse> DeleteNotebookInstanceLifecycleConfigAsync(DeleteNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteNotebookInstanceLifecycleConfigRequest,DeleteNotebookInstanceLifecycleConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1014,10 +1039,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsResponse>(request, options);
         }
 
 
@@ -1033,11 +1059,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1046,10 +1072,11 @@ namespace Amazon.SageMaker
 
         internal virtual DeleteWorkteamResponse DeleteWorkteam(DeleteWorkteamRequest request)
         {
-            var marshaller = DeleteWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteWorkteamRequest,DeleteWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteWorkteamResponse>(request, options);
         }
 
 
@@ -1065,11 +1092,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkteam">REST API Reference for DeleteWorkteam Operation</seealso>
         public virtual Task<DeleteWorkteamResponse> DeleteWorkteamAsync(DeleteWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteWorkteamRequest,DeleteWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1078,10 +1105,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeAlgorithmResponse DescribeAlgorithm(DescribeAlgorithmRequest request)
         {
-            var marshaller = DescribeAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAlgorithmRequest,DescribeAlgorithmResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAlgorithmResponse>(request, options);
         }
 
 
@@ -1097,11 +1125,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAlgorithm">REST API Reference for DescribeAlgorithm Operation</seealso>
         public virtual Task<DescribeAlgorithmResponse> DescribeAlgorithmAsync(DescribeAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAlgorithmRequestMarshaller.Instance;
-            var unmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlgorithmRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAlgorithmRequest,DescribeAlgorithmResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAlgorithmResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1110,10 +1138,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeCodeRepositoryResponse DescribeCodeRepository(DescribeCodeRepositoryRequest request)
         {
-            var marshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCodeRepositoryRequest,DescribeCodeRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCodeRepositoryResponse>(request, options);
         }
 
 
@@ -1129,11 +1158,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">REST API Reference for DescribeCodeRepository Operation</seealso>
         public virtual Task<DescribeCodeRepositoryResponse> DescribeCodeRepositoryAsync(DescribeCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeCodeRepositoryRequest,DescribeCodeRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeCodeRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1142,10 +1171,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeCompilationJobResponse DescribeCompilationJob(DescribeCompilationJobRequest request)
         {
-            var marshaller = DescribeCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCompilationJobRequest,DescribeCompilationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCompilationJobResponse>(request, options);
         }
 
 
@@ -1161,11 +1191,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
         public virtual Task<DescribeCompilationJobResponse> DescribeCompilationJobAsync(DescribeCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeCompilationJobRequest,DescribeCompilationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeCompilationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1174,10 +1204,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
-            var marshaller = DescribeEndpointRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointResponse>(request, options);
         }
 
 
@@ -1193,11 +1224,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual Task<DescribeEndpointResponse> DescribeEndpointAsync(DescribeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEndpointRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1206,10 +1237,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeEndpointConfigResponse DescribeEndpointConfig(DescribeEndpointConfigRequest request)
         {
-            var marshaller = DescribeEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEndpointConfigRequest,DescribeEndpointConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEndpointConfigResponse>(request, options);
         }
 
 
@@ -1225,11 +1257,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpointConfig">REST API Reference for DescribeEndpointConfig Operation</seealso>
         public virtual Task<DescribeEndpointConfigResponse> DescribeEndpointConfigAsync(DescribeEndpointConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEndpointConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEndpointConfigRequest,DescribeEndpointConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEndpointConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1238,10 +1270,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeHyperParameterTuningJobResponse DescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request)
         {
-            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeHyperParameterTuningJobRequest,DescribeHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeHyperParameterTuningJobResponse>(request, options);
         }
 
 
@@ -1257,11 +1290,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
         public virtual Task<DescribeHyperParameterTuningJobResponse> DescribeHyperParameterTuningJobAsync(DescribeHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeHyperParameterTuningJobRequest,DescribeHyperParameterTuningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1270,10 +1303,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeLabelingJobResponse DescribeLabelingJob(DescribeLabelingJobRequest request)
         {
-            var marshaller = DescribeLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeLabelingJobRequest,DescribeLabelingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeLabelingJobResponse>(request, options);
         }
 
 
@@ -1289,11 +1323,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
         public virtual Task<DescribeLabelingJobResponse> DescribeLabelingJobAsync(DescribeLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeLabelingJobRequest,DescribeLabelingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeLabelingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1302,10 +1336,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
         {
-            var marshaller = DescribeModelRequestMarshaller.Instance;
-            var unmarshaller = DescribeModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeModelRequest,DescribeModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeModelResponse>(request, options);
         }
 
 
@@ -1321,11 +1356,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual Task<DescribeModelResponse> DescribeModelAsync(DescribeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeModelRequestMarshaller.Instance;
-            var unmarshaller = DescribeModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeModelRequest,DescribeModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1334,10 +1369,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeModelPackageResponse DescribeModelPackage(DescribeModelPackageRequest request)
         {
-            var marshaller = DescribeModelPackageRequestMarshaller.Instance;
-            var unmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeModelPackageRequest,DescribeModelPackageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeModelPackageResponse>(request, options);
         }
 
 
@@ -1353,11 +1389,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">REST API Reference for DescribeModelPackage Operation</seealso>
         public virtual Task<DescribeModelPackageResponse> DescribeModelPackageAsync(DescribeModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeModelPackageRequestMarshaller.Instance;
-            var unmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeModelPackageRequest,DescribeModelPackageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeModelPackageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1366,10 +1402,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeNotebookInstanceResponse DescribeNotebookInstance(DescribeNotebookInstanceRequest request)
         {
-            var marshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeNotebookInstanceRequest,DescribeNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeNotebookInstanceResponse>(request, options);
         }
 
 
@@ -1385,11 +1422,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstance">REST API Reference for DescribeNotebookInstance Operation</seealso>
         public virtual Task<DescribeNotebookInstanceResponse> DescribeNotebookInstanceAsync(DescribeNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeNotebookInstanceRequest,DescribeNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1398,10 +1435,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeNotebookInstanceLifecycleConfigResponse DescribeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request)
         {
-            var marshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeNotebookInstanceLifecycleConfigRequest,DescribeNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeNotebookInstanceLifecycleConfigResponse>(request, options);
         }
 
 
@@ -1417,11 +1455,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<DescribeNotebookInstanceLifecycleConfigResponse> DescribeNotebookInstanceLifecycleConfigAsync(DescribeNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeNotebookInstanceLifecycleConfigRequest,DescribeNotebookInstanceLifecycleConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1430,10 +1468,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeSubscribedWorkteamResponse DescribeSubscribedWorkteam(DescribeSubscribedWorkteamRequest request)
         {
-            var marshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSubscribedWorkteamRequest,DescribeSubscribedWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSubscribedWorkteamResponse>(request, options);
         }
 
 
@@ -1449,11 +1488,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSubscribedWorkteam">REST API Reference for DescribeSubscribedWorkteam Operation</seealso>
         public virtual Task<DescribeSubscribedWorkteamResponse> DescribeSubscribedWorkteamAsync(DescribeSubscribedWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeSubscribedWorkteamRequest,DescribeSubscribedWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeSubscribedWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1462,10 +1501,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeTrainingJobResponse DescribeTrainingJob(DescribeTrainingJobRequest request)
         {
-            var marshaller = DescribeTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTrainingJobRequest,DescribeTrainingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTrainingJobResponse>(request, options);
         }
 
 
@@ -1481,11 +1521,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         public virtual Task<DescribeTrainingJobResponse> DescribeTrainingJobAsync(DescribeTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeTrainingJobRequest,DescribeTrainingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeTrainingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1494,10 +1534,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request)
         {
-            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTransformJobResponse>(request, options);
         }
 
 
@@ -1513,11 +1554,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
         public virtual Task<DescribeTransformJobResponse> DescribeTransformJobAsync(DescribeTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeTransformJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1526,10 +1567,11 @@ namespace Amazon.SageMaker
 
         internal virtual DescribeWorkteamResponse DescribeWorkteam(DescribeWorkteamRequest request)
         {
-            var marshaller = DescribeWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkteamRequest,DescribeWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkteamResponse>(request, options);
         }
 
 
@@ -1545,11 +1587,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkteam">REST API Reference for DescribeWorkteam Operation</seealso>
         public virtual Task<DescribeWorkteamResponse> DescribeWorkteamAsync(DescribeWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkteamRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeWorkteamRequest,DescribeWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1558,10 +1600,11 @@ namespace Amazon.SageMaker
 
         internal virtual GetSearchSuggestionsResponse GetSearchSuggestions(GetSearchSuggestionsRequest request)
         {
-            var marshaller = GetSearchSuggestionsRequestMarshaller.Instance;
-            var unmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSearchSuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSearchSuggestionsRequest,GetSearchSuggestionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSearchSuggestionsResponse>(request, options);
         }
 
 
@@ -1577,11 +1620,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">REST API Reference for GetSearchSuggestions Operation</seealso>
         public virtual Task<GetSearchSuggestionsResponse> GetSearchSuggestionsAsync(GetSearchSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSearchSuggestionsRequestMarshaller.Instance;
-            var unmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSearchSuggestionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSearchSuggestionsRequest,GetSearchSuggestionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSearchSuggestionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1590,10 +1633,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListAlgorithmsResponse ListAlgorithms(ListAlgorithmsRequest request)
         {
-            var marshaller = ListAlgorithmsRequestMarshaller.Instance;
-            var unmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlgorithmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAlgorithmsRequest,ListAlgorithmsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAlgorithmsResponse>(request, options);
         }
 
 
@@ -1609,11 +1653,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAlgorithms">REST API Reference for ListAlgorithms Operation</seealso>
         public virtual Task<ListAlgorithmsResponse> ListAlgorithmsAsync(ListAlgorithmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAlgorithmsRequestMarshaller.Instance;
-            var unmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAlgorithmsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAlgorithmsRequest,ListAlgorithmsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAlgorithmsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1622,10 +1666,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListCodeRepositoriesResponse ListCodeRepositories(ListCodeRepositoriesRequest request)
         {
-            var marshaller = ListCodeRepositoriesRequestMarshaller.Instance;
-            var unmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodeRepositoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
 
-            return Invoke<ListCodeRepositoriesRequest,ListCodeRepositoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCodeRepositoriesResponse>(request, options);
         }
 
 
@@ -1641,11 +1686,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">REST API Reference for ListCodeRepositories Operation</seealso>
         public virtual Task<ListCodeRepositoriesResponse> ListCodeRepositoriesAsync(ListCodeRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCodeRepositoriesRequestMarshaller.Instance;
-            var unmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodeRepositoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListCodeRepositoriesRequest,ListCodeRepositoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListCodeRepositoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1654,10 +1699,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListCompilationJobsResponse ListCompilationJobs(ListCompilationJobsRequest request)
         {
-            var marshaller = ListCompilationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompilationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListCompilationJobsRequest,ListCompilationJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCompilationJobsResponse>(request, options);
         }
 
 
@@ -1673,11 +1719,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCompilationJobs">REST API Reference for ListCompilationJobs Operation</seealso>
         public virtual Task<ListCompilationJobsResponse> ListCompilationJobsAsync(ListCompilationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListCompilationJobsRequestMarshaller.Instance;
-            var unmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompilationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListCompilationJobsRequest,ListCompilationJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListCompilationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1686,10 +1732,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListEndpointConfigsResponse ListEndpointConfigs(ListEndpointConfigsRequest request)
         {
-            var marshaller = ListEndpointConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEndpointConfigsRequest,ListEndpointConfigsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEndpointConfigsResponse>(request, options);
         }
 
 
@@ -1705,11 +1752,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpointConfigs">REST API Reference for ListEndpointConfigs Operation</seealso>
         public virtual Task<ListEndpointConfigsResponse> ListEndpointConfigsAsync(ListEndpointConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEndpointConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEndpointConfigsRequest,ListEndpointConfigsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListEndpointConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1718,10 +1765,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
         {
-            var marshaller = ListEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<ListEndpointsRequest,ListEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEndpointsResponse>(request, options);
         }
 
 
@@ -1737,11 +1785,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual Task<ListEndpointsResponse> ListEndpointsAsync(ListEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEndpointsRequest,ListEndpointsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1750,10 +1798,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListHyperParameterTuningJobsResponse ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request)
         {
-            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
-            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListHyperParameterTuningJobsRequest,ListHyperParameterTuningJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListHyperParameterTuningJobsResponse>(request, options);
         }
 
 
@@ -1769,11 +1818,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
         public virtual Task<ListHyperParameterTuningJobsResponse> ListHyperParameterTuningJobsAsync(ListHyperParameterTuningJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
-            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListHyperParameterTuningJobsRequest,ListHyperParameterTuningJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListHyperParameterTuningJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1782,10 +1831,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListLabelingJobsResponse ListLabelingJobs(ListLabelingJobsRequest request)
         {
-            var marshaller = ListLabelingJobsRequestMarshaller.Instance;
-            var unmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLabelingJobsRequest,ListLabelingJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLabelingJobsResponse>(request, options);
         }
 
 
@@ -1801,11 +1851,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobs">REST API Reference for ListLabelingJobs Operation</seealso>
         public virtual Task<ListLabelingJobsResponse> ListLabelingJobsAsync(ListLabelingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLabelingJobsRequestMarshaller.Instance;
-            var unmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListLabelingJobsRequest,ListLabelingJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListLabelingJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1814,10 +1864,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListLabelingJobsForWorkteamResponse ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request)
         {
-            var marshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
-            var unmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<ListLabelingJobsForWorkteamRequest,ListLabelingJobsForWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLabelingJobsForWorkteamResponse>(request, options);
         }
 
 
@@ -1833,11 +1884,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobsForWorkteam">REST API Reference for ListLabelingJobsForWorkteam Operation</seealso>
         public virtual Task<ListLabelingJobsForWorkteamResponse> ListLabelingJobsForWorkteamAsync(ListLabelingJobsForWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
-            var unmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListLabelingJobsForWorkteamRequest,ListLabelingJobsForWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListLabelingJobsForWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1846,10 +1897,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListModelPackagesResponse ListModelPackages(ListModelPackagesRequest request)
         {
-            var marshaller = ListModelPackagesRequestMarshaller.Instance;
-            var unmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
 
-            return Invoke<ListModelPackagesRequest,ListModelPackagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListModelPackagesResponse>(request, options);
         }
 
 
@@ -1865,11 +1917,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackages">REST API Reference for ListModelPackages Operation</seealso>
         public virtual Task<ListModelPackagesResponse> ListModelPackagesAsync(ListModelPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListModelPackagesRequestMarshaller.Instance;
-            var unmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListModelPackagesRequest,ListModelPackagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListModelPackagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1878,10 +1930,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListModelsResponse ListModels(ListModelsRequest request)
         {
-            var marshaller = ListModelsRequestMarshaller.Instance;
-            var unmarshaller = ListModelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
 
-            return Invoke<ListModelsRequest,ListModelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListModelsResponse>(request, options);
         }
 
 
@@ -1897,11 +1950,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual Task<ListModelsResponse> ListModelsAsync(ListModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListModelsRequestMarshaller.Instance;
-            var unmarshaller = ListModelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListModelsRequest,ListModelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1910,10 +1963,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListNotebookInstanceLifecycleConfigsResponse ListNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request)
         {
-            var marshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
 
-            return Invoke<ListNotebookInstanceLifecycleConfigsRequest,ListNotebookInstanceLifecycleConfigsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListNotebookInstanceLifecycleConfigsResponse>(request, options);
         }
 
 
@@ -1929,11 +1983,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
         public virtual Task<ListNotebookInstanceLifecycleConfigsResponse> ListNotebookInstanceLifecycleConfigsAsync(ListNotebookInstanceLifecycleConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
-            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListNotebookInstanceLifecycleConfigsRequest,ListNotebookInstanceLifecycleConfigsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListNotebookInstanceLifecycleConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1942,10 +1996,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListNotebookInstancesResponse ListNotebookInstances(ListNotebookInstancesRequest request)
         {
-            var marshaller = ListNotebookInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<ListNotebookInstancesRequest,ListNotebookInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListNotebookInstancesResponse>(request, options);
         }
 
 
@@ -1961,11 +2016,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">REST API Reference for ListNotebookInstances Operation</seealso>
         public virtual Task<ListNotebookInstancesResponse> ListNotebookInstancesAsync(ListNotebookInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListNotebookInstancesRequestMarshaller.Instance;
-            var unmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNotebookInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListNotebookInstancesRequest,ListNotebookInstancesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListNotebookInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1974,10 +2029,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListSubscribedWorkteamsResponse ListSubscribedWorkteams(ListSubscribedWorkteamsRequest request)
         {
-            var marshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
-            var unmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSubscribedWorkteamsRequest,ListSubscribedWorkteamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSubscribedWorkteamsResponse>(request, options);
         }
 
 
@@ -1993,11 +2049,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">REST API Reference for ListSubscribedWorkteams Operation</seealso>
         public virtual Task<ListSubscribedWorkteamsResponse> ListSubscribedWorkteamsAsync(ListSubscribedWorkteamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
-            var unmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSubscribedWorkteamsRequest,ListSubscribedWorkteamsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSubscribedWorkteamsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2006,10 +2062,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsResponse>(request, options);
         }
 
 
@@ -2025,11 +2082,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2038,10 +2095,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListTrainingJobsResponse ListTrainingJobs(ListTrainingJobsRequest request)
         {
-            var marshaller = ListTrainingJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTrainingJobsRequest,ListTrainingJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTrainingJobsResponse>(request, options);
         }
 
 
@@ -2057,11 +2115,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">REST API Reference for ListTrainingJobs Operation</seealso>
         public virtual Task<ListTrainingJobsResponse> ListTrainingJobsAsync(ListTrainingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTrainingJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTrainingJobsRequest,ListTrainingJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTrainingJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2070,10 +2128,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListTrainingJobsForHyperParameterTuningJobResponse ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request)
         {
-            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return Invoke<ListTrainingJobsForHyperParameterTuningJobRequest,ListTrainingJobsForHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTrainingJobsForHyperParameterTuningJobResponse>(request, options);
         }
 
 
@@ -2089,11 +2148,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
         public virtual Task<ListTrainingJobsForHyperParameterTuningJobResponse> ListTrainingJobsForHyperParameterTuningJobAsync(ListTrainingJobsForHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTrainingJobsForHyperParameterTuningJobRequest,ListTrainingJobsForHyperParameterTuningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTrainingJobsForHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2102,10 +2161,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListTransformJobsResponse ListTransformJobs(ListTransformJobsRequest request)
         {
-            var marshaller = ListTransformJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTransformJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTransformJobsResponse>(request, options);
         }
 
 
@@ -2121,11 +2181,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
         public virtual Task<ListTransformJobsResponse> ListTransformJobsAsync(ListTransformJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTransformJobsRequestMarshaller.Instance;
-            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTransformJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTransformJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2134,10 +2194,11 @@ namespace Amazon.SageMaker
 
         internal virtual ListWorkteamsResponse ListWorkteams(ListWorkteamsRequest request)
         {
-            var marshaller = ListWorkteamsRequestMarshaller.Instance;
-            var unmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkteamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListWorkteamsRequest,ListWorkteamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListWorkteamsResponse>(request, options);
         }
 
 
@@ -2153,11 +2214,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkteams">REST API Reference for ListWorkteams Operation</seealso>
         public virtual Task<ListWorkteamsResponse> ListWorkteamsAsync(ListWorkteamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListWorkteamsRequestMarshaller.Instance;
-            var unmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkteamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListWorkteamsRequest,ListWorkteamsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListWorkteamsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2166,10 +2227,11 @@ namespace Amazon.SageMaker
 
         internal virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
         {
-            var marshaller = RenderUiTemplateRequestMarshaller.Instance;
-            var unmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderUiTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
 
-            return Invoke<RenderUiTemplateRequest,RenderUiTemplateResponse>(request, marshaller, unmarshaller);
+            return Invoke<RenderUiTemplateResponse>(request, options);
         }
 
 
@@ -2185,11 +2247,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
         public virtual Task<RenderUiTemplateResponse> RenderUiTemplateAsync(RenderUiTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RenderUiTemplateRequestMarshaller.Instance;
-            var unmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderUiTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RenderUiTemplateRequest,RenderUiTemplateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RenderUiTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2198,10 +2260,11 @@ namespace Amazon.SageMaker
 
         internal virtual SearchResponse Search(SearchRequest request)
         {
-            var marshaller = SearchRequestMarshaller.Instance;
-            var unmarshaller = SearchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
-            return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
+            return Invoke<SearchResponse>(request, options);
         }
 
 
@@ -2217,11 +2280,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">REST API Reference for Search Operation</seealso>
         public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SearchRequestMarshaller.Instance;
-            var unmarshaller = SearchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SearchRequest,SearchResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2230,10 +2293,11 @@ namespace Amazon.SageMaker
 
         internal virtual StartNotebookInstanceResponse StartNotebookInstance(StartNotebookInstanceRequest request)
         {
-            var marshaller = StartNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<StartNotebookInstanceRequest,StartNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartNotebookInstanceResponse>(request, options);
         }
 
 
@@ -2249,11 +2313,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         public virtual Task<StartNotebookInstanceResponse> StartNotebookInstanceAsync(StartNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartNotebookInstanceRequest,StartNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2262,10 +2326,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopCompilationJobResponse StopCompilationJob(StopCompilationJobRequest request)
         {
-            var marshaller = StopCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopCompilationJobRequest,StopCompilationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopCompilationJobResponse>(request, options);
         }
 
 
@@ -2281,11 +2346,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">REST API Reference for StopCompilationJob Operation</seealso>
         public virtual Task<StopCompilationJobResponse> StopCompilationJobAsync(StopCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopCompilationJobRequestMarshaller.Instance;
-            var unmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCompilationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopCompilationJobRequest,StopCompilationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopCompilationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2294,10 +2359,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request)
         {
-            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopHyperParameterTuningJobResponse>(request, options);
         }
 
 
@@ -2313,11 +2379,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         public virtual Task<StopHyperParameterTuningJobResponse> StopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
-            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2326,10 +2392,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopLabelingJobResponse StopLabelingJob(StopLabelingJobRequest request)
         {
-            var marshaller = StopLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopLabelingJobRequest,StopLabelingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopLabelingJobResponse>(request, options);
         }
 
 
@@ -2345,11 +2412,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob">REST API Reference for StopLabelingJob Operation</seealso>
         public virtual Task<StopLabelingJobResponse> StopLabelingJobAsync(StopLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopLabelingJobRequestMarshaller.Instance;
-            var unmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLabelingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopLabelingJobRequest,StopLabelingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopLabelingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2358,10 +2425,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopNotebookInstanceResponse StopNotebookInstance(StopNotebookInstanceRequest request)
         {
-            var marshaller = StopNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<StopNotebookInstanceRequest,StopNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopNotebookInstanceResponse>(request, options);
         }
 
 
@@ -2377,11 +2445,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">REST API Reference for StopNotebookInstance Operation</seealso>
         public virtual Task<StopNotebookInstanceResponse> StopNotebookInstanceAsync(StopNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopNotebookInstanceRequest,StopNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2390,10 +2458,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopTrainingJobResponse StopTrainingJob(StopTrainingJobRequest request)
         {
-            var marshaller = StopTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopTrainingJobRequest,StopTrainingJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopTrainingJobResponse>(request, options);
         }
 
 
@@ -2409,11 +2478,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         public virtual Task<StopTrainingJobResponse> StopTrainingJobAsync(StopTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopTrainingJobRequestMarshaller.Instance;
-            var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopTrainingJobRequest,StopTrainingJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopTrainingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2422,10 +2491,11 @@ namespace Amazon.SageMaker
 
         internal virtual StopTransformJobResponse StopTransformJob(StopTransformJobRequest request)
         {
-            var marshaller = StopTransformJobRequestMarshaller.Instance;
-            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTransformJobResponseUnmarshaller.Instance;
 
-            return Invoke<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopTransformJobResponse>(request, options);
         }
 
 
@@ -2441,11 +2511,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
         public virtual Task<StopTransformJobResponse> StopTransformJobAsync(StopTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopTransformJobRequestMarshaller.Instance;
-            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTransformJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTransformJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopTransformJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2454,10 +2524,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateCodeRepositoryResponse UpdateCodeRepository(UpdateCodeRepositoryRequest request)
         {
-            var marshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCodeRepositoryRequest,UpdateCodeRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCodeRepositoryResponse>(request, options);
         }
 
 
@@ -2473,11 +2544,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
         public virtual Task<UpdateCodeRepositoryResponse> UpdateCodeRepositoryAsync(UpdateCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
-            var unmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateCodeRepositoryRequest,UpdateCodeRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateCodeRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2486,10 +2557,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointResponse>(request, options);
         }
 
 
@@ -2505,11 +2577,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2518,10 +2590,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateEndpointWeightsAndCapacitiesResponse UpdateEndpointWeightsAndCapacities(UpdateEndpointWeightsAndCapacitiesRequest request)
         {
-            var marshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointWeightsAndCapacitiesRequest,UpdateEndpointWeightsAndCapacitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointWeightsAndCapacitiesResponse>(request, options);
         }
 
 
@@ -2537,11 +2610,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">REST API Reference for UpdateEndpointWeightsAndCapacities Operation</seealso>
         public virtual Task<UpdateEndpointWeightsAndCapacitiesResponse> UpdateEndpointWeightsAndCapacitiesAsync(UpdateEndpointWeightsAndCapacitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateEndpointWeightsAndCapacitiesRequest,UpdateEndpointWeightsAndCapacitiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateEndpointWeightsAndCapacitiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2550,10 +2623,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateNotebookInstanceResponse UpdateNotebookInstance(UpdateNotebookInstanceRequest request)
         {
-            var marshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateNotebookInstanceRequest,UpdateNotebookInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateNotebookInstanceResponse>(request, options);
         }
 
 
@@ -2569,11 +2643,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">REST API Reference for UpdateNotebookInstance Operation</seealso>
         public virtual Task<UpdateNotebookInstanceResponse> UpdateNotebookInstanceAsync(UpdateNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateNotebookInstanceRequest,UpdateNotebookInstanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateNotebookInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2582,10 +2656,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateNotebookInstanceLifecycleConfigResponse UpdateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request)
         {
-            var marshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateNotebookInstanceLifecycleConfigRequest,UpdateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateNotebookInstanceLifecycleConfigResponse>(request, options);
         }
 
 
@@ -2601,11 +2676,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<UpdateNotebookInstanceLifecycleConfigResponse> UpdateNotebookInstanceLifecycleConfigAsync(UpdateNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateNotebookInstanceLifecycleConfigRequest,UpdateNotebookInstanceLifecycleConfigResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2614,10 +2689,11 @@ namespace Amazon.SageMaker
 
         internal virtual UpdateWorkteamResponse UpdateWorkteam(UpdateWorkteamRequest request)
         {
-            var marshaller = UpdateWorkteamRequestMarshaller.Instance;
-            var unmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateWorkteamRequest,UpdateWorkteamResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateWorkteamResponse>(request, options);
         }
 
 
@@ -2633,11 +2709,11 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam">REST API Reference for UpdateWorkteam Operation</seealso>
         public virtual Task<UpdateWorkteamResponse> UpdateWorkteamAsync(UpdateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateWorkteamRequestMarshaller.Instance;
-            var unmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkteamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateWorkteamRequest,UpdateWorkteamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateWorkteamResponse>(request, options, cancellationToken);
         }
 
         #endregion

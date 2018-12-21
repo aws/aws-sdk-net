@@ -55,6 +55,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListFlowsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/v1/flows";

@@ -58,6 +58,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             string target = "CodePipeline_20150709.PollForJobs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

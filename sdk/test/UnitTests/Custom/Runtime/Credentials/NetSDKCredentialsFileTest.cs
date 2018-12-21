@@ -118,6 +118,9 @@ namespace AWSSDK.UnitTests
                     var readProfile = tester.TestTryGetProfile(profileName, true, true);
                     Assert.AreEqual(originalProfile, readProfile);
 
+                    //Making sure that the endpoint_discovery_enabled field is set to the default
+                    Assert.IsNull(readProfile.EndpointDiscoveryEnabled);
+
                     // make sure the ProfileType is written, even though it's ignored
                     var expectedType = type.ToString();
                     if (type == CredentialProfileType.Basic)
@@ -214,7 +217,7 @@ namespace AWSSDK.UnitTests
             {
                 tester.TestTryGetProfile("RegionOnlyProfile", true, false);
             }
-        }
+        }                
 
         [TestMethod]
         public void WriteRegionOnlyProfile()
@@ -229,6 +232,22 @@ namespace AWSSDK.UnitTests
                 var readProfile = tester.TestTryGetProfile("RegionOnlyProfile", true, false);
                 Assert.AreEqual(RegionEndpoint.USGovCloudWest1, readProfile.Region);
                 Assert.IsTrue((bool)ReflectionHelpers.Invoke(readProfile.Options, "IsEmpty"));
+            }
+        }
+
+        [TestMethod]
+        public void WriteEndpointDiscoveryEnabledOnlyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                var emptyOptions = new CredentialProfileOptions();
+                var profile = new CredentialProfile("EndpointDiscoveryEnabledOnlyProfile", emptyOptions);
+                profile.EndpointDiscoveryEnabled = true;
+                tester.ProfileStore.RegisterProfile(profile);
+
+                var readProfile = tester.TestTryGetProfile("EndpointDiscoveryEnabledOnlyProfile", true, false);
+                Assert.IsTrue(readProfile.EndpointDiscoveryEnabled.HasValue);
+                Assert.IsTrue(readProfile.EndpointDiscoveryEnabled.Value);
             }
         }
 

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Signer.Model;
 using Amazon.Signer.Model.Internal.MarshallTransformations;
@@ -247,15 +248,16 @@ namespace Amazon.Signer
 
         #endregion
 
-        
+
         #region  CancelSigningProfile
 
         internal virtual CancelSigningProfileResponse CancelSigningProfile(CancelSigningProfileRequest request)
         {
-            var marshaller = CancelSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = CancelSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSigningProfileResponseUnmarshaller.Instance;
 
-            return Invoke<CancelSigningProfileRequest,CancelSigningProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelSigningProfileResponse>(request, options);
         }
 
 
@@ -271,11 +273,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">REST API Reference for CancelSigningProfile Operation</seealso>
         public virtual Task<CancelSigningProfileResponse> CancelSigningProfileAsync(CancelSigningProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = CancelSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSigningProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CancelSigningProfileRequest,CancelSigningProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CancelSigningProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -284,10 +286,11 @@ namespace Amazon.Signer
 
         internal virtual DescribeSigningJobResponse DescribeSigningJob(DescribeSigningJobRequest request)
         {
-            var marshaller = DescribeSigningJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSigningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSigningJobRequest,DescribeSigningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSigningJobResponse>(request, options);
         }
 
 
@@ -303,11 +306,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob">REST API Reference for DescribeSigningJob Operation</seealso>
         public virtual Task<DescribeSigningJobResponse> DescribeSigningJobAsync(DescribeSigningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSigningJobRequestMarshaller.Instance;
-            var unmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSigningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeSigningJobRequest,DescribeSigningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeSigningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -316,10 +319,11 @@ namespace Amazon.Signer
 
         internal virtual GetSigningPlatformResponse GetSigningPlatform(GetSigningPlatformRequest request)
         {
-            var marshaller = GetSigningPlatformRequestMarshaller.Instance;
-            var unmarshaller = GetSigningPlatformResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSigningPlatformRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningPlatformResponseUnmarshaller.Instance;
 
-            return Invoke<GetSigningPlatformRequest,GetSigningPlatformResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSigningPlatformResponse>(request, options);
         }
 
 
@@ -335,11 +339,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningPlatform">REST API Reference for GetSigningPlatform Operation</seealso>
         public virtual Task<GetSigningPlatformResponse> GetSigningPlatformAsync(GetSigningPlatformRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSigningPlatformRequestMarshaller.Instance;
-            var unmarshaller = GetSigningPlatformResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSigningPlatformRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningPlatformResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSigningPlatformRequest,GetSigningPlatformResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSigningPlatformResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -348,10 +352,11 @@ namespace Amazon.Signer
 
         internal virtual GetSigningProfileResponse GetSigningProfile(GetSigningProfileRequest request)
         {
-            var marshaller = GetSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = GetSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningProfileResponseUnmarshaller.Instance;
 
-            return Invoke<GetSigningProfileRequest,GetSigningProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSigningProfileResponse>(request, options);
         }
 
 
@@ -367,11 +372,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile">REST API Reference for GetSigningProfile Operation</seealso>
         public virtual Task<GetSigningProfileResponse> GetSigningProfileAsync(GetSigningProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = GetSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSigningProfileRequest,GetSigningProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSigningProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -380,10 +385,11 @@ namespace Amazon.Signer
 
         internal virtual ListSigningJobsResponse ListSigningJobs(ListSigningJobsRequest request)
         {
-            var marshaller = ListSigningJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSigningJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSigningJobsRequest,ListSigningJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSigningJobsResponse>(request, options);
         }
 
 
@@ -399,11 +405,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">REST API Reference for ListSigningJobs Operation</seealso>
         public virtual Task<ListSigningJobsResponse> ListSigningJobsAsync(ListSigningJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSigningJobsRequestMarshaller.Instance;
-            var unmarshaller = ListSigningJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningJobsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSigningJobsRequest,ListSigningJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSigningJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -412,10 +418,11 @@ namespace Amazon.Signer
 
         internal virtual ListSigningPlatformsResponse ListSigningPlatforms(ListSigningPlatformsRequest request)
         {
-            var marshaller = ListSigningPlatformsRequestMarshaller.Instance;
-            var unmarshaller = ListSigningPlatformsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningPlatformsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningPlatformsResponseUnmarshaller.Instance;
 
-            return Invoke<ListSigningPlatformsRequest,ListSigningPlatformsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSigningPlatformsResponse>(request, options);
         }
 
 
@@ -431,11 +438,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">REST API Reference for ListSigningPlatforms Operation</seealso>
         public virtual Task<ListSigningPlatformsResponse> ListSigningPlatformsAsync(ListSigningPlatformsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSigningPlatformsRequestMarshaller.Instance;
-            var unmarshaller = ListSigningPlatformsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningPlatformsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningPlatformsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSigningPlatformsRequest,ListSigningPlatformsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSigningPlatformsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -444,10 +451,11 @@ namespace Amazon.Signer
 
         internal virtual ListSigningProfilesResponse ListSigningProfiles(ListSigningProfilesRequest request)
         {
-            var marshaller = ListSigningProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSigningProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListSigningProfilesRequest,ListSigningProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSigningProfilesResponse>(request, options);
         }
 
 
@@ -463,11 +471,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">REST API Reference for ListSigningProfiles Operation</seealso>
         public virtual Task<ListSigningProfilesResponse> ListSigningProfilesAsync(ListSigningProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSigningProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListSigningProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSigningProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSigningProfilesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListSigningProfilesRequest,ListSigningProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListSigningProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -476,10 +484,11 @@ namespace Amazon.Signer
 
         internal virtual PutSigningProfileResponse PutSigningProfile(PutSigningProfileRequest request)
         {
-            var marshaller = PutSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = PutSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSigningProfileResponseUnmarshaller.Instance;
 
-            return Invoke<PutSigningProfileRequest,PutSigningProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutSigningProfileResponse>(request, options);
         }
 
 
@@ -495,11 +504,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">REST API Reference for PutSigningProfile Operation</seealso>
         public virtual Task<PutSigningProfileResponse> PutSigningProfileAsync(PutSigningProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutSigningProfileRequestMarshaller.Instance;
-            var unmarshaller = PutSigningProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSigningProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSigningProfileResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutSigningProfileRequest,PutSigningProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutSigningProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -508,10 +517,11 @@ namespace Amazon.Signer
 
         internal virtual StartSigningJobResponse StartSigningJob(StartSigningJobRequest request)
         {
-            var marshaller = StartSigningJobRequestMarshaller.Instance;
-            var unmarshaller = StartSigningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSigningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSigningJobResponseUnmarshaller.Instance;
 
-            return Invoke<StartSigningJobRequest,StartSigningJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSigningJobResponse>(request, options);
         }
 
 
@@ -527,11 +537,11 @@ namespace Amazon.Signer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">REST API Reference for StartSigningJob Operation</seealso>
         public virtual Task<StartSigningJobResponse> StartSigningJobAsync(StartSigningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSigningJobRequestMarshaller.Instance;
-            var unmarshaller = StartSigningJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSigningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSigningJobResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartSigningJobRequest,StartSigningJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartSigningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

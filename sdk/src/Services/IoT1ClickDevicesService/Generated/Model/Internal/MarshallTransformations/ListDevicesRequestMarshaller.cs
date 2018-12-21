@@ -55,6 +55,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDevicesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickDevicesService");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/devices";

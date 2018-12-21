@@ -56,6 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppMesh");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-01";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/meshes/{meshName}/virtualRouters/{virtualRouterName}";

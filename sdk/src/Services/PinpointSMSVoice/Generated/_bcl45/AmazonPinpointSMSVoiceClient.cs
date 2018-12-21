@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.PinpointSMSVoice.Model;
 using Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.PinpointSMSVoice
 
         #endregion
 
-        
+
         #region  CreateConfigurationSet
 
 
@@ -266,10 +267,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -283,11 +285,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConfigurationSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -323,10 +325,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -340,11 +343,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +377,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -391,11 +395,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -425,10 +429,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -442,11 +447,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -477,10 +482,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetEventDestinationsResponse>(request, options);
         }
 
         /// <summary>
@@ -494,11 +500,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationSetEventDestinationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -525,10 +531,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request)
         {
-            var marshaller = SendVoiceMessageRequestMarshaller.Instance;
-            var unmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
-            return Invoke<SendVoiceMessageRequest,SendVoiceMessageResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendVoiceMessageResponse>(request, options);
         }
 
         /// <summary>
@@ -542,11 +549,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SendVoiceMessageResponse> SendVoiceMessageAsync(SendVoiceMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SendVoiceMessageRequestMarshaller.Instance;
-            var unmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SendVoiceMessageRequest,SendVoiceMessageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendVoiceMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -578,10 +585,11 @@ namespace Amazon.PinpointSMSVoice
         /// </exception>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -595,11 +603,11 @@ namespace Amazon.PinpointSMSVoice
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConfigurationSetEventDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion

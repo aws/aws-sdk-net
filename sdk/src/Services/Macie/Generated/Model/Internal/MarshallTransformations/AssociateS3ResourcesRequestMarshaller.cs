@@ -58,6 +58,7 @@ namespace Amazon.Macie.Model.Internal.MarshallTransformations
             string target = "MacieService.AssociateS3Resources";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-12-19";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

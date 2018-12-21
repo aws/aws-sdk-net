@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AppMesh.Model;
 using Amazon.AppMesh.Model.Internal.MarshallTransformations;
@@ -257,7 +258,7 @@ namespace Amazon.AppMesh
 
         #endregion
 
-        
+
         #region  CreateMesh
 
         /// <summary>
@@ -304,10 +305,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         public virtual CreateMeshResponse CreateMesh(CreateMeshRequest request)
         {
-            var marshaller = CreateMeshRequestMarshaller.Instance;
-            var unmarshaller = CreateMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMeshResponseUnmarshaller.Instance;
 
-            return Invoke<CreateMeshRequest,CreateMeshResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateMeshResponse>(request, options);
         }
 
         /// <summary>
@@ -324,11 +326,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         public virtual IAsyncResult BeginCreateMesh(CreateMeshRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateMeshRequestMarshaller.Instance;
-            var unmarshaller = CreateMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMeshResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateMeshRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -399,10 +401,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var marshaller = CreateRouteRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRouteRequest,CreateRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -419,11 +422,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateRoute(CreateRouteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateRouteRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateRouteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -510,10 +513,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         public virtual CreateVirtualNodeResponse CreateVirtualNode(CreateVirtualNodeRequest request)
         {
-            var marshaller = CreateVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
 
-            return Invoke<CreateVirtualNodeRequest,CreateVirtualNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateVirtualNodeResponse>(request, options);
         }
 
         /// <summary>
@@ -530,11 +534,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         public virtual IAsyncResult BeginCreateVirtualNode(CreateVirtualNodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateVirtualNodeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -598,10 +602,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         public virtual CreateVirtualRouterResponse CreateVirtualRouter(CreateVirtualRouterRequest request)
         {
-            var marshaller = CreateVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
 
-            return Invoke<CreateVirtualRouterRequest,CreateVirtualRouterResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateVirtualRouterResponse>(request, options);
         }
 
         /// <summary>
@@ -618,11 +623,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         public virtual IAsyncResult BeginCreateVirtualRouter(CreateVirtualRouterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateVirtualRouterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -681,10 +686,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         public virtual DeleteMeshResponse DeleteMesh(DeleteMeshRequest request)
         {
-            var marshaller = DeleteMeshRequestMarshaller.Instance;
-            var unmarshaller = DeleteMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMeshResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMeshRequest,DeleteMeshResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMeshResponse>(request, options);
         }
 
         /// <summary>
@@ -701,11 +707,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         public virtual IAsyncResult BeginDeleteMesh(DeleteMeshRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteMeshRequestMarshaller.Instance;
-            var unmarshaller = DeleteMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMeshResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteMeshRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -758,10 +764,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var marshaller = DeleteRouteRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRouteRequest,DeleteRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -778,11 +785,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteRoute(DeleteRouteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteRouteRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteRouteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -835,10 +842,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         public virtual DeleteVirtualNodeResponse DeleteVirtualNode(DeleteVirtualNodeRequest request)
         {
-            var marshaller = DeleteVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVirtualNodeRequest,DeleteVirtualNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVirtualNodeResponse>(request, options);
         }
 
         /// <summary>
@@ -855,11 +863,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         public virtual IAsyncResult BeginDeleteVirtualNode(DeleteVirtualNodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVirtualNodeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -918,10 +926,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         public virtual DeleteVirtualRouterResponse DeleteVirtualRouter(DeleteVirtualRouterRequest request)
         {
-            var marshaller = DeleteVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVirtualRouterRequest,DeleteVirtualRouterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVirtualRouterResponse>(request, options);
         }
 
         /// <summary>
@@ -938,11 +947,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         public virtual IAsyncResult BeginDeleteVirtualRouter(DeleteVirtualRouterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVirtualRouterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -991,10 +1000,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         public virtual DescribeMeshResponse DescribeMesh(DescribeMeshRequest request)
         {
-            var marshaller = DescribeMeshRequestMarshaller.Instance;
-            var unmarshaller = DescribeMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMeshResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMeshRequest,DescribeMeshResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMeshResponse>(request, options);
         }
 
         /// <summary>
@@ -1011,11 +1021,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         public virtual IAsyncResult BeginDescribeMesh(DescribeMeshRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMeshRequestMarshaller.Instance;
-            var unmarshaller = DescribeMeshResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMeshResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMeshRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1064,10 +1074,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         public virtual DescribeRouteResponse DescribeRoute(DescribeRouteRequest request)
         {
-            var marshaller = DescribeRouteRequestMarshaller.Instance;
-            var unmarshaller = DescribeRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRouteResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRouteRequest,DescribeRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -1084,11 +1095,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         public virtual IAsyncResult BeginDescribeRoute(DescribeRouteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeRouteRequestMarshaller.Instance;
-            var unmarshaller = DescribeRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRouteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeRouteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1137,10 +1148,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         public virtual DescribeVirtualNodeResponse DescribeVirtualNode(DescribeVirtualNodeRequest request)
         {
-            var marshaller = DescribeVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVirtualNodeRequest,DescribeVirtualNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVirtualNodeResponse>(request, options);
         }
 
         /// <summary>
@@ -1157,11 +1169,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         public virtual IAsyncResult BeginDescribeVirtualNode(DescribeVirtualNodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeVirtualNodeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1210,10 +1222,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         public virtual DescribeVirtualRouterResponse DescribeVirtualRouter(DescribeVirtualRouterRequest request)
         {
-            var marshaller = DescribeVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVirtualRouterRequest,DescribeVirtualRouterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVirtualRouterResponse>(request, options);
         }
 
         /// <summary>
@@ -1230,11 +1243,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         public virtual IAsyncResult BeginDescribeVirtualRouter(DescribeVirtualRouterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeVirtualRouterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1283,10 +1296,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         public virtual ListMeshesResponse ListMeshes(ListMeshesRequest request)
         {
-            var marshaller = ListMeshesRequestMarshaller.Instance;
-            var unmarshaller = ListMeshesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMeshesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMeshesResponseUnmarshaller.Instance;
 
-            return Invoke<ListMeshesRequest,ListMeshesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMeshesResponse>(request, options);
         }
 
         /// <summary>
@@ -1303,11 +1317,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         public virtual IAsyncResult BeginListMeshes(ListMeshesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListMeshesRequestMarshaller.Instance;
-            var unmarshaller = ListMeshesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMeshesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMeshesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListMeshesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1356,10 +1370,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual ListRoutesResponse ListRoutes(ListRoutesRequest request)
         {
-            var marshaller = ListRoutesRequestMarshaller.Instance;
-            var unmarshaller = ListRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
 
-            return Invoke<ListRoutesRequest,ListRoutesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRoutesResponse>(request, options);
         }
 
         /// <summary>
@@ -1376,11 +1391,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual IAsyncResult BeginListRoutes(ListRoutesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListRoutesRequestMarshaller.Instance;
-            var unmarshaller = ListRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListRoutesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1429,10 +1444,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         public virtual ListVirtualNodesResponse ListVirtualNodes(ListVirtualNodesRequest request)
         {
-            var marshaller = ListVirtualNodesRequestMarshaller.Instance;
-            var unmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
 
-            return Invoke<ListVirtualNodesRequest,ListVirtualNodesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListVirtualNodesResponse>(request, options);
         }
 
         /// <summary>
@@ -1449,11 +1465,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         public virtual IAsyncResult BeginListVirtualNodes(ListVirtualNodesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListVirtualNodesRequestMarshaller.Instance;
-            var unmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListVirtualNodesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1502,10 +1518,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         public virtual ListVirtualRoutersResponse ListVirtualRouters(ListVirtualRoutersRequest request)
         {
-            var marshaller = ListVirtualRoutersRequestMarshaller.Instance;
-            var unmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualRoutersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
 
-            return Invoke<ListVirtualRoutersRequest,ListVirtualRoutersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListVirtualRoutersResponse>(request, options);
         }
 
         /// <summary>
@@ -1522,11 +1539,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         public virtual IAsyncResult BeginListVirtualRouters(ListVirtualRoutersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListVirtualRoutersRequestMarshaller.Instance;
-            var unmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualRoutersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListVirtualRoutersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1583,10 +1600,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
-            var marshaller = UpdateRouteRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRouteRequest,UpdateRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -1603,11 +1621,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual IAsyncResult BeginUpdateRoute(UpdateRouteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateRouteRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateRouteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1664,10 +1682,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         public virtual UpdateVirtualNodeResponse UpdateVirtualNode(UpdateVirtualNodeRequest request)
         {
-            var marshaller = UpdateVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateVirtualNodeRequest,UpdateVirtualNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateVirtualNodeResponse>(request, options);
         }
 
         /// <summary>
@@ -1684,11 +1703,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         public virtual IAsyncResult BeginUpdateVirtualNode(UpdateVirtualNodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateVirtualNodeRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateVirtualNodeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1745,10 +1764,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         public virtual UpdateVirtualRouterResponse UpdateVirtualRouter(UpdateVirtualRouterRequest request)
         {
-            var marshaller = UpdateVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateVirtualRouterRequest,UpdateVirtualRouterResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateVirtualRouterResponse>(request, options);
         }
 
         /// <summary>
@@ -1765,11 +1785,11 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         public virtual IAsyncResult BeginUpdateVirtualRouter(UpdateVirtualRouterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateVirtualRouterRequestMarshaller.Instance;
-            var unmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateVirtualRouterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

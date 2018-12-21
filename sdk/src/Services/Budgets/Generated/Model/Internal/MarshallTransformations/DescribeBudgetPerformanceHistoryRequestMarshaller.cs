@@ -58,6 +58,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             string target = "AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-20";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

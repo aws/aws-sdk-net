@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -248,7 +249,7 @@ namespace Amazon.S3
 
         #endregion
 
-        
+
         #region  AbortMultipartUpload
 
         /// <summary>
@@ -289,10 +290,11 @@ namespace Amazon.S3
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<AbortMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -308,11 +310,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AbortMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -339,10 +341,11 @@ namespace Amazon.S3
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<CompleteMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -358,11 +361,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CompleteMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -431,10 +434,11 @@ namespace Amazon.S3
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
         public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            var marshaller = CopyObjectRequestMarshaller.Instance;
-            var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
-            return Invoke<CopyObjectRequest,CopyObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<CopyObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -450,11 +454,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CopyObjectRequestMarshaller.Instance;
-            var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CopyObjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -527,10 +531,11 @@ namespace Amazon.S3
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
-            var marshaller = CopyPartRequestMarshaller.Instance;
-            var unmarshaller = CopyPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
 
-            return Invoke<CopyPartRequest,CopyPartResponse>(request, marshaller, unmarshaller);
+            return Invoke<CopyPartResponse>(request, options);
         }
 
         /// <summary>
@@ -546,11 +551,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CopyPartRequestMarshaller.Instance;
-            var unmarshaller = CopyPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CopyPartRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -593,10 +598,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var marshaller = DeleteBucketRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketResponse>(request, options);
         }
 
         /// <summary>
@@ -612,11 +618,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -644,10 +650,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketAnalyticsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -663,11 +670,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -694,10 +701,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
         public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
         {
-            var marshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketEncryptionRequest,DeleteBucketEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -713,11 +721,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketEncryption(DeleteBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketEncryptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -744,10 +752,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
-            var marshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketInventoryConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -763,11 +772,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -795,10 +804,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
-            var marshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketMetricsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -814,11 +824,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -859,10 +869,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var marshaller = DeleteBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketPolicyRequest,DeleteBucketPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -878,11 +889,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -911,10 +922,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var marshaller = DeleteBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketReplicationRequest,DeleteBucketReplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketReplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -930,11 +942,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketReplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -975,10 +987,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var marshaller = DeleteBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketTaggingRequest,DeleteBucketTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -994,11 +1007,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1039,10 +1052,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
-            var marshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBucketWebsiteRequest,DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBucketWebsiteResponse>(request, options);
         }
 
         /// <summary>
@@ -1058,11 +1072,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBucketWebsiteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1103,10 +1117,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
-            var marshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCORSConfigurationRequest,DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCORSConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1122,11 +1137,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteCORSConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1167,10 +1182,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
-            var marshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLifecycleConfigurationRequest,DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLifecycleConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1186,11 +1202,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteLifecycleConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1257,10 +1273,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = DeleteObjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -1276,11 +1293,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteObjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteObjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1308,10 +1325,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
         public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
-            var marshaller = DeleteObjectsRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteObjectsRequest,DeleteObjectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteObjectsResponse>(request, options);
         }
 
         /// <summary>
@@ -1327,11 +1345,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteObjectsRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteObjectsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1358,10 +1376,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
         public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
-            var marshaller = DeleteObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteObjectTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -1377,11 +1396,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteObjectTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1408,10 +1427,11 @@ namespace Amazon.S3
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -1427,11 +1447,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePublicAccessBlockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1472,10 +1492,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
         public virtual GetACLResponse GetACL(GetACLRequest request)
         {
-            var marshaller = GetACLRequestMarshaller.Instance;
-            var unmarshaller = GetACLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
 
-            return Invoke<GetACLRequest,GetACLResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetACLResponse>(request, options);
         }
 
         /// <summary>
@@ -1491,11 +1512,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetACLRequestMarshaller.Instance;
-            var unmarshaller = GetACLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetACLRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1536,10 +1557,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
-            var marshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketAccelerateConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1555,11 +1577,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1587,10 +1609,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketAnalyticsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1606,11 +1629,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1637,10 +1660,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
         public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
         {
-            var marshaller = GetBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketEncryptionRequest,GetBucketEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -1656,11 +1680,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketEncryption(GetBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketEncryptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1687,10 +1711,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
-            var marshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketInventoryConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1706,11 +1731,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1751,10 +1776,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
         public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
-            var marshaller = GetBucketLocationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketLocationRequest,GetBucketLocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketLocationResponse>(request, options);
         }
 
         /// <summary>
@@ -1770,11 +1796,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketLocationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketLocationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1817,10 +1843,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
         public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
-            var marshaller = GetBucketLoggingRequestMarshaller.Instance;
-            var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -1836,11 +1863,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketLoggingRequestMarshaller.Instance;
-            var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketLoggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1868,10 +1895,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
-            var marshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketMetricsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1887,11 +1915,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1932,10 +1960,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
         public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
-            var marshaller = GetBucketNotificationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketNotificationRequest,GetBucketNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketNotificationResponse>(request, options);
         }
 
         /// <summary>
@@ -1951,11 +1980,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketNotificationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketNotificationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1996,10 +2025,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var marshaller = GetBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -2015,11 +2045,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2047,10 +2077,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
         public virtual GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request)
         {
-            var marshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
-            var unmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketPolicyStatusRequest,GetBucketPolicyStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketPolicyStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -2066,11 +2097,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketPolicyStatus(GetBucketPolicyStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
-            var unmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketPolicyStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2097,10 +2128,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var marshaller = GetBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketReplicationRequest,GetBucketReplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketReplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -2116,11 +2148,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketReplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2161,10 +2193,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
-            var marshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
-            var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketRequestPaymentRequest,GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketRequestPaymentResponse>(request, options);
         }
 
         /// <summary>
@@ -2180,11 +2213,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
-            var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketRequestPaymentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2211,10 +2244,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var marshaller = GetBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketTaggingRequest,GetBucketTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -2230,11 +2264,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2275,10 +2309,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var marshaller = GetBucketVersioningRequestMarshaller.Instance;
-            var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketVersioningRequest,GetBucketVersioningResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketVersioningResponse>(request, options);
         }
 
         /// <summary>
@@ -2294,11 +2329,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketVersioningRequestMarshaller.Instance;
-            var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketVersioningRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2339,10 +2374,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
-            var marshaller = GetBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
-            return Invoke<GetBucketWebsiteRequest,GetBucketWebsiteResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBucketWebsiteResponse>(request, options);
         }
 
         /// <summary>
@@ -2358,11 +2394,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBucketWebsiteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2403,10 +2439,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
-            var marshaller = GetCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetCORSConfigurationRequest,GetCORSConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCORSConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -2422,11 +2459,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCORSConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2467,10 +2504,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
-            var marshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetLifecycleConfigurationRequest,GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLifecycleConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -2486,11 +2524,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetLifecycleConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2551,10 +2589,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var marshaller = GetObjectRequestMarshaller.Instance;
-            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectRequest,GetObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -2570,11 +2609,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectRequestMarshaller.Instance;
-            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2601,10 +2640,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
         public virtual GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request)
         {
-            var marshaller = GetObjectLegalHoldRequestMarshaller.Instance;
-            var unmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectLegalHoldRequest,GetObjectLegalHoldResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectLegalHoldResponse>(request, options);
         }
 
         /// <summary>
@@ -2620,11 +2660,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectLegalHold(GetObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectLegalHoldRequestMarshaller.Instance;
-            var unmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectLegalHoldRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2653,10 +2693,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
         public virtual GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request)
         {
-            var marshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectLockConfigurationRequest,GetObjectLockConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectLockConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -2672,11 +2713,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectLockConfiguration(GetObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectLockConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2743,10 +2784,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
         public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
-            var marshaller = GetObjectMetadataRequestMarshaller.Instance;
-            var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectMetadataResponse>(request, options);
         }
 
         /// <summary>
@@ -2762,11 +2804,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectMetadataRequestMarshaller.Instance;
-            var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectMetadataRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2793,10 +2835,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
         public virtual GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request)
         {
-            var marshaller = GetObjectRetentionRequestMarshaller.Instance;
-            var unmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectRetentionRequest,GetObjectRetentionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectRetentionResponse>(request, options);
         }
 
         /// <summary>
@@ -2812,11 +2855,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectRetention(GetObjectRetentionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectRetentionRequestMarshaller.Instance;
-            var unmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectRetentionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2843,10 +2886,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
         public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
-            var marshaller = GetObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -2862,11 +2906,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2909,10 +2953,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
         public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
-            var marshaller = GetObjectTorrentRequestMarshaller.Instance;
-            var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectTorrentResponse>(request, options);
         }
 
         /// <summary>
@@ -2928,11 +2973,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetObjectTorrentRequestMarshaller.Instance;
-            var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetObjectTorrentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2959,10 +3004,11 @@ namespace Amazon.S3
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -2978,11 +3024,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPublicAccessBlockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3010,10 +3056,11 @@ namespace Amazon.S3
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
         internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
-            var marshaller = HeadBucketRequestMarshaller.Instance;
-            var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
-            return Invoke<HeadBucketRequest,HeadBucketResponse>(request, marshaller, unmarshaller);
+            return Invoke<HeadBucketResponse>(request, options);
         }
 
         /// <summary>
@@ -3029,11 +3076,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         internal virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = HeadBucketRequestMarshaller.Instance;
-            var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
-            return BeginInvoke<HeadBucketRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3092,10 +3139,11 @@ namespace Amazon.S3
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateMultipartUploadResponse>(request, options);
         }
 
         /// <summary>
@@ -3111,11 +3159,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InitiateMultipartUploadRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3142,10 +3190,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
-            var marshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBucketAnalyticsConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3161,11 +3210,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListBucketAnalyticsConfigurationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3192,10 +3241,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
-            var marshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBucketInventoryConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3211,11 +3261,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListBucketInventoryConfigurationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3242,10 +3292,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
-            var marshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBucketMetricsConfigurationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3261,11 +3312,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListBucketMetricsConfigurationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3302,10 +3353,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
         public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
-            var marshaller = ListBucketsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
-            return Invoke<ListBucketsRequest,ListBucketsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBucketsResponse>(request, options);
         }
 
         /// <summary>
@@ -3321,11 +3373,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListBucketsRequestMarshaller.Instance;
-            var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListBucketsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3382,10 +3434,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
-            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMultipartUploadsResponse>(request, options);
         }
 
         /// <summary>
@@ -3401,11 +3454,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
-            var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListMultipartUploadsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3465,10 +3518,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
-            var marshaller = ListObjectsRequestMarshaller.Instance;
-            var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
-            return Invoke<ListObjectsRequest,ListObjectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListObjectsResponse>(request, options);
         }
 
         /// <summary>
@@ -3484,11 +3538,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListObjectsRequestMarshaller.Instance;
-            var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListObjectsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3518,10 +3572,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
         public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
-            var marshaller = ListObjectsV2RequestMarshaller.Instance;
-            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
-            return Invoke<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, unmarshaller);
+            return Invoke<ListObjectsV2Response>(request, options);
         }
 
         /// <summary>
@@ -3537,11 +3592,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
         {
-            var marshaller = ListObjectsV2RequestMarshaller.Instance;
-            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListObjectsV2Request>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3586,10 +3641,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var marshaller = ListPartsRequestMarshaller.Instance;
-            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPartsResponse>(request, options);
         }
 
         /// <summary>
@@ -3605,11 +3661,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListPartsRequestMarshaller.Instance;
-            var unmarshaller = ListPartsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListPartsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3666,10 +3722,11 @@ namespace Amazon.S3
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var marshaller = ListVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListVersionsRequest,ListVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3685,11 +3742,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3716,10 +3773,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
         public virtual PutACLResponse PutACL(PutACLRequest request)
         {
-            var marshaller = PutACLRequestMarshaller.Instance;
-            var unmarshaller = PutACLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
 
-            return Invoke<PutACLRequest,PutACLResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutACLResponse>(request, options);
         }
 
         /// <summary>
@@ -3735,11 +3793,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutACLRequestMarshaller.Instance;
-            var unmarshaller = PutACLResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutACLRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3780,10 +3838,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
         public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
-            var marshaller = PutBucketRequestMarshaller.Instance;
-            var unmarshaller = PutBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketRequest,PutBucketResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketResponse>(request, options);
         }
 
         /// <summary>
@@ -3799,11 +3858,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketRequestMarshaller.Instance;
-            var unmarshaller = PutBucketResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3830,10 +3889,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
-            var marshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketAccelerateConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -3849,11 +3909,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3881,10 +3941,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketAnalyticsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -3900,11 +3961,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3932,10 +3993,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
         public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
         {
-            var marshaller = PutBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketEncryptionRequest,PutBucketEncryptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketEncryptionResponse>(request, options);
         }
 
         /// <summary>
@@ -3951,11 +4013,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketEncryption(PutBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketEncryptionRequestMarshaller.Instance;
-            var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketEncryptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3982,10 +4044,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
-            var marshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketInventoryConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -4001,11 +4064,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4034,10 +4097,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
         public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
-            var marshaller = PutBucketLoggingRequestMarshaller.Instance;
-            var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -4053,11 +4117,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketLoggingRequestMarshaller.Instance;
-            var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketLoggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4084,10 +4148,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
-            var marshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketMetricsConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -4103,11 +4168,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4134,10 +4199,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
         public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
-            var marshaller = PutBucketNotificationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketNotificationRequest,PutBucketNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketNotificationResponse>(request, options);
         }
 
         /// <summary>
@@ -4153,11 +4219,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketNotificationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketNotificationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4221,10 +4287,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var marshaller = PutBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -4240,11 +4307,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketPolicyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4273,10 +4340,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var marshaller = PutBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketReplicationRequest,PutBucketReplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketReplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -4292,11 +4360,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketReplicationRequestMarshaller.Instance;
-            var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketReplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4345,10 +4413,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
-            var marshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
-            var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketRequestPaymentRequest,PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketRequestPaymentResponse>(request, options);
         }
 
         /// <summary>
@@ -4364,11 +4433,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
-            var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketRequestPaymentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4411,10 +4480,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var marshaller = PutBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketTaggingRequest,PutBucketTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -4430,11 +4500,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketTaggingRequestMarshaller.Instance;
-            var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4462,10 +4532,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var marshaller = PutBucketVersioningRequestMarshaller.Instance;
-            var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketVersioningRequest,PutBucketVersioningResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketVersioningResponse>(request, options);
         }
 
         /// <summary>
@@ -4481,11 +4552,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketVersioningRequestMarshaller.Instance;
-            var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketVersioningRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4528,10 +4599,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
-            var marshaller = PutBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
-            return Invoke<PutBucketWebsiteRequest,PutBucketWebsiteResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutBucketWebsiteResponse>(request, options);
         }
 
         /// <summary>
@@ -4547,11 +4619,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutBucketWebsiteRequestMarshaller.Instance;
-            var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutBucketWebsiteRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4594,10 +4666,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
-            var marshaller = PutCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutCORSConfigurationRequest,PutCORSConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutCORSConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -4613,11 +4686,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutCORSConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutCORSConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4662,10 +4735,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
-            var marshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutLifecycleConfigurationRequest,PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLifecycleConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -4681,11 +4755,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutLifecycleConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4712,10 +4786,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var marshaller = PutObjectRequestMarshaller.Instance;
-            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectRequest,PutObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -4731,11 +4806,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutObjectRequestMarshaller.Instance;
-            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutObjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4762,10 +4837,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
         public virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
         {
-            var marshaller = PutObjectLegalHoldRequestMarshaller.Instance;
-            var unmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectLegalHoldRequest,PutObjectLegalHoldResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectLegalHoldResponse>(request, options);
         }
 
         /// <summary>
@@ -4781,11 +4857,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutObjectLegalHold(PutObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutObjectLegalHoldRequestMarshaller.Instance;
-            var unmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutObjectLegalHoldRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4814,10 +4890,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
         public virtual PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request)
         {
-            var marshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectLockConfigurationRequest,PutObjectLockConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectLockConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -4833,11 +4910,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutObjectLockConfiguration(PutObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutObjectLockConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4864,10 +4941,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
         public virtual PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request)
         {
-            var marshaller = PutObjectRetentionRequestMarshaller.Instance;
-            var unmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectRetentionRequest,PutObjectRetentionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectRetentionResponse>(request, options);
         }
 
         /// <summary>
@@ -4883,11 +4961,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutObjectRetention(PutObjectRetentionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutObjectRetentionRequestMarshaller.Instance;
-            var unmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutObjectRetentionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4914,10 +4992,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
         public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
-            var marshaller = PutObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectTaggingResponse>(request, options);
         }
 
         /// <summary>
@@ -4933,11 +5012,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutObjectTaggingRequestMarshaller.Instance;
-            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutObjectTaggingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4965,10 +5044,11 @@ namespace Amazon.S3
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -4984,11 +5064,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutPublicAccessBlockRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5087,10 +5167,11 @@ namespace Amazon.S3
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
-            var marshaller = RestoreObjectRequestMarshaller.Instance;
-            var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreObjectRequest,RestoreObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -5106,11 +5187,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RestoreObjectRequestMarshaller.Instance;
-            var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RestoreObjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5142,10 +5223,11 @@ namespace Amazon.S3
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
         public virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
         {
-            var marshaller = SelectObjectContentRequestMarshaller.Instance;
-            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
 
-            return Invoke<SelectObjectContentRequest,SelectObjectContentResponse>(request, marshaller, unmarshaller);
+            return Invoke<SelectObjectContentResponse>(request, options);
         }
 
         /// <summary>
@@ -5161,11 +5243,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginSelectObjectContent(SelectObjectContentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SelectObjectContentRequestMarshaller.Instance;
-            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SelectObjectContentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5200,10 +5282,11 @@ namespace Amazon.S3
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
         public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
-            var marshaller = UploadPartRequestMarshaller.Instance;
-            var unmarshaller = UploadPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
 
-            return Invoke<UploadPartRequest,UploadPartResponse>(request, marshaller, unmarshaller);
+            return Invoke<UploadPartResponse>(request, options);
         }
 
         /// <summary>
@@ -5219,11 +5302,11 @@ namespace Amazon.S3
         ///         operation.</returns>
         public virtual IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UploadPartRequestMarshaller.Instance;
-            var unmarshaller = UploadPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UploadPartRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

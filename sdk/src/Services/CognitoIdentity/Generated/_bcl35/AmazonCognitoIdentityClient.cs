@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CognitoIdentity.Model;
 using Amazon.CognitoIdentity.Model.Internal.MarshallTransformations;
@@ -275,7 +276,7 @@ namespace Amazon.CognitoIdentity
 
         #endregion
 
-        
+
         #region  CreateIdentityPool
 
         /// <summary>
@@ -332,10 +333,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
         public virtual CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
-            var marshaller = CreateIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
 
-            return Invoke<CreateIdentityPoolRequest,CreateIdentityPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateIdentityPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -352,11 +354,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
         public virtual IAsyncResult BeginCreateIdentityPool(CreateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateIdentityPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -400,10 +402,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
         public virtual DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
-            var marshaller = DeleteIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteIdentitiesRequest,DeleteIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -420,11 +423,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentities(DeleteIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteIdentitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -510,10 +513,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public virtual DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
-            var marshaller = DeleteIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteIdentityPoolRequest,DeleteIdentityPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteIdentityPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -530,11 +534,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentityPool(DeleteIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteIdentityPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -620,10 +624,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public virtual DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
-            var marshaller = DescribeIdentityRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIdentityRequest,DescribeIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -640,11 +645,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public virtual IAsyncResult BeginDescribeIdentity(DescribeIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeIdentityRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -730,10 +735,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public virtual DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
-            var marshaller = DescribeIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeIdentityPoolRequest,DescribeIdentityPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeIdentityPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -750,11 +756,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public virtual IAsyncResult BeginDescribeIdentityPool(DescribeIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeIdentityPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -914,10 +920,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
-            var marshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetCredentialsForIdentityRequest,GetCredentialsForIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCredentialsForIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -934,11 +941,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public virtual IAsyncResult BeginGetCredentialsForIdentity(GetCredentialsForIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCredentialsForIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -997,10 +1004,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
         public virtual GetIdResponse GetId(GetIdRequest request)
         {
-            var marshaller = GetIdRequestMarshaller.Instance;
-            var unmarshaller = GetIdResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdResponseUnmarshaller.Instance;
 
-            return Invoke<GetIdRequest,GetIdResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIdResponse>(request, options);
         }
 
         /// <summary>
@@ -1017,11 +1025,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
         public virtual IAsyncResult BeginGetId(GetIdRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetIdRequestMarshaller.Instance;
-            var unmarshaller = GetIdResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetIdRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1111,10 +1119,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
-            var marshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
 
-            return Invoke<GetIdentityPoolRolesRequest,GetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIdentityPoolRolesResponse>(request, options);
         }
 
         /// <summary>
@@ -1131,11 +1140,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityPoolRoles(GetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetIdentityPoolRolesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1243,10 +1252,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public virtual GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
-            var marshaller = GetOpenIdTokenRequestMarshaller.Instance;
-            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpenIdTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
 
-            return Invoke<GetOpenIdTokenRequest,GetOpenIdTokenResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetOpenIdTokenResponse>(request, options);
         }
 
         /// <summary>
@@ -1263,11 +1273,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public virtual IAsyncResult BeginGetOpenIdToken(GetOpenIdTokenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetOpenIdTokenRequestMarshaller.Instance;
-            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpenIdTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetOpenIdTokenRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1336,10 +1346,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
         public virtual GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
-            var marshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetOpenIdTokenForDeveloperIdentityRequest,GetOpenIdTokenForDeveloperIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetOpenIdTokenForDeveloperIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1356,11 +1367,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
         public virtual IAsyncResult BeginGetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetOpenIdTokenForDeveloperIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1409,10 +1420,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            var marshaller = ListIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1429,11 +1441,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public virtual IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListIdentitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1479,10 +1491,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
         public virtual ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
-            var marshaller = ListIdentityPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
 
-            return Invoke<ListIdentityPoolsRequest,ListIdentityPoolsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListIdentityPoolsResponse>(request, options);
         }
 
         /// <summary>
@@ -1499,11 +1512,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
         public virtual IAsyncResult BeginListIdentityPools(ListIdentityPoolsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListIdentityPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListIdentityPoolsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1563,10 +1576,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
         public virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
-            var marshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<LookupDeveloperIdentityRequest,LookupDeveloperIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<LookupDeveloperIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1583,11 +1597,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
         public virtual IAsyncResult BeginLookupDeveloperIdentity(LookupDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<LookupDeveloperIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1645,10 +1659,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
         public virtual MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
-            var marshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<MergeDeveloperIdentitiesRequest,MergeDeveloperIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<MergeDeveloperIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1665,11 +1680,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
         public virtual IAsyncResult BeginMergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<MergeDeveloperIdentitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1769,10 +1784,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
-            var marshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
 
-            return Invoke<SetIdentityPoolRolesRequest,SetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetIdentityPoolRolesResponse>(request, options);
         }
 
         /// <summary>
@@ -1789,11 +1805,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityPoolRoles(SetIdentityPoolRolesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SetIdentityPoolRolesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1848,10 +1864,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
         public virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
-            var marshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<UnlinkDeveloperIdentityRequest,UnlinkDeveloperIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnlinkDeveloperIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1868,11 +1885,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
         public virtual IAsyncResult BeginUnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
-            var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UnlinkDeveloperIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1929,10 +1946,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
         public virtual UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
-            var marshaller = UnlinkIdentityRequestMarshaller.Instance;
-            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlinkIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<UnlinkIdentityRequest,UnlinkIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnlinkIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1949,11 +1967,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
         public virtual IAsyncResult BeginUnlinkIdentity(UnlinkIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UnlinkIdentityRequestMarshaller.Instance;
-            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlinkIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UnlinkIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2011,10 +2029,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
         public virtual UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
-            var marshaller = UpdateIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateIdentityPoolRequest,UpdateIdentityPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateIdentityPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -2031,11 +2050,11 @@ namespace Amazon.CognitoIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
         public virtual IAsyncResult BeginUpdateIdentityPool(UpdateIdentityPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateIdentityPoolRequestMarshaller.Instance;
-            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateIdentityPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

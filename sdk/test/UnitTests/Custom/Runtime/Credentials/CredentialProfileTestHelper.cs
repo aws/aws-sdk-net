@@ -56,25 +56,26 @@ namespace AWSSDK.UnitTests
             }
             return properties;
         }
-
+        
         public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType)
         {
-            return GetCredentialProfile(Guid.NewGuid(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion());
+            return GetCredentialProfile(Guid.NewGuid(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), null);
         }
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options)
         {
-            return GetCredentialProfile(uniqueKey, profileName, options, null, null);
-        }
+            return GetCredentialProfile(uniqueKey, profileName, options, null, null, null);
+        }                
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options,
-            Dictionary<string, string> properties, RegionEndpoint region)
+            Dictionary<string, string> properties, RegionEndpoint region, bool? endpointDiscoveryEnabled)
         {
             var profile = new CredentialProfile(profileName, options)
             {
-                Region = region
+                Region = region,
+                EndpointDiscoveryEnabled = endpointDiscoveryEnabled
             };
-            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);
+            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);            
             ReflectionHelpers.Invoke(profile, "Properties", properties);
             return profile;
         }

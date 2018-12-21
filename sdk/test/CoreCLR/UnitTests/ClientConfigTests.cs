@@ -46,7 +46,9 @@ namespace UnitTests
             "CorrectedUtcNow",
             "ClockOffset",
             "HttpClientFactory",
-            "DisableHostPrefixInjection"
+            "DisableHostPrefixInjection",
+            "EndpointDiscoveryEnabled",
+            "EndpointDiscoveryCacheLimit"
         };
 
         [Fact]

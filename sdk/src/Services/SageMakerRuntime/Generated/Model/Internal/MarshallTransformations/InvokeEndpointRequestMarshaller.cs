@@ -56,6 +56,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerRuntime");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/endpoints/{EndpointName}/invocations";

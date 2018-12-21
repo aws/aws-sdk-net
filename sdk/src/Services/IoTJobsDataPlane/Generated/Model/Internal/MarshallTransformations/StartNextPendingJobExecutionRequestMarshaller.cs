@@ -56,6 +56,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTJobsDataPlane");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-29";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/things/{thingName}/jobs/$next";

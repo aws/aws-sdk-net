@@ -58,6 +58,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             string target = "Route53Domains_v20140515.CheckDomainAvailability";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

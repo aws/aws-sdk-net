@@ -158,6 +158,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-01";            
             } 
             catch (EncoderFallbackException e) 
             {

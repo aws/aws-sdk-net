@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SecurityHub.Model;
 using Amazon.SecurityHub.Model.Internal.MarshallTransformations;
@@ -245,15 +246,16 @@ namespace Amazon.SecurityHub
 
         #endregion
 
-        
+
         #region  AcceptInvitation
 
         internal virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
-            var marshaller = AcceptInvitationRequestMarshaller.Instance;
-            var unmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptInvitationRequest,AcceptInvitationResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptInvitationResponse>(request, options);
         }
 
 
@@ -269,11 +271,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AcceptInvitationRequestMarshaller.Instance;
-            var unmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AcceptInvitationRequest,AcceptInvitationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -282,10 +284,11 @@ namespace Amazon.SecurityHub
 
         internal virtual BatchDisableStandardsResponse BatchDisableStandards(BatchDisableStandardsRequest request)
         {
-            var marshaller = BatchDisableStandardsRequestMarshaller.Instance;
-            var unmarshaller = BatchDisableStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisableStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisableStandardsResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDisableStandardsRequest,BatchDisableStandardsResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDisableStandardsResponse>(request, options);
         }
 
 
@@ -301,11 +304,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">REST API Reference for BatchDisableStandards Operation</seealso>
         public virtual Task<BatchDisableStandardsResponse> BatchDisableStandardsAsync(BatchDisableStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDisableStandardsRequestMarshaller.Instance;
-            var unmarshaller = BatchDisableStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisableStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisableStandardsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchDisableStandardsRequest,BatchDisableStandardsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchDisableStandardsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -314,10 +317,11 @@ namespace Amazon.SecurityHub
 
         internal virtual BatchEnableStandardsResponse BatchEnableStandards(BatchEnableStandardsRequest request)
         {
-            var marshaller = BatchEnableStandardsRequestMarshaller.Instance;
-            var unmarshaller = BatchEnableStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEnableStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEnableStandardsResponseUnmarshaller.Instance;
 
-            return Invoke<BatchEnableStandardsRequest,BatchEnableStandardsResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchEnableStandardsResponse>(request, options);
         }
 
 
@@ -333,11 +337,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         public virtual Task<BatchEnableStandardsResponse> BatchEnableStandardsAsync(BatchEnableStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchEnableStandardsRequestMarshaller.Instance;
-            var unmarshaller = BatchEnableStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEnableStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEnableStandardsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchEnableStandardsRequest,BatchEnableStandardsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchEnableStandardsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -346,10 +350,11 @@ namespace Amazon.SecurityHub
 
         internal virtual BatchImportFindingsResponse BatchImportFindings(BatchImportFindingsRequest request)
         {
-            var marshaller = BatchImportFindingsRequestMarshaller.Instance;
-            var unmarshaller = BatchImportFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchImportFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchImportFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<BatchImportFindingsRequest,BatchImportFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchImportFindingsResponse>(request, options);
         }
 
 
@@ -365,11 +370,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">REST API Reference for BatchImportFindings Operation</seealso>
         public virtual Task<BatchImportFindingsResponse> BatchImportFindingsAsync(BatchImportFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchImportFindingsRequestMarshaller.Instance;
-            var unmarshaller = BatchImportFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchImportFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchImportFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchImportFindingsRequest,BatchImportFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchImportFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -378,10 +383,11 @@ namespace Amazon.SecurityHub
 
         internal virtual CreateInsightResponse CreateInsight(CreateInsightRequest request)
         {
-            var marshaller = CreateInsightRequestMarshaller.Instance;
-            var unmarshaller = CreateInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInsightResponseUnmarshaller.Instance;
 
-            return Invoke<CreateInsightRequest,CreateInsightResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateInsightResponse>(request, options);
         }
 
 
@@ -397,11 +403,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateInsight">REST API Reference for CreateInsight Operation</seealso>
         public virtual Task<CreateInsightResponse> CreateInsightAsync(CreateInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateInsightRequestMarshaller.Instance;
-            var unmarshaller = CreateInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInsightResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateInsightRequest,CreateInsightResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateInsightResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -410,10 +416,11 @@ namespace Amazon.SecurityHub
 
         internal virtual CreateMembersResponse CreateMembers(CreateMembersRequest request)
         {
-            var marshaller = CreateMembersRequestMarshaller.Instance;
-            var unmarshaller = CreateMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
-            return Invoke<CreateMembersRequest,CreateMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateMembersResponse>(request, options);
         }
 
 
@@ -429,11 +436,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual Task<CreateMembersResponse> CreateMembersAsync(CreateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateMembersRequestMarshaller.Instance;
-            var unmarshaller = CreateMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateMembersRequest,CreateMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -442,10 +449,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
         {
-            var marshaller = DeclineInvitationsRequestMarshaller.Instance;
-            var unmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeclineInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
-            return Invoke<DeclineInvitationsRequest,DeclineInvitationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeclineInvitationsResponse>(request, options);
         }
 
 
@@ -461,11 +469,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeclineInvitationsRequestMarshaller.Instance;
-            var unmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeclineInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeclineInvitationsRequest,DeclineInvitationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeclineInvitationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -474,10 +482,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DeleteInsightResponse DeleteInsight(DeleteInsightRequest request)
         {
-            var marshaller = DeleteInsightRequestMarshaller.Instance;
-            var unmarshaller = DeleteInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInsightRequest,DeleteInsightResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInsightResponse>(request, options);
         }
 
 
@@ -493,11 +502,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         public virtual Task<DeleteInsightResponse> DeleteInsightAsync(DeleteInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteInsightRequestMarshaller.Instance;
-            var unmarshaller = DeleteInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteInsightRequest,DeleteInsightResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteInsightResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -506,10 +515,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
         {
-            var marshaller = DeleteInvitationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInvitationsRequest,DeleteInvitationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInvitationsResponse>(request, options);
         }
 
 
@@ -525,11 +535,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteInvitationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteInvitationsRequest,DeleteInvitationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteInvitationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -538,10 +548,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DeleteMembersResponse DeleteMembers(DeleteMembersRequest request)
         {
-            var marshaller = DeleteMembersRequestMarshaller.Instance;
-            var unmarshaller = DeleteMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMembersRequest,DeleteMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMembersResponse>(request, options);
         }
 
 
@@ -557,11 +568,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual Task<DeleteMembersResponse> DeleteMembersAsync(DeleteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteMembersRequestMarshaller.Instance;
-            var unmarshaller = DeleteMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteMembersRequest,DeleteMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -570,10 +581,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DisableImportFindingsForProductResponse DisableImportFindingsForProduct(DisableImportFindingsForProductRequest request)
         {
-            var marshaller = DisableImportFindingsForProductRequestMarshaller.Instance;
-            var unmarshaller = DisableImportFindingsForProductResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImportFindingsForProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImportFindingsForProductResponseUnmarshaller.Instance;
 
-            return Invoke<DisableImportFindingsForProductRequest,DisableImportFindingsForProductResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableImportFindingsForProductResponse>(request, options);
         }
 
 
@@ -589,11 +601,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct">REST API Reference for DisableImportFindingsForProduct Operation</seealso>
         public virtual Task<DisableImportFindingsForProductResponse> DisableImportFindingsForProductAsync(DisableImportFindingsForProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableImportFindingsForProductRequestMarshaller.Instance;
-            var unmarshaller = DisableImportFindingsForProductResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImportFindingsForProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImportFindingsForProductResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisableImportFindingsForProductRequest,DisableImportFindingsForProductResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisableImportFindingsForProductResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -602,10 +614,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DisableSecurityHubResponse DisableSecurityHub(DisableSecurityHubRequest request)
         {
-            var marshaller = DisableSecurityHubRequestMarshaller.Instance;
-            var unmarshaller = DisableSecurityHubResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubResponseUnmarshaller.Instance;
 
-            return Invoke<DisableSecurityHubRequest,DisableSecurityHubResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableSecurityHubResponse>(request, options);
         }
 
 
@@ -621,11 +634,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">REST API Reference for DisableSecurityHub Operation</seealso>
         public virtual Task<DisableSecurityHubResponse> DisableSecurityHubAsync(DisableSecurityHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableSecurityHubRequestMarshaller.Instance;
-            var unmarshaller = DisableSecurityHubResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisableSecurityHubRequest,DisableSecurityHubResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisableSecurityHubResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -634,10 +647,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
-            var marshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateFromMasterAccountRequest,DisassociateFromMasterAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateFromMasterAccountResponse>(request, options);
         }
 
 
@@ -653,11 +667,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateFromMasterAccountRequest,DisassociateFromMasterAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateFromMasterAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -666,10 +680,11 @@ namespace Amazon.SecurityHub
 
         internal virtual DisassociateMembersResponse DisassociateMembers(DisassociateMembersRequest request)
         {
-            var marshaller = DisassociateMembersRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateMembersRequest,DisassociateMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateMembersResponse>(request, options);
         }
 
 
@@ -685,11 +700,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         public virtual Task<DisassociateMembersResponse> DisassociateMembersAsync(DisassociateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateMembersRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateMembersRequest,DisassociateMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -698,10 +713,11 @@ namespace Amazon.SecurityHub
 
         internal virtual EnableImportFindingsForProductResponse EnableImportFindingsForProduct(EnableImportFindingsForProductRequest request)
         {
-            var marshaller = EnableImportFindingsForProductRequestMarshaller.Instance;
-            var unmarshaller = EnableImportFindingsForProductResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImportFindingsForProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImportFindingsForProductResponseUnmarshaller.Instance;
 
-            return Invoke<EnableImportFindingsForProductRequest,EnableImportFindingsForProductResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableImportFindingsForProductResponse>(request, options);
         }
 
 
@@ -717,11 +733,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">REST API Reference for EnableImportFindingsForProduct Operation</seealso>
         public virtual Task<EnableImportFindingsForProductResponse> EnableImportFindingsForProductAsync(EnableImportFindingsForProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableImportFindingsForProductRequestMarshaller.Instance;
-            var unmarshaller = EnableImportFindingsForProductResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImportFindingsForProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImportFindingsForProductResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableImportFindingsForProductRequest,EnableImportFindingsForProductResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnableImportFindingsForProductResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -730,10 +746,11 @@ namespace Amazon.SecurityHub
 
         internal virtual EnableSecurityHubResponse EnableSecurityHub(EnableSecurityHubRequest request)
         {
-            var marshaller = EnableSecurityHubRequestMarshaller.Instance;
-            var unmarshaller = EnableSecurityHubResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubResponseUnmarshaller.Instance;
 
-            return Invoke<EnableSecurityHubRequest,EnableSecurityHubResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableSecurityHubResponse>(request, options);
         }
 
 
@@ -749,11 +766,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">REST API Reference for EnableSecurityHub Operation</seealso>
         public virtual Task<EnableSecurityHubResponse> EnableSecurityHubAsync(EnableSecurityHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableSecurityHubRequestMarshaller.Instance;
-            var unmarshaller = EnableSecurityHubResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableSecurityHubRequest,EnableSecurityHubResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnableSecurityHubResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -762,10 +779,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetEnabledStandardsResponse GetEnabledStandards(GetEnabledStandardsRequest request)
         {
-            var marshaller = GetEnabledStandardsRequestMarshaller.Instance;
-            var unmarshaller = GetEnabledStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnabledStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnabledStandardsResponseUnmarshaller.Instance;
 
-            return Invoke<GetEnabledStandardsRequest,GetEnabledStandardsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEnabledStandardsResponse>(request, options);
         }
 
 
@@ -781,11 +799,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">REST API Reference for GetEnabledStandards Operation</seealso>
         public virtual Task<GetEnabledStandardsResponse> GetEnabledStandardsAsync(GetEnabledStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEnabledStandardsRequestMarshaller.Instance;
-            var unmarshaller = GetEnabledStandardsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnabledStandardsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnabledStandardsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEnabledStandardsRequest,GetEnabledStandardsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEnabledStandardsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -794,10 +812,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
-            var marshaller = GetFindingsRequestMarshaller.Instance;
-            var unmarshaller = GetFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetFindingsRequest,GetFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFindingsResponse>(request, options);
         }
 
 
@@ -813,11 +832,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetFindingsRequestMarshaller.Instance;
-            var unmarshaller = GetFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetFindingsRequest,GetFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -826,10 +845,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetInsightResultsResponse GetInsightResults(GetInsightResultsRequest request)
         {
-            var marshaller = GetInsightResultsRequestMarshaller.Instance;
-            var unmarshaller = GetInsightResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResultsResponseUnmarshaller.Instance;
 
-            return Invoke<GetInsightResultsRequest,GetInsightResultsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInsightResultsResponse>(request, options);
         }
 
 
@@ -845,11 +865,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">REST API Reference for GetInsightResults Operation</seealso>
         public virtual Task<GetInsightResultsResponse> GetInsightResultsAsync(GetInsightResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInsightResultsRequestMarshaller.Instance;
-            var unmarshaller = GetInsightResultsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResultsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetInsightResultsRequest,GetInsightResultsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetInsightResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -858,10 +878,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetInsightsResponse GetInsights(GetInsightsRequest request)
         {
-            var marshaller = GetInsightsRequestMarshaller.Instance;
-            var unmarshaller = GetInsightsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightsResponseUnmarshaller.Instance;
 
-            return Invoke<GetInsightsRequest,GetInsightsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInsightsResponse>(request, options);
         }
 
 
@@ -877,11 +898,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">REST API Reference for GetInsights Operation</seealso>
         public virtual Task<GetInsightsResponse> GetInsightsAsync(GetInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInsightsRequestMarshaller.Instance;
-            var unmarshaller = GetInsightsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetInsightsRequest,GetInsightsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetInsightsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -890,10 +911,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
         {
-            var marshaller = GetInvitationsCountRequestMarshaller.Instance;
-            var unmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvitationsCountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
-            return Invoke<GetInvitationsCountRequest,GetInvitationsCountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInvitationsCountResponse>(request, options);
         }
 
 
@@ -909,11 +931,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetInvitationsCountRequestMarshaller.Instance;
-            var unmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvitationsCountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetInvitationsCountRequest,GetInvitationsCountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetInvitationsCountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -922,10 +944,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
-            var marshaller = GetMasterAccountRequestMarshaller.Instance;
-            var unmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMasterAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetMasterAccountRequest,GetMasterAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMasterAccountResponse>(request, options);
         }
 
 
@@ -941,11 +964,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMasterAccountRequestMarshaller.Instance;
-            var unmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMasterAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetMasterAccountRequest,GetMasterAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetMasterAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -954,10 +977,11 @@ namespace Amazon.SecurityHub
 
         internal virtual GetMembersResponse GetMembers(GetMembersRequest request)
         {
-            var marshaller = GetMembersRequestMarshaller.Instance;
-            var unmarshaller = GetMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMembersResponseUnmarshaller.Instance;
 
-            return Invoke<GetMembersRequest,GetMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMembersResponse>(request, options);
         }
 
 
@@ -973,11 +997,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMembersRequestMarshaller.Instance;
-            var unmarshaller = GetMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetMembersRequest,GetMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -986,10 +1010,11 @@ namespace Amazon.SecurityHub
 
         internal virtual InviteMembersResponse InviteMembers(InviteMembersRequest request)
         {
-            var marshaller = InviteMembersRequestMarshaller.Instance;
-            var unmarshaller = InviteMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteMembersResponseUnmarshaller.Instance;
 
-            return Invoke<InviteMembersRequest,InviteMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<InviteMembersResponse>(request, options);
         }
 
 
@@ -1005,11 +1030,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         public virtual Task<InviteMembersResponse> InviteMembersAsync(InviteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = InviteMembersRequestMarshaller.Instance;
-            var unmarshaller = InviteMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<InviteMembersRequest,InviteMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<InviteMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1018,10 +1043,11 @@ namespace Amazon.SecurityHub
 
         internal virtual ListEnabledProductsForImportResponse ListEnabledProductsForImport(ListEnabledProductsForImportRequest request)
         {
-            var marshaller = ListEnabledProductsForImportRequestMarshaller.Instance;
-            var unmarshaller = ListEnabledProductsForImportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnabledProductsForImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnabledProductsForImportResponseUnmarshaller.Instance;
 
-            return Invoke<ListEnabledProductsForImportRequest,ListEnabledProductsForImportResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEnabledProductsForImportResponse>(request, options);
         }
 
 
@@ -1037,11 +1063,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">REST API Reference for ListEnabledProductsForImport Operation</seealso>
         public virtual Task<ListEnabledProductsForImportResponse> ListEnabledProductsForImportAsync(ListEnabledProductsForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListEnabledProductsForImportRequestMarshaller.Instance;
-            var unmarshaller = ListEnabledProductsForImportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnabledProductsForImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnabledProductsForImportResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListEnabledProductsForImportRequest,ListEnabledProductsForImportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListEnabledProductsForImportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1050,10 +1076,11 @@ namespace Amazon.SecurityHub
 
         internal virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
-            var marshaller = ListInvitationsRequestMarshaller.Instance;
-            var unmarshaller = ListInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInvitationsRequest,ListInvitationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInvitationsResponse>(request, options);
         }
 
 
@@ -1069,11 +1096,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListInvitationsRequestMarshaller.Instance;
-            var unmarshaller = ListInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListInvitationsRequest,ListInvitationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListInvitationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1082,10 +1109,11 @@ namespace Amazon.SecurityHub
 
         internal virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var marshaller = ListMembersRequestMarshaller.Instance;
-            var unmarshaller = ListMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
-            return Invoke<ListMembersRequest,ListMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMembersResponse>(request, options);
         }
 
 
@@ -1101,11 +1129,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListMembersRequestMarshaller.Instance;
-            var unmarshaller = ListMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListMembersRequest,ListMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1114,10 +1142,11 @@ namespace Amazon.SecurityHub
 
         internal virtual UpdateFindingsResponse UpdateFindings(UpdateFindingsRequest request)
         {
-            var marshaller = UpdateFindingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFindingsRequest,UpdateFindingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFindingsResponse>(request, options);
         }
 
 
@@ -1133,11 +1162,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">REST API Reference for UpdateFindings Operation</seealso>
         public virtual Task<UpdateFindingsResponse> UpdateFindingsAsync(UpdateFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateFindingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateFindingsRequest,UpdateFindingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateFindingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1146,10 +1175,11 @@ namespace Amazon.SecurityHub
 
         internal virtual UpdateInsightResponse UpdateInsight(UpdateInsightRequest request)
         {
-            var marshaller = UpdateInsightRequestMarshaller.Instance;
-            var unmarshaller = UpdateInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInsightResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateInsightRequest,UpdateInsightResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateInsightResponse>(request, options);
         }
 
 
@@ -1165,11 +1195,11 @@ namespace Amazon.SecurityHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">REST API Reference for UpdateInsight Operation</seealso>
         public virtual Task<UpdateInsightResponse> UpdateInsightAsync(UpdateInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateInsightRequestMarshaller.Instance;
-            var unmarshaller = UpdateInsightResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInsightResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateInsightRequest,UpdateInsightResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateInsightResponse>(request, options, cancellationToken);
         }
 
         #endregion

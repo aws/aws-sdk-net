@@ -55,6 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2017-03-31/tags/{ARN}";

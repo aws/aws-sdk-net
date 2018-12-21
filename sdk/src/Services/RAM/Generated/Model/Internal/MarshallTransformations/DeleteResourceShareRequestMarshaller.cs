@@ -55,6 +55,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteResourceShareRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RAM");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/deleteresourceshare";

@@ -58,6 +58,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             string target = "FmrsService.ListAgents";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

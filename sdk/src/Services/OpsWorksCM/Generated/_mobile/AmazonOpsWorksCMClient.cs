@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.OpsWorksCM.Model;
 using Amazon.OpsWorksCM.Model.Internal.MarshallTransformations;
@@ -340,15 +341,16 @@ namespace Amazon.OpsWorksCM
 
         #endregion
 
-        
+
         #region  AssociateNode
 
         internal virtual AssociateNodeResponse AssociateNode(AssociateNodeRequest request)
         {
-            var marshaller = AssociateNodeRequestMarshaller.Instance;
-            var unmarshaller = AssociateNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNodeResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateNodeRequest,AssociateNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateNodeResponse>(request, options);
         }
 
 
@@ -364,11 +366,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
         public virtual Task<AssociateNodeResponse> AssociateNodeAsync(AssociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateNodeRequestMarshaller.Instance;
-            var unmarshaller = AssociateNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNodeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateNodeRequest,AssociateNodeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateNodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -377,10 +379,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
-            var marshaller = CreateBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBackupResponse>(request, options);
         }
 
 
@@ -396,11 +399,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBackupRequestMarshaller.Instance;
-            var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateBackupRequest,CreateBackupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -409,10 +412,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual CreateServerResponse CreateServer(CreateServerRequest request)
         {
-            var marshaller = CreateServerRequestMarshaller.Instance;
-            var unmarshaller = CreateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateServerRequest,CreateServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateServerResponse>(request, options);
         }
 
 
@@ -428,11 +432,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public virtual Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateServerRequestMarshaller.Instance;
-            var unmarshaller = CreateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateServerRequest,CreateServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -441,10 +445,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBackupResponse>(request, options);
         }
 
 
@@ -460,11 +465,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBackupRequestMarshaller.Instance;
-            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -473,10 +478,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DeleteServerResponse DeleteServer(DeleteServerRequest request)
         {
-            var marshaller = DeleteServerRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteServerRequest,DeleteServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteServerResponse>(request, options);
         }
 
 
@@ -492,11 +498,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public virtual Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteServerRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteServerRequest,DeleteServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -505,10 +511,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAccountAttributesResponse>(request, options);
         }
 
 
@@ -524,11 +531,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -537,10 +544,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBackupsRequest,DescribeBackupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBackupsResponse>(request, options);
         }
 
 
@@ -556,11 +564,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBackupsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBackupsRequest,DescribeBackupsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBackupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -569,10 +577,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEventsResponse>(request, options);
         }
 
 
@@ -588,11 +597,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeEventsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -601,10 +610,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DescribeNodeAssociationStatusResponse DescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request)
         {
-            var marshaller = DescribeNodeAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeNodeAssociationStatusRequest,DescribeNodeAssociationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeNodeAssociationStatusResponse>(request, options);
         }
 
 
@@ -620,11 +630,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
         public virtual Task<DescribeNodeAssociationStatusResponse> DescribeNodeAssociationStatusAsync(DescribeNodeAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeNodeAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNodeAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNodeAssociationStatusResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeNodeAssociationStatusRequest,DescribeNodeAssociationStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeNodeAssociationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -633,10 +643,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DescribeServersResponse DescribeServers(DescribeServersRequest request)
         {
-            var marshaller = DescribeServersRequestMarshaller.Instance;
-            var unmarshaller = DescribeServersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeServersRequest,DescribeServersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeServersResponse>(request, options);
         }
 
 
@@ -652,11 +663,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
         public virtual Task<DescribeServersResponse> DescribeServersAsync(DescribeServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeServersRequestMarshaller.Instance;
-            var unmarshaller = DescribeServersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeServersRequest,DescribeServersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeServersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -665,10 +676,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual DisassociateNodeResponse DisassociateNode(DisassociateNodeRequest request)
         {
-            var marshaller = DisassociateNodeRequestMarshaller.Instance;
-            var unmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateNodeRequest,DisassociateNodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateNodeResponse>(request, options);
         }
 
 
@@ -684,11 +696,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
         public virtual Task<DisassociateNodeResponse> DisassociateNodeAsync(DisassociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateNodeRequestMarshaller.Instance;
-            var unmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNodeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateNodeRequest,DisassociateNodeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateNodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -697,10 +709,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual ExportServerEngineAttributeResponse ExportServerEngineAttribute(ExportServerEngineAttributeRequest request)
         {
-            var marshaller = ExportServerEngineAttributeRequestMarshaller.Instance;
-            var unmarshaller = ExportServerEngineAttributeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportServerEngineAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportServerEngineAttributeResponseUnmarshaller.Instance;
 
-            return Invoke<ExportServerEngineAttributeRequest,ExportServerEngineAttributeResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExportServerEngineAttributeResponse>(request, options);
         }
 
 
@@ -716,11 +729,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">REST API Reference for ExportServerEngineAttribute Operation</seealso>
         public virtual Task<ExportServerEngineAttributeResponse> ExportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ExportServerEngineAttributeRequestMarshaller.Instance;
-            var unmarshaller = ExportServerEngineAttributeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportServerEngineAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportServerEngineAttributeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ExportServerEngineAttributeRequest,ExportServerEngineAttributeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ExportServerEngineAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -729,10 +742,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual RestoreServerResponse RestoreServer(RestoreServerRequest request)
         {
-            var marshaller = RestoreServerRequestMarshaller.Instance;
-            var unmarshaller = RestoreServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreServerResponseUnmarshaller.Instance;
 
-            return Invoke<RestoreServerRequest,RestoreServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<RestoreServerResponse>(request, options);
         }
 
 
@@ -748,11 +762,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
         public virtual Task<RestoreServerResponse> RestoreServerAsync(RestoreServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RestoreServerRequestMarshaller.Instance;
-            var unmarshaller = RestoreServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RestoreServerRequest,RestoreServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RestoreServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -761,10 +775,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual StartMaintenanceResponse StartMaintenance(StartMaintenanceRequest request)
         {
-            var marshaller = StartMaintenanceRequestMarshaller.Instance;
-            var unmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
 
-            return Invoke<StartMaintenanceRequest,StartMaintenanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartMaintenanceResponse>(request, options);
         }
 
 
@@ -780,11 +795,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
         public virtual Task<StartMaintenanceResponse> StartMaintenanceAsync(StartMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartMaintenanceRequestMarshaller.Instance;
-            var unmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMaintenanceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartMaintenanceRequest,StartMaintenanceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartMaintenanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -793,10 +808,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual UpdateServerResponse UpdateServer(UpdateServerRequest request)
         {
-            var marshaller = UpdateServerRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateServerRequest,UpdateServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateServerResponse>(request, options);
         }
 
 
@@ -812,11 +828,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public virtual Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateServerRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateServerRequest,UpdateServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -825,10 +841,11 @@ namespace Amazon.OpsWorksCM
 
         internal virtual UpdateServerEngineAttributesResponse UpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request)
         {
-            var marshaller = UpdateServerEngineAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerEngineAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateServerEngineAttributesRequest,UpdateServerEngineAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateServerEngineAttributesResponse>(request, options);
         }
 
 
@@ -844,11 +861,11 @@ namespace Amazon.OpsWorksCM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
         public virtual Task<UpdateServerEngineAttributesResponse> UpdateServerEngineAttributesAsync(UpdateServerEngineAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateServerEngineAttributesRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerEngineAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerEngineAttributesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateServerEngineAttributesRequest,UpdateServerEngineAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateServerEngineAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

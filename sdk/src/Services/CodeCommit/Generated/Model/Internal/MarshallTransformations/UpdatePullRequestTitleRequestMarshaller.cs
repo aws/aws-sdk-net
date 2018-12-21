@@ -58,6 +58,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             string target = "CodeCommit_20150413.UpdatePullRequestTitle";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

@@ -55,6 +55,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetLifecyclePoliciesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DLM");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/policies";

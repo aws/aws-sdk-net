@@ -58,6 +58,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             string target = "AWSCognitoIdentityService.DescribeIdentityPool";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

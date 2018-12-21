@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.RDSDataService.Model;
 using Amazon.RDSDataService.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.RDSDataService
 
         #endregion
 
-        
+
         #region  ExecuteSql
 
 
@@ -261,10 +262,11 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
         public virtual ExecuteSqlResponse ExecuteSql(ExecuteSqlRequest request)
         {
-            var marshaller = ExecuteSqlRequestMarshaller.Instance;
-            var unmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteSqlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
 
-            return Invoke<ExecuteSqlRequest,ExecuteSqlResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExecuteSqlResponse>(request, options);
         }
 
         /// <summary>
@@ -279,11 +281,11 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
         public virtual Task<ExecuteSqlResponse> ExecuteSqlAsync(ExecuteSqlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ExecuteSqlRequestMarshaller.Instance;
-            var unmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ExecuteSqlRequest,ExecuteSqlResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteSqlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExecuteSqlResponse>(request, options, cancellationToken);
         }
 
         #endregion

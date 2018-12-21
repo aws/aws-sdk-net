@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MarketplaceEntitlementService.Model;
 using Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransformations;
@@ -253,7 +254,7 @@ namespace Amazon.MarketplaceEntitlementService
 
         #endregion
 
-        
+
         #region  GetEntitlements
 
         /// <summary>
@@ -276,10 +277,11 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
         {
-            var marshaller = GetEntitlementsRequestMarshaller.Instance;
-            var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
-            return Invoke<GetEntitlementsRequest,GetEntitlementsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEntitlementsResponse>(request, options);
         }
 
         /// <summary>
@@ -296,11 +298,11 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual IAsyncResult BeginGetEntitlements(GetEntitlementsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEntitlementsRequestMarshaller.Instance;
-            var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEntitlementsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

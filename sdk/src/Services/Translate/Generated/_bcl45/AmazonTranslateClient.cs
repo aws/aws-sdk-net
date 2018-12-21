@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Translate.Model;
 using Amazon.Translate.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.Translate
 
         #endregion
 
-        
+
         #region  DeleteTerminology
 
 
@@ -261,10 +262,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual DeleteTerminologyResponse DeleteTerminology(DeleteTerminologyRequest request)
         {
-            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
-            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTerminologyRequest,DeleteTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -279,11 +281,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual Task<DeleteTerminologyResponse> DeleteTerminologyAsync(DeleteTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
-            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteTerminologyRequest,DeleteTerminologyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTerminologyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -316,10 +318,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual GetTerminologyResponse GetTerminology(GetTerminologyRequest request)
         {
-            var marshaller = GetTerminologyRequestMarshaller.Instance;
-            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<GetTerminologyRequest,GetTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -334,11 +337,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual Task<GetTerminologyResponse> GetTerminologyAsync(GetTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTerminologyRequestMarshaller.Instance;
-            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetTerminologyRequest,GetTerminologyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTerminologyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -381,10 +384,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual ImportTerminologyResponse ImportTerminology(ImportTerminologyRequest request)
         {
-            var marshaller = ImportTerminologyRequestMarshaller.Instance;
-            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<ImportTerminologyRequest,ImportTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -399,11 +403,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual Task<ImportTerminologyResponse> ImportTerminologyAsync(ImportTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ImportTerminologyRequestMarshaller.Instance;
-            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ImportTerminologyRequest,ImportTerminologyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportTerminologyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -431,10 +435,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual ListTerminologiesResponse ListTerminologies(ListTerminologiesRequest request)
         {
-            var marshaller = ListTerminologiesRequestMarshaller.Instance;
-            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListTerminologiesRequest,ListTerminologiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTerminologiesResponse>(request, options);
         }
 
         /// <summary>
@@ -449,11 +454,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual Task<ListTerminologiesResponse> ListTerminologiesAsync(ListTerminologiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTerminologiesRequestMarshaller.Instance;
-            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTerminologiesRequest,ListTerminologiesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTerminologiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -599,10 +604,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual TranslateTextResponse TranslateText(TranslateTextRequest request)
         {
-            var marshaller = TranslateTextRequestMarshaller.Instance;
-            var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
-            return Invoke<TranslateTextRequest,TranslateTextResponse>(request, marshaller, unmarshaller);
+            return Invoke<TranslateTextResponse>(request, options);
         }
 
         /// <summary>
@@ -617,11 +623,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual Task<TranslateTextResponse> TranslateTextAsync(TranslateTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TranslateTextRequestMarshaller.Instance;
-            var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TranslateTextRequest,TranslateTextResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TranslateTextResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 using Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         #endregion
 
-        
+
         #region  GenerateDataSet
 
 
@@ -260,10 +261,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
         {
-            var marshaller = GenerateDataSetRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateDataSetResponse>(request, options);
         }
 
         /// <summary>
@@ -278,11 +280,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateDataSetRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateDataSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +312,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         public virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
-            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
-            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSupportDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
-            return Invoke<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSupportDataExportResponse>(request, options);
         }
 
         /// <summary>
@@ -328,11 +331,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         public virtual Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
-            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSupportDataExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSupportDataExportResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IoT1ClickProjects.Model;
 using Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.IoT1ClickProjects
 
         #endregion
 
-        
+
         #region  AssociateDeviceWithPlacement
 
         internal virtual AssociateDeviceWithPlacementResponse AssociateDeviceWithPlacement(AssociateDeviceWithPlacementRequest request)
         {
-            var marshaller = AssociateDeviceWithPlacementRequestMarshaller.Instance;
-            var unmarshaller = AssociateDeviceWithPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithPlacementResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateDeviceWithPlacementRequest,AssociateDeviceWithPlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateDeviceWithPlacementResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/AssociateDeviceWithPlacement">REST API Reference for AssociateDeviceWithPlacement Operation</seealso>
         public virtual Task<AssociateDeviceWithPlacementResponse> AssociateDeviceWithPlacementAsync(AssociateDeviceWithPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateDeviceWithPlacementRequestMarshaller.Instance;
-            var unmarshaller = AssociateDeviceWithPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithPlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateDeviceWithPlacementRequest,AssociateDeviceWithPlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateDeviceWithPlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -278,10 +280,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual CreatePlacementResponse CreatePlacement(CreatePlacementRequest request)
         {
-            var marshaller = CreatePlacementRequestMarshaller.Instance;
-            var unmarshaller = CreatePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlacementResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePlacementRequest,CreatePlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePlacementResponse>(request, options);
         }
 
 
@@ -297,11 +300,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/CreatePlacement">REST API Reference for CreatePlacement Operation</seealso>
         public virtual Task<CreatePlacementResponse> CreatePlacementAsync(CreatePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePlacementRequestMarshaller.Instance;
-            var unmarshaller = CreatePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreatePlacementRequest,CreatePlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreatePlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +313,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateProjectResponse>(request, options);
         }
 
 
@@ -329,11 +333,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateProjectRequest,CreateProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -342,10 +346,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual DeletePlacementResponse DeletePlacement(DeletePlacementRequest request)
         {
-            var marshaller = DeletePlacementRequestMarshaller.Instance;
-            var unmarshaller = DeletePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlacementResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePlacementRequest,DeletePlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePlacementResponse>(request, options);
         }
 
 
@@ -361,11 +366,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">REST API Reference for DeletePlacement Operation</seealso>
         public virtual Task<DeletePlacementResponse> DeletePlacementAsync(DeletePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePlacementRequestMarshaller.Instance;
-            var unmarshaller = DeletePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeletePlacementRequest,DeletePlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeletePlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +379,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteProjectResponse>(request, options);
         }
 
 
@@ -393,11 +399,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -406,10 +412,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual DescribePlacementResponse DescribePlacement(DescribePlacementRequest request)
         {
-            var marshaller = DescribePlacementRequestMarshaller.Instance;
-            var unmarshaller = DescribePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePlacementResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePlacementRequest,DescribePlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePlacementResponse>(request, options);
         }
 
 
@@ -425,11 +432,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DescribePlacement">REST API Reference for DescribePlacement Operation</seealso>
         public virtual Task<DescribePlacementResponse> DescribePlacementAsync(DescribePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribePlacementRequestMarshaller.Instance;
-            var unmarshaller = DescribePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribePlacementRequest,DescribePlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribePlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -438,10 +445,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeProjectResponse>(request, options);
         }
 
 
@@ -457,11 +465,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -470,10 +478,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual DisassociateDeviceFromPlacementResponse DisassociateDeviceFromPlacement(DisassociateDeviceFromPlacementRequest request)
         {
-            var marshaller = DisassociateDeviceFromPlacementRequestMarshaller.Instance;
-            var unmarshaller = DisassociateDeviceFromPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDeviceFromPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDeviceFromPlacementResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateDeviceFromPlacementRequest,DisassociateDeviceFromPlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateDeviceFromPlacementResponse>(request, options);
         }
 
 
@@ -489,11 +498,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DisassociateDeviceFromPlacement">REST API Reference for DisassociateDeviceFromPlacement Operation</seealso>
         public virtual Task<DisassociateDeviceFromPlacementResponse> DisassociateDeviceFromPlacementAsync(DisassociateDeviceFromPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateDeviceFromPlacementRequestMarshaller.Instance;
-            var unmarshaller = DisassociateDeviceFromPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDeviceFromPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDeviceFromPlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateDeviceFromPlacementRequest,DisassociateDeviceFromPlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateDeviceFromPlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -502,10 +511,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual GetDevicesInPlacementResponse GetDevicesInPlacement(GetDevicesInPlacementRequest request)
         {
-            var marshaller = GetDevicesInPlacementRequestMarshaller.Instance;
-            var unmarshaller = GetDevicesInPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDevicesInPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDevicesInPlacementResponseUnmarshaller.Instance;
 
-            return Invoke<GetDevicesInPlacementRequest,GetDevicesInPlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDevicesInPlacementResponse>(request, options);
         }
 
 
@@ -521,11 +531,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/GetDevicesInPlacement">REST API Reference for GetDevicesInPlacement Operation</seealso>
         public virtual Task<GetDevicesInPlacementResponse> GetDevicesInPlacementAsync(GetDevicesInPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDevicesInPlacementRequestMarshaller.Instance;
-            var unmarshaller = GetDevicesInPlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDevicesInPlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDevicesInPlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDevicesInPlacementRequest,GetDevicesInPlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDevicesInPlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -534,10 +544,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual ListPlacementsResponse ListPlacements(ListPlacementsRequest request)
         {
-            var marshaller = ListPlacementsRequestMarshaller.Instance;
-            var unmarshaller = ListPlacementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlacementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlacementsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPlacementsRequest,ListPlacementsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPlacementsResponse>(request, options);
         }
 
 
@@ -553,11 +564,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListPlacements">REST API Reference for ListPlacements Operation</seealso>
         public virtual Task<ListPlacementsResponse> ListPlacementsAsync(ListPlacementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPlacementsRequestMarshaller.Instance;
-            var unmarshaller = ListPlacementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlacementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlacementsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPlacementsRequest,ListPlacementsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPlacementsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -566,10 +577,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
-            return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListProjectsResponse>(request, options);
         }
 
 
@@ -585,11 +597,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -598,10 +610,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual UpdatePlacementResponse UpdatePlacement(UpdatePlacementRequest request)
         {
-            var marshaller = UpdatePlacementRequestMarshaller.Instance;
-            var unmarshaller = UpdatePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlacementResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePlacementRequest,UpdatePlacementResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePlacementResponse>(request, options);
         }
 
 
@@ -617,11 +630,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UpdatePlacement">REST API Reference for UpdatePlacement Operation</seealso>
         public virtual Task<UpdatePlacementResponse> UpdatePlacementAsync(UpdatePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePlacementRequestMarshaller.Instance;
-            var unmarshaller = UpdatePlacementResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlacementResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdatePlacementRequest,UpdatePlacementResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdatePlacementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -630,10 +643,11 @@ namespace Amazon.IoT1ClickProjects
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateProjectResponse>(request, options);
         }
 
 
@@ -649,11 +663,11 @@ namespace Amazon.IoT1ClickProjects
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion

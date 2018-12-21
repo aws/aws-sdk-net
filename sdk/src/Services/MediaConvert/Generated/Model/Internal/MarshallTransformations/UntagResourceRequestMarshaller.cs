@@ -56,6 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConvert");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/2017-08-29/tags/{arn}";

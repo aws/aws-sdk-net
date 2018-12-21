@@ -58,6 +58,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             string target = "StarlingDoveService.PutConfigRule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

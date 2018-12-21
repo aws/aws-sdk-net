@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MarketplaceEntitlementService.Model;
 using Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransformations;
@@ -260,15 +261,16 @@ namespace Amazon.MarketplaceEntitlementService
 
         #endregion
 
-        
+
         #region  GetEntitlements
 
         internal virtual GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
         {
-            var marshaller = GetEntitlementsRequestMarshaller.Instance;
-            var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
-            return Invoke<GetEntitlementsRequest,GetEntitlementsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEntitlementsResponse>(request, options);
         }
 
 
@@ -284,11 +286,11 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual Task<GetEntitlementsResponse> GetEntitlementsAsync(GetEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEntitlementsRequestMarshaller.Instance;
-            var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetEntitlementsRequest,GetEntitlementsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetEntitlementsResponse>(request, options, cancellationToken);
         }
 
         #endregion

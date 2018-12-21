@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.S3Control.Model;
 using Amazon.S3Control.Model.Internal.MarshallTransformations;
@@ -246,7 +247,7 @@ namespace Amazon.S3Control
 
         #endregion
 
-        
+
         #region  DeletePublicAccessBlock
 
 
@@ -258,10 +259,11 @@ namespace Amazon.S3Control
         /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -275,11 +277,11 @@ namespace Amazon.S3Control
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePublicAccessBlockResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -299,10 +301,11 @@ namespace Amazon.S3Control
         /// </exception>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -316,11 +319,11 @@ namespace Amazon.S3Control
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPublicAccessBlockResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -337,10 +340,11 @@ namespace Amazon.S3Control
         /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
-            return Invoke<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPublicAccessBlockResponse>(request, options);
         }
 
         /// <summary>
@@ -354,11 +358,11 @@ namespace Amazon.S3Control
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
-            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutPublicAccessBlockResponse>(request, options, cancellationToken);
         }
 
         #endregion

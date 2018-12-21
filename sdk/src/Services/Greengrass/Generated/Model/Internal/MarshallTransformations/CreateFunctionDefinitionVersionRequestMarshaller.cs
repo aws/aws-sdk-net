@@ -56,6 +56,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Greengrass");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}/versions";

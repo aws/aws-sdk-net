@@ -56,6 +56,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MobileAnalytics");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-05";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2014-06-05/events";

@@ -45,6 +45,9 @@ namespace ServiceClientGenerator
         public const string AuthTypeKey = "authtype";
         public const string EndpointKey = "endpoint";
         public const string HostPrefixKey = "hostPrefix";
+        public const string EndpointOperationKey = "endpointoperation";
+        public const string EndpointDiscoveryKey = "endpointdiscovery";
+        public const string RequiredKey = "required";
 
         // shapes
         public const string ShapesKey = "shapes";
@@ -56,6 +59,7 @@ namespace ServiceClientGenerator
         public const string LocationNameKey = "locationName";
         public const string XmlNamespaceUriKey = "uri";
         public const string XmlNamespaceKey = "xmlNamespace";
+        public const string EndpointDiscoveryIdKey = "endpointdiscoveryid";
 
         // documentation
         public const string DocumentationKey = "documentation";
@@ -276,6 +280,15 @@ namespace ServiceClientGenerator
         public Operation FindOperation(string name)
         {
             return this.Operations.FirstOrDefault(x => x.Name == name);
+        }
+
+        /// <summary>
+        /// Gets the operation marked endpointoperation if one exists
+        /// </summary>        
+        /// <returns>An Operation object that contains details about the operation requested</returns>
+        public Operation FindEndpointOperation()
+        {
+            return this.Operations.FirstOrDefault(x => x.IsEndpointOperation);
         }
 
         /// <summary>

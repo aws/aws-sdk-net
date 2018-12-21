@@ -55,6 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeUserHierarchyStructureRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/user-hierarchy-structure/{InstanceId}";

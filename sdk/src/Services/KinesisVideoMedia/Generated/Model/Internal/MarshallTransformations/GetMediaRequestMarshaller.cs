@@ -56,6 +56,7 @@ namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoMedia");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/getMedia";

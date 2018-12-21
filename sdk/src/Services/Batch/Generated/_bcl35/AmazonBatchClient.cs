@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Batch.Model;
 using Amazon.Batch.Model.Internal.MarshallTransformations;
@@ -252,7 +253,7 @@ namespace Amazon.Batch
 
         #endregion
 
-        
+
         #region  CancelJob
 
         /// <summary>
@@ -276,10 +277,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
         /// <summary>
@@ -296,11 +298,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -392,10 +394,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public virtual CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request)
         {
-            var marshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateComputeEnvironmentRequest,CreateComputeEnvironmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateComputeEnvironmentResponse>(request, options);
         }
 
         /// <summary>
@@ -412,11 +415,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public virtual IAsyncResult BeginCreateComputeEnvironment(CreateComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateComputeEnvironmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -463,10 +466,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public virtual CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
         {
-            var marshaller = CreateJobQueueRequestMarshaller.Instance;
-            var unmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobQueueRequest,CreateJobQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobQueueResponse>(request, options);
         }
 
         /// <summary>
@@ -483,11 +487,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateJobQueue(CreateJobQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateJobQueueRequestMarshaller.Instance;
-            var unmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateJobQueueRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -531,10 +535,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public virtual DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
         {
-            var marshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteComputeEnvironmentRequest,DeleteComputeEnvironmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteComputeEnvironmentResponse>(request, options);
         }
 
         /// <summary>
@@ -551,11 +556,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public virtual IAsyncResult BeginDeleteComputeEnvironment(DeleteComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteComputeEnvironmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -600,10 +605,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public virtual DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request)
         {
-            var marshaller = DeleteJobQueueRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteJobQueueRequest,DeleteJobQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteJobQueueResponse>(request, options);
         }
 
         /// <summary>
@@ -620,11 +626,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public virtual IAsyncResult BeginDeleteJobQueue(DeleteJobQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteJobQueueRequestMarshaller.Instance;
-            var unmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteJobQueueRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -661,10 +667,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public virtual DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request)
         {
-            var marshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterJobDefinitionRequest,DeregisterJobDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterJobDefinitionResponse>(request, options);
         }
 
         /// <summary>
@@ -681,11 +688,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeregisterJobDefinition(DeregisterJobDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
-            var unmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeregisterJobDefinitionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -729,10 +736,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public virtual DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request)
         {
-            var marshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeComputeEnvironmentsRequest,DescribeComputeEnvironmentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeComputeEnvironmentsResponse>(request, options);
         }
 
         /// <summary>
@@ -749,11 +757,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public virtual IAsyncResult BeginDescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeComputeEnvironmentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -791,10 +799,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public virtual DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request)
         {
-            var marshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobDefinitionsRequest,DescribeJobDefinitionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobDefinitionsResponse>(request, options);
         }
 
         /// <summary>
@@ -811,11 +820,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobDefinitions(DescribeJobDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeJobDefinitionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -852,10 +861,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public virtual DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request)
         {
-            var marshaller = DescribeJobQueuesRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobQueuesRequest,DescribeJobQueuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobQueuesResponse>(request, options);
         }
 
         /// <summary>
@@ -872,11 +882,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobQueues(DescribeJobQueuesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeJobQueuesRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeJobQueuesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -913,10 +923,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
-            var marshaller = DescribeJobsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeJobsRequest,DescribeJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -933,11 +944,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobs(DescribeJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeJobsRequestMarshaller.Instance;
-            var unmarshaller = DescribeJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -996,10 +1007,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1016,11 +1028,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1057,10 +1069,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public virtual RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request)
         {
-            var marshaller = RegisterJobDefinitionRequestMarshaller.Instance;
-            var unmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterJobDefinitionRequest,RegisterJobDefinitionResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterJobDefinitionResponse>(request, options);
         }
 
         /// <summary>
@@ -1077,11 +1090,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public virtual IAsyncResult BeginRegisterJobDefinition(RegisterJobDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterJobDefinitionRequestMarshaller.Instance;
-            var unmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterJobDefinitionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1119,10 +1132,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public virtual SubmitJobResponse SubmitJob(SubmitJobRequest request)
         {
-            var marshaller = SubmitJobRequestMarshaller.Instance;
-            var unmarshaller = SubmitJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitJobResponseUnmarshaller.Instance;
 
-            return Invoke<SubmitJobRequest,SubmitJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<SubmitJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1139,11 +1153,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public virtual IAsyncResult BeginSubmitJob(SubmitJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SubmitJobRequestMarshaller.Instance;
-            var unmarshaller = SubmitJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SubmitJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1182,10 +1196,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public virtual TerminateJobResponse TerminateJob(TerminateJobRequest request)
         {
-            var marshaller = TerminateJobRequestMarshaller.Instance;
-            var unmarshaller = TerminateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateJobRequest,TerminateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1202,11 +1217,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public virtual IAsyncResult BeginTerminateJob(TerminateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TerminateJobRequestMarshaller.Instance;
-            var unmarshaller = TerminateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TerminateJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1243,10 +1258,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public virtual UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request)
         {
-            var marshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateComputeEnvironmentRequest,UpdateComputeEnvironmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateComputeEnvironmentResponse>(request, options);
         }
 
         /// <summary>
@@ -1263,11 +1279,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public virtual IAsyncResult BeginUpdateComputeEnvironment(UpdateComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateComputeEnvironmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1304,10 +1320,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public virtual UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request)
         {
-            var marshaller = UpdateJobQueueRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateJobQueueRequest,UpdateJobQueueResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateJobQueueResponse>(request, options);
         }
 
         /// <summary>
@@ -1324,11 +1341,11 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public virtual IAsyncResult BeginUpdateJobQueue(UpdateJobQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateJobQueueRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateJobQueueRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

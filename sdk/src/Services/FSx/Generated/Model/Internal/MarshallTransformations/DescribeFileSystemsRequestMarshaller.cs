@@ -58,6 +58,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             string target = "AWSSimbaAPIService_v20180301.DescribeFileSystems";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

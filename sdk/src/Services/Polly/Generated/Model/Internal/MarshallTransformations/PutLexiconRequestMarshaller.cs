@@ -56,6 +56,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Polly");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/v1/lexicons/{LexiconName}";

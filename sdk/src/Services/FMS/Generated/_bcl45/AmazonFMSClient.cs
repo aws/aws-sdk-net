@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.FMS.Model;
 using Amazon.FMS.Model.Internal.MarshallTransformations;
@@ -243,7 +244,7 @@ namespace Amazon.FMS
 
         #endregion
 
-        
+
         #region  AssociateAdminAccount
 
 
@@ -281,10 +282,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual AssociateAdminAccountResponse AssociateAdminAccount(AssociateAdminAccountRequest request)
         {
-            var marshaller = AssociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateAdminAccountRequest,AssociateAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -299,11 +301,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual Task<AssociateAdminAccountResponse> AssociateAdminAccountAsync(AssociateAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateAdminAccountRequest,AssociateAdminAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateAdminAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -333,10 +335,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual DeleteNotificationChannelResponse DeleteNotificationChannel(DeleteNotificationChannelRequest request)
         {
-            var marshaller = DeleteNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotificationChannelRequest,DeleteNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -351,11 +354,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual Task<DeleteNotificationChannelResponse> DeleteNotificationChannelAsync(DeleteNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteNotificationChannelRequest,DeleteNotificationChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNotificationChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -384,10 +387,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -402,11 +406,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -437,10 +441,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual DisassociateAdminAccountResponse DisassociateAdminAccount(DisassociateAdminAccountRequest request)
         {
-            var marshaller = DisassociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateAdminAccountRequest,DisassociateAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -455,11 +460,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual Task<DisassociateAdminAccountResponse> DisassociateAdminAccountAsync(DisassociateAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisassociateAdminAccountRequest,DisassociateAdminAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateAdminAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -489,10 +494,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual GetAdminAccountResponse GetAdminAccount(GetAdminAccountRequest request)
         {
-            var marshaller = GetAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetAdminAccountRequest,GetAdminAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAdminAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -507,11 +513,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual Task<GetAdminAccountResponse> GetAdminAccountAsync(GetAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAdminAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAdminAccountRequest,GetAdminAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAdminAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -537,10 +543,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual GetComplianceDetailResponse GetComplianceDetail(GetComplianceDetailRequest request)
         {
-            var marshaller = GetComplianceDetailRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
 
-            return Invoke<GetComplianceDetailRequest,GetComplianceDetailResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetComplianceDetailResponse>(request, options);
         }
 
         /// <summary>
@@ -555,11 +562,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual Task<GetComplianceDetailResponse> GetComplianceDetailAsync(GetComplianceDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetComplianceDetailRequestMarshaller.Instance;
-            var unmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetComplianceDetailRequest,GetComplianceDetailResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetComplianceDetailResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -589,10 +596,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual GetNotificationChannelResponse GetNotificationChannel(GetNotificationChannelRequest request)
         {
-            var marshaller = GetNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetNotificationChannelRequest,GetNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -607,11 +615,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual Task<GetNotificationChannelResponse> GetNotificationChannelAsync(GetNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetNotificationChannelRequest,GetNotificationChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNotificationChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -643,10 +651,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -661,11 +670,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetPolicyRequest,GetPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -691,10 +700,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual ListComplianceStatusResponse ListComplianceStatus(ListComplianceStatusRequest request)
         {
-            var marshaller = ListComplianceStatusRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceStatusRequest,ListComplianceStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -709,11 +719,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual Task<ListComplianceStatusResponse> ListComplianceStatusAsync(ListComplianceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListComplianceStatusRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListComplianceStatusRequest,ListComplianceStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComplianceStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -744,10 +754,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMemberAccountsResponse>(request, options);
         }
 
         /// <summary>
@@ -762,11 +773,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual Task<ListMemberAccountsResponse> ListMemberAccountsAsync(ListMemberAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMemberAccountsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -800,10 +811,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPoliciesResponse>(request, options);
         }
 
         /// <summary>
@@ -818,11 +830,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -852,10 +864,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual PutNotificationChannelResponse PutNotificationChannel(PutNotificationChannelRequest request)
         {
-            var marshaller = PutNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
 
-            return Invoke<PutNotificationChannelRequest,PutNotificationChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutNotificationChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -870,11 +883,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual Task<PutNotificationChannelResponse> PutNotificationChannelAsync(PutNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutNotificationChannelRequestMarshaller.Instance;
-            var unmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutNotificationChannelRequest,PutNotificationChannelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutNotificationChannelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -914,10 +927,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
         {
-            var marshaller = PutPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutPolicyRequest,PutPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutPolicyResponse>(request, options);
         }
 
         /// <summary>
@@ -932,11 +946,11 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutPolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutPolicyRequest,PutPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

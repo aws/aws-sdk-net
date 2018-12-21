@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Polly.Model;
 using Amazon.Polly.Model.Internal.MarshallTransformations;
@@ -243,7 +244,7 @@ namespace Amazon.Polly
 
         #endregion
 
-        
+
         #region  DeleteLexicon
 
 
@@ -278,10 +279,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request)
         {
-            var marshaller = DeleteLexiconRequestMarshaller.Instance;
-            var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLexiconRequest,DeleteLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -296,11 +298,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual Task<DeleteLexiconResponse> DeleteLexiconAsync(DeleteLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLexiconRequestMarshaller.Instance;
-            var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteLexiconRequest,DeleteLexiconResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLexiconResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -348,10 +350,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request)
         {
-            var marshaller = DescribeVoicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeVoicesRequest,DescribeVoicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeVoicesResponse>(request, options);
         }
 
         /// <summary>
@@ -366,11 +369,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual Task<DescribeVoicesResponse> DescribeVoicesAsync(DescribeVoicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeVoicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeVoicesRequest,DescribeVoicesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVoicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -403,10 +406,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual GetLexiconResponse GetLexicon(GetLexiconRequest request)
         {
-            var marshaller = GetLexiconRequestMarshaller.Instance;
-            var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<GetLexiconRequest,GetLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -421,11 +425,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual Task<GetLexiconResponse> GetLexiconAsync(GetLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetLexiconRequestMarshaller.Instance;
-            var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetLexiconRequest,GetLexiconResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLexiconResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -453,10 +457,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
         public virtual GetSpeechSynthesisTaskResponse GetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request)
         {
-            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSpeechSynthesisTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -471,11 +476,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
         public virtual Task<GetSpeechSynthesisTaskResponse> GetSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSpeechSynthesisTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -500,10 +505,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
         {
-            var marshaller = ListLexiconsRequestMarshaller.Instance;
-            var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLexiconsRequest,ListLexiconsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLexiconsResponse>(request, options);
         }
 
         /// <summary>
@@ -518,11 +524,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual Task<ListLexiconsResponse> ListLexiconsAsync(ListLexiconsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLexiconsRequestMarshaller.Instance;
-            var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListLexiconsRequest,ListLexiconsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLexiconsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -547,10 +553,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
         public virtual ListSpeechSynthesisTasksResponse ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request)
         {
-            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
-            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
 
-            return Invoke<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListSpeechSynthesisTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -565,11 +572,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
         public virtual Task<ListSpeechSynthesisTasksResponse> ListSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
-            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSpeechSynthesisTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -620,10 +627,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual PutLexiconResponse PutLexicon(PutLexiconRequest request)
         {
-            var marshaller = PutLexiconRequestMarshaller.Instance;
-            var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
-            return Invoke<PutLexiconRequest,PutLexiconResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLexiconResponse>(request, options);
         }
 
         /// <summary>
@@ -638,11 +646,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual Task<PutLexiconResponse> PutLexiconAsync(PutLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutLexiconRequestMarshaller.Instance;
-            var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutLexiconRequest,PutLexiconResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutLexiconResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -714,10 +722,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         public virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
         {
-            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSpeechSynthesisTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -732,11 +741,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         public virtual Task<StartSpeechSynthesisTaskResponse> StartSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
-            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSpeechSynthesisTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -795,10 +804,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)
         {
-            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
-            var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
-            return Invoke<SynthesizeSpeechRequest,SynthesizeSpeechResponse>(request, marshaller, unmarshaller);
+            return Invoke<SynthesizeSpeechResponse>(request, options);
         }
 
         /// <summary>
@@ -813,11 +823,11 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual Task<SynthesizeSpeechResponse> SynthesizeSpeechAsync(SynthesizeSpeechRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
-            var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
-
-            return InvokeAsync<SynthesizeSpeechRequest,SynthesizeSpeechResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SynthesizeSpeechResponse>(request, options, cancellationToken);
         }
 
         #endregion

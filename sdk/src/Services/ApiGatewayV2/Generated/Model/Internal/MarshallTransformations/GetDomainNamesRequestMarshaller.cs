@@ -55,6 +55,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDomainNamesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayV2");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/v2/domainnames";

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Lambda.Model;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
@@ -187,7 +188,7 @@ namespace Amazon.Lambda
 
         #endregion
 
-        
+
         #region  AddLayerVersionPermission
 
         /// <summary>
@@ -202,8 +203,9 @@ namespace Amazon.Lambda
         public virtual void AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, AmazonServiceCallback<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -211,7 +213,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<AddLayerVersionPermissionRequest,AddLayerVersionPermissionResponse>((AddLayerVersionPermissionRequest)req, (AddLayerVersionPermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddLayerVersionPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -230,8 +232,9 @@ namespace Amazon.Lambda
         public virtual void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -239,7 +242,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<AddPermissionRequest,AddPermissionResponse>((AddPermissionRequest)req, (AddPermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -258,8 +261,9 @@ namespace Amazon.Lambda
         public virtual void CreateAliasAsync(CreateAliasRequest request, AmazonServiceCallback<CreateAliasRequest, CreateAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -267,7 +271,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<CreateAliasRequest,CreateAliasResponse>((CreateAliasRequest)req, (CreateAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -286,8 +290,9 @@ namespace Amazon.Lambda
         public virtual void CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, AmazonServiceCallback<CreateEventSourceMappingRequest, CreateEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateEventSourceMappingRequestMarshaller.Instance;
-            var unmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateEventSourceMappingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -295,7 +300,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<CreateEventSourceMappingRequest,CreateEventSourceMappingResponse>((CreateEventSourceMappingRequest)req, (CreateEventSourceMappingResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -314,8 +319,9 @@ namespace Amazon.Lambda
         public virtual void CreateFunctionAsync(CreateFunctionRequest request, AmazonServiceCallback<CreateFunctionRequest, CreateFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateFunctionRequestMarshaller.Instance;
-            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -323,7 +329,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<CreateFunctionRequest,CreateFunctionResponse>((CreateFunctionRequest)req, (CreateFunctionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -347,8 +353,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("DeleteAlias is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -356,7 +363,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<DeleteAliasRequest,DeleteAliasResponse>((DeleteAliasRequest)req, (DeleteAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -380,8 +387,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("DeleteEventSourceMapping is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -389,7 +397,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>((DeleteEventSourceMappingRequest)req, (DeleteEventSourceMappingResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -459,8 +467,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("DeleteFunction is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteFunctionRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -468,7 +477,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<DeleteFunctionRequest,DeleteFunctionResponse>((DeleteFunctionRequest)req, (DeleteFunctionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -492,8 +501,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("DeleteFunctionConcurrency is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -501,7 +511,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<DeleteFunctionConcurrencyRequest,DeleteFunctionConcurrencyResponse>((DeleteFunctionConcurrencyRequest)req, (DeleteFunctionConcurrencyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -525,8 +535,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("DeleteLayerVersion is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteLayerVersionRequestMarshaller.Instance;
-            var unmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteLayerVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -534,7 +545,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<DeleteLayerVersionRequest,DeleteLayerVersionResponse>((DeleteLayerVersionRequest)req, (DeleteLayerVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -553,8 +564,9 @@ namespace Amazon.Lambda
         public virtual void GetAccountSettingsAsync(GetAccountSettingsRequest request, AmazonServiceCallback<GetAccountSettingsRequest, GetAccountSettingsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccountSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -562,7 +574,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetAccountSettingsRequest,GetAccountSettingsResponse>((GetAccountSettingsRequest)req, (GetAccountSettingsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -581,8 +593,9 @@ namespace Amazon.Lambda
         public virtual void GetAliasAsync(GetAliasRequest request, AmazonServiceCallback<GetAliasRequest, GetAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAliasRequestMarshaller.Instance;
-            var unmarshaller = GetAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -590,7 +603,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetAliasRequest,GetAliasResponse>((GetAliasRequest)req, (GetAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -609,8 +622,9 @@ namespace Amazon.Lambda
         public virtual void GetEventSourceMappingAsync(GetEventSourceMappingRequest request, AmazonServiceCallback<GetEventSourceMappingRequest, GetEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetEventSourceMappingRequestMarshaller.Instance;
-            var unmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetEventSourceMappingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -618,7 +632,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetEventSourceMappingRequest,GetEventSourceMappingResponse>((GetEventSourceMappingRequest)req, (GetEventSourceMappingResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -687,8 +701,9 @@ namespace Amazon.Lambda
         public virtual void GetFunctionAsync(GetFunctionRequest request, AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetFunctionRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -696,7 +711,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetFunctionRequest,GetFunctionResponse>((GetFunctionRequest)req, (GetFunctionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -766,8 +781,9 @@ namespace Amazon.Lambda
         public virtual void GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetFunctionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetFunctionConfigurationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -775,7 +791,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetFunctionConfigurationRequest,GetFunctionConfigurationResponse>((GetFunctionConfigurationRequest)req, (GetFunctionConfigurationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetFunctionConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -794,8 +810,9 @@ namespace Amazon.Lambda
         public virtual void GetLayerVersionAsync(GetLayerVersionRequest request, AmazonServiceCallback<GetLayerVersionRequest, GetLayerVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetLayerVersionRequestMarshaller.Instance;
-            var unmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetLayerVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -803,7 +820,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetLayerVersionRequest,GetLayerVersionResponse>((GetLayerVersionRequest)req, (GetLayerVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -822,8 +839,9 @@ namespace Amazon.Lambda
         public virtual void GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, AmazonServiceCallback<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -831,7 +849,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetLayerVersionPolicyRequest,GetLayerVersionPolicyResponse>((GetLayerVersionPolicyRequest)req, (GetLayerVersionPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetLayerVersionPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -850,8 +868,9 @@ namespace Amazon.Lambda
         public virtual void GetPolicyAsync(GetPolicyRequest request, AmazonServiceCallback<GetPolicyRequest, GetPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -859,7 +878,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<GetPolicyRequest,GetPolicyResponse>((GetPolicyRequest)req, (GetPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -878,8 +897,9 @@ namespace Amazon.Lambda
         public virtual void InvokeAsync(InvokeRequest request, AmazonServiceCallback<InvokeRequest, InvokeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = InvokeRequestMarshaller.Instance;
-            var unmarshaller = InvokeResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = InvokeRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = InvokeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -887,7 +907,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<InvokeRequest,InvokeResponse>((InvokeRequest)req, (InvokeResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<InvokeRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -907,8 +927,9 @@ namespace Amazon.Lambda
         public virtual void InvokeAsyncAsync(InvokeAsyncRequest request, AmazonServiceCallback<InvokeAsyncRequest, InvokeAsyncResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = InvokeAsyncRequestMarshaller.Instance;
-            var unmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -916,7 +937,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<InvokeAsyncRequest,InvokeAsyncResponse>((InvokeAsyncRequest)req, (InvokeAsyncResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<InvokeAsyncRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -935,8 +956,9 @@ namespace Amazon.Lambda
         public virtual void ListAliasesAsync(ListAliasesRequest request, AmazonServiceCallback<ListAliasesRequest, ListAliasesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -944,7 +966,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListAliasesRequest,ListAliasesResponse>((ListAliasesRequest)req, (ListAliasesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAliasesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -963,8 +985,9 @@ namespace Amazon.Lambda
         public virtual void ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, AmazonServiceCallback<ListEventSourceMappingsRequest, ListEventSourceMappingsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListEventSourceMappingsRequestMarshaller.Instance;
-            var unmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListEventSourceMappingsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -972,7 +995,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListEventSourceMappingsRequest,ListEventSourceMappingsResponse>((ListEventSourceMappingsRequest)req, (ListEventSourceMappingsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListEventSourceMappingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1034,8 +1057,9 @@ namespace Amazon.Lambda
         public virtual void ListFunctionsAsync(ListFunctionsRequest request, AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListFunctionsRequestMarshaller.Instance;
-            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1043,7 +1067,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListFunctionsRequest,ListFunctionsResponse>((ListFunctionsRequest)req, (ListFunctionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListFunctionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1062,8 +1086,9 @@ namespace Amazon.Lambda
         public virtual void ListLayersAsync(ListLayersRequest request, AmazonServiceCallback<ListLayersRequest, ListLayersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListLayersRequestMarshaller.Instance;
-            var unmarshaller = ListLayersResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListLayersRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListLayersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1071,7 +1096,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListLayersRequest,ListLayersResponse>((ListLayersRequest)req, (ListLayersResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListLayersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1090,8 +1115,9 @@ namespace Amazon.Lambda
         public virtual void ListLayerVersionsAsync(ListLayerVersionsRequest request, AmazonServiceCallback<ListLayerVersionsRequest, ListLayerVersionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListLayerVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListLayerVersionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1099,7 +1125,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListLayerVersionsRequest,ListLayerVersionsResponse>((ListLayerVersionsRequest)req, (ListLayerVersionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListLayerVersionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1118,8 +1144,9 @@ namespace Amazon.Lambda
         public virtual void ListTagsAsync(ListTagsRequest request, AmazonServiceCallback<ListTagsRequest, ListTagsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1127,7 +1154,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListTagsRequest,ListTagsResponse>((ListTagsRequest)req, (ListTagsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1146,8 +1173,9 @@ namespace Amazon.Lambda
         public virtual void ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, AmazonServiceCallback<ListVersionsByFunctionRequest, ListVersionsByFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListVersionsByFunctionRequestMarshaller.Instance;
-            var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListVersionsByFunctionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1155,7 +1183,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<ListVersionsByFunctionRequest,ListVersionsByFunctionResponse>((ListVersionsByFunctionRequest)req, (ListVersionsByFunctionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListVersionsByFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1174,8 +1202,9 @@ namespace Amazon.Lambda
         public virtual void PublishLayerVersionAsync(PublishLayerVersionRequest request, AmazonServiceCallback<PublishLayerVersionRequest, PublishLayerVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PublishLayerVersionRequestMarshaller.Instance;
-            var unmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PublishLayerVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1183,7 +1212,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<PublishLayerVersionRequest,PublishLayerVersionResponse>((PublishLayerVersionRequest)req, (PublishLayerVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PublishLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1202,8 +1231,9 @@ namespace Amazon.Lambda
         public virtual void PublishVersionAsync(PublishVersionRequest request, AmazonServiceCallback<PublishVersionRequest, PublishVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PublishVersionRequestMarshaller.Instance;
-            var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PublishVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PublishVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1211,7 +1241,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<PublishVersionRequest,PublishVersionResponse>((PublishVersionRequest)req, (PublishVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PublishVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1235,8 +1265,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("PutFunctionConcurrency is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
-            var unmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1244,7 +1275,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<PutFunctionConcurrencyRequest,PutFunctionConcurrencyResponse>((PutFunctionConcurrencyRequest)req, (PutFunctionConcurrencyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1268,8 +1299,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("RemoveLayerVersionPermission is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
-            var unmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1277,7 +1309,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<RemoveLayerVersionPermissionRequest,RemoveLayerVersionPermissionResponse>((RemoveLayerVersionPermissionRequest)req, (RemoveLayerVersionPermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemoveLayerVersionPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1301,8 +1333,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("RemovePermission is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1310,7 +1343,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<RemovePermissionRequest,RemovePermissionResponse>((RemovePermissionRequest)req, (RemovePermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemovePermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1329,8 +1362,9 @@ namespace Amazon.Lambda
         public virtual void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1338,7 +1372,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<TagResourceRequest,TagResourceResponse>((TagResourceRequest)req, (TagResourceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1362,8 +1396,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("UntagResource is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1371,7 +1406,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<UntagResourceRequest,UntagResourceResponse>((UntagResourceRequest)req, (UntagResourceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1395,8 +1430,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("UpdateAlias is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateAliasRequestMarshaller.Instance;
-            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1404,7 +1440,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<UpdateAliasRequest,UpdateAliasResponse>((UpdateAliasRequest)req, (UpdateAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1428,8 +1464,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("UpdateEventSourceMapping is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
-            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1437,7 +1474,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>((UpdateEventSourceMappingRequest)req, (UpdateEventSourceMappingResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1461,8 +1498,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("UpdateFunctionCode is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateFunctionCodeRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateFunctionCodeRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1470,7 +1508,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>((UpdateFunctionCodeRequest)req, (UpdateFunctionCodeResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateFunctionCodeRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1494,8 +1532,9 @@ namespace Amazon.Lambda
                 throw new InvalidOperationException("UpdateFunctionConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1503,7 +1542,7 @@ namespace Amazon.Lambda
                             = new AmazonServiceResult<UpdateFunctionConfigurationRequest,UpdateFunctionConfigurationResponse>((UpdateFunctionConfigurationRequest)req, (UpdateFunctionConfigurationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateFunctionConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion

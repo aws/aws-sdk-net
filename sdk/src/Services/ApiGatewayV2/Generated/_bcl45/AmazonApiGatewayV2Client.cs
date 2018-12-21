@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ApiGatewayV2.Model;
 using Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
 
-        
+
         #region  CreateApi
 
 
@@ -264,10 +265,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateApiResponse CreateApi(CreateApiRequest request)
         {
-            var marshaller = CreateApiRequestMarshaller.Instance;
-            var unmarshaller = CreateApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApiRequest,CreateApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApiResponse>(request, options);
         }
 
         /// <summary>
@@ -281,11 +283,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateApiResponse> CreateApiAsync(CreateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateApiRequestMarshaller.Instance;
-            var unmarshaller = CreateApiResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateApiRequest,CreateApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -317,10 +319,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateApiMappingResponse CreateApiMapping(CreateApiMappingRequest request)
         {
-            var marshaller = CreateApiMappingRequestMarshaller.Instance;
-            var unmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApiMappingRequest,CreateApiMappingResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApiMappingResponse>(request, options);
         }
 
         /// <summary>
@@ -334,11 +337,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateApiMappingResponse> CreateApiMappingAsync(CreateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateApiMappingRequestMarshaller.Instance;
-            var unmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateApiMappingRequest,CreateApiMappingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateApiMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -370,10 +373,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
-            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAuthorizerResponse>(request, options);
         }
 
         /// <summary>
@@ -387,11 +391,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -423,10 +427,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var marshaller = CreateDeploymentRequestMarshaller.Instance;
-            var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDeploymentResponse>(request, options);
         }
 
         /// <summary>
@@ -440,11 +445,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDeploymentRequestMarshaller.Instance;
-            var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -476,10 +481,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
-            var marshaller = CreateDomainNameRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDomainNameRequest,CreateDomainNameResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDomainNameResponse>(request, options);
         }
 
         /// <summary>
@@ -493,11 +499,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDomainNameRequestMarshaller.Instance;
-            var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateDomainNameRequest,CreateDomainNameResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDomainNameResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -529,10 +535,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
         {
-            var marshaller = CreateIntegrationRequestMarshaller.Instance;
-            var unmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateIntegrationRequest,CreateIntegrationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateIntegrationResponse>(request, options);
         }
 
         /// <summary>
@@ -546,11 +553,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateIntegrationRequestMarshaller.Instance;
-            var unmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateIntegrationRequest,CreateIntegrationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -582,10 +589,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateIntegrationResponseResponse CreateIntegrationResponse(CreateIntegrationResponseRequest request)
         {
-            var marshaller = CreateIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
 
-            return Invoke<CreateIntegrationResponseRequest,CreateIntegrationResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateIntegrationResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -599,11 +607,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateIntegrationResponseResponse> CreateIntegrationResponseAsync(CreateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateIntegrationResponseRequest,CreateIntegrationResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIntegrationResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -635,10 +643,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var marshaller = CreateModelRequestMarshaller.Instance;
-            var unmarshaller = CreateModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
-            return Invoke<CreateModelRequest,CreateModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateModelResponse>(request, options);
         }
 
         /// <summary>
@@ -652,11 +661,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateModelRequestMarshaller.Instance;
-            var unmarshaller = CreateModelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateModelRequest,CreateModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -688,10 +697,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var marshaller = CreateRouteRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRouteRequest,CreateRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -705,11 +715,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRouteRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateRouteRequest,CreateRouteResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRouteResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -741,10 +751,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateRouteResponseResponse CreateRouteResponse(CreateRouteResponseRequest request)
         {
-            var marshaller = CreateRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRouteResponseRequest,CreateRouteResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRouteResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -758,11 +769,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateRouteResponseResponse> CreateRouteResponseAsync(CreateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateRouteResponseRequest,CreateRouteResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRouteResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -794,10 +805,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
-            var marshaller = CreateStageRequestMarshaller.Instance;
-            var unmarshaller = CreateStageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStageRequest,CreateStageResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStageResponse>(request, options);
         }
 
         /// <summary>
@@ -811,11 +823,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateStageRequestMarshaller.Instance;
-            var unmarshaller = CreateStageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateStageRequest,CreateStageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateStageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -838,10 +850,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteApiResponse DeleteApi(DeleteApiRequest request)
         {
-            var marshaller = DeleteApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApiRequest,DeleteApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApiResponse>(request, options);
         }
 
         /// <summary>
@@ -855,11 +868,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApiResponse> DeleteApiAsync(DeleteApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteApiRequest,DeleteApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -886,10 +899,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteApiMappingResponse DeleteApiMapping(DeleteApiMappingRequest request)
         {
-            var marshaller = DeleteApiMappingRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApiMappingRequest,DeleteApiMappingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApiMappingResponse>(request, options);
         }
 
         /// <summary>
@@ -903,11 +917,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteApiMappingResponse> DeleteApiMappingAsync(DeleteApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApiMappingRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteApiMappingRequest,DeleteApiMappingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteApiMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -930,10 +944,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
-            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAuthorizerResponse>(request, options);
         }
 
         /// <summary>
@@ -947,11 +962,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -974,10 +989,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var marshaller = DeleteDeploymentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDeploymentRequest,DeleteDeploymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDeploymentResponse>(request, options);
         }
 
         /// <summary>
@@ -991,11 +1007,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDeploymentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDeploymentRequest,DeleteDeploymentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1018,10 +1034,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
-            var marshaller = DeleteDomainNameRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDomainNameRequest,DeleteDomainNameResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDomainNameResponse>(request, options);
         }
 
         /// <summary>
@@ -1035,11 +1052,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDomainNameRequestMarshaller.Instance;
-            var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteDomainNameRequest,DeleteDomainNameResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDomainNameResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1062,10 +1079,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var marshaller = DeleteIntegrationRequestMarshaller.Instance;
-            var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteIntegrationRequest,DeleteIntegrationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteIntegrationResponse>(request, options);
         }
 
         /// <summary>
@@ -1079,11 +1097,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteIntegrationRequestMarshaller.Instance;
-            var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteIntegrationRequest,DeleteIntegrationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1106,10 +1124,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
-            var marshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteIntegrationResponseRequest,DeleteIntegrationResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteIntegrationResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -1123,11 +1142,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteIntegrationResponseRequest,DeleteIntegrationResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntegrationResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1150,10 +1169,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var marshaller = DeleteModelRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteModelRequest,DeleteModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteModelResponse>(request, options);
         }
 
         /// <summary>
@@ -1167,11 +1187,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteModelRequestMarshaller.Instance;
-            var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteModelRequest,DeleteModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1194,10 +1214,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var marshaller = DeleteRouteRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRouteRequest,DeleteRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -1211,11 +1232,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRouteRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteRouteRequest,DeleteRouteResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRouteResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1238,10 +1259,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteRouteResponseResponse DeleteRouteResponse(DeleteRouteResponseRequest request)
         {
-            var marshaller = DeleteRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRouteResponseRequest,DeleteRouteResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRouteResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -1255,11 +1277,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteRouteResponseResponse> DeleteRouteResponseAsync(DeleteRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteRouteResponseRequest,DeleteRouteResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRouteResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1282,10 +1304,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
-            var marshaller = DeleteStageRequestMarshaller.Instance;
-            var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteStageRequest,DeleteStageResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteStageResponse>(request, options);
         }
 
         /// <summary>
@@ -1299,11 +1322,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteStageRequestMarshaller.Instance;
-            var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteStageRequest,DeleteStageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteStageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1326,10 +1349,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetApiResponse GetApi(GetApiRequest request)
         {
-            var marshaller = GetApiRequestMarshaller.Instance;
-            var unmarshaller = GetApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiResponseUnmarshaller.Instance;
 
-            return Invoke<GetApiRequest,GetApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApiResponse>(request, options);
         }
 
         /// <summary>
@@ -1343,11 +1367,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApiResponse> GetApiAsync(GetApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApiRequestMarshaller.Instance;
-            var unmarshaller = GetApiResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetApiRequest,GetApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1374,10 +1398,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetApiMappingResponse GetApiMapping(GetApiMappingRequest request)
         {
-            var marshaller = GetApiMappingRequestMarshaller.Instance;
-            var unmarshaller = GetApiMappingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiMappingResponseUnmarshaller.Instance;
 
-            return Invoke<GetApiMappingRequest,GetApiMappingResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApiMappingResponse>(request, options);
         }
 
         /// <summary>
@@ -1391,11 +1416,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApiMappingResponse> GetApiMappingAsync(GetApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApiMappingRequestMarshaller.Instance;
-            var unmarshaller = GetApiMappingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetApiMappingRequest,GetApiMappingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiMappingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetApiMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1422,10 +1447,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetApiMappingsResponse GetApiMappings(GetApiMappingsRequest request)
         {
-            var marshaller = GetApiMappingsRequestMarshaller.Instance;
-            var unmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetApiMappingsRequest,GetApiMappingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApiMappingsResponse>(request, options);
         }
 
         /// <summary>
@@ -1439,11 +1465,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApiMappingsResponse> GetApiMappingsAsync(GetApiMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApiMappingsRequestMarshaller.Instance;
-            var unmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetApiMappingsRequest,GetApiMappingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApiMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetApiMappingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1470,10 +1496,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetApisResponse GetApis(GetApisRequest request)
         {
-            var marshaller = GetApisRequestMarshaller.Instance;
-            var unmarshaller = GetApisResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApisResponseUnmarshaller.Instance;
 
-            return Invoke<GetApisRequest,GetApisResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApisResponse>(request, options);
         }
 
         /// <summary>
@@ -1487,11 +1514,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetApisResponse> GetApisAsync(GetApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetApisRequestMarshaller.Instance;
-            var unmarshaller = GetApisResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetApisRequest,GetApisResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetApisResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1514,10 +1541,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
-            var marshaller = GetAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAuthorizerResponse>(request, options);
         }
 
         /// <summary>
@@ -1531,11 +1559,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1562,10 +1590,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
-            var marshaller = GetAuthorizersRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
-            return Invoke<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAuthorizersResponse>(request, options);
         }
 
         /// <summary>
@@ -1579,11 +1608,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAuthorizersRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAuthorizersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1606,10 +1635,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var marshaller = GetDeploymentRequestMarshaller.Instance;
-            var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeploymentResponse>(request, options);
         }
 
         /// <summary>
@@ -1623,11 +1653,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeploymentRequestMarshaller.Instance;
-            var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1654,10 +1684,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
-            var marshaller = GetDeploymentsRequestMarshaller.Instance;
-            var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeploymentsRequest,GetDeploymentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeploymentsResponse>(request, options);
         }
 
         /// <summary>
@@ -1671,11 +1702,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeploymentsRequestMarshaller.Instance;
-            var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDeploymentsRequest,GetDeploymentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeploymentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1698,10 +1729,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
-            var marshaller = GetDomainNameRequestMarshaller.Instance;
-            var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainNameRequest,GetDomainNameResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainNameResponse>(request, options);
         }
 
         /// <summary>
@@ -1715,11 +1747,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDomainNameRequestMarshaller.Instance;
-            var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDomainNameRequest,GetDomainNameResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDomainNameResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1746,10 +1778,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
-            var marshaller = GetDomainNamesRequestMarshaller.Instance;
-            var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainNamesRequest,GetDomainNamesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainNamesResponse>(request, options);
         }
 
         /// <summary>
@@ -1763,11 +1796,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDomainNamesRequestMarshaller.Instance;
-            var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetDomainNamesRequest,GetDomainNamesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDomainNamesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1790,10 +1823,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var marshaller = GetIntegrationRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntegrationRequest,GetIntegrationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntegrationResponse>(request, options);
         }
 
         /// <summary>
@@ -1807,11 +1841,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIntegrationRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetIntegrationRequest,GetIntegrationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1834,10 +1868,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
-            var marshaller = GetIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntegrationResponseRequest,GetIntegrationResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntegrationResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -1851,11 +1886,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetIntegrationResponseRequest,GetIntegrationResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntegrationResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1882,10 +1917,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetIntegrationResponsesResponse GetIntegrationResponses(GetIntegrationResponsesRequest request)
         {
-            var marshaller = GetIntegrationResponsesRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntegrationResponsesRequest,GetIntegrationResponsesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntegrationResponsesResponse>(request, options);
         }
 
         /// <summary>
@@ -1899,11 +1935,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetIntegrationResponsesResponse> GetIntegrationResponsesAsync(GetIntegrationResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIntegrationResponsesRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetIntegrationResponsesRequest,GetIntegrationResponsesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntegrationResponsesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1930,10 +1966,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetIntegrationsResponse GetIntegrations(GetIntegrationsRequest request)
         {
-            var marshaller = GetIntegrationsRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntegrationsRequest,GetIntegrationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntegrationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1947,11 +1984,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetIntegrationsResponse> GetIntegrationsAsync(GetIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIntegrationsRequestMarshaller.Instance;
-            var unmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetIntegrationsRequest,GetIntegrationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntegrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1974,10 +2011,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
-            var marshaller = GetModelRequestMarshaller.Instance;
-            var unmarshaller = GetModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
 
-            return Invoke<GetModelRequest,GetModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetModelResponse>(request, options);
         }
 
         /// <summary>
@@ -1991,11 +2029,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetModelRequestMarshaller.Instance;
-            var unmarshaller = GetModelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetModelRequest,GetModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2022,10 +2060,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
-            var marshaller = GetModelsRequestMarshaller.Instance;
-            var unmarshaller = GetModelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
-            return Invoke<GetModelsRequest,GetModelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetModelsResponse>(request, options);
         }
 
         /// <summary>
@@ -2039,11 +2078,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetModelsRequestMarshaller.Instance;
-            var unmarshaller = GetModelsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetModelsRequest,GetModelsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetModelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2066,10 +2105,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
-            var marshaller = GetModelTemplateRequestMarshaller.Instance;
-            var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
-            return Invoke<GetModelTemplateRequest,GetModelTemplateResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetModelTemplateResponse>(request, options);
         }
 
         /// <summary>
@@ -2083,11 +2123,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetModelTemplateRequestMarshaller.Instance;
-            var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetModelTemplateRequest,GetModelTemplateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetModelTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2110,10 +2150,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetRouteResponse GetRoute(GetRouteRequest request)
         {
-            var marshaller = GetRouteRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
 
-            return Invoke<GetRouteRequest,GetRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -2127,11 +2168,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetRouteResponse> GetRouteAsync(GetRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRouteRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetRouteRequest,GetRouteResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRouteResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2154,10 +2195,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetRouteResponseResponse GetRouteResponse(GetRouteResponseRequest request)
         {
-            var marshaller = GetRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
 
-            return Invoke<GetRouteResponseRequest,GetRouteResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRouteResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -2171,11 +2213,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetRouteResponseResponse> GetRouteResponseAsync(GetRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetRouteResponseRequest,GetRouteResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRouteResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2202,10 +2244,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetRouteResponsesResponse GetRouteResponses(GetRouteResponsesRequest request)
         {
-            var marshaller = GetRouteResponsesRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
 
-            return Invoke<GetRouteResponsesRequest,GetRouteResponsesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRouteResponsesResponse>(request, options);
         }
 
         /// <summary>
@@ -2219,11 +2262,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetRouteResponsesResponse> GetRouteResponsesAsync(GetRouteResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRouteResponsesRequestMarshaller.Instance;
-            var unmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetRouteResponsesRequest,GetRouteResponsesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRouteResponsesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2250,10 +2293,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetRoutesResponse GetRoutes(GetRoutesRequest request)
         {
-            var marshaller = GetRoutesRequestMarshaller.Instance;
-            var unmarshaller = GetRoutesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutesResponseUnmarshaller.Instance;
 
-            return Invoke<GetRoutesRequest,GetRoutesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRoutesResponse>(request, options);
         }
 
         /// <summary>
@@ -2267,11 +2311,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetRoutesResponse> GetRoutesAsync(GetRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRoutesRequestMarshaller.Instance;
-            var unmarshaller = GetRoutesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetRoutesRequest,GetRoutesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRoutesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2294,10 +2338,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
-            var marshaller = GetStageRequestMarshaller.Instance;
-            var unmarshaller = GetStageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
-            return Invoke<GetStageRequest,GetStageResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStageResponse>(request, options);
         }
 
         /// <summary>
@@ -2311,11 +2356,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetStageRequestMarshaller.Instance;
-            var unmarshaller = GetStageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetStageRequest,GetStageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2342,10 +2387,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
-            var marshaller = GetStagesRequestMarshaller.Instance;
-            var unmarshaller = GetStagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
 
-            return Invoke<GetStagesRequest,GetStagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStagesResponse>(request, options);
         }
 
         /// <summary>
@@ -2359,11 +2405,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetStagesRequestMarshaller.Instance;
-            var unmarshaller = GetStagesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetStagesRequest,GetStagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2395,10 +2441,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateApiResponse UpdateApi(UpdateApiRequest request)
         {
-            var marshaller = UpdateApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApiRequest,UpdateApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApiResponse>(request, options);
         }
 
         /// <summary>
@@ -2412,11 +2459,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApiResponse> UpdateApiAsync(UpdateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateApiRequest,UpdateApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2448,10 +2495,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateApiMappingResponse UpdateApiMapping(UpdateApiMappingRequest request)
         {
-            var marshaller = UpdateApiMappingRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApiMappingRequest,UpdateApiMappingResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApiMappingResponse>(request, options);
         }
 
         /// <summary>
@@ -2465,11 +2513,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateApiMappingResponse> UpdateApiMappingAsync(UpdateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApiMappingRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateApiMappingRequest,UpdateApiMappingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateApiMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2501,10 +2549,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
-            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAuthorizerResponse>(request, options);
         }
 
         /// <summary>
@@ -2518,11 +2567,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
-            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAuthorizerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2554,10 +2603,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
-            var marshaller = UpdateDeploymentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDeploymentRequest,UpdateDeploymentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDeploymentResponse>(request, options);
         }
 
         /// <summary>
@@ -2571,11 +2621,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDeploymentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDeploymentRequest,UpdateDeploymentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2607,10 +2657,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
-            var marshaller = UpdateDomainNameRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDomainNameRequest,UpdateDomainNameResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDomainNameResponse>(request, options);
         }
 
         /// <summary>
@@ -2624,11 +2675,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDomainNameRequestMarshaller.Instance;
-            var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateDomainNameRequest,UpdateDomainNameResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDomainNameResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2660,10 +2711,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
-            var marshaller = UpdateIntegrationRequestMarshaller.Instance;
-            var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateIntegrationRequest,UpdateIntegrationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateIntegrationResponse>(request, options);
         }
 
         /// <summary>
@@ -2677,11 +2729,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateIntegrationRequestMarshaller.Instance;
-            var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateIntegrationRequest,UpdateIntegrationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2713,10 +2765,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
-            var marshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateIntegrationResponseRequest,UpdateIntegrationResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateIntegrationResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -2730,11 +2783,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
-            var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateIntegrationResponseRequest,UpdateIntegrationResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIntegrationResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2766,10 +2819,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var marshaller = UpdateModelRequestMarshaller.Instance;
-            var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateModelRequest,UpdateModelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateModelResponse>(request, options);
         }
 
         /// <summary>
@@ -2783,11 +2837,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateModelRequestMarshaller.Instance;
-            var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateModelRequest,UpdateModelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2819,10 +2873,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
-            var marshaller = UpdateRouteRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRouteRequest,UpdateRouteResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRouteResponse>(request, options);
         }
 
         /// <summary>
@@ -2836,11 +2891,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRouteRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateRouteRequest,UpdateRouteResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2872,10 +2927,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateRouteResponseResponse UpdateRouteResponse(UpdateRouteResponseRequest request)
         {
-            var marshaller = UpdateRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateRouteResponseRequest,UpdateRouteResponseResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateRouteResponseResponse>(request, options);
         }
 
         /// <summary>
@@ -2889,11 +2945,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateRouteResponseResponse> UpdateRouteResponseAsync(UpdateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateRouteResponseRequestMarshaller.Instance;
-            var unmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateRouteResponseRequest,UpdateRouteResponseResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRouteResponseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2925,10 +2981,11 @@ namespace Amazon.ApiGatewayV2
         /// </exception>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
-            var marshaller = UpdateStageRequestMarshaller.Instance;
-            var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateStageRequest,UpdateStageResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateStageResponse>(request, options);
         }
 
         /// <summary>
@@ -2942,11 +2999,11 @@ namespace Amazon.ApiGatewayV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateStageRequestMarshaller.Instance;
-            var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateStageRequest,UpdateStageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateStageResponse>(request, options, cancellationToken);
         }
 
         #endregion

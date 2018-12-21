@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AppSync.Model;
 using Amazon.AppSync.Model.Internal.MarshallTransformations;
@@ -235,7 +236,7 @@ namespace Amazon.AppSync
 
         #endregion
 
-        
+
         #region  CreateApiKey
 
         /// <summary>
@@ -274,10 +275,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
-            var marshaller = CreateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApiKeyRequest,CreateApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApiKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -294,11 +296,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateApiKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -345,10 +347,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var marshaller = CreateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDataSourceRequest,CreateDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -365,11 +368,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual IAsyncResult BeginCreateDataSource(CreateDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -418,10 +421,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
-            var marshaller = CreateFunctionRequestMarshaller.Instance;
-            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFunctionResponse>(request, options);
         }
 
         /// <summary>
@@ -438,11 +442,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateFunctionRequestMarshaller.Instance;
-            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -491,10 +495,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         public virtual CreateGraphqlApiResponse CreateGraphqlApi(CreateGraphqlApiRequest request)
         {
-            var marshaller = CreateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGraphqlApiRequest,CreateGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGraphqlApiResponse>(request, options);
         }
 
         /// <summary>
@@ -511,11 +516,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         public virtual IAsyncResult BeginCreateGraphqlApi(CreateGraphqlApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateGraphqlApiRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -564,10 +569,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         public virtual CreateResolverResponse CreateResolver(CreateResolverRequest request)
         {
-            var marshaller = CreateResolverRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverRequest,CreateResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverResponse>(request, options);
         }
 
         /// <summary>
@@ -584,11 +590,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         public virtual IAsyncResult BeginCreateResolver(CreateResolverRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateResolverRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateResolverRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -635,10 +641,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         public virtual CreateTypeResponse CreateType(CreateTypeRequest request)
         {
-            var marshaller = CreateTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTypeRequest,CreateTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -655,11 +662,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         public virtual IAsyncResult BeginCreateType(CreateTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -702,10 +709,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
-            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApiKeyRequest,DeleteApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApiKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -722,11 +730,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApiKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -773,10 +781,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDataSourceRequest,DeleteDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -793,11 +802,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataSource(DeleteDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -840,10 +849,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
-            var marshaller = DeleteFunctionRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFunctionResponse>(request, options);
         }
 
         /// <summary>
@@ -860,11 +870,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteFunctionRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -911,10 +921,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         public virtual DeleteGraphqlApiResponse DeleteGraphqlApi(DeleteGraphqlApiRequest request)
         {
-            var marshaller = DeleteGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGraphqlApiRequest,DeleteGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGraphqlApiResponse>(request, options);
         }
 
         /// <summary>
@@ -931,11 +942,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         public virtual IAsyncResult BeginDeleteGraphqlApi(DeleteGraphqlApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteGraphqlApiRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -978,10 +989,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         public virtual DeleteResolverResponse DeleteResolver(DeleteResolverRequest request)
         {
-            var marshaller = DeleteResolverRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverRequest,DeleteResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverResponse>(request, options);
         }
 
         /// <summary>
@@ -998,11 +1010,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         public virtual IAsyncResult BeginDeleteResolver(DeleteResolverRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteResolverRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteResolverRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1049,10 +1061,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         public virtual DeleteTypeResponse DeleteType(DeleteTypeRequest request)
         {
-            var marshaller = DeleteTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTypeRequest,DeleteTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -1069,11 +1082,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         public virtual IAsyncResult BeginDeleteType(DeleteTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1120,10 +1133,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var marshaller = GetDataSourceRequestMarshaller.Instance;
-            var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1140,11 +1154,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual IAsyncResult BeginGetDataSource(GetDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDataSourceRequestMarshaller.Instance;
-            var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1184,10 +1198,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
-            var marshaller = GetFunctionRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<GetFunctionRequest,GetFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFunctionResponse>(request, options);
         }
 
         /// <summary>
@@ -1204,11 +1219,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetFunctionRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1251,10 +1266,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         public virtual GetGraphqlApiResponse GetGraphqlApi(GetGraphqlApiRequest request)
         {
-            var marshaller = GetGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<GetGraphqlApiRequest,GetGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGraphqlApiResponse>(request, options);
         }
 
         /// <summary>
@@ -1271,11 +1287,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         public virtual IAsyncResult BeginGetGraphqlApi(GetGraphqlApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetGraphqlApiRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1317,10 +1333,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         public virtual GetIntrospectionSchemaResponse GetIntrospectionSchema(GetIntrospectionSchemaRequest request)
         {
-            var marshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
-            var unmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntrospectionSchemaRequest,GetIntrospectionSchemaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntrospectionSchemaResponse>(request, options);
         }
 
         /// <summary>
@@ -1337,11 +1354,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         public virtual IAsyncResult BeginGetIntrospectionSchema(GetIntrospectionSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
-            var unmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetIntrospectionSchemaRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1381,10 +1398,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         public virtual GetResolverResponse GetResolver(GetResolverRequest request)
         {
-            var marshaller = GetResolverRequestMarshaller.Instance;
-            var unmarshaller = GetResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRequest,GetResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverResponse>(request, options);
         }
 
         /// <summary>
@@ -1401,11 +1419,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         public virtual IAsyncResult BeginGetResolver(GetResolverRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetResolverRequestMarshaller.Instance;
-            var unmarshaller = GetResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetResolverRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1448,10 +1466,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         public virtual GetSchemaCreationStatusResponse GetSchemaCreationStatus(GetSchemaCreationStatusRequest request)
         {
-            var marshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetSchemaCreationStatusRequest,GetSchemaCreationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSchemaCreationStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1468,11 +1487,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         public virtual IAsyncResult BeginGetSchemaCreationStatus(GetSchemaCreationStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSchemaCreationStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1519,10 +1538,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         public virtual GetTypeResponse GetType(GetTypeRequest request)
         {
-            var marshaller = GetTypeRequestMarshaller.Instance;
-            var unmarshaller = GetTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
-            return Invoke<GetTypeRequest,GetTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -1539,11 +1559,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         public virtual IAsyncResult BeginGetType(GetTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetTypeRequestMarshaller.Instance;
-            var unmarshaller = GetTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1595,10 +1615,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         public virtual ListApiKeysResponse ListApiKeys(ListApiKeysRequest request)
         {
-            var marshaller = ListApiKeysRequestMarshaller.Instance;
-            var unmarshaller = ListApiKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiKeysResponseUnmarshaller.Instance;
 
-            return Invoke<ListApiKeysRequest,ListApiKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListApiKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -1615,11 +1636,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         public virtual IAsyncResult BeginListApiKeys(ListApiKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListApiKeysRequestMarshaller.Instance;
-            var unmarshaller = ListApiKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiKeysResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListApiKeysRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1662,10 +1683,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var marshaller = ListDataSourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDataSourcesRequest,ListDataSourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDataSourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -1682,11 +1704,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual IAsyncResult BeginListDataSources(ListDataSourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDataSourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDataSourcesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1729,10 +1751,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
-            var marshaller = ListFunctionsRequestMarshaller.Instance;
-            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFunctionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1749,11 +1772,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListFunctionsRequestMarshaller.Instance;
-            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListFunctionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1792,10 +1815,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         public virtual ListGraphqlApisResponse ListGraphqlApis(ListGraphqlApisRequest request)
         {
-            var marshaller = ListGraphqlApisRequestMarshaller.Instance;
-            var unmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGraphqlApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
 
-            return Invoke<ListGraphqlApisRequest,ListGraphqlApisResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListGraphqlApisResponse>(request, options);
         }
 
         /// <summary>
@@ -1812,11 +1836,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         public virtual IAsyncResult BeginListGraphqlApis(ListGraphqlApisRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListGraphqlApisRequestMarshaller.Instance;
-            var unmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGraphqlApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListGraphqlApisRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1859,10 +1883,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         public virtual ListResolversResponse ListResolvers(ListResolversRequest request)
         {
-            var marshaller = ListResolversRequestMarshaller.Instance;
-            var unmarshaller = ListResolversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolversRequest,ListResolversResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolversResponse>(request, options);
         }
 
         /// <summary>
@@ -1879,11 +1904,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         public virtual IAsyncResult BeginListResolvers(ListResolversRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolversRequestMarshaller.Instance;
-            var unmarshaller = ListResolversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolversRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1926,10 +1951,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         public virtual ListResolversByFunctionResponse ListResolversByFunction(ListResolversByFunctionRequest request)
         {
-            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
-            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolversByFunctionResponse>(request, options);
         }
 
         /// <summary>
@@ -1946,11 +1972,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         public virtual IAsyncResult BeginListResolversByFunction(ListResolversByFunctionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
-            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResolversByFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1997,10 +2023,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual ListTypesResponse ListTypes(ListTypesRequest request)
         {
-            var marshaller = ListTypesRequestMarshaller.Instance;
-            var unmarshaller = ListTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListTypesRequest,ListTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTypesResponse>(request, options);
         }
 
         /// <summary>
@@ -2017,11 +2044,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual IAsyncResult BeginListTypes(ListTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTypesRequestMarshaller.Instance;
-            var unmarshaller = ListTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTypesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2073,10 +2100,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         public virtual StartSchemaCreationResponse StartSchemaCreation(StartSchemaCreationRequest request)
         {
-            var marshaller = StartSchemaCreationRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
 
-            return Invoke<StartSchemaCreationRequest,StartSchemaCreationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSchemaCreationResponse>(request, options);
         }
 
         /// <summary>
@@ -2093,11 +2121,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         public virtual IAsyncResult BeginStartSchemaCreation(StartSchemaCreationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartSchemaCreationRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartSchemaCreationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2147,10 +2175,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
-            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApiKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -2167,11 +2196,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApiKeyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2218,10 +2247,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -2238,11 +2268,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataSource(UpdateDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2285,10 +2315,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
         {
-            var marshaller = UpdateFunctionRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFunctionResponse>(request, options);
         }
 
         /// <summary>
@@ -2305,11 +2336,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual IAsyncResult BeginUpdateFunction(UpdateFunctionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateFunctionRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateFunctionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2356,10 +2387,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         public virtual UpdateGraphqlApiResponse UpdateGraphqlApi(UpdateGraphqlApiRequest request)
         {
-            var marshaller = UpdateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGraphqlApiRequest,UpdateGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGraphqlApiResponse>(request, options);
         }
 
         /// <summary>
@@ -2376,11 +2408,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         public virtual IAsyncResult BeginUpdateGraphqlApi(UpdateGraphqlApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateGraphqlApiRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2423,10 +2455,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         public virtual UpdateResolverResponse UpdateResolver(UpdateResolverRequest request)
         {
-            var marshaller = UpdateResolverRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverRequest,UpdateResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverResponse>(request, options);
         }
 
         /// <summary>
@@ -2443,11 +2476,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         public virtual IAsyncResult BeginUpdateResolver(UpdateResolverRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateResolverRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateResolverRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2494,10 +2527,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         public virtual UpdateTypeResponse UpdateType(UpdateTypeRequest request)
         {
-            var marshaller = UpdateTypeRequestMarshaller.Instance;
-            var unmarshaller = UpdateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTypeResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTypeRequest,UpdateTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTypeResponse>(request, options);
         }
 
         /// <summary>
@@ -2514,11 +2548,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         public virtual IAsyncResult BeginUpdateType(UpdateTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateTypeRequestMarshaller.Instance;
-            var unmarshaller = UpdateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTypeResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateTypeRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

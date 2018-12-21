@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CodeStar.Model;
 using Amazon.CodeStar.Model.Internal.MarshallTransformations;
@@ -329,7 +330,7 @@ namespace Amazon.CodeStar
 
         #endregion
 
-        
+
         #region  AssociateTeamMember
 
 
@@ -364,10 +365,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
         public virtual AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
         {
-            var marshaller = AssociateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateTeamMemberRequest,AssociateTeamMemberResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateTeamMemberResponse>(request, options);
         }
 
         /// <summary>
@@ -382,11 +384,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
         public virtual Task<AssociateTeamMemberResponse> AssociateTeamMemberAsync(AssociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AssociateTeamMemberRequest,AssociateTeamMemberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateTeamMemberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -430,10 +432,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -448,11 +451,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateProjectRequest,CreateProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -479,10 +482,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
-            var marshaller = CreateUserProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
-            return Invoke<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateUserProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -497,11 +501,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateUserProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUserProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -529,10 +533,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -547,11 +552,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -573,10 +578,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
-            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -591,11 +597,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -628,10 +634,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -646,11 +653,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -673,10 +680,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
         {
-            var marshaller = DescribeUserProfileRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserProfileRequest,DescribeUserProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -691,11 +699,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual Task<DescribeUserProfileResponse> DescribeUserProfileAsync(DescribeUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUserProfileRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeUserProfileRequest,DescribeUserProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeUserProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -728,10 +736,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
         public virtual DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
         {
-            var marshaller = DisassociateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateTeamMemberRequest,DisassociateTeamMemberResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateTeamMemberResponse>(request, options);
         }
 
         /// <summary>
@@ -746,11 +755,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
         public virtual Task<DisassociateTeamMemberResponse> DisassociateTeamMemberAsync(DisassociateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisassociateTeamMemberRequest,DisassociateTeamMemberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateTeamMemberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -773,10 +782,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
-            return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListProjectsResponse>(request, options);
         }
 
         /// <summary>
@@ -791,11 +801,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -821,10 +831,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var marshaller = ListResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourcesRequest,ListResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourcesResponse>(request, options);
         }
 
         /// <summary>
@@ -839,11 +850,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListResourcesRequest,ListResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -869,10 +880,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
         public virtual ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
         {
-            var marshaller = ListTagsForProjectRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForProjectRequest,ListTagsForProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -887,11 +899,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
         public virtual Task<ListTagsForProjectResponse> ListTagsForProjectAsync(ListTagsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForProjectRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsForProjectRequest,ListTagsForProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -917,10 +929,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
         public virtual ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
         {
-            var marshaller = ListTeamMembersRequestMarshaller.Instance;
-            var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTeamMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
 
-            return Invoke<ListTeamMembersRequest,ListTeamMembersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTeamMembersResponse>(request, options);
         }
 
         /// <summary>
@@ -935,11 +948,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
         public virtual Task<ListTeamMembersResponse> ListTeamMembersAsync(ListTeamMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTeamMembersRequestMarshaller.Instance;
-            var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTeamMembersRequest,ListTeamMembersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTeamMembersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTeamMembersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -962,10 +975,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
         public virtual ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
         {
-            var marshaller = ListUserProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
 
-            return Invoke<ListUserProfilesRequest,ListUserProfilesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUserProfilesResponse>(request, options);
         }
 
         /// <summary>
@@ -980,11 +994,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
         public virtual Task<ListUserProfilesResponse> ListUserProfilesAsync(ListUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUserProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListUserProfilesRequest,ListUserProfilesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUserProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1014,10 +1028,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
         public virtual TagProjectResponse TagProject(TagProjectRequest request)
         {
-            var marshaller = TagProjectRequestMarshaller.Instance;
-            var unmarshaller = TagProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagProjectResponseUnmarshaller.Instance;
 
-            return Invoke<TagProjectRequest,TagProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -1032,11 +1047,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
         public virtual Task<TagProjectResponse> TagProjectAsync(TagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagProjectRequestMarshaller.Instance;
-            var unmarshaller = TagProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagProjectRequest,TagProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1066,10 +1081,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
         public virtual UntagProjectResponse UntagProject(UntagProjectRequest request)
         {
-            var marshaller = UntagProjectRequestMarshaller.Instance;
-            var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagProjectResponseUnmarshaller.Instance;
 
-            return Invoke<UntagProjectRequest,UntagProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -1084,11 +1100,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
         public virtual Task<UntagProjectResponse> UntagProjectAsync(UntagProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagProjectRequestMarshaller.Instance;
-            var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagProjectRequest,UntagProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1111,10 +1127,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -1129,11 +1146,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1174,10 +1191,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
         public virtual UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
         {
-            var marshaller = UpdateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTeamMemberRequest,UpdateTeamMemberResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTeamMemberResponse>(request, options);
         }
 
         /// <summary>
@@ -1192,11 +1210,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
         public virtual Task<UpdateTeamMemberResponse> UpdateTeamMemberAsync(UpdateTeamMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateTeamMemberRequestMarshaller.Instance;
-            var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateTeamMemberRequest,UpdateTeamMemberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTeamMemberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTeamMemberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1221,10 +1239,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
-            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserProfileResponse>(request, options);
         }
 
         /// <summary>
@@ -1239,11 +1258,11 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -58,6 +58,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             string target = "PerformanceInsightsv20180227.DescribeDimensionKeys";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

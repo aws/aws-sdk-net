@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MediaLive.Model;
 using Amazon.MediaLive.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.MediaLive
 
         #endregion
 
-        
+
         #region  BatchUpdateSchedule
 
         /// <summary>
@@ -270,10 +271,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
         public virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
         {
-            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
-            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<BatchUpdateScheduleRequest,BatchUpdateScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchUpdateScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -290,11 +292,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
         public virtual IAsyncResult BeginBatchUpdateSchedule(BatchUpdateScheduleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
-            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchUpdateScheduleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -347,10 +349,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var marshaller = CreateChannelRequestMarshaller.Instance;
-            var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
-            return Invoke<CreateChannelRequest,CreateChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -367,11 +370,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateChannelRequestMarshaller.Instance;
-            var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -418,10 +421,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual CreateInputResponse CreateInput(CreateInputRequest request)
         {
-            var marshaller = CreateInputRequestMarshaller.Instance;
-            var unmarshaller = CreateInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
-            return Invoke<CreateInputRequest,CreateInputResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateInputResponse>(request, options);
         }
 
         /// <summary>
@@ -438,11 +442,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual IAsyncResult BeginCreateInput(CreateInputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateInputRequestMarshaller.Instance;
-            var unmarshaller = CreateInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateInputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -489,10 +493,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup">REST API Reference for CreateInputSecurityGroup Operation</seealso>
         public virtual CreateInputSecurityGroupResponse CreateInputSecurityGroup(CreateInputSecurityGroupRequest request)
         {
-            var marshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateInputSecurityGroupRequest,CreateInputSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateInputSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -509,11 +514,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup">REST API Reference for CreateInputSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateInputSecurityGroup(CreateInputSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateInputSecurityGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -566,10 +571,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var marshaller = DeleteChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -586,11 +592,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -643,10 +649,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual DeleteInputResponse DeleteInput(DeleteInputRequest request)
         {
-            var marshaller = DeleteInputRequestMarshaller.Instance;
-            var unmarshaller = DeleteInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInputRequest,DeleteInputResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInputResponse>(request, options);
         }
 
         /// <summary>
@@ -663,11 +670,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual IAsyncResult BeginDeleteInput(DeleteInputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteInputRequestMarshaller.Instance;
-            var unmarshaller = DeleteInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteInputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -717,10 +724,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup">REST API Reference for DeleteInputSecurityGroup Operation</seealso>
         public virtual DeleteInputSecurityGroupResponse DeleteInputSecurityGroup(DeleteInputSecurityGroupRequest request)
         {
-            var marshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInputSecurityGroupRequest,DeleteInputSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInputSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -737,11 +745,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup">REST API Reference for DeleteInputSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteInputSecurityGroup(DeleteInputSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteInputSecurityGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -794,10 +802,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation">REST API Reference for DeleteReservation Operation</seealso>
         public virtual DeleteReservationResponse DeleteReservation(DeleteReservationRequest request)
         {
-            var marshaller = DeleteReservationRequestMarshaller.Instance;
-            var unmarshaller = DeleteReservationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReservationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReservationRequest,DeleteReservationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReservationResponse>(request, options);
         }
 
         /// <summary>
@@ -814,11 +823,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation">REST API Reference for DeleteReservation Operation</seealso>
         public virtual IAsyncResult BeginDeleteReservation(DeleteReservationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteReservationRequestMarshaller.Instance;
-            var unmarshaller = DeleteReservationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReservationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteReservationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -868,10 +877,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var marshaller = DescribeChannelRequestMarshaller.Instance;
-            var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -888,11 +898,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual IAsyncResult BeginDescribeChannel(DescribeChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeChannelRequestMarshaller.Instance;
-            var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -942,10 +952,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual DescribeInputResponse DescribeInput(DescribeInputRequest request)
         {
-            var marshaller = DescribeInputRequestMarshaller.Instance;
-            var unmarshaller = DescribeInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInputRequest,DescribeInputResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInputResponse>(request, options);
         }
 
         /// <summary>
@@ -962,11 +973,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual IAsyncResult BeginDescribeInput(DescribeInputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInputRequestMarshaller.Instance;
-            var unmarshaller = DescribeInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1016,10 +1027,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup">REST API Reference for DescribeInputSecurityGroup Operation</seealso>
         public virtual DescribeInputSecurityGroupResponse DescribeInputSecurityGroup(DescribeInputSecurityGroupRequest request)
         {
-            var marshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInputSecurityGroupRequest,DescribeInputSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInputSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1036,11 +1048,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup">REST API Reference for DescribeInputSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeInputSecurityGroup(DescribeInputSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInputSecurityGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1090,10 +1102,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual DescribeOfferingResponse DescribeOffering(DescribeOfferingRequest request)
         {
-            var marshaller = DescribeOfferingRequestMarshaller.Instance;
-            var unmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeOfferingRequest,DescribeOfferingResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeOfferingResponse>(request, options);
         }
 
         /// <summary>
@@ -1110,11 +1123,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual IAsyncResult BeginDescribeOffering(DescribeOfferingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeOfferingRequestMarshaller.Instance;
-            var unmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeOfferingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1164,10 +1177,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual DescribeReservationResponse DescribeReservation(DescribeReservationRequest request)
         {
-            var marshaller = DescribeReservationRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReservationRequest,DescribeReservationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReservationResponse>(request, options);
         }
 
         /// <summary>
@@ -1184,11 +1198,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservation(DescribeReservationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReservationRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReservationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1238,10 +1252,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
         public virtual DescribeScheduleResponse DescribeSchedule(DescribeScheduleRequest request)
         {
-            var marshaller = DescribeScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeScheduleRequest,DescribeScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -1258,11 +1273,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
         public virtual IAsyncResult BeginDescribeSchedule(DescribeScheduleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeScheduleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1309,10 +1324,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var marshaller = ListChannelsRequestMarshaller.Instance;
-            var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<ListChannelsRequest,ListChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListChannelsResponse>(request, options);
         }
 
         /// <summary>
@@ -1329,11 +1345,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListChannelsRequestMarshaller.Instance;
-            var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListChannelsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1380,10 +1396,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual ListInputsResponse ListInputs(ListInputsRequest request)
         {
-            var marshaller = ListInputsRequestMarshaller.Instance;
-            var unmarshaller = ListInputsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInputsRequest,ListInputsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInputsResponse>(request, options);
         }
 
         /// <summary>
@@ -1400,11 +1417,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual IAsyncResult BeginListInputs(ListInputsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListInputsRequestMarshaller.Instance;
-            var unmarshaller = ListInputsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListInputsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1451,10 +1468,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups">REST API Reference for ListInputSecurityGroups Operation</seealso>
         public virtual ListInputSecurityGroupsResponse ListInputSecurityGroups(ListInputSecurityGroupsRequest request)
         {
-            var marshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<ListInputSecurityGroupsRequest,ListInputSecurityGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInputSecurityGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -1471,11 +1489,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups">REST API Reference for ListInputSecurityGroups Operation</seealso>
         public virtual IAsyncResult BeginListInputSecurityGroups(ListInputSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListInputSecurityGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1522,10 +1540,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
-            var marshaller = ListOfferingsRequestMarshaller.Instance;
-            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
-            return Invoke<ListOfferingsRequest,ListOfferingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOfferingsResponse>(request, options);
         }
 
         /// <summary>
@@ -1542,11 +1561,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual IAsyncResult BeginListOfferings(ListOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListOfferingsRequestMarshaller.Instance;
-            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListOfferingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1593,10 +1612,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
         {
-            var marshaller = ListReservationsRequestMarshaller.Instance;
-            var unmarshaller = ListReservationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListReservationsRequest,ListReservationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListReservationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1613,11 +1633,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual IAsyncResult BeginListReservations(ListReservationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListReservationsRequestMarshaller.Instance;
-            var unmarshaller = ListReservationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListReservationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1670,10 +1690,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
-            var marshaller = PurchaseOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
-            return Invoke<PurchaseOfferingRequest,PurchaseOfferingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PurchaseOfferingResponse>(request, options);
         }
 
         /// <summary>
@@ -1690,11 +1711,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual IAsyncResult BeginPurchaseOffering(PurchaseOfferingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PurchaseOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PurchaseOfferingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1747,10 +1768,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual StartChannelResponse StartChannel(StartChannelRequest request)
         {
-            var marshaller = StartChannelRequestMarshaller.Instance;
-            var unmarshaller = StartChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
-            return Invoke<StartChannelRequest,StartChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1767,11 +1789,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual IAsyncResult BeginStartChannel(StartChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartChannelRequestMarshaller.Instance;
-            var unmarshaller = StartChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1824,10 +1846,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual StopChannelResponse StopChannel(StopChannelRequest request)
         {
-            var marshaller = StopChannelRequestMarshaller.Instance;
-            var unmarshaller = StopChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
-            return Invoke<StopChannelRequest,StopChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1844,11 +1867,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual IAsyncResult BeginStopChannel(StopChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopChannelRequestMarshaller.Instance;
-            var unmarshaller = StopChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1898,10 +1921,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var marshaller = UpdateChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1918,11 +1942,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1972,10 +1996,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         public virtual UpdateInputResponse UpdateInput(UpdateInputRequest request)
         {
-            var marshaller = UpdateInputRequestMarshaller.Instance;
-            var unmarshaller = UpdateInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateInputRequest,UpdateInputResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateInputResponse>(request, options);
         }
 
         /// <summary>
@@ -1992,11 +2017,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         public virtual IAsyncResult BeginUpdateInput(UpdateInputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateInputRequestMarshaller.Instance;
-            var unmarshaller = UpdateInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateInputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2046,10 +2071,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup">REST API Reference for UpdateInputSecurityGroup Operation</seealso>
         public virtual UpdateInputSecurityGroupResponse UpdateInputSecurityGroup(UpdateInputSecurityGroupRequest request)
         {
-            var marshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateInputSecurityGroupRequest,UpdateInputSecurityGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateInputSecurityGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -2066,11 +2092,11 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup">REST API Reference for UpdateInputSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateInputSecurityGroup(UpdateInputSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateInputSecurityGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

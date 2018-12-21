@@ -58,6 +58,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             string target = "secretsmanager.GetRandomPassword";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-17";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

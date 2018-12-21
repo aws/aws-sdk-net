@@ -51,6 +51,11 @@ namespace Amazon.Runtime.CredentialManagement
         internal Guid? UniqueKey { get; set; }
 
         /// <summary>
+        /// The endpoint discovery enabled value for this CredentialProfile
+        /// </summary>
+        public bool? EndpointDiscoveryEnabled { get; set; }
+        
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties
@@ -141,7 +146,7 @@ namespace Amazon.Runtime.CredentialManagement
             }
 
             Name = name;
-            Options = profileOptions;
+            Options = profileOptions;            
         }
 
         /// <summary>

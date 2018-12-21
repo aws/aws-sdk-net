@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SQS.Model;
 using Amazon.SQS.Model.Internal.MarshallTransformations;
@@ -261,7 +262,7 @@ namespace Amazon.SQS
 
         #endregion
 
-        
+
         #region  AddPermission
 
         /// <summary>
@@ -351,8 +352,9 @@ namespace Amazon.SQS
         public virtual void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddPermissionRequestMarshaller.Instance;
-            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -360,7 +362,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<AddPermissionRequest,AddPermissionResponse>((AddPermissionRequest)req, (AddPermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -452,8 +454,9 @@ namespace Amazon.SQS
         public virtual void ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, AmazonServiceCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -461,7 +464,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ChangeMessageVisibilityRequest,ChangeMessageVisibilityResponse>((ChangeMessageVisibilityRequest)req, (ChangeMessageVisibilityResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ChangeMessageVisibilityRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -538,8 +541,9 @@ namespace Amazon.SQS
         public virtual void ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, AmazonServiceCallback<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
-            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -547,7 +551,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ChangeMessageVisibilityBatchRequest,ChangeMessageVisibilityBatchResponse>((ChangeMessageVisibilityBatchRequest)req, (ChangeMessageVisibilityBatchResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ChangeMessageVisibilityBatchRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -665,8 +669,9 @@ namespace Amazon.SQS
         public virtual void CreateQueueAsync(CreateQueueRequest request, AmazonServiceCallback<CreateQueueRequest, CreateQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateQueueRequestMarshaller.Instance;
-            var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -674,7 +679,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<CreateQueueRequest,CreateQueueResponse>((CreateQueueRequest)req, (CreateQueueResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateQueueRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -745,8 +750,9 @@ namespace Amazon.SQS
         public virtual void DeleteMessageAsync(DeleteMessageRequest request, AmazonServiceCallback<DeleteMessageRequest, DeleteMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteMessageRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -754,7 +760,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<DeleteMessageRequest,DeleteMessageResponse>((DeleteMessageRequest)req, (DeleteMessageResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteMessageRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -830,8 +836,9 @@ namespace Amazon.SQS
         public virtual void DeleteMessageBatchAsync(DeleteMessageBatchRequest request, AmazonServiceCallback<DeleteMessageBatchRequest, DeleteMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteMessageBatchRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -839,7 +846,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<DeleteMessageBatchRequest,DeleteMessageBatchResponse>((DeleteMessageBatchRequest)req, (DeleteMessageBatchResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteMessageBatchRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -905,8 +912,9 @@ namespace Amazon.SQS
         public virtual void DeleteQueueAsync(DeleteQueueRequest request, AmazonServiceCallback<DeleteQueueRequest, DeleteQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteQueueRequestMarshaller.Instance;
-            var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -914,7 +922,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<DeleteQueueRequest,DeleteQueueResponse>((DeleteQueueRequest)req, (DeleteQueueResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteQueueRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -978,8 +986,9 @@ namespace Amazon.SQS
         public virtual void GetQueueAttributesAsync(GetQueueAttributesRequest request, AmazonServiceCallback<GetQueueAttributesRequest, GetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetQueueAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -987,7 +996,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<GetQueueAttributesRequest,GetQueueAttributesResponse>((GetQueueAttributesRequest)req, (GetQueueAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetQueueAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1039,8 +1048,9 @@ namespace Amazon.SQS
         public virtual void GetQueueUrlAsync(GetQueueUrlRequest request, AmazonServiceCallback<GetQueueUrlRequest, GetQueueUrlResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetQueueUrlRequestMarshaller.Instance;
-            var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetQueueUrlRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1048,7 +1058,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<GetQueueUrlRequest,GetQueueUrlResponse>((GetQueueUrlRequest)req, (GetQueueUrlResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetQueueUrlRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1067,8 +1077,9 @@ namespace Amazon.SQS
         public virtual void ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, AmazonServiceCallback<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1076,7 +1087,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ListDeadLetterSourceQueuesRequest,ListDeadLetterSourceQueuesResponse>((ListDeadLetterSourceQueuesRequest)req, (ListDeadLetterSourceQueuesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListDeadLetterSourceQueuesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1126,8 +1137,9 @@ namespace Amazon.SQS
         public virtual void ListQueuesAsync(ListQueuesRequest request, AmazonServiceCallback<ListQueuesRequest, ListQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListQueuesRequestMarshaller.Instance;
-            var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1135,7 +1147,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ListQueuesRequest,ListQueuesResponse>((ListQueuesRequest)req, (ListQueuesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListQueuesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1154,8 +1166,9 @@ namespace Amazon.SQS
         public virtual void ListQueueTagsAsync(ListQueueTagsRequest request, AmazonServiceCallback<ListQueueTagsRequest, ListQueueTagsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListQueueTagsRequestMarshaller.Instance;
-            var unmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListQueueTagsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1163,7 +1176,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ListQueueTagsRequest,ListQueueTagsResponse>((ListQueueTagsRequest)req, (ListQueueTagsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListQueueTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1230,8 +1243,9 @@ namespace Amazon.SQS
         public virtual void PurgeQueueAsync(PurgeQueueRequest request, AmazonServiceCallback<PurgeQueueRequest, PurgeQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PurgeQueueRequestMarshaller.Instance;
-            var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PurgeQueueRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PurgeQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1239,7 +1253,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<PurgeQueueRequest,PurgeQueueResponse>((PurgeQueueRequest)req, (PurgeQueueResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PurgeQueueRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1350,8 +1364,9 @@ namespace Amazon.SQS
         public virtual void ReceiveMessageAsync(ReceiveMessageRequest request, AmazonServiceCallback<ReceiveMessageRequest, ReceiveMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ReceiveMessageRequestMarshaller.Instance;
-            var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ReceiveMessageRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1359,7 +1374,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<ReceiveMessageRequest,ReceiveMessageResponse>((ReceiveMessageRequest)req, (ReceiveMessageResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ReceiveMessageRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1414,8 +1429,9 @@ namespace Amazon.SQS
         public virtual void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemovePermissionRequestMarshaller.Instance;
-            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1423,7 +1439,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<RemovePermissionRequest,RemovePermissionResponse>((RemovePermissionRequest)req, (RemovePermissionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemovePermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1488,8 +1504,9 @@ namespace Amazon.SQS
         public virtual void SendMessageAsync(SendMessageRequest request, AmazonServiceCallback<SendMessageRequest, SendMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendMessageRequestMarshaller.Instance;
-            var unmarshaller = SendMessageResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendMessageRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1497,7 +1514,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<SendMessageRequest,SendMessageResponse>((SendMessageRequest)req, (SendMessageResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendMessageRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1607,8 +1624,9 @@ namespace Amazon.SQS
         public virtual void SendMessageBatchAsync(SendMessageBatchRequest request, AmazonServiceCallback<SendMessageBatchRequest, SendMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendMessageBatchRequestMarshaller.Instance;
-            var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendMessageBatchRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1616,7 +1634,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<SendMessageBatchRequest,SendMessageBatchResponse>((SendMessageBatchRequest)req, (SendMessageBatchResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendMessageBatchRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1677,8 +1695,9 @@ namespace Amazon.SQS
         public virtual void SetQueueAttributesAsync(SetQueueAttributesRequest request, AmazonServiceCallback<SetQueueAttributesRequest, SetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetQueueAttributesRequestMarshaller.Instance;
-            var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetQueueAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1686,7 +1705,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<SetQueueAttributesRequest,SetQueueAttributesResponse>((SetQueueAttributesRequest)req, (SetQueueAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetQueueAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1705,8 +1724,9 @@ namespace Amazon.SQS
         public virtual void TagQueueAsync(TagQueueRequest request, AmazonServiceCallback<TagQueueRequest, TagQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TagQueueRequestMarshaller.Instance;
-            var unmarshaller = TagQueueResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagQueueRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1714,7 +1734,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<TagQueueRequest,TagQueueResponse>((TagQueueRequest)req, (TagQueueResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TagQueueRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1733,8 +1753,9 @@ namespace Amazon.SQS
         public virtual void UntagQueueAsync(UntagQueueRequest request, AmazonServiceCallback<UntagQueueRequest, UntagQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UntagQueueRequestMarshaller.Instance;
-            var unmarshaller = UntagQueueResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagQueueRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1742,7 +1763,7 @@ namespace Amazon.SQS
                             = new AmazonServiceResult<UntagQueueRequest,UntagQueueResponse>((UntagQueueRequest)req, (UntagQueueResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UntagQueueRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion

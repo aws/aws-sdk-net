@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+    #line 1 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ServiceClientUnity : BaseGenerator
     {
@@ -29,30 +29,31 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 6 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 	AddLicenseHeader();
 
             
             #line default
             #line hidden
-            this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nusing ");
+            this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Net;\r\n\r\nusing " +
+                    "");
             
-            #line 14 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 15 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 15 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 16 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations;\r\nusing ");
             
-            #line 16 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 17 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -60,42 +61,42 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(".Internal;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.R" +
                     "untime.Internal.Auth;\r\nusing Amazon.Runtime.Internal.Transform;\r\n\r\nnamespace ");
             
-            #line 22 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 23 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 24 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 25 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
     this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial class Amazon");
             
-            #line 25 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 26 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client : AmazonServiceClient, IAmazon");
             
-            #line 25 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 26 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n        private static IServiceMetadata serviceMetadata = new Amazon");
             
-            #line 27 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 28 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Metadata();\r\n");
             
-            #line 28 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 29 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
     // Creates constructors for the service if the model specifies to do so
 	if(this.Config.GenerateConstructors)
@@ -107,7 +108,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("        #region Constructors\r\n\r\n        /// <summary>\r\n        /// Constructs Ama" +
                     "zon");
             
-            #line 36 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 37 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -115,14 +116,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client with AWS Credentials\r\n        /// </summary>\r\n        /// <param name=\"cre" +
                     "dentials\">AWS Credentials</param>\r\n        public Amazon");
             
-            #line 39 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 40 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials)\r\n            : this(credentials, new Amazon");
             
-            #line 40 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 41 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -130,7 +131,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 45 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 46 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -139,7 +140,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "dentials\">AWS Credentials</param>\r\n        /// <param name=\"region\">The region t" +
                     "o connect.</param>\r\n        public Amazon");
             
-            #line 49 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 50 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -147,7 +148,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(AWSCredentials credentials, RegionEndpoint region)\r\n            : this(cre" +
                     "dentials, new Amazon");
             
-            #line 50 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 51 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -155,14 +156,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 55 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 56 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Credentials and an\r\n        /// Amazon");
             
-            #line 56 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 57 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -171,21 +172,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "edentials\">AWS Credentials</param>\r\n        /// <param name=\"clientConfig\">The A" +
                     "mazon");
             
-            #line 59 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 60 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 60 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 61 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials, Amazon");
             
-            #line 60 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 61 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -193,7 +194,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(credentials, clientConfig)\r\n        {\r\n " +
                     "       }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 66 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 67 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -202,7 +203,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " /// <param name=\"awsAccessKeyId\">AWS Access Key ID</param>\r\n        /// <param " +
                     "name=\"awsSecretAccessKey\">AWS Secret Access Key</param>\r\n        public Amazon");
             
-            #line 70 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 71 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -210,7 +211,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey)\r\n            : this(awsA" +
                     "ccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 71 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 72 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -218,7 +219,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 76 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 77 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -230,7 +231,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 81 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 82 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -238,7 +239,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)\r\n" +
                     "            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 82 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 83 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -246,14 +247,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config() {RegionEndpoint=region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r" +
                     "\n        /// Constructs Amazon");
             
-            #line 87 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 88 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 88 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 89 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -263,21 +264,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ssKey\">AWS Secret Access Key</param>\r\n        /// <param name=\"clientConfig\">The" +
                     " Amazon");
             
-            #line 92 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 93 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 93 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 94 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon");
             
-            #line 93 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 94 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -286,7 +287,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ntConfig)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs" +
                     " Amazon");
             
-            #line 99 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 100 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -298,7 +299,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         public Amazon");
             
-            #line 104 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 105 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -307,7 +308,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\n            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Ama" +
                     "zon");
             
-            #line 105 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 106 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -315,7 +316,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 110 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 111 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -328,7 +329,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 116 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 117 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -337,7 +338,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "RegionEndpoint region)\r\n            : this(awsAccessKeyId, awsSecretAccessKey, a" +
                     "wsSessionToken, new Amazon");
             
-            #line 117 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 118 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -345,14 +346,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 122 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 123 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 123 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 124 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -364,14 +365,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         /// <param name=""clientConfig"">The Amazon");
             
-            #line 128 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 129 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 129 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 130 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -379,7 +380,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, " +
                     "Amazon");
             
-            #line 129 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 130 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -387,7 +388,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(awsAccessKeyId, awsSecretAccessKey, awsS" +
                     "essionToken, clientConfig)\r\n        {\r\n        }\r\n\r\n        #endregion\r\n");
             
-            #line 135 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 136 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 	}
 
@@ -398,14 +399,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "r the service.\r\n        /// </summary>\r\n        protected override AbstractAWSSi" +
                     "gner CreateSigner()\r\n        {\r\n            return new ");
             
-            #line 146 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 147 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.ClassName)));
             
             #line default
             #line hidden
             this.Write("();\r\n        }\r\n\r\n");
             
-            #line 149 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 150 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
     // Generates overrides for the pipeline if specified in the customizations file
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
@@ -422,7 +423,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         {
 ");
             
-            #line 160 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 161 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			var unityPipelineOverride = this.Config.ServiceModel.Customizations.UnityPipelineOverride;
 			var pipelineOverrides = (unityPipelineOverride != null)?unityPipelineOverride: this.Config.ServiceModel.Customizations.PipelineOverride;
@@ -436,14 +437,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 168 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 169 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 169 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 170 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
                 }
                 else
@@ -454,28 +455,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 174 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 175 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 174 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 175 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.NewType));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 174 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 175 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.ConstructorInput));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 175 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 176 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 				
                 }
             }
@@ -485,7 +486,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        }\t\r\n");
             
-            #line 180 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 181 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 		}
 
@@ -517,9 +518,90 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
         #endregion
 
-        ");
+");
             
-            #line 208 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 209 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+        var endpointOperation = this.Config.ServiceModel.FindEndpointOperation();
+        if(endpointOperation != null)
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"        #region  EndpointOperation Override
+
+        protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)
+        {
+            return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>
+            {
+				var request = new ");
+            
+            #line 220 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpointOperation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Request\r\n\t\t\t\t{\r\n");
+            
+            #line 222 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+        if(endpointOperation.RequestHasOperationEndpointOperationMember)
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\tOperation = context.OperationName,\r\n");
+            
+            #line 227 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+        }
+        if(endpointOperation.RequestHasIdentifiersEndpointOperationMember)
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\tIdentifiers = new Dictionary<string, string>(context.EndpointDiscoveryData.I" +
+                    "dentifiers),\r\n");
+            
+            #line 233 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+        }
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t};\t\t\t\t           \r\n\r\n\t\t\t\tvar response = ");
+            
+            #line 238 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpointOperation.Name));
+            
+            #line default
+            #line hidden
+            this.Write(@"(request);
+				if(response.HttpStatusCode != HttpStatusCode.OK || response.Endpoints == null)
+				{
+					return null;
+				}
+
+				var endpoints = new List<DiscoveryEndpointBase>();
+				foreach(var endpoint in response.Endpoints)
+                {
+                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes));
+                }
+            
+				return endpoints;
+			});
+        }
+
+        #endregion
+");
+            
+            #line 255 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+        }
 
 		// Generates methods for each operation in the model
         foreach(var operation in this.Config.ServiceModel.Operations)
@@ -530,14 +612,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n        #region  ");
             
-            #line 214 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 263 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 215 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 264 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
         if(this.Config.ServiceModel.Customizations.GenerateSyncClientForUnity)
 		{
@@ -552,14 +634,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 224 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 273 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 225 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 274 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 		
 				}
 
@@ -568,35 +650,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\tinternal virtual ");
             
-            #line 228 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 277 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 228 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 277 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n\t\t\treturn ");
             
-            #line 230 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 279 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 230 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 279 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request());\r\n\t\t}\r\n");
             
-            #line 232 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 281 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			}
 
@@ -608,14 +690,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 238 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 287 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 239 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 288 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 		
 			}
 
@@ -624,28 +706,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\tinternal virtual ");
             
-            #line 242 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 291 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 242 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 291 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 242 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 291 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request)\r\n        {\r\n");
             
-            #line 244 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 293 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))
 			{
@@ -656,7 +738,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\t\t    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)\r\n\t\t    {" +
                     "\r\n\t\t\t\tthrow new InvalidOperationException(\"");
             
-            #line 250 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 299 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -664,44 +746,65 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option\");\r\n" +
                     "\t\t    }\r\n");
             
-            #line 252 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 301 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			}
 
             
             #line default
             #line hidden
-            this.Write("            var marshaller = ");
+            this.Write("            var options = new InvokeOptions();\r\n            options.RequestMarsha" +
+                    "ller = ");
             
-            #line 255 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 305 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            options.ResponseUnmarshaller = ");
             
-            #line 256 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 306 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return Invoke<");
+            this.Write("ResponseUnmarshaller.Instance;\r\n");
             
-            #line 258 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 307 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+            if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("            options.EndpointDiscoveryMarshaller = ");
+            
+            #line 311 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Request,");
+            this.Write("EndpointDiscoveryMarshaller.Instance;\r\n            options.EndpointOperation = En" +
+                    "dpointOperation;\r\n");
             
-            #line 258 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 313 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+            }            
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            return Invoke<");
+            
+            #line 317 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Response>(request, marshaller, unmarshaller);\r\n        }\r\n");
+            this.Write("Response>(request, options);\r\n        }\r\n");
             
-            #line 260 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 319 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 		}
         // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
@@ -712,7 +815,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 266 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 325 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
         this.FormatUnityOperationDocumentationAsync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
@@ -723,14 +826,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 271 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 330 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 272 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 331 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 		
 		}
 
@@ -739,42 +842,42 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        public virtual void ");
             
-            #line 275 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 334 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(AmazonServiceCallback<");
             
-            #line 275 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 334 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request, ");
             
-            #line 275 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 334 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> callback, AsyncOptions options = null)\r\n        {\r\n            ");
             
-            #line 277 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 336 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(new ");
             
-            #line 277 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 336 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request(), callback, options);\r\n        }\r\n\r\n");
             
-            #line 280 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 339 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 		}
         AddSimpleClientMethodsForUnity(operation,false);
@@ -784,7 +887,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n");
             
-            #line 285 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 344 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
@@ -794,14 +897,14 @@ AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(o
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 289 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 348 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 290 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 349 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 		}
 
@@ -810,42 +913,42 @@ AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(o
             #line hidden
             this.Write("        ");
             
-            #line 293 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 352 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" virtual void ");
             
-            #line 293 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 352 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 293 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 352 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request, AmazonServiceCallback<");
             
-            #line 293 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 352 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request, ");
             
-            #line 293 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 352 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> callback, AsyncOptions options = null)\r\n        {\r\n");
             
-            #line 295 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 354 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))
 			{
@@ -856,7 +959,7 @@ AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(o
             this.Write("\t\t    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)\r\n\t\t    {" +
                     "\r\n\t\t\t\tthrow new InvalidOperationException(\"");
             
-            #line 301 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 360 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -864,86 +967,106 @@ AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(o
             this.Write(" is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option\");\r\n" +
                     "\t\t    }\r\n");
             
-            #line 303 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 362 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
 			}
 
             
             #line default
             #line hidden
-            this.Write("        \toptions = options == null?new AsyncOptions():options;\r\n            var m" +
-                    "arshaller = ");
+            this.Write("        \toptions = options == null?new AsyncOptions():options;\r\n            var i" +
+                    "nvokeOptions = new InvokeOptions();\r\n            invokeOptions.RequestMarshaller" +
+                    " = ");
             
-            #line 307 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 367 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            invokeOptions.ResponseUnmarshaller = ");
             
-            #line 308 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 368 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write(@"ResponseUnmarshaller.Instance;
-			Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            this.Write("ResponseUnmarshaller.Instance;\r\n");
+            
+            #line 369 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+            if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("            invokeOptions.EndpointDiscoveryMarshaller = ");
+            
+            #line 373 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("EndpointDiscoveryMarshaller.Instance;\r\n            invokeOptions.EndpointOperatio" +
+                    "n = EndpointOperation;\r\n");
+            
+            #line 375 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+
+            }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"			Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
 			if(callback !=null )
 				callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
 					AmazonServiceResult<");
             
-            #line 312 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 381 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 312 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 381 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> responseObject \r\n\t\t\t\t\t\t\t= new AmazonServiceResult<");
             
-            #line 313 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 382 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 313 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 382 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>((");
             
-            #line 313 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 382 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request)req, (");
             
-            #line 313 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 382 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response)res, ex , ao.State);\t\r\n\t\t\t\t\t\tcallback(responseObject); \r\n\t\t\t\t};\r\n       " +
-                    "     BeginInvoke<");
+                    "     BeginInvoke(request, invokeOptions, options, callbackHelper);\r\n        }\r\n\r" +
+                    "\n        #endregion\r\n        ");
             
-            #line 316 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
-            
-            #line default
-            #line hidden
-            this.Write("Request>(request, marshaller, unmarshaller, options, callbackHelper);\r\n        }\r" +
-                    "\n\r\n        #endregion\r\n        ");
-            
-            #line 320 "C:\dev\Repo\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
+            #line 389 "C:\Dev\Worktrees\crr\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
         }
         

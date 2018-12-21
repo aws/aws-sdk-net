@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Mobile.Model;
 using Amazon.Mobile.Model.Internal.MarshallTransformations;
@@ -236,7 +237,7 @@ namespace Amazon.Mobile
 
         #endregion
 
-        
+
         #region  CreateProject
 
         /// <summary>
@@ -275,10 +276,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -295,11 +297,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateProjectRequestMarshaller.Instance;
-            var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateProjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -346,10 +348,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -366,11 +369,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteProjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteProjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -421,10 +424,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
         public virtual DescribeBundleResponse DescribeBundle(DescribeBundleRequest request)
         {
-            var marshaller = DescribeBundleRequestMarshaller.Instance;
-            var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBundleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBundleRequest,DescribeBundleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBundleResponse>(request, options);
         }
 
         /// <summary>
@@ -441,11 +445,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
         public virtual IAsyncResult BeginDescribeBundle(DescribeBundleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeBundleRequestMarshaller.Instance;
-            var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBundleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeBundleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -496,10 +500,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -516,11 +521,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeProjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeProjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -572,10 +577,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
         public virtual ExportBundleResponse ExportBundle(ExportBundleRequest request)
         {
-            var marshaller = ExportBundleRequestMarshaller.Instance;
-            var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportBundleResponseUnmarshaller.Instance;
 
-            return Invoke<ExportBundleRequest,ExportBundleResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExportBundleResponse>(request, options);
         }
 
         /// <summary>
@@ -592,11 +598,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
         public virtual IAsyncResult BeginExportBundle(ExportBundleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ExportBundleRequestMarshaller.Instance;
-            var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportBundleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ExportBundleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -649,10 +655,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
         public virtual ExportProjectResponse ExportProject(ExportProjectRequest request)
         {
-            var marshaller = ExportProjectRequestMarshaller.Instance;
-            var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportProjectResponseUnmarshaller.Instance;
 
-            return Invoke<ExportProjectRequest,ExportProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExportProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -669,11 +676,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
         public virtual IAsyncResult BeginExportProject(ExportProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ExportProjectRequestMarshaller.Instance;
-            var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportProjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ExportProjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -721,10 +728,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
         public virtual ListBundlesResponse ListBundles(ListBundlesRequest request)
         {
-            var marshaller = ListBundlesRequestMarshaller.Instance;
-            var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBundlesResponseUnmarshaller.Instance;
 
-            return Invoke<ListBundlesRequest,ListBundlesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListBundlesResponse>(request, options);
         }
 
         /// <summary>
@@ -741,11 +749,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
         public virtual IAsyncResult BeginListBundles(ListBundlesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListBundlesRequestMarshaller.Instance;
-            var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBundlesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListBundlesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -793,10 +801,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
-            return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListProjectsResponse>(request, options);
         }
 
         /// <summary>
@@ -813,11 +822,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListProjectsRequestMarshaller.Instance;
-            var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListProjectsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -876,10 +885,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateProjectResponse>(request, options);
         }
 
         /// <summary>
@@ -896,11 +906,11 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateProjectRequestMarshaller.Instance;
-            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateProjectRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

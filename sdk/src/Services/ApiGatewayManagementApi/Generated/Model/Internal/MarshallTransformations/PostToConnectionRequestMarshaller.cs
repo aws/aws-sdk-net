@@ -56,6 +56,7 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayManagementApi");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/@connections/{connectionId}";

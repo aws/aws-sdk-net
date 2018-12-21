@@ -58,6 +58,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             string target = "MTurkRequesterServiceV20170117.NotifyWorkers";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-17";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

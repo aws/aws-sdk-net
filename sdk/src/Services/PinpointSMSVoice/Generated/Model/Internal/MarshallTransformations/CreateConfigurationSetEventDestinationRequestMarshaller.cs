@@ -56,6 +56,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoice");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations";

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisVideoMedia.Model;
 using Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations;
@@ -79,15 +80,16 @@ namespace Amazon.KinesisVideoMedia
 
         #endregion
 
-        
+
         #region  GetMedia
 
         internal virtual GetMediaResponse GetMedia(GetMediaRequest request)
         {
-            var marshaller = GetMediaRequestMarshaller.Instance;
-            var unmarshaller = GetMediaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
-            return Invoke<GetMediaRequest,GetMediaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMediaResponse>(request, options);
         }
 
 
@@ -103,11 +105,11 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual Task<GetMediaResponse> GetMediaAsync(GetMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetMediaRequestMarshaller.Instance;
-            var unmarshaller = GetMediaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetMediaRequest,GetMediaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetMediaResponse>(request, options, cancellationToken);
         }
 
         #endregion

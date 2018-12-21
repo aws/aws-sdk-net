@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.CloudTrail.Model;
 using Amazon.CloudTrail.Model.Internal.MarshallTransformations;
@@ -263,7 +264,7 @@ namespace Amazon.CloudTrail
 
         #endregion
 
-        
+
         #region  AddTags
 
 
@@ -343,10 +344,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -361,11 +363,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AddTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -503,10 +505,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public virtual CreateTrailResponse CreateTrail(CreateTrailRequest request)
         {
-            var marshaller = CreateTrailRequestMarshaller.Instance;
-            var unmarshaller = CreateTrailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrailResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTrailRequest,CreateTrailResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTrailResponse>(request, options);
         }
 
         /// <summary>
@@ -521,11 +524,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public virtual Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTrailRequestMarshaller.Instance;
-            var unmarshaller = CreateTrailResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateTrailRequest,CreateTrailResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTrailResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -597,10 +600,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public virtual DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
         {
-            var marshaller = DeleteTrailRequestMarshaller.Instance;
-            var unmarshaller = DeleteTrailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrailResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTrailRequest,DeleteTrailResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTrailResponse>(request, options);
         }
 
         /// <summary>
@@ -615,11 +619,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public virtual Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTrailRequestMarshaller.Instance;
-            var unmarshaller = DeleteTrailResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteTrailRequest,DeleteTrailResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTrailResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -660,10 +664,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public virtual DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
         {
-            var marshaller = DescribeTrailsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTrailsRequest,DescribeTrailsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTrailsResponse>(request, options);
         }
 
 
@@ -698,11 +703,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public virtual Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTrailsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeTrailsRequest,DescribeTrailsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTrailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -777,10 +782,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public virtual GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
         {
-            var marshaller = GetEventSelectorsRequestMarshaller.Instance;
-            var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventSelectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
 
-            return Invoke<GetEventSelectorsRequest,GetEventSelectorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEventSelectorsResponse>(request, options);
         }
 
         /// <summary>
@@ -795,11 +801,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public virtual Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetEventSelectorsRequestMarshaller.Instance;
-            var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetEventSelectorsRequest,GetEventSelectorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventSelectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEventSelectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -850,10 +856,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public virtual GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
         {
-            var marshaller = GetTrailStatusRequestMarshaller.Instance;
-            var unmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrailStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetTrailStatusRequest,GetTrailStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTrailStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -868,11 +875,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public virtual Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTrailStatusRequestMarshaller.Instance;
-            var unmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetTrailStatusRequest,GetTrailStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrailStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTrailStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -913,10 +920,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
-            var marshaller = ListPublicKeysRequestMarshaller.Instance;
-            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
-            return Invoke<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPublicKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -931,11 +939,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPublicKeysRequestMarshaller.Instance;
-            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPublicKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1004,10 +1012,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1022,11 +1031,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1109,10 +1118,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public virtual LookupEventsResponse LookupEvents(LookupEventsRequest request)
         {
-            var marshaller = LookupEventsRequestMarshaller.Instance;
-            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LookupEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LookupEventsResponseUnmarshaller.Instance;
 
-            return Invoke<LookupEventsRequest,LookupEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<LookupEventsResponse>(request, options);
         }
 
         /// <summary>
@@ -1127,11 +1137,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public virtual Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = LookupEventsRequestMarshaller.Instance;
-            var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<LookupEventsRequest,LookupEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LookupEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LookupEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<LookupEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1280,10 +1290,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public virtual PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
         {
-            var marshaller = PutEventSelectorsRequestMarshaller.Instance;
-            var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventSelectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventSelectorsRequest,PutEventSelectorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventSelectorsResponse>(request, options);
         }
 
         /// <summary>
@@ -1298,11 +1309,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public virtual Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutEventSelectorsRequestMarshaller.Instance;
-            var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutEventSelectorsRequest,PutEventSelectorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventSelectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutEventSelectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1378,10 +1389,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1396,11 +1408,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1473,10 +1485,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public virtual StartLoggingResponse StartLogging(StartLoggingRequest request)
         {
-            var marshaller = StartLoggingRequestMarshaller.Instance;
-            var unmarshaller = StartLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<StartLoggingRequest,StartLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -1491,11 +1504,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public virtual Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartLoggingRequestMarshaller.Instance;
-            var unmarshaller = StartLoggingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartLoggingRequest,StartLoggingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartLoggingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1571,10 +1584,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public virtual StopLoggingResponse StopLogging(StopLoggingRequest request)
         {
-            var marshaller = StopLoggingRequestMarshaller.Instance;
-            var unmarshaller = StopLoggingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLoggingResponseUnmarshaller.Instance;
 
-            return Invoke<StopLoggingRequest,StopLoggingResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopLoggingResponse>(request, options);
         }
 
         /// <summary>
@@ -1589,11 +1603,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public virtual Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopLoggingRequestMarshaller.Instance;
-            var unmarshaller = StopLoggingResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopLoggingRequest,StopLoggingResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopLoggingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1735,10 +1749,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public virtual UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
         {
-            var marshaller = UpdateTrailRequestMarshaller.Instance;
-            var unmarshaller = UpdateTrailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrailResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTrailRequest,UpdateTrailResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTrailResponse>(request, options);
         }
 
         /// <summary>
@@ -1753,11 +1768,11 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public virtual Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateTrailRequestMarshaller.Instance;
-            var unmarshaller = UpdateTrailResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateTrailRequest,UpdateTrailResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTrailResponse>(request, options, cancellationToken);
         }
 
         #endregion

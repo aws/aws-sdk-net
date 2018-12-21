@@ -55,6 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDashboardEmbedUrlRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url";

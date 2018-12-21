@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ApiGatewayManagementApi.Model;
 using Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations;
@@ -240,7 +241,7 @@ namespace Amazon.ApiGatewayManagementApi
 
         #endregion
 
-        
+
         #region  PostToConnection
 
 
@@ -264,10 +265,11 @@ namespace Amazon.ApiGatewayManagementApi
         /// </exception>
         public virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<PostToConnectionRequest,PostToConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PostToConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -281,11 +283,11 @@ namespace Amazon.ApiGatewayManagementApi
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PostToConnectionResponse> PostToConnectionAsync(PostToConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PostToConnectionRequest,PostToConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PostToConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Macie.Model;
 using Amazon.Macie.Model.Internal.MarshallTransformations;
@@ -249,15 +250,16 @@ namespace Amazon.Macie
 
         #endregion
 
-        
+
         #region  AssociateMemberAccount
 
         internal virtual AssociateMemberAccountResponse AssociateMemberAccount(AssociateMemberAccountRequest request)
         {
-            var marshaller = AssociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateMemberAccountRequest,AssociateMemberAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateMemberAccountResponse>(request, options);
         }
 
 
@@ -273,11 +275,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">REST API Reference for AssociateMemberAccount Operation</seealso>
         public virtual Task<AssociateMemberAccountResponse> AssociateMemberAccountAsync(AssociateMemberAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMemberAccountResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateMemberAccountRequest,AssociateMemberAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateMemberAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -286,10 +288,11 @@ namespace Amazon.Macie
 
         internal virtual AssociateS3ResourcesResponse AssociateS3Resources(AssociateS3ResourcesRequest request)
         {
-            var marshaller = AssociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateS3ResourcesRequest,AssociateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateS3ResourcesResponse>(request, options);
         }
 
 
@@ -305,11 +308,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">REST API Reference for AssociateS3Resources Operation</seealso>
         public virtual Task<AssociateS3ResourcesResponse> AssociateS3ResourcesAsync(AssociateS3ResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateS3ResourcesRequest,AssociateS3ResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateS3ResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -318,10 +321,11 @@ namespace Amazon.Macie
 
         internal virtual DisassociateMemberAccountResponse DisassociateMemberAccount(DisassociateMemberAccountRequest request)
         {
-            var marshaller = DisassociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateMemberAccountRequest,DisassociateMemberAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateMemberAccountResponse>(request, options);
         }
 
 
@@ -337,11 +341,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">REST API Reference for DisassociateMemberAccount Operation</seealso>
         public virtual Task<DisassociateMemberAccountResponse> DisassociateMemberAccountAsync(DisassociateMemberAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateMemberAccountRequestMarshaller.Instance;
-            var unmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMemberAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMemberAccountResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateMemberAccountRequest,DisassociateMemberAccountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateMemberAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -350,10 +354,11 @@ namespace Amazon.Macie
 
         internal virtual DisassociateS3ResourcesResponse DisassociateS3Resources(DisassociateS3ResourcesRequest request)
         {
-            var marshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateS3ResourcesRequest,DisassociateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateS3ResourcesResponse>(request, options);
         }
 
 
@@ -369,11 +374,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">REST API Reference for DisassociateS3Resources Operation</seealso>
         public virtual Task<DisassociateS3ResourcesResponse> DisassociateS3ResourcesAsync(DisassociateS3ResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateS3ResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateS3ResourcesRequest,DisassociateS3ResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateS3ResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -382,10 +387,11 @@ namespace Amazon.Macie
 
         internal virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListMemberAccountsResponse>(request, options);
         }
 
 
@@ -401,11 +407,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual Task<ListMemberAccountsResponse> ListMemberAccountsAsync(ListMemberAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListMemberAccountsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -414,10 +420,11 @@ namespace Amazon.Macie
 
         internal virtual ListS3ResourcesResponse ListS3Resources(ListS3ResourcesRequest request)
         {
-            var marshaller = ListS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListS3ResourcesRequest,ListS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListS3ResourcesResponse>(request, options);
         }
 
 
@@ -433,11 +440,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">REST API Reference for ListS3Resources Operation</seealso>
         public virtual Task<ListS3ResourcesResponse> ListS3ResourcesAsync(ListS3ResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3ResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListS3ResourcesRequest,ListS3ResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListS3ResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -446,10 +453,11 @@ namespace Amazon.Macie
 
         internal virtual UpdateS3ResourcesResponse UpdateS3Resources(UpdateS3ResourcesRequest request)
         {
-            var marshaller = UpdateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateS3ResourcesRequest,UpdateS3ResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateS3ResourcesResponse>(request, options);
         }
 
 
@@ -465,11 +473,11 @@ namespace Amazon.Macie
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">REST API Reference for UpdateS3Resources Operation</seealso>
         public virtual Task<UpdateS3ResourcesResponse> UpdateS3ResourcesAsync(UpdateS3ResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateS3ResourcesRequestMarshaller.Instance;
-            var unmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateS3ResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateS3ResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateS3ResourcesRequest,UpdateS3ResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateS3ResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion

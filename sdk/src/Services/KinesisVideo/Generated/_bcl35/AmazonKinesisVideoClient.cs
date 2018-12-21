@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisVideo.Model;
 using Amazon.KinesisVideo.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.KinesisVideo
 
         #endregion
 
-        
+
         #region  CreateStream
 
         /// <summary>
@@ -284,10 +285,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
-            var marshaller = CreateStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
-            return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -304,11 +306,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual IAsyncResult BeginCreateStream(CreateStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -372,10 +374,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
-            var marshaller = DeleteStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -392,11 +395,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual IAsyncResult BeginDeleteStream(DeleteStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -439,10 +442,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -459,11 +463,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual IAsyncResult BeginDescribeStream(DescribeStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -518,10 +522,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual GetDataEndpointResponse GetDataEndpoint(GetDataEndpointRequest request)
         {
-            var marshaller = GetDataEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<GetDataEndpointRequest,GetDataEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDataEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -538,11 +543,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetDataEndpoint(GetDataEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDataEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDataEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -579,10 +584,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListStreamsResponse>(request, options);
         }
 
         /// <summary>
@@ -599,11 +605,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListStreamsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -654,10 +660,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
-            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForStreamRequest,ListTagsForStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -674,11 +681,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual IAsyncResult BeginListTagsForStream(ListTagsForStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -745,10 +752,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual TagStreamResponse TagStream(TagStreamRequest request)
         {
-            var marshaller = TagStreamRequestMarshaller.Instance;
-            var unmarshaller = TagStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagStreamResponseUnmarshaller.Instance;
 
-            return Invoke<TagStreamRequest,TagStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -765,11 +773,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual IAsyncResult BeginTagStream(TagStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TagStreamRequestMarshaller.Instance;
-            var unmarshaller = TagStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TagStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -821,10 +829,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual UntagStreamResponse UntagStream(UntagStreamRequest request)
         {
-            var marshaller = UntagStreamRequestMarshaller.Instance;
-            var unmarshaller = UntagStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagStreamResponseUnmarshaller.Instance;
 
-            return Invoke<UntagStreamRequest,UntagStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -841,11 +850,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual IAsyncResult BeginUntagStream(UntagStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UntagStreamRequestMarshaller.Instance;
-            var unmarshaller = UntagStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UntagStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -926,10 +935,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual UpdateDataRetentionResponse UpdateDataRetention(UpdateDataRetentionRequest request)
         {
-            var marshaller = UpdateDataRetentionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDataRetentionRequest,UpdateDataRetentionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDataRetentionResponse>(request, options);
         }
 
         /// <summary>
@@ -946,11 +956,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataRetention(UpdateDataRetentionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDataRetentionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataRetentionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDataRetentionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1016,10 +1026,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
         {
-            var marshaller = UpdateStreamRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -1036,11 +1047,11 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual IAsyncResult BeginUpdateStream(UpdateStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateStreamRequestMarshaller.Instance;
-            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

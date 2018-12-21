@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ImportExport.Model;
 using Amazon.ImportExport.Model.Internal.MarshallTransformations;
@@ -241,7 +242,7 @@ namespace Amazon.ImportExport
 
         #endregion
 
-        
+
         #region  CancelJob
 
 
@@ -274,10 +275,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
         /// <summary>
@@ -291,11 +293,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -371,10 +373,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -388,11 +391,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -432,10 +435,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
-            var marshaller = GetShippingLabelRequestMarshaller.Instance;
-            var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
 
-            return Invoke<GetShippingLabelRequest,GetShippingLabelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetShippingLabelResponse>(request, options);
         }
 
         /// <summary>
@@ -449,11 +453,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetShippingLabelRequestMarshaller.Instance;
-            var unmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetShippingLabelRequest,GetShippingLabelResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetShippingLabelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -488,10 +492,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
-            var marshaller = GetStatusRequestMarshaller.Instance;
-            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetStatusRequest,GetStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -505,11 +510,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetStatusRequestMarshaller.Instance;
-            var unmarshaller = GetStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetStatusRequest,GetStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -564,10 +569,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsResponse>(request, options);
         }
 
 
@@ -608,11 +614,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobsRequestMarshaller.Instance;
-            var unmarshaller = ListJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -691,10 +697,11 @@ namespace Amazon.ImportExport
         /// </exception>
         public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -708,11 +715,11 @@ namespace Amazon.ImportExport
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateJobRequest,UpdateJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

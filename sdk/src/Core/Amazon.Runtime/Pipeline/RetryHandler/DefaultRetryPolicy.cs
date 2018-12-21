@@ -35,6 +35,8 @@ namespace Amazon.Runtime.Internal
         // is done to ensure that the bucket has a strategy for filling up if an explosion of bad retry requests 
         // were to deplete the entire capacity.The default value is set at 1.
         private const int THROTTLE_REQUEST_COST = 1;
+        //The status code returned from a service request when an invalid endpoint is used.
+        private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
         //Holds on to the singleton instance.
         private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(THROTTLED_RETRIES, THROTTLE_RETRY_REQUEST_COST, THROTTLE_REQUEST_COST);
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
@@ -171,7 +173,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>Return true if the request should be retried.</returns>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
-            return RetryForExceptionSync(exception);
+            return RetryForExceptionSync(exception, executionContext);
         }
 
 
@@ -214,6 +216,17 @@ namespace Amazon.Runtime.Internal
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <returns>Return true if the request should be retried.</returns>
         private bool RetryForExceptionSync(Exception exception)
+        {
+            return RetryForExceptionSync(exception, null);
+        }
+        /// <summary>
+        /// Perform the processor-bound portion of the RetryForException logic.
+        /// This is shared by the sync, async, and APM versions of the RetryForException method.
+        /// </summary>
+        /// <param name="exception">The exception thrown by the previous request.</param>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        /// <returns>Return true if the request should be retried.</returns>
+        private bool RetryForExceptionSync(Exception exception, IExecutionContext executionContext)
         {
             // An IOException was thrown by the underlying http client.
             if (exception is IOException)
@@ -278,6 +291,20 @@ namespace Amazon.Runtime.Internal
                     }
                 }
 
+                //Check for Invalid Endpoint Exception indicating that the Endpoint Discovery
+                //endpoint used was invalid for the request. One retry attempt is allowed for this
+                //type of exception.
+                if (serviceException.StatusCode == (HttpStatusCode)INVALID_ENDPOINT_EXCEPTION_STATUSCODE)
+                {
+                    if(executionContext.RequestContext.EndpointDiscoveryRetries < 1)
+                    {
+                        executionContext.RequestContext.EndpointDiscoveryRetries++;
+                        return true;
+                    }
+
+                    return false;
+                }
+                                
                 WebException webException;
                 if (IsInnerException<WebException>(exception, out webException))
                 {

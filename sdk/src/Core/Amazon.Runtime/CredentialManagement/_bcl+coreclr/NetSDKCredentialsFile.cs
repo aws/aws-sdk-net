@@ -46,11 +46,14 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string RegionField = "Region";
 
+        private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
+
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField,
-            RegionField
+            RegionField,
+            EndpointDiscoveryEnabledField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -133,12 +136,27 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
 
+                    string endpointDiscoveryEnabledString;
+                    bool? endpointDiscoveryEnabled = null;
+                    if (reservedProperties.TryGetValue(EndpointDiscoveryEnabledField, out endpointDiscoveryEnabledString))
+                    {
+                        bool endpointDiscoveryEnabledOut;
+                        if (!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
+                        {                            
+                            profile = null;
+                            return false;
+                        }
+
+                        endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
                         Properties = userProperties,
                         Region = region,
-                        CredentialProfileStore = this
+                        CredentialProfileStore = this,
+                        EndpointDiscoveryEnabled = endpointDiscoveryEnabled
                     };
                     return true;
                 }
@@ -172,6 +190,9 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.Region != null)
                     reservedProperties[RegionField] = profile.Region.SystemName;
+
+                if (profile.EndpointDiscoveryEnabled != null)
+                    reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

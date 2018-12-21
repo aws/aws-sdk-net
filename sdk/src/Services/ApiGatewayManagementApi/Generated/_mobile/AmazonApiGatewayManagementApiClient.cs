@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ApiGatewayManagementApi.Model;
 using Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations;
@@ -245,15 +246,16 @@ namespace Amazon.ApiGatewayManagementApi
 
         #endregion
 
-        
+
         #region  PostToConnection
 
         internal virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<PostToConnectionRequest,PostToConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PostToConnectionResponse>(request, options);
         }
 
 
@@ -268,11 +270,11 @@ namespace Amazon.ApiGatewayManagementApi
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PostToConnectionResponse> PostToConnectionAsync(PostToConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PostToConnectionRequest,PostToConnectionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PostToConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Lex.Model;
 using Amazon.Lex.Model.Internal.MarshallTransformations;
@@ -243,7 +244,7 @@ namespace Amazon.Lex
 
         #endregion
 
-        
+
         #region  PostContent
 
         /// <summary>
@@ -387,10 +388,11 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         public virtual PostContentResponse PostContent(PostContentRequest request)
         {
-            var marshaller = PostContentRequestMarshaller.Instance;
-            var unmarshaller = PostContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostContentResponseUnmarshaller.Instance;
 
-            return Invoke<PostContentRequest,PostContentResponse>(request, marshaller, unmarshaller);
+            return Invoke<PostContentResponse>(request, options);
         }
 
         /// <summary>
@@ -407,11 +409,11 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         public virtual IAsyncResult BeginPostContent(PostContentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PostContentRequestMarshaller.Instance;
-            var unmarshaller = PostContentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostContentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PostContentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -557,10 +559,11 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         public virtual PostTextResponse PostText(PostTextRequest request)
         {
-            var marshaller = PostTextRequestMarshaller.Instance;
-            var unmarshaller = PostTextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostTextResponseUnmarshaller.Instance;
 
-            return Invoke<PostTextRequest,PostTextResponse>(request, marshaller, unmarshaller);
+            return Invoke<PostTextResponse>(request, options);
         }
 
         /// <summary>
@@ -577,11 +580,11 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         public virtual IAsyncResult BeginPostText(PostTextRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PostTextRequestMarshaller.Instance;
-            var unmarshaller = PostTextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostTextResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PostTextRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

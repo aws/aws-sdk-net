@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ElasticTranscoder.Model;
 using Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations;
@@ -247,7 +248,7 @@ namespace Amazon.ElasticTranscoder
 
         #endregion
 
-        
+
         #region  CancelJob
 
 
@@ -288,10 +289,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
-            return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelJobResponse>(request, options);
         }
 
         /// <summary>
@@ -305,11 +307,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelJobRequestMarshaller.Instance;
-            var unmarshaller = CancelJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -354,10 +356,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateJobResponse>(request, options);
         }
 
         /// <summary>
@@ -371,11 +374,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateJobRequestMarshaller.Instance;
-            var unmarshaller = CreateJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -412,10 +415,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -429,11 +433,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePipelineRequestMarshaller.Instance;
-            var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -485,10 +489,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
-            var marshaller = CreatePresetRequestMarshaller.Instance;
-            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePresetRequest,CreatePresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePresetResponse>(request, options);
         }
 
         /// <summary>
@@ -502,11 +507,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreatePresetRequestMarshaller.Instance;
-            var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreatePresetRequest,CreatePresetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePresetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -550,10 +555,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -567,11 +573,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePipelineRequestMarshaller.Instance;
-            var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -610,10 +616,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
-            var marshaller = DeletePresetRequestMarshaller.Instance;
-            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePresetRequest,DeletePresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePresetResponse>(request, options);
         }
 
         /// <summary>
@@ -627,11 +634,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeletePresetRequestMarshaller.Instance;
-            var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeletePresetRequest,DeletePresetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePresetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -670,10 +677,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
-            var marshaller = ListJobsByPipelineRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsByPipelineRequest,ListJobsByPipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsByPipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -687,11 +695,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobsByPipelineRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListJobsByPipelineRequest,ListJobsByPipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsByPipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -725,10 +733,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
-            var marshaller = ListJobsByStatusRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
 
-            return Invoke<ListJobsByStatusRequest,ListJobsByStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListJobsByStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -742,11 +751,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListJobsByStatusRequestMarshaller.Instance;
-            var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListJobsByStatusRequest,ListJobsByStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsByStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -801,10 +810,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
-            return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPipelinesResponse>(request, options);
         }
 
 
@@ -845,11 +855,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPipelinesRequestMarshaller.Instance;
-            var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -904,10 +914,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
-            var marshaller = ListPresetsRequestMarshaller.Instance;
-            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPresetsRequest,ListPresetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPresetsResponse>(request, options);
         }
 
 
@@ -948,11 +959,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPresetsRequestMarshaller.Instance;
-            var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListPresetsRequest,ListPresetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPresetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -985,10 +996,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
-            var marshaller = ReadJobRequestMarshaller.Instance;
-            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
 
-            return Invoke<ReadJobRequest,ReadJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1002,11 +1014,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReadJobRequestMarshaller.Instance;
-            var unmarshaller = ReadJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ReadJobRequest,ReadJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReadJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1039,10 +1051,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
-            var marshaller = ReadPipelineRequestMarshaller.Instance;
-            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
 
-            return Invoke<ReadPipelineRequest,ReadPipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadPipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -1056,11 +1069,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReadPipelineRequestMarshaller.Instance;
-            var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ReadPipelineRequest,ReadPipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReadPipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1093,10 +1106,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
-            var marshaller = ReadPresetRequestMarshaller.Instance;
-            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
 
-            return Invoke<ReadPresetRequest,ReadPresetResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReadPresetResponse>(request, options);
         }
 
         /// <summary>
@@ -1110,11 +1124,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReadPresetRequestMarshaller.Instance;
-            var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ReadPresetRequest,ReadPresetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReadPresetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1157,10 +1171,11 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
-            var marshaller = TestRoleRequestMarshaller.Instance;
-            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
 
-            return Invoke<TestRoleRequest,TestRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -1175,11 +1190,11 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TestRoleRequestMarshaller.Instance;
-            var unmarshaller = TestRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TestRoleRequest,TestRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestRoleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1224,10 +1239,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineResponse>(request, options);
         }
 
         /// <summary>
@@ -1241,11 +1257,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePipelineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1289,10 +1305,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
-            var marshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineNotificationsRequest,UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineNotificationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1306,11 +1323,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdatePipelineNotificationsRequest,UpdatePipelineNotificationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePipelineNotificationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1356,10 +1373,11 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
-            var marshaller = UpdatePipelineStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePipelineStatusRequest,UpdatePipelineStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePipelineStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1373,11 +1391,11 @@ namespace Amazon.ElasticTranscoder
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdatePipelineStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdatePipelineStatusRequest,UpdatePipelineStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePipelineStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

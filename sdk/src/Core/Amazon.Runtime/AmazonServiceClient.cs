@@ -33,6 +33,7 @@ namespace Amazon.Runtime
     {
         private bool _disposed;
         private Logger _logger;
+        protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
         public IClientConfig Config { get; private set; }
@@ -153,7 +154,7 @@ namespace Amazon.Runtime
             this.Config = config;
             this.Credentials = credentials;
             Signer = CreateSigner();
-
+            EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             BuildRuntimePipeline();
         }
@@ -182,9 +183,19 @@ namespace Amazon.Runtime
 
         #region Invoke methods
 
+        [Obsolete("Invoke taking marshallers is obsolete. Use Invoke taking InvokeOptionsBase instead.")]
         protected TResponse Invoke<TRequest, TResponse>(TRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)
             where TRequest : AmazonWebServiceRequest
+            where TResponse : AmazonWebServiceResponse
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = marshaller;
+            options.ResponseUnmarshaller = unmarshaller;
+            return Invoke<TResponse>(request, options);
+        }
+
+        protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)            
             where TResponse : AmazonWebServiceResponse
         {
             ThrowIfDisposed();
@@ -193,11 +204,12 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
-                    Marshaller = marshaller,
+                    Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
-                    Unmarshaller = unmarshaller,
+                    Unmarshaller = options.ResponseUnmarshaller,
                     IsAsync = false,
-                    ServiceMetaData = this.ServiceMetadata
+                    ServiceMetaData = this.ServiceMetadata,
+                    Options = options
                 },
                 new ResponseContext()
             );
@@ -207,10 +219,20 @@ namespace Amazon.Runtime
         }
 
 #if UNITY
+        [Obsolete("BeginInvoke taking marshallers is obsolete. Use BeginInvoke taking InvokeOptionsBase instead.")]
         protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller, AsyncOptions asyncOptions,
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
            where TRequest : AmazonWebServiceRequest
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = marshaller;
+            options.ResponseUnmarshaller = unmarshaller;
+            return BeginInvoke(request, options, asyncOptions, callbackHelper);
+        }
+
+        protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request, InvokeOptionsBase options, AsyncOptions asyncOptions,
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
         {
             ThrowIfDisposed();
 
@@ -219,13 +241,14 @@ namespace Amazon.Runtime
                 new AsyncRequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
-                    Marshaller = marshaller,
+                    Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
-                    Unmarshaller = unmarshaller,
+                    Unmarshaller = options.ResponseUnmarshaller,
                     Action = callbackHelper,
                     AsyncOptions = asyncOptions,
                     IsAsync = true,
-                    ServiceMetaData = this.ServiceMetadata
+                    ServiceMetaData = this.ServiceMetadata,
+                    Options = options
                 },
                 new AsyncResponseContext()
             );
@@ -236,10 +259,21 @@ namespace Amazon.Runtime
 
 #if AWS_ASYNC_API
 
+        [Obsolete("InvokeAsync taking marshallers is obsolete. Use InvokeAsync taking InvokeOptionsBase instead.")]
         protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(TRequest request, 
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
             System.Threading.CancellationToken cancellationToken)            
             where TRequest: AmazonWebServiceRequest
+            where TResponse : AmazonWebServiceResponse, new()
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = marshaller;
+            options.ResponseUnmarshaller = unmarshaller;
+            return InvokeAsync<TResponse>(request, options, cancellationToken);
+        }
+
+        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(AmazonWebServiceRequest request,
+            InvokeOptionsBase options, System.Threading.CancellationToken cancellationToken)            
             where TResponse : AmazonWebServiceResponse, new()
         {
             ThrowIfDisposed();
@@ -248,12 +282,13 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
-                    Marshaller = marshaller,
+                    Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
-                    Unmarshaller = unmarshaller,
+                    Unmarshaller = options.ResponseUnmarshaller,
                     IsAsync = true,
                     CancellationToken = cancellationToken,
-                    ServiceMetaData = this.ServiceMetadata
+                    ServiceMetaData = this.ServiceMetadata,
+                    Options = options                    
                 },
                 new ResponseContext()
             );
@@ -262,10 +297,20 @@ namespace Amazon.Runtime
         }
 
 #elif AWS_APM_API
+        [Obsolete("BeginInvoke taking marshallers is obsolete. Use BeginInvoke taking InvokeOptionsBase instead.")]
         protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
             AsyncCallback callback, object state)
             where TRequest : AmazonWebServiceRequest
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = marshaller;
+            options.ResponseUnmarshaller = unmarshaller;
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request,
+            InvokeOptionsBase options, AsyncCallback callback, object state)            
         {
             ThrowIfDisposed();
 
@@ -273,13 +318,14 @@ namespace Amazon.Runtime
                 new AsyncRequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
-                    Marshaller = marshaller,
+                    Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
-                    Unmarshaller = unmarshaller,
+                    Unmarshaller = options.ResponseUnmarshaller,
                     Callback = callback,
                     State = state,
                     IsAsync = true,
-                    ServiceMetaData = this.ServiceMetadata
+                    ServiceMetaData = this.ServiceMetadata,
+                    Options = options
                 },
                 new AsyncResponseContext()
             );
@@ -316,6 +362,8 @@ namespace Amazon.Runtime
             }
         }
 #endif
+
+        protected virtual IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context) { return null; }
 
         #endregion
 
@@ -444,7 +492,10 @@ namespace Amazon.Runtime
                     new ErrorHandler(_logger),
                     postUnmarshallHandler,
                     new Signer(),
-                    new CredentialsRetriever(this.Credentials),
+                    //EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
+                    //credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
+                    new EndpointDiscoveryHandler(), 
+                    new CredentialsRetriever(this.Credentials),                                        
                     new RetryHandler(new DefaultRetryPolicy(this.Config)),
                     postMarshallHandler,
                     new EndpointResolver(),
@@ -619,7 +670,6 @@ namespace Amazon.Runtime
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }
 #endif
-        }
-
+        }        
     }
 }

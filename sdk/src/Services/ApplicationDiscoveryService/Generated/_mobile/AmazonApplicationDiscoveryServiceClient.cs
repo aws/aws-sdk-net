@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ApplicationDiscoveryService.Model;
 using Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations;
@@ -318,15 +319,16 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
 
-        
+
         #region  AssociateConfigurationItemsToApplication
 
         internal virtual AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request)
         {
-            var marshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
-            var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateConfigurationItemsToApplicationRequest,AssociateConfigurationItemsToApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateConfigurationItemsToApplicationResponse>(request, options);
         }
 
 
@@ -342,11 +344,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         public virtual Task<AssociateConfigurationItemsToApplicationResponse> AssociateConfigurationItemsToApplicationAsync(AssociateConfigurationItemsToApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
-            var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateConfigurationItemsToApplicationRequest,AssociateConfigurationItemsToApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateConfigurationItemsToApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -355,10 +357,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var marshaller = CreateApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApplicationResponse>(request, options);
         }
 
 
@@ -374,11 +377,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -387,10 +390,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTagsResponse>(request, options);
         }
 
 
@@ -406,11 +410,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTagsRequestMarshaller.Instance;
-            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -419,10 +423,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request)
         {
-            var marshaller = DeleteApplicationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationsRequest,DeleteApplicationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationsResponse>(request, options);
         }
 
 
@@ -438,11 +443,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         public virtual Task<DeleteApplicationsResponse> DeleteApplicationsAsync(DeleteApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApplicationsRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApplicationsRequest,DeleteApplicationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApplicationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -451,10 +456,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTagsResponse>(request, options);
         }
 
 
@@ -470,11 +476,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTagsRequestMarshaller.Instance;
-            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -483,10 +489,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request)
         {
-            var marshaller = DescribeAgentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAgentsRequest,DescribeAgentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAgentsResponse>(request, options);
         }
 
 
@@ -502,11 +509,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         public virtual Task<DescribeAgentsResponse> DescribeAgentsAsync(DescribeAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeAgentsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAgentsRequest,DescribeAgentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeAgentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -515,10 +522,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
         {
-            var marshaller = DescribeConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeConfigurationsRequest,DescribeConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeConfigurationsResponse>(request, options);
         }
 
 
@@ -534,11 +542,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         public virtual Task<DescribeConfigurationsResponse> DescribeConfigurationsAsync(DescribeConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeConfigurationsRequest,DescribeConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -547,10 +555,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DescribeContinuousExportsResponse DescribeContinuousExports(DescribeContinuousExportsRequest request)
         {
-            var marshaller = DescribeContinuousExportsRequestMarshaller.Instance;
-            var unmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContinuousExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeContinuousExportsRequest,DescribeContinuousExportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeContinuousExportsResponse>(request, options);
         }
 
 
@@ -566,11 +575,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">REST API Reference for DescribeContinuousExports Operation</seealso>
         public virtual Task<DescribeContinuousExportsResponse> DescribeContinuousExportsAsync(DescribeContinuousExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeContinuousExportsRequestMarshaller.Instance;
-            var unmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContinuousExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeContinuousExportsRequest,DescribeContinuousExportsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeContinuousExportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -580,10 +589,11 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         internal virtual DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
         {
-            var marshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeExportConfigurationsResponse>(request, options);
         }
 
 
@@ -600,11 +610,11 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public virtual Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeExportConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -613,10 +623,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
-            var marshaller = DescribeExportTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeExportTasksResponse>(request, options);
         }
 
 
@@ -632,11 +643,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeExportTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeExportTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -645,10 +656,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeTagsResponse>(request, options);
         }
 
 
@@ -664,11 +676,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeTagsRequestMarshaller.Instance;
-            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -677,10 +689,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request)
         {
-            var marshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateConfigurationItemsFromApplicationRequest,DisassociateConfigurationItemsFromApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateConfigurationItemsFromApplicationResponse>(request, options);
         }
 
 
@@ -696,11 +709,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         public virtual Task<DisassociateConfigurationItemsFromApplicationResponse> DisassociateConfigurationItemsFromApplicationAsync(DisassociateConfigurationItemsFromApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateConfigurationItemsFromApplicationRequest,DisassociateConfigurationItemsFromApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateConfigurationItemsFromApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -710,10 +723,11 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of StartExportTask.")]
         internal virtual ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
         {
-            var marshaller = ExportConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ExportConfigurationsRequest,ExportConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ExportConfigurationsResponse>(request, options);
         }
 
 
@@ -730,11 +744,11 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of StartExportTask.")]
         public virtual Task<ExportConfigurationsResponse> ExportConfigurationsAsync(ExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ExportConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ExportConfigurationsRequest,ExportConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ExportConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -743,10 +757,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request)
         {
-            var marshaller = GetDiscoverySummaryRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoverySummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
 
-            return Invoke<GetDiscoverySummaryRequest,GetDiscoverySummaryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDiscoverySummaryResponse>(request, options);
         }
 
 
@@ -762,11 +777,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         public virtual Task<GetDiscoverySummaryResponse> GetDiscoverySummaryAsync(GetDiscoverySummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDiscoverySummaryRequestMarshaller.Instance;
-            var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDiscoverySummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDiscoverySummaryRequest,GetDiscoverySummaryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDiscoverySummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -775,10 +790,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var marshaller = ListConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListConfigurationsRequest,ListConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListConfigurationsResponse>(request, options);
         }
 
 
@@ -794,11 +810,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListConfigurationsRequest,ListConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -807,10 +823,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request)
         {
-            var marshaller = ListServerNeighborsRequestMarshaller.Instance;
-            var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServerNeighborsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
 
-            return Invoke<ListServerNeighborsRequest,ListServerNeighborsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListServerNeighborsResponse>(request, options);
         }
 
 
@@ -826,11 +843,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         public virtual Task<ListServerNeighborsResponse> ListServerNeighborsAsync(ListServerNeighborsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListServerNeighborsRequestMarshaller.Instance;
-            var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServerNeighborsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListServerNeighborsRequest,ListServerNeighborsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListServerNeighborsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -839,10 +856,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual StartContinuousExportResponse StartContinuousExport(StartContinuousExportRequest request)
         {
-            var marshaller = StartContinuousExportRequestMarshaller.Instance;
-            var unmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContinuousExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
 
-            return Invoke<StartContinuousExportRequest,StartContinuousExportResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartContinuousExportResponse>(request, options);
         }
 
 
@@ -858,11 +876,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">REST API Reference for StartContinuousExport Operation</seealso>
         public virtual Task<StartContinuousExportResponse> StartContinuousExportAsync(StartContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartContinuousExportRequestMarshaller.Instance;
-            var unmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContinuousExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartContinuousExportRequest,StartContinuousExportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartContinuousExportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -871,10 +889,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request)
         {
-            var marshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
-            var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
-            return Invoke<StartDataCollectionByAgentIdsRequest,StartDataCollectionByAgentIdsResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartDataCollectionByAgentIdsResponse>(request, options);
         }
 
 
@@ -890,11 +909,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         public virtual Task<StartDataCollectionByAgentIdsResponse> StartDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
-            var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartDataCollectionByAgentIdsRequest,StartDataCollectionByAgentIdsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartDataCollectionByAgentIdsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -903,10 +922,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
-            var marshaller = StartExportTaskRequestMarshaller.Instance;
-            var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
-            return Invoke<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartExportTaskResponse>(request, options);
         }
 
 
@@ -922,11 +942,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartExportTaskRequestMarshaller.Instance;
-            var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -935,10 +955,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual StopContinuousExportResponse StopContinuousExport(StopContinuousExportRequest request)
         {
-            var marshaller = StopContinuousExportRequestMarshaller.Instance;
-            var unmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContinuousExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
 
-            return Invoke<StopContinuousExportRequest,StopContinuousExportResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopContinuousExportResponse>(request, options);
         }
 
 
@@ -954,11 +975,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">REST API Reference for StopContinuousExport Operation</seealso>
         public virtual Task<StopContinuousExportResponse> StopContinuousExportAsync(StopContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopContinuousExportRequestMarshaller.Instance;
-            var unmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContinuousExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopContinuousExportRequest,StopContinuousExportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopContinuousExportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -967,10 +988,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request)
         {
-            var marshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
-            var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
-            return Invoke<StopDataCollectionByAgentIdsRequest,StopDataCollectionByAgentIdsResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopDataCollectionByAgentIdsResponse>(request, options);
         }
 
 
@@ -986,11 +1008,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         public virtual Task<StopDataCollectionByAgentIdsResponse> StopDataCollectionByAgentIdsAsync(StopDataCollectionByAgentIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
-            var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopDataCollectionByAgentIdsRequest,StopDataCollectionByAgentIdsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopDataCollectionByAgentIdsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -999,10 +1021,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var marshaller = UpdateApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApplicationResponse>(request, options);
         }
 
 
@@ -1018,11 +1041,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion

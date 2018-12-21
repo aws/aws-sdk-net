@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisVideoMedia.Model;
 using Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations;
@@ -76,7 +77,7 @@ namespace Amazon.KinesisVideoMedia
 
         #endregion
 
-        
+
         #region  GetMedia
 
         /// <summary>
@@ -141,10 +142,11 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual GetMediaResponse GetMedia(GetMediaRequest request)
         {
-            var marshaller = GetMediaRequestMarshaller.Instance;
-            var unmarshaller = GetMediaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
-            return Invoke<GetMediaRequest,GetMediaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMediaResponse>(request, options);
         }
 
         /// <summary>
@@ -161,11 +163,11 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual IAsyncResult BeginGetMedia(GetMediaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMediaRequestMarshaller.Instance;
-            var unmarshaller = GetMediaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMediaRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

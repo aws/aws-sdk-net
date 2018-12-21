@@ -58,6 +58,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             string target = "AWSServerMigrationService_V2016_10_24.DeleteReplicationJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-24";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

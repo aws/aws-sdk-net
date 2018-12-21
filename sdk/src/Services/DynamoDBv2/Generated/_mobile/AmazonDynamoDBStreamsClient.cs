@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
@@ -254,15 +255,16 @@ namespace Amazon.DynamoDBv2
 
         #endregion
 
-        
+
         #region  DescribeStream
 
         internal virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeStreamResponse>(request, options);
         }
 
 
@@ -317,11 +319,11 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -330,10 +332,11 @@ namespace Amazon.DynamoDBv2
 
         internal virtual GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
-            var marshaller = GetRecordsRequestMarshaller.Instance;
-            var unmarshaller = GetRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
-            return Invoke<GetRecordsRequest,GetRecordsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRecordsResponse>(request, options);
         }
 
 
@@ -423,11 +426,11 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public virtual Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRecordsRequestMarshaller.Instance;
-            var unmarshaller = GetRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetRecordsRequest,GetRecordsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetRecordsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -436,10 +439,11 @@ namespace Amazon.DynamoDBv2
 
         internal virtual GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
-            var marshaller = GetShardIteratorRequestMarshaller.Instance;
-            var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
-            return Invoke<GetShardIteratorRequest,GetShardIteratorResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetShardIteratorResponse>(request, options);
         }
 
 
@@ -455,11 +459,11 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public virtual Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetShardIteratorRequestMarshaller.Instance;
-            var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetShardIteratorRequest,GetShardIteratorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetShardIteratorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -472,10 +476,11 @@ namespace Amazon.DynamoDBv2
         }
         internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListStreamsResponse>(request, options);
         }
 
 
@@ -520,11 +525,11 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListStreamsRequest,ListStreamsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
 
         #endregion

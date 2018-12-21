@@ -58,6 +58,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             string target = "AWSIESnowballJobManagementService.CancelJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-30";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

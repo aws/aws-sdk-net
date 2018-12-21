@@ -56,6 +56,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";

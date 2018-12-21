@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Pricing.Model;
 using Amazon.Pricing.Model.Internal.MarshallTransformations;
@@ -269,7 +270,7 @@ namespace Amazon.Pricing
 
         #endregion
 
-        
+
         #region  DescribeServices
 
         /// <summary>
@@ -301,10 +302,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var marshaller = DescribeServicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeServicesResponse>(request, options);
         }
 
         /// <summary>
@@ -321,11 +323,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeServicesRequestMarshaller.Instance;
-            var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeServicesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -372,10 +374,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual GetAttributeValuesResponse GetAttributeValues(GetAttributeValuesRequest request)
         {
-            var marshaller = GetAttributeValuesRequestMarshaller.Instance;
-            var unmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
 
-            return Invoke<GetAttributeValuesRequest,GetAttributeValuesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAttributeValuesResponse>(request, options);
         }
 
         /// <summary>
@@ -392,11 +395,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual IAsyncResult BeginGetAttributeValues(GetAttributeValuesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAttributeValuesRequestMarshaller.Instance;
-            var unmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAttributeValuesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -440,10 +443,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual GetProductsResponse GetProducts(GetProductsRequest request)
         {
-            var marshaller = GetProductsRequestMarshaller.Instance;
-            var unmarshaller = GetProductsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductsResponseUnmarshaller.Instance;
 
-            return Invoke<GetProductsRequest,GetProductsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetProductsResponse>(request, options);
         }
 
         /// <summary>
@@ -460,11 +464,11 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual IAsyncResult BeginGetProducts(GetProductsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetProductsRequestMarshaller.Instance;
-            var unmarshaller = GetProductsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetProductsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

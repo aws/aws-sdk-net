@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Chime.Model;
 using Amazon.Chime.Model.Internal.MarshallTransformations;
@@ -278,7 +279,7 @@ namespace Amazon.Chime
 
         #endregion
 
-        
+
         #region  BatchSuspendUser
 
         /// <summary>
@@ -333,10 +334,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchSuspendUser">REST API Reference for BatchSuspendUser Operation</seealso>
         public virtual BatchSuspendUserResponse BatchSuspendUser(BatchSuspendUserRequest request)
         {
-            var marshaller = BatchSuspendUserRequestMarshaller.Instance;
-            var unmarshaller = BatchSuspendUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchSuspendUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchSuspendUserResponseUnmarshaller.Instance;
 
-            return Invoke<BatchSuspendUserRequest,BatchSuspendUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchSuspendUserResponse>(request, options);
         }
 
         /// <summary>
@@ -353,11 +355,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchSuspendUser">REST API Reference for BatchSuspendUser Operation</seealso>
         public virtual IAsyncResult BeginBatchSuspendUser(BatchSuspendUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchSuspendUserRequestMarshaller.Instance;
-            var unmarshaller = BatchSuspendUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchSuspendUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchSuspendUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchSuspendUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -418,10 +420,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">REST API Reference for BatchUnsuspendUser Operation</seealso>
         public virtual BatchUnsuspendUserResponse BatchUnsuspendUser(BatchUnsuspendUserRequest request)
         {
-            var marshaller = BatchUnsuspendUserRequestMarshaller.Instance;
-            var unmarshaller = BatchUnsuspendUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUnsuspendUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUnsuspendUserResponseUnmarshaller.Instance;
 
-            return Invoke<BatchUnsuspendUserRequest,BatchUnsuspendUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchUnsuspendUserResponse>(request, options);
         }
 
         /// <summary>
@@ -438,11 +441,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">REST API Reference for BatchUnsuspendUser Operation</seealso>
         public virtual IAsyncResult BeginBatchUnsuspendUser(BatchUnsuspendUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchUnsuspendUserRequestMarshaller.Instance;
-            var unmarshaller = BatchUnsuspendUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUnsuspendUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUnsuspendUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchUnsuspendUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -495,10 +498,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">REST API Reference for BatchUpdateUser Operation</seealso>
         public virtual BatchUpdateUserResponse BatchUpdateUser(BatchUpdateUserRequest request)
         {
-            var marshaller = BatchUpdateUserRequestMarshaller.Instance;
-            var unmarshaller = BatchUpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateUserResponseUnmarshaller.Instance;
 
-            return Invoke<BatchUpdateUserRequest,BatchUpdateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchUpdateUserResponse>(request, options);
         }
 
         /// <summary>
@@ -515,11 +519,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">REST API Reference for BatchUpdateUser Operation</seealso>
         public virtual IAsyncResult BeginBatchUpdateUser(BatchUpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchUpdateUserRequestMarshaller.Instance;
-            var unmarshaller = BatchUpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchUpdateUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -573,10 +577,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
         public virtual CreateAccountResponse CreateAccount(CreateAccountRequest request)
         {
-            var marshaller = CreateAccountRequestMarshaller.Instance;
-            var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAccountRequest,CreateAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -593,11 +598,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
         public virtual IAsyncResult BeginCreateAccount(CreateAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAccountRequestMarshaller.Instance;
-            var unmarshaller = CreateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -671,10 +676,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">REST API Reference for DeleteAccount Operation</seealso>
         public virtual DeleteAccountResponse DeleteAccount(DeleteAccountRequest request)
         {
-            var marshaller = DeleteAccountRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAccountRequest,DeleteAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -691,11 +697,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">REST API Reference for DeleteAccount Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccount(DeleteAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAccountRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -747,10 +753,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetAccountRequest,GetAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -767,11 +774,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -824,10 +831,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var marshaller = GetAccountSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetAccountSettingsRequest,GetAccountSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAccountSettingsResponse>(request, options);
         }
 
         /// <summary>
@@ -844,11 +852,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAccountSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -906,10 +914,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">REST API Reference for GetUser Operation</seealso>
         public virtual GetUserResponse GetUser(GetUserRequest request)
         {
-            var marshaller = GetUserRequestMarshaller.Instance;
-            var unmarshaller = GetUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
-            return Invoke<GetUserRequest,GetUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetUserResponse>(request, options);
         }
 
         /// <summary>
@@ -926,11 +935,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">REST API Reference for GetUser Operation</seealso>
         public virtual IAsyncResult BeginGetUser(GetUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetUserRequestMarshaller.Instance;
-            var unmarshaller = GetUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -983,10 +992,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">REST API Reference for InviteUsers Operation</seealso>
         public virtual InviteUsersResponse InviteUsers(InviteUsersRequest request)
         {
-            var marshaller = InviteUsersRequestMarshaller.Instance;
-            var unmarshaller = InviteUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteUsersResponseUnmarshaller.Instance;
 
-            return Invoke<InviteUsersRequest,InviteUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<InviteUsersResponse>(request, options);
         }
 
         /// <summary>
@@ -1003,11 +1013,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">REST API Reference for InviteUsers Operation</seealso>
         public virtual IAsyncResult BeginInviteUsers(InviteUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = InviteUsersRequestMarshaller.Instance;
-            var unmarshaller = InviteUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InviteUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InviteUsersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<InviteUsersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1060,10 +1070,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual ListAccountsResponse ListAccounts(ListAccountsRequest request)
         {
-            var marshaller = ListAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAccountsRequest,ListAccountsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAccountsResponse>(request, options);
         }
 
         /// <summary>
@@ -1080,11 +1091,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual IAsyncResult BeginListAccounts(ListAccountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAccountsRequestMarshaller.Instance;
-            var unmarshaller = ListAccountsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAccountsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1136,10 +1147,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUsersResponse>(request, options);
         }
 
         /// <summary>
@@ -1156,11 +1168,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1211,10 +1223,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/LogoutUser">REST API Reference for LogoutUser Operation</seealso>
         public virtual LogoutUserResponse LogoutUser(LogoutUserRequest request)
         {
-            var marshaller = LogoutUserRequestMarshaller.Instance;
-            var unmarshaller = LogoutUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LogoutUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LogoutUserResponseUnmarshaller.Instance;
 
-            return Invoke<LogoutUserRequest,LogoutUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<LogoutUserResponse>(request, options);
         }
 
         /// <summary>
@@ -1231,11 +1244,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/LogoutUser">REST API Reference for LogoutUser Operation</seealso>
         public virtual IAsyncResult BeginLogoutUser(LogoutUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = LogoutUserRequestMarshaller.Instance;
-            var unmarshaller = LogoutUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LogoutUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LogoutUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<LogoutUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1287,10 +1300,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ResetPersonalPIN">REST API Reference for ResetPersonalPIN Operation</seealso>
         public virtual ResetPersonalPINResponse ResetPersonalPIN(ResetPersonalPINRequest request)
         {
-            var marshaller = ResetPersonalPINRequestMarshaller.Instance;
-            var unmarshaller = ResetPersonalPINResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetPersonalPINRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetPersonalPINResponseUnmarshaller.Instance;
 
-            return Invoke<ResetPersonalPINRequest,ResetPersonalPINResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResetPersonalPINResponse>(request, options);
         }
 
         /// <summary>
@@ -1307,11 +1321,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ResetPersonalPIN">REST API Reference for ResetPersonalPIN Operation</seealso>
         public virtual IAsyncResult BeginResetPersonalPIN(ResetPersonalPINRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ResetPersonalPINRequestMarshaller.Instance;
-            var unmarshaller = ResetPersonalPINResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetPersonalPINRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetPersonalPINResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ResetPersonalPINRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1363,10 +1377,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
-            var marshaller = UpdateAccountRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAccountRequest,UpdateAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -1383,11 +1398,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAccountRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1445,10 +1460,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var marshaller = UpdateAccountSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAccountSettingsRequest,UpdateAccountSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAccountSettingsResponse>(request, options);
         }
 
         /// <summary>
@@ -1465,11 +1481,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccountSettings(UpdateAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAccountSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAccountSettingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1521,10 +1537,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserResponse>(request, options);
         }
 
         /// <summary>
@@ -1541,11 +1558,11 @@ namespace Amazon.Chime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateUserRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

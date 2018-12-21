@@ -58,6 +58,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             string target = "CodeBuild_20161006.BatchGetBuilds";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-06";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

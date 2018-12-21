@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleSystemsManagement.Model;
 using Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations;
@@ -261,7 +262,7 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
 
-        
+
         #region  AddTagsToResource
 
         /// <summary>
@@ -315,10 +316,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsToResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -335,11 +337,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
-            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -502,10 +504,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public virtual CancelCommandResponse CancelCommand(CancelCommandRequest request)
         {
-            var marshaller = CancelCommandRequestMarshaller.Instance;
-            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCommandResponseUnmarshaller.Instance;
 
-            return Invoke<CancelCommandRequest,CancelCommandResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelCommandResponse>(request, options);
         }
 
         /// <summary>
@@ -522,11 +525,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public virtual IAsyncResult BeginCancelCommand(CancelCommandRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelCommandRequestMarshaller.Instance;
-            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCommandResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelCommandRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -570,10 +573,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">REST API Reference for CancelMaintenanceWindowExecution Operation</seealso>
         public virtual CancelMaintenanceWindowExecutionResponse CancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request)
         {
-            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelMaintenanceWindowExecutionRequest,CancelMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelMaintenanceWindowExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -590,11 +594,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">REST API Reference for CancelMaintenanceWindowExecution Operation</seealso>
         public virtual IAsyncResult BeginCancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelMaintenanceWindowExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -630,10 +634,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual CreateActivationResponse CreateActivation(CreateActivationRequest request)
         {
-            var marshaller = CreateActivationRequestMarshaller.Instance;
-            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActivationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateActivationRequest,CreateActivationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateActivationResponse>(request, options);
         }
 
         /// <summary>
@@ -650,11 +655,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual IAsyncResult BeginCreateActivation(CreateActivationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateActivationRequestMarshaller.Instance;
-            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActivationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateActivationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -840,10 +845,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public virtual CreateAssociationResponse CreateAssociation(CreateAssociationRequest request)
         {
-            var marshaller = CreateAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssociationRequest,CreateAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -860,11 +866,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateAssociation(CreateAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAssociationRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAssociationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -963,10 +969,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public virtual CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request)
         {
-            var marshaller = CreateAssociationBatchRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAssociationBatchRequest,CreateAssociationBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssociationBatchResponse>(request, options);
         }
 
         /// <summary>
@@ -983,11 +990,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public virtual IAsyncResult BeginCreateAssociationBatch(CreateAssociationBatchRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAssociationBatchRequestMarshaller.Instance;
-            var unmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssociationBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssociationBatchResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAssociationBatchRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1081,10 +1088,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public virtual CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
         {
-            var marshaller = CreateDocumentRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDocumentRequest,CreateDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -1101,11 +1109,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public virtual IAsyncResult BeginCreateDocument(CreateDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDocumentRequestMarshaller.Instance;
-            var unmarshaller = CreateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDocumentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDocumentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1151,10 +1159,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public virtual CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request)
         {
-            var marshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<CreateMaintenanceWindowRequest,CreateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -1171,11 +1180,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginCreateMaintenanceWindow(CreateMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1228,10 +1237,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public virtual CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
         {
-            var marshaller = CreatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreatePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -1248,11 +1258,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginCreatePatchBaseline(CreatePatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreatePatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1306,10 +1316,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
         public virtual CreateResourceDataSyncResponse CreateResourceDataSync(CreateResourceDataSyncRequest request)
         {
-            var marshaller = CreateResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResourceDataSyncRequest,CreateResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -1326,11 +1337,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">REST API Reference for CreateResourceDataSync Operation</seealso>
         public virtual IAsyncResult BeginCreateResourceDataSync(CreateResourceDataSyncRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceDataSyncResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateResourceDataSyncRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1376,10 +1387,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public virtual DeleteActivationResponse DeleteActivation(DeleteActivationRequest request)
         {
-            var marshaller = DeleteActivationRequestMarshaller.Instance;
-            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteActivationRequest,DeleteActivationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteActivationResponse>(request, options);
         }
 
         /// <summary>
@@ -1396,11 +1408,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public virtual IAsyncResult BeginDeleteActivation(DeleteActivationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteActivationRequestMarshaller.Instance;
-            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteActivationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1534,10 +1546,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
         {
-            var marshaller = DeleteAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAssociationRequest,DeleteAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -1554,11 +1567,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssociation(DeleteAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAssociationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAssociationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1640,10 +1653,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
-            var marshaller = DeleteDocumentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -1660,11 +1674,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDocumentRequestMarshaller.Instance;
-            var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDocumentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1711,10 +1725,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         public virtual DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request)
         {
-            var marshaller = DeleteInventoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -1731,11 +1746,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
         public virtual IAsyncResult BeginDeleteInventory(DeleteInventoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteInventoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteInventoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1767,10 +1782,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public virtual DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request)
         {
-            var marshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteMaintenanceWindowRequest,DeleteMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -1787,11 +1803,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginDeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1826,10 +1842,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual DeleteParameterResponse DeleteParameter(DeleteParameterRequest request)
         {
-            var marshaller = DeleteParameterRequestMarshaller.Instance;
-            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParameterResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -1846,11 +1863,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual IAsyncResult BeginDeleteParameter(DeleteParameterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteParameterRequestMarshaller.Instance;
-            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParameterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteParameterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1883,10 +1900,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
         public virtual DeleteParametersResponse DeleteParameters(DeleteParametersRequest request)
         {
-            var marshaller = DeleteParametersRequestMarshaller.Instance;
-            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteParametersRequest,DeleteParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -1903,11 +1921,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">REST API Reference for DeleteParameters Operation</seealso>
         public virtual IAsyncResult BeginDeleteParameters(DeleteParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteParametersRequestMarshaller.Instance;
-            var unmarshaller = DeleteParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParametersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteParametersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1943,10 +1961,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public virtual DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
         {
-            var marshaller = DeletePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeletePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -1963,11 +1982,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginDeletePatchBaseline(DeletePatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeletePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeletePatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2005,10 +2024,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         public virtual DeleteResourceDataSyncResponse DeleteResourceDataSync(DeleteResourceDataSyncRequest request)
         {
-            var marshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResourceDataSyncRequest,DeleteResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -2025,11 +2045,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceDataSync(DeleteResourceDataSyncRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceDataSyncResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteResourceDataSyncRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2087,10 +2107,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public virtual DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
         {
-            var marshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterManagedInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -2107,11 +2128,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public virtual IAsyncResult BeginDeregisterManagedInstance(DeregisterManagedInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
-            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterManagedInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeregisterManagedInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2146,10 +2167,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -2166,11 +2188,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual IAsyncResult BeginDeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeregisterPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2216,10 +2238,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public virtual DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request)
         {
-            var marshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterTargetFromMaintenanceWindowRequest,DeregisterTargetFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterTargetFromMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -2236,11 +2259,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTargetFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeregisterTargetFromMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2282,10 +2305,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public virtual DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request)
         {
-            var marshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<DeregisterTaskFromMaintenanceWindowRequest,DeregisterTaskFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeregisterTaskFromMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -2302,11 +2326,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterTaskFromMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeregisterTaskFromMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2346,10 +2370,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public virtual DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request)
         {
-            var marshaller = DescribeActivationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeActivationsRequest,DescribeActivationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeActivationsResponse>(request, options);
         }
 
         /// <summary>
@@ -2366,11 +2391,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public virtual IAsyncResult BeginDescribeActivations(DescribeActivationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeActivationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeActivationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2500,10 +2525,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public virtual DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request)
         {
-            var marshaller = DescribeAssociationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationRequest,DescribeAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -2520,11 +2546,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssociation(DescribeAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAssociationRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAssociationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2562,10 +2588,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         public virtual DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request)
         {
-            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2582,11 +2609,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssociationExecutions(DescribeAssociationExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAssociationExecutionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2627,10 +2654,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         public virtual DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request)
         {
-            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAssociationExecutionTargetsResponse>(request, options);
         }
 
         /// <summary>
@@ -2647,11 +2675,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAssociationExecutionTargetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2692,10 +2720,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public virtual DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request)
         {
-            var marshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutomationExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2712,11 +2741,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutomationExecutions(DescribeAutomationExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAutomationExecutionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2761,10 +2790,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         public virtual DescribeAutomationStepExecutionsResponse DescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request)
         {
-            var marshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAutomationStepExecutionsRequest,DescribeAutomationStepExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAutomationStepExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2781,11 +2811,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions">REST API Reference for DescribeAutomationStepExecutions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationStepExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationStepExecutionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAutomationStepExecutionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2817,10 +2847,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public virtual DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
         {
-            var marshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeAvailablePatchesResponse>(request, options);
         }
 
         /// <summary>
@@ -2837,11 +2868,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public virtual IAsyncResult BeginDescribeAvailablePatches(DescribeAvailablePatchesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAvailablePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeAvailablePatchesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2903,10 +2934,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public virtual DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
         {
-            var marshaller = DescribeDocumentRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentRequest,DescribeDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -2923,11 +2955,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public virtual IAsyncResult BeginDescribeDocument(DescribeDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDocumentRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDocumentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2968,10 +3000,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public virtual DescribeDocumentPermissionResponse DescribeDocumentPermission(DescribeDocumentPermissionRequest request)
         {
-            var marshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDocumentPermissionRequest,DescribeDocumentPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDocumentPermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -2988,11 +3021,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public virtual IAsyncResult BeginDescribeDocumentPermission(DescribeDocumentPermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDocumentPermissionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeDocumentPermissionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3051,10 +3084,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public virtual DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request)
         {
-            var marshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEffectiveInstanceAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3071,11 +3105,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectiveInstanceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEffectiveInstanceAssociationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3126,10 +3160,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public virtual DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
         {
-            var marshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeEffectivePatchesForPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -3146,11 +3181,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginDescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEffectivePatchesForPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeEffectivePatchesForPatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3209,10 +3244,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public virtual DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request)
         {
-            var marshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstanceAssociationsStatusRequest,DescribeInstanceAssociationsStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstanceAssociationsStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -3229,11 +3265,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAssociationsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInstanceAssociationsStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3371,10 +3407,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public virtual DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request)
         {
-            var marshaller = DescribeInstanceInformationRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstanceInformationResponse>(request, options);
         }
 
         /// <summary>
@@ -3391,11 +3428,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceInformation(DescribeInstanceInformationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInstanceInformationRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInstanceInformationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3458,10 +3495,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public virtual DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
         {
-            var marshaller = DescribeInstancePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchesResponse>(request, options);
         }
 
         /// <summary>
@@ -3478,11 +3516,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstancePatches(DescribeInstancePatchesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInstancePatchesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInstancePatchesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3517,10 +3555,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public virtual DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
         {
-            var marshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchStatesResponse>(request, options);
         }
 
         /// <summary>
@@ -3537,11 +3576,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstancePatchStates(DescribeInstancePatchStatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInstancePatchStatesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3579,10 +3618,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public virtual DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
         {
-            var marshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInstancePatchStatesForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -3599,11 +3639,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePatchStatesForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInstancePatchStatesForPatchGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3642,10 +3682,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         public virtual DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request)
         {
-            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeInventoryDeletionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3662,11 +3703,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
         public virtual IAsyncResult BeginDescribeInventoryDeletions(DescribeInventoryDeletionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeInventoryDeletionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3700,10 +3741,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionsRequest,DescribeMaintenanceWindowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3720,11 +3762,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowExecutionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3767,10 +3809,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionTaskInvocationsRequest,DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, options);
         }
 
         /// <summary>
@@ -3787,11 +3830,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowExecutionTaskInvocationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3833,10 +3876,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public virtual DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowExecutionTasksRequest,DescribeMaintenanceWindowExecutionTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowExecutionTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -3853,11 +3897,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowExecutionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowExecutionTasksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3889,10 +3933,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public virtual DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowsResponse>(request, options);
         }
 
         /// <summary>
@@ -3909,11 +3954,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3955,10 +4000,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">REST API Reference for DescribeMaintenanceWindowSchedule Operation</seealso>
         public virtual DescribeMaintenanceWindowScheduleResponse DescribeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowScheduleRequest,DescribeMaintenanceWindowScheduleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowScheduleResponse>(request, options);
         }
 
         /// <summary>
@@ -3975,11 +4021,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">REST API Reference for DescribeMaintenanceWindowSchedule Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowScheduleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4012,10 +4058,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">REST API Reference for DescribeMaintenanceWindowsForTarget Operation</seealso>
         public virtual DescribeMaintenanceWindowsForTargetResponse DescribeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowsForTargetRequest,DescribeMaintenanceWindowsForTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowsForTargetResponse>(request, options);
         }
 
         /// <summary>
@@ -4032,11 +4079,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">REST API Reference for DescribeMaintenanceWindowsForTarget Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowsForTargetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4078,10 +4125,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public virtual DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowTargetsRequest,DescribeMaintenanceWindowTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowTargetsResponse>(request, options);
         }
 
         /// <summary>
@@ -4098,11 +4146,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowTargetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4144,10 +4192,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public virtual DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request)
         {
-            var marshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeMaintenanceWindowTasksRequest,DescribeMaintenanceWindowTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeMaintenanceWindowTasksResponse>(request, options);
         }
 
         /// <summary>
@@ -4164,11 +4213,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
-            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMaintenanceWindowTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeMaintenanceWindowTasksRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4224,10 +4273,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
-            var marshaller = DescribeParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -4244,11 +4294,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeParametersRequestMarshaller.Instance;
-            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeParametersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4280,10 +4330,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public virtual DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
         {
-            var marshaller = DescribePatchBaselinesRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchBaselinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchBaselinesResponse>(request, options);
         }
 
         /// <summary>
@@ -4300,11 +4351,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public virtual IAsyncResult BeginDescribePatchBaselines(DescribePatchBaselinesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribePatchBaselinesRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchBaselinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribePatchBaselinesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4336,10 +4387,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public virtual DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
         {
-            var marshaller = DescribePatchGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -4356,11 +4408,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribePatchGroups(DescribePatchGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribePatchGroupsRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribePatchGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4395,10 +4447,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public virtual DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
         {
-            var marshaller = DescribePatchGroupStateRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
 
-            return Invoke<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribePatchGroupStateResponse>(request, options);
         }
 
         /// <summary>
@@ -4415,11 +4468,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public virtual IAsyncResult BeginDescribePatchGroupState(DescribePatchGroupStateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribePatchGroupStateRequestMarshaller.Instance;
-            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchGroupStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribePatchGroupStateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4458,10 +4511,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSessionsResponse>(request, options);
         }
 
         /// <summary>
@@ -4478,11 +4532,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeSessionsRequestMarshaller.Instance;
-            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeSessionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4518,10 +4572,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public virtual GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
         {
-            var marshaller = GetAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<GetAutomationExecutionRequest,GetAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -4538,11 +4593,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public virtual IAsyncResult BeginGetAutomationExecution(GetAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAutomationExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4608,10 +4663,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public virtual GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request)
         {
-            var marshaller = GetCommandInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommandInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
-            return Invoke<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCommandInvocationResponse>(request, options);
         }
 
         /// <summary>
@@ -4628,11 +4684,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public virtual IAsyncResult BeginGetCommandInvocation(GetCommandInvocationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCommandInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommandInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCommandInvocationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4665,10 +4721,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
         public virtual GetConnectionStatusResponse GetConnectionStatus(GetConnectionStatusRequest request)
         {
-            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetConnectionStatusRequest,GetConnectionStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConnectionStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -4685,11 +4742,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
         public virtual IAsyncResult BeginGetConnectionStatus(GetConnectionStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
-            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetConnectionStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4729,10 +4786,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public virtual GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
         {
-            var marshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDefaultPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -4749,11 +4807,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDefaultPatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4791,10 +4849,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public virtual GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
         {
-            var marshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeployablePatchSnapshotForInstanceResponse>(request, options);
         }
 
         /// <summary>
@@ -4811,11 +4870,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public virtual IAsyncResult BeginGetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
-            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeployablePatchSnapshotForInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDeployablePatchSnapshotForInstanceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4877,10 +4936,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
-            var marshaller = GetDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<GetDocumentRequest,GetDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -4897,11 +4957,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDocumentRequestMarshaller.Instance;
-            var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDocumentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4952,10 +5012,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public virtual GetInventoryResponse GetInventory(GetInventoryRequest request)
         {
-            var marshaller = GetInventoryRequestMarshaller.Instance;
-            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetInventoryRequest,GetInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -4972,11 +5033,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public virtual IAsyncResult BeginGetInventory(GetInventoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetInventoryRequestMarshaller.Instance;
-            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetInventoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5015,10 +5076,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public virtual GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request)
         {
-            var marshaller = GetInventorySchemaRequestMarshaller.Instance;
-            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventorySchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
 
-            return Invoke<GetInventorySchemaRequest,GetInventorySchemaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetInventorySchemaResponse>(request, options);
         }
 
         /// <summary>
@@ -5035,11 +5097,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public virtual IAsyncResult BeginGetInventorySchema(GetInventorySchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetInventorySchemaRequestMarshaller.Instance;
-            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInventorySchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetInventorySchemaRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5081,10 +5143,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public virtual GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request)
         {
-            var marshaller = GetMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowRequest,GetMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -5101,11 +5164,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginGetMaintenanceWindow(GetMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5147,10 +5210,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public virtual GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionRequest,GetMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -5167,11 +5231,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public virtual IAsyncResult BeginGetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMaintenanceWindowExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5214,10 +5278,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public virtual GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionTaskRequest,GetMaintenanceWindowExecutionTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -5234,11 +5299,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public virtual IAsyncResult BeginGetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMaintenanceWindowExecutionTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5281,10 +5346,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
         public virtual GetMaintenanceWindowExecutionTaskInvocationResponse GetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowExecutionTaskInvocationRequest,GetMaintenanceWindowExecutionTaskInvocationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowExecutionTaskInvocationResponse>(request, options);
         }
 
         /// <summary>
@@ -5301,11 +5367,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">REST API Reference for GetMaintenanceWindowExecutionTaskInvocation Operation</seealso>
         public virtual IAsyncResult BeginGetMaintenanceWindowExecutionTaskInvocation(GetMaintenanceWindowExecutionTaskInvocationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowExecutionTaskInvocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowExecutionTaskInvocationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMaintenanceWindowExecutionTaskInvocationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5347,10 +5413,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
         public virtual GetMaintenanceWindowTaskResponse GetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request)
         {
-            var marshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return Invoke<GetMaintenanceWindowTaskRequest,GetMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetMaintenanceWindowTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -5367,11 +5434,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">REST API Reference for GetMaintenanceWindowTask Operation</seealso>
         public virtual IAsyncResult BeginGetMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetMaintenanceWindowTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5414,10 +5481,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
         public virtual GetParameterResponse GetParameter(GetParameterRequest request)
         {
-            var marshaller = GetParameterRequestMarshaller.Instance;
-            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterResponseUnmarshaller.Instance;
 
-            return Invoke<GetParameterRequest,GetParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -5434,11 +5502,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">REST API Reference for GetParameter Operation</seealso>
         public virtual IAsyncResult BeginGetParameter(GetParameterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetParameterRequestMarshaller.Instance;
-            var unmarshaller = GetParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetParameterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5479,10 +5547,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
         {
-            var marshaller = GetParameterHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetParameterHistoryRequest,GetParameterHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParameterHistoryResponse>(request, options);
         }
 
         /// <summary>
@@ -5499,11 +5568,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual IAsyncResult BeginGetParameterHistory(GetParameterHistoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetParameterHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParameterHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetParameterHistoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5539,10 +5608,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public virtual GetParametersResponse GetParameters(GetParametersRequest request)
         {
-            var marshaller = GetParametersRequestMarshaller.Instance;
-            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersResponseUnmarshaller.Instance;
 
-            return Invoke<GetParametersRequest,GetParametersResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParametersResponse>(request, options);
         }
 
         /// <summary>
@@ -5559,11 +5629,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public virtual IAsyncResult BeginGetParameters(GetParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetParametersRequestMarshaller.Instance;
-            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetParametersRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5629,10 +5699,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         public virtual GetParametersByPathResponse GetParametersByPath(GetParametersByPathRequest request)
         {
-            var marshaller = GetParametersByPathRequestMarshaller.Instance;
-            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersByPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
 
-            return Invoke<GetParametersByPathRequest,GetParametersByPathResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParametersByPathResponse>(request, options);
         }
 
         /// <summary>
@@ -5649,11 +5720,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">REST API Reference for GetParametersByPath Operation</seealso>
         public virtual IAsyncResult BeginGetParametersByPath(GetParametersByPathRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetParametersByPathRequestMarshaller.Instance;
-            var unmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersByPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersByPathResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetParametersByPathRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5698,10 +5769,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public virtual GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
         {
-            var marshaller = GetPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -5718,11 +5790,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginGetPatchBaseline(GetPatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5754,10 +5826,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public virtual GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -5774,11 +5847,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public virtual IAsyncResult BeginGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5871,10 +5944,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
         public virtual LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request)
         {
-            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
-            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
 
-            return Invoke<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<LabelParameterVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -5891,11 +5965,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
         public virtual IAsyncResult BeginLabelParameterVersion(LabelParameterVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
-            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LabelParameterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<LabelParameterVersionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5930,10 +6004,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
         {
-            var marshaller = ListAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociationsRequest,ListAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociationsResponse>(request, options);
         }
 
         /// <summary>
@@ -5950,11 +6025,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual IAsyncResult BeginListAssociations(ListAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAssociationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5992,10 +6067,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         public virtual ListAssociationVersionsResponse ListAssociationVersions(ListAssociationVersionsRequest request)
         {
-            var marshaller = ListAssociationVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociationVersionsRequest,ListAssociationVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociationVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -6012,11 +6088,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         public virtual IAsyncResult BeginListAssociationVersions(ListAssociationVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListAssociationVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListAssociationVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6191,10 +6267,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public virtual ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request)
         {
-            var marshaller = ListCommandInvocationsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListCommandInvocationsRequest,ListCommandInvocationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCommandInvocationsResponse>(request, options);
         }
 
         /// <summary>
@@ -6211,11 +6288,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public virtual IAsyncResult BeginListCommandInvocations(ListCommandInvocationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListCommandInvocationsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandInvocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListCommandInvocationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6378,10 +6455,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public virtual ListCommandsResponse ListCommands(ListCommandsRequest request)
         {
-            var marshaller = ListCommandsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandsResponseUnmarshaller.Instance;
 
-            return Invoke<ListCommandsRequest,ListCommandsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListCommandsResponse>(request, options);
         }
 
         /// <summary>
@@ -6398,11 +6476,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public virtual IAsyncResult BeginListCommands(ListCommandsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListCommandsRequestMarshaller.Instance;
-            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommandsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommandsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListCommandsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6449,10 +6527,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
         public virtual ListComplianceItemsResponse ListComplianceItems(ListComplianceItemsRequest request)
         {
-            var marshaller = ListComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceItemsRequest,ListComplianceItemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceItemsResponse>(request, options);
         }
 
         /// <summary>
@@ -6469,11 +6548,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems">REST API Reference for ListComplianceItems Operation</seealso>
         public virtual IAsyncResult BeginListComplianceItems(ListComplianceItemsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceItemsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListComplianceItemsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6513,10 +6592,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         public virtual ListComplianceSummariesResponse ListComplianceSummaries(ListComplianceSummariesRequest request)
         {
-            var marshaller = ListComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<ListComplianceSummariesRequest,ListComplianceSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListComplianceSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -6533,11 +6613,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries">REST API Reference for ListComplianceSummaries Operation</seealso>
         public virtual IAsyncResult BeginListComplianceSummaries(ListComplianceSummariesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceSummariesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListComplianceSummariesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6595,10 +6675,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public virtual ListDocumentsResponse ListDocuments(ListDocumentsRequest request)
         {
-            var marshaller = ListDocumentsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentsRequest,ListDocumentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentsResponse>(request, options);
         }
 
         /// <summary>
@@ -6615,11 +6696,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public virtual IAsyncResult BeginListDocuments(ListDocumentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDocumentsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDocumentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6657,10 +6738,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public virtual ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request)
         {
-            var marshaller = ListDocumentVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDocumentVersionsRequest,ListDocumentVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDocumentVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -6677,11 +6759,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public virtual IAsyncResult BeginListDocumentVersions(ListDocumentVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDocumentVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDocumentVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6746,10 +6828,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public virtual ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request)
         {
-            var marshaller = ListInventoryEntriesRequestMarshaller.Instance;
-            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInventoryEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
 
-            return Invoke<ListInventoryEntriesRequest,ListInventoryEntriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListInventoryEntriesResponse>(request, options);
         }
 
         /// <summary>
@@ -6766,11 +6849,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public virtual IAsyncResult BeginListInventoryEntries(ListInventoryEntriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListInventoryEntriesRequestMarshaller.Instance;
-            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInventoryEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListInventoryEntriesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6810,10 +6893,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         public virtual ListResourceComplianceSummariesResponse ListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request)
         {
-            var marshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceComplianceSummariesRequest,ListResourceComplianceSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceComplianceSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -6830,11 +6914,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries">REST API Reference for ListResourceComplianceSummaries Operation</seealso>
         public virtual IAsyncResult BeginListResourceComplianceSummaries(ListResourceComplianceSummariesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
-            var unmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceComplianceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceComplianceSummariesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResourceComplianceSummariesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6882,10 +6966,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         public virtual ListResourceDataSyncResponse ListResourceDataSync(ListResourceDataSyncRequest request)
         {
-            var marshaller = ListResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceDataSyncRequest,ListResourceDataSyncResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceDataSyncResponse>(request, options);
         }
 
         /// <summary>
@@ -6902,11 +6987,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync">REST API Reference for ListResourceDataSync Operation</seealso>
         public virtual IAsyncResult BeginListResourceDataSync(ListResourceDataSyncRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListResourceDataSyncRequestMarshaller.Instance;
-            var unmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceDataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceDataSyncResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListResourceDataSyncRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -6945,10 +7030,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -6965,11 +7051,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7018,10 +7104,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public virtual ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request)
         {
-            var marshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
 
-            return Invoke<ModifyDocumentPermissionRequest,ModifyDocumentPermissionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ModifyDocumentPermissionResponse>(request, options);
         }
 
         /// <summary>
@@ -7038,11 +7125,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public virtual IAsyncResult BeginModifyDocumentPermission(ModifyDocumentPermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
-            var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDocumentPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ModifyDocumentPermissionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7167,10 +7254,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
         public virtual PutComplianceItemsResponse PutComplianceItems(PutComplianceItemsRequest request)
         {
-            var marshaller = PutComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
 
-            return Invoke<PutComplianceItemsRequest,PutComplianceItemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutComplianceItemsResponse>(request, options);
         }
 
         /// <summary>
@@ -7187,11 +7275,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">REST API Reference for PutComplianceItems Operation</seealso>
         public virtual IAsyncResult BeginPutComplianceItems(PutComplianceItemsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutComplianceItemsRequestMarshaller.Instance;
-            var unmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutComplianceItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutComplianceItemsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutComplianceItemsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7283,10 +7371,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public virtual PutInventoryResponse PutInventory(PutInventoryRequest request)
         {
-            var marshaller = PutInventoryRequestMarshaller.Instance;
-            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<PutInventoryRequest,PutInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutInventoryResponse>(request, options);
         }
 
         /// <summary>
@@ -7303,11 +7392,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public virtual IAsyncResult BeginPutInventory(PutInventoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutInventoryRequestMarshaller.Instance;
-            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInventoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutInventoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7373,10 +7462,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public virtual PutParameterResponse PutParameter(PutParameterRequest request)
         {
-            var marshaller = PutParameterRequestMarshaller.Instance;
-            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutParameterResponseUnmarshaller.Instance;
 
-            return Invoke<PutParameterRequest,PutParameterResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutParameterResponse>(request, options);
         }
 
         /// <summary>
@@ -7393,11 +7483,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public virtual IAsyncResult BeginPutParameter(PutParameterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutParameterRequestMarshaller.Instance;
-            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutParameterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutParameterResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutParameterRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7442,10 +7532,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public virtual RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
         {
-            var marshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterDefaultPatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -7462,11 +7553,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDefaultPatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterDefaultPatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7525,10 +7616,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
         {
-            var marshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterPatchBaselineForPatchGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -7545,11 +7637,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public virtual IAsyncResult BeginRegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
-            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterPatchBaselineForPatchGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7605,10 +7697,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public virtual RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request)
         {
-            var marshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterTargetWithMaintenanceWindowRequest,RegisterTargetWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterTargetWithMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -7625,11 +7718,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginRegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTargetWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterTargetWithMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7689,10 +7782,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public virtual RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request)
         {
-            var marshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterTaskWithMaintenanceWindowRequest,RegisterTaskWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterTaskWithMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -7709,11 +7803,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginRegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterTaskWithMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RegisterTaskWithMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7755,10 +7849,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsFromResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -7775,11 +7870,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7829,10 +7924,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
         public virtual ResumeSessionResponse ResumeSession(ResumeSessionRequest request)
         {
-            var marshaller = ResumeSessionRequestMarshaller.Instance;
-            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeSessionResponseUnmarshaller.Instance;
 
-            return Invoke<ResumeSessionRequest,ResumeSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ResumeSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -7849,11 +7945,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
         public virtual IAsyncResult BeginResumeSession(ResumeSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ResumeSessionRequestMarshaller.Instance;
-            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeSessionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ResumeSessionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -7897,10 +7993,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         public virtual SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request)
         {
-            var marshaller = SendAutomationSignalRequestMarshaller.Instance;
-            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAutomationSignalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
 
-            return Invoke<SendAutomationSignalRequest,SendAutomationSignalResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendAutomationSignalResponse>(request, options);
         }
 
         /// <summary>
@@ -7917,11 +8014,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">REST API Reference for SendAutomationSignal Operation</seealso>
         public virtual IAsyncResult BeginSendAutomationSignal(SendAutomationSignalRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendAutomationSignalRequestMarshaller.Instance;
-            var unmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAutomationSignalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAutomationSignalResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendAutomationSignalRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8087,10 +8184,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public virtual SendCommandResponse SendCommand(SendCommandRequest request)
         {
-            var marshaller = SendCommandRequestMarshaller.Instance;
-            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
 
-            return Invoke<SendCommandRequest,SendCommandResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendCommandResponse>(request, options);
         }
 
         /// <summary>
@@ -8107,11 +8205,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public virtual IAsyncResult BeginSendCommand(SendCommandRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendCommandRequestMarshaller.Instance;
-            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendCommandRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8147,10 +8245,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         public virtual StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request)
         {
-            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
-            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
 
-            return Invoke<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAssociationsOnceResponse>(request, options);
         }
 
         /// <summary>
@@ -8167,11 +8266,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
         public virtual IAsyncResult BeginStartAssociationsOnce(StartAssociationsOnceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
-            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartAssociationsOnceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8226,10 +8325,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public virtual StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request)
         {
-            var marshaller = StartAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StartAutomationExecutionRequest,StartAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -8246,11 +8346,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public virtual IAsyncResult BeginStartAutomationExecution(StartAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartAutomationExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8302,10 +8402,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual StartSessionResponse StartSession(StartSessionRequest request)
         {
-            var marshaller = StartSessionRequestMarshaller.Instance;
-            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
-            return Invoke<StartSessionRequest,StartSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -8322,11 +8423,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual IAsyncResult BeginStartSession(StartSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartSessionRequestMarshaller.Instance;
-            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartSessionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8365,10 +8466,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public virtual StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request)
         {
-            var marshaller = StopAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopAutomationExecutionResponse>(request, options);
         }
 
         /// <summary>
@@ -8385,11 +8487,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public virtual IAsyncResult BeginStopAutomationExecution(StopAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopAutomationExecutionRequestMarshaller.Instance;
-            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAutomationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopAutomationExecutionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8432,10 +8534,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
         {
-            var marshaller = TerminateSessionRequestMarshaller.Instance;
-            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateSessionRequest,TerminateSessionResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateSessionResponse>(request, options);
         }
 
         /// <summary>
@@ -8452,11 +8555,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual IAsyncResult BeginTerminateSession(TerminateSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TerminateSessionRequestMarshaller.Instance;
-            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TerminateSessionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8527,10 +8630,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public virtual UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request)
         {
-            var marshaller = UpdateAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssociationRequest,UpdateAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAssociationResponse>(request, options);
         }
 
         /// <summary>
@@ -8547,11 +8651,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssociation(UpdateAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAssociationRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAssociationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8619,10 +8723,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public virtual UpdateAssociationStatusResponse UpdateAssociationStatus(UpdateAssociationStatusRequest request)
         {
-            var marshaller = UpdateAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssociationStatusRequest,UpdateAssociationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAssociationStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -8639,11 +8744,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssociationStatus(UpdateAssociationStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAssociationStatusRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAssociationStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8705,10 +8810,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
-            var marshaller = UpdateDocumentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDocumentResponse>(request, options);
         }
 
         /// <summary>
@@ -8725,11 +8831,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDocumentRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDocumentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8770,10 +8876,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public virtual UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request)
         {
-            var marshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDocumentDefaultVersionRequest,UpdateDocumentDefaultVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDocumentDefaultVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -8790,11 +8897,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
-            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentDefaultVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateDocumentDefaultVersionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8836,10 +8943,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public virtual UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowResponse>(request, options);
         }
 
         /// <summary>
@@ -8856,11 +8964,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public virtual IAsyncResult BeginUpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateMaintenanceWindowRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -8932,10 +9040,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
         public virtual UpdateMaintenanceWindowTargetResponse UpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowTargetRequest,UpdateMaintenanceWindowTargetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowTargetResponse>(request, options);
         }
 
         /// <summary>
@@ -8952,11 +9061,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">REST API Reference for UpdateMaintenanceWindowTarget Operation</seealso>
         public virtual IAsyncResult BeginUpdateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTargetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateMaintenanceWindowTargetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9032,10 +9141,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
         public virtual UpdateMaintenanceWindowTaskResponse UpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request)
         {
-            var marshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateMaintenanceWindowTaskRequest,UpdateMaintenanceWindowTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateMaintenanceWindowTaskResponse>(request, options);
         }
 
         /// <summary>
@@ -9052,11 +9162,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask">REST API Reference for UpdateMaintenanceWindowTask Operation</seealso>
         public virtual IAsyncResult BeginUpdateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
-            var unmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMaintenanceWindowTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMaintenanceWindowTaskResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateMaintenanceWindowTaskRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9113,10 +9223,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public virtual UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request)
         {
-            var marshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
-            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateManagedInstanceRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -9133,11 +9244,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public virtual IAsyncResult BeginUpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
-            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedInstanceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateManagedInstanceRoleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -9187,10 +9298,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public virtual UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
         {
-            var marshaller = UpdatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
 
-            return Invoke<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdatePatchBaselineResponse>(request, options);
         }
 
         /// <summary>
@@ -9207,11 +9319,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public virtual IAsyncResult BeginUpdatePatchBaseline(UpdatePatchBaselineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdatePatchBaselineRequestMarshaller.Instance;
-            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePatchBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdatePatchBaselineRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

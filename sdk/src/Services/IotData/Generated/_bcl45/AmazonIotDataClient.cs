@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IotData.Model;
 using Amazon.IotData.Model.Internal.MarshallTransformations;
@@ -85,7 +86,7 @@ namespace Amazon.IotData
 
         #endregion
 
-        
+
         #region  DeleteThingShadow
 
 
@@ -127,10 +128,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -144,11 +146,11 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
-            var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThingShadowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -194,10 +196,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var marshaller = GetThingShadowRequestMarshaller.Instance;
-            var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -211,11 +214,11 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetThingShadowRequestMarshaller.Instance;
-            var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetThingShadowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -249,10 +252,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
-            return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
+            return Invoke<PublishResponse>(request, options);
         }
 
         /// <summary>
@@ -266,11 +270,11 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PublishRequestMarshaller.Instance;
-            var unmarshaller = PublishResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PublishRequest,PublishResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PublishResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -319,10 +323,11 @@ namespace Amazon.IotData
         /// </exception>
         public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateThingShadowResponse>(request, options);
         }
 
         /// <summary>
@@ -336,11 +341,11 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
-            var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThingShadowResponse>(request, options, cancellationToken);
         }
 
         #endregion

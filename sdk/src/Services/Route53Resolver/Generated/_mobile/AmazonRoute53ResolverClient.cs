@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Route53Resolver.Model;
 using Amazon.Route53Resolver.Model.Internal.MarshallTransformations;
@@ -303,15 +304,16 @@ namespace Amazon.Route53Resolver
 
         #endregion
 
-        
+
         #region  AssociateResolverEndpointIpAddress
 
         internal virtual AssociateResolverEndpointIpAddressResponse AssociateResolverEndpointIpAddress(AssociateResolverEndpointIpAddressRequest request)
         {
-            var marshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateResolverEndpointIpAddressRequest,AssociateResolverEndpointIpAddressResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateResolverEndpointIpAddressResponse>(request, options);
         }
 
 
@@ -327,11 +329,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverEndpointIpAddress">REST API Reference for AssociateResolverEndpointIpAddress Operation</seealso>
         public virtual Task<AssociateResolverEndpointIpAddressResponse> AssociateResolverEndpointIpAddressAsync(AssociateResolverEndpointIpAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateResolverEndpointIpAddressRequest,AssociateResolverEndpointIpAddressResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateResolverEndpointIpAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -340,10 +342,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual AssociateResolverRuleResponse AssociateResolverRule(AssociateResolverRuleRequest request)
         {
-            var marshaller = AssociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateResolverRuleRequest,AssociateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateResolverRuleResponse>(request, options);
         }
 
 
@@ -359,11 +362,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverRule">REST API Reference for AssociateResolverRule Operation</seealso>
         public virtual Task<AssociateResolverRuleResponse> AssociateResolverRuleAsync(AssociateResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateResolverRuleRequest,AssociateResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -372,10 +375,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual CreateResolverEndpointResponse CreateResolverEndpoint(CreateResolverEndpointRequest request)
         {
-            var marshaller = CreateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverEndpointRequest,CreateResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverEndpointResponse>(request, options);
         }
 
 
@@ -391,11 +395,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverEndpoint">REST API Reference for CreateResolverEndpoint Operation</seealso>
         public virtual Task<CreateResolverEndpointResponse> CreateResolverEndpointAsync(CreateResolverEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateResolverEndpointRequest,CreateResolverEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateResolverEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -404,10 +408,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual CreateResolverRuleResponse CreateResolverRule(CreateResolverRuleRequest request)
         {
-            var marshaller = CreateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverRuleRequest,CreateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverRuleResponse>(request, options);
         }
 
 
@@ -423,11 +428,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverRule">REST API Reference for CreateResolverRule Operation</seealso>
         public virtual Task<CreateResolverRuleResponse> CreateResolverRuleAsync(CreateResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateResolverRuleRequest,CreateResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -436,10 +441,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual DeleteResolverEndpointResponse DeleteResolverEndpoint(DeleteResolverEndpointRequest request)
         {
-            var marshaller = DeleteResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverEndpointRequest,DeleteResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverEndpointResponse>(request, options);
         }
 
 
@@ -455,11 +461,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverEndpoint">REST API Reference for DeleteResolverEndpoint Operation</seealso>
         public virtual Task<DeleteResolverEndpointResponse> DeleteResolverEndpointAsync(DeleteResolverEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteResolverEndpointRequest,DeleteResolverEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteResolverEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -468,10 +474,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual DeleteResolverRuleResponse DeleteResolverRule(DeleteResolverRuleRequest request)
         {
-            var marshaller = DeleteResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverRuleRequest,DeleteResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverRuleResponse>(request, options);
         }
 
 
@@ -487,11 +494,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverRule">REST API Reference for DeleteResolverRule Operation</seealso>
         public virtual Task<DeleteResolverRuleResponse> DeleteResolverRuleAsync(DeleteResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteResolverRuleRequest,DeleteResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -500,10 +507,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual DisassociateResolverEndpointIpAddressResponse DisassociateResolverEndpointIpAddress(DisassociateResolverEndpointIpAddressRequest request)
         {
-            var marshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateResolverEndpointIpAddressRequest,DisassociateResolverEndpointIpAddressResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateResolverEndpointIpAddressResponse>(request, options);
         }
 
 
@@ -519,11 +527,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverEndpointIpAddress">REST API Reference for DisassociateResolverEndpointIpAddress Operation</seealso>
         public virtual Task<DisassociateResolverEndpointIpAddressResponse> DisassociateResolverEndpointIpAddressAsync(DisassociateResolverEndpointIpAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverEndpointIpAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverEndpointIpAddressResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateResolverEndpointIpAddressRequest,DisassociateResolverEndpointIpAddressResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateResolverEndpointIpAddressResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -532,10 +540,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual DisassociateResolverRuleResponse DisassociateResolverRule(DisassociateResolverRuleRequest request)
         {
-            var marshaller = DisassociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateResolverRuleRequest,DisassociateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateResolverRuleResponse>(request, options);
         }
 
 
@@ -551,11 +560,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">REST API Reference for DisassociateResolverRule Operation</seealso>
         public virtual Task<DisassociateResolverRuleResponse> DisassociateResolverRuleAsync(DisassociateResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateResolverRuleRequest,DisassociateResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -564,10 +573,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual GetResolverEndpointResponse GetResolverEndpoint(GetResolverEndpointRequest request)
         {
-            var marshaller = GetResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverEndpointRequest,GetResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverEndpointResponse>(request, options);
         }
 
 
@@ -583,11 +593,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverEndpoint">REST API Reference for GetResolverEndpoint Operation</seealso>
         public virtual Task<GetResolverEndpointResponse> GetResolverEndpointAsync(GetResolverEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResolverEndpointRequest,GetResolverEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResolverEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -596,10 +606,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual GetResolverRuleResponse GetResolverRule(GetResolverRuleRequest request)
         {
-            var marshaller = GetResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRuleRequest,GetResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRuleResponse>(request, options);
         }
 
 
@@ -615,11 +626,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRule">REST API Reference for GetResolverRule Operation</seealso>
         public virtual Task<GetResolverRuleResponse> GetResolverRuleAsync(GetResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResolverRuleRequest,GetResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -628,10 +639,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual GetResolverRuleAssociationResponse GetResolverRuleAssociation(GetResolverRuleAssociationRequest request)
         {
-            var marshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRuleAssociationRequest,GetResolverRuleAssociationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRuleAssociationResponse>(request, options);
         }
 
 
@@ -647,11 +659,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRuleAssociation">REST API Reference for GetResolverRuleAssociation Operation</seealso>
         public virtual Task<GetResolverRuleAssociationResponse> GetResolverRuleAssociationAsync(GetResolverRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRuleAssociationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResolverRuleAssociationRequest,GetResolverRuleAssociationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResolverRuleAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -660,10 +672,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual GetResolverRulePolicyResponse GetResolverRulePolicy(GetResolverRulePolicyRequest request)
         {
-            var marshaller = GetResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRulePolicyRequest,GetResolverRulePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverRulePolicyResponse>(request, options);
         }
 
 
@@ -679,11 +692,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy">REST API Reference for GetResolverRulePolicy Operation</seealso>
         public virtual Task<GetResolverRulePolicyResponse> GetResolverRulePolicyAsync(GetResolverRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResolverRulePolicyRequest,GetResolverRulePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResolverRulePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -692,10 +705,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual ListResolverEndpointIpAddressesResponse ListResolverEndpointIpAddresses(ListResolverEndpointIpAddressesRequest request)
         {
-            var marshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverEndpointIpAddressesRequest,ListResolverEndpointIpAddressesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverEndpointIpAddressesResponse>(request, options);
         }
 
 
@@ -711,11 +725,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpointIpAddresses">REST API Reference for ListResolverEndpointIpAddresses Operation</seealso>
         public virtual Task<ListResolverEndpointIpAddressesResponse> ListResolverEndpointIpAddressesAsync(ListResolverEndpointIpAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointIpAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointIpAddressesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolverEndpointIpAddressesRequest,ListResolverEndpointIpAddressesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolverEndpointIpAddressesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -724,10 +738,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual ListResolverEndpointsResponse ListResolverEndpoints(ListResolverEndpointsRequest request)
         {
-            var marshaller = ListResolverEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverEndpointsRequest,ListResolverEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverEndpointsResponse>(request, options);
         }
 
 
@@ -743,11 +758,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">REST API Reference for ListResolverEndpoints Operation</seealso>
         public virtual Task<ListResolverEndpointsResponse> ListResolverEndpointsAsync(ListResolverEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolverEndpointsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverEndpointsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolverEndpointsRequest,ListResolverEndpointsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolverEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -756,10 +771,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual ListResolverRuleAssociationsResponse ListResolverRuleAssociations(ListResolverRuleAssociationsRequest request)
         {
-            var marshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverRuleAssociationsRequest,ListResolverRuleAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverRuleAssociationsResponse>(request, options);
         }
 
 
@@ -775,11 +791,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">REST API Reference for ListResolverRuleAssociations Operation</seealso>
         public virtual Task<ListResolverRuleAssociationsResponse> ListResolverRuleAssociationsAsync(ListResolverRuleAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRuleAssociationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolverRuleAssociationsRequest,ListResolverRuleAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolverRuleAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -788,10 +804,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual ListResolverRulesResponse ListResolverRules(ListResolverRulesRequest request)
         {
-            var marshaller = ListResolverRulesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolverRulesRequest,ListResolverRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolverRulesResponse>(request, options);
         }
 
 
@@ -807,11 +824,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">REST API Reference for ListResolverRules Operation</seealso>
         public virtual Task<ListResolverRulesResponse> ListResolverRulesAsync(ListResolverRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolverRulesRequestMarshaller.Instance;
-            var unmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverRulesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolverRulesRequest,ListResolverRulesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolverRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -820,10 +837,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -839,11 +857,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -852,10 +870,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual PutResolverRulePolicyResponse PutResolverRulePolicy(PutResolverRulePolicyRequest request)
         {
-            var marshaller = PutResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutResolverRulePolicyRequest,PutResolverRulePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutResolverRulePolicyResponse>(request, options);
         }
 
 
@@ -871,11 +890,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">REST API Reference for PutResolverRulePolicy Operation</seealso>
         public virtual Task<PutResolverRulePolicyResponse> PutResolverRulePolicyAsync(PutResolverRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutResolverRulePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResolverRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResolverRulePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutResolverRulePolicyRequest,PutResolverRulePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutResolverRulePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -884,10 +903,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -903,11 +923,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -916,10 +936,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -935,11 +956,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -948,10 +969,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual UpdateResolverEndpointResponse UpdateResolverEndpoint(UpdateResolverEndpointRequest request)
         {
-            var marshaller = UpdateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverEndpointRequest,UpdateResolverEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverEndpointResponse>(request, options);
         }
 
 
@@ -967,11 +989,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">REST API Reference for UpdateResolverEndpoint Operation</seealso>
         public virtual Task<UpdateResolverEndpointResponse> UpdateResolverEndpointAsync(UpdateResolverEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateResolverEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverEndpointResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateResolverEndpointRequest,UpdateResolverEndpointResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateResolverEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -980,10 +1002,11 @@ namespace Amazon.Route53Resolver
 
         internal virtual UpdateResolverRuleResponse UpdateResolverRule(UpdateResolverRuleRequest request)
         {
-            var marshaller = UpdateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverRuleRequest,UpdateResolverRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverRuleResponse>(request, options);
         }
 
 
@@ -999,11 +1022,11 @@ namespace Amazon.Route53Resolver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverRule">REST API Reference for UpdateResolverRule Operation</seealso>
         public virtual Task<UpdateResolverRuleResponse> UpdateResolverRuleAsync(UpdateResolverRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateResolverRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverRuleResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateResolverRuleRequest,UpdateResolverRuleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateResolverRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion

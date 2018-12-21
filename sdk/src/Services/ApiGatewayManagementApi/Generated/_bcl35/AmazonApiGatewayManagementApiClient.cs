@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ApiGatewayManagementApi.Model;
 using Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations;
@@ -238,7 +239,7 @@ namespace Amazon.ApiGatewayManagementApi
 
         #endregion
 
-        
+
         #region  PostToConnection
 
         /// <summary>
@@ -261,10 +262,11 @@ namespace Amazon.ApiGatewayManagementApi
         /// </exception>
         public virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
-            return Invoke<PostToConnectionRequest,PostToConnectionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PostToConnectionResponse>(request, options);
         }
 
         /// <summary>
@@ -280,11 +282,11 @@ namespace Amazon.ApiGatewayManagementApi
         ///         operation.</returns>
         public virtual IAsyncResult BeginPostToConnection(PostToConnectionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PostToConnectionRequestMarshaller.Instance;
-            var unmarshaller = PostToConnectionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PostToConnectionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

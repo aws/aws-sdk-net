@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleWorkflow.Model;
 using Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations;
@@ -260,15 +261,16 @@ namespace Amazon.SimpleWorkflow
 
         #endregion
 
-        
+
         #region  CountClosedWorkflowExecutions
 
         internal virtual CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request)
         {
-            var marshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<CountClosedWorkflowExecutionsRequest,CountClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CountClosedWorkflowExecutionsResponse>(request, options);
         }
 
 
@@ -284,11 +286,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         public virtual Task<CountClosedWorkflowExecutionsResponse> CountClosedWorkflowExecutionsAsync(CountClosedWorkflowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CountClosedWorkflowExecutionsRequest,CountClosedWorkflowExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CountClosedWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -297,10 +299,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
         {
-            var marshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<CountOpenWorkflowExecutionsRequest,CountOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<CountOpenWorkflowExecutionsResponse>(request, options);
         }
 
 
@@ -316,11 +319,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         public virtual Task<CountOpenWorkflowExecutionsResponse> CountOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CountOpenWorkflowExecutionsRequest,CountOpenWorkflowExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CountOpenWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -329,10 +332,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
         {
-            var marshaller = CountPendingActivityTasksRequestMarshaller.Instance;
-            var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountPendingActivityTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
 
-            return Invoke<CountPendingActivityTasksRequest,CountPendingActivityTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<CountPendingActivityTasksResponse>(request, options);
         }
 
 
@@ -348,11 +352,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         public virtual Task<CountPendingActivityTasksResponse> CountPendingActivityTasksAsync(CountPendingActivityTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CountPendingActivityTasksRequestMarshaller.Instance;
-            var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountPendingActivityTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CountPendingActivityTasksRequest,CountPendingActivityTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CountPendingActivityTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -361,10 +365,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
         {
-            var marshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
-            var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
 
-            return Invoke<CountPendingDecisionTasksRequest,CountPendingDecisionTasksResponse>(request, marshaller, unmarshaller);
+            return Invoke<CountPendingDecisionTasksResponse>(request, options);
         }
 
 
@@ -380,11 +385,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         public virtual Task<CountPendingDecisionTasksResponse> CountPendingDecisionTasksAsync(CountPendingDecisionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
-            var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CountPendingDecisionTasksRequest,CountPendingDecisionTasksResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CountPendingDecisionTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -393,10 +398,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
         {
-            var marshaller = DeprecateActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeprecateActivityTypeRequest,DeprecateActivityTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeprecateActivityTypeResponse>(request, options);
         }
 
 
@@ -412,11 +418,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         public virtual Task<DeprecateActivityTypeResponse> DeprecateActivityTypeAsync(DeprecateActivityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeprecateActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeprecateActivityTypeRequest,DeprecateActivityTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeprecateActivityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -425,10 +431,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
         {
-            var marshaller = DeprecateDomainRequestMarshaller.Instance;
-            var unmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DeprecateDomainRequest,DeprecateDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeprecateDomainResponse>(request, options);
         }
 
 
@@ -444,11 +451,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         public virtual Task<DeprecateDomainResponse> DeprecateDomainAsync(DeprecateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeprecateDomainRequestMarshaller.Instance;
-            var unmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeprecateDomainRequest,DeprecateDomainResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeprecateDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -457,10 +464,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
         {
-            var marshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeprecateWorkflowTypeRequest,DeprecateWorkflowTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeprecateWorkflowTypeResponse>(request, options);
         }
 
 
@@ -476,11 +484,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         public virtual Task<DeprecateWorkflowTypeResponse> DeprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeprecateWorkflowTypeRequest,DeprecateWorkflowTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeprecateWorkflowTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -489,10 +497,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
         {
-            var marshaller = DescribeActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeActivityTypeRequest,DescribeActivityTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeActivityTypeResponse>(request, options);
         }
 
 
@@ -508,11 +517,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         public virtual Task<DescribeActivityTypeResponse> DescribeActivityTypeAsync(DescribeActivityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeActivityTypeRequest,DescribeActivityTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeActivityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -521,10 +530,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
-            var marshaller = DescribeDomainRequestMarshaller.Instance;
-            var unmarshaller = DescribeDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDomainRequest,DescribeDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDomainResponse>(request, options);
         }
 
 
@@ -540,11 +550,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDomainRequestMarshaller.Instance;
-            var unmarshaller = DescribeDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeDomainRequest,DescribeDomainResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -553,10 +563,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
         {
-            var marshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkflowExecutionRequest,DescribeWorkflowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkflowExecutionResponse>(request, options);
         }
 
 
@@ -572,11 +583,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         public virtual Task<DescribeWorkflowExecutionResponse> DescribeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeWorkflowExecutionRequest,DescribeWorkflowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeWorkflowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -585,10 +596,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
         {
-            var marshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeWorkflowTypeRequest,DescribeWorkflowTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeWorkflowTypeResponse>(request, options);
         }
 
 
@@ -604,11 +616,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         public virtual Task<DescribeWorkflowTypeResponse> DescribeWorkflowTypeAsync(DescribeWorkflowTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeWorkflowTypeRequest,DescribeWorkflowTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeWorkflowTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -617,10 +629,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
         {
-            var marshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetWorkflowExecutionHistoryRequest,GetWorkflowExecutionHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetWorkflowExecutionHistoryResponse>(request, options);
         }
 
 
@@ -636,11 +649,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         public virtual Task<GetWorkflowExecutionHistoryResponse> GetWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetWorkflowExecutionHistoryRequest,GetWorkflowExecutionHistoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetWorkflowExecutionHistoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -649,10 +662,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
         {
-            var marshaller = ListActivityTypesRequestMarshaller.Instance;
-            var unmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActivityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListActivityTypesRequest,ListActivityTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListActivityTypesResponse>(request, options);
         }
 
 
@@ -668,11 +682,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         public virtual Task<ListActivityTypesResponse> ListActivityTypesAsync(ListActivityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListActivityTypesRequestMarshaller.Instance;
-            var unmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActivityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListActivityTypesRequest,ListActivityTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListActivityTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -681,10 +695,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
         {
-            var marshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListClosedWorkflowExecutionsRequest,ListClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListClosedWorkflowExecutionsResponse>(request, options);
         }
 
 
@@ -700,11 +715,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         public virtual Task<ListClosedWorkflowExecutionsResponse> ListClosedWorkflowExecutionsAsync(ListClosedWorkflowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListClosedWorkflowExecutionsRequest,ListClosedWorkflowExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListClosedWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -713,10 +728,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDomainsResponse>(request, options);
         }
 
 
@@ -732,11 +748,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDomainsRequestMarshaller.Instance;
-            var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListDomainsRequest,ListDomainsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -745,10 +761,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
         {
-            var marshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListOpenWorkflowExecutionsRequest,ListOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListOpenWorkflowExecutionsResponse>(request, options);
         }
 
 
@@ -764,11 +781,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         public virtual Task<ListOpenWorkflowExecutionsResponse> ListOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
-            var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListOpenWorkflowExecutionsRequest,ListOpenWorkflowExecutionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListOpenWorkflowExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -777,10 +794,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
         {
-            var marshaller = ListWorkflowTypesRequestMarshaller.Instance;
-            var unmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListWorkflowTypesRequest,ListWorkflowTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListWorkflowTypesResponse>(request, options);
         }
 
 
@@ -796,11 +814,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         public virtual Task<ListWorkflowTypesResponse> ListWorkflowTypesAsync(ListWorkflowTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListWorkflowTypesRequestMarshaller.Instance;
-            var unmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListWorkflowTypesRequest,ListWorkflowTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListWorkflowTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -809,10 +827,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
         {
-            var marshaller = PollForActivityTaskRequestMarshaller.Instance;
-            var unmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PollForActivityTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
 
-            return Invoke<PollForActivityTaskRequest,PollForActivityTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<PollForActivityTaskResponse>(request, options);
         }
 
 
@@ -828,11 +847,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         public virtual Task<PollForActivityTaskResponse> PollForActivityTaskAsync(PollForActivityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PollForActivityTaskRequestMarshaller.Instance;
-            var unmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PollForActivityTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PollForActivityTaskRequest,PollForActivityTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PollForActivityTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -841,10 +860,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
         {
-            var marshaller = PollForDecisionTaskRequestMarshaller.Instance;
-            var unmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PollForDecisionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
 
-            return Invoke<PollForDecisionTaskRequest,PollForDecisionTaskResponse>(request, marshaller, unmarshaller);
+            return Invoke<PollForDecisionTaskResponse>(request, options);
         }
 
 
@@ -860,11 +880,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         public virtual Task<PollForDecisionTaskResponse> PollForDecisionTaskAsync(PollForDecisionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PollForDecisionTaskRequestMarshaller.Instance;
-            var unmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PollForDecisionTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PollForDecisionTaskRequest,PollForDecisionTaskResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PollForDecisionTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -873,10 +893,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
         {
-            var marshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
-            var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
 
-            return Invoke<RecordActivityTaskHeartbeatRequest,RecordActivityTaskHeartbeatResponse>(request, marshaller, unmarshaller);
+            return Invoke<RecordActivityTaskHeartbeatResponse>(request, options);
         }
 
 
@@ -892,11 +913,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         public virtual Task<RecordActivityTaskHeartbeatResponse> RecordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
-            var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RecordActivityTaskHeartbeatRequest,RecordActivityTaskHeartbeatResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RecordActivityTaskHeartbeatResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -905,10 +926,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
         {
-            var marshaller = RegisterActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterActivityTypeRequest,RegisterActivityTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterActivityTypeResponse>(request, options);
         }
 
 
@@ -924,11 +946,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         public virtual Task<RegisterActivityTypeResponse> RegisterActivityTypeAsync(RegisterActivityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterActivityTypeRequestMarshaller.Instance;
-            var unmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterActivityTypeRequest,RegisterActivityTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterActivityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -937,10 +959,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
-            var marshaller = RegisterDomainRequestMarshaller.Instance;
-            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterDomainResponse>(request, options);
         }
 
 
@@ -956,11 +979,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         public virtual Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterDomainRequestMarshaller.Instance;
-            var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterDomainResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -969,10 +992,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
         {
-            var marshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
 
-            return Invoke<RegisterWorkflowTypeRequest,RegisterWorkflowTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<RegisterWorkflowTypeResponse>(request, options);
         }
 
 
@@ -988,11 +1012,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         public virtual Task<RegisterWorkflowTypeResponse> RegisterWorkflowTypeAsync(RegisterWorkflowTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
-            var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RegisterWorkflowTypeRequest,RegisterWorkflowTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RegisterWorkflowTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1001,10 +1025,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
         {
-            var marshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<RequestCancelWorkflowExecutionRequest,RequestCancelWorkflowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<RequestCancelWorkflowExecutionResponse>(request, options);
         }
 
 
@@ -1020,11 +1045,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         public virtual Task<RequestCancelWorkflowExecutionResponse> RequestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RequestCancelWorkflowExecutionRequest,RequestCancelWorkflowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RequestCancelWorkflowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1033,10 +1058,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
         {
-            var marshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
 
-            return Invoke<RespondActivityTaskCanceledRequest,RespondActivityTaskCanceledResponse>(request, marshaller, unmarshaller);
+            return Invoke<RespondActivityTaskCanceledResponse>(request, options);
         }
 
 
@@ -1052,11 +1078,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         public virtual Task<RespondActivityTaskCanceledResponse> RespondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RespondActivityTaskCanceledRequest,RespondActivityTaskCanceledResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RespondActivityTaskCanceledResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1065,10 +1091,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
         {
-            var marshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
 
-            return Invoke<RespondActivityTaskCompletedRequest,RespondActivityTaskCompletedResponse>(request, marshaller, unmarshaller);
+            return Invoke<RespondActivityTaskCompletedResponse>(request, options);
         }
 
 
@@ -1084,11 +1111,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         public virtual Task<RespondActivityTaskCompletedResponse> RespondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RespondActivityTaskCompletedRequest,RespondActivityTaskCompletedResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RespondActivityTaskCompletedResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1097,10 +1124,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
         {
-            var marshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
 
-            return Invoke<RespondActivityTaskFailedRequest,RespondActivityTaskFailedResponse>(request, marshaller, unmarshaller);
+            return Invoke<RespondActivityTaskFailedResponse>(request, options);
         }
 
 
@@ -1116,11 +1144,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         public virtual Task<RespondActivityTaskFailedResponse> RespondActivityTaskFailedAsync(RespondActivityTaskFailedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
-            var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RespondActivityTaskFailedRequest,RespondActivityTaskFailedResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RespondActivityTaskFailedResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1129,10 +1157,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
         {
-            var marshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
-            var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
 
-            return Invoke<RespondDecisionTaskCompletedRequest,RespondDecisionTaskCompletedResponse>(request, marshaller, unmarshaller);
+            return Invoke<RespondDecisionTaskCompletedResponse>(request, options);
         }
 
 
@@ -1148,11 +1177,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         public virtual Task<RespondDecisionTaskCompletedResponse> RespondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
-            var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RespondDecisionTaskCompletedRequest,RespondDecisionTaskCompletedResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RespondDecisionTaskCompletedResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1161,10 +1190,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
         {
-            var marshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<SignalWorkflowExecutionRequest,SignalWorkflowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<SignalWorkflowExecutionResponse>(request, options);
         }
 
 
@@ -1180,11 +1210,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         public virtual Task<SignalWorkflowExecutionResponse> SignalWorkflowExecutionAsync(SignalWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SignalWorkflowExecutionRequest,SignalWorkflowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SignalWorkflowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1193,10 +1223,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
         {
-            var marshaller = StartWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<StartWorkflowExecutionRequest,StartWorkflowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartWorkflowExecutionResponse>(request, options);
         }
 
 
@@ -1212,11 +1243,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         public virtual Task<StartWorkflowExecutionResponse> StartWorkflowExecutionAsync(StartWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartWorkflowExecutionRequest,StartWorkflowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartWorkflowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1225,10 +1256,11 @@ namespace Amazon.SimpleWorkflow
 
         internal virtual TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
         {
-            var marshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateWorkflowExecutionRequest,TerminateWorkflowExecutionResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateWorkflowExecutionResponse>(request, options);
         }
 
 
@@ -1244,11 +1276,11 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         public virtual Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
-            var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TerminateWorkflowExecutionRequest,TerminateWorkflowExecutionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TerminateWorkflowExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion

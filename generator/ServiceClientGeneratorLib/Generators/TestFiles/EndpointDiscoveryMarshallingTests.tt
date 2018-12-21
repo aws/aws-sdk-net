@@ -1,0 +1,58 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+
+using System;
+using System.IO;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.Internal.Transform;
+
+using ServiceClientGenerator;
+
+using AWSSDK_DotNet35.UnitTests.TestTools;
+
+namespace AWSSDK_DotNet35.UnitTests.Marshalling
+{
+    [TestClass]
+    public class <#=this.Config.ClassName#>EndpointDiscoveryMarshallingTests
+    {
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= this.Config.ServiceDirectoryName #>");
+<#
+		foreach(var operation in this.Config.ServiceModel.Operations)
+		{
+            if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
+            {
+#>
+ 
+        [TestMethod]
+		[TestCategory("UnitTest")]
+		[TestCategory("Json")]
+		[TestCategory("<#=this.Config.TestCategory#>")]
+        public void <#=operation.Name#>EndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("<#=operation.Name#>");
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+            var marshaller = new <#=operation.Name#>EndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+<#
+            }
+		}
+#>
+    }
+}

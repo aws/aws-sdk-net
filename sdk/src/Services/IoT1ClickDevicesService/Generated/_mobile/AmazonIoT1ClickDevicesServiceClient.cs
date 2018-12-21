@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IoT1ClickDevicesService.Model;
 using Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.IoT1ClickDevicesService
 
         #endregion
 
-        
+
         #region  ClaimDevicesByClaimCode
 
         internal virtual ClaimDevicesByClaimCodeResponse ClaimDevicesByClaimCode(ClaimDevicesByClaimCodeRequest request)
         {
-            var marshaller = ClaimDevicesByClaimCodeRequestMarshaller.Instance;
-            var unmarshaller = ClaimDevicesByClaimCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimDevicesByClaimCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimDevicesByClaimCodeResponseUnmarshaller.Instance;
 
-            return Invoke<ClaimDevicesByClaimCodeRequest,ClaimDevicesByClaimCodeResponse>(request, marshaller, unmarshaller);
+            return Invoke<ClaimDevicesByClaimCodeResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">REST API Reference for ClaimDevicesByClaimCode Operation</seealso>
         public virtual Task<ClaimDevicesByClaimCodeResponse> ClaimDevicesByClaimCodeAsync(ClaimDevicesByClaimCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ClaimDevicesByClaimCodeRequestMarshaller.Instance;
-            var unmarshaller = ClaimDevicesByClaimCodeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimDevicesByClaimCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimDevicesByClaimCodeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ClaimDevicesByClaimCodeRequest,ClaimDevicesByClaimCodeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ClaimDevicesByClaimCodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -278,10 +280,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
         {
-            var marshaller = DescribeDeviceRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeDeviceRequest,DescribeDeviceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeDeviceResponse>(request, options);
         }
 
 
@@ -297,11 +300,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeDeviceRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeDeviceRequest,DescribeDeviceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +313,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual FinalizeDeviceClaimResponse FinalizeDeviceClaim(FinalizeDeviceClaimRequest request)
         {
-            var marshaller = FinalizeDeviceClaimRequestMarshaller.Instance;
-            var unmarshaller = FinalizeDeviceClaimResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FinalizeDeviceClaimRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FinalizeDeviceClaimResponseUnmarshaller.Instance;
 
-            return Invoke<FinalizeDeviceClaimRequest,FinalizeDeviceClaimResponse>(request, marshaller, unmarshaller);
+            return Invoke<FinalizeDeviceClaimResponse>(request, options);
         }
 
 
@@ -329,11 +333,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">REST API Reference for FinalizeDeviceClaim Operation</seealso>
         public virtual Task<FinalizeDeviceClaimResponse> FinalizeDeviceClaimAsync(FinalizeDeviceClaimRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = FinalizeDeviceClaimRequestMarshaller.Instance;
-            var unmarshaller = FinalizeDeviceClaimResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FinalizeDeviceClaimRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FinalizeDeviceClaimResponseUnmarshaller.Instance;
 
-            return InvokeAsync<FinalizeDeviceClaimRequest,FinalizeDeviceClaimResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<FinalizeDeviceClaimResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -342,10 +346,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual GetDeviceMethodsResponse GetDeviceMethods(GetDeviceMethodsRequest request)
         {
-            var marshaller = GetDeviceMethodsRequestMarshaller.Instance;
-            var unmarshaller = GetDeviceMethodsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeviceMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeviceMethodsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeviceMethodsRequest,GetDeviceMethodsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeviceMethodsResponse>(request, options);
         }
 
 
@@ -361,11 +366,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">REST API Reference for GetDeviceMethods Operation</seealso>
         public virtual Task<GetDeviceMethodsResponse> GetDeviceMethodsAsync(GetDeviceMethodsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDeviceMethodsRequestMarshaller.Instance;
-            var unmarshaller = GetDeviceMethodsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeviceMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeviceMethodsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDeviceMethodsRequest,GetDeviceMethodsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDeviceMethodsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +379,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual InitiateDeviceClaimResponse InitiateDeviceClaim(InitiateDeviceClaimRequest request)
         {
-            var marshaller = InitiateDeviceClaimRequestMarshaller.Instance;
-            var unmarshaller = InitiateDeviceClaimResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateDeviceClaimRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateDeviceClaimResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateDeviceClaimRequest,InitiateDeviceClaimResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateDeviceClaimResponse>(request, options);
         }
 
 
@@ -393,11 +399,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">REST API Reference for InitiateDeviceClaim Operation</seealso>
         public virtual Task<InitiateDeviceClaimResponse> InitiateDeviceClaimAsync(InitiateDeviceClaimRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = InitiateDeviceClaimRequestMarshaller.Instance;
-            var unmarshaller = InitiateDeviceClaimResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateDeviceClaimRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateDeviceClaimResponseUnmarshaller.Instance;
 
-            return InvokeAsync<InitiateDeviceClaimRequest,InitiateDeviceClaimResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<InitiateDeviceClaimResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -406,10 +412,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual InvokeDeviceMethodResponse InvokeDeviceMethod(InvokeDeviceMethodRequest request)
         {
-            var marshaller = InvokeDeviceMethodRequestMarshaller.Instance;
-            var unmarshaller = InvokeDeviceMethodResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeDeviceMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeDeviceMethodResponseUnmarshaller.Instance;
 
-            return Invoke<InvokeDeviceMethodRequest,InvokeDeviceMethodResponse>(request, marshaller, unmarshaller);
+            return Invoke<InvokeDeviceMethodResponse>(request, options);
         }
 
 
@@ -425,11 +432,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InvokeDeviceMethod">REST API Reference for InvokeDeviceMethod Operation</seealso>
         public virtual Task<InvokeDeviceMethodResponse> InvokeDeviceMethodAsync(InvokeDeviceMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = InvokeDeviceMethodRequestMarshaller.Instance;
-            var unmarshaller = InvokeDeviceMethodResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeDeviceMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeDeviceMethodResponseUnmarshaller.Instance;
 
-            return InvokeAsync<InvokeDeviceMethodRequest,InvokeDeviceMethodResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<InvokeDeviceMethodResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -438,10 +445,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
         {
-            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
-            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeviceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeviceEventsRequest,ListDeviceEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeviceEventsResponse>(request, options);
         }
 
 
@@ -457,11 +465,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
         public virtual Task<ListDeviceEventsResponse> ListDeviceEventsAsync(ListDeviceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
-            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeviceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListDeviceEventsRequest,ListDeviceEventsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListDeviceEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -470,10 +478,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var marshaller = ListDevicesRequestMarshaller.Instance;
-            var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDevicesRequest,ListDevicesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDevicesResponse>(request, options);
         }
 
 
@@ -489,11 +498,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDevicesRequestMarshaller.Instance;
-            var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListDevicesRequest,ListDevicesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -502,10 +511,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual UnclaimDeviceResponse UnclaimDevice(UnclaimDeviceRequest request)
         {
-            var marshaller = UnclaimDeviceRequestMarshaller.Instance;
-            var unmarshaller = UnclaimDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnclaimDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnclaimDeviceResponseUnmarshaller.Instance;
 
-            return Invoke<UnclaimDeviceRequest,UnclaimDeviceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnclaimDeviceResponse>(request, options);
         }
 
 
@@ -521,11 +531,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UnclaimDevice">REST API Reference for UnclaimDevice Operation</seealso>
         public virtual Task<UnclaimDeviceResponse> UnclaimDeviceAsync(UnclaimDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UnclaimDeviceRequestMarshaller.Instance;
-            var unmarshaller = UnclaimDeviceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnclaimDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnclaimDeviceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UnclaimDeviceRequest,UnclaimDeviceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UnclaimDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -534,10 +544,11 @@ namespace Amazon.IoT1ClickDevicesService
 
         internal virtual UpdateDeviceStateResponse UpdateDeviceState(UpdateDeviceStateRequest request)
         {
-            var marshaller = UpdateDeviceStateRequestMarshaller.Instance;
-            var unmarshaller = UpdateDeviceStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeviceStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeviceStateResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDeviceStateRequest,UpdateDeviceStateResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDeviceStateResponse>(request, options);
         }
 
 
@@ -553,11 +564,11 @@ namespace Amazon.IoT1ClickDevicesService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UpdateDeviceState">REST API Reference for UpdateDeviceState Operation</seealso>
         public virtual Task<UpdateDeviceStateResponse> UpdateDeviceStateAsync(UpdateDeviceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDeviceStateRequestMarshaller.Instance;
-            var unmarshaller = UpdateDeviceStateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeviceStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeviceStateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateDeviceStateRequest,UpdateDeviceStateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateDeviceStateResponse>(request, options, cancellationToken);
         }
 
         #endregion

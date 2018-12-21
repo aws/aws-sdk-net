@@ -29,6 +29,7 @@ namespace Amazon.Runtime
         string RequestName { get; }
         IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; }
         ResponseUnmarshaller Unmarshaller { get; }
+        InvokeOptionsBase Options { get; }        
         RequestMetrics Metrics { get; }
         AbstractAWSSigner Signer { get; }
         IClientConfig ClientConfig { get; }
@@ -38,6 +39,7 @@ namespace Amazon.Runtime
         bool IsSigned { get; set; }
         bool IsAsync { get; }
         int Retries { get; set; }
+        int EndpointDiscoveryRetries { get; set; }
 
 #if AWS_ASYNC_API
         System.Threading.CancellationToken CancellationToken { get; }
@@ -114,11 +116,13 @@ namespace Amazon.Runtime.Internal
         public RequestMetrics Metrics { get; private set; }
         public IClientConfig ClientConfig { get; set; }
         public int Retries { get; set; }
+        public int EndpointDiscoveryRetries { get; set; }
         public bool IsSigned { get; set; }
         public bool IsAsync { get; set; }
         public AmazonWebServiceRequest OriginalRequest { get; set; }
         public IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; set; }
         public ResponseUnmarshaller Unmarshaller { get; set; }
+        public InvokeOptionsBase Options { get; set; }        
         public ImmutableCredentials ImmutableCredentials { get; set; }
         public AbstractAWSSigner Signer
         {

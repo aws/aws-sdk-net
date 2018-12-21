@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.IdentityManagement.Model.Internal.MarshallTransformations;
@@ -252,7 +253,7 @@ namespace Amazon.IdentityManagement
 
         #endregion
 
-        
+
         #region  AddClientIDToOpenIDConnectProvider
 
         /// <summary>
@@ -267,8 +268,9 @@ namespace Amazon.IdentityManagement
         public virtual void AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, AmazonServiceCallback<AddClientIDToOpenIDConnectProviderRequest, AddClientIDToOpenIDConnectProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddClientIDToOpenIDConnectProviderRequestMarshaller.Instance;
-            var unmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddClientIDToOpenIDConnectProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -276,7 +278,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AddClientIDToOpenIDConnectProviderRequest,AddClientIDToOpenIDConnectProviderResponse>((AddClientIDToOpenIDConnectProviderRequest)req, (AddClientIDToOpenIDConnectProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddClientIDToOpenIDConnectProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -295,8 +297,9 @@ namespace Amazon.IdentityManagement
         public virtual void AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, AmazonServiceCallback<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddRoleToInstanceProfileRequestMarshaller.Instance;
-            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddRoleToInstanceProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -304,7 +307,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AddRoleToInstanceProfileRequest,AddRoleToInstanceProfileResponse>((AddRoleToInstanceProfileRequest)req, (AddRoleToInstanceProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddRoleToInstanceProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -323,8 +326,9 @@ namespace Amazon.IdentityManagement
         public virtual void AddUserToGroupAsync(AddUserToGroupRequest request, AmazonServiceCallback<AddUserToGroupRequest, AddUserToGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AddUserToGroupRequestMarshaller.Instance;
-            var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AddUserToGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -332,7 +336,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AddUserToGroupRequest,AddUserToGroupResponse>((AddUserToGroupRequest)req, (AddUserToGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AddUserToGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -351,8 +355,9 @@ namespace Amazon.IdentityManagement
         public virtual void AttachGroupPolicyAsync(AttachGroupPolicyRequest request, AmazonServiceCallback<AttachGroupPolicyRequest, AttachGroupPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AttachGroupPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AttachGroupPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -360,7 +365,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AttachGroupPolicyRequest,AttachGroupPolicyResponse>((AttachGroupPolicyRequest)req, (AttachGroupPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AttachGroupPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -379,8 +384,9 @@ namespace Amazon.IdentityManagement
         public virtual void AttachRolePolicyAsync(AttachRolePolicyRequest request, AmazonServiceCallback<AttachRolePolicyRequest, AttachRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AttachRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AttachRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -388,7 +394,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AttachRolePolicyRequest,AttachRolePolicyResponse>((AttachRolePolicyRequest)req, (AttachRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AttachRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -407,8 +413,9 @@ namespace Amazon.IdentityManagement
         public virtual void AttachUserPolicyAsync(AttachUserPolicyRequest request, AmazonServiceCallback<AttachUserPolicyRequest, AttachUserPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = AttachUserPolicyRequestMarshaller.Instance;
-            var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = AttachUserPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -416,7 +423,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<AttachUserPolicyRequest,AttachUserPolicyResponse>((AttachUserPolicyRequest)req, (AttachUserPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<AttachUserPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -435,8 +442,9 @@ namespace Amazon.IdentityManagement
         public virtual void ChangePasswordAsync(ChangePasswordRequest request, AmazonServiceCallback<ChangePasswordRequest, ChangePasswordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ChangePasswordRequestMarshaller.Instance;
-            var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ChangePasswordRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ChangePasswordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -444,7 +452,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ChangePasswordRequest,ChangePasswordResponse>((ChangePasswordRequest)req, (ChangePasswordResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ChangePasswordRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -514,8 +522,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateAccessKeyAsync(CreateAccessKeyRequest request, AmazonServiceCallback<CreateAccessKeyRequest, CreateAccessKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateAccessKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateAccessKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -523,7 +532,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateAccessKeyRequest,CreateAccessKeyResponse>((CreateAccessKeyRequest)req, (CreateAccessKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateAccessKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -542,8 +551,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateAccountAliasAsync(CreateAccountAliasRequest request, AmazonServiceCallback<CreateAccountAliasRequest, CreateAccountAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateAccountAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateAccountAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -551,7 +561,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateAccountAliasRequest,CreateAccountAliasResponse>((CreateAccountAliasRequest)req, (CreateAccountAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateAccountAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -570,8 +580,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateGroupAsync(CreateGroupRequest request, AmazonServiceCallback<CreateGroupRequest, CreateGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -579,7 +590,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateGroupRequest,CreateGroupResponse>((CreateGroupRequest)req, (CreateGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -598,8 +609,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateInstanceProfileAsync(CreateInstanceProfileRequest request, AmazonServiceCallback<CreateInstanceProfileRequest, CreateInstanceProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -607,7 +619,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateInstanceProfileRequest,CreateInstanceProfileResponse>((CreateInstanceProfileRequest)req, (CreateInstanceProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateInstanceProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -626,8 +638,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateLoginProfileAsync(CreateLoginProfileRequest request, AmazonServiceCallback<CreateLoginProfileRequest, CreateLoginProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateLoginProfileRequestMarshaller.Instance;
-            var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateLoginProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -635,7 +648,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateLoginProfileRequest,CreateLoginProfileResponse>((CreateLoginProfileRequest)req, (CreateLoginProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateLoginProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -654,8 +667,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, AmazonServiceCallback<CreateOpenIDConnectProviderRequest, CreateOpenIDConnectProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateOpenIDConnectProviderRequestMarshaller.Instance;
-            var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateOpenIDConnectProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -663,7 +677,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>((CreateOpenIDConnectProviderRequest)req, (CreateOpenIDConnectProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateOpenIDConnectProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -682,8 +696,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreatePolicyAsync(CreatePolicyRequest request, AmazonServiceCallback<CreatePolicyRequest, CreatePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreatePolicyRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -691,7 +706,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreatePolicyRequest,CreatePolicyResponse>((CreatePolicyRequest)req, (CreatePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreatePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -710,8 +725,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreatePolicyVersionAsync(CreatePolicyVersionRequest request, AmazonServiceCallback<CreatePolicyVersionRequest, CreatePolicyVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreatePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreatePolicyVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -719,7 +735,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreatePolicyVersionRequest,CreatePolicyVersionResponse>((CreatePolicyVersionRequest)req, (CreatePolicyVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreatePolicyVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -738,8 +754,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateRoleAsync(CreateRoleRequest request, AmazonServiceCallback<CreateRoleRequest, CreateRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateRoleRequestMarshaller.Instance;
-            var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -747,7 +764,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateRoleRequest,CreateRoleResponse>((CreateRoleRequest)req, (CreateRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -766,8 +783,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateSAMLProviderAsync(CreateSAMLProviderRequest request, AmazonServiceCallback<CreateSAMLProviderRequest, CreateSAMLProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateSAMLProviderRequestMarshaller.Instance;
-            var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateSAMLProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -775,7 +793,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateSAMLProviderRequest,CreateSAMLProviderResponse>((CreateSAMLProviderRequest)req, (CreateSAMLProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateSAMLProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -794,8 +812,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request, AmazonServiceCallback<CreateServiceLinkedRoleRequest, CreateServiceLinkedRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateServiceLinkedRoleRequestMarshaller.Instance;
-            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateServiceLinkedRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -803,7 +822,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>((CreateServiceLinkedRoleRequest)req, (CreateServiceLinkedRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateServiceLinkedRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -822,8 +841,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, AmazonServiceCallback<CreateServiceSpecificCredentialRequest, CreateServiceSpecificCredentialResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateServiceSpecificCredentialRequestMarshaller.Instance;
-            var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateServiceSpecificCredentialRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -831,7 +851,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>((CreateServiceSpecificCredentialRequest)req, (CreateServiceSpecificCredentialResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateServiceSpecificCredentialRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -850,8 +870,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateUserAsync(CreateUserRequest request, AmazonServiceCallback<CreateUserRequest, CreateUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -859,7 +880,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateUserRequest,CreateUserResponse>((CreateUserRequest)req, (CreateUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -878,8 +899,9 @@ namespace Amazon.IdentityManagement
         public virtual void CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, AmazonServiceCallback<CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateVirtualMFADeviceRequestMarshaller.Instance;
-            var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateVirtualMFADeviceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -887,7 +909,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<CreateVirtualMFADeviceRequest,CreateVirtualMFADeviceResponse>((CreateVirtualMFADeviceRequest)req, (CreateVirtualMFADeviceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateVirtualMFADeviceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -906,8 +928,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, AmazonServiceCallback<DeactivateMFADeviceRequest, DeactivateMFADeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeactivateMFADeviceRequestMarshaller.Instance;
-            var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeactivateMFADeviceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -915,7 +938,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeactivateMFADeviceRequest,DeactivateMFADeviceResponse>((DeactivateMFADeviceRequest)req, (DeactivateMFADeviceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeactivateMFADeviceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -934,8 +957,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteAccessKeyAsync(DeleteAccessKeyRequest request, AmazonServiceCallback<DeleteAccessKeyRequest, DeleteAccessKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteAccessKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteAccessKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -943,7 +967,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteAccessKeyRequest,DeleteAccessKeyResponse>((DeleteAccessKeyRequest)req, (DeleteAccessKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteAccessKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -962,8 +986,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteAccountAliasAsync(DeleteAccountAliasRequest request, AmazonServiceCallback<DeleteAccountAliasRequest, DeleteAccountAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteAccountAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteAccountAliasRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -971,7 +996,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteAccountAliasRequest,DeleteAccountAliasResponse>((DeleteAccountAliasRequest)req, (DeleteAccountAliasResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteAccountAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1019,8 +1044,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, AmazonServiceCallback<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteAccountPasswordPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteAccountPasswordPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1028,7 +1054,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteAccountPasswordPolicyRequest,DeleteAccountPasswordPolicyResponse>((DeleteAccountPasswordPolicyRequest)req, (DeleteAccountPasswordPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteAccountPasswordPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1047,8 +1073,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteGroupAsync(DeleteGroupRequest request, AmazonServiceCallback<DeleteGroupRequest, DeleteGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1056,7 +1083,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteGroupRequest,DeleteGroupResponse>((DeleteGroupRequest)req, (DeleteGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1075,8 +1102,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, AmazonServiceCallback<DeleteGroupPolicyRequest, DeleteGroupPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteGroupPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteGroupPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1084,7 +1112,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteGroupPolicyRequest,DeleteGroupPolicyResponse>((DeleteGroupPolicyRequest)req, (DeleteGroupPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteGroupPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1103,8 +1131,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, AmazonServiceCallback<DeleteInstanceProfileRequest, DeleteInstanceProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1112,7 +1141,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>((DeleteInstanceProfileRequest)req, (DeleteInstanceProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteInstanceProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1131,8 +1160,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteLoginProfileAsync(DeleteLoginProfileRequest request, AmazonServiceCallback<DeleteLoginProfileRequest, DeleteLoginProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteLoginProfileRequestMarshaller.Instance;
-            var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteLoginProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1140,7 +1170,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteLoginProfileRequest,DeleteLoginProfileResponse>((DeleteLoginProfileRequest)req, (DeleteLoginProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteLoginProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1159,8 +1189,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, AmazonServiceCallback<DeleteOpenIDConnectProviderRequest, DeleteOpenIDConnectProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteOpenIDConnectProviderRequestMarshaller.Instance;
-            var unmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteOpenIDConnectProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1168,7 +1199,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteOpenIDConnectProviderRequest,DeleteOpenIDConnectProviderResponse>((DeleteOpenIDConnectProviderRequest)req, (DeleteOpenIDConnectProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteOpenIDConnectProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1187,8 +1218,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeletePolicyAsync(DeletePolicyRequest request, AmazonServiceCallback<DeletePolicyRequest, DeletePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeletePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1196,7 +1228,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeletePolicyRequest,DeletePolicyResponse>((DeletePolicyRequest)req, (DeletePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeletePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1215,8 +1247,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeletePolicyVersionAsync(DeletePolicyVersionRequest request, AmazonServiceCallback<DeletePolicyVersionRequest, DeletePolicyVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeletePolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeletePolicyVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1224,7 +1257,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeletePolicyVersionRequest,DeletePolicyVersionResponse>((DeletePolicyVersionRequest)req, (DeletePolicyVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeletePolicyVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1243,8 +1276,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteRoleAsync(DeleteRoleRequest request, AmazonServiceCallback<DeleteRoleRequest, DeleteRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1252,7 +1286,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteRoleRequest,DeleteRoleResponse>((DeleteRoleRequest)req, (DeleteRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1271,8 +1305,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request, AmazonServiceCallback<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteRolePermissionsBoundaryRequestMarshaller.Instance;
-            var unmarshaller = DeleteRolePermissionsBoundaryResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteRolePermissionsBoundaryRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteRolePermissionsBoundaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1280,7 +1315,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteRolePermissionsBoundaryRequest,DeleteRolePermissionsBoundaryResponse>((DeleteRolePermissionsBoundaryRequest)req, (DeleteRolePermissionsBoundaryResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteRolePermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1299,8 +1334,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteRolePolicyAsync(DeleteRolePolicyRequest request, AmazonServiceCallback<DeleteRolePolicyRequest, DeleteRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1308,7 +1344,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteRolePolicyRequest,DeleteRolePolicyResponse>((DeleteRolePolicyRequest)req, (DeleteRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1327,8 +1363,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, AmazonServiceCallback<DeleteSAMLProviderRequest, DeleteSAMLProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteSAMLProviderRequestMarshaller.Instance;
-            var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteSAMLProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1336,7 +1373,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteSAMLProviderRequest,DeleteSAMLProviderResponse>((DeleteSAMLProviderRequest)req, (DeleteSAMLProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteSAMLProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1355,8 +1392,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteServerCertificateAsync(DeleteServerCertificateRequest request, AmazonServiceCallback<DeleteServerCertificateRequest, DeleteServerCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteServerCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteServerCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1364,7 +1402,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteServerCertificateRequest,DeleteServerCertificateResponse>((DeleteServerCertificateRequest)req, (DeleteServerCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteServerCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1383,8 +1421,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, AmazonServiceCallback<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1392,7 +1431,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>((DeleteServiceLinkedRoleRequest)req, (DeleteServiceLinkedRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteServiceLinkedRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1411,8 +1450,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, AmazonServiceCallback<DeleteServiceSpecificCredentialRequest, DeleteServiceSpecificCredentialResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteServiceSpecificCredentialRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteServiceSpecificCredentialRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1420,7 +1460,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>((DeleteServiceSpecificCredentialRequest)req, (DeleteServiceSpecificCredentialResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteServiceSpecificCredentialRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1439,8 +1479,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, AmazonServiceCallback<DeleteSigningCertificateRequest, DeleteSigningCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteSigningCertificateRequestMarshaller.Instance;
-            var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteSigningCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1448,7 +1489,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteSigningCertificateRequest,DeleteSigningCertificateResponse>((DeleteSigningCertificateRequest)req, (DeleteSigningCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteSigningCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1467,8 +1508,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, AmazonServiceCallback<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteSSHPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteSSHPublicKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1476,7 +1518,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>((DeleteSSHPublicKeyRequest)req, (DeleteSSHPublicKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteSSHPublicKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1495,8 +1537,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteUserAsync(DeleteUserRequest request, AmazonServiceCallback<DeleteUserRequest, DeleteUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1504,7 +1547,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteUserRequest,DeleteUserResponse>((DeleteUserRequest)req, (DeleteUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1523,8 +1566,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request, AmazonServiceCallback<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteUserPermissionsBoundaryRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserPermissionsBoundaryResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteUserPermissionsBoundaryRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteUserPermissionsBoundaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1532,7 +1576,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteUserPermissionsBoundaryRequest,DeleteUserPermissionsBoundaryResponse>((DeleteUserPermissionsBoundaryRequest)req, (DeleteUserPermissionsBoundaryResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteUserPermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1551,8 +1595,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteUserPolicyAsync(DeleteUserPolicyRequest request, AmazonServiceCallback<DeleteUserPolicyRequest, DeleteUserPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteUserPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteUserPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1560,7 +1605,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteUserPolicyRequest,DeleteUserPolicyResponse>((DeleteUserPolicyRequest)req, (DeleteUserPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteUserPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1579,8 +1624,9 @@ namespace Amazon.IdentityManagement
         public virtual void DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, AmazonServiceCallback<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteVirtualMFADeviceRequestMarshaller.Instance;
-            var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteVirtualMFADeviceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1588,7 +1634,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>((DeleteVirtualMFADeviceRequest)req, (DeleteVirtualMFADeviceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteVirtualMFADeviceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1607,8 +1653,9 @@ namespace Amazon.IdentityManagement
         public virtual void DetachGroupPolicyAsync(DetachGroupPolicyRequest request, AmazonServiceCallback<DetachGroupPolicyRequest, DetachGroupPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DetachGroupPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DetachGroupPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1616,7 +1663,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DetachGroupPolicyRequest,DetachGroupPolicyResponse>((DetachGroupPolicyRequest)req, (DetachGroupPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DetachGroupPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1635,8 +1682,9 @@ namespace Amazon.IdentityManagement
         public virtual void DetachRolePolicyAsync(DetachRolePolicyRequest request, AmazonServiceCallback<DetachRolePolicyRequest, DetachRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DetachRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DetachRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1644,7 +1692,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DetachRolePolicyRequest,DetachRolePolicyResponse>((DetachRolePolicyRequest)req, (DetachRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DetachRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1663,8 +1711,9 @@ namespace Amazon.IdentityManagement
         public virtual void DetachUserPolicyAsync(DetachUserPolicyRequest request, AmazonServiceCallback<DetachUserPolicyRequest, DetachUserPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DetachUserPolicyRequestMarshaller.Instance;
-            var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DetachUserPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1672,7 +1721,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<DetachUserPolicyRequest,DetachUserPolicyResponse>((DetachUserPolicyRequest)req, (DetachUserPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DetachUserPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1691,8 +1740,9 @@ namespace Amazon.IdentityManagement
         public virtual void EnableMFADeviceAsync(EnableMFADeviceRequest request, AmazonServiceCallback<EnableMFADeviceRequest, EnableMFADeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = EnableMFADeviceRequestMarshaller.Instance;
-            var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = EnableMFADeviceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1700,7 +1750,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<EnableMFADeviceRequest,EnableMFADeviceResponse>((EnableMFADeviceRequest)req, (EnableMFADeviceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<EnableMFADeviceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1746,8 +1796,9 @@ namespace Amazon.IdentityManagement
         public virtual void GenerateCredentialReportAsync(GenerateCredentialReportRequest request, AmazonServiceCallback<GenerateCredentialReportRequest, GenerateCredentialReportResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GenerateCredentialReportRequestMarshaller.Instance;
-            var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GenerateCredentialReportRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1755,7 +1806,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GenerateCredentialReportRequest,GenerateCredentialReportResponse>((GenerateCredentialReportRequest)req, (GenerateCredentialReportResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GenerateCredentialReportRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1774,8 +1825,9 @@ namespace Amazon.IdentityManagement
         public virtual void GenerateServiceLastAccessedDetailsAsync(GenerateServiceLastAccessedDetailsRequest request, AmazonServiceCallback<GenerateServiceLastAccessedDetailsRequest, GenerateServiceLastAccessedDetailsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GenerateServiceLastAccessedDetailsRequestMarshaller.Instance;
-            var unmarshaller = GenerateServiceLastAccessedDetailsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GenerateServiceLastAccessedDetailsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GenerateServiceLastAccessedDetailsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1783,7 +1835,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GenerateServiceLastAccessedDetailsRequest,GenerateServiceLastAccessedDetailsResponse>((GenerateServiceLastAccessedDetailsRequest)req, (GenerateServiceLastAccessedDetailsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GenerateServiceLastAccessedDetailsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1802,8 +1854,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, AmazonServiceCallback<GetAccessKeyLastUsedRequest, GetAccessKeyLastUsedResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccessKeyLastUsedRequestMarshaller.Instance;
-            var unmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccessKeyLastUsedRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1811,7 +1864,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>((GetAccessKeyLastUsedRequest)req, (GetAccessKeyLastUsedResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccessKeyLastUsedRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1830,8 +1883,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, AmazonServiceCallback<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccountAuthorizationDetailsRequestMarshaller.Instance;
-            var unmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccountAuthorizationDetailsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1839,7 +1893,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetAccountAuthorizationDetailsRequest,GetAccountAuthorizationDetailsResponse>((GetAccountAuthorizationDetailsRequest)req, (GetAccountAuthorizationDetailsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccountAuthorizationDetailsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1885,8 +1939,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, AmazonServiceCallback<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccountPasswordPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccountPasswordPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1894,7 +1949,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetAccountPasswordPolicyRequest,GetAccountPasswordPolicyResponse>((GetAccountPasswordPolicyRequest)req, (GetAccountPasswordPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccountPasswordPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1940,8 +1995,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetAccountSummaryAsync(GetAccountSummaryRequest request, AmazonServiceCallback<GetAccountSummaryRequest, GetAccountSummaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccountSummaryRequestMarshaller.Instance;
-            var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccountSummaryRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1949,7 +2005,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetAccountSummaryRequest,GetAccountSummaryResponse>((GetAccountSummaryRequest)req, (GetAccountSummaryResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccountSummaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2004,8 +2060,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, AmazonServiceCallback<GetContextKeysForCustomPolicyRequest, GetContextKeysForCustomPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetContextKeysForCustomPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetContextKeysForCustomPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2013,7 +2070,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>((GetContextKeysForCustomPolicyRequest)req, (GetContextKeysForCustomPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetContextKeysForCustomPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2136,8 +2193,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, AmazonServiceCallback<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetContextKeysForPrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetContextKeysForPrincipalPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2145,7 +2203,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>((GetContextKeysForPrincipalPolicyRequest)req, (GetContextKeysForPrincipalPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetContextKeysForPrincipalPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2200,8 +2258,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetCredentialReportAsync(GetCredentialReportRequest request, AmazonServiceCallback<GetCredentialReportRequest, GetCredentialReportResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetCredentialReportRequestMarshaller.Instance;
-            var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetCredentialReportRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2209,7 +2268,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetCredentialReportRequest,GetCredentialReportResponse>((GetCredentialReportRequest)req, (GetCredentialReportResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetCredentialReportRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2228,8 +2287,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetGroupAsync(GetGroupRequest request, AmazonServiceCallback<GetGroupRequest, GetGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetGroupRequestMarshaller.Instance;
-            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2237,7 +2297,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetGroupRequest,GetGroupResponse>((GetGroupRequest)req, (GetGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2256,8 +2316,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetGroupPolicyAsync(GetGroupPolicyRequest request, AmazonServiceCallback<GetGroupPolicyRequest, GetGroupPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetGroupPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetGroupPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2265,7 +2326,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetGroupPolicyRequest,GetGroupPolicyResponse>((GetGroupPolicyRequest)req, (GetGroupPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetGroupPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2284,8 +2345,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetInstanceProfileAsync(GetInstanceProfileRequest request, AmazonServiceCallback<GetInstanceProfileRequest, GetInstanceProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
-            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetInstanceProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2293,7 +2355,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetInstanceProfileRequest,GetInstanceProfileResponse>((GetInstanceProfileRequest)req, (GetInstanceProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetInstanceProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2312,8 +2374,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetLoginProfileAsync(GetLoginProfileRequest request, AmazonServiceCallback<GetLoginProfileRequest, GetLoginProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetLoginProfileRequestMarshaller.Instance;
-            var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetLoginProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2321,7 +2384,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetLoginProfileRequest,GetLoginProfileResponse>((GetLoginProfileRequest)req, (GetLoginProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetLoginProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2340,8 +2403,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, AmazonServiceCallback<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetOpenIDConnectProviderRequestMarshaller.Instance;
-            var unmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetOpenIDConnectProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2349,7 +2413,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>((GetOpenIDConnectProviderRequest)req, (GetOpenIDConnectProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetOpenIDConnectProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2368,8 +2432,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetPolicyAsync(GetPolicyRequest request, AmazonServiceCallback<GetPolicyRequest, GetPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2377,7 +2442,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetPolicyRequest,GetPolicyResponse>((GetPolicyRequest)req, (GetPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2396,8 +2461,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetPolicyVersionAsync(GetPolicyVersionRequest request, AmazonServiceCallback<GetPolicyVersionRequest, GetPolicyVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetPolicyVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2405,7 +2471,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetPolicyVersionRequest,GetPolicyVersionResponse>((GetPolicyVersionRequest)req, (GetPolicyVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetPolicyVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2424,8 +2490,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetRoleAsync(GetRoleRequest request, AmazonServiceCallback<GetRoleRequest, GetRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetRoleRequestMarshaller.Instance;
-            var unmarshaller = GetRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2433,7 +2500,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetRoleRequest,GetRoleResponse>((GetRoleRequest)req, (GetRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2452,8 +2519,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetRolePolicyAsync(GetRolePolicyRequest request, AmazonServiceCallback<GetRolePolicyRequest, GetRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2461,7 +2529,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetRolePolicyRequest,GetRolePolicyResponse>((GetRolePolicyRequest)req, (GetRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2480,8 +2548,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetSAMLProviderAsync(GetSAMLProviderRequest request, AmazonServiceCallback<GetSAMLProviderRequest, GetSAMLProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetSAMLProviderRequestMarshaller.Instance;
-            var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetSAMLProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2489,7 +2558,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetSAMLProviderRequest,GetSAMLProviderResponse>((GetSAMLProviderRequest)req, (GetSAMLProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetSAMLProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2508,8 +2577,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetServerCertificateAsync(GetServerCertificateRequest request, AmazonServiceCallback<GetServerCertificateRequest, GetServerCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetServerCertificateRequestMarshaller.Instance;
-            var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetServerCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2517,7 +2587,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetServerCertificateRequest,GetServerCertificateResponse>((GetServerCertificateRequest)req, (GetServerCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetServerCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2536,8 +2606,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request, AmazonServiceCallback<GetServiceLastAccessedDetailsRequest, GetServiceLastAccessedDetailsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetServiceLastAccessedDetailsRequestMarshaller.Instance;
-            var unmarshaller = GetServiceLastAccessedDetailsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetServiceLastAccessedDetailsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetServiceLastAccessedDetailsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2545,7 +2616,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetServiceLastAccessedDetailsRequest,GetServiceLastAccessedDetailsResponse>((GetServiceLastAccessedDetailsRequest)req, (GetServiceLastAccessedDetailsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetServiceLastAccessedDetailsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2564,8 +2635,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetServiceLastAccessedDetailsWithEntitiesAsync(GetServiceLastAccessedDetailsWithEntitiesRequest request, AmazonServiceCallback<GetServiceLastAccessedDetailsWithEntitiesRequest, GetServiceLastAccessedDetailsWithEntitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller.Instance;
-            var unmarshaller = GetServiceLastAccessedDetailsWithEntitiesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetServiceLastAccessedDetailsWithEntitiesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2573,7 +2645,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetServiceLastAccessedDetailsWithEntitiesRequest,GetServiceLastAccessedDetailsWithEntitiesResponse>((GetServiceLastAccessedDetailsWithEntitiesRequest)req, (GetServiceLastAccessedDetailsWithEntitiesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetServiceLastAccessedDetailsWithEntitiesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2592,8 +2664,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetServiceLinkedRoleDeletionStatusAsync(GetServiceLinkedRoleDeletionStatusRequest request, AmazonServiceCallback<GetServiceLinkedRoleDeletionStatusRequest, GetServiceLinkedRoleDeletionStatusResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetServiceLinkedRoleDeletionStatusRequestMarshaller.Instance;
-            var unmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetServiceLinkedRoleDeletionStatusRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2601,7 +2674,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetServiceLinkedRoleDeletionStatusRequest,GetServiceLinkedRoleDeletionStatusResponse>((GetServiceLinkedRoleDeletionStatusRequest)req, (GetServiceLinkedRoleDeletionStatusResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetServiceLinkedRoleDeletionStatusRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2620,8 +2693,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, AmazonServiceCallback<GetSSHPublicKeyRequest, GetSSHPublicKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetSSHPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetSSHPublicKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2629,7 +2703,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>((GetSSHPublicKeyRequest)req, (GetSSHPublicKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetSSHPublicKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2680,8 +2754,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetUserAsync(GetUserRequest request, AmazonServiceCallback<GetUserRequest, GetUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetUserRequestMarshaller.Instance;
-            var unmarshaller = GetUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2689,7 +2764,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetUserRequest,GetUserResponse>((GetUserRequest)req, (GetUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2708,8 +2783,9 @@ namespace Amazon.IdentityManagement
         public virtual void GetUserPolicyAsync(GetUserPolicyRequest request, AmazonServiceCallback<GetUserPolicyRequest, GetUserPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetUserPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetUserPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2717,7 +2793,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<GetUserPolicyRequest,GetUserPolicyResponse>((GetUserPolicyRequest)req, (GetUserPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetUserPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2781,8 +2857,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListAccessKeysAsync(ListAccessKeysRequest request, AmazonServiceCallback<ListAccessKeysRequest, ListAccessKeysResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAccessKeysRequestMarshaller.Instance;
-            var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAccessKeysRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2790,7 +2867,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListAccessKeysRequest,ListAccessKeysResponse>((ListAccessKeysRequest)req, (ListAccessKeysResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAccessKeysRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2832,8 +2909,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListAccountAliasesAsync(ListAccountAliasesRequest request, AmazonServiceCallback<ListAccountAliasesRequest, ListAccountAliasesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAccountAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAccountAliasesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2841,7 +2919,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListAccountAliasesRequest,ListAccountAliasesResponse>((ListAccountAliasesRequest)req, (ListAccountAliasesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAccountAliasesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2860,8 +2938,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, AmazonServiceCallback<ListAttachedGroupPoliciesRequest, ListAttachedGroupPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAttachedGroupPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAttachedGroupPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2869,7 +2948,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>((ListAttachedGroupPoliciesRequest)req, (ListAttachedGroupPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAttachedGroupPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2888,8 +2967,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, AmazonServiceCallback<ListAttachedRolePoliciesRequest, ListAttachedRolePoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAttachedRolePoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAttachedRolePoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2897,7 +2977,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>((ListAttachedRolePoliciesRequest)req, (ListAttachedRolePoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAttachedRolePoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2916,8 +2996,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, AmazonServiceCallback<ListAttachedUserPoliciesRequest, ListAttachedUserPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListAttachedUserPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListAttachedUserPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2925,7 +3006,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>((ListAttachedUserPoliciesRequest)req, (ListAttachedUserPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListAttachedUserPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2944,8 +3025,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, AmazonServiceCallback<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListEntitiesForPolicyRequestMarshaller.Instance;
-            var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListEntitiesForPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2953,7 +3035,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>((ListEntitiesForPolicyRequest)req, (ListEntitiesForPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListEntitiesForPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2972,8 +3054,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListGroupPoliciesAsync(ListGroupPoliciesRequest request, AmazonServiceCallback<ListGroupPoliciesRequest, ListGroupPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListGroupPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListGroupPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2981,7 +3064,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListGroupPoliciesRequest,ListGroupPoliciesResponse>((ListGroupPoliciesRequest)req, (ListGroupPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListGroupPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3027,8 +3110,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListGroupsAsync(ListGroupsRequest request, AmazonServiceCallback<ListGroupsRequest, ListGroupsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListGroupsRequestMarshaller.Instance;
-            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3036,7 +3120,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListGroupsRequest,ListGroupsResponse>((ListGroupsRequest)req, (ListGroupsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListGroupsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3055,8 +3139,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListGroupsForUserAsync(ListGroupsForUserRequest request, AmazonServiceCallback<ListGroupsForUserRequest, ListGroupsForUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListGroupsForUserRequestMarshaller.Instance;
-            var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListGroupsForUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3064,7 +3149,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListGroupsForUserRequest,ListGroupsForUserResponse>((ListGroupsForUserRequest)req, (ListGroupsForUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListGroupsForUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3113,8 +3198,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListInstanceProfilesAsync(ListInstanceProfilesRequest request, AmazonServiceCallback<ListInstanceProfilesRequest, ListInstanceProfilesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListInstanceProfilesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3122,7 +3208,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListInstanceProfilesRequest,ListInstanceProfilesResponse>((ListInstanceProfilesRequest)req, (ListInstanceProfilesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListInstanceProfilesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3141,8 +3227,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, AmazonServiceCallback<ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListInstanceProfilesForRoleRequestMarshaller.Instance;
-            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListInstanceProfilesForRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3150,7 +3237,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListInstanceProfilesForRoleRequest,ListInstanceProfilesForRoleResponse>((ListInstanceProfilesForRoleRequest)req, (ListInstanceProfilesForRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListInstanceProfilesForRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3203,8 +3290,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListMFADevicesAsync(ListMFADevicesRequest request, AmazonServiceCallback<ListMFADevicesRequest, ListMFADevicesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListMFADevicesRequestMarshaller.Instance;
-            var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListMFADevicesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3212,7 +3300,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListMFADevicesRequest,ListMFADevicesResponse>((ListMFADevicesRequest)req, (ListMFADevicesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListMFADevicesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3231,8 +3319,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, AmazonServiceCallback<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListOpenIDConnectProvidersRequestMarshaller.Instance;
-            var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListOpenIDConnectProvidersRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3240,7 +3329,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>((ListOpenIDConnectProvidersRequest)req, (ListOpenIDConnectProvidersResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListOpenIDConnectProvidersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3299,8 +3388,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListPoliciesAsync(ListPoliciesRequest request, AmazonServiceCallback<ListPoliciesRequest, ListPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3308,7 +3398,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListPoliciesRequest,ListPoliciesResponse>((ListPoliciesRequest)req, (ListPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3327,8 +3417,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListPoliciesGrantingServiceAccessAsync(ListPoliciesGrantingServiceAccessRequest request, AmazonServiceCallback<ListPoliciesGrantingServiceAccessRequest, ListPoliciesGrantingServiceAccessResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListPoliciesGrantingServiceAccessRequestMarshaller.Instance;
-            var unmarshaller = ListPoliciesGrantingServiceAccessResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListPoliciesGrantingServiceAccessRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListPoliciesGrantingServiceAccessResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3336,7 +3427,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListPoliciesGrantingServiceAccessRequest,ListPoliciesGrantingServiceAccessResponse>((ListPoliciesGrantingServiceAccessRequest)req, (ListPoliciesGrantingServiceAccessResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListPoliciesGrantingServiceAccessRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3355,8 +3446,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListPolicyVersionsAsync(ListPolicyVersionsRequest request, AmazonServiceCallback<ListPolicyVersionsRequest, ListPolicyVersionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListPolicyVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListPolicyVersionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3364,7 +3456,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListPolicyVersionsRequest,ListPolicyVersionsResponse>((ListPolicyVersionsRequest)req, (ListPolicyVersionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListPolicyVersionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3383,8 +3475,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListRolePoliciesAsync(ListRolePoliciesRequest request, AmazonServiceCallback<ListRolePoliciesRequest, ListRolePoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListRolePoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListRolePoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3392,7 +3485,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListRolePoliciesRequest,ListRolePoliciesResponse>((ListRolePoliciesRequest)req, (ListRolePoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListRolePoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3440,8 +3533,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListRolesAsync(ListRolesRequest request, AmazonServiceCallback<ListRolesRequest, ListRolesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListRolesRequestMarshaller.Instance;
-            var unmarshaller = ListRolesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListRolesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListRolesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3449,7 +3543,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListRolesRequest,ListRolesResponse>((ListRolesRequest)req, (ListRolesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListRolesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3468,8 +3562,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListRoleTagsAsync(ListRoleTagsRequest request, AmazonServiceCallback<ListRoleTagsRequest, ListRoleTagsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListRoleTagsRequestMarshaller.Instance;
-            var unmarshaller = ListRoleTagsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListRoleTagsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListRoleTagsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3477,7 +3572,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListRoleTagsRequest,ListRoleTagsResponse>((ListRoleTagsRequest)req, (ListRoleTagsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListRoleTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3524,8 +3619,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListSAMLProvidersAsync(ListSAMLProvidersRequest request, AmazonServiceCallback<ListSAMLProvidersRequest, ListSAMLProvidersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListSAMLProvidersRequestMarshaller.Instance;
-            var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListSAMLProvidersRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3533,7 +3629,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListSAMLProvidersRequest,ListSAMLProvidersResponse>((ListSAMLProvidersRequest)req, (ListSAMLProvidersResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListSAMLProvidersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3586,8 +3682,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListServerCertificatesAsync(ListServerCertificatesRequest request, AmazonServiceCallback<ListServerCertificatesRequest, ListServerCertificatesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListServerCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListServerCertificatesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3595,7 +3692,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListServerCertificatesRequest,ListServerCertificatesResponse>((ListServerCertificatesRequest)req, (ListServerCertificatesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListServerCertificatesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3614,8 +3711,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, AmazonServiceCallback<ListServiceSpecificCredentialsRequest, ListServiceSpecificCredentialsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListServiceSpecificCredentialsRequestMarshaller.Instance;
-            var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListServiceSpecificCredentialsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3623,7 +3721,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>((ListServiceSpecificCredentialsRequest)req, (ListServiceSpecificCredentialsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListServiceSpecificCredentialsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3682,8 +3780,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListSigningCertificatesAsync(ListSigningCertificatesRequest request, AmazonServiceCallback<ListSigningCertificatesRequest, ListSigningCertificatesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListSigningCertificatesRequestMarshaller.Instance;
-            var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListSigningCertificatesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3691,7 +3790,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListSigningCertificatesRequest,ListSigningCertificatesResponse>((ListSigningCertificatesRequest)req, (ListSigningCertificatesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListSigningCertificatesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3710,8 +3809,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, AmazonServiceCallback<ListSSHPublicKeysRequest, ListSSHPublicKeysResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListSSHPublicKeysRequestMarshaller.Instance;
-            var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListSSHPublicKeysRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3719,7 +3819,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>((ListSSHPublicKeysRequest)req, (ListSSHPublicKeysResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListSSHPublicKeysRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3738,8 +3838,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListUserPoliciesAsync(ListUserPoliciesRequest request, AmazonServiceCallback<ListUserPoliciesRequest, ListUserPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListUserPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListUserPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3747,7 +3848,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListUserPoliciesRequest,ListUserPoliciesResponse>((ListUserPoliciesRequest)req, (ListUserPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListUserPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3795,8 +3896,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListUsersAsync(ListUsersRequest request, AmazonServiceCallback<ListUsersRequest, ListUsersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3804,7 +3906,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListUsersRequest,ListUsersResponse>((ListUsersRequest)req, (ListUsersResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3823,8 +3925,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListUserTagsAsync(ListUserTagsRequest request, AmazonServiceCallback<ListUserTagsRequest, ListUserTagsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListUserTagsRequestMarshaller.Instance;
-            var unmarshaller = ListUserTagsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListUserTagsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListUserTagsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3832,7 +3935,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListUserTagsRequest,ListUserTagsResponse>((ListUserTagsRequest)req, (ListUserTagsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListUserTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3878,8 +3981,9 @@ namespace Amazon.IdentityManagement
         public virtual void ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, AmazonServiceCallback<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListVirtualMFADevicesRequestMarshaller.Instance;
-            var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListVirtualMFADevicesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3887,7 +3991,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ListVirtualMFADevicesRequest,ListVirtualMFADevicesResponse>((ListVirtualMFADevicesRequest)req, (ListVirtualMFADevicesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListVirtualMFADevicesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3906,8 +4010,9 @@ namespace Amazon.IdentityManagement
         public virtual void PutGroupPolicyAsync(PutGroupPolicyRequest request, AmazonServiceCallback<PutGroupPolicyRequest, PutGroupPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutGroupPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutGroupPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3915,7 +4020,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<PutGroupPolicyRequest,PutGroupPolicyResponse>((PutGroupPolicyRequest)req, (PutGroupPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutGroupPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3934,8 +4039,9 @@ namespace Amazon.IdentityManagement
         public virtual void PutRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request, AmazonServiceCallback<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutRolePermissionsBoundaryRequestMarshaller.Instance;
-            var unmarshaller = PutRolePermissionsBoundaryResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutRolePermissionsBoundaryRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutRolePermissionsBoundaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3943,7 +4049,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<PutRolePermissionsBoundaryRequest,PutRolePermissionsBoundaryResponse>((PutRolePermissionsBoundaryRequest)req, (PutRolePermissionsBoundaryResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutRolePermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3962,8 +4068,9 @@ namespace Amazon.IdentityManagement
         public virtual void PutRolePolicyAsync(PutRolePolicyRequest request, AmazonServiceCallback<PutRolePolicyRequest, PutRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3971,7 +4078,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<PutRolePolicyRequest,PutRolePolicyResponse>((PutRolePolicyRequest)req, (PutRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -3990,8 +4097,9 @@ namespace Amazon.IdentityManagement
         public virtual void PutUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request, AmazonServiceCallback<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutUserPermissionsBoundaryRequestMarshaller.Instance;
-            var unmarshaller = PutUserPermissionsBoundaryResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutUserPermissionsBoundaryRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutUserPermissionsBoundaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -3999,7 +4107,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<PutUserPermissionsBoundaryRequest,PutUserPermissionsBoundaryResponse>((PutUserPermissionsBoundaryRequest)req, (PutUserPermissionsBoundaryResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutUserPermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4018,8 +4126,9 @@ namespace Amazon.IdentityManagement
         public virtual void PutUserPolicyAsync(PutUserPolicyRequest request, AmazonServiceCallback<PutUserPolicyRequest, PutUserPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutUserPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutUserPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4027,7 +4136,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<PutUserPolicyRequest,PutUserPolicyResponse>((PutUserPolicyRequest)req, (PutUserPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutUserPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4046,8 +4155,9 @@ namespace Amazon.IdentityManagement
         public virtual void RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, AmazonServiceCallback<RemoveClientIDFromOpenIDConnectProviderRequest, RemoveClientIDFromOpenIDConnectProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemoveClientIDFromOpenIDConnectProviderRequestMarshaller.Instance;
-            var unmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemoveClientIDFromOpenIDConnectProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4055,7 +4165,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<RemoveClientIDFromOpenIDConnectProviderRequest,RemoveClientIDFromOpenIDConnectProviderResponse>((RemoveClientIDFromOpenIDConnectProviderRequest)req, (RemoveClientIDFromOpenIDConnectProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemoveClientIDFromOpenIDConnectProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4074,8 +4184,9 @@ namespace Amazon.IdentityManagement
         public virtual void RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, AmazonServiceCallback<RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemoveRoleFromInstanceProfileRequestMarshaller.Instance;
-            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemoveRoleFromInstanceProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4083,7 +4194,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<RemoveRoleFromInstanceProfileRequest,RemoveRoleFromInstanceProfileResponse>((RemoveRoleFromInstanceProfileRequest)req, (RemoveRoleFromInstanceProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemoveRoleFromInstanceProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4102,8 +4213,9 @@ namespace Amazon.IdentityManagement
         public virtual void RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, AmazonServiceCallback<RemoveUserFromGroupRequest, RemoveUserFromGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = RemoveUserFromGroupRequestMarshaller.Instance;
-            var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = RemoveUserFromGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4111,7 +4223,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<RemoveUserFromGroupRequest,RemoveUserFromGroupResponse>((RemoveUserFromGroupRequest)req, (RemoveUserFromGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<RemoveUserFromGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4130,8 +4242,9 @@ namespace Amazon.IdentityManagement
         public virtual void ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, AmazonServiceCallback<ResetServiceSpecificCredentialRequest, ResetServiceSpecificCredentialResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ResetServiceSpecificCredentialRequestMarshaller.Instance;
-            var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ResetServiceSpecificCredentialRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4139,7 +4252,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>((ResetServiceSpecificCredentialRequest)req, (ResetServiceSpecificCredentialResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ResetServiceSpecificCredentialRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4158,8 +4271,9 @@ namespace Amazon.IdentityManagement
         public virtual void ResyncMFADeviceAsync(ResyncMFADeviceRequest request, AmazonServiceCallback<ResyncMFADeviceRequest, ResyncMFADeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ResyncMFADeviceRequestMarshaller.Instance;
-            var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ResyncMFADeviceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4167,7 +4281,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<ResyncMFADeviceRequest,ResyncMFADeviceResponse>((ResyncMFADeviceRequest)req, (ResyncMFADeviceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ResyncMFADeviceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4186,8 +4300,9 @@ namespace Amazon.IdentityManagement
         public virtual void SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, AmazonServiceCallback<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
-            var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4195,7 +4310,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>((SetDefaultPolicyVersionRequest)req, (SetDefaultPolicyVersionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetDefaultPolicyVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4214,8 +4329,9 @@ namespace Amazon.IdentityManagement
         public virtual void SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, AmazonServiceCallback<SimulateCustomPolicyRequest, SimulateCustomPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SimulateCustomPolicyRequestMarshaller.Instance;
-            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SimulateCustomPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4223,7 +4339,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>((SimulateCustomPolicyRequest)req, (SimulateCustomPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SimulateCustomPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4242,8 +4358,9 @@ namespace Amazon.IdentityManagement
         public virtual void SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, AmazonServiceCallback<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SimulatePrincipalPolicyRequestMarshaller.Instance;
-            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SimulatePrincipalPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4251,7 +4368,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>((SimulatePrincipalPolicyRequest)req, (SimulatePrincipalPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SimulatePrincipalPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4270,8 +4387,9 @@ namespace Amazon.IdentityManagement
         public virtual void TagRoleAsync(TagRoleRequest request, AmazonServiceCallback<TagRoleRequest, TagRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TagRoleRequestMarshaller.Instance;
-            var unmarshaller = TagRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4279,7 +4397,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<TagRoleRequest,TagRoleResponse>((TagRoleRequest)req, (TagRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TagRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4298,8 +4416,9 @@ namespace Amazon.IdentityManagement
         public virtual void TagUserAsync(TagUserRequest request, AmazonServiceCallback<TagUserRequest, TagUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TagUserRequestMarshaller.Instance;
-            var unmarshaller = TagUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4307,7 +4426,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<TagUserRequest,TagUserResponse>((TagUserRequest)req, (TagUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TagUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4326,8 +4445,9 @@ namespace Amazon.IdentityManagement
         public virtual void UntagRoleAsync(UntagRoleRequest request, AmazonServiceCallback<UntagRoleRequest, UntagRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UntagRoleRequestMarshaller.Instance;
-            var unmarshaller = UntagRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4335,7 +4455,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UntagRoleRequest,UntagRoleResponse>((UntagRoleRequest)req, (UntagRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UntagRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4354,8 +4474,9 @@ namespace Amazon.IdentityManagement
         public virtual void UntagUserAsync(UntagUserRequest request, AmazonServiceCallback<UntagUserRequest, UntagUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UntagUserRequestMarshaller.Instance;
-            var unmarshaller = UntagUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4363,7 +4484,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UntagUserRequest,UntagUserResponse>((UntagUserRequest)req, (UntagUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UntagUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4382,8 +4503,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateAccessKeyAsync(UpdateAccessKeyRequest request, AmazonServiceCallback<UpdateAccessKeyRequest, UpdateAccessKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateAccessKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateAccessKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4391,7 +4513,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateAccessKeyRequest,UpdateAccessKeyResponse>((UpdateAccessKeyRequest)req, (UpdateAccessKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateAccessKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4458,8 +4580,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, AmazonServiceCallback<UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateAccountPasswordPolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateAccountPasswordPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4467,7 +4590,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateAccountPasswordPolicyRequest,UpdateAccountPasswordPolicyResponse>((UpdateAccountPasswordPolicyRequest)req, (UpdateAccountPasswordPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateAccountPasswordPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4486,8 +4609,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, AmazonServiceCallback<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateAssumeRolePolicyRequestMarshaller.Instance;
-            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateAssumeRolePolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4495,7 +4619,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateAssumeRolePolicyRequest,UpdateAssumeRolePolicyResponse>((UpdateAssumeRolePolicyRequest)req, (UpdateAssumeRolePolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateAssumeRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4514,8 +4638,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateGroupAsync(UpdateGroupRequest request, AmazonServiceCallback<UpdateGroupRequest, UpdateGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4523,7 +4648,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateGroupRequest,UpdateGroupResponse>((UpdateGroupRequest)req, (UpdateGroupResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateGroupRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4542,8 +4667,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateLoginProfileAsync(UpdateLoginProfileRequest request, AmazonServiceCallback<UpdateLoginProfileRequest, UpdateLoginProfileResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateLoginProfileRequestMarshaller.Instance;
-            var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateLoginProfileRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4551,7 +4677,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateLoginProfileRequest,UpdateLoginProfileResponse>((UpdateLoginProfileRequest)req, (UpdateLoginProfileResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateLoginProfileRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4570,8 +4696,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, AmazonServiceCallback<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateOpenIDConnectProviderThumbprintRequestMarshaller.Instance;
-            var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateOpenIDConnectProviderThumbprintRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4579,7 +4706,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>((UpdateOpenIDConnectProviderThumbprintRequest)req, (UpdateOpenIDConnectProviderThumbprintResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateOpenIDConnectProviderThumbprintRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4598,8 +4725,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateRoleAsync(UpdateRoleRequest request, AmazonServiceCallback<UpdateRoleRequest, UpdateRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateRoleRequestMarshaller.Instance;
-            var unmarshaller = UpdateRoleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateRoleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4607,7 +4735,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateRoleRequest,UpdateRoleResponse>((UpdateRoleRequest)req, (UpdateRoleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4626,8 +4754,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, AmazonServiceCallback<UpdateRoleDescriptionRequest, UpdateRoleDescriptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateRoleDescriptionRequestMarshaller.Instance;
-            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateRoleDescriptionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4635,7 +4764,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>((UpdateRoleDescriptionRequest)req, (UpdateRoleDescriptionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateRoleDescriptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4654,8 +4783,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, AmazonServiceCallback<UpdateSAMLProviderRequest, UpdateSAMLProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateSAMLProviderRequestMarshaller.Instance;
-            var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateSAMLProviderRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4663,7 +4793,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateSAMLProviderRequest,UpdateSAMLProviderResponse>((UpdateSAMLProviderRequest)req, (UpdateSAMLProviderResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateSAMLProviderRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4682,8 +4812,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateServerCertificateAsync(UpdateServerCertificateRequest request, AmazonServiceCallback<UpdateServerCertificateRequest, UpdateServerCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateServerCertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateServerCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4691,7 +4822,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateServerCertificateRequest,UpdateServerCertificateResponse>((UpdateServerCertificateRequest)req, (UpdateServerCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateServerCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4710,8 +4841,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, AmazonServiceCallback<UpdateServiceSpecificCredentialRequest, UpdateServiceSpecificCredentialResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateServiceSpecificCredentialRequestMarshaller.Instance;
-            var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateServiceSpecificCredentialRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4719,7 +4851,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>((UpdateServiceSpecificCredentialRequest)req, (UpdateServiceSpecificCredentialResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateServiceSpecificCredentialRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4738,8 +4870,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, AmazonServiceCallback<UpdateSigningCertificateRequest, UpdateSigningCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateSigningCertificateRequestMarshaller.Instance;
-            var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateSigningCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4747,7 +4880,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateSigningCertificateRequest,UpdateSigningCertificateResponse>((UpdateSigningCertificateRequest)req, (UpdateSigningCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateSigningCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4766,8 +4899,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, AmazonServiceCallback<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateSSHPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateSSHPublicKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4775,7 +4909,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>((UpdateSSHPublicKeyRequest)req, (UpdateSSHPublicKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateSSHPublicKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4794,8 +4928,9 @@ namespace Amazon.IdentityManagement
         public virtual void UpdateUserAsync(UpdateUserRequest request, AmazonServiceCallback<UpdateUserRequest, UpdateUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4803,7 +4938,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UpdateUserRequest,UpdateUserResponse>((UpdateUserRequest)req, (UpdateUserResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4822,8 +4957,9 @@ namespace Amazon.IdentityManagement
         public virtual void UploadServerCertificateAsync(UploadServerCertificateRequest request, AmazonServiceCallback<UploadServerCertificateRequest, UploadServerCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UploadServerCertificateRequestMarshaller.Instance;
-            var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UploadServerCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4831,7 +4967,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UploadServerCertificateRequest,UploadServerCertificateResponse>((UploadServerCertificateRequest)req, (UploadServerCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UploadServerCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4850,8 +4986,9 @@ namespace Amazon.IdentityManagement
         public virtual void UploadSigningCertificateAsync(UploadSigningCertificateRequest request, AmazonServiceCallback<UploadSigningCertificateRequest, UploadSigningCertificateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UploadSigningCertificateRequestMarshaller.Instance;
-            var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UploadSigningCertificateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4859,7 +4996,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UploadSigningCertificateRequest,UploadSigningCertificateResponse>((UploadSigningCertificateRequest)req, (UploadSigningCertificateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UploadSigningCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -4878,8 +5015,9 @@ namespace Amazon.IdentityManagement
         public virtual void UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, AmazonServiceCallback<UploadSSHPublicKeyRequest, UploadSSHPublicKeyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UploadSSHPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UploadSSHPublicKeyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -4887,7 +5025,7 @@ namespace Amazon.IdentityManagement
                             = new AmazonServiceResult<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>((UploadSSHPublicKeyRequest)req, (UploadSSHPublicKeyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UploadSSHPublicKeyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion

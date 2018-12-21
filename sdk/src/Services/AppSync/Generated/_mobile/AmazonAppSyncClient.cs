@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.AppSync.Model;
 using Amazon.AppSync.Model.Internal.MarshallTransformations;
@@ -242,15 +243,16 @@ namespace Amazon.AppSync
 
         #endregion
 
-        
+
         #region  CreateApiKey
 
         internal virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
-            var marshaller = CreateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApiKeyRequest,CreateApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApiKeyResponse>(request, options);
         }
 
 
@@ -266,11 +268,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateApiKeyRequest,CreateApiKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateApiKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -279,10 +281,11 @@ namespace Amazon.AppSync
 
         internal virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var marshaller = CreateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDataSourceRequest,CreateDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDataSourceResponse>(request, options);
         }
 
 
@@ -298,11 +301,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateDataSourceRequest,CreateDataSourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -311,10 +314,11 @@ namespace Amazon.AppSync
 
         internal virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
-            var marshaller = CreateFunctionRequestMarshaller.Instance;
-            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateFunctionResponse>(request, options);
         }
 
 
@@ -330,11 +334,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateFunctionRequestMarshaller.Instance;
-            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -343,10 +347,11 @@ namespace Amazon.AppSync
 
         internal virtual CreateGraphqlApiResponse CreateGraphqlApi(CreateGraphqlApiRequest request)
         {
-            var marshaller = CreateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGraphqlApiRequest,CreateGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGraphqlApiResponse>(request, options);
         }
 
 
@@ -362,11 +367,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         public virtual Task<CreateGraphqlApiResponse> CreateGraphqlApiAsync(CreateGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGraphqlApiResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateGraphqlApiRequest,CreateGraphqlApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateGraphqlApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -375,10 +380,11 @@ namespace Amazon.AppSync
 
         internal virtual CreateResolverResponse CreateResolver(CreateResolverRequest request)
         {
-            var marshaller = CreateResolverRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResolverRequest,CreateResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResolverResponse>(request, options);
         }
 
 
@@ -394,11 +400,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         public virtual Task<CreateResolverResponse> CreateResolverAsync(CreateResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResolverRequestMarshaller.Instance;
-            var unmarshaller = CreateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResolverResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateResolverRequest,CreateResolverResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateResolverResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -407,10 +413,11 @@ namespace Amazon.AppSync
 
         internal virtual CreateTypeResponse CreateType(CreateTypeRequest request)
         {
-            var marshaller = CreateTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
-            return Invoke<CreateTypeRequest,CreateTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateTypeResponse>(request, options);
         }
 
 
@@ -426,11 +433,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         public virtual Task<CreateTypeResponse> CreateTypeAsync(CreateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateTypeRequestMarshaller.Instance;
-            var unmarshaller = CreateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateTypeRequest,CreateTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -439,10 +446,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
-            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApiKeyRequest,DeleteApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApiKeyResponse>(request, options);
         }
 
 
@@ -458,11 +466,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApiKeyRequest,DeleteApiKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteApiKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -471,10 +479,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDataSourceRequest,DeleteDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDataSourceResponse>(request, options);
         }
 
 
@@ -490,11 +499,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteDataSourceRequest,DeleteDataSourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -503,10 +512,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
-            var marshaller = DeleteFunctionRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteFunctionResponse>(request, options);
         }
 
 
@@ -522,11 +532,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteFunctionRequestMarshaller.Instance;
-            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -535,10 +545,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteGraphqlApiResponse DeleteGraphqlApi(DeleteGraphqlApiRequest request)
         {
-            var marshaller = DeleteGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGraphqlApiRequest,DeleteGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGraphqlApiResponse>(request, options);
         }
 
 
@@ -554,11 +565,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         public virtual Task<DeleteGraphqlApiResponse> DeleteGraphqlApiAsync(DeleteGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGraphqlApiResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteGraphqlApiRequest,DeleteGraphqlApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteGraphqlApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -567,10 +578,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteResolverResponse DeleteResolver(DeleteResolverRequest request)
         {
-            var marshaller = DeleteResolverRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResolverRequest,DeleteResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResolverResponse>(request, options);
         }
 
 
@@ -586,11 +598,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         public virtual Task<DeleteResolverResponse> DeleteResolverAsync(DeleteResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResolverRequestMarshaller.Instance;
-            var unmarshaller = DeleteResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResolverResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteResolverRequest,DeleteResolverResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteResolverResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -599,10 +611,11 @@ namespace Amazon.AppSync
 
         internal virtual DeleteTypeResponse DeleteType(DeleteTypeRequest request)
         {
-            var marshaller = DeleteTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTypeRequest,DeleteTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTypeResponse>(request, options);
         }
 
 
@@ -618,11 +631,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         public virtual Task<DeleteTypeResponse> DeleteTypeAsync(DeleteTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteTypeRequestMarshaller.Instance;
-            var unmarshaller = DeleteTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteTypeRequest,DeleteTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -631,10 +644,11 @@ namespace Amazon.AppSync
 
         internal virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var marshaller = GetDataSourceRequestMarshaller.Instance;
-            var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDataSourceResponse>(request, options);
         }
 
 
@@ -650,11 +664,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDataSourceRequestMarshaller.Instance;
-            var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -663,10 +677,11 @@ namespace Amazon.AppSync
 
         internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
-            var marshaller = GetFunctionRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<GetFunctionRequest,GetFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetFunctionResponse>(request, options);
         }
 
 
@@ -682,11 +697,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetFunctionRequestMarshaller.Instance;
-            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetFunctionRequest,GetFunctionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -695,10 +710,11 @@ namespace Amazon.AppSync
 
         internal virtual GetGraphqlApiResponse GetGraphqlApi(GetGraphqlApiRequest request)
         {
-            var marshaller = GetGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<GetGraphqlApiRequest,GetGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGraphqlApiResponse>(request, options);
         }
 
 
@@ -714,11 +730,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         public virtual Task<GetGraphqlApiResponse> GetGraphqlApiAsync(GetGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetGraphqlApiRequest,GetGraphqlApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetGraphqlApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -727,10 +743,11 @@ namespace Amazon.AppSync
 
         internal virtual GetIntrospectionSchemaResponse GetIntrospectionSchema(GetIntrospectionSchemaRequest request)
         {
-            var marshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
-            var unmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
 
-            return Invoke<GetIntrospectionSchemaRequest,GetIntrospectionSchemaResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetIntrospectionSchemaResponse>(request, options);
         }
 
 
@@ -746,11 +763,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         public virtual Task<GetIntrospectionSchemaResponse> GetIntrospectionSchemaAsync(GetIntrospectionSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
-            var unmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntrospectionSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntrospectionSchemaResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetIntrospectionSchemaRequest,GetIntrospectionSchemaResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetIntrospectionSchemaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -759,10 +776,11 @@ namespace Amazon.AppSync
 
         internal virtual GetResolverResponse GetResolver(GetResolverRequest request)
         {
-            var marshaller = GetResolverRequestMarshaller.Instance;
-            var unmarshaller = GetResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverResponseUnmarshaller.Instance;
 
-            return Invoke<GetResolverRequest,GetResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResolverResponse>(request, options);
         }
 
 
@@ -778,11 +796,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         public virtual Task<GetResolverResponse> GetResolverAsync(GetResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResolverRequestMarshaller.Instance;
-            var unmarshaller = GetResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResolverRequest,GetResolverResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResolverResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -791,10 +809,11 @@ namespace Amazon.AppSync
 
         internal virtual GetSchemaCreationStatusResponse GetSchemaCreationStatus(GetSchemaCreationStatusRequest request)
         {
-            var marshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetSchemaCreationStatusRequest,GetSchemaCreationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSchemaCreationStatusResponse>(request, options);
         }
 
 
@@ -810,11 +829,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         public virtual Task<GetSchemaCreationStatusResponse> GetSchemaCreationStatusAsync(GetSchemaCreationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaCreationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaCreationStatusResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetSchemaCreationStatusRequest,GetSchemaCreationStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetSchemaCreationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -823,10 +842,11 @@ namespace Amazon.AppSync
 
         internal virtual GetTypeResponse GetType(GetTypeRequest request)
         {
-            var marshaller = GetTypeRequestMarshaller.Instance;
-            var unmarshaller = GetTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
-            return Invoke<GetTypeRequest,GetTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTypeResponse>(request, options);
         }
 
 
@@ -842,11 +862,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         public virtual Task<GetTypeResponse> GetTypeAsync(GetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetTypeRequestMarshaller.Instance;
-            var unmarshaller = GetTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetTypeRequest,GetTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -855,10 +875,11 @@ namespace Amazon.AppSync
 
         internal virtual ListApiKeysResponse ListApiKeys(ListApiKeysRequest request)
         {
-            var marshaller = ListApiKeysRequestMarshaller.Instance;
-            var unmarshaller = ListApiKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiKeysResponseUnmarshaller.Instance;
 
-            return Invoke<ListApiKeysRequest,ListApiKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListApiKeysResponse>(request, options);
         }
 
 
@@ -874,11 +895,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         public virtual Task<ListApiKeysResponse> ListApiKeysAsync(ListApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListApiKeysRequestMarshaller.Instance;
-            var unmarshaller = ListApiKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApiKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApiKeysResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListApiKeysRequest,ListApiKeysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListApiKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -887,10 +908,11 @@ namespace Amazon.AppSync
 
         internal virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var marshaller = ListDataSourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDataSourcesRequest,ListDataSourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDataSourcesResponse>(request, options);
         }
 
 
@@ -906,11 +928,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListDataSourcesRequestMarshaller.Instance;
-            var unmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListDataSourcesRequest,ListDataSourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -919,10 +941,11 @@ namespace Amazon.AppSync
 
         internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
-            var marshaller = ListFunctionsRequestMarshaller.Instance;
-            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListFunctionsResponse>(request, options);
         }
 
 
@@ -938,11 +961,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListFunctionsRequestMarshaller.Instance;
-            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListFunctionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -951,10 +974,11 @@ namespace Amazon.AppSync
 
         internal virtual ListGraphqlApisResponse ListGraphqlApis(ListGraphqlApisRequest request)
         {
-            var marshaller = ListGraphqlApisRequestMarshaller.Instance;
-            var unmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGraphqlApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
 
-            return Invoke<ListGraphqlApisRequest,ListGraphqlApisResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListGraphqlApisResponse>(request, options);
         }
 
 
@@ -970,11 +994,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         public virtual Task<ListGraphqlApisResponse> ListGraphqlApisAsync(ListGraphqlApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListGraphqlApisRequestMarshaller.Instance;
-            var unmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGraphqlApisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGraphqlApisResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListGraphqlApisRequest,ListGraphqlApisResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListGraphqlApisResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -983,10 +1007,11 @@ namespace Amazon.AppSync
 
         internal virtual ListResolversResponse ListResolvers(ListResolversRequest request)
         {
-            var marshaller = ListResolversRequestMarshaller.Instance;
-            var unmarshaller = ListResolversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolversRequest,ListResolversResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolversResponse>(request, options);
         }
 
 
@@ -1002,11 +1027,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         public virtual Task<ListResolversResponse> ListResolversAsync(ListResolversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolversRequestMarshaller.Instance;
-            var unmarshaller = ListResolversResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolversRequest,ListResolversResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolversResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1015,10 +1040,11 @@ namespace Amazon.AppSync
 
         internal virtual ListResolversByFunctionResponse ListResolversByFunction(ListResolversByFunctionRequest request)
         {
-            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
-            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResolversByFunctionResponse>(request, options);
         }
 
 
@@ -1034,11 +1060,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         public virtual Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(ListResolversByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
-            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResolversByFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1047,10 +1073,11 @@ namespace Amazon.AppSync
 
         internal virtual ListTypesResponse ListTypes(ListTypesRequest request)
         {
-            var marshaller = ListTypesRequestMarshaller.Instance;
-            var unmarshaller = ListTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListTypesRequest,ListTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTypesResponse>(request, options);
         }
 
 
@@ -1066,11 +1093,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTypesRequestMarshaller.Instance;
-            var unmarshaller = ListTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTypesRequest,ListTypesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1079,10 +1106,11 @@ namespace Amazon.AppSync
 
         internal virtual StartSchemaCreationResponse StartSchemaCreation(StartSchemaCreationRequest request)
         {
-            var marshaller = StartSchemaCreationRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
 
-            return Invoke<StartSchemaCreationRequest,StartSchemaCreationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartSchemaCreationResponse>(request, options);
         }
 
 
@@ -1098,11 +1126,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         public virtual Task<StartSchemaCreationResponse> StartSchemaCreationAsync(StartSchemaCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartSchemaCreationRequestMarshaller.Instance;
-            var unmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaCreationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartSchemaCreationRequest,StartSchemaCreationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartSchemaCreationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1111,10 +1139,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
-            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApiKeyResponse>(request, options);
         }
 
 
@@ -1130,11 +1159,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
-            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateApiKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1143,10 +1172,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateDataSourceResponse>(request, options);
         }
 
 
@@ -1162,11 +1192,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1175,10 +1205,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
         {
-            var marshaller = UpdateFunctionRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateFunctionResponse>(request, options);
         }
 
 
@@ -1194,11 +1225,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateFunctionRequestMarshaller.Instance;
-            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1207,10 +1238,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateGraphqlApiResponse UpdateGraphqlApi(UpdateGraphqlApiRequest request)
         {
-            var marshaller = UpdateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGraphqlApiRequest,UpdateGraphqlApiResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGraphqlApiResponse>(request, options);
         }
 
 
@@ -1226,11 +1258,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         public virtual Task<UpdateGraphqlApiResponse> UpdateGraphqlApiAsync(UpdateGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateGraphqlApiRequestMarshaller.Instance;
-            var unmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGraphqlApiResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateGraphqlApiRequest,UpdateGraphqlApiResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateGraphqlApiResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1239,10 +1271,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateResolverResponse UpdateResolver(UpdateResolverRequest request)
         {
-            var marshaller = UpdateResolverRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResolverRequest,UpdateResolverResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResolverResponse>(request, options);
         }
 
 
@@ -1258,11 +1291,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         public virtual Task<UpdateResolverResponse> UpdateResolverAsync(UpdateResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateResolverRequestMarshaller.Instance;
-            var unmarshaller = UpdateResolverResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateResolverRequest,UpdateResolverResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateResolverResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1271,10 +1304,11 @@ namespace Amazon.AppSync
 
         internal virtual UpdateTypeResponse UpdateType(UpdateTypeRequest request)
         {
-            var marshaller = UpdateTypeRequestMarshaller.Instance;
-            var unmarshaller = UpdateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTypeResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateTypeRequest,UpdateTypeResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateTypeResponse>(request, options);
         }
 
 
@@ -1290,11 +1324,11 @@ namespace Amazon.AppSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         public virtual Task<UpdateTypeResponse> UpdateTypeAsync(UpdateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateTypeRequestMarshaller.Instance;
-            var unmarshaller = UpdateTypeResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTypeResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateTypeRequest,UpdateTypeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion

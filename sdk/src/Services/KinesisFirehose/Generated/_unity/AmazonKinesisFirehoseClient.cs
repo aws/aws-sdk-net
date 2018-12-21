@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisFirehose.Model;
 using Amazon.KinesisFirehose.Model.Internal.MarshallTransformations;
@@ -182,7 +183,7 @@ namespace Amazon.KinesisFirehose
 
         #endregion
 
-        
+
         #region  CreateDeliveryStream
 
         /// <summary>
@@ -197,8 +198,9 @@ namespace Amazon.KinesisFirehose
         public virtual void CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, AmazonServiceCallback<CreateDeliveryStreamRequest, CreateDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -206,7 +208,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<CreateDeliveryStreamRequest,CreateDeliveryStreamResponse>((CreateDeliveryStreamRequest)req, (CreateDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -269,8 +271,9 @@ namespace Amazon.KinesisFirehose
         public virtual void DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -278,7 +281,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<DeleteDeliveryStreamRequest,DeleteDeliveryStreamResponse>((DeleteDeliveryStreamRequest)req, (DeleteDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -297,8 +300,9 @@ namespace Amazon.KinesisFirehose
         public virtual void DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, AmazonServiceCallback<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -306,7 +310,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<DescribeDeliveryStreamRequest,DescribeDeliveryStreamResponse>((DescribeDeliveryStreamRequest)req, (DescribeDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DescribeDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -354,8 +358,9 @@ namespace Amazon.KinesisFirehose
         public virtual void ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, AmazonServiceCallback<ListDeliveryStreamsRequest, ListDeliveryStreamsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListDeliveryStreamsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListDeliveryStreamsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -363,7 +368,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<ListDeliveryStreamsRequest,ListDeliveryStreamsResponse>((ListDeliveryStreamsRequest)req, (ListDeliveryStreamsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListDeliveryStreamsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -382,8 +387,9 @@ namespace Amazon.KinesisFirehose
         public virtual void ListTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request, AmazonServiceCallback<ListTagsForDeliveryStreamRequest, ListTagsForDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListTagsForDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListTagsForDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -391,7 +397,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<ListTagsForDeliveryStreamRequest,ListTagsForDeliveryStreamResponse>((ListTagsForDeliveryStreamRequest)req, (ListTagsForDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListTagsForDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -494,8 +500,9 @@ namespace Amazon.KinesisFirehose
         public virtual void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutRecordRequestMarshaller.Instance;
-            var unmarshaller = PutRecordResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutRecordRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -503,7 +510,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<PutRecordRequest,PutRecordResponse>((PutRecordRequest)req, (PutRecordResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutRecordRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -638,8 +645,9 @@ namespace Amazon.KinesisFirehose
         public virtual void PutRecordBatchAsync(PutRecordBatchRequest request, AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutRecordBatchRequestMarshaller.Instance;
-            var unmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutRecordBatchRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -647,7 +655,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<PutRecordBatchRequest,PutRecordBatchResponse>((PutRecordBatchRequest)req, (PutRecordBatchResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutRecordBatchRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -666,8 +674,9 @@ namespace Amazon.KinesisFirehose
         public virtual void StartDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request, AmazonServiceCallback<StartDeliveryStreamEncryptionRequest, StartDeliveryStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -675,7 +684,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<StartDeliveryStreamEncryptionRequest,StartDeliveryStreamEncryptionResponse>((StartDeliveryStreamEncryptionRequest)req, (StartDeliveryStreamEncryptionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<StartDeliveryStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -694,8 +703,9 @@ namespace Amazon.KinesisFirehose
         public virtual void StopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request, AmazonServiceCallback<StopDeliveryStreamEncryptionRequest, StopDeliveryStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
-            var unmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -703,7 +713,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<StopDeliveryStreamEncryptionRequest,StopDeliveryStreamEncryptionResponse>((StopDeliveryStreamEncryptionRequest)req, (StopDeliveryStreamEncryptionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<StopDeliveryStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -722,8 +732,9 @@ namespace Amazon.KinesisFirehose
         public virtual void TagDeliveryStreamAsync(TagDeliveryStreamRequest request, AmazonServiceCallback<TagDeliveryStreamRequest, TagDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -731,7 +742,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<TagDeliveryStreamRequest,TagDeliveryStreamResponse>((TagDeliveryStreamRequest)req, (TagDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TagDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -750,8 +761,9 @@ namespace Amazon.KinesisFirehose
         public virtual void UntagDeliveryStreamAsync(UntagDeliveryStreamRequest request, AmazonServiceCallback<UntagDeliveryStreamRequest, UntagDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UntagDeliveryStreamRequestMarshaller.Instance;
-            var unmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagDeliveryStreamRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -759,7 +771,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<UntagDeliveryStreamRequest,UntagDeliveryStreamResponse>((UntagDeliveryStreamRequest)req, (UntagDeliveryStreamResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UntagDeliveryStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -778,8 +790,9 @@ namespace Amazon.KinesisFirehose
         public virtual void UpdateDestinationAsync(UpdateDestinationRequest request, AmazonServiceCallback<UpdateDestinationRequest, UpdateDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateDestinationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -787,7 +800,7 @@ namespace Amazon.KinesisFirehose
                             = new AmazonServiceResult<UpdateDestinationRequest,UpdateDestinationResponse>((UpdateDestinationRequest)req, (UpdateDestinationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion

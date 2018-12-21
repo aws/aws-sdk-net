@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Pinpoint.Model;
 using Amazon.Pinpoint.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.Pinpoint
 
         #endregion
 
-        
+
         #region  CreateApp
 
         /// <summary>
@@ -263,10 +264,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -282,11 +284,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateAppRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -331,10 +333,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var marshaller = CreateCampaignRequestMarshaller.Instance;
-            var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCampaignRequest,CreateCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCampaignResponse>(request, options);
         }
 
         /// <summary>
@@ -350,11 +353,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateCampaign(CreateCampaignRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateCampaignRequestMarshaller.Instance;
-            var unmarshaller = CreateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateCampaignRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -399,10 +402,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
         {
-            var marshaller = CreateExportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateExportJobResponse>(request, options);
         }
 
         /// <summary>
@@ -418,11 +422,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateExportJob(CreateExportJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateExportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateExportJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -467,10 +471,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
         {
-            var marshaller = CreateImportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateImportJobRequest,CreateImportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateImportJobResponse>(request, options);
         }
 
         /// <summary>
@@ -486,11 +491,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateImportJob(CreateImportJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateImportJobRequestMarshaller.Instance;
-            var unmarshaller = CreateImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateImportJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -535,10 +540,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
-            var marshaller = CreateSegmentRequestMarshaller.Instance;
-            var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSegmentRequest,CreateSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSegmentResponse>(request, options);
         }
 
         /// <summary>
@@ -554,11 +560,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateSegmentRequestMarshaller.Instance;
-            var unmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateSegmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -603,10 +609,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
         {
-            var marshaller = DeleteAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAdmChannelRequest,DeleteAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAdmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -622,11 +629,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteAdmChannel(DeleteAdmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAdmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -671,10 +678,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
         {
-            var marshaller = DeleteApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsChannelRequest,DeleteApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -690,11 +698,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApnsChannel(DeleteApnsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApnsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -739,10 +747,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
         {
-            var marshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsSandboxChannelRequest,DeleteApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -758,11 +767,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -807,10 +816,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteApnsVoipChannelResponse DeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request)
         {
-            var marshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsVoipChannelRequest,DeleteApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsVoipChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -826,11 +836,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApnsVoipChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -875,10 +885,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteApnsVoipSandboxChannelResponse DeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApnsVoipSandboxChannelRequest,DeleteApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApnsVoipSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -894,11 +905,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -943,10 +954,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppResponse>(request, options);
         }
 
         /// <summary>
@@ -962,11 +974,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteAppRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1011,10 +1023,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
         {
-            var marshaller = DeleteBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBaiduChannelRequest,DeleteBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBaiduChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1030,11 +1043,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBaiduChannel(DeleteBaiduChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteBaiduChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1079,10 +1092,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var marshaller = DeleteCampaignRequestMarshaller.Instance;
-            var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCampaignRequest,DeleteCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCampaignResponse>(request, options);
         }
 
         /// <summary>
@@ -1098,11 +1112,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteCampaign(DeleteCampaignRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteCampaignRequestMarshaller.Instance;
-            var unmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteCampaignRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1147,10 +1161,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
         {
-            var marshaller = DeleteEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEmailChannelRequest,DeleteEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEmailChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1166,11 +1181,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteEmailChannel(DeleteEmailChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEmailChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1215,10 +1230,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -1234,11 +1250,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEndpointRequestMarshaller.Instance;
-            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1283,10 +1299,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
-            var marshaller = DeleteEventStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEventStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -1302,11 +1319,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEventStreamRequestMarshaller.Instance;
-            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEventStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1351,10 +1368,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
         {
-            var marshaller = DeleteGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGcmChannelRequest,DeleteGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGcmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1370,11 +1388,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteGcmChannel(DeleteGcmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteGcmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1419,10 +1437,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
-            var marshaller = DeleteSegmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSegmentRequest,DeleteSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSegmentResponse>(request, options);
         }
 
         /// <summary>
@@ -1438,11 +1457,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteSegmentRequestMarshaller.Instance;
-            var unmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteSegmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1487,10 +1506,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
         {
-            var marshaller = DeleteSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSmsChannelRequest,DeleteSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSmsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1506,11 +1526,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteSmsChannel(DeleteSmsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteSmsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1555,10 +1575,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request)
         {
-            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserEndpointsResponse>(request, options);
         }
 
         /// <summary>
@@ -1574,11 +1595,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteUserEndpoints(DeleteUserEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteUserEndpointsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1623,10 +1644,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request)
         {
-            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteVoiceChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1642,11 +1664,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteVoiceChannel(DeleteVoiceChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteVoiceChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1691,10 +1713,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
         {
-            var marshaller = GetAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetAdmChannelRequest,GetAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAdmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1710,11 +1733,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAdmChannel(GetAdmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAdmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1759,10 +1782,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
         {
-            var marshaller = GetApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsChannelRequest,GetApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1778,11 +1802,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApnsChannel(GetApnsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetApnsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1827,10 +1851,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
         {
-            var marshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsSandboxChannelRequest,GetApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1846,11 +1871,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApnsSandboxChannel(GetApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1895,10 +1920,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetApnsVoipChannelResponse GetApnsVoipChannel(GetApnsVoipChannelRequest request)
         {
-            var marshaller = GetApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsVoipChannelRequest,GetApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsVoipChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1914,11 +1940,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApnsVoipChannel(GetApnsVoipChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetApnsVoipChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1963,10 +1989,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetApnsVoipSandboxChannelResponse GetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetApnsVoipSandboxChannelRequest,GetApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApnsVoipSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -1982,11 +2009,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2031,10 +2058,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetAppResponse GetApp(GetAppRequest request)
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppResponse>(request, options);
         }
 
         /// <summary>
@@ -2050,11 +2078,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApp(GetAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAppRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2099,10 +2127,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
         {
-            var marshaller = GetApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetApplicationSettingsRequest,GetApplicationSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetApplicationSettingsResponse>(request, options);
         }
 
         /// <summary>
@@ -2118,11 +2147,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApplicationSettings(GetApplicationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetApplicationSettingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2167,10 +2196,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetAppsResponse GetApps(GetAppsRequest request)
         {
-            var marshaller = GetAppsRequestMarshaller.Instance;
-            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppsRequest,GetAppsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppsResponse>(request, options);
         }
 
         /// <summary>
@@ -2186,11 +2216,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApps(GetAppsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAppsRequestMarshaller.Instance;
-            var unmarshaller = GetAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAppsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2235,10 +2265,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
         {
-            var marshaller = GetBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetBaiduChannelRequest,GetBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBaiduChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -2254,11 +2285,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBaiduChannel(GetBaiduChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBaiduChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2303,10 +2334,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
-            var marshaller = GetCampaignRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignRequest,GetCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignResponse>(request, options);
         }
 
         /// <summary>
@@ -2322,11 +2354,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCampaign(GetCampaignRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCampaignRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCampaignRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2371,10 +2403,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
         {
-            var marshaller = GetCampaignActivitiesRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignActivitiesRequest,GetCampaignActivitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignActivitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -2390,11 +2423,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCampaignActivities(GetCampaignActivitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCampaignActivitiesRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCampaignActivitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2439,10 +2472,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
         {
-            var marshaller = GetCampaignsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignsRequest,GetCampaignsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignsResponse>(request, options);
         }
 
         /// <summary>
@@ -2458,11 +2492,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCampaigns(GetCampaignsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCampaignsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCampaignsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2507,10 +2541,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
         {
-            var marshaller = GetCampaignVersionRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignVersionRequest,GetCampaignVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -2526,11 +2561,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCampaignVersion(GetCampaignVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCampaignVersionRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCampaignVersionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2575,10 +2610,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
         {
-            var marshaller = GetCampaignVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCampaignVersionsRequest,GetCampaignVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCampaignVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2594,11 +2630,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCampaignVersions(GetCampaignVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCampaignVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCampaignVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2643,10 +2679,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetChannelsResponse GetChannels(GetChannelsRequest request)
         {
-            var marshaller = GetChannelsRequestMarshaller.Instance;
-            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
 
-            return Invoke<GetChannelsRequest,GetChannelsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetChannelsResponse>(request, options);
         }
 
         /// <summary>
@@ -2662,11 +2699,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetChannels(GetChannelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetChannelsRequestMarshaller.Instance;
-            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetChannelsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2711,10 +2748,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
         {
-            var marshaller = GetEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetEmailChannelRequest,GetEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEmailChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -2730,11 +2768,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetEmailChannel(GetEmailChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEmailChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2779,10 +2817,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
-            var marshaller = GetEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<GetEndpointRequest,GetEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -2798,11 +2837,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEndpointRequestMarshaller.Instance;
-            var unmarshaller = GetEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2847,10 +2886,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
-            var marshaller = GetEventStreamRequestMarshaller.Instance;
-            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEventStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -2866,11 +2906,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEventStreamRequestMarshaller.Instance;
-            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEventStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2915,10 +2955,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
         {
-            var marshaller = GetExportJobRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
 
-            return Invoke<GetExportJobRequest,GetExportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetExportJobResponse>(request, options);
         }
 
         /// <summary>
@@ -2934,11 +2975,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetExportJob(GetExportJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetExportJobRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetExportJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2983,10 +3024,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetExportJobsResponse GetExportJobs(GetExportJobsRequest request)
         {
-            var marshaller = GetExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetExportJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -3002,11 +3044,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetExportJobs(GetExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetExportJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3051,10 +3093,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
         {
-            var marshaller = GetGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetGcmChannelRequest,GetGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGcmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -3070,11 +3113,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetGcmChannel(GetGcmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetGcmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3119,10 +3162,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
-            var marshaller = GetImportJobRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
-            return Invoke<GetImportJobRequest,GetImportJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetImportJobResponse>(request, options);
         }
 
         /// <summary>
@@ -3138,11 +3182,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetImportJob(GetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetImportJobRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetImportJobRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3187,10 +3231,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
         {
-            var marshaller = GetImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetImportJobsRequest,GetImportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetImportJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -3206,11 +3251,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetImportJobs(GetImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetImportJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3255,10 +3300,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
-            var marshaller = GetSegmentRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentRequest,GetSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentResponse>(request, options);
         }
 
         /// <summary>
@@ -3274,11 +3320,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3323,10 +3369,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request)
         {
-            var marshaller = GetSegmentExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentExportJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -3342,11 +3389,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegmentExportJobs(GetSegmentExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentExportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentExportJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3391,10 +3438,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
         {
-            var marshaller = GetSegmentImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentImportJobsRequest,GetSegmentImportJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentImportJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -3410,11 +3458,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegmentImportJobs(GetSegmentImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentImportJobsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentImportJobsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3459,10 +3507,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentsResponse GetSegments(GetSegmentsRequest request)
         {
-            var marshaller = GetSegmentsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentsRequest,GetSegmentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentsResponse>(request, options);
         }
 
         /// <summary>
@@ -3478,11 +3527,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegments(GetSegmentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3527,10 +3576,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
         {
-            var marshaller = GetSegmentVersionRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentVersionRequest,GetSegmentVersionResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentVersionResponse>(request, options);
         }
 
         /// <summary>
@@ -3546,11 +3596,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegmentVersion(GetSegmentVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentVersionRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentVersionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3595,10 +3645,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
         {
-            var marshaller = GetSegmentVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSegmentVersionsRequest,GetSegmentVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSegmentVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -3614,11 +3665,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSegmentVersions(GetSegmentVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSegmentVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSegmentVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3663,10 +3714,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
         {
-            var marshaller = GetSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSmsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -3682,11 +3734,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSmsChannel(GetSmsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSmsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3731,10 +3783,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request)
         {
-            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
 
-            return Invoke<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetUserEndpointsResponse>(request, options);
         }
 
         /// <summary>
@@ -3750,11 +3803,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUserEndpoints(GetUserEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
-            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetUserEndpointsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3799,10 +3852,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request)
         {
-            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetVoiceChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -3818,11 +3872,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVoiceChannel(GetVoiceChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetVoiceChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3867,10 +3921,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request)
         {
-            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
-            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
 
-            return Invoke<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, unmarshaller);
+            return Invoke<PhoneNumberValidateResponse>(request, options);
         }
 
         /// <summary>
@@ -3886,11 +3941,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginPhoneNumberValidate(PhoneNumberValidateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
-            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PhoneNumberValidateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -3936,10 +3991,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventsResponse>(request, options);
         }
 
         /// <summary>
@@ -3955,11 +4011,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEventsRequestMarshaller.Instance;
-            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEventsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4004,10 +4060,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
         {
-            var marshaller = PutEventStreamRequestMarshaller.Instance;
-            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
-            return Invoke<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEventStreamResponse>(request, options);
         }
 
         /// <summary>
@@ -4023,11 +4080,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEventStream(PutEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEventStreamRequestMarshaller.Instance;
-            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEventStreamRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4072,10 +4129,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request)
         {
-            var marshaller = RemoveAttributesRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -4091,11 +4149,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginRemoveAttributes(RemoveAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveAttributesRequestMarshaller.Instance;
-            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4140,10 +4198,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual SendMessagesResponse SendMessages(SendMessagesRequest request)
         {
-            var marshaller = SendMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
 
-            return Invoke<SendMessagesRequest,SendMessagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendMessagesResponse>(request, options);
         }
 
         /// <summary>
@@ -4159,11 +4218,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginSendMessages(SendMessagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendMessagesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4208,10 +4267,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
         {
-            var marshaller = SendUsersMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
 
-            return Invoke<SendUsersMessagesRequest,SendUsersMessagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendUsersMessagesResponse>(request, options);
         }
 
         /// <summary>
@@ -4227,11 +4287,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginSendUsersMessages(SendUsersMessagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendUsersMessagesRequestMarshaller.Instance;
-            var unmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendUsersMessagesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4276,10 +4336,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
         {
-            var marshaller = UpdateAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAdmChannelRequest,UpdateAdmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAdmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4295,11 +4356,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateAdmChannel(UpdateAdmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateAdmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateAdmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4344,10 +4405,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
         {
-            var marshaller = UpdateApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsChannelRequest,UpdateApnsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4363,11 +4425,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApnsChannel(UpdateApnsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApnsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApnsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4412,10 +4474,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
         {
-            var marshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsSandboxChannelRequest,UpdateApnsSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4431,11 +4494,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApnsSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4480,10 +4543,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateApnsVoipChannelResponse UpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request)
         {
-            var marshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsVoipChannelRequest,UpdateApnsVoipChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsVoipChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4499,11 +4563,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApnsVoipChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4548,10 +4612,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateApnsVoipSandboxChannelResponse UpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request)
         {
-            var marshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApnsVoipSandboxChannelRequest,UpdateApnsVoipSandboxChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApnsVoipSandboxChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4567,11 +4632,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApnsVoipSandboxChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4616,10 +4681,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
-            var marshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApplicationSettingsRequest,UpdateApplicationSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApplicationSettingsResponse>(request, options);
         }
 
         /// <summary>
@@ -4635,11 +4701,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApplicationSettings(UpdateApplicationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApplicationSettingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4684,10 +4750,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
         {
-            var marshaller = UpdateBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateBaiduChannelRequest,UpdateBaiduChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateBaiduChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4703,11 +4770,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateBaiduChannel(UpdateBaiduChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateBaiduChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateBaiduChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4752,10 +4819,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
-            var marshaller = UpdateCampaignRequestMarshaller.Instance;
-            var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCampaignRequest,UpdateCampaignResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCampaignResponse>(request, options);
         }
 
         /// <summary>
@@ -4771,11 +4839,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateCampaign(UpdateCampaignRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateCampaignRequestMarshaller.Instance;
-            var unmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateCampaignRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4820,10 +4888,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
         {
-            var marshaller = UpdateEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEmailChannelRequest,UpdateEmailChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEmailChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -4839,11 +4908,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateEmailChannel(UpdateEmailChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateEmailChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateEmailChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4888,10 +4957,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointResponse>(request, options);
         }
 
         /// <summary>
@@ -4907,11 +4977,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateEndpointRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateEndpointRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -4956,10 +5026,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
         {
-            var marshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateEndpointsBatchRequest,UpdateEndpointsBatchResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateEndpointsBatchResponse>(request, options);
         }
 
         /// <summary>
@@ -4975,11 +5046,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateEndpointsBatch(UpdateEndpointsBatchRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
-            var unmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateEndpointsBatchRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5024,10 +5095,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
         {
-            var marshaller = UpdateGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGcmChannelRequest,UpdateGcmChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGcmChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -5043,11 +5115,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateGcmChannel(UpdateGcmChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateGcmChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateGcmChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5092,10 +5164,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
         {
-            var marshaller = UpdateSegmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSegmentRequest,UpdateSegmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSegmentResponse>(request, options);
         }
 
         /// <summary>
@@ -5111,11 +5184,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateSegment(UpdateSegmentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateSegmentRequestMarshaller.Instance;
-            var unmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateSegmentRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5160,10 +5233,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
         {
-            var marshaller = UpdateSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSmsChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -5179,11 +5253,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateSmsChannel(UpdateSmsChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateSmsChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateSmsChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -5228,10 +5302,11 @@ namespace Amazon.Pinpoint
         /// </exception>
         public virtual UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request)
         {
-            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateVoiceChannelResponse>(request, options);
         }
 
         /// <summary>
@@ -5247,11 +5322,11 @@ namespace Amazon.Pinpoint
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateVoiceChannel(UpdateVoiceChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
-            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateVoiceChannelRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

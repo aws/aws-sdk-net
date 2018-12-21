@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ComprehendMedical.Model;
 using Amazon.ComprehendMedical.Model.Internal.MarshallTransformations;
@@ -235,7 +236,7 @@ namespace Amazon.ComprehendMedical
 
         #endregion
 
-        
+
         #region  DetectEntities
 
         /// <summary>
@@ -273,10 +274,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request)
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
-            return Invoke<DetectEntitiesRequest,DetectEntitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectEntitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -293,11 +295,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual IAsyncResult BeginDetectEntities(DetectEntitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DetectEntitiesRequestMarshaller.Instance;
-            var unmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DetectEntitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -351,10 +353,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         public virtual DetectPHIResponse DetectPHI(DetectPHIRequest request)
         {
-            var marshaller = DetectPHIRequestMarshaller.Instance;
-            var unmarshaller = DetectPHIResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
 
-            return Invoke<DetectPHIRequest,DetectPHIResponse>(request, marshaller, unmarshaller);
+            return Invoke<DetectPHIResponse>(request, options);
         }
 
         /// <summary>
@@ -371,11 +374,11 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         public virtual IAsyncResult BeginDetectPHI(DetectPHIRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DetectPHIRequestMarshaller.Instance;
-            var unmarshaller = DetectPHIResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DetectPHIRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.PinpointEmail.Model;
 using Amazon.PinpointEmail.Model.Internal.MarshallTransformations;
@@ -258,7 +259,7 @@ namespace Amazon.PinpointEmail
 
         #endregion
 
-        
+
         #region  CreateConfigurationSet
 
         /// <summary>
@@ -288,10 +289,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -307,11 +309,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateConfigurationSetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -363,10 +365,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -382,11 +385,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -428,10 +431,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateDedicatedIpPoolResponse CreateDedicatedIpPool(CreateDedicatedIpPoolRequest request)
         {
-            var marshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDedicatedIpPoolRequest,CreateDedicatedIpPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDedicatedIpPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -447,11 +451,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDedicatedIpPool(CreateDedicatedIpPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDedicatedIpPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -511,10 +515,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request)
         {
-            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateDeliverabilityTestReportResponse>(request, options);
         }
 
         /// <summary>
@@ -530,11 +535,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateDeliverabilityTestReportRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -589,10 +594,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual CreateEmailIdentityResponse CreateEmailIdentity(CreateEmailIdentityRequest request)
         {
-            var marshaller = CreateEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<CreateEmailIdentityRequest,CreateEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -608,11 +614,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateEmailIdentity(CreateEmailIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateEmailIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -656,10 +662,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -675,11 +682,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationSetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -724,10 +731,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -743,11 +751,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -783,10 +791,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteDedicatedIpPoolResponse DeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request)
         {
-            var marshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDedicatedIpPoolRequest,DeleteDedicatedIpPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteDedicatedIpPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -802,11 +811,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
-            var unmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteDedicatedIpPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -843,10 +852,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual DeleteEmailIdentityResponse DeleteEmailIdentity(DeleteEmailIdentityRequest request)
         {
-            var marshaller = DeleteEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteEmailIdentityRequest,DeleteEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -862,11 +872,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteEmailIdentity(DeleteEmailIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteEmailIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -900,10 +910,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
-            return Invoke<GetAccountRequest,GetAccountResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAccountResponse>(request, options);
         }
 
         /// <summary>
@@ -919,11 +930,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetAccountRequestMarshaller.Instance;
-            var unmarshaller = GetAccountResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetAccountRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -959,10 +970,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request)
         {
-            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
-            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
 
-            return Invoke<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetBlacklistReportsResponse>(request, options);
         }
 
         /// <summary>
@@ -978,11 +990,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBlacklistReports(GetBlacklistReportsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
-            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetBlacklistReportsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1027,10 +1039,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetConfigurationSetResponse GetConfigurationSet(GetConfigurationSetRequest request)
         {
-            var marshaller = GetConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetRequest,GetConfigurationSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetResponse>(request, options);
         }
 
         /// <summary>
@@ -1046,11 +1059,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetConfigurationSet(GetConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetConfigurationSetRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1095,10 +1108,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetConfigurationSetEventDestinationsRequest,GetConfigurationSetEventDestinationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConfigurationSetEventDestinationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1114,11 +1128,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
-            var unmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetConfigurationSetEventDestinationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1156,10 +1170,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDedicatedIpResponse GetDedicatedIp(GetDedicatedIpRequest request)
         {
-            var marshaller = GetDedicatedIpRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
 
-            return Invoke<GetDedicatedIpRequest,GetDedicatedIpResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDedicatedIpResponse>(request, options);
         }
 
         /// <summary>
@@ -1175,11 +1190,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDedicatedIp(GetDedicatedIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDedicatedIpRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDedicatedIpRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1215,10 +1230,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDedicatedIpsResponse GetDedicatedIps(GetDedicatedIpsRequest request)
         {
-            var marshaller = GetDedicatedIpsRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDedicatedIpsRequest,GetDedicatedIpsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDedicatedIpsResponse>(request, options);
         }
 
         /// <summary>
@@ -1234,11 +1250,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDedicatedIps(GetDedicatedIpsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDedicatedIpsRequestMarshaller.Instance;
-            var unmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDedicatedIpsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1285,10 +1301,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request)
         {
-            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeliverabilityDashboardOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1304,11 +1321,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDeliverabilityDashboardOptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1344,10 +1361,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request)
         {
-            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return Invoke<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDeliverabilityTestReportResponse>(request, options);
         }
 
         /// <summary>
@@ -1363,11 +1381,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
-            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDeliverabilityTestReportRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1404,10 +1422,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
         {
-            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
-            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
 
-            return Invoke<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDomainStatisticsReportResponse>(request, options);
         }
 
         /// <summary>
@@ -1423,11 +1442,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDomainStatisticsReport(GetDomainStatisticsReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
-            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetDomainStatisticsReportRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1465,10 +1484,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request)
         {
-            var marshaller = GetEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
-            return Invoke<GetEmailIdentityRequest,GetEmailIdentityResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEmailIdentityResponse>(request, options);
         }
 
         /// <summary>
@@ -1484,11 +1504,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetEmailIdentity(GetEmailIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEmailIdentityRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1530,10 +1550,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
-            return Invoke<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListConfigurationSetsResponse>(request, options);
         }
 
         /// <summary>
@@ -1549,11 +1570,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListConfigurationSetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1587,10 +1608,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListDedicatedIpPoolsResponse ListDedicatedIpPools(ListDedicatedIpPoolsRequest request)
         {
-            var marshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDedicatedIpPoolsRequest,ListDedicatedIpPoolsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDedicatedIpPoolsResponse>(request, options);
         }
 
         /// <summary>
@@ -1606,11 +1628,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDedicatedIpPools(ListDedicatedIpPoolsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
-            var unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDedicatedIpPoolsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1648,10 +1670,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request)
         {
-            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDeliverabilityTestReportsResponse>(request, options);
         }
 
         /// <summary>
@@ -1667,11 +1690,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
-            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDeliverabilityTestReportsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1706,10 +1729,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual ListEmailIdentitiesResponse ListEmailIdentities(ListEmailIdentitiesRequest request)
         {
-            var marshaller = ListEmailIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListEmailIdentitiesRequest,ListEmailIdentitiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListEmailIdentitiesResponse>(request, options);
         }
 
         /// <summary>
@@ -1725,11 +1749,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginListEmailIdentities(ListEmailIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListEmailIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListEmailIdentitiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1762,10 +1786,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutAccountDedicatedIpWarmupAttributesResponse PutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request)
         {
-            var marshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutAccountDedicatedIpWarmupAttributesRequest,PutAccountDedicatedIpWarmupAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAccountDedicatedIpWarmupAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1781,11 +1806,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutAccountDedicatedIpWarmupAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1818,10 +1843,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutAccountSendingAttributesResponse PutAccountSendingAttributes(PutAccountSendingAttributesRequest request)
         {
-            var marshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutAccountSendingAttributesRequest,PutAccountSendingAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAccountSendingAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -1837,11 +1863,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutAccountSendingAttributes(PutAccountSendingAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutAccountSendingAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1878,10 +1904,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetDeliveryOptionsRequest,PutConfigurationSetDeliveryOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetDeliveryOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1897,11 +1924,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationSetDeliveryOptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1938,10 +1965,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetReputationOptionsResponse PutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetReputationOptionsRequest,PutConfigurationSetReputationOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetReputationOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1957,11 +1985,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationSetReputationOptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1998,10 +2026,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetSendingOptionsResponse PutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetSendingOptionsRequest,PutConfigurationSetSendingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetSendingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2017,11 +2046,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationSetSendingOptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2058,10 +2087,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutConfigurationSetTrackingOptionsResponse PutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request)
         {
-            var marshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
-            return Invoke<PutConfigurationSetTrackingOptionsRequest,PutConfigurationSetTrackingOptionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutConfigurationSetTrackingOptionsResponse>(request, options);
         }
 
         /// <summary>
@@ -2077,11 +2107,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2129,10 +2159,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDedicatedIpInPoolResponse PutDedicatedIpInPool(PutDedicatedIpInPoolRequest request)
         {
-            var marshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
 
-            return Invoke<PutDedicatedIpInPoolRequest,PutDedicatedIpInPoolResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDedicatedIpInPoolResponse>(request, options);
         }
 
         /// <summary>
@@ -2148,11 +2179,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutDedicatedIpInPool(PutDedicatedIpInPoolRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutDedicatedIpInPoolRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2188,10 +2219,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDedicatedIpWarmupAttributesResponse PutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request)
         {
-            var marshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutDedicatedIpWarmupAttributesRequest,PutDedicatedIpWarmupAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDedicatedIpWarmupAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2207,11 +2239,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutDedicatedIpWarmupAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2264,10 +2296,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request)
         {
-            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
-            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
 
-            return Invoke<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutDeliverabilityDashboardOptionResponse>(request, options);
         }
 
         /// <summary>
@@ -2283,11 +2316,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
-            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutDeliverabilityDashboardOptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2323,10 +2356,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityDkimAttributesResponse PutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityDkimAttributesRequest,PutEmailIdentityDkimAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityDkimAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2342,11 +2376,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEmailIdentityDkimAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2399,10 +2433,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityFeedbackAttributesResponse PutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityFeedbackAttributesRequest,PutEmailIdentityFeedbackAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityFeedbackAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2418,11 +2453,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEmailIdentityFeedbackAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2458,10 +2493,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual PutEmailIdentityMailFromAttributesResponse PutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request)
         {
-            var marshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
 
-            return Invoke<PutEmailIdentityMailFromAttributesRequest,PutEmailIdentityMailFromAttributesResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEmailIdentityMailFromAttributesResponse>(request, options);
         }
 
         /// <summary>
@@ -2477,11 +2513,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
-            var unmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEmailIdentityMailFromAttributesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2550,10 +2586,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var marshaller = SendEmailRequestMarshaller.Instance;
-            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
-            return Invoke<SendEmailRequest,SendEmailResponse>(request, marshaller, unmarshaller);
+            return Invoke<SendEmailResponse>(request, options);
         }
 
         /// <summary>
@@ -2569,11 +2606,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginSendEmail(SendEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = SendEmailRequestMarshaller.Instance;
-            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
-            return BeginInvoke<SendEmailRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -2618,10 +2655,11 @@ namespace Amazon.PinpointEmail
         /// </exception>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateConfigurationSetEventDestinationResponse>(request, options);
         }
 
         /// <summary>
@@ -2637,11 +2675,11 @@ namespace Amazon.PinpointEmail
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

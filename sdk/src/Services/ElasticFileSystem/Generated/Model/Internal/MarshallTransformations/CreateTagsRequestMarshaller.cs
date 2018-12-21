@@ -56,6 +56,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2015-02-01/create-tags/{FileSystemId}";

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Elasticsearch.Model;
 using Amazon.Elasticsearch.Model.Internal.MarshallTransformations;
@@ -245,7 +246,7 @@ namespace Amazon.Elasticsearch
 
         #endregion
 
-        
+
         #region  AddTags
 
         /// <summary>
@@ -272,10 +273,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -291,11 +293,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddTagsRequestMarshaller.Instance;
-            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -338,10 +340,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual CancelElasticsearchServiceSoftwareUpdateResponse CancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request)
         {
-            var marshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
-            var unmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<CancelElasticsearchServiceSoftwareUpdateRequest,CancelElasticsearchServiceSoftwareUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelElasticsearchServiceSoftwareUpdateResponse>(request, options);
         }
 
         /// <summary>
@@ -357,11 +360,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginCancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
-            var unmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CancelElasticsearchServiceSoftwareUpdateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -416,10 +419,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
         {
-            var marshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return Invoke<CreateElasticsearchDomainRequest,CreateElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateElasticsearchDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -435,11 +439,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateElasticsearchDomain(CreateElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateElasticsearchDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -481,10 +485,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
         {
-            var marshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteElasticsearchDomainRequest,DeleteElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteElasticsearchDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -500,11 +505,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteElasticsearchDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -545,10 +550,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request)
         {
-            var marshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteElasticsearchServiceRoleRequest,DeleteElasticsearchServiceRoleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteElasticsearchServiceRoleResponse>(request, options);
         }
 
         /// <summary>
@@ -564,11 +570,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteElasticsearchServiceRoleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -610,10 +616,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
         {
-            var marshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeElasticsearchDomainRequest,DescribeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeElasticsearchDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -629,11 +636,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeElasticsearchDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -675,10 +682,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
         {
-            var marshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeElasticsearchDomainConfigRequest,DescribeElasticsearchDomainConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeElasticsearchDomainConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -694,11 +702,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeElasticsearchDomainConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -736,10 +744,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
         {
-            var marshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeElasticsearchDomainsRequest,DescribeElasticsearchDomainsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeElasticsearchDomainsResponse>(request, options);
         }
 
         /// <summary>
@@ -755,11 +764,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeElasticsearchDomainsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -810,10 +819,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
         {
-            var marshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeElasticsearchInstanceTypeLimitsRequest,DescribeElasticsearchInstanceTypeLimitsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeElasticsearchInstanceTypeLimitsResponse>(request, options);
         }
 
         /// <summary>
@@ -829,11 +839,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
-            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeElasticsearchInstanceTypeLimitsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -875,10 +885,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeReservedElasticsearchInstanceOfferingsResponse DescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request)
         {
-            var marshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReservedElasticsearchInstanceOfferingsRequest,DescribeReservedElasticsearchInstanceOfferingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReservedElasticsearchInstanceOfferingsResponse>(request, options);
         }
 
         /// <summary>
@@ -894,11 +905,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReservedElasticsearchInstanceOfferingsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -940,10 +951,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeReservedElasticsearchInstancesResponse DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request)
         {
-            var marshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeReservedElasticsearchInstancesRequest,DescribeReservedElasticsearchInstancesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeReservedElasticsearchInstancesResponse>(request, options);
         }
 
         /// <summary>
@@ -959,11 +971,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
-            var unmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeReservedElasticsearchInstancesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1010,10 +1022,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request)
         {
-            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetCompatibleElasticsearchVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1029,11 +1042,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
-            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetCompatibleElasticsearchVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1079,10 +1092,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
         {
-            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetUpgradeHistoryResponse>(request, options);
         }
 
         /// <summary>
@@ -1098,11 +1112,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUpgradeHistory(GetUpgradeHistoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
-            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetUpgradeHistoryRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1148,10 +1162,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
         {
-            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
-            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetUpgradeStatusResponse>(request, options);
         }
 
         /// <summary>
@@ -1167,11 +1182,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUpgradeStatus(GetUpgradeStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
-            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetUpgradeStatusRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1204,10 +1219,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var marshaller = ListDomainNamesRequestMarshaller.Instance;
-            var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
-            return Invoke<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListDomainNamesResponse>(request, options);
         }
 
         /// <summary>
@@ -1223,11 +1239,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListDomainNamesRequestMarshaller.Instance;
-            var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListDomainNamesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1268,10 +1284,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
         {
-            var marshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
-            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
 
-            return Invoke<ListElasticsearchInstanceTypesRequest,ListElasticsearchInstanceTypesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListElasticsearchInstanceTypesResponse>(request, options);
         }
 
         /// <summary>
@@ -1287,11 +1304,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
-            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListElasticsearchInstanceTypesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1332,10 +1349,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
         {
-            var marshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListElasticsearchVersionsRequest,ListElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListElasticsearchVersionsResponse>(request, options);
         }
 
         /// <summary>
@@ -1351,11 +1369,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
-            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListElasticsearchVersionsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1396,10 +1414,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1415,11 +1434,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTagsRequestMarshaller.Instance;
-            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1469,10 +1488,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual PurchaseReservedElasticsearchInstanceOfferingResponse PurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request)
         {
-            var marshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
 
-            return Invoke<PurchaseReservedElasticsearchInstanceOfferingRequest,PurchaseReservedElasticsearchInstanceOfferingResponse>(request, marshaller, unmarshaller);
+            return Invoke<PurchaseReservedElasticsearchInstanceOfferingResponse>(request, options);
         }
 
         /// <summary>
@@ -1488,11 +1508,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginPurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
-            var unmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PurchaseReservedElasticsearchInstanceOfferingRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1529,10 +1549,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
-            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<RemoveTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -1548,11 +1569,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = RemoveTagsRequestMarshaller.Instance;
-            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<RemoveTagsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1593,10 +1614,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual StartElasticsearchServiceSoftwareUpdateResponse StartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request)
         {
-            var marshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
-            var unmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
-            return Invoke<StartElasticsearchServiceSoftwareUpdateRequest,StartElasticsearchServiceSoftwareUpdateResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartElasticsearchServiceSoftwareUpdateResponse>(request, options);
         }
 
         /// <summary>
@@ -1612,11 +1634,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginStartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
-            var unmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartElasticsearchServiceSoftwareUpdateRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1666,10 +1688,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
         {
-            var marshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateElasticsearchDomainConfigRequest,UpdateElasticsearchDomainConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateElasticsearchDomainConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -1685,11 +1708,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
-            var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateElasticsearchDomainConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1739,10 +1762,11 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request)
         {
-            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return Invoke<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpgradeElasticsearchDomainResponse>(request, options);
         }
 
         /// <summary>
@@ -1758,11 +1782,11 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
-            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpgradeElasticsearchDomainRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

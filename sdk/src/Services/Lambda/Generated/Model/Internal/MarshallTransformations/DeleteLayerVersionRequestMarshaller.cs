@@ -55,6 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteLayerVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2018-10-31/layers/{LayerName}/versions/{VersionNumber}";

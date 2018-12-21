@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ServerMigrationService.Model;
 using Amazon.ServerMigrationService.Model.Internal.MarshallTransformations;
@@ -264,7 +265,7 @@ namespace Amazon.ServerMigrationService
 
         #endregion
 
-        
+
         #region  CreateApp
 
 
@@ -294,10 +295,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -312,11 +314,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAppRequestMarshaller.Instance;
-            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAppRequest,CreateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -363,10 +365,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         public virtual CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request)
         {
-            var marshaller = CreateReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
 
-            return Invoke<CreateReplicationJobRequest,CreateReplicationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateReplicationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -381,11 +384,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         public virtual Task<CreateReplicationJobResponse> CreateReplicationJobAsync(CreateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateReplicationJobRequest,CreateReplicationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateReplicationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -419,10 +422,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppResponse>(request, options);
         }
 
         /// <summary>
@@ -437,11 +441,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAppRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAppRequest,DeleteAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -474,10 +478,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppLaunchConfiguration">REST API Reference for DeleteAppLaunchConfiguration Operation</seealso>
         public virtual DeleteAppLaunchConfigurationResponse DeleteAppLaunchConfiguration(DeleteAppLaunchConfigurationRequest request)
         {
-            var marshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppLaunchConfigurationRequest,DeleteAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppLaunchConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -492,11 +497,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppLaunchConfiguration">REST API Reference for DeleteAppLaunchConfiguration Operation</seealso>
         public virtual Task<DeleteAppLaunchConfigurationResponse> DeleteAppLaunchConfigurationAsync(DeleteAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAppLaunchConfigurationRequest,DeleteAppLaunchConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -529,10 +534,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration">REST API Reference for DeleteAppReplicationConfiguration Operation</seealso>
         public virtual DeleteAppReplicationConfigurationResponse DeleteAppReplicationConfiguration(DeleteAppReplicationConfigurationRequest request)
         {
-            var marshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAppReplicationConfigurationRequest,DeleteAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAppReplicationConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -547,11 +553,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration">REST API Reference for DeleteAppReplicationConfiguration Operation</seealso>
         public virtual Task<DeleteAppReplicationConfigurationResponse> DeleteAppReplicationConfigurationAsync(DeleteAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAppReplicationConfigurationRequest,DeleteAppReplicationConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -591,10 +597,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         public virtual DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request)
         {
-            var marshaller = DeleteReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteReplicationJobRequest,DeleteReplicationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteReplicationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -609,11 +616,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         public virtual Task<DeleteReplicationJobResponse> DeleteReplicationJobAsync(DeleteReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteReplicationJobRequest,DeleteReplicationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteReplicationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -643,10 +650,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         public virtual DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request)
         {
-            var marshaller = DeleteServerCatalogRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteServerCatalogRequest,DeleteServerCatalogResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteServerCatalogResponse>(request, options);
         }
 
         /// <summary>
@@ -661,11 +669,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         public virtual Task<DeleteServerCatalogResponse> DeleteServerCatalogAsync(DeleteServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteServerCatalogRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteServerCatalogRequest,DeleteServerCatalogResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteServerCatalogResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -701,10 +709,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         public virtual DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request)
         {
-            var marshaller = DisassociateConnectorRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateConnectorRequest,DisassociateConnectorResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateConnectorResponse>(request, options);
         }
 
         /// <summary>
@@ -719,11 +728,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         public virtual Task<DisassociateConnectorResponse> DisassociateConnectorAsync(DisassociateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateConnectorRequestMarshaller.Instance;
-            var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisassociateConnectorRequest,DisassociateConnectorResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateConnectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -757,10 +766,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateChangeSet">REST API Reference for GenerateChangeSet Operation</seealso>
         public virtual GenerateChangeSetResponse GenerateChangeSet(GenerateChangeSetRequest request)
         {
-            var marshaller = GenerateChangeSetRequestMarshaller.Instance;
-            var unmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateChangeSetRequest,GenerateChangeSetResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateChangeSetResponse>(request, options);
         }
 
         /// <summary>
@@ -775,11 +785,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateChangeSet">REST API Reference for GenerateChangeSet Operation</seealso>
         public virtual Task<GenerateChangeSetResponse> GenerateChangeSetAsync(GenerateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateChangeSetRequestMarshaller.Instance;
-            var unmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateChangeSetRequest,GenerateChangeSetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateChangeSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -813,10 +823,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateTemplate">REST API Reference for GenerateTemplate Operation</seealso>
         public virtual GenerateTemplateResponse GenerateTemplate(GenerateTemplateRequest request)
         {
-            var marshaller = GenerateTemplateRequestMarshaller.Instance;
-            var unmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateTemplateRequest,GenerateTemplateResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateTemplateResponse>(request, options);
         }
 
         /// <summary>
@@ -831,11 +842,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateTemplate">REST API Reference for GenerateTemplate Operation</seealso>
         public virtual Task<GenerateTemplateResponse> GenerateTemplateAsync(GenerateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateTemplateRequestMarshaller.Instance;
-            var unmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateTemplateRequest,GenerateTemplateResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -868,10 +879,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual GetAppResponse GetApp(GetAppRequest request)
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppResponse>(request, options);
         }
 
         /// <summary>
@@ -886,11 +898,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppRequestMarshaller.Instance;
-            var unmarshaller = GetAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAppRequest,GetAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -923,10 +935,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppLaunchConfiguration">REST API Reference for GetAppLaunchConfiguration Operation</seealso>
         public virtual GetAppLaunchConfigurationResponse GetAppLaunchConfiguration(GetAppLaunchConfigurationRequest request)
         {
-            var marshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppLaunchConfigurationRequest,GetAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppLaunchConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -941,11 +954,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppLaunchConfiguration">REST API Reference for GetAppLaunchConfiguration Operation</seealso>
         public virtual Task<GetAppLaunchConfigurationResponse> GetAppLaunchConfigurationAsync(GetAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAppLaunchConfigurationRequest,GetAppLaunchConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -978,10 +991,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration">REST API Reference for GetAppReplicationConfiguration Operation</seealso>
         public virtual GetAppReplicationConfigurationResponse GetAppReplicationConfiguration(GetAppReplicationConfigurationRequest request)
         {
-            var marshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetAppReplicationConfigurationRequest,GetAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAppReplicationConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -996,11 +1010,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration">REST API Reference for GetAppReplicationConfiguration Operation</seealso>
         public virtual Task<GetAppReplicationConfigurationResponse> GetAppReplicationConfigurationAsync(GetAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetAppReplicationConfigurationRequest,GetAppReplicationConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1021,10 +1035,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         public virtual GetConnectorsResponse GetConnectors(GetConnectorsRequest request)
         {
-            var marshaller = GetConnectorsRequestMarshaller.Instance;
-            var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorsResponseUnmarshaller.Instance;
 
-            return Invoke<GetConnectorsRequest,GetConnectorsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetConnectorsResponse>(request, options);
         }
 
         /// <summary>
@@ -1039,11 +1054,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         public virtual Task<GetConnectorsResponse> GetConnectorsAsync(GetConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetConnectorsRequestMarshaller.Instance;
-            var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConnectorsRequest,GetConnectorsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConnectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1070,10 +1085,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         public virtual GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request)
         {
-            var marshaller = GetReplicationJobsRequestMarshaller.Instance;
-            var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReplicationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
 
-            return Invoke<GetReplicationJobsRequest,GetReplicationJobsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReplicationJobsResponse>(request, options);
         }
 
         /// <summary>
@@ -1088,11 +1104,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         public virtual Task<GetReplicationJobsResponse> GetReplicationJobsAsync(GetReplicationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReplicationJobsRequestMarshaller.Instance;
-            var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetReplicationJobsRequest,GetReplicationJobsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReplicationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReplicationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1119,10 +1135,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         public virtual GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request)
         {
-            var marshaller = GetReplicationRunsRequestMarshaller.Instance;
-            var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReplicationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
 
-            return Invoke<GetReplicationRunsRequest,GetReplicationRunsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetReplicationRunsResponse>(request, options);
         }
 
         /// <summary>
@@ -1137,11 +1154,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         public virtual Task<GetReplicationRunsResponse> GetReplicationRunsAsync(GetReplicationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetReplicationRunsRequestMarshaller.Instance;
-            var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetReplicationRunsRequest,GetReplicationRunsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReplicationRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReplicationRunsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1167,10 +1184,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         public virtual GetServersResponse GetServers(GetServersRequest request)
         {
-            var marshaller = GetServersRequestMarshaller.Instance;
-            var unmarshaller = GetServersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServersResponseUnmarshaller.Instance;
 
-            return Invoke<GetServersRequest,GetServersResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetServersResponse>(request, options);
         }
 
         /// <summary>
@@ -1185,11 +1203,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         public virtual Task<GetServersResponse> GetServersAsync(GetServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetServersRequestMarshaller.Instance;
-            var unmarshaller = GetServersResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetServersRequest,GetServersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetServersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1229,10 +1247,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         public virtual ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request)
         {
-            var marshaller = ImportServerCatalogRequestMarshaller.Instance;
-            var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportServerCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
 
-            return Invoke<ImportServerCatalogRequest,ImportServerCatalogResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportServerCatalogResponse>(request, options);
         }
 
         /// <summary>
@@ -1247,11 +1266,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         public virtual Task<ImportServerCatalogResponse> ImportServerCatalogAsync(ImportServerCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ImportServerCatalogRequestMarshaller.Instance;
-            var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ImportServerCatalogRequest,ImportServerCatalogResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportServerCatalogRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportServerCatalogResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1284,10 +1303,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchApp">REST API Reference for LaunchApp Operation</seealso>
         public virtual LaunchAppResponse LaunchApp(LaunchAppRequest request)
         {
-            var marshaller = LaunchAppRequestMarshaller.Instance;
-            var unmarshaller = LaunchAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LaunchAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LaunchAppResponseUnmarshaller.Instance;
 
-            return Invoke<LaunchAppRequest,LaunchAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<LaunchAppResponse>(request, options);
         }
 
         /// <summary>
@@ -1302,11 +1322,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchApp">REST API Reference for LaunchApp Operation</seealso>
         public virtual Task<LaunchAppResponse> LaunchAppAsync(LaunchAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = LaunchAppRequestMarshaller.Instance;
-            var unmarshaller = LaunchAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<LaunchAppRequest,LaunchAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LaunchAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LaunchAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<LaunchAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1339,10 +1359,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual ListAppsResponse ListApps(ListAppsRequest request)
         {
-            var marshaller = ListAppsRequestMarshaller.Instance;
-            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
-            return Invoke<ListAppsRequest,ListAppsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAppsResponse>(request, options);
         }
 
         /// <summary>
@@ -1357,11 +1378,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAppsRequestMarshaller.Instance;
-            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAppsRequest,ListAppsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1394,10 +1415,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppLaunchConfiguration">REST API Reference for PutAppLaunchConfiguration Operation</seealso>
         public virtual PutAppLaunchConfigurationResponse PutAppLaunchConfiguration(PutAppLaunchConfigurationRequest request)
         {
-            var marshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutAppLaunchConfigurationRequest,PutAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAppLaunchConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1412,11 +1434,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppLaunchConfiguration">REST API Reference for PutAppLaunchConfiguration Operation</seealso>
         public virtual Task<PutAppLaunchConfigurationResponse> PutAppLaunchConfigurationAsync(PutAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAppLaunchConfigurationRequest,PutAppLaunchConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAppLaunchConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1449,10 +1471,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppReplicationConfiguration">REST API Reference for PutAppReplicationConfiguration Operation</seealso>
         public virtual PutAppReplicationConfigurationResponse PutAppReplicationConfiguration(PutAppReplicationConfigurationRequest request)
         {
-            var marshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<PutAppReplicationConfigurationRequest,PutAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutAppReplicationConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -1467,11 +1490,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppReplicationConfiguration">REST API Reference for PutAppReplicationConfiguration Operation</seealso>
         public virtual Task<PutAppReplicationConfigurationResponse> PutAppReplicationConfigurationAsync(PutAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
-            var unmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAppReplicationConfigurationRequest,PutAppReplicationConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAppReplicationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1504,10 +1527,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartAppReplication">REST API Reference for StartAppReplication Operation</seealso>
         public virtual StartAppReplicationResponse StartAppReplication(StartAppReplicationRequest request)
         {
-            var marshaller = StartAppReplicationRequestMarshaller.Instance;
-            var unmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
 
-            return Invoke<StartAppReplicationRequest,StartAppReplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartAppReplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1522,11 +1546,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartAppReplication">REST API Reference for StartAppReplication Operation</seealso>
         public virtual Task<StartAppReplicationResponse> StartAppReplicationAsync(StartAppReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartAppReplicationRequestMarshaller.Instance;
-            var unmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartAppReplicationRequest,StartAppReplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAppReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1567,10 +1591,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         public virtual StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
         {
-            var marshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
-            var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
 
-            return Invoke<StartOnDemandReplicationRunRequest,StartOnDemandReplicationRunResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartOnDemandReplicationRunResponse>(request, options);
         }
 
         /// <summary>
@@ -1585,11 +1610,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         public virtual Task<StartOnDemandReplicationRunResponse> StartOnDemandReplicationRunAsync(StartOnDemandReplicationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
-            var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StartOnDemandReplicationRunRequest,StartOnDemandReplicationRunResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartOnDemandReplicationRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1622,10 +1647,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StopAppReplication">REST API Reference for StopAppReplication Operation</seealso>
         public virtual StopAppReplicationResponse StopAppReplication(StopAppReplicationRequest request)
         {
-            var marshaller = StopAppReplicationRequestMarshaller.Instance;
-            var unmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
 
-            return Invoke<StopAppReplicationRequest,StopAppReplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopAppReplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1640,11 +1666,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StopAppReplication">REST API Reference for StopAppReplication Operation</seealso>
         public virtual Task<StopAppReplicationResponse> StopAppReplicationAsync(StopAppReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopAppReplicationRequestMarshaller.Instance;
-            var unmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StopAppReplicationRequest,StopAppReplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAppReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1677,10 +1703,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/TerminateApp">REST API Reference for TerminateApp Operation</seealso>
         public virtual TerminateAppResponse TerminateApp(TerminateAppRequest request)
         {
-            var marshaller = TerminateAppRequestMarshaller.Instance;
-            var unmarshaller = TerminateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateAppResponseUnmarshaller.Instance;
 
-            return Invoke<TerminateAppRequest,TerminateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<TerminateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -1695,11 +1722,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/TerminateApp">REST API Reference for TerminateApp Operation</seealso>
         public virtual Task<TerminateAppResponse> TerminateAppAsync(TerminateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TerminateAppRequestMarshaller.Instance;
-            var unmarshaller = TerminateAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TerminateAppRequest,TerminateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TerminateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1732,10 +1759,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
-            var marshaller = UpdateAppRequestMarshaller.Instance;
-            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAppResponse>(request, options);
         }
 
         /// <summary>
@@ -1750,11 +1778,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAppRequestMarshaller.Instance;
-            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAppRequest,UpdateAppResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1796,10 +1824,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         public virtual UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request)
         {
-            var marshaller = UpdateReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateReplicationJobRequest,UpdateReplicationJobResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateReplicationJobResponse>(request, options);
         }
 
         /// <summary>
@@ -1814,11 +1843,11 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         public virtual Task<UpdateReplicationJobResponse> UpdateReplicationJobAsync(UpdateReplicationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateReplicationJobRequestMarshaller.Instance;
-            var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateReplicationJobRequest,UpdateReplicationJobResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReplicationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateReplicationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

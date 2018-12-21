@@ -55,6 +55,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteObjectRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaStoreData");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/{Path+}";

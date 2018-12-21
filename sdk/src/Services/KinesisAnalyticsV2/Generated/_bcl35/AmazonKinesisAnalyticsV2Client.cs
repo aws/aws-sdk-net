@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KinesisAnalyticsV2.Model;
 using Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
 
-        
+
         #region  AddApplicationCloudWatchLoggingOption
 
         /// <summary>
@@ -263,10 +264,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual AddApplicationCloudWatchLoggingOptionResponse AddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request)
         {
-            var marshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
-            return Invoke<AddApplicationCloudWatchLoggingOptionRequest,AddApplicationCloudWatchLoggingOptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddApplicationCloudWatchLoggingOptionResponse>(request, options);
         }
 
         /// <summary>
@@ -283,11 +285,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual IAsyncResult BeginAddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddApplicationCloudWatchLoggingOptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -351,10 +353,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         public virtual AddApplicationInputResponse AddApplicationInput(AddApplicationInputRequest request)
         {
-            var marshaller = AddApplicationInputRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
 
-            return Invoke<AddApplicationInputRequest,AddApplicationInputResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddApplicationInputResponse>(request, options);
         }
 
         /// <summary>
@@ -371,11 +374,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         public virtual IAsyncResult BeginAddApplicationInput(AddApplicationInputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddApplicationInputRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddApplicationInputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -424,10 +427,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         public virtual AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request)
         {
-            var marshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<AddApplicationInputProcessingConfigurationRequest,AddApplicationInputProcessingConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddApplicationInputProcessingConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -444,11 +448,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginAddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddApplicationInputProcessingConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -515,10 +519,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         public virtual AddApplicationOutputResponse AddApplicationOutput(AddApplicationOutputRequest request)
         {
-            var marshaller = AddApplicationOutputRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
 
-            return Invoke<AddApplicationOutputRequest,AddApplicationOutputResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddApplicationOutputResponse>(request, options);
         }
 
         /// <summary>
@@ -535,11 +540,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         public virtual IAsyncResult BeginAddApplicationOutput(AddApplicationOutputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddApplicationOutputRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddApplicationOutputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -595,10 +600,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         public virtual AddApplicationReferenceDataSourceResponse AddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request)
         {
-            var marshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<AddApplicationReferenceDataSourceRequest,AddApplicationReferenceDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<AddApplicationReferenceDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -615,11 +621,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         public virtual IAsyncResult BeginAddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
-            var unmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<AddApplicationReferenceDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -673,10 +679,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var marshaller = CreateApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -693,11 +700,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateApplicationRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -745,10 +752,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot">REST API Reference for CreateApplicationSnapshot Operation</seealso>
         public virtual CreateApplicationSnapshotResponse CreateApplicationSnapshot(CreateApplicationSnapshotRequest request)
         {
-            var marshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<CreateApplicationSnapshotRequest,CreateApplicationSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateApplicationSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -765,11 +773,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot">REST API Reference for CreateApplicationSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateApplicationSnapshot(CreateApplicationSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateApplicationSnapshotRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -816,10 +824,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var marshaller = DeleteApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -836,11 +845,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -886,10 +895,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual DeleteApplicationCloudWatchLoggingOptionResponse DeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request)
         {
-            var marshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationCloudWatchLoggingOptionRequest,DeleteApplicationCloudWatchLoggingOptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationCloudWatchLoggingOptionResponse>(request, options);
         }
 
         /// <summary>
@@ -906,11 +916,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationCloudWatchLoggingOptionRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -956,10 +966,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         public virtual DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request)
         {
-            var marshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationInputProcessingConfigurationRequest,DeleteApplicationInputProcessingConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationInputProcessingConfigurationResponse>(request, options);
         }
 
         /// <summary>
@@ -976,11 +987,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationInputProcessingConfigurationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1028,10 +1039,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         public virtual DeleteApplicationOutputResponse DeleteApplicationOutput(DeleteApplicationOutputRequest request)
         {
-            var marshaller = DeleteApplicationOutputRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationOutputRequest,DeleteApplicationOutputResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationOutputResponse>(request, options);
         }
 
         /// <summary>
@@ -1048,11 +1060,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationOutput(DeleteApplicationOutputRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationOutputRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationOutputRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1106,10 +1118,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         public virtual DeleteApplicationReferenceDataSourceResponse DeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request)
         {
-            var marshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationReferenceDataSourceRequest,DeleteApplicationReferenceDataSourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationReferenceDataSourceResponse>(request, options);
         }
 
         /// <summary>
@@ -1126,11 +1139,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationReferenceDataSourceRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1175,10 +1188,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationSnapshot">REST API Reference for DeleteApplicationSnapshot Operation</seealso>
         public virtual DeleteApplicationSnapshotResponse DeleteApplicationSnapshot(DeleteApplicationSnapshotRequest request)
         {
-            var marshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteApplicationSnapshotRequest,DeleteApplicationSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteApplicationSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1195,11 +1209,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationSnapshot">REST API Reference for DeleteApplicationSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationSnapshot(DeleteApplicationSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteApplicationSnapshotRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1243,10 +1257,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
         {
-            var marshaller = DescribeApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeApplicationRequest,DescribeApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1263,11 +1278,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual IAsyncResult BeginDescribeApplication(DescribeApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeApplicationRequestMarshaller.Instance;
-            var unmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1306,10 +1321,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationSnapshot">REST API Reference for DescribeApplicationSnapshot Operation</seealso>
         public virtual DescribeApplicationSnapshotResponse DescribeApplicationSnapshot(DescribeApplicationSnapshotRequest request)
         {
-            var marshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeApplicationSnapshotRequest,DescribeApplicationSnapshotResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeApplicationSnapshotResponse>(request, options);
         }
 
         /// <summary>
@@ -1326,11 +1342,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationSnapshot">REST API Reference for DescribeApplicationSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDescribeApplicationSnapshot(DescribeApplicationSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
-            var unmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DescribeApplicationSnapshotRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1389,10 +1405,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         public virtual DiscoverInputSchemaResponse DiscoverInputSchema(DiscoverInputSchemaRequest request)
         {
-            var marshaller = DiscoverInputSchemaRequestMarshaller.Instance;
-            var unmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInputSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
 
-            return Invoke<DiscoverInputSchemaRequest,DiscoverInputSchemaResponse>(request, marshaller, unmarshaller);
+            return Invoke<DiscoverInputSchemaResponse>(request, options);
         }
 
         /// <summary>
@@ -1409,11 +1426,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         public virtual IAsyncResult BeginDiscoverInputSchema(DiscoverInputSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DiscoverInputSchemaRequestMarshaller.Instance;
-            var unmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInputSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DiscoverInputSchemaRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1452,10 +1469,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var marshaller = ListApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListApplicationsResponse>(request, options);
         }
 
         /// <summary>
@@ -1472,11 +1490,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListApplicationsRequestMarshaller.Instance;
-            var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListApplicationsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1512,10 +1530,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationSnapshots">REST API Reference for ListApplicationSnapshots Operation</seealso>
         public virtual ListApplicationSnapshotsResponse ListApplicationSnapshots(ListApplicationSnapshotsRequest request)
         {
-            var marshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
 
-            return Invoke<ListApplicationSnapshotsRequest,ListApplicationSnapshotsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListApplicationSnapshotsResponse>(request, options);
         }
 
         /// <summary>
@@ -1532,11 +1551,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationSnapshots">REST API Reference for ListApplicationSnapshots Operation</seealso>
         public virtual IAsyncResult BeginListApplicationSnapshots(ListApplicationSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
-            var unmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListApplicationSnapshotsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1588,10 +1607,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
         {
-            var marshaller = StartApplicationRequestMarshaller.Instance;
-            var unmarshaller = StartApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<StartApplicationRequest,StartApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1608,11 +1628,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual IAsyncResult BeginStartApplication(StartApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StartApplicationRequestMarshaller.Instance;
-            var unmarshaller = StartApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StartApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1655,10 +1675,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
         {
-            var marshaller = StopApplicationRequestMarshaller.Instance;
-            var unmarshaller = StopApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<StopApplicationRequest,StopApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1675,11 +1696,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual IAsyncResult BeginStopApplication(StopApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = StopApplicationRequestMarshaller.Instance;
-            var unmarshaller = StopApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<StopApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1742,10 +1763,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var marshaller = UpdateApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateApplicationResponse>(request, options);
         }
 
         /// <summary>
@@ -1762,11 +1784,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateApplicationRequestMarshaller.Instance;
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateApplicationRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.MediaStoreData.Model;
 using Amazon.MediaStoreData.Model.Internal.MarshallTransformations;
@@ -80,7 +81,7 @@ namespace Amazon.MediaStoreData
 
         #endregion
 
-        
+
         #region  DeleteObject
 
 
@@ -102,10 +103,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = DeleteObjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -120,11 +122,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteObjectRequestMarshaller.Instance;
-            var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteObjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -150,10 +152,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">REST API Reference for DescribeObject Operation</seealso>
         public virtual DescribeObjectResponse DescribeObject(DescribeObjectRequest request)
         {
-            var marshaller = DescribeObjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeObjectResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeObjectRequest,DescribeObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -168,11 +171,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">REST API Reference for DescribeObject Operation</seealso>
         public virtual Task<DescribeObjectResponse> DescribeObjectAsync(DescribeObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeObjectRequestMarshaller.Instance;
-            var unmarshaller = DescribeObjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeObjectRequest,DescribeObjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeObjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeObjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -201,10 +204,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var marshaller = GetObjectRequestMarshaller.Instance;
-            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
-            return Invoke<GetObjectRequest,GetObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -219,11 +223,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetObjectRequestMarshaller.Instance;
-            var unmarshaller = GetObjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetObjectRequest,GetObjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetObjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -246,10 +250,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">REST API Reference for ListItems Operation</seealso>
         public virtual ListItemsResponse ListItems(ListItemsRequest request)
         {
-            var marshaller = ListItemsRequestMarshaller.Instance;
-            var unmarshaller = ListItemsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListItemsResponseUnmarshaller.Instance;
 
-            return Invoke<ListItemsRequest,ListItemsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListItemsResponse>(request, options);
         }
 
         /// <summary>
@@ -264,11 +269,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">REST API Reference for ListItems Operation</seealso>
         public virtual Task<ListItemsResponse> ListItemsAsync(ListItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListItemsRequestMarshaller.Instance;
-            var unmarshaller = ListItemsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListItemsRequest,ListItemsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListItemsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListItemsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -291,10 +296,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var marshaller = PutObjectRequestMarshaller.Instance;
-            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
-            return Invoke<PutObjectRequest,PutObjectResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutObjectResponse>(request, options);
         }
 
         /// <summary>
@@ -309,11 +315,11 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutObjectRequestMarshaller.Instance;
-            var unmarshaller = PutObjectResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutObjectResponse>(request, options, cancellationToken);
         }
 
         #endregion

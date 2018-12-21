@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.XRay.Model;
 using Amazon.XRay.Model.Internal.MarshallTransformations;
@@ -235,7 +236,7 @@ namespace Amazon.XRay
 
         #endregion
 
-        
+
         #region  BatchGetTraces
 
         /// <summary>
@@ -254,10 +255,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
-            var marshaller = BatchGetTracesRequestMarshaller.Instance;
-            var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTracesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetTracesRequest,BatchGetTracesResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetTracesResponse>(request, options);
         }
 
         /// <summary>
@@ -273,11 +275,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = BatchGetTracesRequestMarshaller.Instance;
-            var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTracesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<BatchGetTracesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -310,10 +312,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = CreateGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -329,11 +332,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateGroupRequestMarshaller.Instance;
-            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -375,10 +378,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
         {
-            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSamplingRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -394,11 +398,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateSamplingRule(CreateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<CreateSamplingRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -431,10 +435,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = DeleteGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -450,11 +455,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteGroupRequestMarshaller.Instance;
-            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -487,10 +492,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request)
         {
-            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSamplingRuleRequest,DeleteSamplingRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSamplingRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -506,11 +512,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteSamplingRule(DeleteSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteSamplingRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -543,10 +549,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
         {
-            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -562,11 +569,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetEncryptionConfig(GetEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -599,10 +606,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var marshaller = GetGroupRequestMarshaller.Instance;
-            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
-            return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -618,11 +626,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetGroupRequestMarshaller.Instance;
-            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -655,10 +663,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetGroupsResponse GetGroups(GetGroupsRequest request)
         {
-            var marshaller = GetGroupsRequestMarshaller.Instance;
-            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsResponseUnmarshaller.Instance;
 
-            return Invoke<GetGroupsRequest,GetGroupsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetGroupsResponse>(request, options);
         }
 
         /// <summary>
@@ -674,11 +683,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetGroups(GetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetGroupsRequestMarshaller.Instance;
-            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetGroupsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -711,10 +720,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
         {
-            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
 
-            return Invoke<GetSamplingRulesRequest,GetSamplingRulesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSamplingRulesResponse>(request, options);
         }
 
         /// <summary>
@@ -730,11 +740,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSamplingRules(GetSamplingRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSamplingRulesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -767,10 +777,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request)
         {
-            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<GetSamplingStatisticSummariesRequest,GetSamplingStatisticSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSamplingStatisticSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -786,11 +797,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSamplingStatisticSummariesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -823,10 +834,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request)
         {
-            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
 
-            return Invoke<GetSamplingTargetsRequest,GetSamplingTargetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetSamplingTargetsResponse>(request, options);
         }
 
         /// <summary>
@@ -842,11 +854,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSamplingTargets(GetSamplingTargetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
-            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetSamplingTargetsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -883,10 +895,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
-            var marshaller = GetServiceGraphRequestMarshaller.Instance;
-            var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
-            return Invoke<GetServiceGraphRequest,GetServiceGraphResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetServiceGraphResponse>(request, options);
         }
 
         /// <summary>
@@ -902,11 +915,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetServiceGraphRequestMarshaller.Instance;
-            var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetServiceGraphRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -939,10 +952,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
-            var marshaller = GetTraceGraphRequestMarshaller.Instance;
-            var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
-            return Invoke<GetTraceGraphRequest,GetTraceGraphResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTraceGraphResponse>(request, options);
         }
 
         /// <summary>
@@ -958,11 +972,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetTraceGraphRequestMarshaller.Instance;
-            var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetTraceGraphRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1022,10 +1036,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
-            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
-            var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
-            return Invoke<GetTraceSummariesRequest,GetTraceSummariesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTraceSummariesResponse>(request, options);
         }
 
         /// <summary>
@@ -1041,11 +1056,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
-            var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetTraceSummariesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1078,10 +1093,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
         {
-            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
 
-            return Invoke<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutEncryptionConfigResponse>(request, options);
         }
 
         /// <summary>
@@ -1097,11 +1113,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEncryptionConfig(PutEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
-            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutEncryptionConfigRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1134,10 +1150,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
-            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
-            var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTelemetryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
-            return Invoke<PutTelemetryRecordsRequest,PutTelemetryRecordsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutTelemetryRecordsResponse>(request, options);
         }
 
         /// <summary>
@@ -1153,11 +1170,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
-            var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTelemetryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutTelemetryRecordsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1256,10 +1273,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
-            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
-            var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTraceSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
-            return Invoke<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutTraceSegmentsResponse>(request, options);
         }
 
         /// <summary>
@@ -1275,11 +1293,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
-            var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTraceSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
-            return BeginInvoke<PutTraceSegmentsRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1312,10 +1330,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var marshaller = UpdateGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateGroupResponse>(request, options);
         }
 
         /// <summary>
@@ -1331,11 +1350,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateGroupRequestMarshaller.Instance;
-            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateGroupRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -1368,10 +1387,11 @@ namespace Amazon.XRay
         /// </exception>
         public virtual UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request)
         {
-            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSamplingRuleRequest,UpdateSamplingRuleResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSamplingRuleResponse>(request, options);
         }
 
         /// <summary>
@@ -1387,11 +1407,11 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateSamplingRule(UpdateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
 
-            return BeginInvoke<UpdateSamplingRuleRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

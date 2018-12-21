@@ -55,6 +55,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListConfigurationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/v1/configurations";

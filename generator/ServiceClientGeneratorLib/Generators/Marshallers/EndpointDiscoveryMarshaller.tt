@@ -1,0 +1,92 @@
+<#@ template language="C#" inherits="BaseMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+    AddSource();
+#>
+<#+    
+    // The operation to unmarshall a response from
+    public Operation Operation { get; set; }
+
+    protected void AddSingletonMethod()
+    {
+#>
+        private static <#=this.Operation.Name #>EndpointDiscoveryMarshaller _instance = new <#=this.Operation.Name #>EndpointDiscoveryMarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+		public static <#=this.Operation.Name #>EndpointDiscoveryMarshaller Instance
+		{
+			get
+			{
+				return _instance;
+			}
+		}
+<#+
+	}		
+    
+    protected void ProcessRequestEndpointDiscoveryIds(string variableName, IEnumerable<Member> members)
+	{
+		foreach(var member in members)
+		{			
+#>
+			if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+				endpointDiscoveryData.Identifiers.Add("<#=member.PropertyName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+		
+		}
+	}
+
+    protected void AddSource()
+    {
+#>
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Endpoint discovery parameters for <#=this.Operation.Name #> operation
+    /// </summary>  
+    public class <#=this.Operation.Name #>EndpointDiscoveryMarshaller : IMarshaller<EndpointDiscoveryDataBase, <#=this.Operation.Name#>Request> , IMarshaller<EndpointDiscoveryDataBase,AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the endpoint discovery object.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+		public EndpointDiscoveryDataBase Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((<#=this.Operation.Name#>Request)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+		public EndpointDiscoveryDataBase Marshall(<#=this.Operation.Name #>Request publicRequest)
+		{
+			var endpointDiscoveryData = new EndpointDiscoveryData(<#=this.Operation.IsEndpointDiscoveryRequired.ToString().ToLowerInvariant()#>);
+
+<#+
+	if(this.Operation.RequestHasEndpointDiscoveryIdMembers)
+	{
+		ProcessRequestEndpointDiscoveryIds("publicRequest", this.Operation.RequestEndpointDiscoveryIdMembers);		
+	}
+#>
+			return endpointDiscoveryData;
+		}
+        
+<#+
+    this.AddSingletonMethod();
+#>      
+    }
+}
+<#+
+    }
+#>
+
+

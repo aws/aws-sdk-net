@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Transfer.Model;
 using Amazon.Transfer.Model.Internal.MarshallTransformations;
@@ -241,15 +242,16 @@ namespace Amazon.Transfer
 
         #endregion
 
-        
+
         #region  CreateServer
 
         internal virtual CreateServerResponse CreateServer(CreateServerRequest request)
         {
-            var marshaller = CreateServerRequestMarshaller.Instance;
-            var unmarshaller = CreateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
-            return Invoke<CreateServerRequest,CreateServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateServerResponse>(request, options);
         }
 
 
@@ -265,11 +267,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public virtual Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateServerRequestMarshaller.Instance;
-            var unmarshaller = CreateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateServerRequest,CreateServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -278,10 +280,11 @@ namespace Amazon.Transfer
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateUserResponse>(request, options);
         }
 
 
@@ -297,11 +300,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateUserRequestMarshaller.Instance;
-            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -310,10 +313,11 @@ namespace Amazon.Transfer
 
         internal virtual DeleteServerResponse DeleteServer(DeleteServerRequest request)
         {
-            var marshaller = DeleteServerRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteServerRequest,DeleteServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteServerResponse>(request, options);
         }
 
 
@@ -329,11 +333,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public virtual Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteServerRequestMarshaller.Instance;
-            var unmarshaller = DeleteServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteServerRequest,DeleteServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -342,10 +346,11 @@ namespace Amazon.Transfer
 
         internal virtual DeleteSshPublicKeyResponse DeleteSshPublicKey(DeleteSshPublicKeyRequest request)
         {
-            var marshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSshPublicKeyRequest,DeleteSshPublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSshPublicKeyResponse>(request, options);
         }
 
 
@@ -361,11 +366,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         public virtual Task<DeleteSshPublicKeyResponse> DeleteSshPublicKeyAsync(DeleteSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSshPublicKeyRequest,DeleteSshPublicKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSshPublicKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +379,11 @@ namespace Amazon.Transfer
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteUserResponse>(request, options);
         }
 
 
@@ -393,11 +399,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteUserRequestMarshaller.Instance;
-            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -406,10 +412,11 @@ namespace Amazon.Transfer
 
         internal virtual DescribeServerResponse DescribeServer(DescribeServerRequest request)
         {
-            var marshaller = DescribeServerRequestMarshaller.Instance;
-            var unmarshaller = DescribeServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeServerRequest,DescribeServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeServerResponse>(request, options);
         }
 
 
@@ -425,11 +432,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">REST API Reference for DescribeServer Operation</seealso>
         public virtual Task<DescribeServerResponse> DescribeServerAsync(DescribeServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeServerRequestMarshaller.Instance;
-            var unmarshaller = DescribeServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeServerRequest,DescribeServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -438,10 +445,11 @@ namespace Amazon.Transfer
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeUserResponse>(request, options);
         }
 
 
@@ -457,11 +465,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeUserRequestMarshaller.Instance;
-            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeUserRequest,DescribeUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -470,10 +478,11 @@ namespace Amazon.Transfer
 
         internal virtual ImportSshPublicKeyResponse ImportSshPublicKey(ImportSshPublicKeyRequest request)
         {
-            var marshaller = ImportSshPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportSshPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
 
-            return Invoke<ImportSshPublicKeyRequest,ImportSshPublicKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportSshPublicKeyResponse>(request, options);
         }
 
 
@@ -489,11 +498,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         public virtual Task<ImportSshPublicKeyResponse> ImportSshPublicKeyAsync(ImportSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ImportSshPublicKeyRequestMarshaller.Instance;
-            var unmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportSshPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ImportSshPublicKeyRequest,ImportSshPublicKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ImportSshPublicKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -502,10 +511,11 @@ namespace Amazon.Transfer
 
         internal virtual ListServersResponse ListServers(ListServersRequest request)
         {
-            var marshaller = ListServersRequestMarshaller.Instance;
-            var unmarshaller = ListServersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
-            return Invoke<ListServersRequest,ListServersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListServersResponse>(request, options);
         }
 
 
@@ -521,11 +531,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">REST API Reference for ListServers Operation</seealso>
         public virtual Task<ListServersResponse> ListServersAsync(ListServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListServersRequestMarshaller.Instance;
-            var unmarshaller = ListServersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListServersRequest,ListServersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListServersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -534,10 +544,11 @@ namespace Amazon.Transfer
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -553,11 +564,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -566,10 +577,11 @@ namespace Amazon.Transfer
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUsersResponse>(request, options);
         }
 
 
@@ -585,11 +597,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUsersRequestMarshaller.Instance;
-            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -598,10 +610,11 @@ namespace Amazon.Transfer
 
         internal virtual StartServerResponse StartServer(StartServerRequest request)
         {
-            var marshaller = StartServerRequestMarshaller.Instance;
-            var unmarshaller = StartServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartServerResponseUnmarshaller.Instance;
 
-            return Invoke<StartServerRequest,StartServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartServerResponse>(request, options);
         }
 
 
@@ -617,11 +630,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         public virtual Task<StartServerResponse> StartServerAsync(StartServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartServerRequestMarshaller.Instance;
-            var unmarshaller = StartServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartServerRequest,StartServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -630,10 +643,11 @@ namespace Amazon.Transfer
 
         internal virtual StopServerResponse StopServer(StopServerRequest request)
         {
-            var marshaller = StopServerRequestMarshaller.Instance;
-            var unmarshaller = StopServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopServerResponseUnmarshaller.Instance;
 
-            return Invoke<StopServerRequest,StopServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<StopServerResponse>(request, options);
         }
 
 
@@ -649,11 +663,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         public virtual Task<StopServerResponse> StopServerAsync(StopServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StopServerRequestMarshaller.Instance;
-            var unmarshaller = StopServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopServerRequest,StopServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StopServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -662,10 +676,11 @@ namespace Amazon.Transfer
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -681,11 +696,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -694,10 +709,11 @@ namespace Amazon.Transfer
 
         internal virtual TestIdentityProviderResponse TestIdentityProvider(TestIdentityProviderRequest request)
         {
-            var marshaller = TestIdentityProviderRequestMarshaller.Instance;
-            var unmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
 
-            return Invoke<TestIdentityProviderRequest,TestIdentityProviderResponse>(request, marshaller, unmarshaller);
+            return Invoke<TestIdentityProviderResponse>(request, options);
         }
 
 
@@ -713,11 +729,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">REST API Reference for TestIdentityProvider Operation</seealso>
         public virtual Task<TestIdentityProviderResponse> TestIdentityProviderAsync(TestIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TestIdentityProviderRequestMarshaller.Instance;
-            var unmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TestIdentityProviderRequest,TestIdentityProviderResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TestIdentityProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -726,10 +742,11 @@ namespace Amazon.Transfer
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -745,11 +762,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -758,10 +775,11 @@ namespace Amazon.Transfer
 
         internal virtual UpdateServerResponse UpdateServer(UpdateServerRequest request)
         {
-            var marshaller = UpdateServerRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateServerRequest,UpdateServerResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateServerResponse>(request, options);
         }
 
 
@@ -777,11 +795,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public virtual Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateServerRequestMarshaller.Instance;
-            var unmarshaller = UpdateServerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateServerRequest,UpdateServerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -790,10 +808,11 @@ namespace Amazon.Transfer
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateUserResponse>(request, options);
         }
 
 
@@ -809,11 +828,11 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateUserRequestMarshaller.Instance;
-            var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateUserRequest,UpdateUserResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
 
         #endregion

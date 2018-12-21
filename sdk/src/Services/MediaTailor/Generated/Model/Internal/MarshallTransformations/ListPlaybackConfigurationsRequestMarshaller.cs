@@ -55,6 +55,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPlaybackConfigurationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/playbackConfigurations";

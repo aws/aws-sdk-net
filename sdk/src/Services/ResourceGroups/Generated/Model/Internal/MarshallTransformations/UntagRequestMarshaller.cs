@@ -56,6 +56,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroups");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "PATCH";
 
             string uriResourcePath = "/resources/{Arn}/tags";

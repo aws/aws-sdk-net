@@ -56,6 +56,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoArchivedMedia");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/getHLSStreamingSessionURL";

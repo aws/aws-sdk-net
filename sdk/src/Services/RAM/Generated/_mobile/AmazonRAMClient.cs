@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.RAM.Model;
 using Amazon.RAM.Model.Internal.MarshallTransformations;
@@ -265,15 +266,16 @@ namespace Amazon.RAM
 
         #endregion
 
-        
+
         #region  AcceptResourceShareInvitation
 
         internal virtual AcceptResourceShareInvitationResponse AcceptResourceShareInvitation(AcceptResourceShareInvitationRequest request)
         {
-            var marshaller = AcceptResourceShareInvitationRequestMarshaller.Instance;
-            var unmarshaller = AcceptResourceShareInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptResourceShareInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptResourceShareInvitationResponseUnmarshaller.Instance;
 
-            return Invoke<AcceptResourceShareInvitationRequest,AcceptResourceShareInvitationResponse>(request, marshaller, unmarshaller);
+            return Invoke<AcceptResourceShareInvitationResponse>(request, options);
         }
 
 
@@ -289,11 +291,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">REST API Reference for AcceptResourceShareInvitation Operation</seealso>
         public virtual Task<AcceptResourceShareInvitationResponse> AcceptResourceShareInvitationAsync(AcceptResourceShareInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AcceptResourceShareInvitationRequestMarshaller.Instance;
-            var unmarshaller = AcceptResourceShareInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptResourceShareInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptResourceShareInvitationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AcceptResourceShareInvitationRequest,AcceptResourceShareInvitationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AcceptResourceShareInvitationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -302,10 +304,11 @@ namespace Amazon.RAM
 
         internal virtual AssociateResourceShareResponse AssociateResourceShare(AssociateResourceShareRequest request)
         {
-            var marshaller = AssociateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = AssociateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceShareResponseUnmarshaller.Instance;
 
-            return Invoke<AssociateResourceShareRequest,AssociateResourceShareResponse>(request, marshaller, unmarshaller);
+            return Invoke<AssociateResourceShareResponse>(request, options);
         }
 
 
@@ -321,11 +324,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">REST API Reference for AssociateResourceShare Operation</seealso>
         public virtual Task<AssociateResourceShareResponse> AssociateResourceShareAsync(AssociateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = AssociateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = AssociateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceShareResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AssociateResourceShareRequest,AssociateResourceShareResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<AssociateResourceShareResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -334,10 +337,11 @@ namespace Amazon.RAM
 
         internal virtual CreateResourceShareResponse CreateResourceShare(CreateResourceShareRequest request)
         {
-            var marshaller = CreateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceShareResponseUnmarshaller.Instance;
 
-            return Invoke<CreateResourceShareRequest,CreateResourceShareResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateResourceShareResponse>(request, options);
         }
 
 
@@ -353,11 +357,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">REST API Reference for CreateResourceShare Operation</seealso>
         public virtual Task<CreateResourceShareResponse> CreateResourceShareAsync(CreateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = CreateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceShareResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateResourceShareRequest,CreateResourceShareResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateResourceShareResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -366,10 +370,11 @@ namespace Amazon.RAM
 
         internal virtual DeleteResourceShareResponse DeleteResourceShare(DeleteResourceShareRequest request)
         {
-            var marshaller = DeleteResourceShareRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceShareResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteResourceShareRequest,DeleteResourceShareResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteResourceShareResponse>(request, options);
         }
 
 
@@ -385,11 +390,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">REST API Reference for DeleteResourceShare Operation</seealso>
         public virtual Task<DeleteResourceShareResponse> DeleteResourceShareAsync(DeleteResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteResourceShareRequestMarshaller.Instance;
-            var unmarshaller = DeleteResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceShareResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteResourceShareRequest,DeleteResourceShareResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteResourceShareResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -398,10 +403,11 @@ namespace Amazon.RAM
 
         internal virtual DisassociateResourceShareResponse DisassociateResourceShare(DisassociateResourceShareRequest request)
         {
-            var marshaller = DisassociateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceShareResponseUnmarshaller.Instance;
 
-            return Invoke<DisassociateResourceShareRequest,DisassociateResourceShareResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisassociateResourceShareResponse>(request, options);
         }
 
 
@@ -417,11 +423,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceShare">REST API Reference for DisassociateResourceShare Operation</seealso>
         public virtual Task<DisassociateResourceShareResponse> DisassociateResourceShareAsync(DisassociateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisassociateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = DisassociateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceShareResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DisassociateResourceShareRequest,DisassociateResourceShareResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DisassociateResourceShareResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -430,10 +436,11 @@ namespace Amazon.RAM
 
         internal virtual EnableSharingWithAwsOrganizationResponse EnableSharingWithAwsOrganization(EnableSharingWithAwsOrganizationRequest request)
         {
-            var marshaller = EnableSharingWithAwsOrganizationRequestMarshaller.Instance;
-            var unmarshaller = EnableSharingWithAwsOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSharingWithAwsOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSharingWithAwsOrganizationResponseUnmarshaller.Instance;
 
-            return Invoke<EnableSharingWithAwsOrganizationRequest,EnableSharingWithAwsOrganizationResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableSharingWithAwsOrganizationResponse>(request, options);
         }
 
 
@@ -449,11 +456,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">REST API Reference for EnableSharingWithAwsOrganization Operation</seealso>
         public virtual Task<EnableSharingWithAwsOrganizationResponse> EnableSharingWithAwsOrganizationAsync(EnableSharingWithAwsOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableSharingWithAwsOrganizationRequestMarshaller.Instance;
-            var unmarshaller = EnableSharingWithAwsOrganizationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSharingWithAwsOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSharingWithAwsOrganizationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableSharingWithAwsOrganizationRequest,EnableSharingWithAwsOrganizationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<EnableSharingWithAwsOrganizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -462,10 +469,11 @@ namespace Amazon.RAM
 
         internal virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
         {
-            var marshaller = GetResourcePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourcePoliciesRequest,GetResourcePoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourcePoliciesResponse>(request, options);
         }
 
 
@@ -481,11 +489,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourcePoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResourcePoliciesRequest,GetResourcePoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResourcePoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -494,10 +502,11 @@ namespace Amazon.RAM
 
         internal virtual GetResourceShareAssociationsResponse GetResourceShareAssociations(GetResourceShareAssociationsRequest request)
         {
-            var marshaller = GetResourceShareAssociationsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceShareAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceShareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceShareAssociationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceShareAssociationsRequest,GetResourceShareAssociationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceShareAssociationsResponse>(request, options);
         }
 
 
@@ -513,11 +522,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">REST API Reference for GetResourceShareAssociations Operation</seealso>
         public virtual Task<GetResourceShareAssociationsResponse> GetResourceShareAssociationsAsync(GetResourceShareAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourceShareAssociationsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceShareAssociationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceShareAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceShareAssociationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResourceShareAssociationsRequest,GetResourceShareAssociationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResourceShareAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -526,10 +535,11 @@ namespace Amazon.RAM
 
         internal virtual GetResourceShareInvitationsResponse GetResourceShareInvitations(GetResourceShareInvitationsRequest request)
         {
-            var marshaller = GetResourceShareInvitationsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceShareInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceShareInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceShareInvitationsResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceShareInvitationsRequest,GetResourceShareInvitationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceShareInvitationsResponse>(request, options);
         }
 
 
@@ -545,11 +555,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">REST API Reference for GetResourceShareInvitations Operation</seealso>
         public virtual Task<GetResourceShareInvitationsResponse> GetResourceShareInvitationsAsync(GetResourceShareInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourceShareInvitationsRequestMarshaller.Instance;
-            var unmarshaller = GetResourceShareInvitationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceShareInvitationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceShareInvitationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResourceShareInvitationsRequest,GetResourceShareInvitationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResourceShareInvitationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -558,10 +568,11 @@ namespace Amazon.RAM
 
         internal virtual GetResourceSharesResponse GetResourceShares(GetResourceSharesRequest request)
         {
-            var marshaller = GetResourceSharesRequestMarshaller.Instance;
-            var unmarshaller = GetResourceSharesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSharesResponseUnmarshaller.Instance;
 
-            return Invoke<GetResourceSharesRequest,GetResourceSharesResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetResourceSharesResponse>(request, options);
         }
 
 
@@ -577,11 +588,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">REST API Reference for GetResourceShares Operation</seealso>
         public virtual Task<GetResourceSharesResponse> GetResourceSharesAsync(GetResourceSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetResourceSharesRequestMarshaller.Instance;
-            var unmarshaller = GetResourceSharesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSharesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetResourceSharesRequest,GetResourceSharesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetResourceSharesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -590,10 +601,11 @@ namespace Amazon.RAM
 
         internal virtual ListPrincipalsResponse ListPrincipals(ListPrincipalsRequest request)
         {
-            var marshaller = ListPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalsResponseUnmarshaller.Instance;
 
-            return Invoke<ListPrincipalsRequest,ListPrincipalsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListPrincipalsResponse>(request, options);
         }
 
 
@@ -609,11 +621,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">REST API Reference for ListPrincipals Operation</seealso>
         public virtual Task<ListPrincipalsResponse> ListPrincipalsAsync(ListPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListPrincipalsRequestMarshaller.Instance;
-            var unmarshaller = ListPrincipalsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrincipalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrincipalsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListPrincipalsRequest,ListPrincipalsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListPrincipalsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -622,10 +634,11 @@ namespace Amazon.RAM
 
         internal virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var marshaller = ListResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourcesRequest,ListResourcesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourcesResponse>(request, options);
         }
 
 
@@ -641,11 +654,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourcesRequestMarshaller.Instance;
-            var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResourcesRequest,ListResourcesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -654,10 +667,11 @@ namespace Amazon.RAM
 
         internal virtual RejectResourceShareInvitationResponse RejectResourceShareInvitation(RejectResourceShareInvitationRequest request)
         {
-            var marshaller = RejectResourceShareInvitationRequestMarshaller.Instance;
-            var unmarshaller = RejectResourceShareInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectResourceShareInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectResourceShareInvitationResponseUnmarshaller.Instance;
 
-            return Invoke<RejectResourceShareInvitationRequest,RejectResourceShareInvitationResponse>(request, marshaller, unmarshaller);
+            return Invoke<RejectResourceShareInvitationResponse>(request, options);
         }
 
 
@@ -673,11 +687,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/RejectResourceShareInvitation">REST API Reference for RejectResourceShareInvitation Operation</seealso>
         public virtual Task<RejectResourceShareInvitationResponse> RejectResourceShareInvitationAsync(RejectResourceShareInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RejectResourceShareInvitationRequestMarshaller.Instance;
-            var unmarshaller = RejectResourceShareInvitationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectResourceShareInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectResourceShareInvitationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<RejectResourceShareInvitationRequest,RejectResourceShareInvitationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<RejectResourceShareInvitationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -686,10 +700,11 @@ namespace Amazon.RAM
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -705,11 +720,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -718,10 +733,11 @@ namespace Amazon.RAM
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -737,11 +753,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -750,10 +766,11 @@ namespace Amazon.RAM
 
         internal virtual UpdateResourceShareResponse UpdateResourceShare(UpdateResourceShareRequest request)
         {
-            var marshaller = UpdateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = UpdateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceShareResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateResourceShareRequest,UpdateResourceShareResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateResourceShareResponse>(request, options);
         }
 
 
@@ -769,11 +786,11 @@ namespace Amazon.RAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">REST API Reference for UpdateResourceShare Operation</seealso>
         public virtual Task<UpdateResourceShareResponse> UpdateResourceShareAsync(UpdateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateResourceShareRequestMarshaller.Instance;
-            var unmarshaller = UpdateResourceShareResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceShareResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateResourceShareRequest,UpdateResourceShareResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateResourceShareResponse>(request, options, cancellationToken);
         }
 
         #endregion

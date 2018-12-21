@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.KeyManagementService.Model;
 using Amazon.KeyManagementService.Model.Internal.MarshallTransformations;
@@ -347,7 +348,7 @@ namespace Amazon.KeyManagementService
 
         #endregion
 
-        
+
         #region  CancelKeyDeletion
 
 
@@ -453,10 +454,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public virtual CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
         {
-            var marshaller = CancelKeyDeletionRequestMarshaller.Instance;
-            var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelKeyDeletionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
 
-            return Invoke<CancelKeyDeletionRequest,CancelKeyDeletionResponse>(request, marshaller, unmarshaller);
+            return Invoke<CancelKeyDeletionResponse>(request, options);
         }
 
 
@@ -528,11 +530,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public virtual Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CancelKeyDeletionRequestMarshaller.Instance;
-            var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CancelKeyDeletionRequest,CancelKeyDeletionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelKeyDeletionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelKeyDeletionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -662,10 +664,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ConnectCustomKeyStore">REST API Reference for ConnectCustomKeyStore Operation</seealso>
         public virtual ConnectCustomKeyStoreResponse ConnectCustomKeyStore(ConnectCustomKeyStoreRequest request)
         {
-            var marshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
 
-            return Invoke<ConnectCustomKeyStoreRequest,ConnectCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<ConnectCustomKeyStoreResponse>(request, options);
         }
 
         /// <summary>
@@ -680,11 +683,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ConnectCustomKeyStore">REST API Reference for ConnectCustomKeyStore Operation</seealso>
         public virtual Task<ConnectCustomKeyStoreResponse> ConnectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ConnectCustomKeyStoreRequest,ConnectCustomKeyStoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConnectCustomKeyStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -860,10 +863,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = CreateAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
-            return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAliasResponse>(request, options);
         }
 
 
@@ -969,11 +973,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateAliasRequestMarshaller.Instance;
-            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAliasRequest,CreateAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1144,10 +1148,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
         public virtual CreateCustomKeyStoreResponse CreateCustomKeyStore(CreateCustomKeyStoreRequest request)
         {
-            var marshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
 
-            return Invoke<CreateCustomKeyStoreRequest,CreateCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateCustomKeyStoreResponse>(request, options);
         }
 
         /// <summary>
@@ -1162,11 +1167,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
         public virtual Task<CreateCustomKeyStoreResponse> CreateCustomKeyStoreAsync(CreateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateCustomKeyStoreRequest,CreateCustomKeyStoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCustomKeyStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1235,10 +1240,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public virtual CreateGrantResponse CreateGrant(CreateGrantRequest request)
         {
-            var marshaller = CreateGrantRequestMarshaller.Instance;
-            var unmarshaller = CreateGrantResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
 
-            return Invoke<CreateGrantRequest,CreateGrantResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateGrantResponse>(request, options);
         }
 
         /// <summary>
@@ -1253,11 +1259,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public virtual Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateGrantRequestMarshaller.Instance;
-            var unmarshaller = CreateGrantResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateGrantRequest,CreateGrantResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1391,10 +1397,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
-            var marshaller = CreateKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
-            return Invoke<CreateKeyRequest,CreateKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -1409,11 +1416,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateKeyRequestMarshaller.Instance;
-            var unmarshaller = CreateKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateKeyRequest,CreateKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1498,10 +1505,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public virtual DecryptResponse Decrypt(DecryptRequest request)
         {
-            var marshaller = DecryptRequestMarshaller.Instance;
-            var unmarshaller = DecryptResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DecryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecryptResponseUnmarshaller.Instance;
 
-            return Invoke<DecryptRequest,DecryptResponse>(request, marshaller, unmarshaller);
+            return Invoke<DecryptResponse>(request, options);
         }
 
         /// <summary>
@@ -1516,11 +1524,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public virtual Task<DecryptResponse> DecryptAsync(DecryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DecryptRequestMarshaller.Instance;
-            var unmarshaller = DecryptResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DecryptRequest,DecryptResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DecryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecryptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DecryptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1624,10 +1632,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var marshaller = DeleteAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteAliasResponse>(request, options);
         }
 
 
@@ -1696,11 +1705,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteAliasRequestMarshaller.Instance;
-            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1796,10 +1805,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteCustomKeyStore">REST API Reference for DeleteCustomKeyStore Operation</seealso>
         public virtual DeleteCustomKeyStoreResponse DeleteCustomKeyStore(DeleteCustomKeyStoreRequest request)
         {
-            var marshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteCustomKeyStoreRequest,DeleteCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteCustomKeyStoreResponse>(request, options);
         }
 
         /// <summary>
@@ -1814,11 +1824,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteCustomKeyStore">REST API Reference for DeleteCustomKeyStore Operation</seealso>
         public virtual Task<DeleteCustomKeyStoreResponse> DeleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteCustomKeyStoreRequest,DeleteCustomKeyStoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCustomKeyStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1885,10 +1895,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public virtual DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
         {
-            var marshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
-            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteImportedKeyMaterialResponse>(request, options);
         }
 
         /// <summary>
@@ -1903,11 +1914,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public virtual Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
-            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteImportedKeyMaterialResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1968,10 +1979,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">REST API Reference for DescribeCustomKeyStores Operation</seealso>
         public virtual DescribeCustomKeyStoresResponse DescribeCustomKeyStores(DescribeCustomKeyStoresRequest request)
         {
-            var marshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
-            var unmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeCustomKeyStoresRequest,DescribeCustomKeyStoresResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeCustomKeyStoresResponse>(request, options);
         }
 
         /// <summary>
@@ -1986,11 +1998,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">REST API Reference for DescribeCustomKeyStores Operation</seealso>
         public virtual Task<DescribeCustomKeyStoresResponse> DescribeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
-            var unmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeCustomKeyStoresRequest,DescribeCustomKeyStoresResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCustomKeyStoresResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2072,10 +2084,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public virtual DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
         {
-            var marshaller = DescribeKeyRequestMarshaller.Instance;
-            var unmarshaller = DescribeKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeKeyRequest,DescribeKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeKeyResponse>(request, options);
         }
 
 
@@ -2133,11 +2146,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public virtual Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeKeyRequestMarshaller.Instance;
-            var unmarshaller = DescribeKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeKeyRequest,DescribeKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2249,10 +2262,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public virtual DisableKeyResponse DisableKey(DisableKeyRequest request)
         {
-            var marshaller = DisableKeyRequestMarshaller.Instance;
-            var unmarshaller = DisableKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKeyResponseUnmarshaller.Instance;
 
-            return Invoke<DisableKeyRequest,DisableKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableKeyResponse>(request, options);
         }
 
 
@@ -2325,11 +2339,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public virtual Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableKeyRequestMarshaller.Instance;
-            var unmarshaller = DisableKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableKeyRequest,DisableKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2443,10 +2457,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public virtual DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
         {
-            var marshaller = DisableKeyRotationRequestMarshaller.Instance;
-            var unmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKeyRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
 
-            return Invoke<DisableKeyRotationRequest,DisableKeyRotationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisableKeyRotationResponse>(request, options);
         }
 
 
@@ -2520,11 +2535,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public virtual Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisableKeyRotationRequestMarshaller.Instance;
-            var unmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisableKeyRotationRequest,DisableKeyRotationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKeyRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableKeyRotationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2604,10 +2619,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisconnectCustomKeyStore">REST API Reference for DisconnectCustomKeyStore Operation</seealso>
         public virtual DisconnectCustomKeyStoreResponse DisconnectCustomKeyStore(DisconnectCustomKeyStoreRequest request)
         {
-            var marshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
 
-            return Invoke<DisconnectCustomKeyStoreRequest,DisconnectCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<DisconnectCustomKeyStoreResponse>(request, options);
         }
 
         /// <summary>
@@ -2622,11 +2638,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisconnectCustomKeyStore">REST API Reference for DisconnectCustomKeyStore Operation</seealso>
         public virtual Task<DisconnectCustomKeyStoreResponse> DisconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DisconnectCustomKeyStoreRequest,DisconnectCustomKeyStoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisconnectCustomKeyStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2736,10 +2752,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public virtual EnableKeyResponse EnableKey(EnableKeyRequest request)
         {
-            var marshaller = EnableKeyRequestMarshaller.Instance;
-            var unmarshaller = EnableKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKeyResponseUnmarshaller.Instance;
 
-            return Invoke<EnableKeyRequest,EnableKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableKeyResponse>(request, options);
         }
 
 
@@ -2811,11 +2828,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public virtual Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableKeyRequestMarshaller.Instance;
-            var unmarshaller = EnableKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableKeyRequest,EnableKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2941,10 +2958,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public virtual EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
         {
-            var marshaller = EnableKeyRotationRequestMarshaller.Instance;
-            var unmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKeyRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
 
-            return Invoke<EnableKeyRotationRequest,EnableKeyRotationResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableKeyRotationResponse>(request, options);
         }
 
 
@@ -3024,11 +3042,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public virtual Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EnableKeyRotationRequestMarshaller.Instance;
-            var unmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EnableKeyRotationRequest,EnableKeyRotationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKeyRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableKeyRotationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3118,10 +3136,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public virtual EncryptResponse Encrypt(EncryptRequest request)
         {
-            var marshaller = EncryptRequestMarshaller.Instance;
-            var unmarshaller = EncryptResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EncryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EncryptResponseUnmarshaller.Instance;
 
-            return Invoke<EncryptRequest,EncryptResponse>(request, marshaller, unmarshaller);
+            return Invoke<EncryptResponse>(request, options);
         }
 
         /// <summary>
@@ -3136,11 +3155,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public virtual Task<EncryptResponse> EncryptAsync(EncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = EncryptRequestMarshaller.Instance;
-            var unmarshaller = EncryptResponseUnmarshaller.Instance;
-
-            return InvokeAsync<EncryptRequest,EncryptResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EncryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EncryptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EncryptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3262,10 +3281,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public virtual GenerateDataKeyResponse GenerateDataKey(GenerateDataKeyRequest request)
         {
-            var marshaller = GenerateDataKeyRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateDataKeyRequest,GenerateDataKeyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateDataKeyResponse>(request, options);
         }
 
         /// <summary>
@@ -3280,11 +3300,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public virtual Task<GenerateDataKeyResponse> GenerateDataKeyAsync(GenerateDataKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateDataKeyRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateDataKeyRequest,GenerateDataKeyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateDataKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3364,10 +3384,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public virtual GenerateDataKeyWithoutPlaintextResponse GenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request)
         {
-            var marshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateDataKeyWithoutPlaintextRequest,GenerateDataKeyWithoutPlaintextResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateDataKeyWithoutPlaintextResponse>(request, options);
         }
 
         /// <summary>
@@ -3382,11 +3403,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public virtual Task<GenerateDataKeyWithoutPlaintextResponse> GenerateDataKeyWithoutPlaintextAsync(GenerateDataKeyWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
-            var unmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateDataKeyWithoutPlaintextRequest,GenerateDataKeyWithoutPlaintextResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateDataKeyWithoutPlaintextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3522,10 +3543,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
         {
-            var marshaller = GenerateRandomRequestMarshaller.Instance;
-            var unmarshaller = GenerateRandomResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateRandomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
 
-            return Invoke<GenerateRandomRequest,GenerateRandomResponse>(request, marshaller, unmarshaller);
+            return Invoke<GenerateRandomResponse>(request, options);
         }
 
 
@@ -3610,11 +3632,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual Task<GenerateRandomResponse> GenerateRandomAsync(GenerateRandomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GenerateRandomRequestMarshaller.Instance;
-            var unmarshaller = GenerateRandomResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GenerateRandomRequest,GenerateRandomResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateRandomRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateRandomResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3698,10 +3720,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public virtual GetKeyPolicyResponse GetKeyPolicy(GetKeyPolicyRequest request)
         {
-            var marshaller = GetKeyPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetKeyPolicyRequest,GetKeyPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetKeyPolicyResponse>(request, options);
         }
 
 
@@ -3761,11 +3784,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public virtual Task<GetKeyPolicyResponse> GetKeyPolicyAsync(GetKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetKeyPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetKeyPolicyRequest,GetKeyPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetKeyPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3905,10 +3928,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public virtual GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
         {
-            var marshaller = GetKeyRotationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyRotationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
 
-            return Invoke<GetKeyRotationStatusRequest,GetKeyRotationStatusResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetKeyRotationStatusResponse>(request, options);
         }
 
 
@@ -3995,11 +4019,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public virtual Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(GetKeyRotationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetKeyRotationStatusRequestMarshaller.Instance;
-            var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetKeyRotationStatusRequest,GetKeyRotationStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKeyRotationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetKeyRotationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4072,10 +4096,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
         {
-            var marshaller = GetParametersForImportRequestMarshaller.Instance;
-            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
 
-            return Invoke<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetParametersForImportResponse>(request, options);
         }
 
         /// <summary>
@@ -4090,11 +4115,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetParametersForImportRequestMarshaller.Instance;
-            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetParametersForImportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4214,10 +4239,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public virtual ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
         {
-            var marshaller = ImportKeyMaterialRequestMarshaller.Instance;
-            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
 
-            return Invoke<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportKeyMaterialResponse>(request, options);
         }
 
         /// <summary>
@@ -4232,11 +4258,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public virtual Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ImportKeyMaterialRequestMarshaller.Instance;
-            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportKeyMaterialResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4286,10 +4312,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var marshaller = ListAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
-            return Invoke<ListAliasesRequest,ListAliasesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAliasesResponse>(request, options);
         }
 
         /// <summary>
@@ -4304,11 +4331,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAliasesRequestMarshaller.Instance;
-            var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAliasesRequest,ListAliasesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAliasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4359,10 +4386,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public virtual ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
-            var marshaller = ListGrantsRequestMarshaller.Instance;
-            var unmarshaller = ListGrantsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGrantsResponseUnmarshaller.Instance;
 
-            return Invoke<ListGrantsRequest,ListGrantsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListGrantsResponse>(request, options);
         }
 
         /// <summary>
@@ -4377,11 +4405,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public virtual Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListGrantsRequestMarshaller.Instance;
-            var unmarshaller = ListGrantsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListGrantsRequest,ListGrantsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4425,10 +4453,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public virtual ListKeyPoliciesResponse ListKeyPolicies(ListKeyPoliciesRequest request)
         {
-            var marshaller = ListKeyPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
 
-            return Invoke<ListKeyPoliciesRequest,ListKeyPoliciesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListKeyPoliciesResponse>(request, options);
         }
 
         /// <summary>
@@ -4443,11 +4472,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public virtual Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListKeyPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListKeyPoliciesRequest,ListKeyPoliciesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKeyPoliciesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4475,10 +4504,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
-            var marshaller = ListKeysRequestMarshaller.Instance;
-            var unmarshaller = ListKeysResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
-            return Invoke<ListKeysRequest,ListKeysResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListKeysResponse>(request, options);
         }
 
         /// <summary>
@@ -4493,11 +4523,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListKeysRequestMarshaller.Instance;
-            var unmarshaller = ListKeysResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListKeysRequest,ListKeysResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4533,10 +4563,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
         public virtual ListResourceTagsResponse ListResourceTags(ListResourceTagsRequest request)
         {
-            var marshaller = ListResourceTagsRequestMarshaller.Instance;
-            var unmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceTagsRequest,ListResourceTagsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceTagsResponse>(request, options);
         }
 
         /// <summary>
@@ -4551,11 +4582,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
         public virtual Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourceTagsRequestMarshaller.Instance;
-            var unmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListResourceTagsRequest,ListResourceTagsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4672,10 +4703,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public virtual ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
         {
-            var marshaller = ListRetirableGrantsRequestMarshaller.Instance;
-            var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetirableGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
 
-            return Invoke<ListRetirableGrantsRequest,ListRetirableGrantsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListRetirableGrantsResponse>(request, options);
         }
 
 
@@ -4772,11 +4804,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public virtual Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListRetirableGrantsRequestMarshaller.Instance;
-            var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListRetirableGrantsRequest,ListRetirableGrantsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetirableGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRetirableGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4900,10 +4932,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public virtual PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
         {
-            var marshaller = PutKeyPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutKeyPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutKeyPolicyRequest,PutKeyPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutKeyPolicyResponse>(request, options);
         }
 
 
@@ -4984,11 +5017,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public virtual Task<PutKeyPolicyResponse> PutKeyPolicyAsync(PutKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutKeyPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutKeyPolicyRequest,PutKeyPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutKeyPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutKeyPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5070,10 +5103,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public virtual ReEncryptResponse ReEncrypt(ReEncryptRequest request)
         {
-            var marshaller = ReEncryptRequestMarshaller.Instance;
-            var unmarshaller = ReEncryptResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReEncryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReEncryptResponseUnmarshaller.Instance;
 
-            return Invoke<ReEncryptRequest,ReEncryptResponse>(request, marshaller, unmarshaller);
+            return Invoke<ReEncryptResponse>(request, options);
         }
 
         /// <summary>
@@ -5088,11 +5122,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public virtual Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ReEncryptRequestMarshaller.Instance;
-            var unmarshaller = ReEncryptResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ReEncryptRequest,ReEncryptResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReEncryptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReEncryptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReEncryptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5230,10 +5264,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public virtual RetireGrantResponse RetireGrant(RetireGrantRequest request)
         {
-            var marshaller = RetireGrantRequestMarshaller.Instance;
-            var unmarshaller = RetireGrantResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetireGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetireGrantResponseUnmarshaller.Instance;
 
-            return Invoke<RetireGrantRequest,RetireGrantResponse>(request, marshaller, unmarshaller);
+            return Invoke<RetireGrantResponse>(request, options);
         }
 
 
@@ -5319,11 +5354,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public virtual Task<RetireGrantResponse> RetireGrantAsync(RetireGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RetireGrantRequestMarshaller.Instance;
-            var unmarshaller = RetireGrantResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RetireGrantRequest,RetireGrantResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RetireGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetireGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RetireGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5425,10 +5460,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public virtual RevokeGrantResponse RevokeGrant(RevokeGrantRequest request)
         {
-            var marshaller = RevokeGrantRequestMarshaller.Instance;
-            var unmarshaller = RevokeGrantResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeGrantResponseUnmarshaller.Instance;
 
-            return Invoke<RevokeGrantRequest,RevokeGrantResponse>(request, marshaller, unmarshaller);
+            return Invoke<RevokeGrantResponse>(request, options);
         }
 
 
@@ -5497,11 +5533,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public virtual Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = RevokeGrantRequestMarshaller.Instance;
-            var unmarshaller = RevokeGrantResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RevokeGrantRequest,RevokeGrantResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5733,10 +5769,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public virtual ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
         {
-            var marshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
-            var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
 
-            return Invoke<ScheduleKeyDeletionRequest,ScheduleKeyDeletionResponse>(request, marshaller, unmarshaller);
+            return Invoke<ScheduleKeyDeletionResponse>(request, options);
         }
 
 
@@ -5911,11 +5948,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public virtual Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
-            var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ScheduleKeyDeletionRequest,ScheduleKeyDeletionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ScheduleKeyDeletionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5985,10 +6022,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -6003,11 +6041,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6062,10 +6100,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
         /// <summary>
@@ -6080,11 +6119,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6224,10 +6263,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var marshaller = UpdateAliasRequestMarshaller.Instance;
-            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateAliasResponse>(request, options);
         }
 
 
@@ -6315,11 +6355,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateAliasRequestMarshaller.Instance;
-            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6492,10 +6532,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
         public virtual UpdateCustomKeyStoreResponse UpdateCustomKeyStore(UpdateCustomKeyStoreRequest request)
         {
-            var marshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateCustomKeyStoreRequest,UpdateCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateCustomKeyStoreResponse>(request, options);
         }
 
         /// <summary>
@@ -6510,11 +6551,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
         public virtual Task<UpdateCustomKeyStoreResponse> UpdateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
-            var unmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateCustomKeyStoreRequest,UpdateCustomKeyStoreResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCustomKeyStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6622,10 +6663,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public virtual UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
         {
-            var marshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
-            var unmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateKeyDescriptionRequest,UpdateKeyDescriptionResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateKeyDescriptionResponse>(request, options);
         }
 
 
@@ -6697,11 +6739,11 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public virtual Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
-            var unmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
-
-            return InvokeAsync<UpdateKeyDescriptionRequest,UpdateKeyDescriptionResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateKeyDescriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion

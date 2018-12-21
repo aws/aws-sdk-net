@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.SimpleEmail.Model.Internal.MarshallTransformations;
@@ -190,7 +191,7 @@ namespace Amazon.SimpleEmail
 
         #endregion
 
-        
+
         #region  CloneReceiptRuleSet
 
         /// <summary>
@@ -205,8 +206,9 @@ namespace Amazon.SimpleEmail
         public virtual void CloneReceiptRuleSetAsync(CloneReceiptRuleSetRequest request, AmazonServiceCallback<CloneReceiptRuleSetRequest, CloneReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -214,7 +216,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CloneReceiptRuleSetRequest,CloneReceiptRuleSetResponse>((CloneReceiptRuleSetRequest)req, (CloneReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CloneReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -233,8 +235,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateConfigurationSetAsync(CreateConfigurationSetRequest request, AmazonServiceCallback<CreateConfigurationSetRequest, CreateConfigurationSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -242,7 +245,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateConfigurationSetRequest,CreateConfigurationSetResponse>((CreateConfigurationSetRequest)req, (CreateConfigurationSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -261,8 +264,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, AmazonServiceCallback<CreateConfigurationSetEventDestinationRequest, CreateConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -270,7 +274,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>((CreateConfigurationSetEventDestinationRequest)req, (CreateConfigurationSetEventDestinationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -289,8 +293,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateConfigurationSetTrackingOptionsAsync(CreateConfigurationSetTrackingOptionsRequest request, AmazonServiceCallback<CreateConfigurationSetTrackingOptionsRequest, CreateConfigurationSetTrackingOptionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -298,7 +303,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateConfigurationSetTrackingOptionsRequest,CreateConfigurationSetTrackingOptionsResponse>((CreateConfigurationSetTrackingOptionsRequest)req, (CreateConfigurationSetTrackingOptionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -317,8 +322,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateCustomVerificationEmailTemplateAsync(CreateCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<CreateCustomVerificationEmailTemplateRequest, CreateCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
-            var unmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -326,7 +332,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateCustomVerificationEmailTemplateRequest,CreateCustomVerificationEmailTemplateResponse>((CreateCustomVerificationEmailTemplateRequest)req, (CreateCustomVerificationEmailTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -345,8 +351,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateReceiptFilterAsync(CreateReceiptFilterRequest request, AmazonServiceCallback<CreateReceiptFilterRequest, CreateReceiptFilterResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateReceiptFilterRequestMarshaller.Instance;
-            var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateReceiptFilterRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -354,7 +361,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateReceiptFilterRequest,CreateReceiptFilterResponse>((CreateReceiptFilterRequest)req, (CreateReceiptFilterResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateReceiptFilterRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -373,8 +380,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateReceiptRuleAsync(CreateReceiptRuleRequest request, AmazonServiceCallback<CreateReceiptRuleRequest, CreateReceiptRuleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateReceiptRuleRequestMarshaller.Instance;
-            var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateReceiptRuleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -382,7 +390,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateReceiptRuleRequest,CreateReceiptRuleResponse>((CreateReceiptRuleRequest)req, (CreateReceiptRuleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateReceiptRuleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -401,8 +409,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateReceiptRuleSetAsync(CreateReceiptRuleSetRequest request, AmazonServiceCallback<CreateReceiptRuleSetRequest, CreateReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -410,7 +419,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>((CreateReceiptRuleSetRequest)req, (CreateReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -429,8 +438,9 @@ namespace Amazon.SimpleEmail
         public virtual void CreateTemplateAsync(CreateTemplateRequest request, AmazonServiceCallback<CreateTemplateRequest, CreateTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = CreateTemplateRequestMarshaller.Instance;
-            var unmarshaller = CreateTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -438,7 +448,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<CreateTemplateRequest,CreateTemplateResponse>((CreateTemplateRequest)req, (CreateTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<CreateTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -457,8 +467,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, AmazonServiceCallback<DeleteConfigurationSetRequest, DeleteConfigurationSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -466,7 +477,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>((DeleteConfigurationSetRequest)req, (DeleteConfigurationSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -485,8 +496,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, AmazonServiceCallback<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -494,7 +506,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>((DeleteConfigurationSetEventDestinationRequest)req, (DeleteConfigurationSetEventDestinationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -513,8 +525,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteConfigurationSetTrackingOptionsAsync(DeleteConfigurationSetTrackingOptionsRequest request, AmazonServiceCallback<DeleteConfigurationSetTrackingOptionsRequest, DeleteConfigurationSetTrackingOptionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -522,7 +535,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteConfigurationSetTrackingOptionsRequest,DeleteConfigurationSetTrackingOptionsResponse>((DeleteConfigurationSetTrackingOptionsRequest)req, (DeleteConfigurationSetTrackingOptionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -541,8 +554,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteCustomVerificationEmailTemplateAsync(DeleteCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<DeleteCustomVerificationEmailTemplateRequest, DeleteCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
-            var unmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -550,7 +564,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteCustomVerificationEmailTemplateRequest,DeleteCustomVerificationEmailTemplateResponse>((DeleteCustomVerificationEmailTemplateRequest)req, (DeleteCustomVerificationEmailTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -569,8 +583,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteIdentityAsync(DeleteIdentityRequest request, AmazonServiceCallback<DeleteIdentityRequest, DeleteIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteIdentityRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteIdentityRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -578,7 +593,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteIdentityRequest,DeleteIdentityResponse>((DeleteIdentityRequest)req, (DeleteIdentityResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteIdentityRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -597,8 +612,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteIdentityPolicyAsync(DeleteIdentityPolicyRequest request, AmazonServiceCallback<DeleteIdentityPolicyRequest, DeleteIdentityPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -606,7 +622,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteIdentityPolicyRequest,DeleteIdentityPolicyResponse>((DeleteIdentityPolicyRequest)req, (DeleteIdentityPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteIdentityPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -625,8 +641,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteReceiptFilterAsync(DeleteReceiptFilterRequest request, AmazonServiceCallback<DeleteReceiptFilterRequest, DeleteReceiptFilterResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteReceiptFilterRequestMarshaller.Instance;
-            var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteReceiptFilterRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -634,7 +651,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteReceiptFilterRequest,DeleteReceiptFilterResponse>((DeleteReceiptFilterRequest)req, (DeleteReceiptFilterResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteReceiptFilterRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -653,8 +670,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteReceiptRuleAsync(DeleteReceiptRuleRequest request, AmazonServiceCallback<DeleteReceiptRuleRequest, DeleteReceiptRuleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteReceiptRuleRequestMarshaller.Instance;
-            var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteReceiptRuleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -662,7 +680,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteReceiptRuleRequest,DeleteReceiptRuleResponse>((DeleteReceiptRuleRequest)req, (DeleteReceiptRuleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteReceiptRuleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -681,8 +699,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteReceiptRuleSetAsync(DeleteReceiptRuleSetRequest request, AmazonServiceCallback<DeleteReceiptRuleSetRequest, DeleteReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -690,7 +709,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>((DeleteReceiptRuleSetRequest)req, (DeleteReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -709,8 +728,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteTemplateAsync(DeleteTemplateRequest request, AmazonServiceCallback<DeleteTemplateRequest, DeleteTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteTemplateRequestMarshaller.Instance;
-            var unmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -718,7 +738,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteTemplateRequest,DeleteTemplateResponse>((DeleteTemplateRequest)req, (DeleteTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -737,8 +757,9 @@ namespace Amazon.SimpleEmail
         public virtual void DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, AmazonServiceCallback<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
-            var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -746,7 +767,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>((DeleteVerifiedEmailAddressRequest)req, (DeleteVerifiedEmailAddressResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DeleteVerifiedEmailAddressRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -765,8 +786,9 @@ namespace Amazon.SimpleEmail
         public virtual void DescribeActiveReceiptRuleSetAsync(DescribeActiveReceiptRuleSetRequest request, AmazonServiceCallback<DescribeActiveReceiptRuleSetRequest, DescribeActiveReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -774,7 +796,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>((DescribeActiveReceiptRuleSetRequest)req, (DescribeActiveReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DescribeActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -793,8 +815,9 @@ namespace Amazon.SimpleEmail
         public virtual void DescribeConfigurationSetAsync(DescribeConfigurationSetRequest request, AmazonServiceCallback<DescribeConfigurationSetRequest, DescribeConfigurationSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DescribeConfigurationSetRequestMarshaller.Instance;
-            var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeConfigurationSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -802,7 +825,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse>((DescribeConfigurationSetRequest)req, (DescribeConfigurationSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DescribeConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -821,8 +844,9 @@ namespace Amazon.SimpleEmail
         public virtual void DescribeReceiptRuleAsync(DescribeReceiptRuleRequest request, AmazonServiceCallback<DescribeReceiptRuleRequest, DescribeReceiptRuleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DescribeReceiptRuleRequestMarshaller.Instance;
-            var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeReceiptRuleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -830,7 +854,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DescribeReceiptRuleRequest,DescribeReceiptRuleResponse>((DescribeReceiptRuleRequest)req, (DescribeReceiptRuleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DescribeReceiptRuleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -849,8 +873,9 @@ namespace Amazon.SimpleEmail
         public virtual void DescribeReceiptRuleSetAsync(DescribeReceiptRuleSetRequest request, AmazonServiceCallback<DescribeReceiptRuleSetRequest, DescribeReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -858,7 +883,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<DescribeReceiptRuleSetRequest,DescribeReceiptRuleSetResponse>((DescribeReceiptRuleSetRequest)req, (DescribeReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<DescribeReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -877,8 +902,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetAccountSendingEnabledAsync(GetAccountSendingEnabledRequest request, AmazonServiceCallback<GetAccountSendingEnabledRequest, GetAccountSendingEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
-            var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -886,7 +912,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetAccountSendingEnabledRequest,GetAccountSendingEnabledResponse>((GetAccountSendingEnabledRequest)req, (GetAccountSendingEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetAccountSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -905,8 +931,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetCustomVerificationEmailTemplateAsync(GetCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<GetCustomVerificationEmailTemplateRequest, GetCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
-            var unmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -914,7 +941,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetCustomVerificationEmailTemplateRequest,GetCustomVerificationEmailTemplateResponse>((GetCustomVerificationEmailTemplateRequest)req, (GetCustomVerificationEmailTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -933,8 +960,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest request, AmazonServiceCallback<GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -942,7 +970,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetIdentityDkimAttributesRequest,GetIdentityDkimAttributesResponse>((GetIdentityDkimAttributesRequest)req, (GetIdentityDkimAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetIdentityDkimAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -961,8 +989,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetIdentityMailFromDomainAttributesAsync(GetIdentityMailFromDomainAttributesRequest request, AmazonServiceCallback<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -970,7 +999,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>((GetIdentityMailFromDomainAttributesRequest)req, (GetIdentityMailFromDomainAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetIdentityMailFromDomainAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -989,8 +1018,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest request, AmazonServiceCallback<GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -998,7 +1028,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>((GetIdentityNotificationAttributesRequest)req, (GetIdentityNotificationAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetIdentityNotificationAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1017,8 +1047,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetIdentityPoliciesAsync(GetIdentityPoliciesRequest request, AmazonServiceCallback<GetIdentityPoliciesRequest, GetIdentityPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetIdentityPoliciesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetIdentityPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1026,7 +1057,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetIdentityPoliciesRequest,GetIdentityPoliciesResponse>((GetIdentityPoliciesRequest)req, (GetIdentityPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetIdentityPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1045,8 +1076,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest request, AmazonServiceCallback<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
-            var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1054,7 +1086,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetIdentityVerificationAttributesRequest,GetIdentityVerificationAttributesResponse>((GetIdentityVerificationAttributesRequest)req, (GetIdentityVerificationAttributesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetIdentityVerificationAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1096,8 +1128,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetSendQuotaAsync(GetSendQuotaRequest request, AmazonServiceCallback<GetSendQuotaRequest, GetSendQuotaResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetSendQuotaRequestMarshaller.Instance;
-            var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetSendQuotaRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1105,7 +1138,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetSendQuotaRequest,GetSendQuotaResponse>((GetSendQuotaRequest)req, (GetSendQuotaResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetSendQuotaRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1149,8 +1182,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetSendStatisticsAsync(GetSendStatisticsRequest request, AmazonServiceCallback<GetSendStatisticsRequest, GetSendStatisticsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetSendStatisticsRequestMarshaller.Instance;
-            var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetSendStatisticsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1158,7 +1192,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetSendStatisticsRequest,GetSendStatisticsResponse>((GetSendStatisticsRequest)req, (GetSendStatisticsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetSendStatisticsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1177,8 +1211,9 @@ namespace Amazon.SimpleEmail
         public virtual void GetTemplateAsync(GetTemplateRequest request, AmazonServiceCallback<GetTemplateRequest, GetTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = GetTemplateRequestMarshaller.Instance;
-            var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1186,7 +1221,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<GetTemplateRequest,GetTemplateResponse>((GetTemplateRequest)req, (GetTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<GetTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1205,8 +1240,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListConfigurationSetsAsync(ListConfigurationSetsRequest request, AmazonServiceCallback<ListConfigurationSetsRequest, ListConfigurationSetsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
-            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1214,7 +1250,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListConfigurationSetsRequest,ListConfigurationSetsResponse>((ListConfigurationSetsRequest)req, (ListConfigurationSetsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListConfigurationSetsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1233,8 +1269,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListCustomVerificationEmailTemplatesAsync(ListCustomVerificationEmailTemplatesRequest request, AmazonServiceCallback<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
-            var unmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1242,7 +1279,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListCustomVerificationEmailTemplatesRequest,ListCustomVerificationEmailTemplatesResponse>((ListCustomVerificationEmailTemplatesRequest)req, (ListCustomVerificationEmailTemplatesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListCustomVerificationEmailTemplatesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1285,8 +1322,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListIdentitiesAsync(ListIdentitiesRequest request, AmazonServiceCallback<ListIdentitiesRequest, ListIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListIdentitiesRequestMarshaller.Instance;
-            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListIdentitiesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1294,7 +1332,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListIdentitiesRequest,ListIdentitiesResponse>((ListIdentitiesRequest)req, (ListIdentitiesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListIdentitiesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1313,8 +1351,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListIdentityPoliciesAsync(ListIdentityPoliciesRequest request, AmazonServiceCallback<ListIdentityPoliciesRequest, ListIdentityPoliciesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListIdentityPoliciesRequestMarshaller.Instance;
-            var unmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListIdentityPoliciesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1322,7 +1361,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListIdentityPoliciesRequest,ListIdentityPoliciesResponse>((ListIdentityPoliciesRequest)req, (ListIdentityPoliciesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListIdentityPoliciesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1341,8 +1380,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListReceiptFiltersAsync(ListReceiptFiltersRequest request, AmazonServiceCallback<ListReceiptFiltersRequest, ListReceiptFiltersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListReceiptFiltersRequestMarshaller.Instance;
-            var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListReceiptFiltersRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1350,7 +1390,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListReceiptFiltersRequest,ListReceiptFiltersResponse>((ListReceiptFiltersRequest)req, (ListReceiptFiltersResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListReceiptFiltersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1369,8 +1409,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListReceiptRuleSetsAsync(ListReceiptRuleSetsRequest request, AmazonServiceCallback<ListReceiptRuleSetsRequest, ListReceiptRuleSetsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
-            var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1378,7 +1419,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListReceiptRuleSetsRequest,ListReceiptRuleSetsResponse>((ListReceiptRuleSetsRequest)req, (ListReceiptRuleSetsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListReceiptRuleSetsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1397,8 +1438,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListTemplatesAsync(ListTemplatesRequest request, AmazonServiceCallback<ListTemplatesRequest, ListTemplatesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListTemplatesRequestMarshaller.Instance;
-            var unmarshaller = ListTemplatesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1406,7 +1448,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListTemplatesRequest,ListTemplatesResponse>((ListTemplatesRequest)req, (ListTemplatesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListTemplatesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1444,8 +1486,9 @@ namespace Amazon.SimpleEmail
         public virtual void ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest request, AmazonServiceCallback<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
-            var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1453,7 +1496,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>((ListVerifiedEmailAddressesRequest)req, (ListVerifiedEmailAddressesResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ListVerifiedEmailAddressesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1472,8 +1515,9 @@ namespace Amazon.SimpleEmail
         public virtual void PutIdentityPolicyAsync(PutIdentityPolicyRequest request, AmazonServiceCallback<PutIdentityPolicyRequest, PutIdentityPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = PutIdentityPolicyRequestMarshaller.Instance;
-            var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = PutIdentityPolicyRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1481,7 +1525,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<PutIdentityPolicyRequest,PutIdentityPolicyResponse>((PutIdentityPolicyRequest)req, (PutIdentityPolicyResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<PutIdentityPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1500,8 +1544,9 @@ namespace Amazon.SimpleEmail
         public virtual void ReorderReceiptRuleSetAsync(ReorderReceiptRuleSetRequest request, AmazonServiceCallback<ReorderReceiptRuleSetRequest, ReorderReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1509,7 +1554,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<ReorderReceiptRuleSetRequest,ReorderReceiptRuleSetResponse>((ReorderReceiptRuleSetRequest)req, (ReorderReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<ReorderReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1528,8 +1573,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendBounceAsync(SendBounceRequest request, AmazonServiceCallback<SendBounceRequest, SendBounceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendBounceRequestMarshaller.Instance;
-            var unmarshaller = SendBounceResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendBounceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendBounceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1537,7 +1583,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendBounceRequest,SendBounceResponse>((SendBounceRequest)req, (SendBounceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendBounceRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1556,8 +1602,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendBulkTemplatedEmailAsync(SendBulkTemplatedEmailRequest request, AmazonServiceCallback<SendBulkTemplatedEmailRequest, SendBulkTemplatedEmailResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
-            var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1565,7 +1612,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendBulkTemplatedEmailRequest,SendBulkTemplatedEmailResponse>((SendBulkTemplatedEmailRequest)req, (SendBulkTemplatedEmailResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendBulkTemplatedEmailRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1584,8 +1631,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request, AmazonServiceCallback<SendCustomVerificationEmailRequest, SendCustomVerificationEmailResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
-            var unmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1593,7 +1641,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendCustomVerificationEmailRequest,SendCustomVerificationEmailResponse>((SendCustomVerificationEmailRequest)req, (SendCustomVerificationEmailResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendCustomVerificationEmailRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1612,8 +1660,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendEmailAsync(SendEmailRequest request, AmazonServiceCallback<SendEmailRequest, SendEmailResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendEmailRequestMarshaller.Instance;
-            var unmarshaller = SendEmailResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendEmailRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1621,7 +1670,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendEmailRequest,SendEmailResponse>((SendEmailRequest)req, (SendEmailResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendEmailRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1640,8 +1689,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendRawEmailAsync(SendRawEmailRequest request, AmazonServiceCallback<SendRawEmailRequest, SendRawEmailResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendRawEmailRequestMarshaller.Instance;
-            var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendRawEmailRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendRawEmailResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1649,7 +1699,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendRawEmailRequest,SendRawEmailResponse>((SendRawEmailRequest)req, (SendRawEmailResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendRawEmailRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1668,8 +1718,9 @@ namespace Amazon.SimpleEmail
         public virtual void SendTemplatedEmailAsync(SendTemplatedEmailRequest request, AmazonServiceCallback<SendTemplatedEmailRequest, SendTemplatedEmailResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SendTemplatedEmailRequestMarshaller.Instance;
-            var unmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SendTemplatedEmailRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1677,7 +1728,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SendTemplatedEmailRequest,SendTemplatedEmailResponse>((SendTemplatedEmailRequest)req, (SendTemplatedEmailResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SendTemplatedEmailRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1696,8 +1747,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetActiveReceiptRuleSetAsync(SetActiveReceiptRuleSetRequest request, AmazonServiceCallback<SetActiveReceiptRuleSetRequest, SetActiveReceiptRuleSetResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
-            var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1705,7 +1757,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetActiveReceiptRuleSetRequest,SetActiveReceiptRuleSetResponse>((SetActiveReceiptRuleSetRequest)req, (SetActiveReceiptRuleSetResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1724,8 +1776,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest request, AmazonServiceCallback<SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1733,7 +1786,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetIdentityDkimEnabledRequest,SetIdentityDkimEnabledResponse>((SetIdentityDkimEnabledRequest)req, (SetIdentityDkimEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetIdentityDkimEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1752,8 +1805,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest request, AmazonServiceCallback<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1761,7 +1815,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>((SetIdentityFeedbackForwardingEnabledRequest)req, (SetIdentityFeedbackForwardingEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetIdentityFeedbackForwardingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1780,8 +1834,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetIdentityHeadersInNotificationsEnabledAsync(SetIdentityHeadersInNotificationsEnabledRequest request, AmazonServiceCallback<SetIdentityHeadersInNotificationsEnabledRequest, SetIdentityHeadersInNotificationsEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1789,7 +1844,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetIdentityHeadersInNotificationsEnabledRequest,SetIdentityHeadersInNotificationsEnabledResponse>((SetIdentityHeadersInNotificationsEnabledRequest)req, (SetIdentityHeadersInNotificationsEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetIdentityHeadersInNotificationsEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1808,8 +1863,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetIdentityMailFromDomainAsync(SetIdentityMailFromDomainRequest request, AmazonServiceCallback<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1817,7 +1873,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>((SetIdentityMailFromDomainRequest)req, (SetIdentityMailFromDomainResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetIdentityMailFromDomainRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1836,8 +1892,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, AmazonServiceCallback<SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
-            var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1845,7 +1902,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>((SetIdentityNotificationTopicRequest)req, (SetIdentityNotificationTopicResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetIdentityNotificationTopicRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1864,8 +1921,9 @@ namespace Amazon.SimpleEmail
         public virtual void SetReceiptRulePositionAsync(SetReceiptRulePositionRequest request, AmazonServiceCallback<SetReceiptRulePositionRequest, SetReceiptRulePositionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = SetReceiptRulePositionRequestMarshaller.Instance;
-            var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = SetReceiptRulePositionRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1873,7 +1931,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>((SetReceiptRulePositionRequest)req, (SetReceiptRulePositionResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<SetReceiptRulePositionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1892,8 +1950,9 @@ namespace Amazon.SimpleEmail
         public virtual void TestRenderTemplateAsync(TestRenderTemplateRequest request, AmazonServiceCallback<TestRenderTemplateRequest, TestRenderTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = TestRenderTemplateRequestMarshaller.Instance;
-            var unmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TestRenderTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1901,7 +1960,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<TestRenderTemplateRequest,TestRenderTemplateResponse>((TestRenderTemplateRequest)req, (TestRenderTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<TestRenderTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1920,8 +1979,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateAccountSendingEnabledAsync(UpdateAccountSendingEnabledRequest request, AmazonServiceCallback<UpdateAccountSendingEnabledRequest, UpdateAccountSendingEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
-            var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1929,7 +1989,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateAccountSendingEnabledRequest,UpdateAccountSendingEnabledResponse>((UpdateAccountSendingEnabledRequest)req, (UpdateAccountSendingEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateAccountSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1948,8 +2008,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, AmazonServiceCallback<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1957,7 +2018,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>((UpdateConfigurationSetEventDestinationRequest)req, (UpdateConfigurationSetEventDestinationResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -1976,8 +2037,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateConfigurationSetReputationMetricsEnabledAsync(UpdateConfigurationSetReputationMetricsEnabledRequest request, AmazonServiceCallback<UpdateConfigurationSetReputationMetricsEnabledRequest, UpdateConfigurationSetReputationMetricsEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -1985,7 +2047,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateConfigurationSetReputationMetricsEnabledRequest,UpdateConfigurationSetReputationMetricsEnabledResponse>((UpdateConfigurationSetReputationMetricsEnabledRequest)req, (UpdateConfigurationSetReputationMetricsEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateConfigurationSetReputationMetricsEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2004,8 +2066,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateConfigurationSetSendingEnabledAsync(UpdateConfigurationSetSendingEnabledRequest request, AmazonServiceCallback<UpdateConfigurationSetSendingEnabledRequest, UpdateConfigurationSetSendingEnabledResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2013,7 +2076,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateConfigurationSetSendingEnabledRequest,UpdateConfigurationSetSendingEnabledResponse>((UpdateConfigurationSetSendingEnabledRequest)req, (UpdateConfigurationSetSendingEnabledResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateConfigurationSetSendingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2032,8 +2095,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateConfigurationSetTrackingOptionsAsync(UpdateConfigurationSetTrackingOptionsRequest request, AmazonServiceCallback<UpdateConfigurationSetTrackingOptionsRequest, UpdateConfigurationSetTrackingOptionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
-            var unmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2041,7 +2105,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateConfigurationSetTrackingOptionsRequest,UpdateConfigurationSetTrackingOptionsResponse>((UpdateConfigurationSetTrackingOptionsRequest)req, (UpdateConfigurationSetTrackingOptionsResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2060,8 +2124,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateCustomVerificationEmailTemplateAsync(UpdateCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<UpdateCustomVerificationEmailTemplateRequest, UpdateCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
-            var unmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2069,7 +2134,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateCustomVerificationEmailTemplateRequest,UpdateCustomVerificationEmailTemplateResponse>((UpdateCustomVerificationEmailTemplateRequest)req, (UpdateCustomVerificationEmailTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2088,8 +2153,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateReceiptRuleAsync(UpdateReceiptRuleRequest request, AmazonServiceCallback<UpdateReceiptRuleRequest, UpdateReceiptRuleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateReceiptRuleRequestMarshaller.Instance;
-            var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateReceiptRuleRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2097,7 +2163,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>((UpdateReceiptRuleRequest)req, (UpdateReceiptRuleResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateReceiptRuleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2116,8 +2182,9 @@ namespace Amazon.SimpleEmail
         public virtual void UpdateTemplateAsync(UpdateTemplateRequest request, AmazonServiceCallback<UpdateTemplateRequest, UpdateTemplateResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = UpdateTemplateRequestMarshaller.Instance;
-            var unmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2125,7 +2192,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<UpdateTemplateRequest,UpdateTemplateResponse>((UpdateTemplateRequest)req, (UpdateTemplateResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<UpdateTemplateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2144,8 +2211,9 @@ namespace Amazon.SimpleEmail
         public virtual void VerifyDomainDkimAsync(VerifyDomainDkimRequest request, AmazonServiceCallback<VerifyDomainDkimRequest, VerifyDomainDkimResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = VerifyDomainDkimRequestMarshaller.Instance;
-            var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = VerifyDomainDkimRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2153,7 +2221,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<VerifyDomainDkimRequest,VerifyDomainDkimResponse>((VerifyDomainDkimRequest)req, (VerifyDomainDkimResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<VerifyDomainDkimRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2172,8 +2240,9 @@ namespace Amazon.SimpleEmail
         public virtual void VerifyDomainIdentityAsync(VerifyDomainIdentityRequest request, AmazonServiceCallback<VerifyDomainIdentityRequest, VerifyDomainIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = VerifyDomainIdentityRequestMarshaller.Instance;
-            var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = VerifyDomainIdentityRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2181,7 +2250,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<VerifyDomainIdentityRequest,VerifyDomainIdentityResponse>((VerifyDomainIdentityRequest)req, (VerifyDomainIdentityResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<VerifyDomainIdentityRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2200,8 +2269,9 @@ namespace Amazon.SimpleEmail
         public virtual void VerifyEmailAddressAsync(VerifyEmailAddressRequest request, AmazonServiceCallback<VerifyEmailAddressRequest, VerifyEmailAddressResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = VerifyEmailAddressRequestMarshaller.Instance;
-            var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = VerifyEmailAddressRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2209,7 +2279,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<VerifyEmailAddressRequest,VerifyEmailAddressResponse>((VerifyEmailAddressRequest)req, (VerifyEmailAddressResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<VerifyEmailAddressRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion
@@ -2228,8 +2298,9 @@ namespace Amazon.SimpleEmail
         public virtual void VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, AmazonServiceCallback<VerifyEmailIdentityRequest, VerifyEmailIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = VerifyEmailIdentityRequestMarshaller.Instance;
-            var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = VerifyEmailIdentityRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
@@ -2237,7 +2308,7 @@ namespace Amazon.SimpleEmail
                             = new AmazonServiceResult<VerifyEmailIdentityRequest,VerifyEmailIdentityResponse>((VerifyEmailIdentityRequest)req, (VerifyEmailIdentityResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
-            BeginInvoke<VerifyEmailIdentityRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
         }
 
         #endregion

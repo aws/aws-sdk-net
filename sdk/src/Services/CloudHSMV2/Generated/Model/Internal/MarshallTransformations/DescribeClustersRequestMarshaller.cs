@@ -58,6 +58,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             string target = "BaldrApiService.DescribeClusters";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";

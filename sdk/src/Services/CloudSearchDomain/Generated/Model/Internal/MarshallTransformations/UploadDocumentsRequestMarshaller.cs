@@ -56,6 +56,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2013-01-01/documents/batch";

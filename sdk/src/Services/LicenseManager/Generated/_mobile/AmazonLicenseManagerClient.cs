@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.LicenseManager.Model;
 using Amazon.LicenseManager.Model.Internal.MarshallTransformations;
@@ -253,15 +254,16 @@ namespace Amazon.LicenseManager
 
         #endregion
 
-        
+
         #region  CreateLicenseConfiguration
 
         internal virtual CreateLicenseConfigurationResponse CreateLicenseConfiguration(CreateLicenseConfigurationRequest request)
         {
-            var marshaller = CreateLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateLicenseConfigurationRequest,CreateLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -277,11 +279,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">REST API Reference for CreateLicenseConfiguration Operation</seealso>
         public virtual Task<CreateLicenseConfigurationResponse> CreateLicenseConfigurationAsync(CreateLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = CreateLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateLicenseConfigurationRequest,CreateLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -290,10 +292,11 @@ namespace Amazon.LicenseManager
 
         internal virtual DeleteLicenseConfigurationResponse DeleteLicenseConfiguration(DeleteLicenseConfigurationRequest request)
         {
-            var marshaller = DeleteLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLicenseConfigurationRequest,DeleteLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -309,11 +312,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseConfiguration">REST API Reference for DeleteLicenseConfiguration Operation</seealso>
         public virtual Task<DeleteLicenseConfigurationResponse> DeleteLicenseConfigurationAsync(DeleteLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = DeleteLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteLicenseConfigurationRequest,DeleteLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -322,10 +325,11 @@ namespace Amazon.LicenseManager
 
         internal virtual GetLicenseConfigurationResponse GetLicenseConfiguration(GetLicenseConfigurationRequest request)
         {
-            var marshaller = GetLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetLicenseConfigurationRequest,GetLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -341,11 +345,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">REST API Reference for GetLicenseConfiguration Operation</seealso>
         public virtual Task<GetLicenseConfigurationResponse> GetLicenseConfigurationAsync(GetLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = GetLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetLicenseConfigurationRequest,GetLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -354,10 +358,11 @@ namespace Amazon.LicenseManager
 
         internal virtual GetServiceSettingsResponse GetServiceSettings(GetServiceSettingsRequest request)
         {
-            var marshaller = GetServiceSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<GetServiceSettingsRequest,GetServiceSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetServiceSettingsResponse>(request, options);
         }
 
 
@@ -373,11 +378,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetServiceSettings">REST API Reference for GetServiceSettings Operation</seealso>
         public virtual Task<GetServiceSettingsResponse> GetServiceSettingsAsync(GetServiceSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetServiceSettingsRequestMarshaller.Instance;
-            var unmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetServiceSettingsRequest,GetServiceSettingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetServiceSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -386,10 +391,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListAssociationsForLicenseConfigurationResponse ListAssociationsForLicenseConfiguration(ListAssociationsForLicenseConfigurationRequest request)
         {
-            var marshaller = ListAssociationsForLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsForLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsForLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsForLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<ListAssociationsForLicenseConfigurationRequest,ListAssociationsForLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListAssociationsForLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -405,11 +411,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssociationsForLicenseConfiguration">REST API Reference for ListAssociationsForLicenseConfiguration Operation</seealso>
         public virtual Task<ListAssociationsForLicenseConfigurationResponse> ListAssociationsForLicenseConfigurationAsync(ListAssociationsForLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListAssociationsForLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = ListAssociationsForLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsForLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsForLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssociationsForLicenseConfigurationRequest,ListAssociationsForLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListAssociationsForLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -418,10 +424,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListLicenseConfigurationsResponse ListLicenseConfigurations(ListLicenseConfigurationsRequest request)
         {
-            var marshaller = ListLicenseConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListLicenseConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseConfigurationsResponseUnmarshaller.Instance;
 
-            return Invoke<ListLicenseConfigurationsRequest,ListLicenseConfigurationsResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLicenseConfigurationsResponse>(request, options);
         }
 
 
@@ -437,11 +444,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">REST API Reference for ListLicenseConfigurations Operation</seealso>
         public virtual Task<ListLicenseConfigurationsResponse> ListLicenseConfigurationsAsync(ListLicenseConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLicenseConfigurationsRequestMarshaller.Instance;
-            var unmarshaller = ListLicenseConfigurationsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseConfigurationsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListLicenseConfigurationsRequest,ListLicenseConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListLicenseConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -450,10 +457,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListLicenseSpecificationsForResourceResponse ListLicenseSpecificationsForResource(ListLicenseSpecificationsForResourceRequest request)
         {
-            var marshaller = ListLicenseSpecificationsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseSpecificationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListLicenseSpecificationsForResourceRequest,ListLicenseSpecificationsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListLicenseSpecificationsForResourceResponse>(request, options);
         }
 
 
@@ -469,11 +477,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseSpecificationsForResource">REST API Reference for ListLicenseSpecificationsForResource Operation</seealso>
         public virtual Task<ListLicenseSpecificationsForResourceResponse> ListLicenseSpecificationsForResourceAsync(ListLicenseSpecificationsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListLicenseSpecificationsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseSpecificationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListLicenseSpecificationsForResourceRequest,ListLicenseSpecificationsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListLicenseSpecificationsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -482,10 +490,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListResourceInventoryResponse ListResourceInventory(ListResourceInventoryRequest request)
         {
-            var marshaller = ListResourceInventoryRequestMarshaller.Instance;
-            var unmarshaller = ListResourceInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceInventoryResponseUnmarshaller.Instance;
 
-            return Invoke<ListResourceInventoryRequest,ListResourceInventoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListResourceInventoryResponse>(request, options);
         }
 
 
@@ -501,11 +510,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListResourceInventory">REST API Reference for ListResourceInventory Operation</seealso>
         public virtual Task<ListResourceInventoryResponse> ListResourceInventoryAsync(ListResourceInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListResourceInventoryRequestMarshaller.Instance;
-            var unmarshaller = ListResourceInventoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceInventoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceInventoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListResourceInventoryRequest,ListResourceInventoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListResourceInventoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -514,10 +523,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -533,11 +543,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -546,10 +556,11 @@ namespace Amazon.LicenseManager
 
         internal virtual ListUsageForLicenseConfigurationResponse ListUsageForLicenseConfiguration(ListUsageForLicenseConfigurationRequest request)
         {
-            var marshaller = ListUsageForLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsageForLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<ListUsageForLicenseConfigurationRequest,ListUsageForLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListUsageForLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -565,11 +576,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListUsageForLicenseConfiguration">REST API Reference for ListUsageForLicenseConfiguration Operation</seealso>
         public virtual Task<ListUsageForLicenseConfigurationResponse> ListUsageForLicenseConfigurationAsync(ListUsageForLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListUsageForLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsageForLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListUsageForLicenseConfigurationRequest,ListUsageForLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListUsageForLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -578,10 +589,11 @@ namespace Amazon.LicenseManager
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -597,11 +609,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -610,10 +622,11 @@ namespace Amazon.LicenseManager
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -629,11 +642,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -642,10 +655,11 @@ namespace Amazon.LicenseManager
 
         internal virtual UpdateLicenseConfigurationResponse UpdateLicenseConfiguration(UpdateLicenseConfigurationRequest request)
         {
-            var marshaller = UpdateLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateLicenseConfigurationRequest,UpdateLicenseConfigurationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateLicenseConfigurationResponse>(request, options);
         }
 
 
@@ -661,11 +675,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">REST API Reference for UpdateLicenseConfiguration Operation</seealso>
         public virtual Task<UpdateLicenseConfigurationResponse> UpdateLicenseConfigurationAsync(UpdateLicenseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateLicenseConfigurationRequestMarshaller.Instance;
-            var unmarshaller = UpdateLicenseConfigurationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseConfigurationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateLicenseConfigurationRequest,UpdateLicenseConfigurationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateLicenseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -674,10 +688,11 @@ namespace Amazon.LicenseManager
 
         internal virtual UpdateLicenseSpecificationsForResourceResponse UpdateLicenseSpecificationsForResource(UpdateLicenseSpecificationsForResourceRequest request)
         {
-            var marshaller = UpdateLicenseSpecificationsForResourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseSpecificationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateLicenseSpecificationsForResourceRequest,UpdateLicenseSpecificationsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateLicenseSpecificationsForResourceResponse>(request, options);
         }
 
 
@@ -693,11 +708,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">REST API Reference for UpdateLicenseSpecificationsForResource Operation</seealso>
         public virtual Task<UpdateLicenseSpecificationsForResourceResponse> UpdateLicenseSpecificationsForResourceAsync(UpdateLicenseSpecificationsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateLicenseSpecificationsForResourceRequestMarshaller.Instance;
-            var unmarshaller = UpdateLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseSpecificationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateLicenseSpecificationsForResourceRequest,UpdateLicenseSpecificationsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateLicenseSpecificationsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -706,10 +721,11 @@ namespace Amazon.LicenseManager
 
         internal virtual UpdateServiceSettingsResponse UpdateServiceSettings(UpdateServiceSettingsRequest request)
         {
-            var marshaller = UpdateServiceSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateServiceSettingsRequest,UpdateServiceSettingsResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateServiceSettingsResponse>(request, options);
         }
 
 
@@ -725,11 +741,11 @@ namespace Amazon.LicenseManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual Task<UpdateServiceSettingsResponse> UpdateServiceSettingsAsync(UpdateServiceSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateServiceSettingsRequestMarshaller.Instance;
-            var unmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateServiceSettingsRequest,UpdateServiceSettingsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateServiceSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Budgets.Model;
 using Amazon.Budgets.Model.Internal.MarshallTransformations;
@@ -307,15 +308,16 @@ namespace Amazon.Budgets
 
         #endregion
 
-        
+
         #region  CreateBudget
 
         internal virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
-            var marshaller = CreateBudgetRequestMarshaller.Instance;
-            var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
-            return Invoke<CreateBudgetRequest,CreateBudgetResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateBudgetResponse>(request, options);
         }
 
 
@@ -330,11 +332,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateBudgetRequestMarshaller.Instance;
-            var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateBudgetRequest,CreateBudgetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -343,10 +345,11 @@ namespace Amazon.Budgets
 
         internal virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
-            var marshaller = CreateNotificationRequestMarshaller.Instance;
-            var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateNotificationRequest,CreateNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateNotificationResponse>(request, options);
         }
 
 
@@ -361,11 +364,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateNotificationRequestMarshaller.Instance;
-            var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateNotificationRequest,CreateNotificationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateNotificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -374,10 +377,11 @@ namespace Amazon.Budgets
 
         internal virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
-            var marshaller = CreateSubscriberRequestMarshaller.Instance;
-            var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSubscriberRequest,CreateSubscriberResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateSubscriberResponse>(request, options);
         }
 
 
@@ -392,11 +396,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateSubscriberRequestMarshaller.Instance;
-            var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateSubscriberRequest,CreateSubscriberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateSubscriberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -405,10 +409,11 @@ namespace Amazon.Budgets
 
         internal virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
-            var marshaller = DeleteBudgetRequestMarshaller.Instance;
-            var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteBudgetRequest,DeleteBudgetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteBudgetResponse>(request, options);
         }
 
 
@@ -423,11 +428,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteBudgetRequestMarshaller.Instance;
-            var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteBudgetRequest,DeleteBudgetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -436,10 +441,11 @@ namespace Amazon.Budgets
 
         internal virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
-            var marshaller = DeleteNotificationRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteNotificationRequest,DeleteNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteNotificationResponse>(request, options);
         }
 
 
@@ -454,11 +460,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteNotificationRequestMarshaller.Instance;
-            var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteNotificationRequest,DeleteNotificationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteNotificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -467,10 +473,11 @@ namespace Amazon.Budgets
 
         internal virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
-            var marshaller = DeleteSubscriberRequestMarshaller.Instance;
-            var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteSubscriberRequest,DeleteSubscriberResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteSubscriberResponse>(request, options);
         }
 
 
@@ -485,11 +492,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteSubscriberRequestMarshaller.Instance;
-            var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteSubscriberRequest,DeleteSubscriberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteSubscriberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -498,10 +505,11 @@ namespace Amazon.Budgets
 
         internal virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
-            var marshaller = DescribeBudgetRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBudgetRequest,DescribeBudgetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBudgetResponse>(request, options);
         }
 
 
@@ -516,11 +524,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeBudgetResponse> DescribeBudgetAsync(DescribeBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBudgetRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBudgetRequest,DescribeBudgetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -529,10 +537,11 @@ namespace Amazon.Budgets
 
         internal virtual DescribeBudgetPerformanceHistoryResponse DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request)
         {
-            var marshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBudgetPerformanceHistoryRequest,DescribeBudgetPerformanceHistoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBudgetPerformanceHistoryResponse>(request, options);
         }
 
 
@@ -547,11 +556,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeBudgetPerformanceHistoryResponse> DescribeBudgetPerformanceHistoryAsync(DescribeBudgetPerformanceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBudgetPerformanceHistoryRequest,DescribeBudgetPerformanceHistoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBudgetPerformanceHistoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -560,10 +569,11 @@ namespace Amazon.Budgets
 
         internal virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
-            var marshaller = DescribeBudgetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeBudgetsRequest,DescribeBudgetsResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeBudgetsResponse>(request, options);
         }
 
 
@@ -578,11 +588,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeBudgetsResponse> DescribeBudgetsAsync(DescribeBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeBudgetsRequestMarshaller.Instance;
-            var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBudgetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeBudgetsRequest,DescribeBudgetsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeBudgetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -591,10 +601,11 @@ namespace Amazon.Budgets
 
         internal virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
-            var marshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeNotificationsForBudgetRequest,DescribeNotificationsForBudgetResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeNotificationsForBudgetResponse>(request, options);
         }
 
 
@@ -609,11 +620,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeNotificationsForBudgetResponse> DescribeNotificationsForBudgetAsync(DescribeNotificationsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
-            var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeNotificationsForBudgetRequest,DescribeNotificationsForBudgetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeNotificationsForBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -622,10 +633,11 @@ namespace Amazon.Budgets
 
         internal virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
-            var marshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeSubscribersForNotificationRequest,DescribeSubscribersForNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeSubscribersForNotificationResponse>(request, options);
         }
 
 
@@ -640,11 +652,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeSubscribersForNotificationResponse> DescribeSubscribersForNotificationAsync(DescribeSubscribersForNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
-            var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeSubscribersForNotificationRequest,DescribeSubscribersForNotificationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeSubscribersForNotificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -653,10 +665,11 @@ namespace Amazon.Budgets
 
         internal virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
-            var marshaller = UpdateBudgetRequestMarshaller.Instance;
-            var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateBudgetRequest,UpdateBudgetResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateBudgetResponse>(request, options);
         }
 
 
@@ -671,11 +684,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateBudgetRequestMarshaller.Instance;
-            var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateBudgetRequest,UpdateBudgetResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateBudgetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -684,10 +697,11 @@ namespace Amazon.Budgets
 
         internal virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
-            var marshaller = UpdateNotificationRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateNotificationRequest,UpdateNotificationResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateNotificationResponse>(request, options);
         }
 
 
@@ -702,11 +716,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateNotificationResponse> UpdateNotificationAsync(UpdateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateNotificationRequestMarshaller.Instance;
-            var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateNotificationRequest,UpdateNotificationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateNotificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -715,10 +729,11 @@ namespace Amazon.Budgets
 
         internal virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
-            var marshaller = UpdateSubscriberRequestMarshaller.Instance;
-            var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSubscriberRequest,UpdateSubscriberResponse>(request, marshaller, unmarshaller);
+            return Invoke<UpdateSubscriberResponse>(request, options);
         }
 
 
@@ -733,11 +748,11 @@ namespace Amazon.Budgets
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UpdateSubscriberRequestMarshaller.Instance;
-            var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateSubscriberRequest,UpdateSubscriberResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UpdateSubscriberResponse>(request, options, cancellationToken);
         }
 
         #endregion

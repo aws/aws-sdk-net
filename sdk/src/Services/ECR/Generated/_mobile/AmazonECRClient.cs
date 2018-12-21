@@ -23,6 +23,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.ECR.Model;
 using Amazon.ECR.Model.Internal.MarshallTransformations;
@@ -246,15 +247,16 @@ namespace Amazon.ECR
 
         #endregion
 
-        
+
         #region  BatchCheckLayerAvailability
 
         internal virtual BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request)
         {
-            var marshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
-            var unmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
 
-            return Invoke<BatchCheckLayerAvailabilityRequest,BatchCheckLayerAvailabilityResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchCheckLayerAvailabilityResponse>(request, options);
         }
 
 
@@ -270,11 +272,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         public virtual Task<BatchCheckLayerAvailabilityResponse> BatchCheckLayerAvailabilityAsync(BatchCheckLayerAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
-            var unmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchCheckLayerAvailabilityRequest,BatchCheckLayerAvailabilityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchCheckLayerAvailabilityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -283,10 +285,11 @@ namespace Amazon.ECR
 
         internal virtual BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request)
         {
-            var marshaller = BatchDeleteImageRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
 
-            return Invoke<BatchDeleteImageRequest,BatchDeleteImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchDeleteImageResponse>(request, options);
         }
 
 
@@ -302,11 +305,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         public virtual Task<BatchDeleteImageResponse> BatchDeleteImageAsync(BatchDeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchDeleteImageRequestMarshaller.Instance;
-            var unmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchDeleteImageRequest,BatchDeleteImageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchDeleteImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -315,10 +318,11 @@ namespace Amazon.ECR
 
         internal virtual BatchGetImageResponse BatchGetImage(BatchGetImageRequest request)
         {
-            var marshaller = BatchGetImageRequestMarshaller.Instance;
-            var unmarshaller = BatchGetImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetImageResponseUnmarshaller.Instance;
 
-            return Invoke<BatchGetImageRequest,BatchGetImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<BatchGetImageResponse>(request, options);
         }
 
 
@@ -334,11 +338,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         public virtual Task<BatchGetImageResponse> BatchGetImageAsync(BatchGetImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = BatchGetImageRequestMarshaller.Instance;
-            var unmarshaller = BatchGetImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetImageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<BatchGetImageRequest,BatchGetImageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<BatchGetImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -347,10 +351,11 @@ namespace Amazon.ECR
 
         internal virtual CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request)
         {
-            var marshaller = CompleteLayerUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteLayerUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
 
-            return Invoke<CompleteLayerUploadRequest,CompleteLayerUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<CompleteLayerUploadResponse>(request, options);
         }
 
 
@@ -366,11 +371,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual Task<CompleteLayerUploadResponse> CompleteLayerUploadAsync(CompleteLayerUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CompleteLayerUploadRequestMarshaller.Instance;
-            var unmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteLayerUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CompleteLayerUploadRequest,CompleteLayerUploadResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CompleteLayerUploadResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -379,10 +384,11 @@ namespace Amazon.ECR
 
         internal virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var marshaller = CreateRepositoryRequestMarshaller.Instance;
-            var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateRepositoryResponse>(request, options);
         }
 
 
@@ -398,11 +404,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = CreateRepositoryRequestMarshaller.Instance;
-            var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<CreateRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -411,10 +417,11 @@ namespace Amazon.ECR
 
         internal virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var marshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteLifecyclePolicyRequest,DeleteLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteLifecyclePolicyResponse>(request, options);
         }
 
 
@@ -430,11 +437,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteLifecyclePolicyRequest,DeleteLifecyclePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -443,10 +450,11 @@ namespace Amazon.ECR
 
         internal virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var marshaller = DeleteRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRepositoryResponse>(request, options);
         }
 
 
@@ -462,11 +470,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRepositoryRequestMarshaller.Instance;
-            var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -475,10 +483,11 @@ namespace Amazon.ECR
 
         internal virtual DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request)
         {
-            var marshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteRepositoryPolicyRequest,DeleteRepositoryPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteRepositoryPolicyResponse>(request, options);
         }
 
 
@@ -494,11 +503,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         public virtual Task<DeleteRepositoryPolicyResponse> DeleteRepositoryPolicyAsync(DeleteRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteRepositoryPolicyRequest,DeleteRepositoryPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DeleteRepositoryPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -507,10 +516,11 @@ namespace Amazon.ECR
 
         internal virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var marshaller = DescribeImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeImagesResponse>(request, options);
         }
 
 
@@ -526,11 +536,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeImagesRequestMarshaller.Instance;
-            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -539,10 +549,11 @@ namespace Amazon.ECR
 
         internal virtual DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)
         {
-            var marshaller = DescribeRepositoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRepositoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
 
-            return Invoke<DescribeRepositoriesRequest,DescribeRepositoriesResponse>(request, marshaller, unmarshaller);
+            return Invoke<DescribeRepositoriesResponse>(request, options);
         }
 
 
@@ -558,11 +569,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         public virtual Task<DescribeRepositoriesResponse> DescribeRepositoriesAsync(DescribeRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = DescribeRepositoriesRequestMarshaller.Instance;
-            var unmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRepositoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeRepositoriesRequest,DescribeRepositoriesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<DescribeRepositoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -571,10 +582,11 @@ namespace Amazon.ECR
 
         internal virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
         {
-            var marshaller = GetAuthorizationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
-            return Invoke<GetAuthorizationTokenRequest,GetAuthorizationTokenResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetAuthorizationTokenResponse>(request, options);
         }
 
 
@@ -590,11 +602,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual Task<GetAuthorizationTokenResponse> GetAuthorizationTokenAsync(GetAuthorizationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetAuthorizationTokenRequestMarshaller.Instance;
-            var unmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAuthorizationTokenRequest,GetAuthorizationTokenResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetAuthorizationTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -603,10 +615,11 @@ namespace Amazon.ECR
 
         internal virtual GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request)
         {
-            var marshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
-            var unmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
 
-            return Invoke<GetDownloadUrlForLayerRequest,GetDownloadUrlForLayerResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetDownloadUrlForLayerResponse>(request, options);
         }
 
 
@@ -622,11 +635,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         public virtual Task<GetDownloadUrlForLayerResponse> GetDownloadUrlForLayerAsync(GetDownloadUrlForLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
-            var unmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetDownloadUrlForLayerRequest,GetDownloadUrlForLayerResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetDownloadUrlForLayerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -635,10 +648,11 @@ namespace Amazon.ECR
 
         internal virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
         {
-            var marshaller = GetLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetLifecyclePolicyRequest,GetLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLifecyclePolicyResponse>(request, options);
         }
 
 
@@ -654,11 +668,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetLifecyclePolicyRequest,GetLifecyclePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -667,10 +681,11 @@ namespace Amazon.ECR
 
         internal virtual GetLifecyclePolicyPreviewResponse GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request)
         {
-            var marshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
-            return Invoke<GetLifecyclePolicyPreviewRequest,GetLifecyclePolicyPreviewResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetLifecyclePolicyPreviewResponse>(request, options);
         }
 
 
@@ -686,11 +701,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
         public virtual Task<GetLifecyclePolicyPreviewResponse> GetLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
-            var unmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetLifecyclePolicyPreviewRequest,GetLifecyclePolicyPreviewResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetLifecyclePolicyPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -699,10 +714,11 @@ namespace Amazon.ECR
 
         internal virtual GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
         {
-            var marshaller = GetRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<GetRepositoryPolicyRequest,GetRepositoryPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetRepositoryPolicyResponse>(request, options);
         }
 
 
@@ -718,11 +734,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         public virtual Task<GetRepositoryPolicyResponse> GetRepositoryPolicyAsync(GetRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = GetRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetRepositoryPolicyRequest,GetRepositoryPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<GetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -731,10 +747,11 @@ namespace Amazon.ECR
 
         internal virtual InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request)
         {
-            var marshaller = InitiateLayerUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateLayerUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
 
-            return Invoke<InitiateLayerUploadRequest,InitiateLayerUploadResponse>(request, marshaller, unmarshaller);
+            return Invoke<InitiateLayerUploadResponse>(request, options);
         }
 
 
@@ -750,11 +767,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         public virtual Task<InitiateLayerUploadResponse> InitiateLayerUploadAsync(InitiateLayerUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = InitiateLayerUploadRequestMarshaller.Instance;
-            var unmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InitiateLayerUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
 
-            return InvokeAsync<InitiateLayerUploadRequest,InitiateLayerUploadResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<InitiateLayerUploadResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -763,10 +780,11 @@ namespace Amazon.ECR
 
         internal virtual ListImagesResponse ListImages(ListImagesRequest request)
         {
-            var marshaller = ListImagesRequestMarshaller.Instance;
-            var unmarshaller = ListImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
 
-            return Invoke<ListImagesRequest,ListImagesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListImagesResponse>(request, options);
         }
 
 
@@ -782,11 +800,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         public virtual Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListImagesRequestMarshaller.Instance;
-            var unmarshaller = ListImagesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListImagesRequest,ListImagesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListImagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -795,10 +813,11 @@ namespace Amazon.ECR
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
 
@@ -814,11 +833,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
-            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -827,10 +846,11 @@ namespace Amazon.ECR
 
         internal virtual PutImageResponse PutImage(PutImageRequest request)
         {
-            var marshaller = PutImageRequestMarshaller.Instance;
-            var unmarshaller = PutImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutImageResponseUnmarshaller.Instance;
 
-            return Invoke<PutImageRequest,PutImageResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutImageResponse>(request, options);
         }
 
 
@@ -846,11 +866,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         public virtual Task<PutImageResponse> PutImageAsync(PutImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutImageRequestMarshaller.Instance;
-            var unmarshaller = PutImageResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutImageResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutImageRequest,PutImageResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -859,10 +879,11 @@ namespace Amazon.ECR
 
         internal virtual PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request)
         {
-            var marshaller = PutLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return Invoke<PutLifecyclePolicyRequest,PutLifecyclePolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<PutLifecyclePolicyResponse>(request, options);
         }
 
 
@@ -878,11 +899,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         public virtual Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = PutLifecyclePolicyRequestMarshaller.Instance;
-            var unmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<PutLifecyclePolicyRequest,PutLifecyclePolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<PutLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -891,10 +912,11 @@ namespace Amazon.ECR
 
         internal virtual SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
         {
-            var marshaller = SetRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return Invoke<SetRepositoryPolicyRequest,SetRepositoryPolicyResponse>(request, marshaller, unmarshaller);
+            return Invoke<SetRepositoryPolicyResponse>(request, options);
         }
 
 
@@ -910,11 +932,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         public virtual Task<SetRepositoryPolicyResponse> SetRepositoryPolicyAsync(SetRepositoryPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = SetRepositoryPolicyRequestMarshaller.Instance;
-            var unmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetRepositoryPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SetRepositoryPolicyRequest,SetRepositoryPolicyResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<SetRepositoryPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -923,10 +945,11 @@ namespace Amazon.ECR
 
         internal virtual StartLifecyclePolicyPreviewResponse StartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request)
         {
-            var marshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
-            var unmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
-            return Invoke<StartLifecyclePolicyPreviewRequest,StartLifecyclePolicyPreviewResponse>(request, marshaller, unmarshaller);
+            return Invoke<StartLifecyclePolicyPreviewResponse>(request, options);
         }
 
 
@@ -942,11 +965,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
         public virtual Task<StartLifecyclePolicyPreviewResponse> StartLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
-            var unmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartLifecyclePolicyPreviewRequest,StartLifecyclePolicyPreviewResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<StartLifecyclePolicyPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -955,10 +978,11 @@ namespace Amazon.ECR
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<TagResourceResponse>(request, options);
         }
 
 
@@ -974,11 +998,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = TagResourceRequestMarshaller.Instance;
-            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -987,10 +1011,11 @@ namespace Amazon.ECR
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+            return Invoke<UntagResourceResponse>(request, options);
         }
 
 
@@ -1006,11 +1031,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UntagResourceRequestMarshaller.Instance;
-            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1019,10 +1044,11 @@ namespace Amazon.ECR
 
         internal virtual UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
         {
-            var marshaller = UploadLayerPartRequestMarshaller.Instance;
-            var unmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadLayerPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
 
-            return Invoke<UploadLayerPartRequest,UploadLayerPartResponse>(request, marshaller, unmarshaller);
+            return Invoke<UploadLayerPartResponse>(request, options);
         }
 
 
@@ -1038,11 +1064,11 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual Task<UploadLayerPartResponse> UploadLayerPartAsync(UploadLayerPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = UploadLayerPartRequestMarshaller.Instance;
-            var unmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadLayerPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UploadLayerPartRequest,UploadLayerPartResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            return InvokeAsync<UploadLayerPartResponse>(request, options, cancellationToken);
         }
 
         #endregion

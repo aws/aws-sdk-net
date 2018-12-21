@@ -56,6 +56,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaStoreData");
             request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
             request.HttpMethod = "HEAD";
 
             string uriResourcePath = "/{Path+}";

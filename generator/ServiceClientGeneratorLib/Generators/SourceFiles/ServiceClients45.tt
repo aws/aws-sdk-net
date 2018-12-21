@@ -13,6 +13,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Net;
 
 using <#=this.Config.Namespace#>.Model;
 using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
@@ -263,10 +264,58 @@ namespace <#=this.Config.Namespace#>
 
         #endregion
 
-        <#
+<#
+        var endpointOperation = this.Config.ServiceModel.FindEndpointOperation();
+        if(endpointOperation != null)
+        {
+#>
+        #region  EndpointOperation Override
+
+        protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)
+        {
+            return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>
+            {
+				var request = new <#=endpointOperation.Name#>Request
+				{
+<#
+        if(endpointOperation.RequestHasOperationEndpointOperationMember)
+        {
+#>
+					Operation = context.OperationName,
+<#
+        }
+        if(endpointOperation.RequestHasIdentifiersEndpointOperationMember)
+        {
+#>
+					Identifiers = new Dictionary<string, string>(context.EndpointDiscoveryData.Identifiers),
+<#
+        }
+#>
+				};
+				
+				var response = <#=endpointOperation.Name#>(request);
+				if(response.HttpStatusCode != HttpStatusCode.OK || response.Endpoints == null)
+				{
+					return null;
+				}
+
+				var endpoints = new List<DiscoveryEndpointBase>();
+				foreach(var endpoint in response.Endpoints)
+                {
+                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes));
+                }
+            
+				return endpoints;
+			});
+        }
+
+        #endregion
+<#
+        }
+
         foreach(var operation in this.Config.ServiceModel.Operations)
         {
-        #>
+#>
 
         #region  <#=operation.Name#>
 
@@ -305,10 +354,20 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
-            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
-            var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = <#=operation.Name#>RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+<#
+            if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
+            {
+#>
+            options.EndpointDiscoveryMarshaller = <#=operation.Name#>EndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+<#
+            }            
+#>
 
-            return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
+            return Invoke<<#=operation.Name#>Response>(request, options);
         }
 
 <#
@@ -345,11 +404,20 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
-            var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
-
-            return InvokeAsync<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, 
-                unmarshaller, cancellationToken);
+            var options = new InvokeOptions();
+            options.RequestMarshaller = <#=operation.Name#>RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+<#
+            if(!operation.IsEndpointOperation && operation.EndpointDiscoveryEnabled)
+            {
+#>
+            options.EndpointDiscoveryMarshaller = <#=operation.Name#>EndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+<#
+            }            
+#>
+            
+            return InvokeAsync<<#=operation.Name#>Response>(request, options, cancellationToken);
         }
 
         #endregion

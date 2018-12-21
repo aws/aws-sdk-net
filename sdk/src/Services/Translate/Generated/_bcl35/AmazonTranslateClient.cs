@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Amazon.Translate.Model;
 using Amazon.Translate.Model.Internal.MarshallTransformations;
@@ -234,7 +235,7 @@ namespace Amazon.Translate
 
         #endregion
 
-        
+
         #region  DeleteTerminology
 
         /// <summary>
@@ -258,10 +259,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual DeleteTerminologyResponse DeleteTerminology(DeleteTerminologyRequest request)
         {
-            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
-            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteTerminologyRequest,DeleteTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<DeleteTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -278,11 +280,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual IAsyncResult BeginDeleteTerminology(DeleteTerminologyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
-            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<DeleteTerminologyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -327,10 +329,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual GetTerminologyResponse GetTerminology(GetTerminologyRequest request)
         {
-            var marshaller = GetTerminologyRequestMarshaller.Instance;
-            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<GetTerminologyRequest,GetTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<GetTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -347,11 +350,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual IAsyncResult BeginGetTerminology(GetTerminologyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = GetTerminologyRequestMarshaller.Instance;
-            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<GetTerminologyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -406,10 +409,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual ImportTerminologyResponse ImportTerminology(ImportTerminologyRequest request)
         {
-            var marshaller = ImportTerminologyRequestMarshaller.Instance;
-            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
 
-            return Invoke<ImportTerminologyRequest,ImportTerminologyResponse>(request, marshaller, unmarshaller);
+            return Invoke<ImportTerminologyResponse>(request, options);
         }
 
         /// <summary>
@@ -426,11 +430,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual IAsyncResult BeginImportTerminology(ImportTerminologyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ImportTerminologyRequestMarshaller.Instance;
-            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ImportTerminologyRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -470,10 +474,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual ListTerminologiesResponse ListTerminologies(ListTerminologiesRequest request)
         {
-            var marshaller = ListTerminologiesRequestMarshaller.Instance;
-            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
 
-            return Invoke<ListTerminologiesRequest,ListTerminologiesResponse>(request, marshaller, unmarshaller);
+            return Invoke<ListTerminologiesResponse>(request, options);
         }
 
         /// <summary>
@@ -490,11 +495,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual IAsyncResult BeginListTerminologies(ListTerminologiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = ListTerminologiesRequestMarshaller.Instance;
-            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
 
-            return BeginInvoke<ListTerminologiesRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
@@ -652,10 +657,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual TranslateTextResponse TranslateText(TranslateTextRequest request)
         {
-            var marshaller = TranslateTextRequestMarshaller.Instance;
-            var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
-            return Invoke<TranslateTextRequest,TranslateTextResponse>(request, marshaller, unmarshaller);
+            return Invoke<TranslateTextResponse>(request, options);
         }
 
         /// <summary>
@@ -672,11 +678,11 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual IAsyncResult BeginTranslateText(TranslateTextRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = TranslateTextRequestMarshaller.Instance;
-            var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
-            return BeginInvoke<TranslateTextRequest>(request, marshaller, unmarshaller,
-                callback, state);
+            return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>

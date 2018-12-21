@@ -288,6 +288,14 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool IsEndpointDiscoveryId
+        {
+            get
+            {
+                return (bool)(this.data[ServiceModel.EndpointDiscoveryIdKey] ?? false);
+            }
+        }
+
         /// <summary>
         /// Determines if this member is a base64 encoded json in the header of the request/response
         /// Note: In the future this may also include members that are not in a header.  For now the generator assumes

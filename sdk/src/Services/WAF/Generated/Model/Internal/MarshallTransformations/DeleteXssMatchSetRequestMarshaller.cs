@@ -58,6 +58,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             string target = "AWSWAF_20150824.DeleteXssMatchSet";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-24";            
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";
