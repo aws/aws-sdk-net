@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoice.Model
 {
     /// <summary>
-    /// An object that contains information about a event destination that sends data to Amazon
-    /// CloudWatch Logs.
+    /// An object that contains information about an event destination that sends data to
+    /// Amazon CloudWatch Logs.
     /// </summary>
     public partial class CloudWatchLogsDestination
     {

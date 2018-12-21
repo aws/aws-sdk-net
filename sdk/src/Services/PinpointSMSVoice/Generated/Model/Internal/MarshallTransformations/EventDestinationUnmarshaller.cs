@@ -94,6 +94,12 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnsDestination", targetDepth))
+                {
+                    var unmarshaller = SnsDestinationUnmarshaller.Instance;
+                    unmarshalledObject.SnsDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

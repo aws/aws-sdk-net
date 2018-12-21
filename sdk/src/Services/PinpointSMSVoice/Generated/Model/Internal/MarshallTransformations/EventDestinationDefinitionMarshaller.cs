@@ -84,6 +84,17 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSnsDestination())
+            {
+                context.Writer.WritePropertyName("SnsDestination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnsDestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnsDestination, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

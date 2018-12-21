@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoice.Model
 {
     /// <summary>
-    /// An object that contains information about a event destination that sends data to Amazon
-    /// Kinesis Data Firehose.
+    /// An object that contains information about an event destination that sends data to
+    /// Amazon Kinesis Data Firehose.
     /// </summary>
     public partial class KinesisFirehoseDestination
     {

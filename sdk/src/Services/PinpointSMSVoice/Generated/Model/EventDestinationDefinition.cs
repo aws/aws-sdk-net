@@ -36,6 +36,7 @@ namespace Amazon.PinpointSMSVoice.Model
         private bool? _enabled;
         private KinesisFirehoseDestination _kinesisFirehoseDestination;
         private List<string> _matchingEventTypes = new List<string>();
+        private SnsDestination _snsDestination;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogsDestination.
@@ -97,6 +98,21 @@ namespace Amazon.PinpointSMSVoice.Model
         internal bool IsSetMatchingEventTypes()
         {
             return this._matchingEventTypes != null && this._matchingEventTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsDestination.
+        /// </summary>
+        public SnsDestination SnsDestination
+        {
+            get { return this._snsDestination; }
+            set { this._snsDestination = value; }
+        }
+
+        // Check to see if SnsDestination property is set
+        internal bool IsSetSnsDestination()
+        {
+            return this._snsDestination != null;
         }
 
     }
