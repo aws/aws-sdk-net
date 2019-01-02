@@ -159,11 +159,6 @@ namespace Amazon.Runtime.Internal
                 jw.WritePropertyName("SdkException");
                 jw.Write(monitoringAPICallAttempt.SdkException);
             }
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.UserAgent))
-            {
-                jw.WritePropertyName("UserAgent");
-                jw.Write(monitoringAPICallAttempt.UserAgent);
-            }
 
             if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AWSExceptionMessage))
             {
@@ -241,6 +236,36 @@ namespace Amazon.Runtime.Internal
             }
             jw.Write(maxRetriesValue);
 
+            if (monitoringAPICallEvent.FinalHttpStatusCode != null)
+            {
+                jw.WritePropertyName("FinalHttpStatusCode");
+                jw.Write((int)monitoringAPICallEvent.FinalHttpStatusCode);
+            }
+
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSException))
+            {
+                jw.WritePropertyName("FinalAWSException");
+                jw.Write(monitoringAPICallEvent.FinalAWSException);
+            }
+
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkException))
+            {
+                jw.WritePropertyName("FinalSdkException");
+                jw.Write(monitoringAPICallEvent.FinalSdkException);
+            }
+
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSExceptionMessage))
+            {
+                jw.WritePropertyName("FinalAWSExceptionMessage");
+                jw.Write(monitoringAPICallEvent.FinalAWSExceptionMessage);
+            }
+
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkExceptionMessage))
+            {
+                jw.WritePropertyName("FinalSdkExceptionMessage");
+                jw.Write(monitoringAPICallEvent.FinalSdkExceptionMessage);
+            }
+
             jw.WriteObjectEnd();
             response = jw.ToString();
 
@@ -289,6 +314,12 @@ namespace Amazon.Runtime.Internal
             {
                 jw.WritePropertyName("Region");
                 jw.Write(monitoringAPICall.Region);
+            }
+
+            if (!string.IsNullOrEmpty(monitoringAPICall.UserAgent))
+            {
+                jw.WritePropertyName("UserAgent");
+                jw.Write(monitoringAPICall.UserAgent);
             }
 
             return jw;

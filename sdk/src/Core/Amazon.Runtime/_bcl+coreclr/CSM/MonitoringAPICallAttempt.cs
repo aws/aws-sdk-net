@@ -39,12 +39,6 @@ namespace Amazon.Runtime.Internal
         public string Fqdn { get; internal set; }
 
         /// <summary>
-        /// Contains the full value of the SDK's default 
-        /// user agent header for http requests.
-        /// </summary>
-        public string UserAgent { get; internal set; }
-
-        /// <summary>
         /// Contains the session token passed 
         /// in the x-amz-security-token header.
         /// </summary>
@@ -75,7 +69,7 @@ namespace Amazon.Runtime.Internal
         /// for any attempt-level failure that is due to something other 
         /// than an Aws exception.The value of this entry has a maximum length of 128.
         /// </summary>
-        public string SdkException { get; set; }
+        public string SdkException { get; internal set; }
 
         /// <summary>
         /// Contains the Aws exception code returned in the response.

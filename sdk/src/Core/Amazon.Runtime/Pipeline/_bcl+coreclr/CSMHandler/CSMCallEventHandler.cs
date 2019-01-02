@@ -42,7 +42,7 @@ namespace Amazon.Runtime.Internal
             }
             catch (Exception e)
             {
-                CaptureCSMCallEventExceptionData(executionContext.RequestContext);
+                CaptureCSMCallEventExceptionData(executionContext.RequestContext, e);
                 throw;
             }
             finally
@@ -67,7 +67,7 @@ namespace Amazon.Runtime.Internal
             }
             catch (Exception e)
             {
-                CaptureCSMCallEventExceptionData(executionContext.RequestContext);
+                CaptureCSMCallEventExceptionData(executionContext.RequestContext, e);
                 throw;
             }
             finally
@@ -90,7 +90,7 @@ namespace Amazon.Runtime.Internal
         {
             if (executionContext.ResponseContext.AsyncResult.Exception != null)
             {
-                CaptureCSMCallEventExceptionData(executionContext.RequestContext);
+                CaptureCSMCallEventExceptionData(executionContext.RequestContext, executionContext.ResponseContext.AsyncResult.Exception);
             }
             CSMCallEventMetricsCapture(ExecutionContext.CreateFromAsyncContext(executionContext));
             CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);
@@ -113,17 +113,30 @@ namespace Amazon.Runtime.Internal
             executionContext.RequestContext.CSMCallEvent.Api = executionContext.RequestContext.CSMCallAttempt.Api;
             executionContext.RequestContext.CSMCallEvent.Region = executionContext.RequestContext.CSMCallAttempt.Region;
             executionContext.RequestContext.CSMCallEvent.Latency = stopWatch.ElapsedMilliseconds;
+            executionContext.RequestContext.CSMCallEvent.UserAgent = executionContext.RequestContext.Request.GetHeaderValue(HeaderKeys.UserAgentHeader);
+            executionContext.RequestContext.CSMCallEvent.FinalHttpStatusCode = executionContext.RequestContext.CSMCallAttempt.HttpStatusCode;
         }
 
         /// <summary>
         /// Method that gets invoked in case of an exception in the API request completion.
         /// </summary>
         /// <param name="requestContext"></param>
-        private static void CaptureCSMCallEventExceptionData(IRequestContext requestContext)
+        /// <param name="exception"></param>
+        private static void CaptureCSMCallEventExceptionData(IRequestContext requestContext, Exception exception)
         {
             // Set IsLastExceptionRetryable value on CSMCallEvent to whether the final exception thrown as part of 
             // of the API request completion was retryable or  not. 
             requestContext.CSMCallEvent.IsLastExceptionRetryable = requestContext.IsLastExceptionRetryable;
+            if(exception is AmazonServiceException)
+            {
+                requestContext.CSMCallEvent.FinalAWSException = requestContext.CSMCallAttempt.AWSException;
+                requestContext.CSMCallEvent.FinalAWSExceptionMessage = requestContext.CSMCallAttempt.AWSExceptionMessage;
+            }
+            else
+            {
+                requestContext.CSMCallEvent.FinalSdkException = requestContext.CSMCallAttempt.SdkException;
+                requestContext.CSMCallEvent.FinalSdkExceptionMessage = requestContext.CSMCallAttempt.SdkExceptionMessage;
+            }
         }
         protected void PreInvoke(IExecutionContext executionContext)
         {

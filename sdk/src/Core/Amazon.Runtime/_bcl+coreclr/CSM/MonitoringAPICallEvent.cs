@@ -50,5 +50,44 @@ namespace Amazon.Runtime.Internal
         /// when serialized to a UDP datagram.
         /// </summary>
         public bool IsLastExceptionRetryable { get; internal set; }
+
+        /// <summary>
+        /// Contains the full text (exception object
+        /// converted to String, for example) for an attempt-level failure that is due to
+        /// something other than an Aws exception that occurred on the last attempt to
+        /// fulfill the Api call.The value of this entry has a maximum length of 512.
+        /// </summary>
+        public string FinalSdkExceptionMessage { get; internal set; }
+
+        /// <summary>
+        /// Contains the short error name (exception
+        /// class name, for example) for a failure that is due to something other than an
+        /// Aws exception that occurred on the last attempt to fulfill an Api call.See
+        /// the SdkException entry for more details.The value of this entry has a
+        /// maximum length of 128.
+        /// </summary>
+        public string FinalSdkException { get; internal set; }
+
+        /// <summary>
+        /// Contains the Aws exception code
+        /// returned in the response to the final attempt at fulfilling this API call.
+        /// The value of this entry has a maximum length of 128.
+        /// </summary>
+        public string FinalAWSException { get; internal set; }
+
+        /// <summary>
+        /// Contains the full text of the
+        /// Aws exception message returned in the response to the final attempt at
+        /// fulfilling this API call.The value of this entry has a maximum length limit
+     
+        /// of 512.
+        /// </summary>
+        public string FinalAWSExceptionMessage { get; internal set; }
+
+        /// <summary>
+        /// Contains the attempt's response status code, 
+        /// as returned by the http client.
+        /// </summary>
+        public int? FinalHttpStatusCode { get; internal set; } = null;
     }
 }

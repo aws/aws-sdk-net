@@ -92,5 +92,11 @@ namespace Amazon.Runtime.Internal
         /// service client that made the request attempt.
         /// </summary>
         public string Region { get; internal set; }
+
+        /// <summary>
+        /// Contains the full value of the SDK's default 
+        /// user agent header for http requests.
+        /// </summary>
+        public string UserAgent { get; internal set; }
     }
 }

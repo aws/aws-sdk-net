@@ -40,6 +40,24 @@ namespace AWSSDK.CSM.IntegrationTests
             Assert.Equal(ClientId, monitoringAPICallEvent.ClientId);
             Assert.Equal(MaxRetriesExceeded, monitoringAPICallEvent.MaxRetriesExceeded);
             Assert.Equal(Region, monitoringAPICallEvent.Region);
+            Assert.Equal(HttpStatusCode, monitoringAPICallEvent.FinalHttpStatusCode);
+            Assert.NotNull(monitoringAPICallEvent.UserAgent);
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSException))
+            {
+                Assert.Contains(AWSException, monitoringAPICallEvent.FinalAWSException);
+            }
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSExceptionMessage))
+            {
+                Assert.Contains(AWSExceptionMessage, monitoringAPICallEvent.FinalAWSExceptionMessage);
+            }
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkException))
+            {
+                Assert.Contains(SdkException, monitoringAPICallEvent.FinalSdkException);
+            }
+            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkExceptionMessage))
+            {
+                Assert.Contains(SdkExceptionMessage, monitoringAPICallEvent.FinalSdkExceptionMessage);
+            }
         }
 
         public void Validate(MonitoringAPICallAttempt monitoringAPICallAttempt)

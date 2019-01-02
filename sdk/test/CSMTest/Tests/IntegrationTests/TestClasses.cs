@@ -42,6 +42,12 @@ namespace AWSSDK.CSM.IntegrationTests
         public int Version { get; set; }
         public int MaxRetriesExceeded { get; set; }
         public string Region { get; set; }
+        public int? FinalHttpStatusCode { get; set; }
+        public string UserAgent { get; set; }
+        public string FinalAWSException { get; set; }
+        public string FinalAWSExceptionMessage { get; set; }
+        public string FinalSdkException { get; set; }
+        public string FinalSdkExceptionMessage { get; set; }
     }
 
 }

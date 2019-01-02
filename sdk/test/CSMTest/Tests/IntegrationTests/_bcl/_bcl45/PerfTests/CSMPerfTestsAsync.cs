@@ -26,7 +26,6 @@ namespace AWSSDK.CSM.IntegrationTests
         public int TestRequestExecution { get; set; }
         public Stopwatch TestTimer { get; set; } = new Stopwatch();
 
-
         [Fact(Skip = "Running performance tests as part of a regular build is expensive.")]
         [Trait("Category", "CSM")]
         [Trait("Category", "bcl45")]
