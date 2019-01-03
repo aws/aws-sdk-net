@@ -38,7 +38,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineAttribute. 
         /// <para>
-        /// The requested engine attribute pair with attribute name and value. 
+        /// The requested engine attribute pair with attribute name and value.
         /// </para>
         /// </summary>
         public EngineAttribute EngineAttribute
@@ -56,7 +56,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// The requested ServerName. 
+        /// The server name used in the request.
         /// </para>
         /// </summary>
         public string ServerName
