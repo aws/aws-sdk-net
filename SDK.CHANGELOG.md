@@ -1,3 +1,7 @@
+### 3.3.434.1 (2019-01-03 03:19 UTC)
+* OpsWorksCM (3.3.6.25)
+	* Documentation updates for opsworkscm
+
 ### 3.3.434.0 (2018-12-21 22:22 UTC)
 * ACMPCA (3.3.2.0)
 	* This release marks the introduction of waiters in ACM PCA, which allow you to control the progression of your code based on the presence or state of certain resources. Waiters can be implemented in the DescribeCertificateAuthorityAuditReport, GetCertificate, and GetCertificateAuthorityCsr API operations.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.434.0",
+    "ProductVersion" : "3.3.434.1",
     "CoreVersion"    : "3.3.30.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -649,7 +649,7 @@
             "InPreview"               : false
         },
         "OpsWorksCM"                      : {
-            "Version" : "3.3.6.24",
+            "Version" : "3.3.6.25",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.30.2"
