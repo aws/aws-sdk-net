@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// 
+    /// The destination to which data set contents are delivered.
     /// </summary>
     public partial class DatasetContentDeliveryDestination
     {
         private IotEventsDestinationConfiguration _iotEventsDestinationConfiguration;
 
         /// <summary>
-        /// Gets and sets the property IotEventsDestinationConfiguration.
+        /// Gets and sets the property IotEventsDestinationConfiguration. 
+        /// <para>
+        /// Configuration information for delivery of data set contents to AWS IoT Events.
+        /// </para>
         /// </summary>
         public IotEventsDestinationConfiguration IotEventsDestinationConfiguration
         {

@@ -36,6 +36,8 @@ namespace Amazon.IoTAnalytics.Model
         private string _datasetName;
         private int? _maxResults;
         private string _nextToken;
+        private DateTime? _scheduledBefore;
+        private DateTime? _scheduledOnOrAfter;
 
         /// <summary>
         /// Gets and sets the property DatasetName. 
@@ -89,6 +91,46 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledBefore. 
+        /// <para>
+        /// A filter to limit results to those data set contents whose creation is scheduled before
+        /// the given time. See the field <code>triggers.schedule</code> in the CreateDataset
+        /// request. (timestamp)
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledBefore
+        {
+            get { return this._scheduledBefore.GetValueOrDefault(); }
+            set { this._scheduledBefore = value; }
+        }
+
+        // Check to see if ScheduledBefore property is set
+        internal bool IsSetScheduledBefore()
+        {
+            return this._scheduledBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledOnOrAfter. 
+        /// <para>
+        /// A filter to limit results to those data set contents whose creation is scheduled on
+        /// or after the given time. See the field <code>triggers.schedule</code> in the CreateDataset
+        /// request. (timestamp)
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledOnOrAfter
+        {
+            get { return this._scheduledOnOrAfter.GetValueOrDefault(); }
+            set { this._scheduledOnOrAfter = value; }
+        }
+
+        // Check to see if ScheduledOnOrAfter property is set
+        internal bool IsSetScheduledOnOrAfter()
+        {
+            return this._scheduledOnOrAfter.HasValue; 
         }
 
     }

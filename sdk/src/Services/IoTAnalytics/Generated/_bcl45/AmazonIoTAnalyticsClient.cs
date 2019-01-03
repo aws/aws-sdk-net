@@ -498,7 +498,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying a SQL action.
+        /// Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction"
+        /// (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// 

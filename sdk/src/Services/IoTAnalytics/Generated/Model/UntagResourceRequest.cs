@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource whose tags will be removed.
+        /// The ARN of the resource whose tags you want to remove.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of those tags which will be removed.
+        /// The keys of those tags which you want to remove.
         /// </para>
         /// </summary>
         public List<string> TagKeys

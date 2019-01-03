@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute that will contain the result of the math operation.
+        /// The name of the attribute that contains the result of the math operation.
         /// </para>
         /// </summary>
         public string Attribute

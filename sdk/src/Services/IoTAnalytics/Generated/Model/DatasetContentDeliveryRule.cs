@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// 
+    /// When data set contents are created they are delivered to destination specified here.
     /// </summary>
     public partial class DatasetContentDeliveryRule
     {
@@ -36,7 +36,10 @@ namespace Amazon.IoTAnalytics.Model
         private string _entryName;
 
         /// <summary>
-        /// Gets and sets the property Destination.
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The destination to which data set contents are delivered.
+        /// </para>
         /// </summary>
         public DatasetContentDeliveryDestination Destination
         {
@@ -51,7 +54,10 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntryName.
+        /// Gets and sets the property EntryName. 
+        /// <para>
+        /// The name of the data set content delivery rules entry.
+        /// </para>
         /// </summary>
         public string EntryName
         {

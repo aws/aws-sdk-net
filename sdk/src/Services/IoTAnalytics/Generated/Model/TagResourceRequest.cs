@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource whose tags will be modified.
+        /// The ARN of the resource whose tags you want to modify.
         /// </para>
         /// </summary>
         public string ResourceArn

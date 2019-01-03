@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about the data set whose content generation will trigger the new data
-    /// set content generation.
+    /// Information about the data set whose content generation triggers the new data set
+    /// content generation.
     /// </summary>
     public partial class TriggeringDataset
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data set whose content generation will trigger the new data set content
+        /// The name of the data set whose content generation triggers the new data set content
         /// generation.
         /// </para>
         /// </summary>

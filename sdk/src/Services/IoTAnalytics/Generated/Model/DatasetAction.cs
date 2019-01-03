@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A "DatasetAction" object specifying the query that creates the data set content.
+    /// A "DatasetAction" object that specifies how data set contents are automatically created.
     /// </summary>
     public partial class DatasetAction
     {
@@ -77,7 +77,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property QueryAction. 
         /// <para>
-        /// An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+        /// An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data
+        /// set contents.
         /// </para>
         /// </summary>
         public SqlQueryDatasetAction QueryAction

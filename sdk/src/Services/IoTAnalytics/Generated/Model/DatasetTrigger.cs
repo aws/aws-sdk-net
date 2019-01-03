@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Dataset. 
         /// <para>
-        /// The data set whose content creation will trigger the creation of this data set's contents.
+        /// The data set whose content creation triggers the creation of this data set's contents.
         /// </para>
         /// </summary>
         public TriggeringDataset Dataset

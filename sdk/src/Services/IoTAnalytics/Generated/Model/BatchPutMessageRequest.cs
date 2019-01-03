@@ -60,6 +60,42 @@ namespace Amazon.IoTAnalytics.Model
         /// The list of messages to be sent. Each message has format: '{ "messageId": "string",
         /// "payload": "string"}'.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain only alphanumeric characters and undescores (_); no other special characters
+        /// are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with an alphabetic character or single underscore (_).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot contain hyphens (-).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be greater than 255 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered
+        /// duplicates.)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp":
+        /// 29} or {"__temp_01": 29} are invalid in message payloads. 
+        /// </para>
         /// </summary>
         public List<Message> Messages
         {

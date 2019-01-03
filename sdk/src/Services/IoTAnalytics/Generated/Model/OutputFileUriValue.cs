@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The URI of the location where data set contents are stored, usually the URI of a file
-    /// in an S3 bucket.
+    /// The value of the variable as a structure that specifies an output file URI.
     /// </summary>
     public partial class OutputFileUriValue
     {

@@ -62,7 +62,10 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentDeliveryRules.
+        /// Gets and sets the property ContentDeliveryRules. 
+        /// <para>
+        /// When data set contents are created they are delivered to destinations specified here.
+        /// </para>
         /// </summary>
         public List<DatasetContentDeliveryRule> ContentDeliveryRules
         {
