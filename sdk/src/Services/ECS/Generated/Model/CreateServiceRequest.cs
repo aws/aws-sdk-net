@@ -249,7 +249,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
         /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
