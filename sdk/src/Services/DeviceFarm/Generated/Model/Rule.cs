@@ -65,11 +65,13 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>

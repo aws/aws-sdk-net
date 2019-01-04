@@ -119,6 +119,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// VIDEO_LOG: The video log type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// RESULT_LOG: The result log type.
         /// </para>
         ///  </li> <li> 
@@ -193,6 +197,22 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// XCTEST_LOG: The XCode test output type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VIDEO: The Video output type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUSTOMER_ARTIFACT:The Customer Artifact output type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log output type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TESTSPEC_OUTPUT: The Test Spec Output type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

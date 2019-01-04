@@ -86,7 +86,7 @@ namespace Amazon.DeviceFarm.Model
         ///  
         /// <para>
         /// Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-        /// </b> are required in a request.
+        /// </b> is required in a request.
         /// </para>
         /// </summary>
         public string DevicePoolArn
@@ -110,7 +110,7 @@ namespace Amazon.DeviceFarm.Model
         ///  
         /// <para>
         /// Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-        /// </b> are required in a request.
+        /// </b> is required in a request.
         /// </para>
         /// </summary>
         public DeviceSelectionConfiguration DeviceSelectionConfiguration

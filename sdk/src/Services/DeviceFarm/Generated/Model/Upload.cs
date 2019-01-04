@@ -258,15 +258,33 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web
+        /// apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for
+        /// web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -306,15 +324,32 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+        /// APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+        /// APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web
+        /// app.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
         /// </para>
         ///  </li> <li> 
         /// <para>

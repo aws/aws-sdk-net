@@ -101,11 +101,13 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,7 +149,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The IN and NOT operators can take a values array that has more than one element.
+        /// The IN and NOT_IN operators take a values array that has one or more elements.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -75,7 +75,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Availability. 
         /// <para>
-        /// Reflects how likely a device will be available for a test run.
+        /// Reflects how likely a device will be available for a test run. It is currently available
+        /// in the ListDevices and GetDevice API methods.
         /// </para>
         /// </summary>
         public DeviceAvailability Availability

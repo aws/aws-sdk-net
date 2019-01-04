@@ -29,13 +29,13 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents a device filter used to select a set of devices to be included in a test
-    /// run. This data structure is passed in as the "deviceSelectionConfiguration" parameter
-    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// run. This data structure is passed in as the <code>deviceSelectionConfiguration</code>
+    /// parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     /// 
     ///  
     /// <para>
-    /// It is also passed in as the "filters" parameter to ListDevices. For an example of
-    /// the JSON request syntax, see <a>ListDevices</a>.
+    /// It is also passed in as the <code>filters</code> parameter to ListDevices. For an
+    /// example of the JSON request syntax, see <a>ListDevices</a>.
     /// </para>
     /// </summary>
     public partial class DeviceFilter
@@ -85,11 +85,13 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -163,7 +165,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The IN and NOT operators can take a values array that has more than one element.
+        /// The IN and NOT_IN operators can take a values array that has more than one element.
         /// </para>
         ///  </li> <li> 
         /// <para>

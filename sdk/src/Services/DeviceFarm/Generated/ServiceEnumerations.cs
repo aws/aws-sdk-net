@@ -1479,9 +1479,17 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType APPIUM_JAVA_TESTNG = new TestType("APPIUM_JAVA_TESTNG");
         /// <summary>
+        /// Constant APPIUM_NODE for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_NODE = new TestType("APPIUM_NODE");
+        /// <summary>
         /// Constant APPIUM_PYTHON for TestType
         /// </summary>
         public static readonly TestType APPIUM_PYTHON = new TestType("APPIUM_PYTHON");
+        /// <summary>
+        /// Constant APPIUM_RUBY for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_RUBY = new TestType("APPIUM_RUBY");
         /// <summary>
         /// Constant APPIUM_WEB_JAVA_JUNIT for TestType
         /// </summary>
@@ -1491,9 +1499,17 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType APPIUM_WEB_JAVA_TESTNG = new TestType("APPIUM_WEB_JAVA_TESTNG");
         /// <summary>
+        /// Constant APPIUM_WEB_NODE for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_WEB_NODE = new TestType("APPIUM_WEB_NODE");
+        /// <summary>
         /// Constant APPIUM_WEB_PYTHON for TestType
         /// </summary>
         public static readonly TestType APPIUM_WEB_PYTHON = new TestType("APPIUM_WEB_PYTHON");
+        /// <summary>
+        /// Constant APPIUM_WEB_RUBY for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_WEB_RUBY = new TestType("APPIUM_WEB_RUBY");
         /// <summary>
         /// Constant BUILTIN_EXPLORER for TestType
         /// </summary>
@@ -1709,6 +1725,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly UploadType APPIUM_JAVA_TESTNG_TEST_SPEC = new UploadType("APPIUM_JAVA_TESTNG_TEST_SPEC");
         /// <summary>
+        /// Constant APPIUM_NODE_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_NODE_TEST_PACKAGE = new UploadType("APPIUM_NODE_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_NODE_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_NODE_TEST_SPEC = new UploadType("APPIUM_NODE_TEST_SPEC");
+        /// <summary>
         /// Constant APPIUM_PYTHON_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_PYTHON_TEST_PACKAGE");
@@ -1716,6 +1740,14 @@ namespace Amazon.DeviceFarm
         /// Constant APPIUM_PYTHON_TEST_SPEC for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_PYTHON_TEST_SPEC = new UploadType("APPIUM_PYTHON_TEST_SPEC");
+        /// <summary>
+        /// Constant APPIUM_RUBY_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_RUBY_TEST_PACKAGE = new UploadType("APPIUM_RUBY_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_RUBY_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_RUBY_TEST_SPEC = new UploadType("APPIUM_RUBY_TEST_SPEC");
         /// <summary>
         /// Constant APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE for UploadType
         /// </summary>
@@ -1733,6 +1765,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly UploadType APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = new UploadType("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
         /// <summary>
+        /// Constant APPIUM_WEB_NODE_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_NODE_TEST_PACKAGE = new UploadType("APPIUM_WEB_NODE_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_NODE_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_NODE_TEST_SPEC = new UploadType("APPIUM_WEB_NODE_TEST_SPEC");
+        /// <summary>
         /// Constant APPIUM_WEB_PYTHON_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_WEB_PYTHON_TEST_PACKAGE");
@@ -1740,6 +1780,14 @@ namespace Amazon.DeviceFarm
         /// Constant APPIUM_WEB_PYTHON_TEST_SPEC for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_PYTHON_TEST_SPEC = new UploadType("APPIUM_WEB_PYTHON_TEST_SPEC");
+        /// <summary>
+        /// Constant APPIUM_WEB_RUBY_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_RUBY_TEST_PACKAGE = new UploadType("APPIUM_WEB_RUBY_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_RUBY_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_RUBY_TEST_SPEC = new UploadType("APPIUM_WEB_RUBY_TEST_SPEC");
         /// <summary>
         /// Constant CALABASH_TEST_PACKAGE for UploadType
         /// </summary>

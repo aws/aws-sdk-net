@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents the device filters used in a test run as well as the maximum number of
-    /// devices to be included in the run. It is passed in as the deviceSelectionConfiguration
+    /// devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code>
     /// request parameter in <a>ScheduleRun</a>.
     /// </summary>
     public partial class DeviceSelectionConfiguration
@@ -45,8 +45,12 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Attribute: The aspect of a device such as platform or model used as the selection
-        /// criteria in a device filter.
+        ///  <b>Attribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The aspect of a device such as platform or model used as the selection criteria in
+        /// a device filter.
         /// </para>
         ///  
         /// <para>
@@ -83,11 +87,13 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are "TRUE" or "FALSE".
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,7 +109,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Operator: The filter operator.
+        ///  <b>Operator</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The filter operator.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -125,20 +135,40 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Values: An array of one or more filter values.
+        ///  <b>Values</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// An array of one or more filter values.
+        /// </para>
+        ///  <p class="title"> <b>Operator Values</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The IN and NOT operators can take a values array that has more than one element.
+        /// The IN and NOT_IN operators can take a values array that has more than one element.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The other operators require an array with a single element.
         /// </para>
+        ///  </li> </ul> <p class="title"> <b>Attribute Values</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The PLATFORM attribute can be set to "ANDROID" or "IOS".
+        /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY",
-        /// or "TEMPORARY_NOT_AVAILABLE" as values.
+        /// The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY",
+        /// or "TEMPORARY_NOT_AVAILABLE".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

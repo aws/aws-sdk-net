@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents test settings. This data structure is passed in as the "test" parameter
-    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// Represents test settings. This data structure is passed in as the <code>test</code>
+    /// parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     /// </summary>
     public partial class ScheduleRunTest
     {
@@ -91,12 +91,12 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1",
-        /// "1.6.5", "latest", and "default".
+        /// appium_version: The Appium version. Currently supported values are "1.6.5" (and higher),
+        /// "latest", and "default".
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+        /// “latest” will run the latest Appium version supported by Device Farm (1.9.1).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -287,15 +287,31 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+        /// APPIUM_NODE: The Appium Node.js type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+        /// APPIUM_RUBY: The Appium Ruby type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
         /// </para>
         ///  </li> <li> 
         /// <para>
