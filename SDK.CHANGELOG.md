@@ -1,3 +1,12 @@
+### 3.3.435.0 (2019-01-03 22:55 UTC)
+* IoTAnalytics (3.3.7.0)
+	* ListDatasetContents now has a filter to limit results by date scheduled.
+* Core 3.3.30.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.434.1 (2019-01-03 03:19 UTC)
 * OpsWorksCM (3.3.6.25)
 	* Documentation updates for opsworkscm
