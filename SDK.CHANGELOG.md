@@ -1,3 +1,9 @@
+### 3.3.436.0 (2019-01-04 23:00 UTC)
+* DeviceFarm (3.3.12.0)
+	* "This release provides support for running Appium Node.js and Appium Ruby tests on AWS Device Farm.
+* ECS (3.3.21.8)
+	* Documentation updates for Amazon ECS tagging feature.
+
 ### 3.3.435.0 (2019-01-03 22:55 UTC)
 * IoTAnalytics (3.3.7.0)
 	* ListDatasetContents now has a filter to limit results by date scheduled.
