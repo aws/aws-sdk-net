@@ -55,7 +55,7 @@ namespace Amazon.AppMesh
     ///            naming for their components. To use App Mesh, you must have a containerized
     /// application            running on Amazon EC2 instances, hosted in either Amazon ECS,
     /// Amazon EKS, or Kubernetes on AWS. For            more information about service discovery
-    /// on Amazon ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+    /// on Amazon ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// Discovery</a> in the               <i>Amazon Elastic Container Service Developer Guide</i>.
     /// Kubernetes <code>kube-dns</code> is supported.            For more information, see
     /// <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
@@ -863,7 +863,7 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Describes an existing cluster.
+        /// Describes an existing service mesh.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMesh service method.</param>
         /// 

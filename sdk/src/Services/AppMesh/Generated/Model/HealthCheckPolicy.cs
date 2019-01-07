@@ -29,12 +29,6 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object representing the health check policy for a virtual node's listener.
-    /// 
-    ///          <note>            
-    /// <para>
-    /// Listener health checks are not available during the App Mesh preview.
-    /// </para>
-    ///          </note>
     /// </summary>
     public partial class HealthCheckPolicy
     {
@@ -86,7 +80,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The destination path for the health check request.
+        /// The destination path for the health check request. This is only required if the  
+        ///       specified protocol is HTTP; if the protocol is TCP, then this parameter is ignored.
         /// </para>
         /// </summary>
         public string Path
@@ -104,7 +99,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The destination port for the health check request.
+        /// The destination port for the health check request. This port must match the port defined
+        ///         in the <a>PortMapping</a> for the listener.
         /// </para>
         /// </summary>
         public int Port

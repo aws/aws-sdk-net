@@ -197,7 +197,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.HealthyThreshold</property>
-    <min>0</min>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.HealthCheckPolicy.IntervalMillis</property>
+    <min>5000</min>
+    <max>300000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.Port</property>
@@ -205,8 +211,14 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.HealthCheckPolicy.TimeoutMillis</property>
+    <min>2000</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.HealthCheckPolicy.UnhealthyThreshold</property>
-    <min>0</min>
+    <min>2</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.MeshData.MeshName</property>

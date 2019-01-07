@@ -29,7 +29,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMesh operation.
-    /// Describes an existing cluster.
+    /// Describes an existing service mesh.
     /// </summary>
     public partial class DescribeMeshRequest : AmazonAppMeshRequest
     {

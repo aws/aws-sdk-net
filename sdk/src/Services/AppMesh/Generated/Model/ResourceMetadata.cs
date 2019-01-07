@@ -75,7 +75,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the cluster was created.
+        /// The Unix epoch timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -93,7 +93,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the cluster was last updated.
+        /// The Unix epoch timestamp in seconds for when the resource was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt

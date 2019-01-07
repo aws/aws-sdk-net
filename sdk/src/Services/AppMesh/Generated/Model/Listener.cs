@@ -40,11 +40,6 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// The health check information for the listener.
         /// </para>
-        ///          <note>            
-        /// <para>
-        /// Listener health checks are not available during the App Mesh preview.
-        /// </para>
-        ///          </note>
         /// </summary>
         public HealthCheckPolicy HealthCheck
         {
