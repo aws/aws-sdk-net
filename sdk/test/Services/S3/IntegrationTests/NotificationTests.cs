@@ -177,6 +177,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(putObjectRequest.BucketName, evnt.Records[0].S3.Bucket.Name);
                     Assert.AreEqual(putObjectRequest.Key, evnt.Records[0].S3.Object.Key);
                     Assert.AreEqual(putObjectRequest.ContentBody.Length, evnt.Records[0].S3.Object.Size);
+                    Assert.IsNotNull(evnt.Records[0].S3.Object.Sequencer);
                 }
                 finally
                 {

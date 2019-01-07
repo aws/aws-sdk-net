@@ -110,6 +110,23 @@ namespace Amazon.S3.Util
                                 record.S3.Object.Size = GetValueAsLong(jsonObject, "size");
                                 record.S3.Object.ETag = GetValueAsString(jsonObject, "eTag");
                                 record.S3.Object.VersionId = GetValueAsString(jsonObject, "versionId");
+                                record.S3.Object.Sequencer = GetValueAsString(jsonObject, "sequencer");
+                            }
+                        }
+
+                        if(jsonRecord["glacierEventData"] != null)
+                        {
+                            var jsonGlacier = jsonRecord["glacierEventData"];
+                            record.GlacierEventData = new S3GlacierEventDataEntity();
+
+                            if(jsonGlacier["restoreEventData"] != null)
+                            {
+                                var jsonRestore = jsonGlacier["restoreEventData"];
+
+                                record.GlacierEventData.RestoreEventData = new S3RestoreEventDataEntity();
+
+                                record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime = GetValueAsDateTime(jsonRestore, "lifecycleRestorationExpiryTime").GetValueOrDefault();
+                                record.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass = GetValueAsString(jsonRestore, "lifecycleRestoreStorageClass");
                             }
                         }
 
@@ -161,31 +178,36 @@ namespace Amazon.S3.Util
             /// </summary>
             public string Arn {get; set;}        
         }
-    
+
         /// <summary>
         /// This class contains the information for an object in S3.
         /// </summary>
-        public class S3ObjectEntity 
-        {        
+        public class S3ObjectEntity
+        {
             /// <summary>
             /// Gets and sets the key for the object stored in S3.
             /// </summary>
-            public string Key {get; set;}
+            public string Key { get; set; }
 
             /// <summary>
             /// Gets and sets the size of the object in S3.
             /// </summary>
-            public long Size {get;set;}
+            public long Size { get; set; }
 
             /// <summary>
             /// Gets and sets the etag of the object. This can be used to determine if the object has changed.
             /// </summary>
-            public string ETag {get;set;}
+            public string ETag { get; set; }
 
             /// <summary>
             /// Gets and sets the version id of the object in S3.
             /// </summary>
-            public string VersionId {get;set;}
+            public string VersionId { get; set; }
+
+            /// <summary>
+            /// Gets and sets the sequencer a string representation of a hexadecimal value used to determine event sequence, only used with PUTs and DELETEs.
+            /// </summary>
+            public string Sequencer { get; set; }
         }
 
         /// <summary>
@@ -240,7 +262,34 @@ namespace Amazon.S3.Util
             /// </summary>
             public string XAmzRequestId {get;set;}
         }
-    
+
+        /// <summary>
+        /// The class holds the glacier event data elements.
+        /// </summary>
+        public class S3GlacierEventDataEntity
+        {
+            /// <summary>
+            /// Gets and sets the RestoreEventData property.  
+            /// </summary>
+            public S3RestoreEventDataEntity RestoreEventData { get; set; }
+        }
+
+        /// <summary>
+        /// The class holds the restore event data elements.
+        /// </summary>
+        public class S3RestoreEventDataEntity
+        {
+            /// <summary>
+            /// Gets and sets the LifecycleRestorationExpiryTime the time when the object restoration will be expired. 
+            /// </summary>
+            public DateTime LifecycleRestorationExpiryTime { get; set; }
+
+            /// <summary>
+            /// Gets and sets the LifecycleRestoreStorageClass the source storage class for restore.
+            /// </summary>
+            public string LifecycleRestoreStorageClass { get; set; }
+        }
+
         /// <summary>
         /// The class holds the event notification.
         /// </summary>
@@ -291,13 +340,28 @@ namespace Amazon.S3.Util
             /// Gets and sets the UserIdentity property.
             /// </summary>
             public UserIdentityEntity UserIdentity { get; set; }
+
+            /// <summary>
+            /// Get and sets the GlacierEventData property.
+            /// </summary>
+            public S3GlacierEventDataEntity GlacierEventData { get; set; }
         }
+
 
         private static string GetValueAsString(JsonData data, string key)
         {
             if (data[key] != null)
                 return (string)data[key];
             return null;
+        }
+
+        private static DateTime? GetValueAsDateTime(JsonData data, string key)
+        {
+            var str = GetValueAsString(data, key);
+            if (string.IsNullOrEmpty(str))
+                return null;
+
+            return DateTime.Parse(str, CultureInfo.InvariantCulture);
         }
 
         private static long GetValueAsLong(JsonData data, string key)

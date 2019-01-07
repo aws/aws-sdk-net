@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.S3;
 using Amazon.S3.Util;
+using System.Globalization;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -42,7 +43,14 @@ namespace AWSSDK_DotNet35.UnitTests
 "               \"key\":\"HappyFace.jpg\"," +
 "               \"size\":1024," +
 "               \"eTag\":\"d41d8cd98f00b204e9800998ecf8427e\"," +
-"               \"versionId\":\"096fKKXTRTtl3on89fVO.nfljtsv6qko\"" +
+"               \"versionId\":\"096fKKXTRTtl3on89fVO.nfljtsv6qko\"," +
+"               \"sequencer\":\"1234567890\"" +
+"            }" +
+"         }," +
+"         \"glacierEventData\":{" +
+"           \"restoreEventData\":{" +
+"               \"lifecycleRestorationExpiryTime\":\"1970-01-01T00:00:00.000Z\"," +
+"               \"lifecycleRestoreStorageClass\":\"Standard\"" +
 "            }" +
 "         }" +
 "      }" +
@@ -81,6 +89,10 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual(1024, record.S3.Object.Size);
             Assert.AreEqual("d41d8cd98f00b204e9800998ecf8427e", record.S3.Object.ETag);
             Assert.AreEqual("096fKKXTRTtl3on89fVO.nfljtsv6qko", record.S3.Object.VersionId);
+            Assert.AreEqual("1234567890", record.S3.Object.Sequencer);
+
+            Assert.AreEqual(DateTime.Parse("1970-01-01T00:00:00.000Z", CultureInfo.InvariantCulture), record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime);
+            Assert.AreEqual("Standard", record.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass);
         }
 
         [TestMethod]
