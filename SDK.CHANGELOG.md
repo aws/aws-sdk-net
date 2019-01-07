@@ -1,3 +1,12 @@
+### 3.3.436.1 (2019-01-07 22:00 UTC)
+* AppMesh (3.3.0.8)
+	* AWS App Mesh now supports active health checks. You can specify TCP or HTTP health checks with custom thresholds and intervals on your VirtualNode definitions. See the AWS App Mesh HealthCheckPolicy documentation for more information.
+* Core 3.3.30.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.436.0 (2019-01-04 23:00 UTC)
 * DeviceFarm (3.3.12.0)
 	* "This release provides support for running Appium Node.js and Appium Ruby tests on AWS Device Farm.
