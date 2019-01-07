@@ -97,27 +97,34 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
-            var regionalEndpoint = requestContext.Request.Endpoint;
-            var exception = responseContext.AsyncResult.Exception;            
-
-            if (exception != null)
-            {   
-                if (IsInvalidEndpointException(exception))
-                {
-                    EvictCacheKeyForRequest(requestContext, regionalEndpoint);
-                }
-
-                return;
-            }
-            else
+            try
             {
-                PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            }
+                var requestContext = executionContext.RequestContext;
+                var responseContext = executionContext.ResponseContext;
+                var regionalEndpoint = requestContext.Request.Endpoint;
+                var exception = responseContext.AsyncResult.Exception;
 
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
+                if (exception != null)
+                {
+                    if (IsInvalidEndpointException(exception))
+                    {
+                        EvictCacheKeyForRequest(requestContext, regionalEndpoint);
+                    }
+                }
+                else
+                {
+                    PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+                }
+            }
+            catch(Exception e)
+            {
+                executionContext.ResponseContext.AsyncResult.Exception = e;
+            }
+            finally
+            {
+                // Call outer handler
+                base.InvokeAsyncCallback(executionContext);                
+            }
         }
 #endif
 
