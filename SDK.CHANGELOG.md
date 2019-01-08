@@ -1,3 +1,13 @@
+### 3.3.437.0 (2019-01-08 02:56 UTC)
+* S3 (3.3.31.8)
+	* Added missing header for S3 CopyPart request.
+Updated event notification object to include the sequencer and glacier event data.
+* Core 3.3.31.0
+	* Code for future SDK instrumentation and telemetry.
+Add support for us-gov-east-1 region.
+Fix for endpoint discovery handler async exception handling logic that could cause a .NET 3.5 async call to hang.
+	* All services packages updated to require new Core
+
 ### 3.3.436.1 (2019-01-07 22:00 UTC)
 * AppMesh (3.3.0.8)
 	* AWS App Mesh now supports active health checks. You can specify TCP or HTTP health checks with custom thresholds and intervals on your VirtualNode definitions. See the AWS App Mesh HealthCheckPolicy documentation for more information.
