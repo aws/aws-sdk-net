@@ -1,3 +1,14 @@
+### 3.3.438.0 (2019-01-09 22:23 UTC)
+* DocDB (3.3.0.0)
+	* Amazon DocumentDB (with MongoDB compatibility) is a fast, reliable, and fully-managed database service. Amazon DocumentDB makes it easy for developers to set up, run, and scale MongoDB-compatible databases in the cloud.
+* Redshift (3.3.12.0)
+	* DescribeSnapshotSchedules returns a list of snapshot schedules. With this release, this API will have a list of clusters and number of clusters associated with the schedule.
+* Core 3.3.31.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.437.0 (2019-01-08 02:56 UTC)
 * S3 (3.3.31.8)
 	* Added missing header for S3 CopyPart request.

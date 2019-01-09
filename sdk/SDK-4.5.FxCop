@@ -78,6 +78,7 @@
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/dlm/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/docdb/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecr/bin/Release/net45/</Directory>
@@ -248,6 +249,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectoryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DLM.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DocDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ECR.dll" Analyze="True" AnalyzeAllChildren="True" />
