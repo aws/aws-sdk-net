@@ -33,11 +33,43 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ModifySnapshotScheduleResponse : AmazonWebServiceResponse
     {
+        private int? _associatedClusterCount;
+        private List<ClusterAssociatedToSchedule> _associatedClusters = new List<ClusterAssociatedToSchedule>();
         private List<DateTime> _nextInvocations = new List<DateTime>();
         private List<string> _scheduleDefinitions = new List<string>();
         private string _scheduleDescription;
         private string _scheduleIdentifier;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AssociatedClusterCount.
+        /// </summary>
+        public int AssociatedClusterCount
+        {
+            get { return this._associatedClusterCount.GetValueOrDefault(); }
+            set { this._associatedClusterCount = value; }
+        }
+
+        // Check to see if AssociatedClusterCount property is set
+        internal bool IsSetAssociatedClusterCount()
+        {
+            return this._associatedClusterCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedClusters.
+        /// </summary>
+        public List<ClusterAssociatedToSchedule> AssociatedClusters
+        {
+            get { return this._associatedClusters; }
+            set { this._associatedClusters = value; }
+        }
+
+        // Check to see if AssociatedClusters property is set
+        internal bool IsSetAssociatedClusters()
+        {
+            return this._associatedClusters != null && this._associatedClusters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextInvocations.

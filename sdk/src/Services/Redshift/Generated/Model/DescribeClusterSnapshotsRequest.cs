@@ -69,30 +69,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A value that indicates whether to return snapshots only for an existing cluster. Table-level
         /// restore can be performed only using a snapshot of an existing cluster, that is, a
-        /// cluster that has not been deleted. 
+        /// cluster that has not been deleted. If <code>ClusterExists</code> is set to <code>true</code>,
+        /// <code>ClusterIdentifier</code> is required.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code>
-        /// is required.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// is not specified, all snapshots associated with deleted clusters (orphaned snapshots)
-        /// are returned. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// is specified for a deleted cluster, snapshots associated with that cluster are returned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// is specified for an existing cluster, no snapshots are returned. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool ClusterExists
         {

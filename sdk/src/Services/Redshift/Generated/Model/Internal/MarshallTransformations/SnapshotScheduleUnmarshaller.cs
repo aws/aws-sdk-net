@@ -54,6 +54,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AssociatedClusterCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AssociatedClusterCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AssociatedClusters/ClusterAssociatedToSchedule", targetDepth))
+                    {
+                        var unmarshaller = ClusterAssociatedToScheduleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AssociatedClusters.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("NextInvocations/SnapshotTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
