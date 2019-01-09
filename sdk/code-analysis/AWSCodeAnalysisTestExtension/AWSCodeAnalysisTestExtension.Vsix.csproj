@@ -276,6 +276,10 @@
       <Project>{677AAD0A-676F-4830-9161-2EFF3E918BE3}</Project>
       <Name>AWSSDK.DLM.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DocDB/AWSSDK.DocDB.CodeAnalysis.csproj">
+      <Project>{C67154AF-C6CB-43F6-BE8A-2E5BF629D887}</Project>
+      <Name>AWSSDK.DocDB.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DynamoDBv2/AWSSDK.DynamoDBv2.CodeAnalysis.csproj">
       <Project>{B0E4C8D2-B504-4B0E-8789-47F2B9CBDA02}</Project>
       <Name>AWSSDK.DynamoDBv2.CodeAnalysis</Name>

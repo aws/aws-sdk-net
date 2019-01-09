@@ -187,6 +187,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud.
 * [AWSSDK.DLM](https://www.nuget.org/packages/AWSSDK.DLM/)
 	* New Service temporary synopsis, please replace it.
+* [AWSSDK.DocDB](https://www.nuget.org/packages/AWSSDK.DocDB/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.DynamoDBv2](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/)
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)

@@ -87,6 +87,7 @@
     <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DLM\AWSSDK.DLM.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DocDB\AWSSDK.DocDB.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj"/>
