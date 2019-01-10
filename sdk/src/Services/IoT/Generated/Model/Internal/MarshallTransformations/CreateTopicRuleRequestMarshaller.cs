@@ -78,6 +78,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if(publicRequest.IsSetTags())
+                request.Headers["x-amz-tagging"] = publicRequest.Tags;
 
             return request;
         }

@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     public partial class CreateTopicRuleRequest : AmazonIoTRequest
     {
         private string _ruleName;
+        private string _tags;
         private TopicRulePayload _topicRulePayload;
 
         /// <summary>
@@ -53,6 +54,37 @@ namespace Amazon.IoT.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the topic rule.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+        /// </para>
+        ///  
+        /// <para>
+        /// For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."
+        /// </para>
+        ///  
+        /// <para>
+        /// For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null;
         }
 
         /// <summary>
