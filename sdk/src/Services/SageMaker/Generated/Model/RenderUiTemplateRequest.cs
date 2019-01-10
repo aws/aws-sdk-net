@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UiTemplate. 
         /// <para>
-        /// A <code>Template</code>object containing the worker UI template to render.
+        /// A <code>Template</code> object containing the worker UI template to render.
         /// </para>
         /// </summary>
         public UiTemplate UiTemplate

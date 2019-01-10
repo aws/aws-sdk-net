@@ -29,16 +29,16 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCodeRepository operation.
-    /// Create a git repository as a resource in your Amazon SageMaker account. You can associate
-    /// the repository with notebook instances so that you can use git source control for
-    /// the notebooks you create. The git repository is a resource in your Amazon SageMaker
+    /// Creates a Git repository as a resource in your Amazon SageMaker account. You can associate
+    /// the repository with notebook instances so that you can use Git source control for
+    /// the notebooks you create. The Git repository is a resource in your Amazon SageMaker
     /// account, so it can be associated with more than one notebook instance, and it persists
     /// independently from the lifecycle of any notebook instances it is associated with.
     /// 
     ///  
     /// <para>
     /// The repository can be hosted either in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-    /// CodeCommit</a> or in any other git repository.
+    /// CodeCommit</a> or in any other Git repository.
     /// </para>
     /// </summary>
     public partial class CreateCodeRepositoryRequest : AmazonSageMakerRequest
@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository. The name must have 1 to 63 characters. Valid characters
+        /// The name of the Git repository. The name must have 1 to 63 characters. Valid characters
         /// are a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>

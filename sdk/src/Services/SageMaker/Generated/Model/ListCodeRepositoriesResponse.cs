@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositorySummaryList. 
         /// <para>
-        /// Gets a list of summaries of the git repositories. Each summary specifies the following
+        /// Gets a list of summaries of the Git repositories. Each summary specifies the following
         /// values for the repository: 
         /// </para>
         ///  <ul> <li> 
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// of the AWS Secrets Manager secret that contains the credentials used to access the
         /// repository.
         /// </para>
-        ///  </li> <li>  </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public List<CodeRepositorySummary> CodeRepositorySummaryList
         {
@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To get the next set of git repositories,
+        /// the response includes a <code>NextToken</code>. To get the next set of Git repositories,
         /// use the token in the next request.
         /// </para>
         /// </summary>

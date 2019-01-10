@@ -52,9 +52,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BatchStrategy. 
         /// <para>
-        /// SingleRecord means only one record was used per a batch. <code>MultiRecord</code>
-        /// means batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code>
-        /// limit.
+        ///  If you want to include only one record in a batch, specify <code>SingleRecord</code>..
+        /// If you want batches to contain a maximum of the number of records specified in the
+        /// <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.S
         /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
@@ -161,7 +161,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxPayloadInMB. 
         /// <para>
-        /// The maximum payload size , in MB used in the transform job.
+        /// The maximum payload size, in MB, used in the transform job.
         /// </para>
         /// </summary>
         public int MaxPayloadInMB
@@ -197,9 +197,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformEndTime. 
         /// <para>
-        /// Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>,
-        /// or <code>Failed</code>. You are billed for the time interval between this time and
-        /// the value of <code>TransformStartTime</code>.
+        /// Indicates when the transform job has been completed, or has stopped or failed. You
+        /// are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
         /// </para>
         /// </summary>
         public DateTime TransformEndTime

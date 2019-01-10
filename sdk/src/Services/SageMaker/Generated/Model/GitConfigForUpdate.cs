@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies configuration details for a git repository when the repository is updated.
+    /// Specifies configuration details for a Git repository when the repository is updated.
     /// </summary>
     public partial class GitConfigForUpdate
     {

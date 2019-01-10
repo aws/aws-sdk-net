@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies configuration details for a git repository in your AWS account.
+    /// Specifies configuration details for a Git repository in your AWS account.
     /// </summary>
     public partial class GitConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        /// The default beach for the git repository.
+        /// The default branch for the Git repository.
         /// </para>
         /// </summary>
         public string Branch
@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RepositoryUrl. 
         /// <para>
-        /// The URL where the git repository is located.
+        /// The URL where the Git repository is located.
         /// </para>
         /// </summary>
         public string RepositoryUrl

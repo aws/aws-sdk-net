@@ -79,6 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEnableInterContainerTrafficEncryption())
+                {
+                    context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
+                    context.Writer.Write(publicRequest.EnableInterContainerTrafficEncryption);
+                }
+
                 if(publicRequest.IsSetEnableNetworkIsolation())
                 {
                     context.Writer.WritePropertyName("EnableNetworkIsolation");

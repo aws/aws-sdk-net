@@ -13,7 +13,7 @@
     <property>Amazon.SageMaker.Model.CreateAlgorithmRequest.AlgorithmName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateAlgorithmResponse.AlgorithmArn</property>
@@ -25,7 +25,7 @@
     <property>Amazon.SageMaker.Model.CreateCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateCodeRepositoryResponse.CodeRepositoryArn</property>
@@ -37,7 +37,7 @@
     <property>Amazon.SageMaker.Model.CreateCompilationJobRequest.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateCompilationJobRequest.RoleArn</property>
@@ -143,7 +143,7 @@
     <property>Amazon.SageMaker.Model.CreateModelPackageRequest.ModelPackageName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelPackageResponse.ModelPackageArn</property>
@@ -270,13 +270,13 @@
     <property>Amazon.SageMaker.Model.DeleteAlgorithmRequest.AlgorithmName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteEndpointRequest.EndpointName</property>
@@ -297,7 +297,7 @@
     <property>Amazon.SageMaker.Model.DeleteModelPackageRequest.ModelPackageName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteNotebookInstanceRequest.NotebookInstanceName</property>
@@ -340,13 +340,13 @@
     <property>Amazon.SageMaker.Model.DescribeAlgorithmResponse.AlgorithmName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCodeRepositoryResponse.CodeRepositoryArn</property>
@@ -358,13 +358,13 @@
     <property>Amazon.SageMaker.Model.DescribeCodeRepositoryResponse.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCompilationJobRequest.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCompilationJobResponse.CompilationJobArn</property>
@@ -375,7 +375,7 @@
     <property>Amazon.SageMaker.Model.DescribeCompilationJobResponse.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeCompilationJobResponse.FailureReason</property>
@@ -535,7 +535,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ModelPackageName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceRequest.NotebookInstanceName</property>
@@ -1065,7 +1065,7 @@
     <property>Amazon.SageMaker.Model.StopCompilationJobRequest.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StopHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
@@ -1100,7 +1100,7 @@
     <property>Amazon.SageMaker.Model.UpdateCodeRepositoryRequest.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateCodeRepositoryResponse.CodeRepositoryArn</property>
@@ -1190,7 +1190,7 @@
     <property>Amazon.SageMaker.Model.AlgorithmStatusItem.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmSummary.AlgorithmArn</property>
@@ -1207,13 +1207,13 @@
     <property>Amazon.SageMaker.Model.AlgorithmSummary.AlgorithmName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmValidationProfile.ProfileName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmValidationSpecification.ValidationRole</property>
@@ -1261,7 +1261,7 @@
     <property>Amazon.SageMaker.Model.CodeRepositorySummary.CodeRepositoryName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CognitoMemberDefinition.ClientId</property>
@@ -1290,7 +1290,7 @@
     <property>Amazon.SageMaker.Model.CompilationJobSummary.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContainerDefinition.ContainerHostname</property>
@@ -1587,6 +1587,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.LabelingJobAlgorithmsConfig.LabelingJobAlgorithmSpecificationArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobForWorkteamSummary.JobReferenceCode</property>
     <min>1</min>
   </property-value-rule>
@@ -1711,7 +1715,7 @@
     <property>Amazon.SageMaker.Model.ModelPackageStatusItem.Name</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageSummary.ModelPackageArn</property>
@@ -1728,13 +1732,13 @@
     <property>Amazon.SageMaker.Model.ModelPackageSummary.ModelPackageName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageValidationProfile.ProfileName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageValidationSpecification.ValidationRole</property>
@@ -1948,7 +1952,7 @@
     <property>Amazon.SageMaker.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^((?!aws:)[\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Tag.Value</property>

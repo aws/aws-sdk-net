@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CertifyForMarketplace. 
         /// <para>
-        /// Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+        /// Whether to certify the algorithm so that it can be listed in AWS Marketplace.
         /// </para>
         /// </summary>
         public bool CertifyForMarketplace

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies summary information about a git repository.
+    /// Specifies summary information about a Git repository.
     /// </summary>
     public partial class CodeRepositorySummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the git repository.
+        /// The Amazon Resource Name (ARN) of the Git repository.
         /// </para>
         /// </summary>
         public string CodeRepositoryArn
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository.
+        /// The name of the Git repository.
         /// </para>
         /// </summary>
         public string CodeRepositoryName
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date and time that the git repository was created.
+        /// The date and time that the Git repository was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -95,7 +95,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property GitConfig. 
         /// <para>
-        /// Configuration details for the git repository, including the URL where it is located
+        /// Configuration details for the Git repository, including the URL where it is located
         /// and the ARN of the AWS Secrets Manager secret that contains the credentials used to
         /// access the repository.
         /// </para>
@@ -115,7 +115,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the git repository was last modified.
+        /// The date and time that the Git repository was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

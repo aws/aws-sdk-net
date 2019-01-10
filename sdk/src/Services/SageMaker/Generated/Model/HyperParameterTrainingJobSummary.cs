@@ -137,7 +137,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingEndTime. 
         /// <para>
-        /// The date and time that the training job ended.
+        /// Specifies the time when the training job ends on training instances. You are billed
+        /// for the time interval between the value of <code>TrainingStartTime</code> and this
+        /// time. For successful jobs and stopped jobs, this is the time after model artifacts
+        /// are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+        /// failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime

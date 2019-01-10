@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     {
         private AlgorithmSpecification _algorithmSpecification;
         private DateTime? _creationTime;
+        private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableNetworkIsolation;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
@@ -93,13 +94,34 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableInterContainerTrafficEncryption. 
+        /// <para>
+        /// To encrypt all communications between ML compute instances in distributed training,
+        /// specify <code>True</code>. Encryption provides greater security for distributed training,
+        /// but training take longer because of the additional communications between ML compute
+        /// instances.
+        /// </para>
+        /// </summary>
+        public bool EnableInterContainerTrafficEncryption
+        {
+            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            set { this._enableInterContainerTrafficEncryption = value; }
+        }
+
+        // Check to see if EnableInterContainerTrafficEncryption property is set
+        internal bool IsSetEnableInterContainerTrafficEncryption()
+        {
+            return this._enableInterContainerTrafficEncryption.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableNetworkIsolation. 
         /// <para>
-        /// If <code>True</code>, inbound or outbound network calls can be made, except for calls
-        /// between peers within a training cluster for distributed training. If network isolation
-        /// is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads
-        /// and uploads customer data and model artifacts through the specifed VPC, but the training
-        /// container does not have network access.
+        /// If you want to allow inbound or outbound network calls, except for calls between peers
+        /// within a training cluster for distributed training, choose <code>True</code>. If you
+        /// enable network isolation for training jobs that are configured to use a VPC, Amazon
+        /// SageMaker downloads and uploads customer data and model artifacts through the specified
+        /// VPC, but the training container does not have network access.
         /// </para>
         ///  <note> 
         /// <para>

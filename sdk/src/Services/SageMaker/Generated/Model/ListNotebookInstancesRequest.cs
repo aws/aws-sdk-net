@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AdditionalCodeRepositoryEquals. 
         /// <para>
         /// A filter that returns only notebook instances with associated with the specified git
-        /// respository.
+        /// repository.
         /// </para>
         /// </summary>
         public string AdditionalCodeRepositoryEquals
@@ -108,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultCodeRepositoryContains. 
         /// <para>
-        /// A string in the name or URL of a git repository associated with this notebook instance.
+        /// A string in the name or URL of a Git repository associated with this notebook instance.
         /// This filter returns only notebook instances associated with a git repository with
         /// a name that contains the specified string.
         /// </para>
@@ -210,7 +210,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You might specify a filter or a sort order in your request. When response is truncated,
+        /// You might specify a filter or a sort order in your request. When response is truncated,
         /// you must use the same values for the filer and sort order in the next request. 
         /// </para>
         ///  </note>

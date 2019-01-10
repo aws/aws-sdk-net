@@ -107,8 +107,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AcceleratorTypes. 
         /// <para>
         /// A list of Elastic Inference (EI) instance types to associate with this notebook instance.
-        /// Currently, only one instance type can be associated with a notebook intance. For more
-        /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
+        /// Currently, only one instance type can be associated with a notebook instance. For
+        /// more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
         /// Elastic Inference in Amazon SageMaker</a>.
         /// </para>
         /// </summary>
@@ -127,10 +127,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AdditionalCodeRepositories. 
         /// <para>
-        /// An array of up to 3 git repositories to associate with the notebook instance. These
-        /// can be either the names of git repositories stored as resources in your account, or
-        /// the URL of git repositories in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-        /// CodeCommit</a> or in any other git repository. These repositories are cloned at the
+        /// An array of up to three Git repositories to associate with the notebook instance.
+        /// These can be either the names of Git repositories stored as resources in your account,
+        /// or the URL of Git repositories in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other Git repository. These repositories are cloned at the
         /// same level as the default repository of your notebook instance. For more information,
         /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
@@ -151,10 +151,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultCodeRepository. 
         /// <para>
-        /// A git repository to associate with the notebook instance as its default code repository.
-        /// This can be either the name of a git repository stored as a resource in your account,
-        /// or the URL of a git repository in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-        /// CodeCommit</a> or in any other git repository. When you open a notebook instance,
+        /// A Git repository to associate with the notebook instance as its default code repository.
+        /// This can be either the name of a Git repository stored as a resource in your account,
+        /// or the URL of a Git repository in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other Git repository. When you open a notebook instance,
         /// it opens in the directory that contains this repository. For more information, see
         /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.

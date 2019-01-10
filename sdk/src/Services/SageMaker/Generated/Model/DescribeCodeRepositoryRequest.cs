@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCodeRepository operation.
-    /// Gets details about the specified git repository.
+    /// Gets details about the specified Git repository.
     /// </summary>
     public partial class DescribeCodeRepositoryRequest : AmazonSageMakerRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository to describe.
+        /// The name of the Git repository to describe.
         /// </para>
         /// </summary>
         public string CodeRepositoryName

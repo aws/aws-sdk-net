@@ -157,8 +157,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingImage. 
         /// <para>
-        /// The Amazon Amazon ECR registry path of the Docker image that contains the training
-        /// algorithm.
+        /// The Amazon ECR registry path of the Docker image that contains the training algorithm.
         /// </para>
         /// </summary>
         public string TrainingImage

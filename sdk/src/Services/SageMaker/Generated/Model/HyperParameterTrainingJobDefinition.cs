@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     public partial class HyperParameterTrainingJobDefinition
     {
         private HyperParameterAlgorithmSpecification _algorithmSpecification;
+        private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableNetworkIsolation;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
@@ -59,6 +60,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableInterContainerTrafficEncryption. 
+        /// <para>
+        /// To encrypt all communications between ML compute instances in distributed training,
+        /// specify <code>True</code>. Encryption provides greater security for distributed training,
+        /// but training take longer because of the additional communications between ML compute
+        /// instances.
+        /// </para>
+        /// </summary>
+        public bool EnableInterContainerTrafficEncryption
+        {
+            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            set { this._enableInterContainerTrafficEncryption = value; }
+        }
+
+        // Check to see if EnableInterContainerTrafficEncryption property is set
+        internal bool IsSetEnableInterContainerTrafficEncryption()
+        {
+            return this._enableInterContainerTrafficEncryption.HasValue; 
         }
 
         /// <summary>

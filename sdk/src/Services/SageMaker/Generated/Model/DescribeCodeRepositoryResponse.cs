@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the git repository.
+        /// The Amazon Resource Name (ARN) of the Git repository.
         /// </para>
         /// </summary>
         public string CodeRepositoryArn
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository.
+        /// The name of the Git repository.
         /// </para>
         /// </summary>
         public string CodeRepositoryName

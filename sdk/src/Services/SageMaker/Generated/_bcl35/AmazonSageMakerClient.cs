@@ -368,16 +368,16 @@ namespace Amazon.SageMaker
         #region  CreateCodeRepository
 
         /// <summary>
-        /// Create a git repository as a resource in your Amazon SageMaker account. You can associate
-        /// the repository with notebook instances so that you can use git source control for
-        /// the notebooks you create. The git repository is a resource in your Amazon SageMaker
+        /// Creates a Git repository as a resource in your Amazon SageMaker account. You can associate
+        /// the repository with notebook instances so that you can use Git source control for
+        /// the notebooks you create. The Git repository is a resource in your Amazon SageMaker
         /// account, so it can be associated with more than one notebook instance, and it persists
         /// independently from the lifecycle of any notebook instances it is associated with.
         /// 
         ///  
         /// <para>
         /// The repository can be hosted either in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-        /// CodeCommit</a> or in any other git repository.
+        /// CodeCommit</a> or in any other Git repository.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeRepository service method.</param>
@@ -1656,7 +1656,7 @@ namespace Amazon.SageMaker
         #region  DeleteCodeRepository
 
         /// <summary>
-        /// Deletes the specified git repository from your account.
+        /// Deletes the specified Git repository from your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCodeRepository service method.</param>
         /// 
@@ -2240,7 +2240,7 @@ namespace Amazon.SageMaker
         #region  DescribeCodeRepository
 
         /// <summary>
-        /// Gets details about the specified git repository.
+        /// Gets details about the specified Git repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCodeRepository service method.</param>
         /// 
@@ -3145,7 +3145,7 @@ namespace Amazon.SageMaker
         #region  ListCodeRepositories
 
         /// <summary>
-        /// Gets a list of the git repositories in your account.
+        /// Gets a list of the Git repositories in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCodeRepositories service method.</param>
         /// 
@@ -4655,7 +4655,7 @@ namespace Amazon.SageMaker
         #region  UpdateCodeRepository
 
         /// <summary>
-        /// Updates the specified git repository with the specified values.
+        /// Updates the specified Git repository with the specified values.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCodeRepository service method.</param>
         /// 

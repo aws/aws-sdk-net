@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCodeRepositories operation.
-    /// Gets a list of the git repositories in your account.
+    /// Gets a list of the Git repositories in your account.
     /// </summary>
     public partial class ListCodeRepositoriesRequest : AmazonSageMakerRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// A filter that returns only git repositories that were created after the specified
+        /// A filter that returns only Git repositories that were created after the specified
         /// time.
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// A filter that returns only git repositories that were created before the specified
+        /// A filter that returns only Git repositories that were created before the specified
         /// time.
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeAfter. 
         /// <para>
-        /// A filter that returns only git repositories that were last modified after the specified
+        /// A filter that returns only Git repositories that were last modified after the specified
         /// time.
         /// </para>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeBefore. 
         /// <para>
-        /// A filter that returns only git repositories that were last modified before the specified
+        /// A filter that returns only Git repositories that were last modified before the specified
         /// time.
         /// </para>
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of git repositories to return in the response.
+        /// The maximum number of Git repositories to return in the response.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string in the git repositories name. This filter returns only repositories whose
+        /// A string in the Git repositories name. This filter returns only repositories whose
         /// name contains the specified string.
         /// </para>
         /// </summary>
@@ -160,7 +160,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To get the next set of git repositories,
+        /// the response includes a <code>NextToken</code>. To get the next set of Git repositories,
         /// use the token in the next request.
         /// </para>
         /// </summary>

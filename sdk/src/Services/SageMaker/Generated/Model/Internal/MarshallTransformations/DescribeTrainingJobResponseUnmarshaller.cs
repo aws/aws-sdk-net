@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

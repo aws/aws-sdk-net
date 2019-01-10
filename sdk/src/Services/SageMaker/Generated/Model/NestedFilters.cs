@@ -28,15 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified
+    /// Defines a list of <code>NestedFilters</code> objects. To satisfy the conditions specified
     /// in the <code>NestedFilters</code> call, a resource must satisfy the conditions of
     /// all of the filters.
     /// 
     ///  
     /// <para>
-    /// For example, a <code>NestedFilters</code> could be defined using the training job's
-    /// <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code>
-    /// objects. 
+    /// For example, you could define a <code>NestedFilters</code> using the training job's
+    /// <code>InputDataConfig</code> property to filter on <code>Channel</code> objects. 
     /// </para>
     ///  
     /// <para>

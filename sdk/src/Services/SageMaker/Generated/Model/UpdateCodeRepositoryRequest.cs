@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCodeRepository operation.
-    /// Updates the specified git repository with the specified values.
+    /// Updates the specified Git repository with the specified values.
     /// </summary>
     public partial class UpdateCodeRepositoryRequest : AmazonSageMakerRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository to update.
+        /// The name of the Git repository to update.
         /// </para>
         /// </summary>
         public string CodeRepositoryName

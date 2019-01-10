@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The maximum length of time, in seconds, that the training job can run. If model training
         /// does not complete during this time, Amazon SageMaker ends the job. If value is not
-        /// specified, default value is 1 day. Maximum value is 5 days.
+        /// specified, default value is 1 day. Maximum value is 28 days.
         /// </para>
         /// </summary>
         public int MaxRuntimeInSeconds

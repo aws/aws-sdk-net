@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCodeRepository operation.
-    /// Deletes the specified git repository from your account.
+    /// Deletes the specified Git repository from your account.
     /// </summary>
     public partial class DeleteCodeRepositoryRequest : AmazonSageMakerRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
         /// <para>
-        /// The name of the git repository to delete.
+        /// The name of the Git repository to delete.
         /// </para>
         /// </summary>
         public string CodeRepositoryName
