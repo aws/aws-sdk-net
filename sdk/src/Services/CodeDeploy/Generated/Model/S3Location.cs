@@ -96,7 +96,7 @@ namespace Amazon.CodeDeploy.Model
         ///  
         /// <para>
         /// If the ETag is not specified as an input parameter, ETag validation of the object
-        /// will be skipped.
+        /// is skipped.
         /// </para>
         /// </summary>
         public string ETag
@@ -138,7 +138,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// If the version is not specified, the system will use the most recent version by default.
+        /// If the version is not specified, the system uses the most recent version by default.
         /// </para>
         /// </summary>
         public string Version

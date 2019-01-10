@@ -43,16 +43,16 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EC2/On-premises</b> - Each target object is an EC2 or on-premises instance. 
+        ///  <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS Lambda</b> - The target object is a specific version of an AWS Lambda function.
+        ///  <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon ECS</b> - The target object is an Amazon ECS service. 
+        ///  <b>Amazon ECS</b>: The target object is an Amazon ECS service. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

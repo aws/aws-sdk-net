@@ -59,7 +59,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// A timestamp indicating when the deployment lifecycle event ended.
+        /// A timestamp that indicates when the deployment lifecycle event ended.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -96,7 +96,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp indicating when the deployment lifecycle event started.
+        /// A timestamp that indicates when the deployment lifecycle event started.
         /// </para>
         /// </summary>
         public DateTime StartTime

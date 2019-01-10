@@ -34,8 +34,8 @@ namespace Amazon.CodeDeploy.Model
     ///  
     /// <para>
     /// Unless otherwise specified, both registered and deregistered on-premises instance
-    /// names will be listed. To list only registered or deregistered on-premises instance
-    /// names, use the registration status parameter.
+    /// names are listed. To list only registered or deregistered on-premises instance names,
+    /// use the registration status parameter.
     /// </para>
     /// </summary>
     public partial class ListOnPremisesInstancesRequest : AmazonCodeDeployRequest
@@ -93,8 +93,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TagFilters. 
         /// <para>
-        /// The on-premises instance tags that will be used to restrict the corresponding on-premises
-        /// instance names returned.
+        /// The on-premises instance tags that are used to restrict the on-premises instance names
+        /// returned.
         /// </para>
         /// </summary>
         public List<TagFilter> TagFilters

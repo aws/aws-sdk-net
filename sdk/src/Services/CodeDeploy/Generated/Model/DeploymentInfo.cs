@@ -136,7 +136,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CompleteTime. 
         /// <para>
-        /// A timestamp indicating when the deployment was complete.
+        /// A timestamp that indicates when the deployment was complete.
         /// </para>
         /// </summary>
         public DateTime CompleteTime
@@ -173,7 +173,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// A timestamp indicating when the deployment was created.
+        /// A timestamp that indicates when the deployment was created.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -199,7 +199,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// autoscaling: Auto Scaling created the deployment.
+        /// autoscaling: Amazon EC2 Auto Scaling created the deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -403,15 +403,14 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
         /// If true, then if the deployment causes the ApplicationStop deployment lifecycle event
-        /// to an instance to fail, the deployment to that instance will not be considered to
-        /// have failed at that point and will continue on to the BeforeInstall deployment lifecycle
-        /// event.
+        /// to an instance to fail, the deployment to that instance is not considered to have
+        /// failed at that point and continues on to the BeforeInstall deployment lifecycle event.
         /// </para>
         ///  
         /// <para>
         /// If false or not specified, then if the deployment causes the ApplicationStop deployment
-        /// lifecycle event to an instance to fail, the deployment to that instance will stop,
-        /// and the deployment to that instance will be considered to have failed.
+        /// lifecycle event to an instance to fail, the deployment to that instance stops, and
+        /// the deployment to that instance is considered to have failed.
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures
@@ -430,8 +429,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property InstanceTerminationWaitTimeStarted. 
         /// <para>
         /// Indicates whether the wait period set for the termination of instances in the original
-        /// environment has started. Status is 'false' if the KEEP_ALIVE option is specified;
-        /// otherwise, 'true' as soon as the termination wait period starts.
+        /// environment has started. Status is 'false' if the KEEP_ALIVE option is specified.
+        /// Otherwise, 'true' as soon as the termination wait period starts.
         /// </para>
         /// </summary>
         public bool InstanceTerminationWaitTimeStarted
@@ -523,12 +522,12 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp indicating when the deployment was deployed to the deployment group.
+        /// A timestamp that indicates when the deployment was deployed to the deployment group.
         /// </para>
         ///  
         /// <para>
-        /// In some cases, the reported value of the start time may be later than the complete
-        /// time. This is due to differences in the clock settings of back-end servers that participate
+        /// In some cases, the reported value of the start time might be later than the complete
+        /// time. This is due to differences in the clock settings of backend servers that participate
         /// in the deployment process.
         /// </para>
         /// </summary>

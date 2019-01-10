@@ -40,7 +40,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ElbInfoList. 
         /// <para>
-        /// An array containing information about the load balancer to use for load balancing
+        /// An array that contains information about the load balancer to use for load balancing
         /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
         /// Balancers.
         /// </para>
@@ -65,9 +65,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetGroupInfoList. 
         /// <para>
-        /// An array containing information about the target group to use for load balancing in
-        /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
-        /// Balancers.
+        /// An array that contains information about the target group to use for load balancing
+        /// in a deployment. In Elastic Load Balancing, target groups are used with Application
+        /// Load Balancers.
         /// </para>
         ///  <note> 
         /// <para>

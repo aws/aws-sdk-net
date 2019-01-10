@@ -31,7 +31,7 @@ namespace Amazon.CodeDeploy.Model
     /// Container for the parameters to the BatchGetDeploymentInstances operation.
     /// <note> 
     /// <para>
-    ///  This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code>
+    ///  This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code>
     /// instead. 
     /// </para>
     ///  </note> 
@@ -67,7 +67,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The unique IDs of instances of the deployment.
+        /// The unique IDs of instances used in the deployment.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

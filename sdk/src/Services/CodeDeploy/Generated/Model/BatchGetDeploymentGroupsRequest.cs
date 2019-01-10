@@ -58,7 +58,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentGroupNames. 
         /// <para>
-        /// The deployment groups' names.
+        /// The names of the deployment groups.
         /// </para>
         /// </summary>
         public List<string> DeploymentGroupNames

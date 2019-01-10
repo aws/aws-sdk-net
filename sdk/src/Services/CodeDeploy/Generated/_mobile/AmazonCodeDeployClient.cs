@@ -41,16 +41,17 @@ namespace Amazon.CodeDeploy
     /// AWS CodeDeploy 
     /// <para>
     /// AWS CodeDeploy is a deployment service that automates application deployments to Amazon
-    /// EC2 instances, on-premises instances running in your own facility, or serverless AWS
-    /// Lambda functions.
+    /// EC2 instances, on-premises instances running in your own facility, serverless AWS
+    /// Lambda functions, or applications in an Amazon ECS service.
     /// </para>
     ///  
     /// <para>
     /// You can deploy a nearly unlimited variety of application content, such as an updated
-    /// Lambda function, code, web and configuration files, executables, packages, scripts,
-    /// multimedia files, and so on. AWS CodeDeploy can deploy application content stored
-    /// in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need
-    /// to make changes to your existing code before you can use AWS CodeDeploy.
+    /// Lambda function, updated applications in an Amazon ECS service, code, web and configuration
+    /// files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy
+    /// can deploy application content stored in Amazon S3 buckets, GitHub repositories, or
+    /// Bitbucket repositories. You do not need to make changes to your existing code before
+    /// you can use AWS CodeDeploy.
     /// </para>
     ///  
     /// <para>
@@ -76,10 +77,14 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications.
-    /// A Lambda deployment group contains a group of applications. An EC2/On-premises deployment
-    /// group contains individually tagged instances, Amazon EC2 instances in Auto Scaling
-    /// groups, or both. 
+    ///  <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment
+    /// configuration settings, or an Amazon ECS service and network details. A Lambda deployment
+    /// group specifies how to route traffic to a new version of a Lambda function. An Amazon
+    /// ECS deployment group specifies the service created in Amazon ECS to deploy, a load
+    /// balancer, and a listener to reroute production traffic to an updated containerized
+    /// application. An EC2/On-premises deployment group contains individually tagged instances,
+    /// Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups
+    /// can specify optional trigger, alarm, and rollback settings.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,25 +93,29 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment</b>: The process and the components used in the process of updating
-    /// a Lambda function or of installing content on one or more instances. 
+    ///  <b>Deployment</b>: The process and the components used when updating a Lambda function,
+    /// a containerized application in an Amazon ECS service, or of installing content on
+    /// one or more instances. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file
-    /// that specifies the Lambda function to update and one or more functions to validate
-    /// deployment lifecycle events. For an EC2/On-premises deployment, this is an archive
-    /// file containing source content—source code, web pages, executable files, and deployment
-    /// scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub
-    /// repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object
-    /// key and its ETag, version, or both. For GitHub, a revision is uniquely identified
-    /// by its commit ID.
+    /// that specifies the Lambda function to be updated and one or more functions to validate
+    /// deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file
+    /// that specifies the Amazon ECS task definition, container, and port where production
+    /// traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that
+    /// contains source content—source code, webpages, executable files, and deployment scripts—along
+    /// with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories.
+    /// For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
+    /// ETag, version, or both. For GitHub, a revision is uniquely identified by its commit
+    /// ID.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// This guide also contains information to help you get details about the instances in
     /// your deployments, to make on-premises instances available for AWS CodeDeploy deployments,
-    /// and to get details about a Lambda function deployment.
+    /// to get details about a Lambda function deployment, and to get details about Amazon
+    /// ECS service deployments.
     /// </para>
     ///  
     /// <para>
@@ -1249,7 +1258,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the applications registered with the applicable IAM user or AWS account.
+        /// Lists the applications registered with the IAM user or AWS account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1304,7 +1313,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment configurations with the applicable IAM user or AWS account.
+        /// Lists the deployment configurations with the IAM user or AWS account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

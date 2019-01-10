@@ -47,8 +47,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the applicable IAM user
-        /// or AWS account.
+        /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -85,14 +84,13 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The name of a deployment configuration associated with the applicable IAM user or
-        /// AWS account.
+        /// The name of a deployment configuration associated with the IAM user or AWS account.
         /// </para>
         ///  
         /// <para>
-        /// If not specified, the value configured in the deployment group will be used as the
-        /// default. If the deployment group does not have a deployment configuration associated
-        /// with it, then CodeDeployDefault.OneAtATime will be used by default.
+        /// If not specified, the value configured in the deployment group is used as the default.
+        /// If the deployment group does not have a deployment configuration associated with it,
+        /// CodeDeployDefault.OneAtATime is used by default.
         /// </para>
         /// </summary>
         public string DeploymentConfigName
@@ -186,16 +184,15 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
         ///  If set to true, then if the deployment causes the ApplicationStop deployment lifecycle
-        /// event to an instance to fail, the deployment to that instance will not be considered
-        /// to have failed at that point and will continue on to the BeforeInstall deployment
-        /// lifecycle event. 
+        /// event to an instance to fail, the deployment to that instance is considered to have
+        /// failed at that point and continues on to the BeforeInstall deployment lifecycle event.
+        /// 
         /// </para>
         ///  
         /// <para>
         ///  If set to false or not specified, then if the deployment causes the ApplicationStop
         /// deployment lifecycle event to fail to an instance, the deployment to that instance
-        /// will stop, and the deployment to that instance will be considered to have failed.
-        /// 
+        /// stops, and the deployment to that instance is considered to have failed. 
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures
@@ -231,8 +228,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetInstances. 
         /// <para>
-        ///  Information about the instances that will belong to the replacement environment in
-        /// a blue/green deployment. 
+        ///  Information about the instances that belong to the replacement environment in a blue/green
+        /// deployment. 
         /// </para>
         /// </summary>
         public TargetInstances TargetInstances

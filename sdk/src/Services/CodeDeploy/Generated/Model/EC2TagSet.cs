@@ -37,9 +37,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSetList. 
         /// <para>
-        /// A list containing other lists of EC2 instance tag groups. In order for an instance
-        /// to be included in the deployment group, it must be identified by all the tag groups
-        /// in the list.
+        /// A list that contains other lists of EC2 instance tag groups. For an instance to be
+        /// included in the deployment group, it must be identified by all of the tag groups in
+        /// the list.
         /// </para>
         /// </summary>
         public List<List<EC2TagFilter>> Ec2TagSetList

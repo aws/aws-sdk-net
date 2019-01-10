@@ -40,7 +40,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargetType. 
         /// <para>
-        ///  The deployment type which is specific to the deployment's compute platform. 
+        ///  The deployment type that is specific to the deployment's compute platform. 
         /// </para>
         /// </summary>
         public DeploymentTargetType DeploymentTargetType

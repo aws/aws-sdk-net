@@ -86,11 +86,11 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+        /// GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+        /// String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
         /// </para>
         ///  </li> </ul>
         /// </summary>

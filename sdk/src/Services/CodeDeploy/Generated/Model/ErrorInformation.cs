@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// For information about additional error codes, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+        /// For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
         /// Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
         /// CodeDeploy User Guide</a>.
         /// </para>
@@ -48,14 +48,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// APPLICATION_MISSING: The application was missing. This error code will most likely
-        /// be raised if the application is deleted after the deployment is created but before
-        /// it is started.
+        /// APPLICATION_MISSING: The application was missing. This error code is most likely raised
+        /// if the application is deleted after the deployment is created, but before it is started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most
-        /// likely be raised if the deployment group is deleted after the deployment is created
+        /// DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most
+        /// likely raised if the deployment group is deleted after the deployment is created,
         /// but before it is started.
         /// </para>
         ///  </li> <li> 
@@ -82,15 +81,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+        /// NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_INSTANCES: No instance were specified, or no instance can be found.
+        /// NO_INSTANCES: No instances were specified, or no instances can be found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+        /// OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,9 +102,8 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REVISION_MISSING: The revision ID was missing. This error code will most likely be
-        /// raised if the revision is deleted after the deployment is created but before it is
-        /// started.
+        /// REVISION_MISSING: The revision ID was missing. This error code is most likely raised
+        /// if the revision is deleted after the deployment is created, but before it is started.
         /// </para>
         ///  </li> </ul>
         /// </summary>

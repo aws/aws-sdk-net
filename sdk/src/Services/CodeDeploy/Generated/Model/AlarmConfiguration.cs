@@ -81,13 +81,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// true: The deployment will proceed even if alarm status information can't be retrieved
+        /// true: The deployment proceeds even if alarm status information can't be retrieved
         /// from Amazon CloudWatch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// false: The deployment will stop if alarm status information can't be retrieved from
-        /// Amazon CloudWatch.
+        /// false: The deployment stops if alarm status information can't be retrieved from Amazon
+        /// CloudWatch.
         /// </para>
         ///  </li> </ul>
         /// </summary>

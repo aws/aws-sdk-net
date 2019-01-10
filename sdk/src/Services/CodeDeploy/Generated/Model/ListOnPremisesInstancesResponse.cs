@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of list on-premises instances operation.
+    /// Represents the output of the list on-premises instances operation.
     /// </summary>
     public partial class ListOnPremisesInstancesResponse : AmazonWebServiceResponse
     {

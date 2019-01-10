@@ -73,7 +73,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The application name corresponding to the deployment group to update.
+        /// The application name that corresponds to the deployment group to update.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -224,7 +224,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
         /// Information about groups of tags applied to on-premises instances. The deployment
-        /// group will include only EC2 instances identified by all the tag groups.
+        /// group includes only EC2 instances identified by all the tag groups.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -242,8 +242,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property EcsServices. 
         /// <para>
-        ///  The target ECS services in the deployment group. This only applies to deployment
-        /// groups that use the Amazon ECS compute platform. A target ECS service is specified
+        ///  The target Amazon ECS services in the deployment group. This applies only to deployment
+        /// groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified
         /// as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
         /// 
         /// </para>
@@ -319,8 +319,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OnPremisesTagSet. 
         /// <para>
-        /// Information about an on-premises instance tag set. The deployment group will include
-        /// only on-premises instances identified by all the tag groups.
+        /// Information about an on-premises instance tag set. The deployment group includes only
+        /// on-premises instances identified by all the tag groups.
         /// </para>
         /// </summary>
         public OnPremisesTagSet OnPremisesTagSet

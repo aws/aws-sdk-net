@@ -57,8 +57,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RollbackMessage. 
         /// <para>
-        /// Information describing the status of a deployment rollback; for example, whether the
-        /// deployment can't be rolled back, is in progress, failed, or succeeded. 
+        /// Information that describes the status of a deployment rollback (for example, whether
+        /// the deployment can't be rolled back, is in progress, failed, or succeeded). 
         /// </para>
         /// </summary>
         public string RollbackMessage

@@ -133,7 +133,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LinkedToGitHub. 
         /// <para>
-        /// True if the user has authenticated with GitHub for the specified application; otherwise,
+        /// True if the user has authenticated with GitHub for the specified application. Otherwise,
         /// false.
         /// </para>
         /// </summary>

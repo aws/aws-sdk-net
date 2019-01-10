@@ -106,7 +106,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// A timestamp indicating when the instance information was last updated.
+        /// A timestamp that indicaties when the instance information was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt

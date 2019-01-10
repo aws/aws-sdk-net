@@ -56,7 +56,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Information about errors that may have occurred during the API call.
+        /// Information about errors that might have occurred during the API call.
         /// </para>
         /// </summary>
         public string ErrorMessage

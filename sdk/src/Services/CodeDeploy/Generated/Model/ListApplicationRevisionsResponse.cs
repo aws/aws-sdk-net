@@ -38,9 +38,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a large amount of information is returned, an identifier will also be returned.
-        /// It can be used in a subsequent list application revisions call to return the next
-        /// set of application revisions in the list.
+        /// If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list application revisions call to return the next set of
+        /// application revisions in the list.
         /// </para>
         /// </summary>
         public string NextToken

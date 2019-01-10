@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeploymentGroup operation.
-    /// Creates a deployment group to which application revisions will be deployed.
+    /// Creates a deployment group to which application revisions are deployed.
     /// </summary>
     public partial class CreateDeploymentGroupRequest : AmazonCodeDeployRequest
     {
@@ -71,8 +71,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the applicable IAM user
-        /// or AWS account.
+        /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -109,7 +108,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
-        /// A list of associated Auto Scaling groups.
+        /// A list of associated Amazon EC2 Auto Scaling groups.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroups
@@ -152,7 +151,7 @@ namespace Amazon.CodeDeploy.Model
         ///  
         /// <para>
         /// CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if
-        /// a configuration isn't specified for the deployment or the deployment group.
+        /// a configuration isn't specified for the deployment or deployment group.
         /// </para>
         ///  
         /// <para>
@@ -213,7 +212,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances
+        /// The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
         /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.
         /// </para>
         /// </summary>
@@ -232,9 +231,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
-        /// Information about groups of tags applied to EC2 instances. The deployment group will
-        /// include only EC2 instances identified by all the tag groups. Cannot be used in the
-        /// same call as ec2TagFilters.
+        /// Information about groups of tags applied to EC2 instances. The deployment group includes
+        /// only EC2 instances identified by all the tag groups. Cannot be used in the same call
+        /// as ec2TagFilters.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -252,8 +251,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property EcsServices. 
         /// <para>
-        ///  The target ECS services in the deployment group. This only applies to deployment
-        /// groups that use the Amazon ECS compute platform. A target ECS service is specified
+        ///  The target Amazon ECS services in the deployment group. This applies only to deployment
+        /// groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified
         /// as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
         /// 
         /// </para>
@@ -291,9 +290,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
-        /// The on-premises instance tags on which to filter. The deployment group will include
-        /// on-premises instances with any of the specified tags. Cannot be used in the same call
-        /// as OnPremisesTagSet.
+        /// The on-premises instance tags on which to filter. The deployment group includes on-premises
+        /// instances with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -312,7 +310,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property OnPremisesTagSet. 
         /// <para>
         /// Information about groups of tags applied to on-premises instances. The deployment
-        /// group will include only on-premises instances identified by all the tag groups. Cannot
+        /// group includes only on-premises instances identified by all of the tag groups. Cannot
         /// be used in the same call as onPremisesInstanceTagFilters.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the SkipWaitTimeForInstanceTermination operation.
     /// In a blue/green deployment, overrides any specified wait time and starts terminating
-    /// instances immediately after the traffic routing is completed.
+    /// instances immediately after the traffic routing is complete.
     /// </summary>
     public partial class SkipWaitTimeForInstanceTerminationRequest : AmazonCodeDeployRequest
     {

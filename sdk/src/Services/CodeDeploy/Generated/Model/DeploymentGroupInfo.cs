@@ -259,8 +259,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
         /// Information about groups of tags applied to an EC2 instance. The deployment group
-        /// includes only EC2 instances identified by all the tag groups. Cannot be used in the
-        /// same call as ec2TagFilters.
+        /// includes only EC2 instances identified by all of the tag groups. Cannot be used in
+        /// the same call as ec2TagFilters.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -278,8 +278,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property EcsServices. 
         /// <para>
-        ///  The target ECS services in the deployment group. This only applies to deployment
-        /// groups that use the Amazon ECS compute platform. A target ECS service is specified
+        ///  The target Amazon ECS services in the deployment group. This applies only to deployment
+        /// groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified
         /// as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
         /// 
         /// </para>

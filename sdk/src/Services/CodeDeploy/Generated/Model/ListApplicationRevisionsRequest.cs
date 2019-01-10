@@ -44,8 +44,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of an AWS CodeDeploy application associated with the applicable IAM user
-        /// or AWS account. 
+        ///  The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+        /// 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -171,7 +171,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If not specified or set to null, the results will be returned in an arbitrary order.
+        ///  If not specified or set to null, the results are returned in an arbitrary order.
         /// 
         /// </para>
         /// </summary>
@@ -202,11 +202,11 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If not specified, the results will be sorted in ascending order.
+        /// If not specified, the results are sorted in ascending order.
         /// </para>
         ///  
         /// <para>
-        /// If set to null, the results will be sorted in an arbitrary order.
+        /// If set to null, the results are sorted in an arbitrary order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

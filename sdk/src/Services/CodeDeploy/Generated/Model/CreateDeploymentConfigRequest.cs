@@ -121,7 +121,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TrafficRoutingConfig. 
         /// <para>
-        /// The configuration that specifies how the deployment traffic will be routed.
+        /// The configuration that specifies how the deployment traffic is routed.
         /// </para>
         /// </summary>
         public TrafficRoutingConfig TrafficRoutingConfig

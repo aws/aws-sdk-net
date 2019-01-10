@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
-    /// Lists the applications registered with the applicable IAM user or AWS account.
+    /// Lists the applications registered with the IAM user or AWS account.
     /// </summary>
     public partial class ListApplicationsRequest : AmazonCodeDeployRequest
     {

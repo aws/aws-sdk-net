@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// A set of Amazon ECS tasks. A task set runs a specified number of instances of a task
-    /// definition simultaneously inside an Amazon ECS service. Information about a set of
-    /// Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
-    /// details such as the desired number of tasks, how many tasks are running, and whether
-    /// the task set serves production traffic or not.
+    /// Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon
+    /// ECS task set includes details such as the desired number of tasks, how many tasks
+    /// are running, and whether the task set serves production traffic. An AWS CodeDeploy
+    /// application that uses the Amazon ECS compute platform deploys a containerized application
+    /// in an Amazon ECS service as a task set.
     /// </summary>
     public partial class ECSTaskSet
     {
@@ -49,9 +49,9 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         ///  The number of tasks in a task set. During a deployment that uses the Amazon ECS compute
-        /// type, CodeDeploy asks Amazon ECS to create a new task set and uses this value to determine
-        /// how many tasks to create. After the updated task set is created, CodeDeploy shifts
-        /// traffic to the new task set. 
+        /// type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value
+        /// to determine how many tasks to create. After the updated task set is created, CodeDeploy
+        /// shifts traffic to the new task set. 
         /// </para>
         /// </summary>
         public long DesiredCount
@@ -133,15 +133,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRIMARY</code> - indicates the task set is serving production traffic. 
+        ///  <code>PRIMARY</code>: Indicates the task set is serving production traffic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - indicates the task set is not serving production traffic. 
+        ///  <code>ACTIVE</code>: Indicates the task set is not serving production traffic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DRAINING</code> - indicates the tasks in the task set are being stopped and
+        ///  <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and
         /// their corresponding targets are being deregistered from their target group. 
         /// </para>
         ///  </li> </ul>

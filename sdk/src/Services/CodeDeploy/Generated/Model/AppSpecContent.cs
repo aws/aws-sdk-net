@@ -45,14 +45,14 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        ///  For an AWS Lambda deployment the content includes a Lambda function name, the alias
+        ///  For an AWS Lambda deployment, the content includes a Lambda function name, the alias
         /// for its original version, and the alias for its replacement version. The deployment
         /// shifts traffic from the original version of the Lambda function to the replacement
         /// version. 
         /// </para>
         ///  
         /// <para>
-        ///  For an Amazon ECS deployment the content includes the task name, information about
+        ///  For an Amazon ECS deployment, the content includes the task name, information about
         /// the load balancer that serves traffic to the container, and more. 
         /// </para>
         ///  

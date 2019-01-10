@@ -41,7 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// A timestamp indicating when the most recent deployment to the deployment group started.
+        /// A timestamp that indicates when the most recent deployment to the deployment group
+        /// started.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -77,7 +78,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// A timestamp indicating when the most recent deployment to the deployment group completed.
+        /// A timestamp that indicates when the most recent deployment to the deployment group
+        /// was complete.
         /// </para>
         /// </summary>
         public DateTime EndTime

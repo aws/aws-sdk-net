@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        ///  The name of the cluster that the ECS service is associated with. 
+        ///  The name of the cluster that the Amazon ECS service is associated with. 
         /// </para>
         /// </summary>
         public string ClusterName
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        ///  The name of the target ECS service. 
+        ///  The name of the target Amazon ECS service. 
         /// </para>
         /// </summary>
         public string ServiceName

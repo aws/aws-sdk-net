@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Information about a configuration for automatically rolling back to a previous version
-    /// of an application revision when a deployment doesn't complete successfully.
+    /// of an application revision when a deployment is not completed successfully.
     /// </summary>
     public partial class AutoRollbackConfiguration
     {

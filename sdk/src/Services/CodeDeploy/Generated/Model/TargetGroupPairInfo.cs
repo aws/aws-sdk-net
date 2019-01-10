@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about two target groups and how traffic routes during an Amazon ECS deployment.
-    /// An optional test traffic route can be specified.
+    /// Information about two target groups and how traffic is routed during an Amazon ECS
+    /// deployment. An optional test traffic route can be specified.
     /// </summary>
     public partial class TargetGroupPairInfo
     {
@@ -60,7 +60,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TargetGroups. 
         /// <para>
         ///  One pair of target groups. One is associated with the original task set. The second
-        /// target is associated with the task set that serves traffic after the deployment completes.
+        /// is associated with the task set that serves traffic after the deployment is complete.
         /// 
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TestTrafficRoute. 
         /// <para>
         ///  An optional path used by a load balancer to route test traffic after an Amazon ECS
-        /// deployment. Validation can happen while test traffic is served during a deployment.
+        /// deployment. Validation can occur while test traffic is served during a deployment.
         /// 
         /// </para>
         /// </summary>
