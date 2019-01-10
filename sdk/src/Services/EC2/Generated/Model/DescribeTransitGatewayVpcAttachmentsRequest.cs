@@ -46,13 +46,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+        ///  <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
+        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
-        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+        ///  <code>transit-gateway-attachment-id</code> - The ID of the attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>

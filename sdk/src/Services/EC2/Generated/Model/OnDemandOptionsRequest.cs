@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private FleetOnDemandAllocationStrategy _allocationStrategy;
         private int? _minTargetCapacity;
+        private bool? _singleAvailabilityZone;
         private bool? _singleInstanceType;
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMinTargetCapacity()
         {
             return this._minTargetCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleAvailabilityZone. 
+        /// <para>
+        /// Indicates that the fleet launches all On-Demand Instances into a single Availability
+        /// Zone.
+        /// </para>
+        /// </summary>
+        public bool SingleAvailabilityZone
+        {
+            get { return this._singleAvailabilityZone.GetValueOrDefault(); }
+            set { this._singleAvailabilityZone = value; }
+        }
+
+        // Check to see if SingleAvailabilityZone property is set
+        internal bool IsSetSingleAvailabilityZone()
+        {
+            return this._singleAvailabilityZone.HasValue; 
         }
 
         /// <summary>

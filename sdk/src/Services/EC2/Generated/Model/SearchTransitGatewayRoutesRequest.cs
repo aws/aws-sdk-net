@@ -60,10 +60,6 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters

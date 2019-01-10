@@ -10035,6 +10035,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
+        /// limit the number of results returned. This paginates the output, which makes the list
+        /// more manageable and returns the results faster. If the list of results exceeds your
+        /// <code>MaxResults</code> value, then that number of results is returned along with
+        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
+        /// request to retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
         /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
@@ -10054,6 +10063,15 @@ namespace Amazon.EC2
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
+        /// limit the number of results returned. This paginates the output, which makes the list
+        /// more manageable and returns the results faster. If the list of results exceeds your
+        /// <code>MaxResults</code> value, then that number of results is returned along with
+        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
+        /// request to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

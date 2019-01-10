@@ -46,33 +46,55 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>amazon-side-asn</code> - The private ASN for the Amazon side of a BGP session.
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association-default-route-table-id</code> - The ID of the default association
+        ///  <code>options.propagation-default-route-table-id</code> - The ID of the default propagation
         /// route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-route-table-association</code> - Indicates whether resource attachments
-        /// are automatically associated with the default association route table (<code>enable</code>
-        /// | <code>disable</code>).
+        ///  <code>options.amazon-side-asn</code> - The private ASN for the Amazon side of a BGP
+        /// session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-route-table-propagation</code> - Indicates whether resource attachments
-        /// automatically propagate routes to the default propagation route table (<code>enable</code>
-        /// | <code>disable</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>owner-account-id</code> - The ID of the AWS account that owns the transit gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>propagation-default-route-table-id</code> - The ID of the default propagation
+        ///  <code>options.association-default-route-table-id</code> - The ID of the default association
         /// route table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>options.auto-accept-shared-attachments</code> - Indicates whether there is
+        /// automatic acceptance of attachment requests (<code>enable</code> | <code>disable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>options.default-route-table-association</code> - Indicates whether resource
+        /// attachments are automatically associated with the default association route table
+        /// (<code>enable</code> | <code>disable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>options.default-route-table-propagation</code> - Indicates whether resource
+        /// attachments automatically propagate routes to the default propagation route table
+        /// (<code>enable</code> | <code>disable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>options.dns-support</code> - Indicates whether DNS support is enabled (<code>enable</code>
+        /// | <code>disable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath Protocol
+        /// support is enabled (<code>enable</code> | <code>disable</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
+        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

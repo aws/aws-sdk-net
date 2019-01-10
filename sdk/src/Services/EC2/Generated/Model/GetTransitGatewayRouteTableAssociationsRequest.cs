@@ -45,10 +45,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>association-id</code> - The ID of the association.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>resource-id</code> - The ID of the resource.
         /// </para>
         ///  </li> <li> 

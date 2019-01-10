@@ -56,17 +56,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
+        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route
         /// table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>transit-gateway-route-table-state</code> - The state (<code>pending</code>
-        /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

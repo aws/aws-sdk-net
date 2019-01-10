@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinTargetCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("singleAvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SingleAvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("singleInstanceType", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

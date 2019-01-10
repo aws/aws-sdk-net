@@ -47,21 +47,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>association-id</code> - The ID of the association.
+        ///  <code>association.transit-gateway-route-table-id</code> - The ID of the route table
+        /// for the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association-route-table-id</code> - The ID of the route table for the transit
-        /// gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>associate-state</code> - The state of the association (<code>associating</code>
+        ///  <code>association.state</code> - The state of the association (<code>associating</code>
         /// | <code>associated</code> | <code>disassociating</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>resource-id</code> - The ID of the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resource-owner</code> - The ID of the AWS account that owns the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -41,6 +41,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
+    /// limit the number of results returned. This paginates the output, which makes the list
+    /// more manageable and returns the results faster. If the list of results exceeds your
+    /// <code>MaxResults</code> value, then that number of results is returned along with
+    /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
+    /// request to retrieve the remaining results.
+    /// </para>
+    ///  
+    /// <para>
     /// Spot Instance requests are deleted four hours after they are canceled and their instances
     /// are terminated.
     /// </para>
@@ -48,6 +57,8 @@ namespace Amazon.EC2.Model
     public partial class DescribeSpotInstanceRequestsRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private int? _maxResults;
+        private string _nextToken;
         private List<string> _spotInstanceRequestIds = new List<string>();
 
         /// <summary>
@@ -250,6 +261,45 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. Specify a value between
+        /// 5 and 1000. To retrieve the remaining results, make another call with the returned
+        /// <code>NextToken</code> value.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next set of results. This value is <code>null</code> when
+        /// there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

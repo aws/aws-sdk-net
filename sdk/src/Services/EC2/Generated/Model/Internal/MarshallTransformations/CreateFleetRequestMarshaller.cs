@@ -162,6 +162,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "MinTargetCapacity", StringUtils.FromInt(publicRequest.OnDemandOptions.MinTargetCapacity));
                     }
+                    if(publicRequest.OnDemandOptions.IsSetSingleAvailabilityZone())
+                    {
+                        request.Parameters.Add("OnDemandOptions" + "." + "SingleAvailabilityZone", StringUtils.FromBool(publicRequest.OnDemandOptions.SingleAvailabilityZone));
+                    }
                     if(publicRequest.OnDemandOptions.IsSetSingleInstanceType())
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "SingleInstanceType", StringUtils.FromBool(publicRequest.OnDemandOptions.SingleInstanceType));
@@ -188,6 +192,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotOptions.IsSetMinTargetCapacity())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "MinTargetCapacity", StringUtils.FromInt(publicRequest.SpotOptions.MinTargetCapacity));
+                    }
+                    if(publicRequest.SpotOptions.IsSetSingleAvailabilityZone())
+                    {
+                        request.Parameters.Add("SpotOptions" + "." + "SingleAvailabilityZone", StringUtils.FromBool(publicRequest.SpotOptions.SingleAvailabilityZone));
                     }
                     if(publicRequest.SpotOptions.IsSetSingleInstanceType())
                     {

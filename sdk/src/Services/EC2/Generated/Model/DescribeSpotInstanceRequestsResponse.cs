@@ -32,7 +32,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSpotInstanceRequestsResponse : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private List<SpotInstanceRequest> _spotInstanceRequests = new List<SpotInstanceRequest>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next set of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SpotInstanceRequests. 
