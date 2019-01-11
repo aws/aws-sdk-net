@@ -1,3 +1,18 @@
+### 3.3.439.0 (2019-01-10 22:50 UTC)
+* CodeDeploy (3.3.12.11)
+	* Documentation updates for codedeploy
+* EC2 (3.3.79.0)
+	* EC2 Spot: a) CreateFleet support for Single AvailabilityZone requests and b) support for paginated DescribeSpotInstanceRequests.
+* IoT (3.3.23.0)
+	* This release adds tagging support for rules of AWS IoT Rules Engine. Tags enable you to categorize your rules in different ways, for example, by purpose, owner, or environment. For more information about tagging, see AWS Tagging Strategies (https://aws.amazon.com/answers/account-management/aws-tagging-strategies/). For technical documentation, look for the tagging operations in the AWS IoT Core API reference or User Guide (https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot.html).
+* SageMaker (3.3.19.0)
+	* SageMaker Training Jobs now support Inter-Container traffic encryption.
+* Core 3.3.31.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.438.0 (2019-01-09 22:23 UTC)
 * DocDB (3.3.0.0)
 	* Amazon DocumentDB (with MongoDB compatibility) is a fast, reliable, and fully-managed database service. Amazon DocumentDB makes it easy for developers to set up, run, and scale MongoDB-compatible databases in the cloud.
