@@ -55,8 +55,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates JobFlowInstancesDetail with the parameterized properties
         /// </summary>
         /// <param name="masterInstanceType">The Amazon EC2 master node instance type.</param>
-        /// <param name="slaveInstanceType">The Amazon EC2 slave node instance type.</param>
-        /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.</param>
+        /// <param name="slaveInstanceType">The Amazon EC2 core and task node instance type.</param>
+        /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</param>
         public JobFlowInstancesDetail(string masterInstanceType, string slaveInstanceType, int instanceCount)
         {
             _masterInstanceType = masterInstanceType;
@@ -123,8 +123,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance
-        /// serves as both the master and slave node. If the value is greater than 1, one instance
-        /// is the master node and all others are slave nodes.
+        /// serves as both the master and core and task node. If the value is greater than 1,
+        /// one instance is the master node and all others are core and task nodes.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -273,7 +273,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SlaveInstanceType. 
         /// <para>
-        /// The Amazon EC2 slave node instance type.
+        /// The Amazon EC2 core and task node instance type.
         /// </para>
         /// </summary>
         public string SlaveInstanceType

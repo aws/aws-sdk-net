@@ -41,8 +41,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ActionOnFailure. 
         /// <para>
-        /// This specifies what action to take when the cluster step fails. Possible values are
-        /// TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
+        /// The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER,
+        /// CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility.
+        /// We recommend using TERMINATE_CLUSTER instead.
         /// </para>
         /// </summary>
         public ActionOnFailure ActionOnFailure

@@ -149,8 +149,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid
-        /// values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+        /// Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
+        /// for Amazon EMR to install and configure when launching the cluster. For a list of
+        /// applications available for each Amazon EMR release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+        /// EMR Release Guide</a>.
         /// </para>
         /// </summary>
         public List<Application> Applications

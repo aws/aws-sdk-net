@@ -80,7 +80,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AdditionalSlaveSecurityGroups. 
         /// <para>
-        /// A list of additional Amazon EC2 security group IDs for the slave nodes.
+        /// A list of additional Amazon EC2 security group IDs for the core and task nodes.
         /// </para>
         /// </summary>
         public List<string> AdditionalSlaveSecurityGroups
@@ -190,7 +190,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EmrManagedSlaveSecurityGroup. 
         /// <para>
-        /// The identifier of the Amazon EC2 security group for the slave nodes.
+        /// The identifier of the Amazon EC2 security group for the core and task nodes.
         /// </para>
         /// </summary>
         public string EmrManagedSlaveSecurityGroup
@@ -363,7 +363,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SlaveInstanceType. 
         /// <para>
-        /// The EC2 instance type of the slave nodes.
+        /// The EC2 instance type of the core and task nodes.
         /// </para>
         /// </summary>
         public string SlaveInstanceType
