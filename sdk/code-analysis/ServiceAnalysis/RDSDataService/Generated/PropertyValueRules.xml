@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.AwsSecretStoreArn</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.Database</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.DbClusterOrInstanceArn</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.Schema</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDSDataService.Model.ExecuteSqlRequest.SqlStatements</property>
+    <max>65536</max>
+  </property-value-rule>
+</property-value-rules>
