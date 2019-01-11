@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.439.0",
+    "ProductVersion" : "3.3.440.0",
     "CoreVersion"    : "3.3.31.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -191,7 +191,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.3.6.32",
+            "Version" : "3.3.6.33",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.2"
@@ -1217,7 +1217,7 @@
             "InPreview"               : false
         },
         "RDSDataService"                  : {
-            "Version" : "3.3.0.11",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.2"

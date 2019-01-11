@@ -1,3 +1,9 @@
+### 3.3.440.0 (2019-01-11 19:21 UTC)
+* ElasticMapReduce (3.3.6.33)
+	* Documentation updates for Amazon EMR
+* RDSDataService (3.3.1.0)
+	* Documentation updates for RDS Data API.
+
 ### 3.3.439.0 (2019-01-10 22:50 UTC)
 * CodeDeploy (3.3.12.11)
 	* Documentation updates for codedeploy
