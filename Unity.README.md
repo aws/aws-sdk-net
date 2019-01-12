@@ -32,14 +32,14 @@ There are only a few fundamentals that are helpful to know when developing again
 * To enable logging you need to create a config file called awsconfig.xml in a `Resources` directory add add the following
 
 		<?xml version="1.0" encoding="utf-8"?>
-		<aws 
+		<aws> 
 			<logging
 	    		logTo="UnityLogger"
 	    		logResponses="Always"
 	    		logMetrics="true"
 	    		logMetricsFormat="JSON" />
 			/>
-		/>
+		</aws>
 	
 You can also do this configuration in a script
 
