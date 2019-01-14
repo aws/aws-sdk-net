@@ -231,10 +231,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateDenominator. When you use the API for transcode
-        /// jobs that use framerate conversion, specify the framerate as a fraction. For example,
+        /// jobs that use frame rate conversion, specify the frame rate as a fraction. For example,
         ///  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
         /// this fraction. In this example, use 1001 for the value of FramerateDenominator. When
-        /// you use the console for transcode jobs that use framerate conversion, provide the
+        /// you use the console for transcode jobs that use frame rate conversion, provide the
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         public int FramerateDenominator
@@ -250,7 +250,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
+        /// Gets and sets the property FramerateNumerator. Frame rate numerator - frame rate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
         public int FramerateNumerator

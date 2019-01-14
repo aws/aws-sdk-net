@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Enable the image inserter feature to include a graphic overlay on your video. Enable
-    /// or disable this feature for each input or output individually. This setting is disabled
-    /// by default.
+    /// Acceleration settings for job execution.
     /// </summary>
-    public partial class ImageInserter
+    public partial class AccelerationSettings
     {
-        private List<InsertableImage> _insertableImages = new List<InsertableImage>();
+        private AccelerationMode _mode;
 
         /// <summary>
-        /// Gets and sets the property InsertableImages. Specify the images that you want to overlay
-        /// on your video. The images must be PNG or TGA files.
+        /// Gets and sets the property Mode. Acceleration configuration for the job.
         /// </summary>
-        public List<InsertableImage> InsertableImages
+        public AccelerationMode Mode
         {
-            get { return this._insertableImages; }
-            set { this._insertableImages = value; }
+            get { return this._mode; }
+            set { this._mode = value; }
         }
 
-        // Check to see if InsertableImages property is set
-        internal bool IsSetInsertableImages()
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
         {
-            return this._insertableImages != null && this._insertableImages.Count > 0; 
+            return this._mode != null;
         }
 
     }

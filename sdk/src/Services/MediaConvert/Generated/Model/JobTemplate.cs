@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class JobTemplate
     {
+        private AccelerationSettings _accelerationSettings;
         private string _arn;
         private string _category;
         private DateTime? _createdAt;
@@ -42,6 +43,21 @@ namespace Amazon.MediaConvert.Model
         private string _queue;
         private JobTemplateSettings _settings;
         private Type _type;
+
+        /// <summary>
+        /// Gets and sets the property AccelerationSettings. Acceleration settings for job execution.
+        /// </summary>
+        public AccelerationSettings AccelerationSettings
+        {
+            get { return this._accelerationSettings; }
+            set { this._accelerationSettings = value; }
+        }
+
+        // Check to see if AccelerationSettings property is set
+        internal bool IsSetAccelerationSettings()
+        {
+            return this._accelerationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. An identifier for this resource that is unique within

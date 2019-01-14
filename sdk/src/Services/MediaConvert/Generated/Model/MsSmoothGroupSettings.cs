@@ -90,7 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FragmentLength. Use Fragment length (FragmentLength) to
         /// specify the mp4 fragment sizes in seconds. Fragment length must be compatible with
-        /// GOP size and framerate.
+        /// GOP size and frame rate.
         /// </summary>
         public int FragmentLength
         {

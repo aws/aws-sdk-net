@@ -148,6 +148,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EsRateInPes);
             }
 
+            if(requestObject.IsSetForceTsVideoEbpOrder())
+            {
+                context.Writer.WritePropertyName("forceTsVideoEbpOrder");
+                context.Writer.Write(requestObject.ForceTsVideoEbpOrder);
+            }
+
             if(requestObject.IsSetFragmentTime())
             {
                 context.Writer.WritePropertyName("fragmentTime");

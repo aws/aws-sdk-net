@@ -34,12 +34,29 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CreateJobTemplateRequest : AmazonMediaConvertRequest
     {
+        private AccelerationSettings _accelerationSettings;
         private string _category;
         private string _description;
         private string _name;
         private string _queue;
         private JobTemplateSettings _settings;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccelerationSettings. This is a beta feature. If you are
+        /// interested in using this feature please contact AWS customer support.
+        /// </summary>
+        public AccelerationSettings AccelerationSettings
+        {
+            get { return this._accelerationSettings; }
+            set { this._accelerationSettings = value; }
+        }
+
+        // Check to see if AccelerationSettings property is set
+        internal bool IsSetAccelerationSettings()
+        {
+            return this._accelerationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Category. Optional. A category for the job template you

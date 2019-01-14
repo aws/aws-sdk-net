@@ -85,7 +85,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Hdr10Metadata.
+        /// Gets and sets the property Hdr10Metadata. Use the HDR master display (Hdr10Metadata)
+        /// settings to correct HDR metadata or to provide missing metadata. Note that these settings
+        /// are not color correction.
         /// </summary>
         public Hdr10Metadata Hdr10Metadata
         {

@@ -142,6 +142,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.PsiControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supplementalImps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupplementalImps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timecodeSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

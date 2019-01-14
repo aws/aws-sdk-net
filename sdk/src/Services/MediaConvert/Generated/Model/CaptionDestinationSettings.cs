@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
         private BurninDestinationSettings _burninDestinationSettings;
         private CaptionDestinationType _destinationType;
         private DvbSubDestinationSettings _dvbSubDestinationSettings;
+        private EmbeddedDestinationSettings _embeddedDestinationSettings;
         private SccDestinationSettings _sccDestinationSettings;
         private TeletextDestinationSettings _teletextDestinationSettings;
         private TtmlDestinationSettings _ttmlDestinationSettings;
@@ -83,6 +84,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDvbSubDestinationSettings()
         {
             return this._dvbSubDestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmbeddedDestinationSettings.
+        /// </summary>
+        public EmbeddedDestinationSettings EmbeddedDestinationSettings
+        {
+            get { return this._embeddedDestinationSettings; }
+            set { this._embeddedDestinationSettings = value; }
+        }
+
+        // Check to see if EmbeddedDestinationSettings property is set
+        internal bool IsSetEmbeddedDestinationSettings()
+        {
+            return this._embeddedDestinationSettings != null;
         }
 
         /// <summary>

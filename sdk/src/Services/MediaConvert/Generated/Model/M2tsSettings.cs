@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         private M2tsEbpAudioInterval _ebpAudioInterval;
         private M2tsEbpPlacement _ebpPlacement;
         private M2tsEsRateInPes _esRateInPes;
+        private M2tsForceTsVideoEbpOrder _forceTsVideoEbpOrder;
         private double? _fragmentTime;
         private int? _maxPcrInterval;
         private int? _minEbpInterval;
@@ -268,6 +269,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEsRateInPes()
         {
             return this._esRateInPes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceTsVideoEbpOrder.
+        /// </summary>
+        public M2tsForceTsVideoEbpOrder ForceTsVideoEbpOrder
+        {
+            get { return this._forceTsVideoEbpOrder; }
+            set { this._forceTsVideoEbpOrder = value; }
+        }
+
+        // Check to see if ForceTsVideoEbpOrder property is set
+        internal bool IsSetForceTsVideoEbpOrder()
+        {
+            return this._forceTsVideoEbpOrder != null;
         }
 
         /// <summary>

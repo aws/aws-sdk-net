@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings that specify how your overlay appears.
+    /// Settings that specify how your still graphic overlay appears.
     /// </summary>
     public partial class InsertableImage
     {
@@ -45,8 +45,9 @@ namespace Amazon.MediaConvert.Model
         private int? _width;
 
         /// <summary>
-        /// Gets and sets the property Duration. Set the time, in milliseconds, for the image
-        /// to remain on the output video.
+        /// Gets and sets the property Duration. Specify the time, in milliseconds, for the image
+        /// to remain on the output video. This duration includes fade-in time but not fade-out
+        /// time.
         /// </summary>
         public int Duration
         {
@@ -61,7 +62,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FadeIn. Set the length of time, in milliseconds, between
+        /// Gets and sets the property FadeIn. Specify the length of time, in milliseconds, between
         /// the Start time that you specify for the image insertion and the time that the image
         /// appears at full opacity. Full opacity is the level that you specify for the opacity
         /// setting. If you don't specify a value for Fade-in, the image will appear abruptly
@@ -116,9 +117,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageInserterInput. Use Image location (imageInserterInput)
-        /// to specify the Amazon S3 location of the image to be inserted into the output. Use
-        /// a PNG or TGA file that fits inside the video frame.
+        /// Gets and sets the property ImageInserterInput. Specify the Amazon S3 location of the
+        /// image that you want to overlay on the video. Use a PNG or TGA file.
         /// </summary>
         public string ImageInserterInput
         {
@@ -133,9 +133,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageX. Use Left (ImageX) to set the distance, in pixels,
-        /// between the inserted image and the left edge of the video frame. Required for any
-        /// image overlay that you specify.
+        /// Gets and sets the property ImageX. Specify the distance, in pixels, between the inserted
+        /// image and the left edge of the video frame. Required for any image overlay that you
+        /// specify.
         /// </summary>
         public int ImageX
         {
@@ -150,9 +150,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageY. Use Top (ImageY) to set the distance, in pixels,
-        /// between the overlaid image and the top edge of the video frame. Required for any image
-        /// overlay that you specify.
+        /// Gets and sets the property ImageY. Specify the distance, in pixels, between the overlaid
+        /// image and the top edge of the video frame. Required for any image overlay that you
+        /// specify.
         /// </summary>
         public int ImageY
         {
@@ -201,9 +201,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. Use Start time (StartTime) to specify the video
-        /// timecode when the image is inserted in the output. This must be in timecode (HH:MM:SS:FF
-        /// or HH:MM:SS;FF) format.
+        /// Gets and sets the property StartTime. Specify the timecode of the frame that you want
+        /// the overlay to first appear on. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
+        /// format. Remember to take into account your timecode source settings.
         /// </summary>
         public string StartTime
         {

@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class Job
     {
+        private AccelerationSettings _accelerationSettings;
         private string _arn;
         private BillingTagsSource _billingTagsSource;
         private DateTime? _createdAt;
@@ -47,6 +48,21 @@ namespace Amazon.MediaConvert.Model
         private JobStatus _status;
         private Timing _timing;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccelerationSettings. Acceleration settings for job execution.
+        /// </summary>
+        public AccelerationSettings AccelerationSettings
+        {
+            get { return this._accelerationSettings; }
+            set { this._accelerationSettings = value; }
+        }
+
+        // Check to see if AccelerationSettings property is set
+        internal bool IsSetAccelerationSettings()
+        {
+            return this._accelerationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. An identifier for this resource that is unique within

@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private DvbSubtitleFontColor _fontColor;
         private int? _fontOpacity;
         private int? _fontResolution;
+        private FontScript _fontScript;
         private int? _fontSize;
         private DvbSubtitleOutlineColor _outlineColor;
         private int? _outlineSize;
@@ -141,6 +142,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFontResolution()
         {
             return this._fontResolution.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontScript. Provide the font script, using an ISO 15924
+        /// script code, if the LanguageCode is not sufficient for determining the script type.
+        /// Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset.
+        /// This is used to help determine the appropriate font for rendering DVB-Sub captions.
+        /// </summary>
+        public FontScript FontScript
+        {
+            get { return this._fontScript; }
+            set { this._fontScript = value; }
+        }
+
+        // Check to see if FontScript property is set
+        internal bool IsSetFontScript()
+        {
+            return this._fontScript != null;
         }
 
         /// <summary>

@@ -81,6 +81,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FontResolution);
             }
 
+            if(requestObject.IsSetFontScript())
+            {
+                context.Writer.WritePropertyName("fontScript");
+                context.Writer.Write(requestObject.FontScript);
+            }
+
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("fontSize");

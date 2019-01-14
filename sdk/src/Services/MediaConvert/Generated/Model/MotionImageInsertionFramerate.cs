@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// For motion overlays that don't have a built-in framerate, specify the framerate of
-    /// the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1.
-    /// The overlay framerate doesn't need to match the framerate of the underlying video.
+    /// For motion overlays that don't have a built-in frame rate, specify the frame rate
+    /// of the overlay in frames per second, as a fraction. For example, specify 24 fps as
+    /// 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying
+    /// video.
     /// </summary>
     public partial class MotionImageInsertionFramerate
     {
@@ -39,8 +40,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateDenominator. The bottom of the fraction that expresses
-        /// your overlay framerate. For example, if your framerate is 24 fps, set this value to
-        /// 1.
+        /// your overlay frame rate. For example, if your frame rate is 24 fps, set this value
+        /// to 1.
         /// </summary>
         public int FramerateDenominator
         {
@@ -56,8 +57,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateNumerator. The top of the fraction that expresses
-        /// your overlay framerate. For example, if your framerate is 24 fps, set this value to
-        /// 24.
+        /// your overlay frame rate. For example, if your frame rate is 24 fps, set this value
+        /// to 24.
         /// </summary>
         public int FramerateNumerator
         {

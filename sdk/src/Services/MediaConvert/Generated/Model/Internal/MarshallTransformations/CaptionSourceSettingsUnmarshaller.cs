@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trackSourceSettings", targetDepth))
+                {
+                    var unmarshaller = TrackSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TrackSourceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

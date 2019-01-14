@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private FileSourceSettings _fileSourceSettings;
         private CaptionSourceType _sourceType;
         private TeletextSourceSettings _teletextSourceSettings;
+        private TrackSourceSettings _trackSourceSettings;
 
         /// <summary>
         /// Gets and sets the property AncillarySourceSettings.
@@ -128,6 +129,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTeletextSourceSettings()
         {
             return this._teletextSourceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackSourceSettings.
+        /// </summary>
+        public TrackSourceSettings TrackSourceSettings
+        {
+            get { return this._trackSourceSettings; }
+            set { this._trackSourceSettings = value; }
+        }
+
+        // Check to see if TrackSourceSettings property is set
+        internal bool IsSetTrackSourceSettings()
+        {
+            return this._trackSourceSettings != null;
         }
 
     }

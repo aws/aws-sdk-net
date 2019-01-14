@@ -681,6 +681,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AccelerationMode.
+    /// </summary>
+    public class AccelerationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AccelerationMode
+        /// </summary>
+        public static readonly AccelerationMode DISABLED = new AccelerationMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AccelerationMode
+        /// </summary>
+        public static readonly AccelerationMode ENABLED = new AccelerationMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccelerationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccelerationMode FindValue(string value)
+        {
+            return FindValue<AccelerationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccelerationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AfdSignaling.
     /// </summary>
     public class AfdSignaling : ConstantClass
@@ -1756,6 +1806,10 @@ namespace Amazon.MediaConvert
         /// Constant EMBEDDED for CaptionSourceType
         /// </summary>
         public static readonly CaptionSourceType EMBEDDED = new CaptionSourceType("EMBEDDED");
+        /// <summary>
+        /// Constant IMSC for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType IMSC = new CaptionSourceType("IMSC");
         /// <summary>
         /// Constant NULL_SOURCE for CaptionSourceType
         /// </summary>
@@ -4432,6 +4486,60 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FileSourceConvert608To708(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FontScript.
+    /// </summary>
+    public class FontScript : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for FontScript
+        /// </summary>
+        public static readonly FontScript AUTOMATIC = new FontScript("AUTOMATIC");
+        /// <summary>
+        /// Constant HANS for FontScript
+        /// </summary>
+        public static readonly FontScript HANS = new FontScript("HANS");
+        /// <summary>
+        /// Constant HANT for FontScript
+        /// </summary>
+        public static readonly FontScript HANT = new FontScript("HANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FontScript(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FontScript FindValue(string value)
+        {
+            return FindValue<FontScript>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FontScript(string value)
         {
             return FindValue(value);
         }
@@ -9310,6 +9418,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M2tsEsRateInPes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type M2tsForceTsVideoEbpOrder.
+    /// </summary>
+    public class M2tsForceTsVideoEbpOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for M2tsForceTsVideoEbpOrder
+        /// </summary>
+        public static readonly M2tsForceTsVideoEbpOrder DEFAULT = new M2tsForceTsVideoEbpOrder("DEFAULT");
+        /// <summary>
+        /// Constant FORCE for M2tsForceTsVideoEbpOrder
+        /// </summary>
+        public static readonly M2tsForceTsVideoEbpOrder FORCE = new M2tsForceTsVideoEbpOrder("FORCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsForceTsVideoEbpOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsForceTsVideoEbpOrder FindValue(string value)
+        {
+            return FindValue<M2tsForceTsVideoEbpOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsForceTsVideoEbpOrder(string value)
         {
             return FindValue(value);
         }

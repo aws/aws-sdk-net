@@ -28,28 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Enable the image inserter feature to include a graphic overlay on your video. Enable
-    /// or disable this feature for each input or output individually. This setting is disabled
-    /// by default.
+    /// Settings specific to caption sources that are specfied by track number. Sources include
+    /// IMSC in IMF.
     /// </summary>
-    public partial class ImageInserter
+    public partial class TrackSourceSettings
     {
-        private List<InsertableImage> _insertableImages = new List<InsertableImage>();
+        private int? _trackNumber;
 
         /// <summary>
-        /// Gets and sets the property InsertableImages. Specify the images that you want to overlay
-        /// on your video. The images must be PNG or TGA files.
+        /// Gets and sets the property TrackNumber. Use this setting to select a single captions
+        /// track from a source. Track numbers correspond to the order in the captions source
+        /// file. For IMF sources, track numbering is based on the order that the captions appear
+        /// in the CPL. For example, use 1 to select the captions asset that is listed first in
+        /// the CPL. To include more than one captions track in your job outputs, create multiple
+        /// input captions selectors. Specify one track per selector.
         /// </summary>
-        public List<InsertableImage> InsertableImages
+        public int TrackNumber
         {
-            get { return this._insertableImages; }
-            set { this._insertableImages = value; }
+            get { return this._trackNumber.GetValueOrDefault(); }
+            set { this._trackNumber = value; }
         }
 
-        // Check to see if InsertableImages property is set
-        internal bool IsSetInsertableImages()
+        // Check to see if TrackNumber property is set
+        internal bool IsSetTrackNumber()
         {
-            return this._insertableImages != null && this._insertableImages.Count > 0; 
+            return this._trackNumber.HasValue; 
         }
 
     }

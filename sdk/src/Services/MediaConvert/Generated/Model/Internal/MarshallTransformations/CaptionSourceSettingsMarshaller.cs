@@ -106,6 +106,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTrackSourceSettings())
+            {
+                context.Writer.WritePropertyName("trackSourceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrackSourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrackSourceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

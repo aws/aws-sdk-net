@@ -142,6 +142,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.EsRateInPes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("forceTsVideoEbpOrder", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForceTsVideoEbpOrder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fragmentTime", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

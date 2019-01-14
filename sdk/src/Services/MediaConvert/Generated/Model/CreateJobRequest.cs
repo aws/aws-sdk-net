@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CreateJobRequest : AmazonMediaConvertRequest
     {
+        private AccelerationSettings _accelerationSettings;
         private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
         private string _jobTemplate;
@@ -41,6 +42,22 @@ namespace Amazon.MediaConvert.Model
         private string _role;
         private JobSettings _settings;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AccelerationSettings. This is a beta feature. If you are
+        /// interested in using this feature, please contact AWS customer support.
+        /// </summary>
+        public AccelerationSettings AccelerationSettings
+        {
+            get { return this._accelerationSettings; }
+            set { this._accelerationSettings = value; }
+        }
+
+        // Check to see if AccelerationSettings property is set
+        internal bool IsSetAccelerationSettings()
+        {
+            return this._accelerationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BillingTagsSource.

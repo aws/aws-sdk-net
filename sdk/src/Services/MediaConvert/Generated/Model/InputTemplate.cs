@@ -160,9 +160,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageInserter. Enable the Image inserter (ImageInserter)
-        /// feature to include a graphic overlay on your video. Enable or disable this feature
-        /// for each input individually. This setting is disabled by default.
+        /// Gets and sets the property ImageInserter. Enable the image inserter feature to include
+        /// a graphic overlay on your video. Enable or disable this feature for each input individually.
+        /// This setting is disabled by default.
         /// </summary>
         public ImageInserter ImageInserter
         {

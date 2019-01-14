@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         private List<InputClipping> _inputClippings = new List<InputClipping>();
         private int? _programNumber;
         private InputPsiControl _psiControl;
+        private List<string> _supplementalImps = new List<string>();
         private InputTimecodeSource _timecodeSource;
         private VideoSelector _videoSelector;
 
@@ -115,8 +116,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DecryptionSettings. If the input file is encrypted, decryption
-        /// settings to decrypt the media file
+        /// Gets and sets the property DecryptionSettings. Settings for decrypting any input files
+        /// that are encrypted.
         /// </summary>
         public InputDecryptionSettings DecryptionSettings
         {
@@ -146,9 +147,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileInput. Use Input (fileInput) to define the source file
-        /// used in the transcode job. There can be multiple inputs in a job. These inputs are
-        /// concantenated, in the order they are specified in the job, to create the output.
+        /// Gets and sets the property FileInput. Specify the source file for your transcoding
+        /// job. You can use multiple inputs in a single job. The service concatenates these inputs,
+        /// in the order that you specify them in the job, to create the outputs. If your input
+        /// format is IMF, specify your input by providing the path to your CPL. For example,
+        /// "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental
+        /// IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced
+        /// by the CPL.
         /// </summary>
         public string FileInput
         {
@@ -195,9 +200,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageInserter. Enable the Image inserter (ImageInserter)
-        /// feature to include a graphic overlay on your video. Enable or disable this feature
-        /// for each input individually. This setting is disabled by default.
+        /// Gets and sets the property ImageInserter. Enable the image inserter feature to include
+        /// a graphic overlay on your video. Enable or disable this feature for each input individually.
+        /// This setting is disabled by default.
         /// </summary>
         public ImageInserter ImageInserter
         {
@@ -262,6 +267,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetPsiControl()
         {
             return this._psiControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementalImps. Provide a list of any necessary supplemental
+        /// IMPs. You need supplemental IMPs if the CPL that you're using for your input is in
+        /// an incomplete IMP. Specify either the supplemental IMP directories with a trailing
+        /// slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"].
+        /// You don't need to specify the IMP that contains your input CPL, because the service
+        /// automatically detects it.
+        /// </summary>
+        public List<string> SupplementalImps
+        {
+            get { return this._supplementalImps; }
+            set { this._supplementalImps = value; }
+        }
+
+        // Check to see if SupplementalImps property is set
+        internal bool IsSetSupplementalImps()
+        {
+            return this._supplementalImps != null && this._supplementalImps.Count > 0; 
         }
 
         /// <summary>

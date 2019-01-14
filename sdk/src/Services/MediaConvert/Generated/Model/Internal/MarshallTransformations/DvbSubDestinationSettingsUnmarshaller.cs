@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FontResolution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fontScript", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontScript = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fontSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

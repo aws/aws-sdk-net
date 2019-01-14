@@ -42,7 +42,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Anchor. If you use an editing platform that relies on an
         /// anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match
         /// the input video frame to the output video frame. Use 24-hour format with frame number,
-        /// (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores framerate conversion. System
+        /// (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System
         /// behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource).
         /// * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
         /// input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor)

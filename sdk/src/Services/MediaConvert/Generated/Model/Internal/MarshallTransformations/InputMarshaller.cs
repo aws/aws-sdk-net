@@ -182,6 +182,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PsiControl);
             }
 
+            if(requestObject.IsSetSupplementalImps())
+            {
+                context.Writer.WritePropertyName("supplementalImps");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSupplementalImpsListValue in requestObject.SupplementalImps)
+                {
+                        context.Writer.Write(requestObjectSupplementalImpsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTimecodeSource())
             {
                 context.Writer.WritePropertyName("timecodeSource");

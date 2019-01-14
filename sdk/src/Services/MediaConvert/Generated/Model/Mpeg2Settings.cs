@@ -177,7 +177,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateDenominator. Framerate denominator.
+        /// Gets and sets the property FramerateDenominator. Frame rate denominator.
         /// </summary>
         public int FramerateDenominator
         {
@@ -192,7 +192,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
+        /// Gets and sets the property FramerateNumerator. Frame rate numerator - frame rate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
         public int FramerateNumerator
