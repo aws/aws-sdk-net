@@ -43,7 +43,10 @@ namespace Amazon.StorageGateway.Model
         private bool? _recursive;
 
         /// <summary>
-        /// Gets and sets the property FileShareARN.
+        /// Gets and sets the property FileShareARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the file share you want to refresh.
+        /// </para>
         /// </summary>
         public string FileShareARN
         {
@@ -58,7 +61,13 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FolderList.
+        /// Gets and sets the property FolderList. 
+        /// <para>
+        /// A comma-separated list of the paths of folders to refresh in the cache. The default
+        /// is [<code>"/"</code>]. The default refreshes objects and folders at the root of the
+        /// Amazon S3 bucket. If <code>Recursive</code> is set to "true", the entire S3 bucket
+        /// that the file share has access to is refreshed.
+        /// </para>
         /// </summary>
         public List<string> FolderList
         {

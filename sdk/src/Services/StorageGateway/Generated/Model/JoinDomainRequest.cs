@@ -34,10 +34,31 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class JoinDomainRequest : AmazonStorageGatewayRequest
     {
+        private List<string> _domainControllers = new List<string>();
         private string _domainName;
         private string _gatewayARN;
+        private string _organizationalUnit;
         private string _password;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property DomainControllers. 
+        /// <para>
+        /// List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you
+        /// need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+        /// </para>
+        /// </summary>
+        public List<string> DomainControllers
+        {
+            get { return this._domainControllers; }
+            set { this._domainControllers = value; }
+        }
+
+        // Check to see if DomainControllers property is set
+        internal bool IsSetDomainControllers()
+        {
+            return this._domainControllers != null && this._domainControllers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -60,8 +81,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active
-        /// Directory domain. 
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
+        /// to return a list of gateways for your account and region.
         /// </para>
         /// </summary>
         public string GatewayARN
@@ -74,6 +95,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnit. 
+        /// <para>
+        /// The organizational unit (OU) is a container with an Active Directory that can hold
+        /// users, groups, computers, and other OUs and this parameter specifies the OU that the
+        /// gateway will join within the AD domain.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnit
+        {
+            get { return this._organizationalUnit; }
+            set { this._organizationalUnit = value; }
+        }
+
+        // Check to see if OrganizationalUnit property is set
+        internal bool IsSetOrganizationalUnit()
+        {
+            return this._organizationalUnit != null;
         }
 
         /// <summary>

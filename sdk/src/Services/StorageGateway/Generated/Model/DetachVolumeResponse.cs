@@ -28,36 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateCachediSCSIVolume operation.
+    /// AttachVolumeOutput
     /// </summary>
-    public partial class CreateCachediSCSIVolumeResponse : AmazonWebServiceResponse
+    public partial class DetachVolumeResponse : AmazonWebServiceResponse
     {
-        private string _targetARN;
         private string _volumeARN;
-
-        /// <summary>
-        /// Gets and sets the property TargetARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name
-        /// that initiators can use to connect to the target.
-        /// </para>
-        /// </summary>
-        public string TargetARN
-        {
-            get { return this._targetARN; }
-            set { this._targetARN = value; }
-        }
-
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
-        {
-            return this._targetARN != null;
-        }
 
         /// <summary>
         /// Gets and sets the property VolumeARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the configured volume.
+        /// The Amazon Resource Name (ARN) of the volume that was detached.
         /// </para>
         /// </summary>
         public string VolumeARN

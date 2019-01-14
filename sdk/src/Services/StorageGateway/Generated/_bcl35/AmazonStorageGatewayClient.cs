@@ -687,6 +687,72 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AttachVolume
+
+        /// <summary>
+        /// Connects a volume to an iSCSI connection and then attaches the volume to the specified
+        /// gateway. Detaching and attaching a volume enables you to recover your data from one
+        /// gateway to a different gateway without creating a snapshot. It also makes it easier
+        /// to move your volumes from an on-premises gateway to a gateway hosted on an Amazon
+        /// EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
+        /// 
+        /// <returns>The response from the AttachVolume service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<AttachVolumeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachVolume
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual IAsyncResult BeginAttachVolume(AttachVolumeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachVolume.</param>
+        /// 
+        /// <returns>Returns a  AttachVolumeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual AttachVolumeResponse EndAttachVolume(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachVolumeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelArchival
 
         /// <summary>
@@ -3180,6 +3246,72 @@ namespace Amazon.StorageGateway
         public virtual DescribeWorkingStorageResponse EndDescribeWorkingStorage(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkingStorageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetachVolume
+
+        /// <summary>
+        /// Disconnects a volume from an iSCSI connection and then detaches the volume from the
+        /// specified gateway. Detaching and attaching a volume enables you to recover your data
+        /// from one gateway to a different gateway without creating a snapshot. It also makes
+        /// it easier to move your volumes from an on-premises gateway to a gateway hosted on
+        /// an Amazon EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
+        /// 
+        /// <returns>The response from the DetachVolume service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DetachVolumeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachVolume
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual IAsyncResult BeginDetachVolume(DetachVolumeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachVolume.</param>
+        /// 
+        /// <returns>Returns a  DetachVolumeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual DetachVolumeResponse EndDetachVolume(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachVolumeResponse>(asyncResult);
         }
 
         #endregion

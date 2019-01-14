@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
         private string _gatewayId;
         private string _volumeARN;
+        private string _volumeAttachmentStatus;
         private string _volumeId;
         private long? _volumeSizeInBytes;
         private string _volumeType;
@@ -103,6 +104,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetVolumeARN()
         {
             return this._volumeARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeAttachmentStatus.
+        /// </summary>
+        public string VolumeAttachmentStatus
+        {
+            get { return this._volumeAttachmentStatus; }
+            set { this._volumeAttachmentStatus = value; }
+        }
+
+        // Check to see if VolumeAttachmentStatus property is set
+        internal bool IsSetVolumeAttachmentStatus()
+        {
+            return this._volumeAttachmentStatus != null;
         }
 
         /// <summary>

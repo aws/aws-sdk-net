@@ -35,7 +35,9 @@ namespace Amazon.StorageGateway.Model
         private DateTime? _createdDate;
         private string _kmsKey;
         private string _sourceSnapshotId;
+        private string _targetName;
         private string _volumeARN;
+        private string _volumeAttachmentStatus;
         private string _volumeId;
         private VolumeiSCSIAttributes _volumeiSCSIAttributes;
         private double? _volumeProgress;
@@ -98,6 +100,26 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetName. 
+        /// <para>
+        /// The name of the iSCSI target that is used by an initiator to connect to a volume and
+        /// used as a suffix for the target ARN. For example, specifying <code>TargetName</code>
+        /// as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+        /// </para>
+        /// </summary>
+        public string TargetName
+        {
+            get { return this._targetName; }
+            set { this._targetName = value; }
+        }
+
+        // Check to see if TargetName property is set
+        internal bool IsSetTargetName()
+        {
+            return this._targetName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the storage volume.
@@ -113,6 +135,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetVolumeARN()
         {
             return this._volumeARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeAttachmentStatus. 
+        /// <para>
+        /// A value that indicates whether a storage volume is attached to or detached from a
+        /// gateway.
+        /// </para>
+        /// </summary>
+        public string VolumeAttachmentStatus
+        {
+            get { return this._volumeAttachmentStatus; }
+            set { this._volumeAttachmentStatus = value; }
+        }
+
+        // Check to see if VolumeAttachmentStatus property is set
+        internal bool IsSetVolumeAttachmentStatus()
+        {
+            return this._volumeAttachmentStatus != null;
         }
 
         /// <summary>

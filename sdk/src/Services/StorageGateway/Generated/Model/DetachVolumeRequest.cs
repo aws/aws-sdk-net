@@ -28,36 +28,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateCachediSCSIVolume operation.
+    /// Container for the parameters to the DetachVolume operation.
+    /// Disconnects a volume from an iSCSI connection and then detaches the volume from the
+    /// specified gateway. Detaching and attaching a volume enables you to recover your data
+    /// from one gateway to a different gateway without creating a snapshot. It also makes
+    /// it easier to move your volumes from an on-premises gateway to a gateway hosted on
+    /// an Amazon EC2 instance.
     /// </summary>
-    public partial class CreateCachediSCSIVolumeResponse : AmazonWebServiceResponse
+    public partial class DetachVolumeRequest : AmazonStorageGatewayRequest
     {
-        private string _targetARN;
+        private bool? _forceDetach;
         private string _volumeARN;
 
         /// <summary>
-        /// Gets and sets the property TargetARN. 
+        /// Gets and sets the property ForceDetach. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name
-        /// that initiators can use to connect to the target.
+        /// Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume
+        /// and detach the volume. The default is <code>false</code>. If this value is set to
+        /// <code>false</code>, you must manually disconnect the iSCSI connection from the target
+        /// volume.
         /// </para>
         /// </summary>
-        public string TargetARN
+        public bool ForceDetach
         {
-            get { return this._targetARN; }
-            set { this._targetARN = value; }
+            get { return this._forceDetach.GetValueOrDefault(); }
+            set { this._forceDetach = value; }
         }
 
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
+        // Check to see if ForceDetach property is set
+        internal bool IsSetForceDetach()
         {
-            return this._targetARN != null;
+            return this._forceDetach.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property VolumeARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the configured volume.
+        /// The Amazon Resource Name (ARN) of the volume to detach from the gateway.
         /// </para>
         /// </summary>
         public string VolumeARN

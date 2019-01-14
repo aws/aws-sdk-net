@@ -487,6 +487,39 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AttachVolume
+
+        internal virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<AttachVolumeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelArchival
 
         internal virtual CancelArchivalResponse CancelArchival(CancelArchivalRequest request)
@@ -1672,6 +1705,39 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = DescribeWorkingStorageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeWorkingStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachVolume
+
+        internal virtual DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DetachVolumeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachVolumeResponse>(request, options, cancellationToken);
         }
 
         #endregion

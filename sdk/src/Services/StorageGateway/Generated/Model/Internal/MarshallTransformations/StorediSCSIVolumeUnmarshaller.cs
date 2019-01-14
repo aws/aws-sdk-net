@@ -88,10 +88,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceSnapshotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VolumeARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeAttachmentStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeAttachmentStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeDiskId", targetDepth))

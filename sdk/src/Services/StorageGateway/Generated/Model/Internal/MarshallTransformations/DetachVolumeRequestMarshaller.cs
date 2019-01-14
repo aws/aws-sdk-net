@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JoinDomain Request Marshaller
+    /// DetachVolume Request Marshaller
     /// </summary>       
-    public class JoinDomainRequestMarshaller : IMarshaller<IRequest, JoinDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DetachVolumeRequestMarshaller : IMarshaller<IRequest, DetachVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((JoinDomainRequest)input);
+            return this.Marshall((DetachVolumeRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(JoinDomainRequest publicRequest)
+        public IRequest Marshall(DetachVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
-            string target = "StorageGateway_20130630.JoinDomain";
+            string target = "StorageGateway_20130630.DetachVolume";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";            
@@ -68,45 +68,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainControllers())
+                if(publicRequest.IsSetForceDetach())
                 {
-                    context.Writer.WritePropertyName("DomainControllers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
-                    {
-                            context.Writer.Write(publicRequestDomainControllersListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ForceDetach");
+                    context.Writer.Write(publicRequest.ForceDetach);
                 }
 
-                if(publicRequest.IsSetDomainName())
+                if(publicRequest.IsSetVolumeARN())
                 {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetGatewayARN())
-                {
-                    context.Writer.WritePropertyName("GatewayARN");
-                    context.Writer.Write(publicRequest.GatewayARN);
-                }
-
-                if(publicRequest.IsSetOrganizationalUnit())
-                {
-                    context.Writer.WritePropertyName("OrganizationalUnit");
-                    context.Writer.Write(publicRequest.OrganizationalUnit);
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetUserName())
-                {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
+                    context.Writer.WritePropertyName("VolumeARN");
+                    context.Writer.Write(publicRequest.VolumeARN);
                 }
 
         
@@ -118,9 +89,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static JoinDomainRequestMarshaller _instance = new JoinDomainRequestMarshaller();        
+        private static DetachVolumeRequestMarshaller _instance = new DetachVolumeRequestMarshaller();        
 
-        internal static JoinDomainRequestMarshaller GetInstance()
+        internal static DetachVolumeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +99,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinDomainRequestMarshaller Instance
+        public static DetachVolumeRequestMarshaller Instance
         {
             get
             {

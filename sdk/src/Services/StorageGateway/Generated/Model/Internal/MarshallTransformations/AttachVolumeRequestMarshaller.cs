@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JoinDomain Request Marshaller
+    /// AttachVolume Request Marshaller
     /// </summary>       
-    public class JoinDomainRequestMarshaller : IMarshaller<IRequest, JoinDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AttachVolumeRequestMarshaller : IMarshaller<IRequest, AttachVolumeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((JoinDomainRequest)input);
+            return this.Marshall((AttachVolumeRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(JoinDomainRequest publicRequest)
+        public IRequest Marshall(AttachVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StorageGateway");
-            string target = "StorageGateway_20130630.JoinDomain";
+            string target = "StorageGateway_20130630.AttachVolume";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";            
@@ -68,21 +68,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainControllers())
+                if(publicRequest.IsSetDiskId())
                 {
-                    context.Writer.WritePropertyName("DomainControllers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
-                    {
-                            context.Writer.Write(publicRequestDomainControllersListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDomainName())
-                {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
+                    context.Writer.WritePropertyName("DiskId");
+                    context.Writer.Write(publicRequest.DiskId);
                 }
 
                 if(publicRequest.IsSetGatewayARN())
@@ -91,22 +80,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GatewayARN);
                 }
 
-                if(publicRequest.IsSetOrganizationalUnit())
+                if(publicRequest.IsSetNetworkInterfaceId())
                 {
-                    context.Writer.WritePropertyName("OrganizationalUnit");
-                    context.Writer.Write(publicRequest.OrganizationalUnit);
+                    context.Writer.WritePropertyName("NetworkInterfaceId");
+                    context.Writer.Write(publicRequest.NetworkInterfaceId);
                 }
 
-                if(publicRequest.IsSetPassword())
+                if(publicRequest.IsSetTargetName())
                 {
-                    context.Writer.WritePropertyName("Password");
-                    context.Writer.Write(publicRequest.Password);
+                    context.Writer.WritePropertyName("TargetName");
+                    context.Writer.Write(publicRequest.TargetName);
                 }
 
-                if(publicRequest.IsSetUserName())
+                if(publicRequest.IsSetVolumeARN())
                 {
-                    context.Writer.WritePropertyName("UserName");
-                    context.Writer.Write(publicRequest.UserName);
+                    context.Writer.WritePropertyName("VolumeARN");
+                    context.Writer.Write(publicRequest.VolumeARN);
                 }
 
         
@@ -118,9 +107,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static JoinDomainRequestMarshaller _instance = new JoinDomainRequestMarshaller();        
+        private static AttachVolumeRequestMarshaller _instance = new AttachVolumeRequestMarshaller();        
 
-        internal static JoinDomainRequestMarshaller GetInstance()
+        internal static AttachVolumeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +117,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JoinDomainRequestMarshaller Instance
+        public static AttachVolumeRequestMarshaller Instance
         {
             get
             {

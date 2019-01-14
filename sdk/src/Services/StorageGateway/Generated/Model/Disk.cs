@@ -44,7 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DiskAllocationResource. 
         /// <para>
-        /// The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not included
+        /// The iSCSI qualified name (IQN) that is defined for a disk. This field is not included
         /// in the response if the local disk is not defined as an iSCSI target. The format of
         /// this field is <i>targetIqn::LUNNumber::region-volumeId</i>. 
         /// </para>

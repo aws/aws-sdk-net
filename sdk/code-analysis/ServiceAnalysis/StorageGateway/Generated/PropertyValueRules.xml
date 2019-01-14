@@ -82,6 +82,41 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.DiskId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.NetworkInterfaceId</property>
+    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.TargetName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[-\.;a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeResponse.TargetARN</property>
+    <min>50</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.AttachVolumeResponse.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelArchivalRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -580,6 +615,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeSMBSettingsResponse.DomainName</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -719,6 +756,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DetachVolumeRequest.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DetachVolumeResponse.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DisableGatewayRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -730,6 +777,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.DomainName</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -738,11 +787,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.OrganizationalUnit</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.Password</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.UserName</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>^\w[\w\.\- ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1212,9 +1270,20 @@
     <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.TargetName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[-\.;a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeAttachmentStatus</property>
+    <min>3</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeId</property>
@@ -1433,9 +1502,20 @@
     <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.StorediSCSIVolume.TargetName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[-\.;a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeAttachmentStatus</property>
+    <min>3</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeDiskId</property>
@@ -1548,6 +1628,11 @@
     <property>Amazon.StorageGateway.Model.VolumeInfo.VolumeARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.VolumeInfo.VolumeAttachmentStatus</property>
+    <min>3</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeInfo.VolumeId</property>

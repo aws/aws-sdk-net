@@ -619,6 +619,58 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AttachVolume
+
+
+        /// <summary>
+        /// Connects a volume to an iSCSI connection and then attaches the volume to the specified
+        /// gateway. Detaching and attaching a volume enables you to recover your data from one
+        /// gateway to a different gateway without creating a snapshot. It also makes it easier
+        /// to move your volumes from an on-premises gateway to a gateway hosted on an Amazon
+        /// EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
+        /// 
+        /// <returns>The response from the AttachVolume service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<AttachVolumeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
+        public virtual Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AttachVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelArchival
 
 
@@ -2652,6 +2704,58 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = DescribeWorkingStorageResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeWorkingStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachVolume
+
+
+        /// <summary>
+        /// Disconnects a volume from an iSCSI connection and then detaches the volume from the
+        /// specified gateway. Detaching and attaching a volume enables you to recover your data
+        /// from one gateway to a different gateway without creating a snapshot. It also makes
+        /// it easier to move your volumes from an on-premises gateway to a gateway hosted on
+        /// an Amazon EC2 instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
+        /// 
+        /// <returns>The response from the DetachVolume service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DetachVolumeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
+        public virtual Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetachVolumeResponse>(request, options, cancellationToken);
         }
 
         #endregion
