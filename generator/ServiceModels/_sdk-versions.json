@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.440.0",
+    "ProductVersion" : "3.3.441.0",
     "CoreVersion"    : "3.3.31.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -377,7 +377,7 @@
             "InPreview"               : false
         },
         "StorageGateway"            : {
-            "Version" : "3.3.12.10",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.2"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.10.11",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.2"

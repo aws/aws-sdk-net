@@ -1,3 +1,9 @@
+### 3.3.441.0 (2019-01-14 23:08 UTC)
+* MediaConvert (3.3.11.0)
+	* IMF decode from a Composition Playlist for IMF specializations App #2 and App #2e; up to 99 input clippings; caption channel selection for MXF; and updated rate control for CBR jobs. Added support for acceleration in preview
+* StorageGateway (3.3.13.0)
+	* JoinDomain API supports two more  parameters: organizational unit(OU) and domain controllers.  Two new APIs are introduced: DetachVolume and AttachVolume.
+
 ### 3.3.440.0 (2019-01-11 19:21 UTC)
 * ElasticMapReduce (3.3.6.33)
 	* Documentation updates for Amazon EMR
