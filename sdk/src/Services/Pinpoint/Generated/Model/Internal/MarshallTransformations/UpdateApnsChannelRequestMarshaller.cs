@@ -67,13 +67,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                context.Writer.WriteObjectStart();
 
                 var marshaller = APNSChannelRequestMarshaller.Instance;
                 marshaller.Marshall(publicRequest.APNSChannelRequest, context);
-        
-                writer.WriteObjectEnd();
+
+                context.Writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }

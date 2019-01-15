@@ -69,42 +69,39 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         protected virtual void ValidateBody()
         {
             var payload = this.Operation.RequestPayloadMember;
-            var payloadMarshalled = payload != null && payload.IsStructure;
+            var payloadMarshalled = payload != null && !payload.IsMemoryStream;
             if (this.Operation.RequestHasBodyMembers || payloadMarshalled)
             {
                 Assert.IsTrue(this.MarshalledRequest.Content.Count() > 0);
                 T marshalledData = GetMarshalledData(this.MarshalledRequest.Content);
 
-                var parentType = this.Operation.RequestPayloadMember == null ?
-                    this.Request.GetType() :
-                    this.Request.GetType().GetProperties().Single(p => p.Name == this.Operation.RequestPayloadMember.PropertyName).PropertyType;
-
-                var parentObject = this.Operation.RequestPayloadMember == null ?
-                    this.Request :
-                    this.Request.GetType().GetProperties().Single(p => p.Name == this.Operation.RequestPayloadMember.PropertyName).GetValue(this.Request);
-
-                var members = this.Operation.RequestPayloadMember == null ?
-                    this.Operation.RequestBodyMembers :
-                    this.Operation.RequestPayloadMember.Shape.Members;
-
-                foreach (var property in parentType.GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
+                if (this.Operation.RequestPayloadMember != null)
                 {
-                    if (this.Operation.RequestHeaderMembers.Any(m=>m.PropertyName == property.Name) ||
-                        this.Operation.RequestQueryStringMembers.Any(m => m.PropertyName == property.Name) ||
-                        this.Operation.RequestUriMembers.Any(m => m.PropertyName == property.Name))
-                    {
-                        continue;
-                    }
+                    var parentObject = this.Request.GetType().GetProperties().Single(p => p.Name == this.Operation.RequestPayloadMember.PropertyName).GetValue(this.Request);
 
-                    if (property.PropertyType.BaseType.FullName == "System.MulticastDelegate")
+                    Visit(parentObject, Operation.RequestPayloadMember, marshalledData);
+                }
+                else
+                {
+                    foreach (var property in this.Request.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
                     {
-                        continue;
-                    }
+                        if (this.Operation.RequestHeaderMembers.Any(m => m.PropertyName == property.Name) ||
+                            this.Operation.RequestQueryStringMembers.Any(m => m.PropertyName == property.Name) ||
+                            this.Operation.RequestUriMembers.Any(m => m.PropertyName == property.Name))
+                        {
+                            continue;
+                        }
 
-                    var childMember = members.Single(m => m.PropertyName == property.Name);
-                    var childValue = property.GetValue(parentObject);
-                    var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
-                    Visit(childValue, childMember, childMarshalledData);
+                        if (property.PropertyType.BaseType.FullName == "System.MulticastDelegate")
+                        {
+                            continue;
+                        }
+
+                        var childMember = this.Operation.RequestBodyMembers.Single(m => m.PropertyName == property.Name);
+                        var childValue = property.GetValue(this.Request);
+                        var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
+                        Visit(childValue, childMember, childMarshalledData);
+                    }
                 }
             }
             else
@@ -229,7 +226,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         private void ValidateStreamingContent()
         {
             var payload = this.Operation.RequestPayloadMember;
-            if (payload != null && !payload.IsStructure)
+            if (payload != null && payload.IsMemoryStream)
             {
                 Assert.IsTrue(this.MarshalledRequest.Headers.ContainsKey("Content-Type"));
                 if (!this.Operation.RequestHeaderMembers.Any(h => h.MarshallLocationName.ToLower() == "content-type"))

@@ -303,7 +303,7 @@ namespace ServiceClientGenerator
                     cb.Append(" }");
             }
 
-            else if (shape.IsBlob && shape.IsMemoryStream && data.IsString)
+            else if (shape.IsMemoryStream && data.IsString)
             {
                 cb.AppendFormat("new {0}({1})", ShapeType(shape), data.ToString());
             }

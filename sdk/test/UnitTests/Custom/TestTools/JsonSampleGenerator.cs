@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
             else if (shape.IsBoolean)
                 writer.Write(true);
-            else if (shape.IsBlob)
+            else if (shape.IsMemoryStream)
                 writer.Write(Constants.DEFAULT_BLOB_ENCODED);
             else
                 throw new Exception("Unknown Type for shape " + shape.Name);

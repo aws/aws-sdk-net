@@ -138,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 writer.WriteValue(ValidatorUtils.GetTestDate(member, shape));
             else if (shape.IsBoolean)
                 writer.WriteValue(true);
-            else if (shape.IsBlob)
+            else if (shape.IsMemoryStream)
                 writer.WriteValue(Constants.DEFAULT_BLOB_ENCODED);
             else
                 throw new Exception("Unknown Type for shape " + shape.Name);

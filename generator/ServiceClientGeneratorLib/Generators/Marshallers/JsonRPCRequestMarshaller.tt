@@ -75,7 +75,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			request.ResourcePath = uriResourcePath;
 <#    
     var payload= this.Operation.RequestPayloadMember;
-    var shouldMarshallPayload = (payload != null && payload.IsStructure);
+    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream);
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
@@ -83,20 +83,27 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
 			{
 				JsonWriter writer = new JsonWriter(stringWriter);
-				writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
 <#		
 		if(shouldMarshallPayload)	
 		{
-            ProcessRequestPayloadMember(0, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape);
+#>
+				var context = new JsonMarshallerContext(request, writer);
+<#		
+			ProcessStructure(0, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape);
 		}
 		else
 		{
+#>
+				writer.WriteObjectStart();
+				var context = new JsonMarshallerContext(request, writer);
+<#		
 			ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
-		}
 #>
 		
 				writer.WriteObjectEnd();
+<#
+		}
+#>
 				string snippet = stringWriter.ToString();
 				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
 			}

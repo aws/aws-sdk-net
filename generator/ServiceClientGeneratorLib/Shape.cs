@@ -426,14 +426,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the shape's type is a blob
-        /// </summary>
-        public bool IsBlob
-        {
-            get { return this.Type == "blob"; }
-        }
-
-        /// <summary>
         /// Determines if the shape's type is a map
         /// </summary>
         public bool IsMap
