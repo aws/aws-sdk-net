@@ -1,3 +1,11 @@
+### 3.3.442.0 (2019-01-16 18:53 UTC)
+* Backup (3.3.0.0)
+	* AWS Backup is a unified backup service designed to protect AWS services and their associated data. AWS Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing
+* CostExplorer (3.3.9.11)
+	* Removed Tags from the list of GroupBy dimensions available for GetReservationCoverage.
+* DynamoDBv2 (3.3.17.0)
+	* Amazon DynamoDB now integrates with AWS Backup, a centralized backup service that makes it easy for customers to configure and audit the AWS resources they want to backup, automate backup scheduling, set retention policies, and monitor all recent backup and restore activity. AWS Backup provides a fully managed, policy-based backup solution, simplifying your backup management, and helping you meet your business and regulatory backup compliance requirements. For more information, see the Amazon DynamoDB Developer Guide.
+
 ### 3.3.441.0 (2019-01-14 23:08 UTC)
 * MediaConvert (3.3.11.0)
 	* IMF decode from a Composition Playlist for IMF specializations App #2 and App #2e; up to 99 input clippings; caption channel selection for MXF; and updated rate control for CBR jobs. Added support for acceleration in preview
