@@ -64,8 +64,11 @@ namespace ServiceClientGenerator
         private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
         private const string CommonTestProjectName = "AWSSDK.CommonTest";
 
-        private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities";
-        private const string UtilityProjectFileGuid = "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}";
+        private const string UnitTestUtilityProjectFileName35 = "AWSSDK.UnitTestUtilities.Net35";
+        private const string UtilityProjectFileGuid35 = "{A23CE153-A4A3-4D3A-A6DC-0DD1B207118E}";
+
+        private const string UnitTestUtilityProjectFileName45 = "AWSSDK.UnitTestUtilities.Net45";
+        private const string UtilityProjectFileGuid45 = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
 
         private const string IntegrationTestUtilityName35 = "AWSSDK.IntegrationTestUtilities.Net35";
         private const string IntegrationTestUtilityGuid35 = "{924D2906-70D6-4D77-8603-816648B2CCA6}";
@@ -118,12 +121,20 @@ namespace ServiceClientGenerator
             RelativePath = string.Format(@"..\..\..\test\Common\{0}.csproj", CommonTestProjectName)
         };
 
-        private static readonly Project UnitTestUtilityProject = new Project
+        private static readonly Project UnitTestUtilityProject35 = new Project
         {
-            Name = UnitTestUtilityProjectFileName,
-            ProjectGuid = UtilityProjectFileGuid,
-            ProjectPath = string.Format(@"..\..\..\..\sdk\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName),
-            RelativePath = string.Format(@"..\..\..\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName)
+            Name = UnitTestUtilityProjectFileName35,
+            ProjectGuid = UtilityProjectFileGuid35,
+            ProjectPath = string.Format(@"..\..\..\..\sdk\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName35),
+            RelativePath = string.Format(@"..\..\..\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName35)
+        };
+
+        private static readonly Project UnitTestUtilityProject45 = new Project
+        {
+            Name = UnitTestUtilityProjectFileName45,
+            ProjectGuid = UtilityProjectFileGuid45,
+            ProjectPath = string.Format(@"..\..\..\..\sdk\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName45),
+            RelativePath = string.Format(@"..\..\..\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName45)
         };
 
         private static readonly Project IntegrationTestUtility35Project = new Project
@@ -860,7 +871,8 @@ namespace ServiceClientGenerator
                     testProjects.Add(ServiceSlnGeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
 
-                    testProjects.Add(UnitTestUtilityProject);
+                    testProjects.Add(UnitTestUtilityProject35);
+                    testProjects.Add(UnitTestUtilityProject45);
 
                     testProjects.Add(IntegrationTestUtility35Project);
                     dependentProjects.AddRange(AddProjectDependencies

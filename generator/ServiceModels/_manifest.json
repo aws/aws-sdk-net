@@ -144,15 +144,15 @@
                 },
                 {
                     "include" : "MSTest.TestAdapter",
-                    "version" : "1.2.0"
+                    "version" : "1.4.0"
                 },
                 {
                     "include" : "Microsoft.NET.Test.Sdk",
-                    "version" : "15.6.2"
+                    "version" : "15.9.0"
                 },
                 {
                     "include": "MSTest.TestFramework",
-                    "version": "1.2.0"
+                    "version": "1.4.0"
                 },
                 {
                     "include": "AutoFixture",
@@ -189,16 +189,16 @@
                     "version": "4.8.3"
                 },
                 {
-                    "include": "MSTest.TestAdapter",
-                    "version": "1.2.0"
+                    "include" : "MSTest.TestAdapter",
+                    "version" : "1.4.0"
                 },
                 {
-                    "include": "Microsoft.NET.Test.Sdk",
-                    "version": "15.6.2"
+                    "include" : "Microsoft.NET.Test.Sdk",
+                    "version" : "15.9.0"
                 },
                 {
-                    "include": "MSTest.TestFramework",
-                    "version": "1.2.0"
+                  "include": "MSTest.TestFramework",
+                  "version": "1.4.0"
                 },
                 {
                     "include": "AutoFixture",

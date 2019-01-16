@@ -47,6 +47,7 @@
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj" />
     <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj" />
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>
