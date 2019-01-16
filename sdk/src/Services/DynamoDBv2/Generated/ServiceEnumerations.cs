@@ -139,6 +139,10 @@ namespace Amazon.DynamoDBv2
     {
 
         /// <summary>
+        /// Constant AWS_BACKUP for BackupType
+        /// </summary>
+        public static readonly BackupType AWS_BACKUP = new BackupType("AWS_BACKUP");
+        /// <summary>
         /// Constant SYSTEM for BackupType
         /// </summary>
         public static readonly BackupType SYSTEM = new BackupType("SYSTEM");
@@ -192,6 +196,10 @@ namespace Amazon.DynamoDBv2
         /// Constant ALL for BackupTypeFilter
         /// </summary>
         public static readonly BackupTypeFilter ALL = new BackupTypeFilter("ALL");
+        /// <summary>
+        /// Constant AWS_BACKUP for BackupTypeFilter
+        /// </summary>
+        public static readonly BackupTypeFilter AWS_BACKUP = new BackupTypeFilter("AWS_BACKUP");
         /// <summary>
         /// Constant SYSTEM for BackupTypeFilter
         /// </summary>

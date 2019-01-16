@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpoints operation.
-    /// 
+    /// Returns the regional endpoint information.
     /// </summary>
     public partial class DescribeEndpointsRequest : AmazonDynamoDBRequest
     {

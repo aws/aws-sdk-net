@@ -172,7 +172,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"L": ["Cookies", "Coffee", 3.14159]</code> 
+        ///  <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code> 
         /// </para>
         /// </summary>
         public List<AttributeValue> L

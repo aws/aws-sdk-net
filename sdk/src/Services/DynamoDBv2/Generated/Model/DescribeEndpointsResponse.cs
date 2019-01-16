@@ -35,7 +35,10 @@ namespace Amazon.DynamoDBv2.Model
         private List<Endpoint> _endpoints = new List<Endpoint>();
 
         /// <summary>
-        /// Gets and sets the property Endpoints.
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// List of endpoints.
+        /// </para>
         /// </summary>
         public List<Endpoint> Endpoints
         {

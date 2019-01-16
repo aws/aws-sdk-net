@@ -147,7 +147,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
         /// <para>
-        /// One or more global secondary indexes (the maximum is five) to be created on the table.
+        /// One or more global secondary indexes (the maximum is 20) to be created on the table.
         /// Each global secondary index in the array includes the following:
         /// </para>
         ///  <ul> <li> 
@@ -188,7 +188,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -282,7 +282,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LocalSecondaryIndexes. 
         /// <para>
-        /// One or more local secondary indexes (the maximum is five) to be created on the table.
+        /// One or more local secondary indexes (the maximum is 5) to be created on the table.
         /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
         /// partition key value; otherwise, the size of a local secondary index is unconstrained.
         /// </para>
@@ -329,7 +329,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> </ul>

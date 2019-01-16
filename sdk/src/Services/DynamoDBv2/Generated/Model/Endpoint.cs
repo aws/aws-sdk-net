@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// 
+    /// An endpoint information details.
     /// </summary>
     public partial class Endpoint
     {
@@ -36,7 +36,10 @@ namespace Amazon.DynamoDBv2.Model
         private long? _cachePeriodInMinutes;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// IP address of the endpoint.
+        /// </para>
         /// </summary>
         public string Address
         {
@@ -51,7 +54,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CachePeriodInMinutes.
+        /// Gets and sets the property CachePeriodInMinutes. 
+        /// <para>
+        /// Endpoint cache time to live (TTL) value.
+        /// </para>
         /// </summary>
         public long CachePeriodInMinutes
         {
