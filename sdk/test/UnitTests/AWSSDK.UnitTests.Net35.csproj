@@ -52,6 +52,7 @@
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Backup\AWSSDK.Backup.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Budgets\AWSSDK.Budgets.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj"/>
