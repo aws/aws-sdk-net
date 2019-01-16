@@ -248,10 +248,6 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TAG
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// TENANCY
         /// </para>
         ///  </li> </ul>
