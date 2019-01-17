@@ -29,9 +29,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstance operation.
-    /// Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting,
-    /// Lightsail assigns a new public IP address. To use the same IP address after restarting,
-    /// create a static IP address and attach it to the instance.
+    /// Restarts a specific instance.
     /// 
     ///  
     /// <para>

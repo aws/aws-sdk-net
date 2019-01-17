@@ -29,7 +29,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportSnapshot operation.
-    /// Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic
+    /// Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic
     /// Compute Cloud (Amazon EC2). This operation results in an export snapshot record that
     /// can be used with the <code>create cloud formation stack</code> operation to create
     /// new Amazon EC2 instances.

@@ -46,6 +46,17 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
+    /// You can also use this operation to create a snapshot of an instance's system volume.
+    /// You might want to do this, for example, to recover data from the system volume of
+    /// a botched instance or to create a backup of the system volume like you would for a
+    /// block storage disk. To create a snapshot of a system volume, just define the <code>instance
+    /// name</code> parameter when issuing the snapshot command, and a snapshot of the defined
+    /// instance's system volume will be created. After the snapshot is available, you can
+    /// create a block storage disk from the snapshot and attach it to a running instance
+    /// to access the data on the disk.
+    /// </para>
+    ///  
+    /// <para>
     /// The <code>create disk snapshot</code> operation supports tag-based access control
     /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Dev Guide</a>.
@@ -55,13 +66,21 @@ namespace Amazon.Lightsail.Model
     {
         private string _diskName;
         private string _diskSnapshotName;
+        private string _instanceName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique name of the source disk (e.g., <code>my-source-disk</code>).
+        /// The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter cannot be defined together with the <code>instance name</code> parameter.
+        /// The <code>disk name</code> and <code>instance name</code> parameters are mutually
+        /// exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DiskName
         {
@@ -92,6 +111,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDiskSnapshotName()
         {
             return this._diskSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceName. 
+        /// <para>
+        /// The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
+        /// When this is defined, a snapshot of the instance's system volume is created.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter cannot be defined together with the <code>disk name</code> parameter.
+        /// The <code>instance name</code> and <code>disk name</code> parameters are mutually
+        /// exclusive.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string InstanceName
+        {
+            get { return this._instanceName; }
+            set { this._instanceName = value; }
+        }
+
+        // Check to see if InstanceName property is set
+        internal bool IsSetInstanceName()
+        {
+            return this._instanceName != null;
         }
 
         /// <summary>

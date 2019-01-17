@@ -36,6 +36,8 @@ namespace Amazon.Lightsail.Model
         private DateTime? _createdAt;
         private string _fromDiskArn;
         private string _fromDiskName;
+        private string _fromInstanceArn;
+        private string _fromInstanceName;
         private ResourceLocation _location;
         private string _name;
         private string _progress;
@@ -84,8 +86,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromDiskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source disk from which you are creating the
-        /// disk snapshot.
+        /// The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was
+        /// created.
         /// </para>
         /// </summary>
         public string FromDiskArn
@@ -103,7 +105,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromDiskName. 
         /// <para>
-        /// The unique name of the source disk from which you are creating the disk snapshot.
+        /// The unique name of the source disk from which the disk snapshot was created.
         /// </para>
         /// </summary>
         public string FromDiskName
@@ -116,6 +118,44 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetFromDiskName()
         {
             return this._fromDiskName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source instance from which the disk (system
+        /// volume) snapshot was created.
+        /// </para>
+        /// </summary>
+        public string FromInstanceArn
+        {
+            get { return this._fromInstanceArn; }
+            set { this._fromInstanceArn = value; }
+        }
+
+        // Check to see if FromInstanceArn property is set
+        internal bool IsSetFromInstanceArn()
+        {
+            return this._fromInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromInstanceName. 
+        /// <para>
+        /// The unique name of the source instance from which the disk (system volume) snapshot
+        /// was created.
+        /// </para>
+        /// </summary>
+        public string FromInstanceName
+        {
+            get { return this._fromInstanceName; }
+            set { this._fromInstanceName = value; }
+        }
+
+        // Check to see if FromInstanceName property is set
+        internal bool IsSetFromInstanceName()
+        {
+            return this._fromInstanceName != null;
         }
 
         /// <summary>

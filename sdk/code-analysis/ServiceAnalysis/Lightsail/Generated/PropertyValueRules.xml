@@ -77,6 +77,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateDiskSnapshotRequest.InstanceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesRequest.BlueprintId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -479,6 +483,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskSnapshot.FromDiskName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DiskSnapshot.FromInstanceArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.DiskSnapshot.FromInstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>

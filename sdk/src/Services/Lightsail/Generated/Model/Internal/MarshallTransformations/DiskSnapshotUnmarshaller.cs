@@ -88,6 +88,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.FromDiskName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fromInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FromInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fromInstanceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FromInstanceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = ResourceLocationUnmarshaller.Instance;

@@ -96,6 +96,10 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// NONE — Default to Amazon EC2.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSED — All ports closed.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public PortInfoSourceType PortInfoSource

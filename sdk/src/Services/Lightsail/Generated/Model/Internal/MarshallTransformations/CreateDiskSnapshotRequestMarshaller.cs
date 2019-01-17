@@ -80,6 +80,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DiskSnapshotName);
                 }
 
+                if(publicRequest.IsSetInstanceName())
+                {
+                    context.Writer.WritePropertyName("instanceName");
+                    context.Writer.Write(publicRequest.InstanceName);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

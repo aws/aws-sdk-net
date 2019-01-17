@@ -1901,6 +1901,10 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant CLOSED for PortInfoSourceType
+        /// </summary>
+        public static readonly PortInfoSourceType CLOSED = new PortInfoSourceType("CLOSED");
+        /// <summary>
         /// Constant DEFAULT for PortInfoSourceType
         /// </summary>
         public static readonly PortInfoSourceType DEFAULT = new PortInfoSourceType("DEFAULT");

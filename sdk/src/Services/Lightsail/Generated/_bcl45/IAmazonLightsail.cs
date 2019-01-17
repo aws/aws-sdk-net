@@ -734,6 +734,17 @@ namespace Amazon.Lightsail
         /// </para>
         ///  
         /// <para>
+        /// You can also use this operation to create a snapshot of an instance's system volume.
+        /// You might want to do this, for example, to recover data from the system volume of
+        /// a botched instance or to create a backup of the system volume like you would for a
+        /// block storage disk. To create a snapshot of a system volume, just define the <code>instance
+        /// name</code> parameter when issuing the snapshot command, and a snapshot of the defined
+        /// instance's system volume will be created. After the snapshot is available, you can
+        /// create a block storage disk from the snapshot and attach it to a running instance
+        /// to access the data on the disk.
+        /// </para>
+        ///  
+        /// <para>
         /// The <code>create disk snapshot</code> operation supports tag-based access control
         /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
         /// Dev Guide</a>.
@@ -2538,7 +2549,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic
+        /// Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic
         /// Compute Cloud (Amazon EC2). This operation results in an export snapshot record that
         /// can be used with the <code>create cloud formation stack</code> operation to create
         /// new Amazon EC2 instances.
@@ -5521,9 +5532,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting,
-        /// Lightsail assigns a new public IP address. To use the same IP address after restarting,
-        /// create a static IP address and attach it to the instance.
+        /// Restarts a specific instance.
         /// 
         ///  
         /// <para>
@@ -5714,9 +5723,17 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance,
-        /// use the reboot instance operation.
+        /// use the <code>reboot instance</code> operation.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When you start a stopped instance, Lightsail assigns a new public IP address to the
+        /// instance. To use the same IP address after stopping and starting an instance, create
+        /// a static IP address and attach it to the instance. For more information, see the <a
+        /// href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+        /// Dev Guide</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The <code>start instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by instanceName. For more information, see
@@ -5849,7 +5866,15 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Stops a specific Amazon Lightsail instance that is currently running.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When you start a stopped instance, Lightsail assigns a new public IP address to the
+        /// instance. To use the same IP address after stopping and starting an instance, create
+        /// a static IP address and attach it to the instance. For more information, see the <a
+        /// href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+        /// Dev Guide</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The <code>stop instance</code> operation supports tag-based access control via resource
         /// tags applied to the resource identified by instanceName. For more information, see
