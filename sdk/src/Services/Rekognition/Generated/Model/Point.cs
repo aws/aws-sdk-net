@@ -35,9 +35,9 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// An array of <code>Point</code> objects, <code>Polygon</code>, is returned by . <code>Polygon</code>
-    /// represents a fine-grained polygon around detected text. For more information, see
-    /// Geometry in the Amazon Rekognition Developer Guide. 
+    /// An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a>.
+    /// <code>Polygon</code> represents a fine-grained polygon around detected text. For more
+    /// information, see Geometry in the Amazon Rekognition Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Point

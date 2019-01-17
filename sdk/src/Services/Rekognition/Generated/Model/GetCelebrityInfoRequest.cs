@@ -51,8 +51,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID for the celebrity. You get the celebrity ID from a call to the operation, which
-        /// recognizes celebrities in an image. 
+        /// The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a>
+        /// operation, which recognizes celebrities in an image. 
         /// </para>
         /// </summary>
         public string Id

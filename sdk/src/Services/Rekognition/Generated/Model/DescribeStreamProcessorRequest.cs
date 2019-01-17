@@ -29,9 +29,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStreamProcessor operation.
-    /// Provides information about a stream processor created by . You can get information
-    /// about the input and output streams, the input parameters for the face recognition
-    /// being performed, and the current status of the stream processor.
+    /// Provides information about a stream processor created by <a>CreateStreamProcessor</a>.
+    /// You can get information about the input and output streams, the input parameters for
+    /// the face recognition being performed, and the current status of the stream processor.
     /// </summary>
     public partial class DescribeStreamProcessorRequest : AmazonRekognitionRequest
     {

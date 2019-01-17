@@ -30,18 +30,19 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the GetCelebrityRecognition operation.
     /// Gets the celebrity recognition results for a Amazon Rekognition Video analysis started
-    /// by .
+    /// by <a>StartCelebrityRecognition</a>.
     /// 
     ///  
     /// <para>
     /// Celebrity recognition in a video is an asynchronous operation. Analysis is started
-    /// by a call to which returns a job identifier (<code>JobId</code>). When the celebrity
-    /// recognition operation finishes, Amazon Rekognition Video publishes a completion status
-    /// to the Amazon Simple Notification Service topic registered in the initial call to
-    /// <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition
-    /// analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.
-    /// If so, call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>)
-    /// from the initial call to <code>StartCelebrityDetection</code>. 
+    /// by a call to <a>StartCelebrityRecognition</a> which returns a job identifier (<code>JobId</code>).
+    /// When the celebrity recognition operation finishes, Amazon Rekognition Video publishes
+    /// a completion status to the Amazon Simple Notification Service topic registered in
+    /// the initial call to <code>StartCelebrityRecognition</code>. To get the results of
+    /// the celebrity recognition analysis, first check that the status value published to
+    /// the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -51,9 +52,10 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     ///  <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s)
-    /// they are detected in an array (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code>
-    /// contains information about the celebrity in a object and the time, <code>Timestamp</code>,
-    /// the celebrity was detected. 
+    /// they are detected in an array (<code>Celebrities</code>) of <a>CelebrityRecognition</a>
+    /// objects. Each <code>CelebrityRecognition</code> contains information about the celebrity
+    /// in a <a>CelebrityDetail</a> object and the time, <code>Timestamp</code>, the celebrity
+    /// was detected. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -73,7 +75,7 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// The <code>CelebrityDetail</code> object includes the celebrity identifer and additional
     /// information urls. If you don't store the additional information urls, you can get
-    /// them later by calling with the celebrity identifer.
+    /// them later by calling <a>GetCelebrityInfo</a> with the celebrity identifer.
     /// </para>
     ///  
     /// <para>

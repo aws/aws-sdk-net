@@ -78,9 +78,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Persons. 
         /// <para>
-        /// An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition
-        /// collection. It also includes time information for when persons are matched in the
-        /// video. You specify the input collection in an initial call to <code>StartFaceSearch</code>.
+        /// An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s)
+        /// in an Amazon Rekognition collection. It also includes time information for when persons
+        /// are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>.
         /// Each <code>Persons</code> element includes a time the person was matched, face match
         /// details (<code>FaceMatches</code>) for matching faces in the collection, and person
         /// information (<code>Person</code>) for the matched person. 

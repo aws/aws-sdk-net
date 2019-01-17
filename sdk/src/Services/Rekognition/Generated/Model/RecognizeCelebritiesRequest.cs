@@ -52,7 +52,8 @@ namespace Amazon.Rekognition.Model
     /// recognized in. Your application must store this information and use the <code>Celebrity</code>
     /// ID property as a unique identifier for the celebrity. If you don't store the celebrity
     /// name or additional information URLs returned by <code>RecognizeCelebrities</code>,
-    /// you will need the ID to identify the celebrity in a call to the operation.
+    /// you will need the ID to identify the celebrity in a call to the <a>GetCelebrityInfo</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>

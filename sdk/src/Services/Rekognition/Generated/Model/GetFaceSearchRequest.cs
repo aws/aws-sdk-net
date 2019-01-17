@@ -29,19 +29,19 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFaceSearch operation.
-    /// Gets the face search results for Amazon Rekognition Video face search started by .
+    /// Gets the face search results for Amazon Rekognition Video face search started by <a>StartFaceSearch</a>.
     /// The search returns faces in a collection that match the faces of persons detected
     /// in a video. It also includes the time(s) that faces are matched in the video.
     /// 
     ///  
     /// <para>
     /// Face search in a video is an asynchronous operation. You start face search by calling
-    /// to which returns a job identifier (<code>JobId</code>). When the search operation
-    /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
-    /// Notification Service topic registered in the initial call to <code>StartFaceSearch</code>.
-    /// To get the search results, first check that the status value published to the Amazon
-    /// SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass
-    /// the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
+    /// to <a>StartFaceSearch</a> which returns a job identifier (<code>JobId</code>). When
+    /// the search operation finishes, Amazon Rekognition Video publishes a completion status
+    /// to the Amazon Simple Notification Service topic registered in the initial call to
+    /// <code>StartFaceSearch</code>. To get the search results, first check that the status
+    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
     /// </para>
     ///  
     /// <para>
@@ -50,10 +50,11 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
-    /// element contains details about the matching faces in the input collection, person
-    /// information (facial attributes, bounding boxes, and person identifer) for the matched
-    /// person, and the time the person was matched in the video.
+    /// The search results are retured in an array, <code>Persons</code>, of <a>PersonMatch</a>
+    /// objects. Each<code>PersonMatch</code> element contains details about the matching
+    /// faces in the input collection, person information (facial attributes, bounding boxes,
+    /// and person identifer) for the matched person, and the time the person was matched
+    /// in the video.
     /// </para>
     ///  <note> 
     /// <para>

@@ -43,8 +43,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// To get the results of the person detection operation, first check that the status
-    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and
-    /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
+    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
     /// </para>
     /// </summary>
     public partial class StartPersonTrackingRequest : AmazonRekognitionRequest

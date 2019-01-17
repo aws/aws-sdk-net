@@ -29,7 +29,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the StopStreamProcessor operation.
-    /// Stops a running stream processor that was created by .
+    /// Stops a running stream processor that was created by <a>CreateStreamProcessor</a>.
     /// </summary>
     public partial class StopStreamProcessorRequest : AmazonRekognitionRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a stream processor created by .
+        /// The name of a stream processor created by <a>CreateStreamProcessor</a>.
         /// </para>
         /// </summary>
         public string Name

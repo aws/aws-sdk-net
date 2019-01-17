@@ -41,9 +41,9 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>DetectText</code> operation returns text in an array of elements, <code>TextDetections</code>.
-    /// Each <code>TextDetection</code> element provides information about a single word or
-    /// line of text that was detected in the image. 
+    /// The <code>DetectText</code> operation returns text in an array of <a>TextDetection</a>
+    /// elements, <code>TextDetections</code>. Each <code>TextDetection</code> element provides
+    /// information about a single word or line of text that was detected in the image. 
     /// </para>
     ///  
     /// <para>

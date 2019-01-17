@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A face that detected, but didn't index. Use the <code>Reasons</code> response attribute
-    /// to determine why a face wasn't indexed.
+    /// A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code>
+    /// response attribute to determine why a face wasn't indexed.
     /// </summary>
     public partial class UnindexedFace
     {

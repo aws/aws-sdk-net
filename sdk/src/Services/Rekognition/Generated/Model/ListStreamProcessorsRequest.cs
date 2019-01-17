@@ -29,7 +29,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreamProcessors operation.
-    /// Gets a list of stream processors that you have created with .
+    /// Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
     /// </summary>
     public partial class ListStreamProcessorsRequest : AmazonRekognitionRequest
     {

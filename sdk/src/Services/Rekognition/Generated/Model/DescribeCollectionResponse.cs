@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property FaceCount. 
         /// <para>
         /// The number of faces that are indexed into the collection. To index faces into a collection,
-        /// use .
+        /// use <a>IndexFaces</a>.
         /// </para>
         /// </summary>
         public long FaceCount

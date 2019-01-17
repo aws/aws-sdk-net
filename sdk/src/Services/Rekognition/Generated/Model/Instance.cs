@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// An instance of a label detected by .
+    /// An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>)
+    /// or by Amazon Rekognition Video (<a>GetLabelDetection</a>).
     /// </summary>
     public partial class Instance
     {
@@ -56,7 +57,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+        /// The confidence that Amazon Rekognition has in the accuracy of the bounding box.
         /// </para>
         /// </summary>
         public float Confidence

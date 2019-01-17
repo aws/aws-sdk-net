@@ -30,14 +30,14 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the GetContentModeration operation.
     /// Gets the content moderation analysis results for a Amazon Rekognition Video analysis
-    /// started by .
+    /// started by <a>StartContentModeration</a>.
     /// 
     ///  
     /// <para>
     /// Content moderation analysis of a video is an asynchronous operation. You start analysis
-    /// by calling . which returns a job identifier (<code>JobId</code>). When analysis finishes,
-    /// Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
-    /// Service topic registered in the initial call to <code>StartContentModeration</code>.
+    /// by calling <a>StartContentModeration</a>. which returns a job identifier (<code>JobId</code>).
+    /// When analysis finishes, Amazon Rekognition Video publishes a completion status to
+    /// the Amazon Simple Notification Service topic registered in the initial call to <code>StartContentModeration</code>.
     /// To get the results of the content moderation analysis, first check that the status
     /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code>
     /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>.
@@ -51,8 +51,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     ///  <code>GetContentModeration</code> returns detected content moderation labels, and
-    /// the time they are detected, in an array, <code>ModerationLabels</code>, of objects.
-    /// 
+    /// the time they are detected, in an array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
+    /// objects. 
     /// </para>
     ///  
     /// <para>

@@ -33,6 +33,7 @@ namespace Amazon.Rekognition.Model
     public partial class GetLabelDetectionResponse : AmazonWebServiceResponse
     {
         private VideoJobStatus _jobStatus;
+        private string _labelModelVersion;
         private List<LabelDetection> _labels = new List<LabelDetection>();
         private string _nextToken;
         private string _statusMessage;
@@ -54,6 +55,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelModelVersion. 
+        /// <para>
+        /// Version number of the label detection model that was used to detect labels.
+        /// </para>
+        /// </summary>
+        public string LabelModelVersion
+        {
+            get { return this._labelModelVersion; }
+            set { this._labelModelVersion = value; }
+        }
+
+        // Check to see if LabelModelVersion property is set
+        internal bool IsSetLabelModelVersion()
+        {
+            return this._labelModelVersion != null;
         }
 
         /// <summary>

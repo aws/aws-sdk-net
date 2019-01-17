@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides information about a celebrity recognized by the operation.
+    /// Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a>
+    /// operation.
     /// </summary>
     public partial class Celebrity
     {

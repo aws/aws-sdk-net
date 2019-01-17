@@ -49,8 +49,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// To get the results of the label detection operation, first check that the status value
-    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
-    /// the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
+    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
     /// </para>
     /// </summary>
     public partial class StartLabelDetectionRequest : AmazonRekognitionRequest

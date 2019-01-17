@@ -30,8 +30,9 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the DeleteStreamProcessor operation.
     /// Deletes the stream processor identified by <code>Name</code>. You assign the value
-    /// for <code>Name</code> when you create the stream processor with . You might not be
-    /// able to use the same name for a stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.
+    /// for <code>Name</code> when you create the stream processor with <a>CreateStreamProcessor</a>.
+    /// You might not be able to use the same name for a stream processor for a few seconds
+    /// after calling <code>DeleteStreamProcessor</code>.
     /// </summary>
     public partial class DeleteStreamProcessorRequest : AmazonRekognitionRequest
     {

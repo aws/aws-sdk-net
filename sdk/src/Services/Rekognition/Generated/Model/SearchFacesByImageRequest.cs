@@ -35,8 +35,9 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To search for all faces in an input image, you might first call the operation, and
-    /// then use the face IDs returned in subsequent calls to the operation. 
+    /// To search for all faces in an input image, you might first call the <a>IndexFaces</a>
+    /// operation, and then use the face IDs returned in subsequent calls to the <a>SearchFaces</a>
+    /// operation. 
     /// </para>
     ///  
     /// <para>

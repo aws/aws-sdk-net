@@ -98,7 +98,7 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// In response, the API returns an array of labels. In addition, the response also includes
     /// the orientation correction. Optionally, you can specify <code>MinConfidence</code>
-    /// to control the confidence threshold for the labels returned. The default is 50%. You
+    /// to control the confidence threshold for the labels returned. The default is 55%. You
     /// can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
     /// 
     /// </para>
@@ -110,9 +110,9 @@ namespace Amazon.Rekognition.Model
     ///  </note> 
     /// <para>
     ///  <code>DetectLabels</code> returns bounding boxes for instances of common object labels
-    /// in an array of objects. An <code>Instance</code> object contains a object, for the
-    /// location of the label on the image. It also includes the confidence by which the bounding
-    /// box was detected.
+    /// in an array of <a>Instance</a> objects. An <code>Instance</code> object contains a
+    /// <a>BoundingBox</a> object, for the location of the label on the image. It also includes
+    /// the confidence by which the bounding box was detected.
     /// </para>
     ///  
     /// <para>
@@ -187,7 +187,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If <code>MinConfidence</code> is not specified, the operation returns labels with
-        /// a confidence values greater than or equal to 50 percent.
+        /// a confidence values greater than or equal to 55 percent.
         /// </para>
         /// </summary>
         public float MinConfidence

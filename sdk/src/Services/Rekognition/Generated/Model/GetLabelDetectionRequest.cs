@@ -30,17 +30,17 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the GetLabelDetection operation.
     /// Gets the label detection results of a Amazon Rekognition Video analysis started by
-    /// . 
+    /// <a>StartLabelDetection</a>. 
     /// 
     ///  
     /// <para>
-    /// The label detection operation is started by a call to which returns a job identifier
-    /// (<code>JobId</code>). When the label detection operation finishes, Amazon Rekognition
-    /// publishes a completion status to the Amazon Simple Notification Service topic registered
-    /// in the initial call to <code>StartlabelDetection</code>. To get the results of the
-    /// label detection operation, first check that the status value published to the Amazon
-    /// SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>)
-    /// from the initial call to <code>StartLabelDetection</code>.
+    /// The label detection operation is started by a call to <a>StartLabelDetection</a> which
+    /// returns a job identifier (<code>JobId</code>). When the label detection operation
+    /// finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+    /// Service topic registered in the initial call to <code>StartlabelDetection</code>.
+    /// To get the results of the label detection operation, first check that the status value
+    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
+    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
     /// </para>
     ///  
     /// <para>
@@ -55,6 +55,11 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
+    /// The returned labels also include bounding box information for common objects, a hierarchical
+    /// taxonomy of detected labels, and the version of the label model used for detection.
+    /// </para>
+    ///  
+    /// <para>
     /// Use MaxResults parameter to limit the number of labels returned. If there are more
     /// results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
     /// in the operation response contains a pagination token for getting the next set of
@@ -62,14 +67,6 @@ namespace Amazon.Rekognition.Model
     /// populate the <code>NextToken</code> request parameter with the token value returned
     /// from the previous call to <code>GetLabelDetection</code>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    ///  <code>GetLabelDetection</code> doesn't return a hierarchical taxonomy, or bounding
-    /// box information, for detected labels. <code>GetLabelDetection</code> returns <code>null</code>
-    /// for the <code>Parents</code> and <code>Instances</code> attributes of the object which
-    /// is returned in the <code>Labels</code> array. 
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class GetLabelDetectionRequest : AmazonRekognitionRequest
     {

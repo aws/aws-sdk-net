@@ -106,7 +106,8 @@ namespace Amazon.Rekognition.Model
         ///  </li> </ul> 
         /// <para>
         /// Bounding box information is returned in the <code>FaceRecords</code> array. You can
-        /// get the version of the face detection model by calling . 
+        /// get the version of the face detection model by calling <a>DescribeCollection</a>.
+        /// 
         /// </para>
         /// </summary>
         public OrientationCorrection OrientationCorrection

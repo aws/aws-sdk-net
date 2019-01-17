@@ -35,8 +35,8 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see API_GetPersonTracking in the Amazon Rekognition Developer
-    /// Guide. 
+    /// For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
+    /// 
     /// </para>
     /// </summary>
     public partial class PersonDetection

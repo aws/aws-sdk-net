@@ -29,7 +29,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code>
-    /// is a request parameter for .
+    /// is a request parameter for <a>CreateStreamProcessor</a>.
     /// </summary>
     public partial class FaceSearchSettings
     {

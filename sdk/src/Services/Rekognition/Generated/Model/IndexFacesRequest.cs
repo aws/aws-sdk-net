@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
     /// detection algorithm first detects the faces in the input image. For each face, the
     /// algorithm extracts facial features into a feature vector, and stores it in the backend
     /// database. Amazon Rekognition uses feature vectors when it performs face match and
-    /// search operations using the and operations.
+    /// search operations using the <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.
     /// </para>
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// To get the number of faces in a collection, call . 
+    /// To get the number of faces in a collection, call <a>DescribeCollection</a>. 
     /// </para>
     ///  
     /// <para>
@@ -61,9 +61,9 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// To determine which version of the model you're using, call and supply the collection
-    /// ID. You can also get the model version from the value of <code>FaceModelVersion</code>
-    /// in the response from <code>IndexFaces</code> 
+    /// To determine which version of the model you're using, call <a>DescribeCollection</a>
+    /// and supply the collection ID. You can also get the model version from the value of
+    /// <code>FaceModelVersion</code> in the response from <code>IndexFaces</code> 
     /// </para>
     ///  
     /// <para>
@@ -73,9 +73,9 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// If you provide the optional <code>ExternalImageID</code> for the input image you provided,
     /// Amazon Rekognition associates this ID with all faces that it detects. When you call
-    /// the operation, the response returns the external ID. You can use this external image
-    /// ID to create a client-side index to associate the faces with each image. You can then
-    /// use the index to find all faces in an image.
+    /// the <a>ListFaces</a> operation, the response returns the external ID. You can use
+    /// this external image ID to create a client-side index to associate the faces with each
+    /// image. You can then use the index to find all faces in an image.
     /// </para>
     ///  
     /// <para>
@@ -96,12 +96,14 @@ namespace Amazon.Rekognition.Model
     ///  <note> 
     /// <para>
     /// To use quality filtering, you need a collection associated with version 3 of the face
-    /// model. To get the version of the face model associated with a collection, call . 
+    /// model. To get the version of the face model associated with a collection, call <a>DescribeCollection</a>.
+    /// 
     /// </para>
     ///  </note> 
     /// <para>
     /// Information about faces detected in an image, but not indexed, is returned in an array
-    /// of objects, <code>UnindexedFaces</code>. Faces aren't indexed for reasons such as:
+    /// of <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed
+    /// for reasons such as:
     /// </para>
     ///  <ul> <li> 
     /// <para>

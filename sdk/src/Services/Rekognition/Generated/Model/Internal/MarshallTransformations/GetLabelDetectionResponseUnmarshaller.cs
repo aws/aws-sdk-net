@@ -57,6 +57,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.JobStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LabelModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LabelModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Labels", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LabelDetection, LabelDetectionUnmarshaller>(LabelDetectionUnmarshaller.Instance);

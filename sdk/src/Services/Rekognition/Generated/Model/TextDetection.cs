@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Information about a word or line of text detected by .
+    /// Information about a word or line of text detected by <a>DetectText</a>.
     /// 
     ///  
     /// <para>
