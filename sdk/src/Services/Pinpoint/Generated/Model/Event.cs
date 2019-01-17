@@ -32,12 +32,63 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class Event
     {
+        private string _appPackageName;
+        private string _appTitle;
+        private string _appVersionCode;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _clientSdkVersion;
         private string _eventType;
         private Dictionary<string, double> _metrics = new Dictionary<string, double>();
+        private string _sdkName;
         private Session _session;
         private string _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property AppPackageName. The package name associated with the app
+        /// that's recording the event.
+        /// </summary>
+        public string AppPackageName
+        {
+            get { return this._appPackageName; }
+            set { this._appPackageName = value; }
+        }
+
+        // Check to see if AppPackageName property is set
+        internal bool IsSetAppPackageName()
+        {
+            return this._appPackageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppTitle. The title of the app that's recording the event.
+        /// </summary>
+        public string AppTitle
+        {
+            get { return this._appTitle; }
+            set { this._appTitle = value; }
+        }
+
+        // Check to see if AppTitle property is set
+        internal bool IsSetAppTitle()
+        {
+            return this._appTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppVersionCode. The version number of the app that's recording
+        /// the event.
+        /// </summary>
+        public string AppVersionCode
+        {
+            get { return this._appVersionCode; }
+            set { this._appVersionCode = value; }
+        }
+
+        // Check to see if AppVersionCode property is set
+        internal bool IsSetAppVersionCode()
+        {
+            return this._appVersionCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. Custom attributes that are associated with
@@ -99,6 +150,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null && this._metrics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdkName. The name of the SDK that's being used to record
+        /// the event.
+        /// </summary>
+        public string SdkName
+        {
+            get { return this._sdkName; }
+            set { this._sdkName = value; }
+        }
+
+        // Check to see if SdkName property is set
+        internal bool IsSetSdkName()
+        {
+            return this._sdkName != null;
         }
 
         /// <summary>

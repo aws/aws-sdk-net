@@ -45,6 +45,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Event requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppPackageName())
+            {
+                context.Writer.WritePropertyName("AppPackageName");
+                context.Writer.Write(requestObject.AppPackageName);
+            }
+
+            if(requestObject.IsSetAppTitle())
+            {
+                context.Writer.WritePropertyName("AppTitle");
+                context.Writer.Write(requestObject.AppTitle);
+            }
+
+            if(requestObject.IsSetAppVersionCode())
+            {
+                context.Writer.WritePropertyName("AppVersionCode");
+                context.Writer.Write(requestObject.AppVersionCode);
+            }
+
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
@@ -83,6 +101,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectMetricsValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSdkName())
+            {
+                context.Writer.WritePropertyName("SdkName");
+                context.Writer.Write(requestObject.SdkName);
             }
 
             if(requestObject.IsSetSession())
