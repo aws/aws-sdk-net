@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVersionsByFunction operation.
-    /// Lists all versions of a function. For information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>.
+    /// Returns a list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
+    /// with the version-specific configuration of each.
     /// </summary>
     public partial class ListVersionsByFunctionRequest : AmazonLambdaRequest
     {
@@ -78,8 +78,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  Optional string. An opaque pagination token returned from a previous <code>ListVersionsByFunction</code>
-        /// operation. If present, indicates where to continue the listing. 
+        /// Specify the pagination token returned by a previous request to retrieve the next page
+        /// of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -97,8 +97,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Optional integer. Specifies the maximum number of AWS Lambda function versions to
-        /// return in response. This parameter value must be greater than 0.
+        /// Limit the number of versions returned.
         /// </para>
         /// </summary>
         public int MaxItems

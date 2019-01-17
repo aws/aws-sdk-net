@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
+    /// This is the response object from the GetFunction operation.
     /// </summary>
     public partial class GetFunctionResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The function's code.
+        /// The deployment package of the function or version.
         /// </para>
         /// </summary>
         public FunctionCodeLocation Code
@@ -58,9 +58,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Concurrency. 
         /// <para>
-        /// The concurrent execution limit set for this function. For more information, see <a
-        /// href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-        /// Concurrency</a>.
+        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+        /// concurrency</a>.
         /// </para>
         /// </summary>
         public Concurrency Concurrency
@@ -78,7 +77,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The function's configuration.
+        /// The configuration of the function or version.
         /// </para>
         /// </summary>
         public FunctionConfiguration Configuration
@@ -96,9 +95,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Returns the list of tags associated with the function. For more information, see <a
-        /// href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a>
-        /// in the <b>AWS Lambda Developer Guide</b>.
+        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

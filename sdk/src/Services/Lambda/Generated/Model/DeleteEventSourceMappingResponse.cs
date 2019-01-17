@@ -99,7 +99,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The date that the event source mapping was last updated, in Unix time seconds.
+        /// The date that the event source mapping was last updated.
         /// </para>
         /// </summary>
         public DateTime LastModified

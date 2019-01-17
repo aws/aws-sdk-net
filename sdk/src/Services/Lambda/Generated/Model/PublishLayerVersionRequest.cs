@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishLayerVersion operation.
-    /// Creates a function layer from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
+    /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
     /// with the same version name, a new version is created.
     /// 
     ///  
@@ -103,7 +104,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerName. 
         /// <para>
-        /// The name of the layer.
+        /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
         public string LayerName

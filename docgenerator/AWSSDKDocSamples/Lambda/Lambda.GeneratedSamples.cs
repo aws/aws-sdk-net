@@ -44,7 +44,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                 MemorySize = 128,
                 Publish = true,
                 Role = "arn:aws:iam::123456789012:role/service-role/role-name", // replace with the actual arn of the execution role you created
-                Runtime = "nodejs4.3",
+                Runtime = "nodejs8.10",
                 Timeout = 15,
                 VpcConfig = new VpcConfig {  }
             });

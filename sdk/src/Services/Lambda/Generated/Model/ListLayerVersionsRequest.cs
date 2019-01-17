@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLayerVersions operation.
-    /// Lists the versions of a function layer. Versions that have been deleted aren't listed.
-    /// Specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+    /// Lists the versions of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
     /// identifier</a> to list only versions that indicate that they're compatible with that
     /// runtime.
     /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerName. 
         /// <para>
-        /// The name of the layer.
+        /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
         public string LayerName

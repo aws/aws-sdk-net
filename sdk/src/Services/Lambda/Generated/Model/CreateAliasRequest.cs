@@ -29,14 +29,15 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
-    /// Creates an alias that points to the specified Lambda function version. For more information,
-    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-    /// to AWS Lambda Aliases</a>.
+    /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+    /// for a Lambda function version. Use aliases to provide clients with a function identifier
+    /// that you can update to invoke a different version.
     /// 
     ///  
     /// <para>
-    /// Alias names are unique for a given function. This requires permission for the lambda:CreateAlias
-    /// action.
+    /// You can also map an alias to split invocation requests between two versions. Use the
+    /// <code>RoutingConfig</code> parameter to specify a second version and the percentage
+    /// of invocation requests that it receives.
     /// </para>
     /// </summary>
     public partial class CreateAliasRequest : AmazonLambdaRequest
@@ -50,7 +51,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the alias.
+        /// A description of the alias.
         /// </para>
         /// </summary>
         public string Description
@@ -105,7 +106,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// Lambda function version for which you are creating the alias.
+        /// The function version that the alias invokes.
         /// </para>
         /// </summary>
         public string FunctionVersion
@@ -123,7 +124,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name for the alias you are creating.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         public string Name
@@ -141,9 +142,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// Specifies an additional version your alias can point to, allowing you to dictate what
-        /// percentage of traffic will invoke each version. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-        /// Shifting Using Aliases</a>.
+        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// configuration</a> of the alias.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

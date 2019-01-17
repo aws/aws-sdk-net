@@ -29,15 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Returns list of aliases created for a Lambda function. For each alias, the response
-    /// includes information such as the alias ARN, description, alias name, and the function
-    /// version to which it points. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-    /// to AWS Lambda Aliases</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This requires permission for the lambda:ListAliases action.
-    /// </para>
+    /// Returns a list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+    /// for a Lambda function.
     /// </summary>
     public partial class ListAliasesRequest : AmazonLambdaRequest
     {
@@ -86,9 +79,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// If you specify this optional parameter, the API returns only the aliases that are
-        /// pointing to the specific Lambda function version, otherwise the API returns all of
-        /// the aliases created for the Lambda function.
+        /// Specify a function version to only list aliases that invoke that version.
         /// </para>
         /// </summary>
         public string FunctionVersion
@@ -106,8 +97,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Optional string. An opaque pagination token returned from a previous <code>ListAliases</code>
-        /// operation. If present, indicates where to continue the listing.
+        /// Specify the pagination token returned by a previous request to retrieve the next page
+        /// of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -125,8 +116,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Optional integer. Specifies the maximum number of aliases to return in response. This
-        /// parameter value must be greater than 0.
+        /// Limit the number of aliases returned.
         /// </para>
         /// </summary>
         public int MaxItems

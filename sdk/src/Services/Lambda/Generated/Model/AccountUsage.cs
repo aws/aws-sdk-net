@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Provides code size usage and function count associated with the current account and
-    /// region.
+    /// The number of functions and amount of storage in use.
     /// </summary>
     public partial class AccountUsage
     {
@@ -39,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionCount. 
         /// <para>
-        /// The number of your account's existing functions per region.
+        /// The number of Lambda functions.
         /// </para>
         /// </summary>
         public long FunctionCount
@@ -57,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TotalCodeSize. 
         /// <para>
-        /// Total size, in bytes, of the account's deployment packages per region.
+        /// The amount of storage space, in bytes, in use by deployment packages and layer archives.
         /// </para>
         /// </summary>
         public long TotalCodeSize

@@ -29,14 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Using this API you can update the function version to which the alias points and the
-    /// alias description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-    /// to AWS Lambda Aliases</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This requires permission for the lambda:UpdateAlias action.
-    /// </para>
+    /// Updates the configuration of a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class UpdateAliasRequest : AmazonLambdaRequest
     {
@@ -50,7 +43,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// You can change the description of the alias using this parameter.
+        /// A description of the alias.
         /// </para>
         /// </summary>
         public string Description
@@ -105,8 +98,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// Using this parameter you can change the Lambda function version to which the alias
-        /// points.
+        /// The function version that the alias invokes.
         /// </para>
         /// </summary>
         public string FunctionVersion
@@ -124,7 +116,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The alias name.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         public string Name
@@ -142,11 +134,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// An optional value you can use to ensure you are updating the latest update of the
-        /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
-        /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
-        /// message, advising you retrieve the latest function version or alias <code>RevisionID</code>
-        /// using either <a>GetFunction</a> or <a>GetAlias</a>.
+        /// Only update the alias if the revision ID matches the ID specified. Use this option
+        /// to avoid modifying an alias that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -164,9 +153,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// Specifies an additional version your alias can point to, allowing you to dictate what
-        /// percentage of traffic will invoke each version. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-        /// Shifting Using Aliases</a>.
+        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// configuration</a> of the alias.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

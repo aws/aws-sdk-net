@@ -29,22 +29,9 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFunction operation.
-    /// Returns the configuration information of the Lambda function and a presigned URL link
-    /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
-    /// file. Note that the URL is valid for up to 10 minutes. The configuration information
-    /// is the same information you provided as parameters when uploading the function.
-    /// 
-    ///  
-    /// <para>
-    /// Use the <code>Qualifier</code> parameter to retrieve a published version of the function.
-    /// Otherwise, returns the unpublished version (<code>$LATEST</code>). For more information,
-    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:GetFunction</code> action.
-    /// </para>
+    /// Returns information about function or function version, with a link to download the
+    /// deployment package that's valid for 10 minutes. If you specify a function version,
+    /// only details specific to that version are returned.
     /// </summary>
     public partial class GetFunctionRequest : AmazonLambdaRequest
     {
@@ -54,26 +41,28 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name of the Lambda function, version, or alias.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>MyFunction</code>.
+        ///  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code>
+        /// (with alias).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The length constraint applies only to the full ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length.
+        /// You can append a version number or alias to any of the formats. The length constraint
+        /// applies only to the full ARN. If you specify only the function name, it is limited
+        /// to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

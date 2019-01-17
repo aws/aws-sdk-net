@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The code for the Lambda function. You can specify either an S3 location, or upload
-    /// a deployment package directly.
+    /// The code for the Lambda function. You can specify either an object in Amazon S3, or
+    /// upload a deployment package directly.
     /// </summary>
     public partial class FunctionCode
     {
@@ -41,7 +41,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An Amazon S3 bucket in the same region as your function.
+        /// An Amazon S3 bucket in the same region as your function. The bucket can be in a different
+        /// AWS account.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -95,8 +96,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// The base64-encoded contents of your zip file containing your deployment package. AWS
-        /// SDK and AWS CLI clients handle the encoding for you.
+        /// The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients
+        /// handle the encoding for you.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

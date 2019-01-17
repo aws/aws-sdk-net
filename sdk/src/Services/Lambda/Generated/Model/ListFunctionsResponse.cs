@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// A string, present if there are more functions.
+        /// Pagination token included if more results are available.
         /// </para>
         /// </summary>
         public string NextMarker

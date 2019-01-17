@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLayerVersionPolicy operation.
-    /// Returns the permission policy for a layer version. For more information, see <a>AddLayerVersionPermission</a>.
+    /// Returns the permission policy for a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>. For more information, see <a>AddLayerVersionPermission</a>.
     /// </summary>
     public partial class GetLayerVersionPolicyRequest : AmazonLambdaRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerName. 
         /// <para>
-        /// The name of the layer.
+        /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
         public string LayerName

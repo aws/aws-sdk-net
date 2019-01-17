@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Provides configuration information about a Lambda function version alias.
+    /// Provides configuration information about a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class CreateAliasResponse : AmazonWebServiceResponse
     {
@@ -42,9 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AliasArn. 
         /// <para>
-        /// Lambda function ARN that is qualified using the alias name as the suffix. For example,
-        /// if you create an alias called <code>BETA</code> that points to a helloworld function
-        /// version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+        /// The Amazon Resource Name (ARN) of the alias.
         /// </para>
         /// </summary>
         public string AliasArn
@@ -62,7 +60,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Alias description.
+        /// A description of the alias.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +78,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// Function version to which the alias points.
+        /// The function version that the alias invokes.
         /// </para>
         /// </summary>
         public string FunctionVersion
@@ -98,7 +96,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Alias name.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         public string Name
@@ -116,7 +114,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Represents the latest updated revision of the function or alias.
+        /// A unique identifier that changes when you update the alias.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -134,8 +132,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// Specifies an additional function versions the alias points to, allowing you to dictate
-        /// what percentage of traffic will invoke each version.
+        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// configuration</a> of the alias.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

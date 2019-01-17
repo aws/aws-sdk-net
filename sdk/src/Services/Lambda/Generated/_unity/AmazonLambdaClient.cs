@@ -406,16 +406,17 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted. Event source mappings
-        /// are not deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted.
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
+        /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
+        /// For AWS services and resources that invoke your function directly, delete the trigger
+        /// in the service where you originally configured it.
         /// </para>
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -439,7 +440,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded
+        /// Request throughput limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual void DeleteFunctionAsync(string functionName,  AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
@@ -640,24 +641,11 @@ namespace Amazon.Lambda
         #region  GetFunction
 
         /// <summary>
-        /// Returns the configuration information of the Lambda function and a presigned URL link
-        /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
-        /// file. Note that the URL is valid for up to 10 minutes. The configuration information
-        /// is the same information you provided as parameters when uploading the function.
-        /// 
-        ///  
-        /// <para>
-        /// Use the <code>Qualifier</code> parameter to retrieve a published version of the function.
-        /// Otherwise, returns the unpublished version (<code>$LATEST</code>). For more information,
-        /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation requires permission for the <code>lambda:GetFunction</code> action.
-        /// </para>
+        /// Returns information about function or function version, with a link to download the
+        /// deployment package that's valid for 10 minutes. If you specify a function version,
+        /// only details specific to that version are returned.
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -678,7 +666,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded
+        /// Request throughput limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual void GetFunctionAsync(string functionName,  AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null)
@@ -719,25 +707,16 @@ namespace Amazon.Lambda
         #region  GetFunctionConfiguration
 
         /// <summary>
-        /// Returns the configuration information of the Lambda function. This the same information
-        /// you provided as parameters when uploading the function by using <a>CreateFunction</a>.
+        /// Returns a the version-specific settings of a Lambda function or version. The output
+        /// includes only options that can vary between versions of a function. To modify these
+        /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 
         ///  
         /// <para>
-        /// If you are using the versioning feature, you can retrieve this information for a specific
-        /// function version by using the optional <code>Qualifier</code> parameter and specifying
-        /// the function version or alias that points to it. If you don't provide it, the API
-        /// returns information about the $LATEST version of the function. For more information
-        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
-        /// operation.
+        /// To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -758,7 +737,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded
+        /// Request throughput limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual void GetFunctionConfigurationAsync(string functionName,  AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null)
@@ -1003,20 +982,13 @@ namespace Amazon.Lambda
         #region  ListFunctions
 
         /// <summary>
-        /// Returns a list of your Lambda functions. For each function, the response includes
-        /// the function configuration information. You must use <a>GetFunction</a> to retrieve
-        /// the code for your function.
+        /// Returns a list of Lambda functions, with the version-specific configuration of each.
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are using the versioning feature, you can list all of your functions or only
-        /// <code>$LATEST</code> versions. For information about the versioning feature, see <a
-        /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
-        /// Function Versioning and Aliases</a>. 
+        /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
+        /// of each function in addition to the unpublished version. To get more information about
+        /// a function or version, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1035,7 +1007,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// Request throughput limit exceeded
+        /// Request throughput limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual void ListFunctionsAsync( AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null)

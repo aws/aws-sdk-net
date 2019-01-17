@@ -29,20 +29,13 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFunctions operation.
-    /// Returns a list of your Lambda functions. For each function, the response includes
-    /// the function configuration information. You must use <a>GetFunction</a> to retrieve
-    /// the code for your function.
+    /// Returns a list of Lambda functions, with the version-specific configuration of each.
     /// 
     ///  
     /// <para>
-    /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you are using the versioning feature, you can list all of your functions or only
-    /// <code>$LATEST</code> versions. For information about the versioning feature, see <a
-    /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
-    /// Function Versioning and Aliases</a>. 
+    /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
+    /// of each function in addition to the unpublished version. To get more information about
+    /// a function or version, use <a>GetFunction</a>.
     /// </para>
     /// </summary>
     public partial class ListFunctionsRequest : AmazonLambdaRequest
@@ -55,8 +48,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// Set to <code>ALL</code> to list all published versions. If not specified, only the
-        /// latest unpublished version ARN is returned.
+        /// Set to <code>ALL</code> to include entries for all published versions of each function.
         /// </para>
         /// </summary>
         public FunctionVersion FunctionVersion
@@ -74,8 +66,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code>
-        /// operation. If present, indicates where to continue the listing. 
+        /// Specify the pagination token returned by a previous request to retrieve the next page
+        /// of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -93,9 +85,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterRegion. 
         /// <para>
-        /// Specify a region (e.g. <code>us-east-2</code>) to only list functions that were created
-        /// in that region, or <code>ALL</code> to include functions replicated from any region.
-        /// If specified, you also must specify the <code>FunctionVersion</code>.
+        /// For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code>
+        /// or <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
         /// </para>
         /// </summary>
         public string MasterRegion
@@ -113,9 +104,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Optional integer. Specifies the maximum number of AWS Lambda functions to return in
-        /// response. This parameter value must be greater than 0. The absolute maximum of AWS
-        /// Lambda functions that can be returned is 50.
+        /// Specify a value between 1 and 50 to limit the number of functions in the response.
         /// </para>
         /// </summary>
         public int MaxItems

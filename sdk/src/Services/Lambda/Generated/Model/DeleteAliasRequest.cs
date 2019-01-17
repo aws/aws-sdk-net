@@ -29,13 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-    /// to AWS Lambda Aliases</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This requires permission for the lambda:DeleteAlias action.
-    /// </para>
+    /// Deletes a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class DeleteAliasRequest : AmazonLambdaRequest
     {
@@ -82,7 +76,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the alias to delete.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         public string Name

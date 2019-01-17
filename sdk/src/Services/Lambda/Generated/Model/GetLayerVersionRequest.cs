@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLayerVersion operation.
-    /// Returns information about a version of a function layer, with a link to download the
-    /// layer archive that's valid for 10 minutes.
+    /// Returns information about a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
     /// </summary>
     public partial class GetLayerVersionRequest : AmazonLambdaRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerName. 
         /// <para>
-        /// The name of the layer.
+        /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
         public string LayerName

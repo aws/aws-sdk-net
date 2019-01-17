@@ -206,8 +206,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPositionTimestamp. 
         /// <para>
-        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time
-        /// in seconds from which to start reading.
+        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from
+        /// which to start reading.
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp

@@ -117,7 +117,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the function layer.
+        /// The ARN of the layer.
         /// </para>
         /// </summary>
         public string LayerArn

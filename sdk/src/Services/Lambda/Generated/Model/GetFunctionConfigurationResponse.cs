@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A Lambda function's configuration settings.
+    /// Details about a function's configuration.
     /// </summary>
     public partial class GetFunctionConfigurationResponse : AmazonWebServiceResponse
     {
@@ -146,7 +146,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The function's Amazon Resource Name.
+        /// The function's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -238,8 +238,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-        /// layers</a>.
+        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// layers</a> 
         /// </para>
         /// </summary>
         public List<Layer> Layers
@@ -257,7 +257,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterArn. 
         /// <para>
-        /// The ARN of the master function.
+        /// For Lambda@Edge functions, the ARN of the master function.
         /// </para>
         /// </summary>
         public string MasterArn

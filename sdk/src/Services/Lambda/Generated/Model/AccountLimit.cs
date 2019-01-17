@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Provides limits of code size and concurrency associated with the current account and
-    /// region. For more information or to request a limit increase for concurrent executions,
-    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>.
+    /// Limits related to concurrency and code storage. All file and storage sizes are in
+    /// bytes.
     /// </summary>
     public partial class AccountLimit
     {
@@ -43,8 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeUnzipped. 
         /// <para>
-        /// Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed
-        /// zip/jar size) for uploading. The default limit is 250 MB.
+        /// The maximum size of your function's code and layers when extracted.
         /// </para>
         /// </summary>
         public long CodeSizeUnzipped
@@ -62,9 +60,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeZipped. 
         /// <para>
-        /// Size, in bytes, of a single zipped code/dependencies package you can upload for your
-        /// Lambda function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default
-        /// limit is 50 MB.
+        /// The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use
+        /// Amazon S3 for larger files.
         /// </para>
         /// </summary>
         public long CodeSizeZipped
@@ -82,8 +79,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
-        /// Number of simultaneous executions of your function per region. The default limit is
-        /// 1000.
+        /// The maximum number of simultaneous function executions.
         /// </para>
         /// </summary>
         public int ConcurrentExecutions
@@ -101,8 +97,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TotalCodeSize. 
         /// <para>
-        /// Maximum size, in bytes, of a code package you can upload per region. The default size
-        /// is 75 GB. 
+        /// The amount of storage space that you can use for all deployment packages and layer
+        /// archives.
         /// </para>
         /// </summary>
         public long TotalCodeSize
@@ -120,9 +116,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UnreservedConcurrentExecutions. 
         /// <para>
-        /// The number of concurrent executions available to functions that do not have concurrency
-        /// limits set. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-        /// Concurrency</a>.
+        /// The maximum number of simultaneous function executions, less the concurrency reserved
+        /// for individual functions with <a>PutFunctionConcurrency</a>.
         /// </para>
         /// </summary>
         public int UnreservedConcurrentExecutions

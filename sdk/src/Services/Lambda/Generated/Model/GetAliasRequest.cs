@@ -29,14 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAlias operation.
-    /// Returns the specified alias information such as the alias ARN, description, and function
-    /// version it is pointing to. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-    /// to AWS Lambda Aliases</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This requires permission for the <code>lambda:GetAlias</code> action.
-    /// </para>
+    /// Returns details about a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class GetAliasRequest : AmazonLambdaRequest
     {
@@ -83,7 +76,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the alias for which you want to retrieve information.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         public string Name

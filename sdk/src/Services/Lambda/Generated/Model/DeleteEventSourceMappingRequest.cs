@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventSourceMapping operation.
-    /// Deletes an event source mapping.
+    /// Deletes an <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
+    /// source mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.
     /// </summary>
     public partial class DeleteEventSourceMappingRequest : AmazonLambdaRequest
     {

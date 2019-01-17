@@ -29,21 +29,28 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
-    /// the Lambda Function and Test It Manually</a>. 
+    /// Invokes a Lambda function. You can invoke a function synchronously and wait for the
+    /// response, or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
+    /// to <code>Event</code>.
     /// 
     ///  
     /// <para>
-    /// Specify just a function name to invoke the latest version of the function. To invoke
-    /// a published version, use the <code>Qualifier</code> parameter to specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version
-    /// or alias</a>.
+    /// For synchronous invocation, details about the function response, including errors,
+    /// are included in the response body and headers. For either invocation type, you can
+    /// find more information in the <a href="http://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+    /// log</a> and <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
+    /// To record function errors for asynchronous invocations, configure your function with
+    /// a <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
     /// </para>
     ///  
     /// <para>
-    /// If you use the <code>RequestResponse</code> (synchronous) invocation option, the function
-    /// will be invoked only once. If you use the <code>Event</code> (asynchronous) invocation
-    /// option, the function will be invoked at least once in response to an event and the
-    /// function must be idempotent to handle this.
+    /// The status code in the API response does not reflect function errors. Error codes
+    /// are reserved for errors that prevent your function from executing, such as permissions
+    /// errors, <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
+    /// or issues with your function's code and configuration. For example, Lambda returns
+    /// <code>TooManyRequestsException</code> if executing the function would cause you to
+    /// exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
+    /// or function level (<code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
     /// </para>
     ///  
     /// <para>
@@ -55,15 +62,6 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
-    /// </para>
-    ///  
-    /// <para>
-    /// The <code>TooManyRequestsException</code> noted below will return the following: <code>ConcurrentInvocationLimitExceeded</code>
-    /// will be returned if you have no functions with reserved concurrency and have exceeded
-    /// your account concurrent limit or if a function without reserved concurrency exceeds
-    /// the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
-    /// will be returned when a function with reserved concurrency exceeds its configured
-    /// concurrency limit. 
     /// </para>
     /// </summary>
     public partial class InvokeRequest : AmazonLambdaRequest
@@ -78,22 +76,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ClientContextBase64. 
         /// <para>
-        /// Using the <code>ClientContext</code> you can pass client-specific information to the
-        /// Lambda function you are invoking. You can then process the client information in your
-        /// Lambda function as you choose through the context variable. For an example of a <code>ClientContext</code>
-        /// JSON, see <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
-        /// in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.
+        /// Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function
+        /// in the context object.
         /// </para>
-        ///  
-        /// <para>
-        /// The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>ClientContext</code> information is returned only if you use the synchronous
-        /// (<code>RequestResponse</code>) invocation type.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string ClientContextBase64
         {
@@ -110,26 +95,28 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name of the Lambda function, version, or alias.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>MyFunction</code>.
+        ///  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code>
+        /// (with alias).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The length constraint applies only to the full ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length.
+        /// You can append a version number or alias to any of the formats. The length constraint
+        /// applies only to the full ARN. If you specify only the function name, it is limited
+        /// to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -152,12 +139,14 @@ namespace Amazon.Lambda.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-        /// the connection open until the function returns a response or times out.
+        /// the connection open until the function returns a response or times out. The API response
+        /// includes the function response and additional data.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple
-        /// times to the function's dead-letter queue (if configured).
+        /// times to the function's dead-letter queue (if configured). The API response only includes
+        /// a status code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,10 +170,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// You can set this optional parameter to <code>Tail</code> in the request only if you
-        /// specify the <code>InvocationType</code> parameter with value <code>RequestResponse</code>.
-        /// In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced
-        /// by your Lambda function in the <code>x-amz-log-result</code> header. 
+        /// Set to <code>Tail</code> to include the execution log in the response.
         /// </para>
         /// </summary>
         public LogType LogType

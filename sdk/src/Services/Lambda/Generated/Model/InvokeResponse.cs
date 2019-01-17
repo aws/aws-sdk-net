@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Upon success, returns an empty response. Otherwise, throws an exception.
+    /// This is the response object from the Invoke operation.
     /// </summary>
     public partial class InvokeResponse : AmazonWebServiceResponse
     {
@@ -41,9 +41,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ExecutedVersion. 
         /// <para>
-        /// The function version that has been executed. This value is returned only if the invocation
-        /// type is <code>RequestResponse</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-        /// Shifting Using Aliases</a>.
+        /// The version of the function that executed. When you invoke a function with an alias,
+        /// indicates which version the alias resolved to.
         /// </para>
         /// </summary>
         public string ExecutedVersion
@@ -61,14 +60,20 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionError. 
         /// <para>
-        /// Indicates whether an error occurred while executing the Lambda function. If an error
-        /// occurred this field will have one of two values; <code>Handled</code> or <code>Unhandled</code>.
-        /// <code>Handled</code> errors are errors that are reported by the function while the
-        /// <code>Unhandled</code> errors are those detected and reported by AWS Lambda. Unhandled
-        /// errors include out of memory errors and function timeouts. For information about how
-        /// to report an <code>Handled</code> error, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming
-        /// Model</a>. 
+        /// If present, indicates that an error occured during function execution. Details about
+        /// the error are included in the response payload.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Handled</code> - The runtime caught an error thrown by the function and formatted
+        /// it into a JSON document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Unhandled</code> - The runtime did not handle the error. For example, the function
+        /// ran out of memory or timed out.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string FunctionError
         {
@@ -85,9 +90,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogResult. 
         /// <para>
-        ///  It is the base64-encoded logs for the Lambda function invocation. This is present
-        /// only if the invocation type is <code>RequestResponse</code> and the logs were requested.
-        /// 
+        /// The last 4 KB of the execution log, base64 encoded.
         /// </para>
         /// </summary>
         public string LogResult
@@ -105,14 +108,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        ///  It is the JSON representation of the object returned by the Lambda function. This
-        /// is present only if the invocation type is <code>RequestResponse</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// In the event of a function error this field contains a message describing the error.
-        /// For the <code>Handled</code> errors the Lambda function will report this message.
-        /// For <code>Unhandled</code> errors AWS Lambda reports the message. 
+        /// The response from the function, or an error object.
         /// </para>
         /// </summary>
         public MemoryStream Payload
@@ -133,7 +129,7 @@ namespace Amazon.Lambda.Model
         /// The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
         /// invocation type this status code will be 200. For the <code>Event</code> invocation
         /// type this status code will be 202. For the <code>DryRun</code> invocation type the
-        /// status code will be 204. 
+        /// status code will be 204.
         /// </para>
         /// </summary>
         public int StatusCode

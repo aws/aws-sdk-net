@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Details about a layer version.
+    /// Details about a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>.
     /// </summary>
     public partial class LayerVersionsListItem
     {

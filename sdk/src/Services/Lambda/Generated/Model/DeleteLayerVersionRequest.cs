@@ -29,8 +29,9 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLayerVersion operation.
-    /// Deletes a version of a function layer. Deleted versions can no longer be viewed or
-    /// added to functions. However, a copy of the version remains in Lambda until no functions
+    /// Deletes a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>. Deleted versions can no longer be viewed or added to functions.
+    /// To avoid breaking functions, a copy of the version remains in Lambda until no functions
     /// refer to it.
     /// </summary>
     public partial class DeleteLayerVersionRequest : AmazonLambdaRequest
@@ -41,7 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LayerName. 
         /// <para>
-        /// The name of the layer.
+        /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
         public string LayerName

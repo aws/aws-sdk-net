@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The object for the Lambda function location.
+    /// Details about a function's deployment package.
     /// </summary>
     public partial class FunctionCodeLocation
     {
@@ -38,8 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The presigned URL you can use to download the function's .zip file that you previously
-        /// uploaded. The URL is valid for up to 10 minutes.
+        /// A pre-signed URL that you can use to download the deployment package.
         /// </para>
         /// </summary>
         public string Location
@@ -57,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RepositoryType. 
         /// <para>
-        /// The repository from which you can download the function.
+        /// The service hosting the file.
         /// </para>
         /// </summary>
         public string RepositoryType

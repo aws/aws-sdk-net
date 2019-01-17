@@ -29,20 +29,12 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFunctionCode operation.
-    /// Updates the code for the specified Lambda function. This operation must only be used
-    /// on an existing Lambda function and cannot be used to update the function configuration.
+    /// Updates a Lambda function's code.
     /// 
     ///  
     /// <para>
-    /// If you are using the versioning feature, note this API will always update the $LATEST
-    /// version of your Lambda function. For information about the versioning feature, see
-    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:UpdateFunctionCode</code>
-    /// action.
+    /// The function's code is locked when you publish a version. You cannot modify the code
+    /// of a published version, only the unpublished version.
     /// </para>
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
@@ -59,11 +51,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// This boolean parameter can be used to test your request to AWS Lambda to update the
-        /// Lambda function and publish a version as an atomic operation. It will do all necessary
-        /// computation and validation of your code but will not upload it or a publish a version.
-        /// Each time this operation is invoked, the <code>CodeSha256</code> hash value of the
-        /// provided code will also be computed and returned in the response.
+        /// Set to true to validate the request parameters and access permissions without modifying
+        /// the function code.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -87,15 +76,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>MyFunction</code>.
+        ///  <b>Function name</b> - <code>my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -118,8 +107,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Publish. 
         /// <para>
-        /// This boolean parameter can be used to request AWS Lambda to update the Lambda function
-        /// and publish a version as an atomic operation.
+        /// Set to true to publish a new version of the function after updating the code. This
+        /// has the same effect as calling <a>PublishVersion</a> separately.
         /// </para>
         /// </summary>
         public bool Publish
@@ -137,11 +126,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// An optional value you can use to ensure you are updating the latest update of the
-        /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
-        /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
-        /// message, advising you to retrieve the latest function version or alias <code>RevisionID</code>
-        /// using either using using either <a>GetFunction</a> or <a>GetAlias</a>.
+        /// Only update the function if the revision ID matches the ID specified. Use this option
+        /// to avoid modifying a function that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -159,8 +145,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// Amazon S3 bucket name where the .zip file containing your deployment package is stored.
-        /// This bucket must reside in the same AWS Region where you are creating the Lambda function.
+        /// An Amazon S3 bucket in the same region as your function. The bucket can be in a different
+        /// AWS account.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -178,7 +164,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The Amazon S3 object (the deployment package) key name you want to upload.
+        /// The Amazon S3 key of the deployment package.
         /// </para>
         /// </summary>
         public string S3Key
@@ -196,7 +182,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3ObjectVersion. 
         /// <para>
-        /// The Amazon S3 object (the deployment package) version you want to upload.
+        /// For versioned objects, the version of the deployment package object to use.
         /// </para>
         /// </summary>
         public string S3ObjectVersion
@@ -214,11 +200,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// The contents of your zip file containing your deployment package. If you are using
-        /// the web API directly, the contents of the zip file must be base64-encoded. If you
-        /// are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for you.
-        /// For more information about creating a .zip file, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
-        /// Permissions</a>. 
+        /// The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients
+        /// handle the encoding for you.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile
