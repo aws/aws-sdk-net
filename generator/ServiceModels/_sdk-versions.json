@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.443.1",
+    "ProductVersion" : "3.3.444.0",
     "CoreVersion"    : "3.3.31.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.79.1",
+            "Version" : "3.3.80.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.3"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.16.10",
+            "Version" : "3.3.17.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.3"

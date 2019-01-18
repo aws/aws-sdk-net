@@ -1,3 +1,9 @@
+### 3.3.444.0 (2019-01-18 21:13 UTC)
+* EC2 (3.3.80.0)
+	* Adjust EC2's available instance types.
+* Glue (3.3.17.0)
+	* AllocatedCapacity field is being deprecated and replaced with MaxCapacity field
+
 ### 3.3.443.1 (2019-01-18 01:29 UTC)
 * Signer (3.3.0.34)
 	* Updated to use new Core, version 3.3.31.3
