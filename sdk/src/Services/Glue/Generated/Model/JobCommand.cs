@@ -38,7 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the job command: this must be <code>glueetl</code>.
+        /// The name of the job command: this must be <code>glueetl</code>, for an Apache Spark
+        /// ETL job, or <code>pythonshell</code>, for a Python shell job.
         /// </para>
         /// </summary>
         public string Name

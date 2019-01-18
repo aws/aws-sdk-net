@@ -130,6 +130,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxCapacity", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotificationProperty", targetDepth))
                 {
                     var unmarshaller = NotificationPropertyUnmarshaller.Instance;

@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private ExecutionProperty _executionProperty;
         private string _logUri;
+        private double? _maxCapacity;
         private int? _maxRetries;
         private NotificationProperty _notificationProperty;
         private string _role;
@@ -49,6 +50,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
+        /// This field is deprecated. Use <code>MaxCapacity</code> instead.
+        /// </para>
+        ///  
+        /// <para>
         /// The number of AWS Glue data processing units (DPUs) to allocate to this Job. From
         /// 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of
         /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
@@ -56,6 +61,7 @@ namespace Amazon.Glue.Model
         /// pricing page</a>.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated, use MaxCapacity instead.")]
         public int AllocatedCapacity
         {
             get { return this._allocatedCapacity.GetValueOrDefault(); }
@@ -192,6 +198,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxCapacity. 
+        /// <para>
+        /// AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with
+        /// allocated processing as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>.
+        /// Glue ETL jobs running in any other way cannot have fractional DPU allocations.
+        /// </para>
+        /// </summary>
+        public double MaxCapacity
+        {
+            get { return this._maxCapacity.GetValueOrDefault(); }
+            set { this._maxCapacity = value; }
+        }
+
+        // Check to see if MaxCapacity property is set
+        internal bool IsSetMaxCapacity()
+        {
+            return this._maxCapacity.HasValue; 
         }
 
         /// <summary>

@@ -110,6 +110,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LogUri);
             }
 
+            if(requestObject.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("MaxCapacity");
+                context.Writer.Write(requestObject.MaxCapacity);
+            }
+
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("MaxRetries");

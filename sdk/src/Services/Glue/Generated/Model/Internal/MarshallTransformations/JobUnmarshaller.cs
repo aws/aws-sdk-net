@@ -118,6 +118,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxCapacity", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxRetries", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

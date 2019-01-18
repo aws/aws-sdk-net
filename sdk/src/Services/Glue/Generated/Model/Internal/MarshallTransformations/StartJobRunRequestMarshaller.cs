@@ -100,6 +100,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobRunId);
                 }
 
+                if(publicRequest.IsSetMaxCapacity())
+                {
+                    context.Writer.WritePropertyName("MaxCapacity");
+                    context.Writer.Write(publicRequest.MaxCapacity);
+                }
+
                 if(publicRequest.IsSetNotificationProperty())
                 {
                     context.Writer.WritePropertyName("NotificationProperty");
