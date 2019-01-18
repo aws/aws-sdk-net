@@ -1,3 +1,8 @@
+### 3.3.443.1 (2019-01-18 01:29 UTC)
+* Signer (3.3.0.34)
+	* Updated to use new Core, version 3.3.31.3
+	* Updating package to use latest Core.
+
 ### 3.3.443.0 (2019-01-17 23:11 UTC)
 * Lambda (3.3.19.12)
 	* Documentation updates for AWS Lambda
