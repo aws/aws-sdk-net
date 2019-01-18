@@ -177,6 +177,15 @@ namespace ServiceClientGenerator
                 }
             }
 
+            //We need to make sure that we have configuration files for all expected services and that there aren't mismatches in the service names
+            foreach (string serviceVersionEntry in serviceVersions.GetMap().Keys)
+            {
+                if (!serviceConfigurations.Any(config => config.ServiceNameRoot == serviceVersionEntry))
+                {
+                    throw new Exception($"Service entry {serviceVersionEntry} doesn't match any of the available service configurations.");
+                }
+            }
+
             // The parent model for current model, if set, the client will be generated
             // in the same namespace and share common types.
 
