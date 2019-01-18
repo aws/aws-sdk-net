@@ -4523,10 +4523,6 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R512xlarge = new InstanceType("r5.12xlarge");
         /// <summary>
-        /// Constant R516xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType R516xlarge = new InstanceType("r5.16xlarge");
-        /// <summary>
         /// Constant R524xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R524xlarge = new InstanceType("r5.24xlarge");
@@ -4538,10 +4534,6 @@ namespace Amazon.EC2
         /// Constant R54xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R54xlarge = new InstanceType("r5.4xlarge");
-        /// <summary>
-        /// Constant R58xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType R58xlarge = new InstanceType("r5.8xlarge");
         /// <summary>
         /// Constant R5a12xlarge for InstanceType
         /// </summary>
@@ -4571,10 +4563,6 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R5d12xlarge = new InstanceType("r5d.12xlarge");
         /// <summary>
-        /// Constant R5d16xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType R5d16xlarge = new InstanceType("r5d.16xlarge");
-        /// <summary>
         /// Constant R5d24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5d24xlarge = new InstanceType("r5d.24xlarge");
@@ -4586,10 +4574,6 @@ namespace Amazon.EC2
         /// Constant R5d4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5d4xlarge = new InstanceType("r5d.4xlarge");
-        /// <summary>
-        /// Constant R5d8xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType R5d8xlarge = new InstanceType("r5d.8xlarge");
         /// <summary>
         /// Constant R5dLarge for InstanceType
         /// </summary>
