@@ -1160,7 +1160,7 @@
             },
             "InPreview"               : false
         },
-        "signer"                          : {
+        "Signer"                          : {
             "Version" : "3.3.0.33",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
