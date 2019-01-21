@@ -47,7 +47,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ExcludeMap. 
         /// <para>
         /// Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code>
-        /// values are evaluated first, with all of the appropriate account IDs added to the policy.
+        /// values are evaluated first, with all the appropriate account IDs added to the policy.
         /// Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the
         /// final list of accounts to add to the policy.
         /// </para>
@@ -94,9 +94,9 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property IncludeMap. 
         /// <para>
         /// Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code>
-        /// is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code>
-        /// is not null, only values listed in <code>IncludeMap</code> will be included in the
-        /// policy.
+        /// is null, all accounts in the organization in AWS Organizations are included in the
+        /// policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code>
+        /// are included in the policy.
         /// </para>
         ///  
         /// <para>

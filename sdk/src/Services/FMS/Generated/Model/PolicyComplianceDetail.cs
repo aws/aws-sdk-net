@@ -83,7 +83,7 @@ namespace Amazon.FMS.Model
         /// <para>
         /// Details about problems with dependent services, such as AWS WAF or AWS Config, that
         /// are causing a resource to be non-compliant. The details include the name of the dependent
-        /// service and the error message recieved indicating the problem with the service.
+        /// service and the error message received that indicates the problem with the service.
         /// </para>
         /// </summary>
         public Dictionary<string, string> IssueInfoMap

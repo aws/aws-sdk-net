@@ -68,6 +68,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeleteAllPolicyResources())
+                {
+                    context.Writer.WritePropertyName("DeleteAllPolicyResources");
+                    context.Writer.Write(publicRequest.DeleteAllPolicyResources);
+                }
+
                 if(publicRequest.IsSetPolicyId())
                 {
                     context.Writer.WritePropertyName("PolicyId");

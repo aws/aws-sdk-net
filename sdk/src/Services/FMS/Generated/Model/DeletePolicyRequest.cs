@@ -33,7 +33,27 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class DeletePolicyRequest : AmazonFMSRequest
     {
+        private bool? _deleteAllPolicyResources;
         private string _policyId;
+
+        /// <summary>
+        /// Gets and sets the property DeleteAllPolicyResources. 
+        /// <para>
+        /// If <code>True</code>, the request will also delete all web ACLs in this policy. Associated
+        /// resources will no longer be protected by web ACLs in this policy.
+        /// </para>
+        /// </summary>
+        public bool DeleteAllPolicyResources
+        {
+            get { return this._deleteAllPolicyResources.GetValueOrDefault(); }
+            set { this._deleteAllPolicyResources = value; }
+        }
+
+        // Check to see if DeleteAllPolicyResources property is set
+        internal bool IsSetDeleteAllPolicyResources()
+        {
+            return this._deleteAllPolicyResources.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyId. 

@@ -49,7 +49,7 @@ namespace Amazon.FMS.Model
         /// Specifies the number of member account IDs that you want AWS Firewall Manager to return
         /// for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>,
         /// the response includes a <code>NextToken</code> value that you can use to get another
-        /// batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.
+        /// batch of member account IDs.
         /// </para>
         /// </summary>
         public int MaxResults
