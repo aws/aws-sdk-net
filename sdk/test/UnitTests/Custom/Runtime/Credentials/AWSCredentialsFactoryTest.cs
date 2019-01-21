@@ -129,7 +129,7 @@ namespace AWSSDK.UnitTests
                 UserIdentity = "user_identity"
             });
 
-        private static readonly CredentialProfile AssumeRoleProfileSourceNotBasicOrSession =
+        private static readonly CredentialProfile AssumeRoleProfileSAMLRoleSource =
             new CredentialProfile("assume_role_profile_source_not_basic_or_session", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
@@ -188,7 +188,7 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleExternalProfile.Name, AssumeRoleExternalProfile);
             ProfileStore.Profiles.Add(AssumeRoleExternalMfaProfile.Name, AssumeRoleExternalMfaProfile);
             ProfileStore.Profiles.Add(AssumeRoleMfaProfile.Name, AssumeRoleMfaProfile);
-            ProfileStore.Profiles.Add(AssumeRoleProfileSourceNotBasicOrSession.Name, AssumeRoleProfileSourceNotBasicOrSession);
+            ProfileStore.Profiles.Add(AssumeRoleProfileSAMLRoleSource.Name, AssumeRoleProfileSAMLRoleSource);
             ProfileStore.Profiles.Add(AssumeRoleProfileInvalidSource.Name, AssumeRoleProfileInvalidSource);
             ProfileStore.Profiles.Add(SAMLRoleProfile.Name, SAMLRoleProfile);
             ProfileStore.Profiles.Add(SAMLRoleUserIdentityProfile.Name, SAMLRoleUserIdentityProfile);
@@ -243,6 +243,9 @@ namespace AWSSDK.UnitTests
             {
                 UserIdentity = "user_identity"
             });
+
+        private static readonly AssumeRoleAWSCredentials AssumeRoleProfileSAMLSourceCredentials =
+            new AssumeRoleAWSCredentials(FederatedUserIdentityCredentials, "role_arn", "role_session_name");
 
         [TestMethod]
         public void TryGetInvalidCredentials()
@@ -362,14 +365,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetAssumeRoleProfileSourceNotBasicOrSession()
         {
-            AssertExtensions.ExpectException(() =>
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
-                throw AssertExtensions.ExpectException(() =>
-                {
-                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasicOrSession, ProfileStore);
-                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, SAMLRoleUserIdentityProfile.Name,
-                    AssumeRoleProfileSourceNotBasicOrSession.Name)).InnerException;
-            }, typeof(InvalidDataException), string.Format(SourceNotBasicOrSessionFormat, SAMLRoleUserIdentityProfile.Name));
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertAssumeRoleCredentialsAreEqual(AssumeRoleProfileSAMLSourceCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSAMLRoleSource, ProfileStore));
+            }
         }
 
         [TestMethod]
@@ -495,13 +495,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetAssumeRoleProfileSourceNotBasicOrSessionAnonymous()
         {
-            AssertExtensions.ExpectException(() =>
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
-                throw AssertExtensions.ExpectException(() =>
-                {
-                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasicOrSession.Options, ProfileStore);
-                }, typeof(InvalidDataException), string.Format(SourceErrorFormatAnonymous, SAMLRoleUserIdentityProfile.Name)).InnerException;
-            }, typeof(InvalidDataException), string.Format(SourceNotBasicOrSessionFormat, SAMLRoleUserIdentityProfile.Name));
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertAssumeRoleCredentialsAreEqual(AssumeRoleProfileSAMLSourceCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSAMLRoleSource.Options, ProfileStore));
+            }
         }
 
         [TestMethod]
@@ -625,6 +623,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.PreemptExpiryTime, actual.PreemptExpiryTime);
             if (expected.SourceCredentials is AssumeRoleAWSCredentials && actual.SourceCredentials is AssumeRoleAWSCredentials)
                 AssertAssumeRoleCredentialsAreEqual(expected.SourceCredentials as AssumeRoleAWSCredentials, actual.SourceCredentials);
+            else if (expected.SourceCredentials is FederatedAWSCredentials && actual.SourceCredentials is FederatedAWSCredentials)
+                AssertFederatedCredentialsAreEqual(expected.SourceCredentials as FederatedAWSCredentials, actual.SourceCredentials);
             else
                 Assert.AreEqual(expected.SourceCredentials, actual.SourceCredentials);
             Assert.AreEqual(expected.Options.DurationSeconds, actual.Options.DurationSeconds);
