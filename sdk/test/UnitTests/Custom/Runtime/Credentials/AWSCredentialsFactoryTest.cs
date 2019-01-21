@@ -34,7 +34,7 @@ namespace AWSSDK.UnitTests
         private const string SourceNotBasicOrSessionFormat = "Source profile [{0}] is not a basic or a session profile.";
         private const string SourceNotFoundFormat = "Source profile [{0}] was not found.";
 
-        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";        
+        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";
         private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
         private const string MfaCallbackErrorFormat = "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.";
@@ -243,7 +243,7 @@ namespace AWSSDK.UnitTests
             {
                 UserIdentity = "user_identity"
             });
-                
+
         [TestMethod]
         public void TryGetInvalidCredentials()
         {
@@ -541,10 +541,10 @@ namespace AWSSDK.UnitTests
             using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEnvironment.Options, SessionCredentials))
             {
                 AWSCredentials credentials;
-                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEnvironment.Options, ProfileStore, out credentials));                
+                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEnvironment.Options, ProfileStore, out credentials));
                 Assert.IsNotNull(credentials);
                 Assert.AreEqual(typeof(EnvironmentVariablesAWSCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
-            }                
+            }
         }
 
         [TestMethod]
@@ -554,7 +554,7 @@ namespace AWSSDK.UnitTests
             {
                 AWSCredentials credentials;
                 Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEc2InstanceMetadata.Options, ProfileStore, out credentials));
-                Assert.IsNotNull(credentials);                
+                Assert.IsNotNull(credentials);
                 Assert.AreEqual("Amazon.Runtime.DefaultInstanceProfileAWSCredentials", ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType().ToString());
             }
         }
@@ -565,7 +565,7 @@ namespace AWSSDK.UnitTests
             using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEcsContainer.Options, null))
             {
                 AWSCredentials credentials;
-                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEcsContainer.Options, ProfileStore, out credentials));                                
+                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEcsContainer.Options, ProfileStore, out credentials));
                 Assert.IsNotNull(credentials);
                 Assert.AreEqual(typeof(ECSTaskCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
             }
@@ -583,21 +583,21 @@ namespace AWSSDK.UnitTests
                 }, typeof(InvalidDataException), string.Format(CredentialSourceErrorFormat, AssumeRoleCredentialSourceInvalid.Options.CredentialSource,
                 AssumeRoleCredentialSourceInvalid.Name)).InnerException;
             }
-            , typeof(InvalidDataException), string.Format(InvalidCredentialSourceErrorFormat, AssumeRoleCredentialSourceInvalid.Options.CredentialSource));            
+            , typeof(InvalidDataException), string.Format(InvalidCredentialSourceErrorFormat, AssumeRoleCredentialSourceInvalid.Options.CredentialSource));
         }
 
         [TestMethod]
         public void GetAssumeRoleCredentialSourceIDMSNotEnabled()
-        {            
+        {
             AssertExtensions.ExpectException(() =>
             {
                 using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEc2InstanceMetadata.Options, null, true))
                 {
                     AWSCredentialsFactory.GetAWSCredentials(AssumeRoleCredentialSourceEc2InstanceMetadata, ProfileStore);
-                }                            
+                }
             }, typeof(AmazonServiceException), IMDSNotEnabledError);
         }
-                
+
         [TestMethod]
         public void GetAssumeRoleCredentialSourceEcContainerNotSet()
         {
@@ -690,7 +690,7 @@ namespace AWSSDK.UnitTests
                     case CredentialSourceType.EcsContainer:
                         originalContainerURIEnvVariableValue = SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, disable ? null : MOCK_ECSContainer_URIEnvVariableValue);
                         break;
-                }                                
+                }
             }
 
             public void Dispose()
@@ -717,7 +717,7 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(name, value);
                 return originalValue;
             }
-            
+
         }
     }
 }

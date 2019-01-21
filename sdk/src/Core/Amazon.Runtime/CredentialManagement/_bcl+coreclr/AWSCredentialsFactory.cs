@@ -22,7 +22,7 @@ using System.IO;
 using Amazon.Runtime.Internal.Settings;
 
 namespace Amazon.Runtime.CredentialManagement
-{        
+{
     /// <summary>
     /// Factory to construct different types of AWSCredentials based on a profile.
     /// </summary>
@@ -38,7 +38,7 @@ namespace Amazon.Runtime.CredentialManagement
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
-        
+
         /// <summary>
         /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
         /// and AWSCredentials can be created.  Throws an exception otherwise.
@@ -209,12 +209,12 @@ namespace Amazon.Runtime.CredentialManagement
                             ExternalId = options.ExternalID,
                             MfaSerialNumber = options.MfaSerial
                         };
-                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);                    
-                    case CredentialProfileType.AssumeRoleCredentialSource:                                                                        
+                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                    case CredentialProfileType.AssumeRoleCredentialSource:
                         // get credentials specified by credentialSource
                         try
                         {
-                            sourceCredentials = GetCredentialSourceAWSCredentials(options.CredentialSource, throwIfInvalid);                            
+                            sourceCredentials = GetCredentialSourceAWSCredentials(options.CredentialSource, throwIfInvalid);
                         }
                         catch (InvalidDataException e)
                         {
@@ -265,10 +265,10 @@ namespace Amazon.Runtime.CredentialManagement
                 return ThrowInvalidOrReturnNull(profileName, throwIfInvalid);
             }
         }
-                
+
         private static AWSCredentials GetCredentialSourceAWSCredentials(string credentialSourceType, bool throwIfInvalid)
         {
-            
+
             AWSCredentials credentials;
             CredentialSourceType type;
             try
@@ -306,7 +306,7 @@ namespace Amazon.Runtime.CredentialManagement
 
             return credentials;
         }
-        
+
         private static AWSCredentials GetSourceAWSCredentials(string sourceProfileName,
             ICredentialProfileSource profileSource, bool throwIfInvalid)
         {
