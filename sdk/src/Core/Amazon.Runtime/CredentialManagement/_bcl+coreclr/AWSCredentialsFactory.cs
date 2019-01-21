@@ -315,13 +315,12 @@ namespace Amazon.Runtime.CredentialManagement
             {
                 if (sourceProfile.CanCreateAWSCredentials)
                 {
-                    if (sourceProfile.ProfileType == CredentialProfileType.Basic)
-                        return new BasicAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey);
-                    else if (sourceProfile.ProfileType == CredentialProfileType.Session)
-                        return new SessionAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey, sourceProfile.Options.Token);
-                    else
+                    if (TryGetAWSCredentials(sourceProfile, profileSource, out var sourceCredentials)) {
+                        return sourceCredentials;
+                    } else {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                            "Source profile [{0}] is not a basic or a session profile.", sourceProfileName), null, throwIfInvalid);
+                            "Could not get credentials from source profile [{0}].", sourceProfileName), null, throwIfInvalid);
+                    }
                 }
                 else
                 {

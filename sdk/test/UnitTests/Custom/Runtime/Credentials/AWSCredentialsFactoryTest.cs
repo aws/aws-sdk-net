@@ -171,6 +171,13 @@ namespace AWSSDK.UnitTests
                 CredentialSource = "InvalidSource"
             });
 
+        private static readonly CredentialProfile AssumeRoleChainedAssumeRoleSource =
+            new CredentialProfile("assume_role_chained_assume_role_source", new CredentialProfileOptions
+            {
+                RoleArn = "second_role_arn",
+                CredentialSource = "assume_role_profile_basic_source"
+            });
+
         static AWSCredentialsFactoryTest()
         {
             ProfileStore.Profiles.Add(InvalidProfile.Name, InvalidProfile);
@@ -189,6 +196,7 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleCredentialSourceEc2InstanceMetadata.Name, AssumeRoleCredentialSourceEc2InstanceMetadata);
             ProfileStore.Profiles.Add(AssumeRoleCredentialSourceEcsContainer.Name, AssumeRoleCredentialSourceEcsContainer);
             ProfileStore.Profiles.Add(AssumeRoleCredentialSourceInvalid.Name, AssumeRoleCredentialSourceInvalid);
+            ProfileStore.Profiles.Add(AssumeRoleChainedAssumeRoleSource.Name, AssumeRoleChainedAssumeRoleSource);
         }
 
         private static readonly BasicAWSCredentials BasicCredentials =
@@ -221,6 +229,9 @@ namespace AWSSDK.UnitTests
                 ExternalId = "external_id",
                 MfaSerialNumber = "mfa_serial"
             });
+
+        private static readonly AssumeRoleAWSCredentials AssumeRoleChainedAssumeRoleCredentials =
+            new AssumeRoleAWSCredentials(AssumeRoleCredentialsBasicSource, "second_role_arn", "role_session_name");
 
         private static readonly SAMLEndpoint SomeSAMLEndpoint = new SAMLEndpoint("endpoint_name", new Uri("https://samlendpoint.com"));
 
@@ -308,6 +319,12 @@ namespace AWSSDK.UnitTests
         public void GetAssumeRoleExternalMfaCredentials()
         {
             AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleChainedAssumeRoleCredentials()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleChainedAssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleChainedAssumeRoleSource, ProfileStore));
         }
 
         [TestMethod]
@@ -447,6 +464,12 @@ namespace AWSSDK.UnitTests
         public void GetAssumeRoleExternalMfaCredentialsAnonymous()
         {
             AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleChainedAssumeRoleCredentialsAnonymous()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleChainedAssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleChainedAssumeRoleSource.Options, ProfileStore));
         }
 
         [TestMethod]
