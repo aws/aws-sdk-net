@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Configuration information for the directory used to join domains.
+    /// Describes the configuration information for the directory used to join a streaming
+    /// instance to a Microsoft Active Directory domain.
     /// </summary>
     public partial class DirectoryConfig
     {

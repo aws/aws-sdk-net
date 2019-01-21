@@ -57,7 +57,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Domains. 
         /// <para>
-        /// The names of the domains for the G Suite account.
+        /// The names of the domains for the account.
         /// </para>
         /// </summary>
         public List<string> Domains

@@ -57,7 +57,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The 12-digit ID of the AWS account with which the image is shared.
+        /// The 12-digit identifier of the AWS account with which the image is shared.
         /// </para>
         /// </summary>
         public string SharedAccountId

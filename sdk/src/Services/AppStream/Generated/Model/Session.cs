@@ -80,7 +80,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the streaming session.
+        /// The identifier of the streaming session.
         /// </para>
         /// </summary>
         public string Id

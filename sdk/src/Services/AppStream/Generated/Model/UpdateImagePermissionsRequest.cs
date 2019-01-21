@@ -76,7 +76,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The 12-digit ID of the AWS account for which you want add or update image permissions.
+        /// The 12-digit identifier of the AWS account for which you want add or update image
+        /// permissions.
         /// </para>
         /// </summary>
         public string SharedAccountId

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The network details of the fleet instance for the streaming session.
+    /// Describes the network details of the fleet instance for the streaming session.
     /// </summary>
     public partial class NetworkAccessConfiguration
     {

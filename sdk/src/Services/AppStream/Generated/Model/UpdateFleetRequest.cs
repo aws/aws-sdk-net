@@ -114,7 +114,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -152,7 +152,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The fleet name for display.
+        /// The fleet name to display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -170,7 +170,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
-        /// The information needed to join a Microsoft Active Directory domain.
+        /// The name of the directory and organizational unit (OU) to use to join the fleet to
+        /// a Microsoft Active Directory domain. 
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo

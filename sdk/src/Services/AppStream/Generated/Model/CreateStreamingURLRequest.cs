@@ -118,7 +118,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of the user.
+        /// The identifier of the user.
         /// </para>
         /// </summary>
         public string UserId

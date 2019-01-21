@@ -41,6 +41,7 @@ namespace Amazon.AppStream.Model
         private string _name;
         private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<UserSetting> _userSettings = new List<UserSetting>();
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -84,7 +85,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The stack name for display.
+        /// The stack name to display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -170,6 +171,34 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStorageConnectors()
         {
             return this._storageConnectors != null && this._storageConnectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to associate with the stack. A tag is a key-value pair (the value is optional).
+        /// For example, Environment=Test, or, if you do not specify a value, Environment=. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value, we set the value to an empty string.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

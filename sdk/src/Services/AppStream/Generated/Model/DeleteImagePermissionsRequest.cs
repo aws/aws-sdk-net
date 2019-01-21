@@ -59,7 +59,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The 12-digit ID of the AWS account for which to delete image permissions.
+        /// The 12-digit identifier of the AWS account for which to delete image permissions.
         /// </para>
         /// </summary>
         public string SharedAccountId

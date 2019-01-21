@@ -104,7 +104,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -122,7 +122,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The stack name for display.
+        /// The stack name to display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -140,8 +140,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FeedbackURL. 
         /// <para>
-        /// The URL that users are redirected to after they click the Send Feedback link. If no
-        /// URL is specified, no Send Feedback link is displayed.
+        /// The URL that users are redirected to after they choose the Send Feedback link. If
+        /// no URL is specified, no Send Feedback link is displayed.
         /// </para>
         /// </summary>
         public string FeedbackURL

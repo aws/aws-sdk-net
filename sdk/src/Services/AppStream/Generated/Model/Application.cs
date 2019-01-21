@@ -43,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The application name for display.
+        /// The application name to display.
         /// </para>
         /// </summary>
         public string DisplayName

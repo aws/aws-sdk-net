@@ -30,7 +30,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the DescribeSessions operation.
     /// Retrieves a list that describes the streaming sessions for a specified stack and fleet.
-    /// If a user ID is provided for the stack and fleet, only streaming sessions for that
+    /// If a UserId is provided for the stack and fleet, only streaming sessions for that
     /// user are described. If an authentication type is not provided, the default is to authenticate
     /// users using a streaming URL.
     /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user ID.
+        /// The user identifier.
         /// </para>
         /// </summary>
         public string UserId

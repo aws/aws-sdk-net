@@ -45,6 +45,7 @@ namespace Amazon.AppStream.Model
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -106,7 +107,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The fleet name for display.
+        /// The fleet name to display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -124,7 +125,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
-        /// The information needed to join a Microsoft Active Directory domain.
+        /// The name of the directory and organizational unit (OU) to use to join the fleet to
+        /// a Microsoft Active Directory domain. 
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
@@ -358,6 +360,34 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to associate with the fleet. A tag is a key-value pair (the value is optional).
+        /// For example, Environment=Test, or, if you do not specify a value, Environment=. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value, we set the value to an empty string.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

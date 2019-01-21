@@ -142,7 +142,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -160,7 +160,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The image name for display.
+        /// The image name to display.
         /// </para>
         /// </summary>
         public string DisplayName

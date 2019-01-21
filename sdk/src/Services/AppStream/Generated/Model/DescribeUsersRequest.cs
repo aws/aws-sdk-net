@@ -29,8 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUsers operation.
-    /// Retrieves a list that describes one or more specified users in the user pool, if user
-    /// names are provided. Otherwise, all users in the user pool are described.
+    /// Retrieves a list that describes one or more specified users in the user pool.
     /// </summary>
     public partial class DescribeUsersRequest : AmazonAppStreamRequest
     {

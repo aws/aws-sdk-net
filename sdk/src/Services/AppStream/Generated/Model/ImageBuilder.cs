@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes a streaming instance used for editing an image. New images are created from
-    /// a snapshot through an image builder.
+    /// Describes a virtual machine that is used to create an image.
     /// </summary>
     public partial class ImageBuilder
     {
@@ -52,8 +51,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
-        /// The version of the AppStream 2.0 agent that is currently being used by this image
-        /// builder. 
+        /// The version of the AppStream 2.0 agent that is currently being used by the image builder.
+        /// 
         /// </para>
         /// </summary>
         public string AppstreamAgentVersion
@@ -107,7 +106,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for display.
+        /// The description to display.
         /// </para>
         /// </summary>
         public string Description
@@ -125,7 +124,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The image builder name for display.
+        /// The image builder name to display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -143,7 +142,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
-        /// The information needed to join a Microsoft Active Directory domain.
+        /// The name of the directory and organizational unit (OU) to use to join the image builder
+        /// to a Microsoft Active Directory domain. 
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
