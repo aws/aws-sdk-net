@@ -44,11 +44,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cachedir=/var/cache/yum/$basesearch</code> 
+        ///  <code>[main]</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>$releasever</code> 
+        ///  <code>cachedir=/var/cache/yum/$basesearch$releasever</code> 
         /// </para>
         ///  
         /// <para>

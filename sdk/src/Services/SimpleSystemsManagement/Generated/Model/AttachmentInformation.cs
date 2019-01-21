@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An attribute of an attachment, such as the attachment name or size.
+    /// An attribute of an attachment, such as the attachment name.
     /// </summary>
     public partial class AttachmentInformation
     {
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the attachment.
+        /// </para>
         /// </summary>
         public string Name
         {

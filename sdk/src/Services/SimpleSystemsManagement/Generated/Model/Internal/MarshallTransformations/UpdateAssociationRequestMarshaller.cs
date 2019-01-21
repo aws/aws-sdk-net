@@ -86,6 +86,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssociationVersion);
                 }
 
+                if(publicRequest.IsSetAutomationTargetParameterName())
+                {
+                    context.Writer.WritePropertyName("AutomationTargetParameterName");
+                    context.Writer.Write(publicRequest.AutomationTargetParameterName);
+                }
+
                 if(publicRequest.IsSetComplianceSeverity())
                 {
                     context.Writer.WritePropertyName("ComplianceSeverity");

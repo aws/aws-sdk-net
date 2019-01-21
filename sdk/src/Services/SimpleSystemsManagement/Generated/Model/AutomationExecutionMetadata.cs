@@ -95,9 +95,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AutomationType. 
         /// <para>
-        /// Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
-        /// CrossAccount is an Automation that executes in multiple AWS Regions and accounts.
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+        /// Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
+        /// CrossAccount. CrossAccount is an Automation that executes in multiple AWS Regions
+        /// and accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
         /// Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
         /// Manager User Guide</i>. 
         /// </para>

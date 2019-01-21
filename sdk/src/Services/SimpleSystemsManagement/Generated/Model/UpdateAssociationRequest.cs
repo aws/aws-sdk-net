@@ -37,6 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
+        private string _automationTargetParameterName;
         private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
         private string _maxConcurrency;
@@ -101,6 +102,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationVersion()
         {
             return this._associationVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomationTargetParameterName. 
+        /// <para>
+        /// Specify the target for the association. This target is required for associations that
+        /// use an Automation document and target resources by using rate controls.
+        /// </para>
+        /// </summary>
+        public string AutomationTargetParameterName
+        {
+            get { return this._automationTargetParameterName; }
+            set { this._automationTargetParameterName = value; }
+        }
+
+        // Check to see if AutomationTargetParameterName property is set
+        internal bool IsSetAutomationTargetParameterName()
+        {
+            return this._automationTargetParameterName != null;
         }
 
         /// <summary>
