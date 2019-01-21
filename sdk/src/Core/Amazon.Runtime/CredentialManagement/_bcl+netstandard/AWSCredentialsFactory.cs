@@ -22,7 +22,7 @@ using System.IO;
 using Amazon.Runtime.Internal.Settings;
 
 namespace Amazon.Runtime.CredentialManagement
-{        
+{
     /// <summary>
     /// Factory to construct different types of AWSCredentials based on a profile.
     /// </summary>
@@ -38,7 +38,7 @@ namespace Amazon.Runtime.CredentialManagement
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
-        
+
         /// <summary>
         /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
         /// and AWSCredentials can be created.  Throws an exception otherwise.
@@ -170,7 +170,7 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         private static AWSCredentials GetAWSCredentialsInternal(string profileName, CredentialProfileType? profileType,
-            CredentialProfileOptions options, RegionEndpoint stsRegion, ICredentialProfileSource profileSource, bool throwIfInvalid)
+            CredentialProfileOptions options, RegionEndpoint stsRegion, ICredentialProfileSource profileSource, bool throwIfInvalid, HashSet<string> profileLoopAvoidance = null)
         {
             if (profileType.HasValue)
             {
@@ -184,11 +184,25 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleExternal:
                     case CredentialProfileType.AssumeRoleMFA:
                     case CredentialProfileType.AssumeRoleExternalMFA:
+                        if (profileName != null)
+                        {
+                            if (profileLoopAvoidance == null)
+                            {
+                                profileLoopAvoidance = new HashSet<string>();
+                            }
+                            else if (profileLoopAvoidance.Contains(profileName))
+                            {
+                                var sourceMessage = string.Format(CultureInfo.InvariantCulture,
+                                   "Error reading profile [{0}]: the source profile definition is cyclical.", profileName);
+                                return ThrowOrReturnNull(sourceMessage, null, throwIfInvalid);
+                            }
+                            profileLoopAvoidance.Add(profileName);
+                        }
+
                         AWSCredentials sourceCredentials;
-                        // get basic or session credentials from profileSource
                         try
                         {
-                            sourceCredentials = GetSourceAWSCredentials(options.SourceProfile, profileSource, throwIfInvalid);
+                            sourceCredentials = GetSourceAWSCredentials(options.SourceProfile, profileSource, throwIfInvalid, profileLoopAvoidance);
                         }
                         catch (InvalidDataException e)
                         {
@@ -198,7 +212,6 @@ namespace Amazon.Runtime.CredentialManagement
                                : string.Format(CultureInfo.InvariantCulture,
                                    "Error reading source profile [{0}] for profile [{1}].", options.SourceProfile, profileName);
                             return ThrowOrReturnNull(sourceMessage, e, throwIfInvalid);
-
                         }
 
 #pragma warning disable CS0612 // Type or member is obsolete
@@ -209,12 +222,12 @@ namespace Amazon.Runtime.CredentialManagement
                             ExternalId = options.ExternalID,
                             MfaSerialNumber = options.MfaSerial
                         };
-                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);                    
-                    case CredentialProfileType.AssumeRoleCredentialSource:                                                                        
+                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                    case CredentialProfileType.AssumeRoleCredentialSource:
                         // get credentials specified by credentialSource
                         try
                         {
-                            sourceCredentials = GetCredentialSourceAWSCredentials(options.CredentialSource, throwIfInvalid);                            
+                            sourceCredentials = GetCredentialSourceAWSCredentials(options.CredentialSource, throwIfInvalid);
                         }
                         catch (InvalidDataException e)
                         {
@@ -268,10 +281,10 @@ namespace Amazon.Runtime.CredentialManagement
                 return ThrowInvalidOrReturnNull(profileName, throwIfInvalid);
             }
         }
-                
+
         private static AWSCredentials GetCredentialSourceAWSCredentials(string credentialSourceType, bool throwIfInvalid)
         {
-            
+
             AWSCredentials credentials;
             CredentialSourceType type;
             try
@@ -309,22 +322,21 @@ namespace Amazon.Runtime.CredentialManagement
 
             return credentials;
         }
-        
+
         private static AWSCredentials GetSourceAWSCredentials(string sourceProfileName,
-            ICredentialProfileSource profileSource, bool throwIfInvalid)
+            ICredentialProfileSource profileSource, bool throwIfInvalid, HashSet<string> profileLoopAvoidance = null)
         {
             CredentialProfile sourceProfile = null;
             if (profileSource.TryGetProfile(sourceProfileName, out sourceProfile))
             {
                 if (sourceProfile.CanCreateAWSCredentials)
                 {
-                    if (sourceProfile.ProfileType == CredentialProfileType.Basic)
-                        return new BasicAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey);
-                    else if (sourceProfile.ProfileType == CredentialProfileType.Session)
-                        return new SessionAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey, sourceProfile.Options.Token);
-                    else
+                    var sourceCredentials = GetAWSCredentialsInternal(sourceProfile.Name, sourceProfile.ProfileType, sourceProfile.Options, sourceProfile.Region, profileSource, throwIfInvalid, profileLoopAvoidance);
+                    if (sourceCredentials == null) {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                            "Source profile [{0}] is not a basic or a session profile.", sourceProfileName), null, throwIfInvalid);
+                            "Could not get credentials from source profile [{0}].", sourceProfileName), null, throwIfInvalid);
+                    }
+                    return sourceCredentials;
                 }
                 else
                 {
