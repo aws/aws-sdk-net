@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// All of the supplied IDs must be for the same asset type from one of the follwoing:
+    /// All of the supplied IDs must be for the same asset type from one of the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>

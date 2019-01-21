@@ -6,8 +6,43 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.DescribeImportTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.ImportUrl</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ContinuousExportDescription.StatusDetail</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.ClientRequestToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.ImportUrl</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.Name</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
 </property-value-rules>

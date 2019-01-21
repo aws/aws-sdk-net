@@ -91,6 +91,56 @@ namespace Amazon.ApplicationDiscoveryService
 
 
     /// <summary>
+    /// Constants used for properties of type BatchDeleteImportDataErrorCode.
+    /// </summary>
+    public class BatchDeleteImportDataErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for BatchDeleteImportDataErrorCode
+        /// </summary>
+        public static readonly BatchDeleteImportDataErrorCode INTERNAL_SERVER_ERROR = new BatchDeleteImportDataErrorCode("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant NOT_FOUND for BatchDeleteImportDataErrorCode
+        /// </summary>
+        public static readonly BatchDeleteImportDataErrorCode NOT_FOUND = new BatchDeleteImportDataErrorCode("NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchDeleteImportDataErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchDeleteImportDataErrorCode FindValue(string value)
+        {
+            return FindValue<BatchDeleteImportDataErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchDeleteImportDataErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurationItemType.
     /// </summary>
     public class ConfigurationItemType : ConstantClass
@@ -362,6 +412,138 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_COMPLETE for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus DELETE_COMPLETE = new ImportStatus("DELETE_COMPLETE");
+        /// <summary>
+        /// Constant DELETE_FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus DELETE_FAILED = new ImportStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_FAILED_LIMIT_EXCEEDED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus DELETE_FAILED_LIMIT_EXCEEDED = new ImportStatus("DELETE_FAILED_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus DELETE_IN_PROGRESS = new ImportStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant IMPORT_COMPLETE for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_COMPLETE = new ImportStatus("IMPORT_COMPLETE");
+        /// <summary>
+        /// Constant IMPORT_FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_FAILED = new ImportStatus("IMPORT_FAILED");
+        /// <summary>
+        /// Constant IMPORT_FAILED_RECORD_LIMIT_EXCEEDED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = new ImportStatus("IMPORT_FAILED_RECORD_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant IMPORT_FAILED_SERVER_LIMIT_EXCEEDED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = new ImportStatus("IMPORT_FAILED_SERVER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_IN_PROGRESS = new ImportStatus("IMPORT_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportTaskFilterName.
+    /// </summary>
+    public class ImportTaskFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT_TASK_ID for ImportTaskFilterName
+        /// </summary>
+        public static readonly ImportTaskFilterName IMPORT_TASK_ID = new ImportTaskFilterName("IMPORT_TASK_ID");
+        /// <summary>
+        /// Constant NAME for ImportTaskFilterName
+        /// </summary>
+        public static readonly ImportTaskFilterName NAME = new ImportTaskFilterName("NAME");
+        /// <summary>
+        /// Constant STATUS for ImportTaskFilterName
+        /// </summary>
+        public static readonly ImportTaskFilterName STATUS = new ImportTaskFilterName("STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportTaskFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportTaskFilterName FindValue(string value)
+        {
+            return FindValue<ImportTaskFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportTaskFilterName(string value)
         {
             return FindValue(value);
         }

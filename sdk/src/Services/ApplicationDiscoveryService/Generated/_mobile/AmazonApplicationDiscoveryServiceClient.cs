@@ -97,13 +97,6 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  </important> 
     /// <para>
-    /// Your AWS account must be granted access to Application Discovery Service, a process
-    /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, <a href="http://aws.amazon.com/application-discovery/">sign up for
-    /// Application Discovery Service</a>. 
-    /// </para>
-    ///  
-    /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
     /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
@@ -349,6 +342,39 @@ namespace Amazon.ApplicationDiscoveryService
             options.ResponseUnmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateConfigurationItemsToApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteImportData
+
+        internal virtual BatchDeleteImportDataResponse BatchDeleteImportData(BatchDeleteImportDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImportDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImportDataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteImportDataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteImportData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImportData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">REST API Reference for BatchDeleteImportData Operation</seealso>
+        public virtual Task<BatchDeleteImportDataResponse> BatchDeleteImportDataAsync(BatchDeleteImportDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImportDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImportDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteImportDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -652,6 +678,39 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  DescribeImportTasks
+
+        internal virtual DescribeImportTasksResponse DescribeImportTasks(DescribeImportTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        public virtual Task<DescribeImportTasksResponse> DescribeImportTasksAsync(DescribeImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImportTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
         internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
@@ -947,6 +1006,39 @@ namespace Amazon.ApplicationDiscoveryService
             options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImportTask
+
+        internal virtual StartImportTaskResponse StartImportTask(StartImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual Task<StartImportTaskResponse> StartImportTaskAsync(StartImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartImportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion

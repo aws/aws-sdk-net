@@ -94,13 +94,6 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  </important> 
     /// <para>
-    /// Your AWS account must be granted access to Application Discovery Service, a process
-    /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, <a href="http://aws.amazon.com/application-discovery/">sign up for
-    /// Application Discovery Service</a>. 
-    /// </para>
-    ///  
-    /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
     /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
@@ -377,6 +370,81 @@ namespace Amazon.ApplicationDiscoveryService
         public virtual AssociateConfigurationItemsToApplicationResponse EndAssociateConfigurationItemsToApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateConfigurationItemsToApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteImportData
+
+        /// <summary>
+        /// Deletes one or more import tasks, each identified by their import ID. Each import
+        /// task has a number of records that can identify servers or applications. 
+        /// 
+        ///  
+        /// <para>
+        /// AWS Application Discovery Service has built-in matching logic that will identify when
+        /// discovered servers match existing entries that you've previously discovered, the information
+        /// for the already-existing discovered server is updated. When you delete an import task
+        /// that contains records that were used to match, the information in those matched records
+        /// that comes from the deleted records will also be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImportData service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteImportData service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">REST API Reference for BatchDeleteImportData Operation</seealso>
+        public virtual BatchDeleteImportDataResponse BatchDeleteImportData(BatchDeleteImportDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImportDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImportDataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteImportDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteImportData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImportData operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteImportData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">REST API Reference for BatchDeleteImportData Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteImportData(BatchDeleteImportDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteImportDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteImportDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteImportData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteImportData.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteImportDataResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">REST API Reference for BatchDeleteImportData Operation</seealso>
+        public virtual BatchDeleteImportDataResponse EndBatchDeleteImportData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteImportDataResponse>(asyncResult);
         }
 
         #endregion
@@ -740,7 +808,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         ///  <note> 
         /// <para>
-        /// All of the supplied IDs must be for the same asset type from one of the follwoing:
+        /// All of the supplied IDs must be for the same asset type from one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1057,6 +1125,72 @@ namespace Amazon.ApplicationDiscoveryService
         public virtual DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImportTasks
+
+        /// <summary>
+        /// Returns an array of import tasks for your account, including status information, times,
+        /// IDs, the Amazon S3 Object URL for the import file, and more.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImportTasks service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        public virtual DescribeImportTasksResponse DescribeImportTasks(DescribeImportTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportTasksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTasks operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImportTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImportTasks(DescribeImportTasksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportTasksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImportTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeImportTasksResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        public virtual DescribeImportTasksResponse EndDescribeImportTasks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImportTasksResponse>(asyncResult);
         }
 
         #endregion
@@ -1549,7 +1683,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// This operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceInUseException">
-        /// 
+        /// This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code>
+        /// action, but with different parameters. For example, you use the same request token
+        /// but have two different import URLs, you can encounter this issue. If the import tasks
+        /// are meant to be different, use a different <code>clientRequestToken</code>, and try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
@@ -1754,6 +1892,119 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  StartImportTask
+
+        /// <summary>
+        /// Starts an import task, which allows you to import details of your on-premises environment
+        /// directly into AWS without having to use the Application Discovery Service (ADS) tools
+        /// such as the Discovery Connector or Discovery Agent. This gives you the option to perform
+        /// migration assessment and planning directly from your imported data, including the
+        /// ability to group your devices as applications and track their migration status.
+        /// 
+        ///  
+        /// <para>
+        /// To start an import request, do this:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Download the specially formatted comma separated value (CSV) import template, which
+        /// you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fill out the template with your server and application data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL.
+        /// Your import file must be in the CSV format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the console or the <code>StartImportTask</code> command with the AWS CLI or one
+        /// of the AWS SDKs to import the records from your file.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information, including step-by-step procedures, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
+        /// Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// There are limits to the number of import tasks you can create (and delete) in an AWS
+        /// account. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
+        /// Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartImportTask service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceInUseException">
+        /// This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code>
+        /// action, but with different parameters. For example, you use the same request token
+        /// but have two different import URLs, you can encounter this issue. If the import tasks
+        /// are meant to be different, use a different <code>clientRequestToken</code>, and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual StartImportTaskResponse StartImportTask(StartImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual IAsyncResult BeginStartImportTask(StartImportTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImportTask.</param>
+        /// 
+        /// <returns>Returns a  StartImportTaskResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual StartImportTaskResponse EndStartImportTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopContinuousExport
 
         /// <summary>
@@ -1777,7 +2028,11 @@ namespace Amazon.ApplicationDiscoveryService
         /// This operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceInUseException">
-        /// 
+        /// This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code>
+        /// action, but with different parameters. For example, you use the same request token
+        /// but have two different import URLs, you can encounter this issue. If the import tasks
+        /// are meant to be different, use a different <code>clientRequestToken</code>, and try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
         /// The specified configuration ID was not located. Verify the configuration ID and try
