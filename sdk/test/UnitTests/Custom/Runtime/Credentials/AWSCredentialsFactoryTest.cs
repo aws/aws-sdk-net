@@ -175,7 +175,7 @@ namespace AWSSDK.UnitTests
             new CredentialProfile("assume_role_chained_assume_role_source", new CredentialProfileOptions
             {
                 RoleArn = "second_role_arn",
-                CredentialSource = "assume_role_profile_basic_source"
+                SourceProfile = "assume_role_profile_basic_source"
             });
 
         static AWSCredentialsFactoryTest()
@@ -623,7 +623,10 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(actual.RoleSessionName.StartsWith("aws-dotnet-sdk-session-"));
             Assert.AreEqual(expected.RoleArn, actual.RoleArn);
             Assert.AreEqual(expected.PreemptExpiryTime, actual.PreemptExpiryTime);
-            Assert.AreEqual(expected.SourceCredentials, actual.SourceCredentials);
+            if (expected.SourceCredentials is AssumeRoleAWSCredentials && actual.SourceCredentials is AssumeRoleAWSCredentials)
+                AssertAssumeRoleCredentialsAreEqual(expected.SourceCredentials as AssumeRoleAWSCredentials, actual.SourceCredentials);
+            else
+                Assert.AreEqual(expected.SourceCredentials, actual.SourceCredentials);
             Assert.AreEqual(expected.Options.DurationSeconds, actual.Options.DurationSeconds);
             Assert.AreEqual(expected.Options.ExternalId, actual.Options.ExternalId);
             Assert.AreEqual(expected.Options.MfaSerialNumber, actual.Options.MfaSerialNumber);
