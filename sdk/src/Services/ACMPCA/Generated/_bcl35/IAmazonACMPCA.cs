@@ -61,10 +61,16 @@ namespace Amazon.ACMPCA
     ///  
     /// <para>
     /// You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional
-    /// audit report that lists every time the CA private key is used. The private key is
-    /// used for signing when the <b>IssueCertificate</b> or <b>RevokeCertificate</b> operation
-    /// is called. 
+    /// audit report, which enumerates all of the issued, valid, expired, and revoked certificates
+    /// from the CA.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Each ACM PCA API operation has a throttling limit which determines the number of times
+    /// the operation can be called per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
+    /// Rate Limits in ACM PCA</a> in the ACM PCA user guide.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonACMPCA : IAmazonService, IDisposable
     {
@@ -93,6 +99,10 @@ namespace Amazon.ACMPCA
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from
         /// and write to the bucket and find the bucket location.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
+        /// The tag associated with the CA is not valid. The invalid argument is contained in
+        /// the message field.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
         /// An ACM PCA limit has been exceeded. See the exception message returned to determine
@@ -918,6 +928,10 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The private CA is in a state during which a report or certificate cannot be generated.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
+        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// the limit that was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestAlreadyProcessedException">
         /// Your request has already been completed.

@@ -45,6 +45,7 @@ namespace Amazon.ACMPCA.Model
         private CertificateAuthorityType _certificateAuthorityType;
         private string _idempotencyToken;
         private RevocationConfiguration _revocationConfiguration;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityConfiguration. 
@@ -126,6 +127,25 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetRevocationConfiguration()
         {
             return this._revocationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Key-value pairs that will be attached to the new private CA. You can associate up
+        /// to 50 tags with a private CA.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
