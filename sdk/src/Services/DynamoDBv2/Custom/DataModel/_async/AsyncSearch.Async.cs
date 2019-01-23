@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -29,8 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// from DynamoDB.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public partial class AsyncSearch<T>
-    {
+    public partial class AsyncSearch<T> : IAsyncSearch<T> {
         #region Async public
 
         /// <summary>

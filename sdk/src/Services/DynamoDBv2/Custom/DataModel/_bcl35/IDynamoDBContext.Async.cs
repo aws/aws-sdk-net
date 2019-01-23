@@ -18,6 +18,7 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -162,7 +163,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -174,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
         IAsyncResult BeginDelete<T>(T value, AsyncCallback callback, object state);
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -188,7 +189,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -201,7 +202,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -215,7 +216,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -229,7 +230,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -244,7 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
+        /// <seealso cref="Delete"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDelete.</param>
         void EndDelete(IAsyncResult asyncResult);
@@ -308,7 +309,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Conditions that the results should meet.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> ScanAsync<T>(params ScanCondition[] conditions);
+        IAsyncSearch<T> ScanAsync<T>(params ScanCondition[] conditions);
 
         /// <summary>
         ///  Configures an async Scan operation against DynamoDB, finding items
@@ -320,7 +321,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig);
+        IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
         ///  Configures an async Scan operation against DynamoDB, finding items
@@ -329,7 +330,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig);
+        IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig);
 
         /// <summary>
         ///  Configures an async Scan operation against DynamoDB, finding items
@@ -339,7 +340,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="scanConfig">Scan request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig);
+        IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig);
 
         #endregion
 
@@ -352,7 +353,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue);
+        IAsyncSearch<T> QueryAsync<T>(object hashKeyValue);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -362,7 +363,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig);
+        IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -377,7 +378,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, params object[] values);
+        IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, params object[] values);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -393,7 +394,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig);
+        IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -402,7 +403,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Query request object.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig);
+        IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -412,7 +413,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="queryConfig">Query request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig);
+        IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig);
 
         #endregion
     }

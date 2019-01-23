@@ -25,6 +25,7 @@ using Amazon.DynamoDBv2.Model;
 
 using Amazon.Util.Internal;
 using System.Globalization;
+using AWSSDK.DynamoDBv2.CoreCLR.Custom.DataModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -1033,7 +1034,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(query, currentConfig);
         }
 
-        private AsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
+        private IAsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
         {
             return new AsyncSearch<T>(this, contextSearch);
         }
