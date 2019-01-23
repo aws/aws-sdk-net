@@ -641,6 +641,7 @@
             <PrivateKeyException Include="sdk\test\Services\EC2\UnitTests\Custom\PasswordTest.cs" />
             <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\test\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
+            <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\WorkLink\Generated\PropertyValueRules.xml" />
         </ItemGroup>
 
     <ItemGroup>

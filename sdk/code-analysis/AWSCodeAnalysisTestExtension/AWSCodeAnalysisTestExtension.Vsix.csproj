@@ -720,6 +720,10 @@
       <Project>{386E816F-4EA7-413F-BA4B-4D02226A2856}</Project>
       <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WorkLink/AWSSDK.WorkLink.CodeAnalysis.csproj">
+      <Project>{7B81A6D8-C532-4A91-8EA5-D0F19CCF0BFD}</Project>
+      <Name>AWSSDK.WorkLink.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkMail/AWSSDK.WorkMail.CodeAnalysis.csproj">
       <Project>{6E634EA7-4131-4B58-B2C6-E52669D9AE2A}</Project>
       <Name>AWSSDK.WorkMail.CodeAnalysis</Name>
