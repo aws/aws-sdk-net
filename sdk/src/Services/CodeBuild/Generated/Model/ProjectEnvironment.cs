@@ -36,7 +36,9 @@ namespace Amazon.CodeBuild.Model
         private ComputeType _computeType;
         private List<EnvironmentVariable> _environmentVariables = new List<EnvironmentVariable>();
         private string _image;
+        private ImagePullCredentialsType _imagePullCredentialsType;
         private bool? _privilegedMode;
+        private RegistryCredential _registryCredential;
         private EnvironmentType _type;
 
         /// <summary>
@@ -109,8 +111,21 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The ID of the Docker image to use for this build project.
+        /// The image tag or image digest that identifies the Docker image to use for this build
+        /// project. Use the following formats:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For an image tag: <code>registry/repository:tag</code>. For example, to specify an
+        /// image with the tag "latest," use <code>registry/repository:latest</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an image digest: <code>registry/repository@digest</code>. For example, to specify
+        /// an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,"
+        /// use <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Image
         {
@@ -122,6 +137,42 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImagePullCredentialsType. 
+        /// <para>
+        ///  The type of credentials AWS CodeBuild uses to pull images in your build. There are
+        /// two valid values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
+        /// requires that you modify your ECR repository policy to trust AWS CodeBuild's service
+        /// principal. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
+        /// service role. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  When you use a cross-account or private registry image, you must use SERVICE_ROLE
+        /// credentials. When you use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+        /// 
+        /// </para>
+        /// </summary>
+        public ImagePullCredentialsType ImagePullCredentialsType
+        {
+            get { return this._imagePullCredentialsType; }
+            set { this._imagePullCredentialsType = value; }
+        }
+
+        // Check to see if ImagePullCredentialsType property is set
+        internal bool IsSetImagePullCredentialsType()
+        {
+            return this._imagePullCredentialsType != null;
         }
 
         /// <summary>
@@ -168,6 +219,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetPrivilegedMode()
         {
             return this._privilegedMode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistryCredential. 
+        /// <para>
+        ///  The credentials for access to a private registry.
+        /// </para>
+        /// </summary>
+        public RegistryCredential RegistryCredential
+        {
+            get { return this._registryCredential; }
+            set { this._registryCredential = value; }
+        }
+
+        // Check to see if RegistryCredential property is set
+        internal bool IsSetRegistryCredential()
+        {
+            return this._registryCredential != null;
         }
 
         /// <summary>

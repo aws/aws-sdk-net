@@ -148,6 +148,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageOverride);
                 }
 
+                if(publicRequest.IsSetImagePullCredentialsTypeOverride())
+                {
+                    context.Writer.WritePropertyName("imagePullCredentialsTypeOverride");
+                    context.Writer.Write(publicRequest.ImagePullCredentialsTypeOverride);
+                }
+
                 if(publicRequest.IsSetInsecureSslOverride())
                 {
                     context.Writer.WritePropertyName("insecureSslOverride");
@@ -181,6 +187,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("queuedTimeoutInMinutesOverride");
                     context.Writer.Write(publicRequest.QueuedTimeoutInMinutesOverride);
+                }
+
+                if(publicRequest.IsSetRegistryCredentialOverride())
+                {
+                    context.Writer.WritePropertyName("registryCredentialOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RegistryCredentialMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RegistryCredentialOverride, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetReportBuildStatusOverride())

@@ -79,10 +79,27 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetImagePullCredentialsType())
+            {
+                context.Writer.WritePropertyName("imagePullCredentialsType");
+                context.Writer.Write(requestObject.ImagePullCredentialsType);
+            }
+
             if(requestObject.IsSetPrivilegedMode())
             {
                 context.Writer.WritePropertyName("privilegedMode");
                 context.Writer.Write(requestObject.PrivilegedMode);
+            }
+
+            if(requestObject.IsSetRegistryCredential())
+            {
+                context.Writer.WritePropertyName("registryCredential");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegistryCredentialMarshaller.Instance;
+                marshaller.Marshall(requestObject.RegistryCredential, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetType())

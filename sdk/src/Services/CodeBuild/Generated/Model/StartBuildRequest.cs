@@ -43,11 +43,13 @@ namespace Amazon.CodeBuild.Model
         private int? _gitCloneDepthOverride;
         private string _idempotencyToken;
         private string _imageOverride;
+        private ImagePullCredentialsType _imagePullCredentialsTypeOverride;
         private bool? _insecureSslOverride;
         private LogsConfig _logsConfigOverride;
         private bool? _privilegedModeOverride;
         private string _projectName;
         private int? _queuedTimeoutInMinutesOverride;
+        private RegistryCredential _registryCredentialOverride;
         private bool? _reportBuildStatusOverride;
         private List<ProjectArtifacts> _secondaryArtifactsOverride = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySourcesOverride = new List<ProjectSource>();
@@ -251,6 +253,41 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImagePullCredentialsTypeOverride. 
+        /// <para>
+        ///  The type of credentials AWS CodeBuild uses to pull images in your build. There are
+        /// two valid values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
+        /// requires that you modify your ECR repository policy to trust AWS CodeBuild's service
+        /// principal.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
+        /// service role. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  When using a cross-account or private registry image, you must use SERVICE_ROLE credentials.
+        /// When using an AWS CodeBuild curated image, you must use CODEBUILD credentials. 
+        /// </para>
+        /// </summary>
+        public ImagePullCredentialsType ImagePullCredentialsTypeOverride
+        {
+            get { return this._imagePullCredentialsTypeOverride; }
+            set { this._imagePullCredentialsTypeOverride = value; }
+        }
+
+        // Check to see if ImagePullCredentialsTypeOverride property is set
+        internal bool IsSetImagePullCredentialsTypeOverride()
+        {
+            return this._imagePullCredentialsTypeOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InsecureSslOverride. 
         /// <para>
         /// Enable this flag to override the insecure SSL setting that is specified in the build
@@ -342,6 +379,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetQueuedTimeoutInMinutesOverride()
         {
             return this._queuedTimeoutInMinutesOverride.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistryCredentialOverride. 
+        /// <para>
+        ///  The credentials for access to a private registry. 
+        /// </para>
+        /// </summary>
+        public RegistryCredential RegistryCredentialOverride
+        {
+            get { return this._registryCredentialOverride; }
+            set { this._registryCredentialOverride = value; }
+        }
+
+        // Check to see if RegistryCredentialOverride property is set
+        internal bool IsSetRegistryCredentialOverride()
+        {
+            return this._registryCredentialOverride != null;
         }
 
         /// <summary>

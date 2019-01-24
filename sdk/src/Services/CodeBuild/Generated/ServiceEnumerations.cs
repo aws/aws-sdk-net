@@ -423,6 +423,52 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type CredentialProviderType.
+    /// </summary>
+    public class CredentialProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SECRETS_MANAGER for CredentialProviderType
+        /// </summary>
+        public static readonly CredentialProviderType SECRETS_MANAGER = new CredentialProviderType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CredentialProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CredentialProviderType FindValue(string value)
+        {
+            return FindValue<CredentialProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CredentialProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnvironmentType.
     /// </summary>
     public class EnvironmentType : ConstantClass
@@ -516,6 +562,56 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnvironmentVariableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImagePullCredentialsType.
+    /// </summary>
+    public class ImagePullCredentialsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODEBUILD for ImagePullCredentialsType
+        /// </summary>
+        public static readonly ImagePullCredentialsType CODEBUILD = new ImagePullCredentialsType("CODEBUILD");
+        /// <summary>
+        /// Constant SERVICE_ROLE for ImagePullCredentialsType
+        /// </summary>
+        public static readonly ImagePullCredentialsType SERVICE_ROLE = new ImagePullCredentialsType("SERVICE_ROLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImagePullCredentialsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImagePullCredentialsType FindValue(string value)
+        {
+            return FindValue<ImagePullCredentialsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImagePullCredentialsType(string value)
         {
             return FindValue(value);
         }

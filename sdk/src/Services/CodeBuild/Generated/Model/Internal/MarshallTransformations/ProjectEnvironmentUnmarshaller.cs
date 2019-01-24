@@ -88,10 +88,22 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imagePullCredentialsType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImagePullCredentialsType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privilegedMode", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registryCredential", targetDepth))
+                {
+                    var unmarshaller = RegistryCredentialUnmarshaller.Instance;
+                    unmarshalledObject.RegistryCredential = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
