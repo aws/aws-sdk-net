@@ -509,6 +509,56 @@ namespace Amazon.PinpointSMSVoice
 
         #endregion
         
+        #region  ListConfigurationSets
+
+
+        /// <summary>
+        /// List all of the configuration sets associated with your Amazon Pinpoint account in
+        /// the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationSets service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
+        public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationSetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendVoiceMessage
 
 
