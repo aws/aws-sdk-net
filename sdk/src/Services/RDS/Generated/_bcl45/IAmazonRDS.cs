@@ -112,7 +112,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
         /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon
         /// Aurora User Guide</i>.
@@ -149,6 +149,47 @@ namespace Amazon.RDS
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AddRoleToDBInstance
+
+
+        /// <summary>
+        /// Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the AddRoleToDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleAlreadyExistsException">
+        /// The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with
+        /// the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleQuotaExceededException">
+        /// You can't associate any more AWS Identity and Access Management (IAM) roles with the
+        /// DB instance because the quota has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        AddRoleToDBInstanceResponse AddRoleToDBInstance(AddRoleToDBInstanceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        Task<AddRoleToDBInstanceResponse> AddRoleToDBInstanceAsync(AddRoleToDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -934,7 +975,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
@@ -3938,7 +3979,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
@@ -4533,8 +4574,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+        /// Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora
+        /// DB cluster. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
         /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon
         /// Aurora User Guide</i>.
         /// </summary>
@@ -4566,6 +4607,42 @@ namespace Amazon.RDS
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveRoleFromDBInstance
+
+
+        /// <summary>
+        /// Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleNotFoundException">
+        /// The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        RemoveRoleFromDBInstanceResponse RemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        Task<RemoveRoleFromDBInstanceResponse> RemoveRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5072,7 +5149,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
@@ -5173,7 +5250,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
@@ -5281,7 +5358,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.

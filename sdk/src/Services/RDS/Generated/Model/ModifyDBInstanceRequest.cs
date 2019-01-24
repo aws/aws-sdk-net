@@ -290,6 +290,12 @@ namespace Amazon.RDS.Model
         /// The configuration setting for the log types to be enabled for export to CloudWatch
         /// Logs for a specific DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always
+        /// applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code>
+        /// parameter has no effect.
+        /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
         {

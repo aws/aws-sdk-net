@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private List<string> _exportableLogTypes = new List<string>();
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<string> _supportedEngineModes = new List<string>();
+        private List<string> _supportedFeatureNames = new List<string>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsReadReplica;
@@ -214,6 +215,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedEngineModes()
         {
             return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedFeatureNames. 
+        /// <para>
+        ///  A list of features supported by the DB engine. Supported feature names include the
+        /// following. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// s3Import
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> SupportedFeatureNames
+        {
+            get { return this._supportedFeatureNames; }
+            set { this._supportedFeatureNames = value; }
+        }
+
+        // Check to see if SupportedFeatureNames property is set
+        internal bool IsSetSupportedFeatureNames()
+        {
+            return this._supportedFeatureNames != null && this._supportedFeatureNames.Count > 0; 
         }
 
         /// <summary>

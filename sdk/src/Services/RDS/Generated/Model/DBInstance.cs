@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
     public partial class DBInstance
     {
         private int? _allocatedStorage;
+        private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
@@ -111,6 +112,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedRoles. 
+        /// <para>
+        ///  The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<DBInstanceRole> AssociatedRoles
+        {
+            get { return this._associatedRoles; }
+            set { this._associatedRoles = value; }
+        }
+
+        // Check to see if AssociatedRoles property is set
+        internal bool IsSetAssociatedRoles()
+        {
+            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
         }
 
         /// <summary>

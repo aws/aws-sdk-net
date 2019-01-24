@@ -355,6 +355,39 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  AddRoleToDBInstance
+
+        internal virtual AddRoleToDBInstanceResponse AddRoleToDBInstance(AddRoleToDBInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToDBInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        public virtual Task<AddRoleToDBInstanceResponse> AddRoleToDBInstanceAsync(AddRoleToDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddRoleToDBInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddSourceIdentifierToSubscription
 
         internal virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
@@ -3661,6 +3694,39 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveRoleFromDBClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveRoleFromDBInstance
+
+        internal virtual RemoveRoleFromDBInstanceResponse RemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromDBInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        public virtual Task<RemoveRoleFromDBInstanceResponse> RemoveRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveRoleFromDBInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion

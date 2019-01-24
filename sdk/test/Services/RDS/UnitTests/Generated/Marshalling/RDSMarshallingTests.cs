@@ -63,6 +63,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void AddRoleToDBInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddRoleToDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<AddRoleToDBInstanceRequest>();
+            var marshaller = new AddRoleToDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void AddSourceIdentifierToSubscriptionMarshallTest()
         {
             var operation = service_model.FindOperation("AddSourceIdentifierToSubscription");
@@ -2199,6 +2218,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<RemoveRoleFromDBClusterRequest>();
             var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RemoveRoleFromDBInstanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveRoleFromDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<RemoveRoleFromDBInstanceRequest>();
+            var marshaller = new RemoveRoleFromDBInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

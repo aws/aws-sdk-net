@@ -318,7 +318,7 @@ namespace Amazon.RDS
         #region  AddRoleToDBCluster
 
         /// <summary>
-        /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
         /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon
         /// Aurora User Guide</i>.
@@ -382,6 +382,74 @@ namespace Amazon.RDS
         public virtual AddRoleToDBClusterResponse EndAddRoleToDBCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<AddRoleToDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AddRoleToDBInstance
+
+        /// <summary>
+        /// Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the AddRoleToDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleAlreadyExistsException">
+        /// The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with
+        /// the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleQuotaExceededException">
+        /// You can't associate any more AWS Identity and Access Management (IAM) roles with the
+        /// DB instance because the quota has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        public virtual AddRoleToDBInstanceResponse AddRoleToDBInstance(AddRoleToDBInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToDBInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddRoleToDBInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        public virtual IAsyncResult BeginAddRoleToDBInstance(AddRoleToDBInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddRoleToDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRoleToDBInstance.</param>
+        /// 
+        /// <returns>Returns a  AddRoleToDBInstanceResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
+        public virtual AddRoleToDBInstanceResponse EndAddRoleToDBInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddRoleToDBInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -1545,7 +1613,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
@@ -6060,7 +6128,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
@@ -7006,8 +7074,8 @@ namespace Amazon.RDS
         #region  RemoveRoleFromDBCluster
 
         /// <summary>
-        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+        /// Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora
+        /// DB cluster. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
         /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon
         /// Aurora User Guide</i>.
         /// </summary>
@@ -7066,6 +7134,69 @@ namespace Amazon.RDS
         public virtual RemoveRoleFromDBClusterResponse EndRemoveRoleFromDBCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveRoleFromDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveRoleFromDBInstance
+
+        /// <summary>
+        /// Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceRoleNotFoundException">
+        /// The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        public virtual RemoveRoleFromDBInstanceResponse RemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromDBInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBInstance operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveRoleFromDBInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        public virtual IAsyncResult BeginRemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveRoleFromDBInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRoleFromDBInstance.</param>
+        /// 
+        /// <returns>Returns a  RemoveRoleFromDBInstanceResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
+        public virtual RemoveRoleFromDBInstanceResponse EndRemoveRoleFromDBInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveRoleFromDBInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -7761,7 +7892,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
@@ -7889,7 +8020,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
@@ -8024,7 +8155,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// 
+        /// The backup policy was not found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
