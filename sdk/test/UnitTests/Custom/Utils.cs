@@ -161,7 +161,13 @@ namespace AWSSDK_DotNet35.UnitTests
         public static Stream GetResourceStream(string resourceName)
         {
             Assembly assembly = typeof(Utils).Assembly;
-            var resource = FindResourceName(resourceName);
+            var resource = FindResourceName(assembly, resourceName);
+            if(resource == null)
+            {
+                assembly = Assembly.GetCallingAssembly();
+                resource = FindResourceName(assembly, resourceName);
+            }
+
             Stream stream = assembly.GetManifestResourceStream(resource);
             return stream;
         }
@@ -172,13 +178,15 @@ namespace AWSSDK_DotNet35.UnitTests
                 return reader.ReadToEnd();
             }
         }
-        public static string FindResourceName(string partialName)
+        public static string FindResourceName(Assembly assembly, string partialName)
         {
-            return FindResourceName(s => s.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0).Single();
+            var resources = FindResourceName(assembly, s => s.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0);
+            if (resources.Any())
+                return resources.Single();
+            return null;
         }
-        public static IEnumerable<string> FindResourceName(Predicate<string> match)
-        {
-            Assembly assembly = typeof(Utils).Assembly;
+        public static IEnumerable<string> FindResourceName(Assembly assembly, Predicate<string> match)
+        {            
             var allResources = assembly.GetManifestResourceNames();
             foreach (var resource in allResources)
             {
