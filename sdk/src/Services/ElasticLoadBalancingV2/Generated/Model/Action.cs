@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AuthenticateCognitoConfig. 
         /// <para>
-        /// [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify
+        /// [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify
         /// only when <code>Type</code> is <code>authenticate-cognito</code>.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AuthenticateOidcConfig. 
         /// <para>
-        /// [HTTPS listener] Information about an identity provider that is compliant with OpenID
+        /// [HTTPS listeners] Information about an identity provider that is compliant with OpenID
         /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.
         /// </para>
         /// </summary>

@@ -55,9 +55,9 @@ namespace Amazon.ElasticLoadBalancingV2
     /// <para>
     /// An Application Load Balancer makes routing and load balancing decisions at the application
     /// layer (HTTP/HTTPS). A Network Load Balancer makes routing and load balancing decisions
-    /// at the transport layer (TCP). Both Application Load Balancers and Network Load Balancers
-    /// can route requests to one or more ports on each EC2 instance or container instance
-    /// in your virtual private cloud (VPC).
+    /// at the transport layer (TCP/TLS). Both Application Load Balancers and Network Load
+    /// Balancers can route requests to one or more ports on each EC2 instance or container
+    /// instance in your virtual private cloud (VPC).
     /// </para>
     ///  
     /// <para>
@@ -311,7 +311,7 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  AddListenerCertificates
 
         /// <summary>
-        /// Adds the specified certificate to the specified secure listener.
+        /// Adds the specified certificate to the specified HTTPS listener.
         /// 
         ///  
         /// <para>
@@ -1294,7 +1294,7 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  DescribeListenerCertificates
 
         /// <summary>
-        /// Describes the certificates for the specified secure listener.
+        /// Describes the certificates for the specified HTTPS listener.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListenerCertificates service method.</param>
         /// 
@@ -1940,9 +1940,9 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// Any properties that you do not specify retain their current values. However, changing
-        /// the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties.
-        /// If you change the protocol from HTTP to HTTPS, you must add the security policy and
-        /// server certificate.
+        /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
+        /// server certificate properties. If you change the protocol from HTTP to HTTPS, or from
+        /// TCP to TLS, you must add the security policy and server certificate properties.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyListener service method.</param>
@@ -2421,7 +2421,7 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  RemoveListenerCertificates
 
         /// <summary>
-        /// Removes the specified certificate from the specified secure listener.
+        /// Removes the specified certificate from the specified HTTPS listener.
         /// 
         ///  
         /// <para>

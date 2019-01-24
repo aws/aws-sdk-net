@@ -34,9 +34,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// Any properties that you do not specify retain their current values. However, changing
-    /// the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties.
-    /// If you change the protocol from HTTP to HTTPS, you must add the security policy and
-    /// server certificate.
+    /// the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and
+    /// server certificate properties. If you change the protocol from HTTP to HTTPS, or from
+    /// TCP to TLS, you must add the security policy and server certificate properties.
     /// </para>
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -51,9 +51,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// [HTTPS listeners] The default SSL server certificate. You must provide exactly one
-        /// certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.
+        /// [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly
+        /// one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not
+        /// set <code>IsDefault</code>.
         /// </para>
         ///  
         /// <para>
@@ -81,17 +81,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// If the action type is <code>forward</code>, you specify a target group. The protocol
-        /// of the target group must be HTTP or HTTPS for an Application Load Balancer or TCP
-        /// for a Network Load Balancer.
+        /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
+        /// of the target group must be TCP or TLS for a Network Load Balancer.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate
         /// users through an identity provider that is OpenID Connect (OIDC) compliant.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate
         /// users through the user pools supported by Amazon Cognito.
         /// </para>
         ///  
@@ -157,7 +157,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support HTTP and HTTPS and Network Load Balancers support TCP.
+        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS
+        /// protocols.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol
@@ -175,8 +176,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// [HTTPS listeners] The security policy that defines which protocols and ciphers are
-        /// supported. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+        /// [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers
+        /// are supported. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
         /// Policies</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>

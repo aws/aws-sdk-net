@@ -133,7 +133,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
         /// The protocol the load balancer uses when performing health checks on targets. The
-        /// TCP protocol is supported only if the protocol of the target group is TCP.
+        /// TCP protocol is supported for health checks only if the protocol of the target group
+        /// is TCP or TLS. The TLS protocol is not supported for health checks.
         /// </para>
         ///  
         /// <para>

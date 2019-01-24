@@ -62,9 +62,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// [HTTPS listeners] The default SSL server certificate. You must provide exactly one
-        /// certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.
+        /// [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly
+        /// one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not
+        /// set <code>IsDefault</code>.
         /// </para>
         ///  
         /// <para>
@@ -92,17 +92,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// If the action type is <code>forward</code>, you specify a target group. The protocol
-        /// of the target group must be HTTP or HTTPS for an Application Load Balancer or TCP
-        /// for a Network Load Balancer.
+        /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
+        /// of the target group must be TCP or TLS for a Network Load Balancer.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate
         /// users through an identity provider that is OpenID Connect (OIDC) compliant.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate
         /// users through the user pools supported by Amazon Cognito.
         /// </para>
         ///  
@@ -169,7 +169,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol for connections from clients to the load balancer. For Application Load
         /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
-        /// the supported protocol is TCP.
+        /// the supported protocols are TCP and TLS.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol
@@ -187,8 +187,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// [HTTPS listeners] The security policy that defines which ciphers and protocols are
-        /// supported. The default is the current predefined security policy.
+        /// [HTTPS and TLS listeners] The security policy that defines which ciphers and protocols
+        /// are supported. The default is the current predefined security policy.
         /// </para>
         /// </summary>
         public string SslPolicy

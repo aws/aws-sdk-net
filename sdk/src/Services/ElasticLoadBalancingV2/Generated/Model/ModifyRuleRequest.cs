@@ -54,17 +54,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// If the action type is <code>forward</code>, you specify a target group. The protocol
-        /// of the target group must be HTTP or HTTPS for an Application Load Balancer or TCP
-        /// for a Network Load Balancer.
+        /// of the target group must be HTTP or HTTPS for an Application Load Balancer. The protocol
+        /// of the target group must be TCP or TLS for a Network Load Balancer.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate
         /// users through an identity provider that is OpenID Connect (OIDC) compliant.
         /// </para>
         ///  
         /// <para>
-        /// [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate
+        /// [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate
         /// users through the user pools supported by Amazon Cognito.
         /// </para>
         ///  

@@ -43,7 +43,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+        /// The SSL server certificate. You must provide a certificate if the protocol is HTTPS
+        /// or TLS.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

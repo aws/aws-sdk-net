@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeListenerCertificates operation.
-    /// Describes the certificates for the specified secure listener.
+    /// Describes the certificates for the specified HTTPS listener.
     /// </summary>
     public partial class DescribeListenerCertificatesRequest : AmazonElasticLoadBalancingV2Request
     {
