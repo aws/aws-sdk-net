@@ -136,7 +136,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             int threadCount;
             if ((this._fileTransporterRequest.IsSetFilePath()
-                 || this._fileTransporterRequest.InputStream is IConcurrentStream)
+                 || this._fileTransporterRequest.InputStream?.CanSeek == true)
                 && !(_s3Client is Amazon.S3.Internal.IAmazonS3Encryption))
             {
                 threadCount = this._config.ConcurrentServiceRequests;
