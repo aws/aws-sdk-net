@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the StartQuery operation.
     /// Schedules a query of a log group using CloudWatch Logs Insights. You specify the log
-    /// group to query, the query string to use, and the time to query.
+    /// group and time range to query, and the query string to use.
     /// 
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time to end this query, if it is still running. Specified as epoch time, the number
-        /// of seconds since January 1, 1970, 00:00:00 UTC.
+        /// The end of the time range to query. Specified as epoch time, the number of seconds
+        /// since January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         public long EndTime
@@ -124,8 +124,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time to start the query. Specified as epoch time, the number of seconds since
-        /// January 1, 1970, 00:00:00 UTC.
+        /// The beginning of the time range to query. Specified as epoch time, the number of seconds
+        /// since January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         public long StartTime

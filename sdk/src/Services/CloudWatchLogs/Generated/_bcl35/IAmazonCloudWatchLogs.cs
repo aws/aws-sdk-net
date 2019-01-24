@@ -2101,7 +2101,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Schedules a query of a log group using CloudWatch Logs Insights. You specify the log
-        /// group to query, the query string to use, and the time to query.
+        /// group and time range to query, and the query string to use.
         /// 
         ///  
         /// <para>
