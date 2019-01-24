@@ -1,3 +1,16 @@
+### 3.3.446.0 (2019-01-23 23:45 UTC)
+* ACMPCA (3.3.3.0)
+	* Added TagOnCreate parameter to the CreateCertificateAuthority operation, updated the Tag regex pattern to align with AWS tagging APIs, and added RevokeCertificate limit.
+* ApiGatewayManagementApi (3.3.1.0)
+	* Fixes a typo in the 'max' constraint.
+* WorkLink (3.3.0.0)
+	* This is the initial SDK release for Amazon WorkLink. Amazon WorkLink is a fully managed, cloud-based service that enables secure, one-click access to internal websites and web apps from mobile phones. With Amazon WorkLink, employees can access internal websites as seamlessly as they access any other website. IT administrators can manage users, devices, and domains by enforcing their own security and access policies via the AWS Console or the AWS SDK.
+* Core 3.3.31.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.445.0 (2019-01-21 22:53 UTC)
 * ApplicationDiscoveryService (3.3.6.0)
 	* The Application Discovery Service's import APIs allow you to import information about your on-premises servers and applications into ADS so that you can track the status of your migrations through the Migration Hub console.
