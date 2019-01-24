@@ -51,7 +51,7 @@ namespace Amazon.ECR
         {
             get
             {
-                return "ecr";
+                return "api.ecr";
             }
         }
 
