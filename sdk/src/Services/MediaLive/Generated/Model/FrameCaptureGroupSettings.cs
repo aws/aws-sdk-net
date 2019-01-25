@@ -28,16 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for ArchiveGroupSettings
+    /// Frame Capture Group Settings
     /// </summary>
-    public partial class ArchiveGroupSettings
+    public partial class FrameCaptureGroupSettings
     {
         private OutputLocationRef _destination;
-        private int? _rolloverInterval;
 
         /// <summary>
-        /// Gets and sets the property Destination. A directory and base filename where archive
-        /// files should be written.
+        /// Gets and sets the property Destination. The destination for the frame capture files.
+        /// Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example,
+        /// s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
+        /// plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_).
+        /// The final file names consist of the prefix from the destination field (for example,
+        /// "curling_") + name modifier + the counter (5 digits, starting from 00001) + extension
+        /// (which is always .jpg).  For example, curlingLow.00001.jpg
         /// </summary>
         public OutputLocationRef Destination
         {
@@ -49,22 +53,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RolloverInterval. Number of seconds to write to archive
-        /// file before closing and starting a new one.
-        /// </summary>
-        public int RolloverInterval
-        {
-            get { return this._rolloverInterval.GetValueOrDefault(); }
-            set { this._rolloverInterval = value; }
-        }
-
-        // Check to see if RolloverInterval property is set
-        internal bool IsSetRolloverInterval()
-        {
-            return this._rolloverInterval.HasValue; 
         }
 
     }

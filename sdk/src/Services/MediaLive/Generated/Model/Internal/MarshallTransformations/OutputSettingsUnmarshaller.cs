@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArchiveOutputSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("frameCaptureOutputSettings", targetDepth))
+                {
+                    var unmarshaller = FrameCaptureOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FrameCaptureOutputSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsOutputSettings", targetDepth))
                 {
                     var unmarshaller = HlsOutputSettingsUnmarshaller.Instance;

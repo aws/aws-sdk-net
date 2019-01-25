@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputGroupSettings
     {
         private ArchiveGroupSettings _archiveGroupSettings;
+        private FrameCaptureGroupSettings _frameCaptureGroupSettings;
         private HlsGroupSettings _hlsGroupSettings;
         private MsSmoothGroupSettings _msSmoothGroupSettings;
         private RtmpGroupSettings _rtmpGroupSettings;
@@ -51,6 +52,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArchiveGroupSettings()
         {
             return this._archiveGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameCaptureGroupSettings.
+        /// </summary>
+        public FrameCaptureGroupSettings FrameCaptureGroupSettings
+        {
+            get { return this._frameCaptureGroupSettings; }
+            set { this._frameCaptureGroupSettings = value; }
+        }
+
+        // Check to see if FrameCaptureGroupSettings property is set
+        internal bool IsSetFrameCaptureGroupSettings()
+        {
+            return this._frameCaptureGroupSettings != null;
         }
 
         /// <summary>

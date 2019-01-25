@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private HlsDirectoryStructure _directoryStructure;
         private HlsEncryptionType _encryptionType;
         private HlsCdnSettings _hlsCdnSettings;
+        private IFrameOnlyPlaylistType _iFrameOnlyPlaylists;
         private int? _indexNSegments;
         private InputLossActionForHlsOut _inputLossAction;
         private HlsIvInManifest _ivInManifest;
@@ -268,6 +269,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsCdnSettings()
         {
             return this._hlsCdnSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IFrameOnlyPlaylists. If enabled, writes out I-Frame only
+        /// playlists in addition to media playlists.
+        /// </summary>
+        public IFrameOnlyPlaylistType IFrameOnlyPlaylists
+        {
+            get { return this._iFrameOnlyPlaylists; }
+            set { this._iFrameOnlyPlaylists = value; }
+        }
+
+        // Check to see if IFrameOnlyPlaylists property is set
+        internal bool IsSetIFrameOnlyPlaylists()
+        {
+            return this._iFrameOnlyPlaylists != null;
         }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArchiveGroupSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("frameCaptureGroupSettings", targetDepth))
+                {
+                    var unmarshaller = FrameCaptureGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FrameCaptureGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsGroupSettings", targetDepth))
                 {
                     var unmarshaller = HlsGroupSettingsUnmarshaller.Instance;

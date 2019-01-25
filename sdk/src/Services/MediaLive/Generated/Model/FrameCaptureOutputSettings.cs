@@ -28,41 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for VideoCodecSettings
+    /// Frame Capture Output Settings
     /// </summary>
-    public partial class VideoCodecSettings
+    public partial class FrameCaptureOutputSettings
     {
-        private FrameCaptureSettings _frameCaptureSettings;
-        private H264Settings _h264Settings;
+        private string _nameModifier;
 
         /// <summary>
-        /// Gets and sets the property FrameCaptureSettings.
+        /// Gets and sets the property NameModifier. Required if the output group contains more
+        /// than one output. This modifier forms part of the output file name.
         /// </summary>
-        public FrameCaptureSettings FrameCaptureSettings
+        public string NameModifier
         {
-            get { return this._frameCaptureSettings; }
-            set { this._frameCaptureSettings = value; }
+            get { return this._nameModifier; }
+            set { this._nameModifier = value; }
         }
 
-        // Check to see if FrameCaptureSettings property is set
-        internal bool IsSetFrameCaptureSettings()
+        // Check to see if NameModifier property is set
+        internal bool IsSetNameModifier()
         {
-            return this._frameCaptureSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property H264Settings.
-        /// </summary>
-        public H264Settings H264Settings
-        {
-            get { return this._h264Settings; }
-            set { this._h264Settings = value; }
-        }
-
-        // Check to see if H264Settings property is set
-        internal bool IsSetH264Settings()
-        {
-            return this._h264Settings != null;
+            return this._nameModifier != null;
         }
 
     }

@@ -142,6 +142,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIFrameOnlyPlaylists())
+            {
+                context.Writer.WritePropertyName("iFrameOnlyPlaylists");
+                context.Writer.Write(requestObject.IFrameOnlyPlaylists);
+            }
+
             if(requestObject.IsSetIndexNSegments())
             {
                 context.Writer.WritePropertyName("indexNSegments");

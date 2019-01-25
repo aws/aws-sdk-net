@@ -28,41 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for VideoCodecSettings
+    /// Frame Capture Settings
     /// </summary>
-    public partial class VideoCodecSettings
+    public partial class FrameCaptureSettings
     {
-        private FrameCaptureSettings _frameCaptureSettings;
-        private H264Settings _h264Settings;
+        private int? _captureInterval;
 
         /// <summary>
-        /// Gets and sets the property FrameCaptureSettings.
+        /// Gets and sets the property CaptureInterval. The frequency, in seconds, for capturing
+        /// frames for inclusion in the output.  For example, "10" means capture a frame every
+        /// 10 seconds.
         /// </summary>
-        public FrameCaptureSettings FrameCaptureSettings
+        public int CaptureInterval
         {
-            get { return this._frameCaptureSettings; }
-            set { this._frameCaptureSettings = value; }
+            get { return this._captureInterval.GetValueOrDefault(); }
+            set { this._captureInterval = value; }
         }
 
-        // Check to see if FrameCaptureSettings property is set
-        internal bool IsSetFrameCaptureSettings()
+        // Check to see if CaptureInterval property is set
+        internal bool IsSetCaptureInterval()
         {
-            return this._frameCaptureSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property H264Settings.
-        /// </summary>
-        public H264Settings H264Settings
-        {
-            get { return this._h264Settings; }
-            set { this._h264Settings = value; }
-        }
-
-        // Check to see if H264Settings property is set
-        internal bool IsSetH264Settings()
-        {
-            return this._h264Settings != null;
+            return this._captureInterval.HasValue; 
         }
 
     }

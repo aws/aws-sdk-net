@@ -136,6 +136,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsCdnSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iFrameOnlyPlaylists", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IFrameOnlyPlaylists = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("indexNSegments", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

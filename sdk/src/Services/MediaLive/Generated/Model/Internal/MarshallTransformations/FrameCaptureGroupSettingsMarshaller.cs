@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoCodecSettings Marshaller
+    /// FrameCaptureGroupSettings Marshaller
     /// </summary>       
-    public class VideoCodecSettingsMarshaller : IRequestMarshaller<VideoCodecSettings, JsonMarshallerContext> 
+    public class FrameCaptureGroupSettingsMarshaller : IRequestMarshaller<FrameCaptureGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoCodecSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FrameCaptureGroupSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFrameCaptureSettings())
+            if(requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("frameCaptureSettings");
+                context.Writer.WritePropertyName("destination");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FrameCaptureSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FrameCaptureSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetH264Settings())
-            {
-                context.Writer.WritePropertyName("h264Settings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = H264SettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.H264Settings, context);
+                var marshaller = OutputLocationRefMarshaller.Instance;
+                marshaller.Marshall(requestObject.Destination, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VideoCodecSettingsMarshaller Instance = new VideoCodecSettingsMarshaller();
+        public readonly static FrameCaptureGroupSettingsMarshaller Instance = new FrameCaptureGroupSettingsMarshaller();
 
     }
 }

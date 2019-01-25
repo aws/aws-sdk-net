@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputSettings
     {
         private ArchiveOutputSettings _archiveOutputSettings;
+        private FrameCaptureOutputSettings _frameCaptureOutputSettings;
         private HlsOutputSettings _hlsOutputSettings;
         private MsSmoothOutputSettings _msSmoothOutputSettings;
         private RtmpOutputSettings _rtmpOutputSettings;
@@ -51,6 +52,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArchiveOutputSettings()
         {
             return this._archiveOutputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameCaptureOutputSettings.
+        /// </summary>
+        public FrameCaptureOutputSettings FrameCaptureOutputSettings
+        {
+            get { return this._frameCaptureOutputSettings; }
+            set { this._frameCaptureOutputSettings = value; }
+        }
+
+        // Check to see if FrameCaptureOutputSettings property is set
+        internal bool IsSetFrameCaptureOutputSettings()
+        {
+            return this._frameCaptureOutputSettings != null;
         }
 
         /// <summary>

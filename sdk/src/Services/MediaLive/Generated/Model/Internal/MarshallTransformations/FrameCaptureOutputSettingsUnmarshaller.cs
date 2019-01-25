@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoCodecSettings Object
+    /// Response Unmarshaller for FrameCaptureOutputSettings Object
     /// </summary>  
-    public class VideoCodecSettingsUnmarshaller : IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoCodecSettings, JsonUnmarshallerContext>
+    public class FrameCaptureOutputSettingsUnmarshaller : IUnmarshaller<FrameCaptureOutputSettings, XmlUnmarshallerContext>, IUnmarshaller<FrameCaptureOutputSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoCodecSettings IUnmarshaller<VideoCodecSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FrameCaptureOutputSettings IUnmarshaller<FrameCaptureOutputSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoCodecSettings Unmarshall(JsonUnmarshallerContext context)
+        public FrameCaptureOutputSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoCodecSettings unmarshalledObject = new VideoCodecSettings();
+            FrameCaptureOutputSettings unmarshalledObject = new FrameCaptureOutputSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("frameCaptureSettings", targetDepth))
+                if (context.TestExpression("nameModifier", targetDepth))
                 {
-                    var unmarshaller = FrameCaptureSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("h264Settings", targetDepth))
-                {
-                    var unmarshaller = H264SettingsUnmarshaller.Instance;
-                    unmarshalledObject.H264Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NameModifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoCodecSettingsUnmarshaller _instance = new VideoCodecSettingsUnmarshaller();        
+        private static FrameCaptureOutputSettingsUnmarshaller _instance = new FrameCaptureOutputSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoCodecSettingsUnmarshaller Instance
+        public static FrameCaptureOutputSettingsUnmarshaller Instance
         {
             get
             {
