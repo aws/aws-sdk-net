@@ -83,11 +83,6 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The ARN of the device pool for the run to be scheduled.
         /// </para>
-        ///  
-        /// <para>
-        /// Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a request.
-        /// </para>
         /// </summary>
         public string DevicePoolArn
         {

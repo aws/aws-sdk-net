@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents test settings. This data structure is passed in as the <code>test</code>
-    /// parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// Represents test settings. This data structure is passed in as the "test" parameter
+    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     /// </summary>
     public partial class ScheduleRunTest
     {

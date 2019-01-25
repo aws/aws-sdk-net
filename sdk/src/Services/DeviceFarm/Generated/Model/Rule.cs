@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents a condition for a device pool. It is passed in as the <code>rules</code>
-    /// parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.
+    /// Represents a condition for a device pool.
     /// </summary>
     public partial class Rule
     {
@@ -40,56 +39,125 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The rule's attribute. It is the aspect of a device such as platform or model used
-        /// as selection criteria to create or update a device pool.
+        /// The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
         /// </para>
         ///  
         /// <para>
-        /// Allowed values include:
+        /// The supported operators for each attribute are provided in the following list.
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>APPIUM_VERSION</dt> <dd> 
         /// <para>
-        /// ARN: The Amazon Resource Name (ARN) of a device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
+        /// The Appium version for the test.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ARN</dt> <dd> 
         /// <para>
-        /// FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+        /// The Amazon Resource Name (ARN) of the device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// MANUFACTURER: The device manufacturer. For example, "Apple".
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>AVAILABILITY</dt> <dd> 
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are "TRUE" or "FALSE".
+        /// The current availability of the device. Valid values are "AVAILABLE", "HIGHLY_AVAILABLE",
+        /// "BUSY", or "TEMPORARY_NOT_AVAILABLE".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are "TRUE" or "FALSE".
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FLEET_TYPE</dt> <dd> 
         /// <para>
-        /// APPIUM_VERSION: The Appium version for the test.
+        /// The fleet type. Valid values are "PUBLIC" or "PRIVATE".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FORM_FACTOR</dt> <dd> 
         /// <para>
-        /// INSTANCE_LABELS: The label of the device instance.
+        /// The device form factor. Valid values are "PHONE" or "TABLET".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> <dt>INSTANCE_ARN</dt> <dd> 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the device instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>IN</code>, <code>NOT_IN</code> 
+        /// </para>
+        ///  </dd> <dt>INSTANCE_LABELS</dt> <dd> 
+        /// <para>
+        /// The label of the device instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
+        /// </para>
+        ///  </dd> <dt>MANUFACTURER</dt> <dd> 
+        /// <para>
+        /// The device manufacturer. For example, "Apple".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>MODEL</dt> <dd> 
+        /// <para>
+        /// The device model, such as "Apple iPad Air 2" or "Google Pixel".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
+        /// <code>NOT_IN</code> 
+        /// </para>
+        ///  </dd> <dt>OS_VERSION</dt> <dd> 
+        /// <para>
+        /// The operating system version. For example, "10.3.2".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+        /// <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>PLATFORM</dt> <dd> 
+        /// <para>
+        /// The device platform. Valid values are "ANDROID" or "IOS".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>REMOTE_ACCESS_ENABLED</dt> <dd> 
+        /// <para>
+        /// Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// </para>
+        ///  </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> 
+        /// <para>
+        /// Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public DeviceAttribute Attribute
         {
@@ -106,33 +174,9 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The rule's operator.
+        /// Specifies how Device Farm compares the rule's attribute to the value. For the operators
+        /// that are supported by each attribute, see the attribute descriptions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// EQUALS: The equals operator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// GREATER_THAN: The greater-than operator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// IN: The in operator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// LESS_THAN: The less-than operator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// NOT_IN: The not-in operator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CONTAINS: The contains operator.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public RuleOperator Operator
         {
@@ -150,18 +194,6 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The rule's value.
-        /// </para>
-        ///  
-        /// <para>
-        /// The value must be passed in as a string using escaped quotes.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        /// "value": "\"ANDROID\""
         /// </para>
         /// </summary>
         public string Value

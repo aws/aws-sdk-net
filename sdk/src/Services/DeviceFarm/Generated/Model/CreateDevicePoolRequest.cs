@@ -34,6 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateDevicePoolRequest : AmazonDeviceFarmRequest
     {
         private string _description;
+        private int? _maxDevices;
         private string _name;
         private string _projectArn;
         private List<Rule> _rules = new List<Rule>();
@@ -54,6 +55,32 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxDevices. 
+        /// <para>
+        /// The number of devices that Device Farm can add to your device pool. Device Farm adds
+        /// devices that are available and that meet the criteria that you assign for the <code>rules</code>
+        /// parameter. Depending on how many devices meet these constraints, your device pool
+        /// might contain fewer devices than the value for this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// By specifying the maximum number of devices, you can control the costs that you incur
+        /// by running tests.
+        /// </para>
+        /// </summary>
+        public int MaxDevices
+        {
+            get { return this._maxDevices.GetValueOrDefault(); }
+            set { this._maxDevices = value; }
+        }
+
+        // Check to see if MaxDevices property is set
+        internal bool IsSetMaxDevices()
+        {
+            return this._maxDevices.HasValue; 
         }
 
         /// <summary>

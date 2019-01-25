@@ -74,10 +74,22 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetClearMaxDevices())
+                {
+                    context.Writer.WritePropertyName("clearMaxDevices");
+                    context.Writer.Write(publicRequest.ClearMaxDevices);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetMaxDevices())
+                {
+                    context.Writer.WritePropertyName("maxDevices");
+                    context.Writer.Write(publicRequest.MaxDevices);
                 }
 
                 if(publicRequest.IsSetName())

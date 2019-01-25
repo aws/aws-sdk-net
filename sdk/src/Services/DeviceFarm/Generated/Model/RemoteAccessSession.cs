@@ -76,7 +76,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property BillingMethod. 
         /// <para>
         /// The billing method of the remote access session. Possible values include <code>METERED</code>
-        /// or <code>UNMETERED</code>. For more information about metered devices, see <a href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+        /// or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
         /// Device Farm terminology</a>."
         /// </para>
         /// </summary>

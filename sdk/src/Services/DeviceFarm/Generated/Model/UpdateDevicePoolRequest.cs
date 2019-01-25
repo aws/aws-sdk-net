@@ -36,7 +36,9 @@ namespace Amazon.DeviceFarm.Model
     public partial class UpdateDevicePoolRequest : AmazonDeviceFarmRequest
     {
         private string _arn;
+        private bool? _clearMaxDevices;
         private string _description;
+        private int? _maxDevices;
         private string _name;
         private List<Rule> _rules = new List<Rule>();
 
@@ -59,6 +61,33 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClearMaxDevices. 
+        /// <para>
+        /// Sets whether the <code>maxDevices</code> parameter applies to your device pool. If
+        /// you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter
+        /// does not apply, and Device Farm does not limit the number of devices that it adds
+        /// to your device pool. In this case, Device Farm adds all available devices that meet
+        /// the criteria that are specified for the <code>rules</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this parameter in your request, you cannot use the <code>maxDevices</code>
+        /// parameter in the same request.
+        /// </para>
+        /// </summary>
+        public bool ClearMaxDevices
+        {
+            get { return this._clearMaxDevices.GetValueOrDefault(); }
+            set { this._clearMaxDevices = value; }
+        }
+
+        // Check to see if ClearMaxDevices property is set
+        internal bool IsSetClearMaxDevices()
+        {
+            return this._clearMaxDevices.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the device pool you wish to update.
@@ -74,6 +103,37 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxDevices. 
+        /// <para>
+        /// The number of devices that Device Farm can add to your device pool. Device Farm adds
+        /// devices that are available and that meet the criteria that you assign for the <code>rules</code>
+        /// parameter. Depending on how many devices meet these constraints, your device pool
+        /// might contain fewer devices than the value for this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// By specifying the maximum number of devices, you can control the costs that you incur
+        /// by running tests.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code>
+        /// parameter in the same request.
+        /// </para>
+        /// </summary>
+        public int MaxDevices
+        {
+            get { return this._maxDevices.GetValueOrDefault(); }
+            set { this._maxDevices = value; }
+        }
+
+        // Check to see if MaxDevices property is set
+        internal bool IsSetMaxDevices()
+        {
+            return this._maxDevices.HasValue; 
         }
 
         /// <summary>

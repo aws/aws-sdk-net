@@ -343,6 +343,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly DeviceAttribute ARN = new DeviceAttribute("ARN");
         /// <summary>
+        /// Constant AVAILABILITY for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute AVAILABILITY = new DeviceAttribute("AVAILABILITY");
+        /// <summary>
         /// Constant FLEET_TYPE for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute FLEET_TYPE = new DeviceAttribute("FLEET_TYPE");
@@ -362,6 +366,14 @@ namespace Amazon.DeviceFarm
         /// Constant MANUFACTURER for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute MANUFACTURER = new DeviceAttribute("MANUFACTURER");
+        /// <summary>
+        /// Constant MODEL for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute MODEL = new DeviceAttribute("MODEL");
+        /// <summary>
+        /// Constant OS_VERSION for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute OS_VERSION = new DeviceAttribute("OS_VERSION");
         /// <summary>
         /// Constant PLATFORM for DeviceAttribute
         /// </summary>
@@ -552,80 +564,6 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceFilterAttribute(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
-    /// Constants used for properties of type DeviceFilterOperator.
-    /// </summary>
-    public class DeviceFilterOperator : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant CONTAINS for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator CONTAINS = new DeviceFilterOperator("CONTAINS");
-        /// <summary>
-        /// Constant EQUALS for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator EQUALS = new DeviceFilterOperator("EQUALS");
-        /// <summary>
-        /// Constant GREATER_THAN for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator GREATER_THAN = new DeviceFilterOperator("GREATER_THAN");
-        /// <summary>
-        /// Constant GREATER_THAN_OR_EQUALS for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator GREATER_THAN_OR_EQUALS = new DeviceFilterOperator("GREATER_THAN_OR_EQUALS");
-        /// <summary>
-        /// Constant IN for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator IN = new DeviceFilterOperator("IN");
-        /// <summary>
-        /// Constant LESS_THAN for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator LESS_THAN = new DeviceFilterOperator("LESS_THAN");
-        /// <summary>
-        /// Constant LESS_THAN_OR_EQUALS for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator LESS_THAN_OR_EQUALS = new DeviceFilterOperator("LESS_THAN_OR_EQUALS");
-        /// <summary>
-        /// Constant NOT_IN for DeviceFilterOperator
-        /// </summary>
-        public static readonly DeviceFilterOperator NOT_IN = new DeviceFilterOperator("NOT_IN");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public DeviceFilterOperator(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static DeviceFilterOperator FindValue(string value)
-        {
-            return FindValue<DeviceFilterOperator>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator DeviceFilterOperator(string value)
         {
             return FindValue(value);
         }
@@ -1307,6 +1245,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly RuleOperator GREATER_THAN = new RuleOperator("GREATER_THAN");
         /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS for RuleOperator
+        /// </summary>
+        public static readonly RuleOperator GREATER_THAN_OR_EQUALS = new RuleOperator("GREATER_THAN_OR_EQUALS");
+        /// <summary>
         /// Constant IN for RuleOperator
         /// </summary>
         public static readonly RuleOperator IN = new RuleOperator("IN");
@@ -1314,6 +1256,10 @@ namespace Amazon.DeviceFarm
         /// Constant LESS_THAN for RuleOperator
         /// </summary>
         public static readonly RuleOperator LESS_THAN = new RuleOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS for RuleOperator
+        /// </summary>
+        public static readonly RuleOperator LESS_THAN_OR_EQUALS = new RuleOperator("LESS_THAN_OR_EQUALS");
         /// <summary>
         /// Constant NOT_IN for RuleOperator
         /// </summary>

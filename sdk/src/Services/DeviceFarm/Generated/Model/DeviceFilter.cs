@@ -41,7 +41,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class DeviceFilter
     {
         private DeviceFilterAttribute _attribute;
-        private DeviceFilterOperator _operator;
+        private RuleOperator _operator;
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -52,60 +52,112 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// Allowed values include:
+        /// The supported operators for each attribute are provided in the following list.
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>ARN</dt> <dd> 
         /// <para>
-        /// ARN: The Amazon Resource Name (ARN) of the device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
+        /// The Amazon Resource Name (ARN) of the device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PLATFORM</dt> <dd> 
         /// <para>
-        /// OS_VERSION: The operating system version. For example, "10.3.2".
+        /// The device platform. Valid values are "ANDROID" or "IOS".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// MODEL: The device model. For example, "iPad 5th Gen".
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>OS_VERSION</dt> <dd> 
         /// <para>
-        /// AVAILABILITY: The current availability of the device. Valid values are "AVAILABLE",
-        /// "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+        /// The operating system version. For example, "10.3.2".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+        /// <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+        /// 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>MODEL</dt> <dd> 
         /// <para>
-        /// MANUFACTURER: The device manufacturer. For example, "Apple".
+        /// The device model. For example, "iPad 5th Gen".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are "TRUE" or "FALSE".
+        ///  <i>Supported operators</i>: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>,
+        /// <code>NOT_IN</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>AVAILABILITY</dt> <dd> 
         /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are "TRUE" or "FALSE".
+        /// The current availability of the device. Valid values are "AVAILABLE", "HIGHLY_AVAILABLE",
+        /// "BUSY", or "TEMPORARY_NOT_AVAILABLE".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>FORM_FACTOR</dt> <dd> 
         /// <para>
-        /// INSTANCE_LABELS: The label of the device instance.
+        /// The device form factor. Valid values are "PHONE" or "TABLET".
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> <dt>MANUFACTURER</dt> <dd> 
+        /// <para>
+        /// The device manufacturer. For example, "Apple".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>REMOTE_ACCESS_ENABLED</dt> <dd> 
+        /// <para>
+        /// Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// </para>
+        ///  </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> 
+        /// <para>
+        /// Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// </para>
+        ///  </dd> <dt>INSTANCE_ARN</dt> <dd> 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the device instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>INSTANCE_LABELS</dt> <dd> 
+        /// <para>
+        /// The label of the device instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>CONTAINS</code> 
+        /// </para>
+        ///  </dd> <dt>FLEET_TYPE</dt> <dd> 
+        /// <para>
+        /// The fleet type. Valid values are "PUBLIC" or "PRIVATE".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Supported operators</i>: <code>EQUALS</code> 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public DeviceFilterAttribute Attribute
         {
@@ -122,29 +174,11 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The filter operator.
+        /// Specifies how Device Farm compares the filter's attribute to the value. For the operators
+        /// that are supported by each attribute, see the attribute descriptions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The EQUALS operator is available for every attribute except INSTANCE_LABELS.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
-        /// and INSTANCE_ARN attributes.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators
-        /// are also available for the OS_VERSION attribute.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public DeviceFilterOperator Operator
+        public RuleOperator Operator
         {
             get { return this._operator; }
             set { this._operator = value; }
