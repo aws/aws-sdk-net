@@ -479,6 +479,58 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags associated with the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonMediaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from MediaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RemoveFlowOutput
 
 
@@ -736,6 +788,111 @@ namespace Amazon.MediaConnect
         /// <returns>Returns a  StopFlowResult from MediaConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">REST API Reference for StopFlow Operation</seealso>
         StopFlowResponse EndStopFlow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource. If the request does not mention an existing
+        /// tag associated with the resource, that tag is not changed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonMediaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from MediaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes the specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonMediaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from MediaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

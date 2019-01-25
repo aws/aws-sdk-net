@@ -682,6 +682,58 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags associated with the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveFlowOutput
 
 
@@ -938,6 +990,111 @@ namespace Amazon.MediaConnect
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource. If the request does not mention an existing
+        /// tag associated with the resource, that tag is not changed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes the specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// for the operation for more information on the cause of this exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

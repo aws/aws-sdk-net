@@ -268,6 +268,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaConnect")]
+        public void ListTagsForResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTagsForResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaConnect")]
         public void RemoveFlowOutputMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveFlowOutput");
@@ -389,6 +421,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as StopFlowResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaConnect")]
+        public void TagResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaConnect")]
+        public void UntagResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+
         }
 
         
