@@ -3504,6 +3504,18 @@ namespace Amazon.CodeCommit
         /// name as a directory in this repository. Either provide another name for the file,
         /// or add the file in a directory that does not match the file name.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FilePathConflictsWithSubmodulePathException">
+        /// The specified file path or folder has the same path as a submodule in this repository.
+        /// Either provide a different name for the file, or save the file in a directory that
+        /// does not conflict with the submodule path.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderContentSizeLimitExceededException">
+        /// The specified file is in a folder that exceeds the folder content size limit. Either
+        /// save the file in a folder that has less content, or remove files or subfolders from
+        /// the folder so it does not exceed the size limit. For more information about limits
+        /// in AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
         /// The specified reference name is not valid.
         /// </exception>

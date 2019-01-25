@@ -136,6 +136,14 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new FileNameConflictsWithDirectoryNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FilePathConflictsWithSubmodulePathException"))
+            {
+                return new FilePathConflictsWithSubmodulePathException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FolderContentSizeLimitExceededException"))
+            {
+                return new FolderContentSizeLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidBranchNameException"))
             {
                 return new InvalidBranchNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
