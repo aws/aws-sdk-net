@@ -1,3 +1,22 @@
+### 3.3.447.0 (2019-01-24 23:03 UTC)
+* CloudWatchLogs (3.3.7.14)
+	* Documentation updates for CloudWatch Logs
+* CodeBuild (3.3.20.0)
+	* This release adds support for cross-account ECR images and private registry authentication. 
+* ECR (3.3.5.0)
+	* Amazon ECR updated the default endpoint URL to support AWS Private Link.
+* ElasticLoadBalancingV2 (3.3.13.0)
+	* Elastic Load Balancing now supports TLS termination on Network Load Balancers. With this launch, you can offload the decryption/encryption of TLS traffic from your application servers to the Network Load Balancer. This enables you to run your backend servers optimally and keep your workloads secure. Additionally, Network Load Balancers preserve the source IP of the clients to the back-end applications, while terminating TLS on the load balancer.  When TLS is enabled on an NLB, Access Logs can be enabled for the load balancer, and log entries will be emitted for all TLS connections.
+* PinpointSMSVoice (3.3.2.0)
+	* Added the ListConfigurationSets operation, which returns a list of the configuration sets that are associated with your account.
+* RDS (3.3.38.0)
+	* The Amazon RDS API allows you to add or remove Identity and Access Management (IAM) role associated with a specific feature name with an RDS database instance. This helps with capabilities such as invoking Lambda functions from within a trigger in the database, load data from Amazon S3 and so on
+* Core 3.3.31.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.446.0 (2019-01-23 23:45 UTC)
 * ACMPCA (3.3.3.0)
 	* Added TagOnCreate parameter to the CreateCertificateAuthority operation, updated the Tag regex pattern to align with AWS tagging APIs, and added RevokeCertificate limit.
