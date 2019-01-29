@@ -256,7 +256,11 @@ namespace Amazon
         /// The services system name. Service system names can be obtained from the
         /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
         /// </param>
-        /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
+        /// <param>
+        /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
+        /// will generate an endpoint using the AWS endpoint heuristics. In this case, it is not guaranteed the
+        /// endpoint will point to a valid service endpoint.
+        /// </param>
         /// <returns></returns>
         public Endpoint GetEndpointForService(string serviceName)
         {
@@ -274,7 +278,11 @@ namespace Amazon
         /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service
         /// supports a dualstack endpoint for the region.
         /// </param>
-        /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
+        /// <param>
+        /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
+        /// will generate an endpoint using the AWS endpoint heuristics. In this case, it is not guaranteed the
+        /// endpoint will point to a valid service endpoint.
+        /// </param>
         /// <returns></returns>
         public Endpoint GetEndpointForService(string serviceName, bool dualStack)
         {
