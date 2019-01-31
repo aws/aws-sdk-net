@@ -158,8 +158,9 @@ namespace Amazon.Runtime
 
             if (isHead || isClockskewErrorCode)
             {
+                var endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
                 var realNow = AWSConfigs.utcNowSource();
-                var correctedNow = clientConfig.CorrectedUtcNow;
+                var correctedNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint);
 
                 DateTime serverTime;
 
@@ -178,7 +179,6 @@ namespace Amazon.Runtime
                     var absDiff = diff.Ticks < 0 ? -diff : diff;
                     if (absDiff > clockSkewMaxThreshold)
                     {
-                        string endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
                         var newCorrection = serverTime - realNow;
                         Logger.InfoFormat(clockSkewMessageFormat,
                             realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);

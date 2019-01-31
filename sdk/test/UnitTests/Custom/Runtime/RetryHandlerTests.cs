@@ -15,6 +15,10 @@ using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
 using Amazon;
+using Amazon.Runtime.Internal.Transform;
+using static AWSSDK.UnitTests.UnmarshallerTests;
+using Amazon.Util;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK.UnitTests
 {
@@ -132,6 +136,42 @@ namespace AWSSDK.UnitTests
             },
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ChangeSkewBasedOnRequestEndpointAndNotConfigEndpoint()
+        {
+            Uri configEndpoint = new Uri("https://s3.amazonaws.com");
+            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
+
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+                new object[] { configEndpoint.ToString(), TimeSpan.FromHours(-1) });
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
+
+            Assert.AreEqual(TimeSpan.Zero, CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()));
+
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                var timeString = DateTime.UtcNow.AddHours(-1).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+                var exception = new AmazonS3Exception("(" + timeString + " - ");
+                exception.ErrorCode = "RequestTimeTooSkewed";
+                throw exception;
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                request.RequestContext.Request.Endpoint = requestEndpoint;
+                RuntimePipeline.InvokeSync(request);
+            },
+            typeof(AmazonServiceException));
+
+            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -1 hour
+            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-55));
         }
 
         [TestMethod]

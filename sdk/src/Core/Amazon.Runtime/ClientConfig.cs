@@ -482,6 +482,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the current UTC now after clock correction for this endpoint.
         /// </summary>
+        [Obsolete("Please use CorrectClockSkew.GetCorrectedUtcNowForEndpoint(string endpoint) instead.", false)]
         public DateTime CorrectedUtcNow
         {
             get
