@@ -164,10 +164,7 @@ namespace Amazon.SecurityToken.SAML
                         var chunks = roleNode.InnerText.Split(new[] { ',' }, 3);
                         var samlRole = chunks[0] + ',' + chunks[1];
                         if (!seenRoles.Contains(samlRole))
-                        {
-                            // It is possible to configure the same role name across different accounts
-                            // so we much take account number into consideration to get the friendly name
-                            // to avoid duplicate keys
+                        {                            
                             var roleName = string.Empty;                            
                             if (IsSamlProvider(chunks[1]))
                             {
@@ -198,6 +195,11 @@ namespace Amazon.SecurityToken.SAML
 
         private static string ExtractRoleName(string chunk)
         {
+            // It is possible to configure the same role name across different accounts
+            // so we must take account number into consideration to get the friendly name
+            // to avoid duplicate keys
+
+            //Example chunk format: arn:aws:iam::account-number:role/role-name1
             var roleNameStart = chunk.LastIndexOf("::", StringComparison.Ordinal);
             string roleName;
             if (roleNameStart >= 0)
