@@ -6,7 +6,6 @@
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
-        <RunCognitoAuthExtensionTests Condition="'$(RunCognitoAuthExtensionTests)'==''">false</RunCognitoAuthExtensionTests>
         <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
 
@@ -526,58 +525,12 @@
     <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
   </Target>
 
-
-    <Target Name="build-cognito-auth-extension-coreCLR" >
-        <Message Text="Build and Test Cognito Authentication Extension"/>
-
-        <Exec Command="dotnet restore -f  CognitoAuthentication.CoreCLR.sln"    WorkingDirectory="..\extensions"/>
-        <Exec Command="dotnet clean CognitoAuthentication.CoreCLR.sln"      WorkingDirectory="..\extensions"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental CognitoAuthentication.CoreCLR.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
-    </Target>
-
-    <Target Name="build-cognito-auth-extension-net45" >
-        <Message Text="Build and Test Cognito Authentication Extension"/>
-
-        <Exec Command="dotnet restore -f  CognitoAuthentication.NET45.sln"    WorkingDirectory="..\extensions"/>
-        <Exec Command="dotnet clean CognitoAuthentication.NET45.sln"      WorkingDirectory="..\extensions"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental CognitoAuthentication.NET45.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
-    </Target>
-
-        <Target Name="test-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR" Condition="'$(RunCognitoAuthExtensionTests)' != '' And '$(RunCognitoAuthExtensionTests)' != 'false'">
-            <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-         <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/> 
-        <!--<XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.NET45.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/> 
-         <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.NET45.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        -->
-    </Target>
-
-    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-cognito-auth-extension"/>
+    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions"/>
 
   <Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
         <MakeDir Directories="..\Deployment\nuget" />
     <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
   </Target>
-
-    <Target Name="package-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR;test-cognito-auth-extension">
-        <MakeDir Directories="..\Deployment\nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.CognitoAuthentication.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.CognitoAuthentication" />
-    </Target>
 
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
