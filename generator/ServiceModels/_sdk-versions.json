@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.448.1",
+    "ProductVersion" : "3.3.449.0",
     "CoreVersion"    : "3.3.31.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.21.17",
+            "Version" : "3.3.22.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.5.16",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -409,7 +409,7 @@
             "InPreview"               : false
         },
         "CodeCommit"                : {
-            "Version" : "3.3.7.1",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.10.44",
+            "Version" : "3.3.10.45",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"

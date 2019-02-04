@@ -1,3 +1,13 @@
+### 3.3.449.0 (2019-02-04 22:36 UTC)
+* ApplicationAutoScaling (3.3.10.45)
+	* Documentation updates for application-autoscaling
+* CodeCommit (3.3.8.0)
+	* This release supports a more graceful handling of the error case when a repository is not associated with a pull request ID in a merge request in AWS CodeCommit.
+* ECS (3.3.22.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for GPU workloads by enabling you to create clusters with GPU-enabled container instances.
+* WorkSpaces (3.3.6.0)
+	* This release sets ClientProperties as a required parameter.
+
 ### 3.3.448.1 (2019-02-04 17:02 UTC)
 * S3 (3.3.31.15)
 	* Update region constants.
