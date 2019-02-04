@@ -206,7 +206,9 @@ namespace Amazon.Runtime
             cachedRegion = null;
             AllGenerators = new List<RegionGenerator>
             {
+#if !PCL
                 () => new AppConfigAWSRegion(),
+#endif
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
                 () => new ProfileAWSRegion(credentialProfileChain),
@@ -216,7 +218,9 @@ namespace Amazon.Runtime
 
             NonMetadataGenerators = new List<RegionGenerator>
             {
+#if !PCL
                 () => new AppConfigAWSRegion(),
+#endif
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
                 () => new ProfileAWSRegion(credentialProfileChain),
