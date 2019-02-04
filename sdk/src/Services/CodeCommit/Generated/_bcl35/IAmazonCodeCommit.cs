@@ -2458,6 +2458,10 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
         /// A repository name is required but was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNotAssociatedWithPullRequestException">
+        /// The repository does not contain any pull requests with that pull request ID. Check
+        /// to make sure you have provided the correct repository name for the pull request.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TipOfSourceReferenceIsDifferentException">
         /// The tip of the source branch in the destination repository does not match the tip
         /// of the source branch specified in your request. The pull request might have been updated.

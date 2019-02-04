@@ -132,6 +132,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new RepositoryNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNotAssociatedWithPullRequestException"))
+            {
+                return new RepositoryNotAssociatedWithPullRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TipOfSourceReferenceIsDifferentException"))
             {
                 return new TipOfSourceReferenceIsDifferentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
