@@ -300,9 +300,17 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PropagateTags. 
         /// <para>
-        /// Specifies whether to propagate the tags from the task definition or the service to
-        /// the task. If no value is specified, the tags are not propagated.
+        /// Specifies whether to propagate the tags from the task definition to the task. If no
+        /// value is specified, the tags are not propagated. Tags can only be propagated to the
+        /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
+        /// API action.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// An error will be received if you specify the <code>SERVICE</code> option when running
+        /// a task.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PropagateTags PropagateTags
         {

@@ -33,9 +33,13 @@ namespace Amazon.ECS.Model
     public partial class Container
     {
         private string _containerArn;
+        private string _cpu;
         private int? _exitCode;
+        private List<string> _gpuIds = new List<string>();
         private HealthStatus _healthStatus;
         private string _lastStatus;
+        private string _memory;
+        private string _memoryReservation;
         private string _name;
         private List<NetworkBinding> _networkBindings = new List<NetworkBinding>();
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
@@ -61,6 +65,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Cpu. 
+        /// <para>
+        /// The number of CPU units set for the container. The value will be <code>0</code> if
+        /// no value was specified in the container definition when the task definition was registered.
+        /// </para>
+        /// </summary>
+        public string Cpu
+        {
+            get { return this._cpu; }
+            set { this._cpu = value; }
+        }
+
+        // Check to see if Cpu property is set
+        internal bool IsSetCpu()
+        {
+            return this._cpu != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
         /// The exit code returned from the container.
@@ -76,6 +99,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GpuIds. 
+        /// <para>
+        /// The IDs of each GPU assigned to the container.
+        /// </para>
+        /// </summary>
+        public List<string> GpuIds
+        {
+            get { return this._gpuIds; }
+            set { this._gpuIds = value; }
+        }
+
+        // Check to see if GpuIds property is set
+        internal bool IsSetGpuIds()
+        {
+            return this._gpuIds != null && this._gpuIds.Count > 0; 
         }
 
         /// <summary>
@@ -113,6 +154,42 @@ namespace Amazon.ECS.Model
         internal bool IsSetLastStatus()
         {
             return this._lastStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Memory. 
+        /// <para>
+        /// The hard limit (in MiB) of memory set for the container.
+        /// </para>
+        /// </summary>
+        public string Memory
+        {
+            get { return this._memory; }
+            set { this._memory = value; }
+        }
+
+        // Check to see if Memory property is set
+        internal bool IsSetMemory()
+        {
+            return this._memory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryReservation. 
+        /// <para>
+        /// The soft limit (in MiB) of memory set for the container.
+        /// </para>
+        /// </summary>
+        public string MemoryReservation
+        {
+            get { return this._memoryReservation; }
+            set { this._memoryReservation = value; }
+        }
+
+        // Check to see if MemoryReservation property is set
+        internal bool IsSetMemoryReservation()
+        {
+            return this._memoryReservation != null;
         }
 
         /// <summary>

@@ -305,6 +305,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetResourceRequirements())
+            {
+                context.Writer.WritePropertyName("resourceRequirements");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceRequirementsListValue in requestObject.ResourceRequirements)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceRequirementMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSecrets())
             {
                 context.Writer.WritePropertyName("secrets");

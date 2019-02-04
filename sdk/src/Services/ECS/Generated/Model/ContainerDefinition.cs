@@ -60,6 +60,7 @@ namespace Amazon.ECS.Model
         private bool? _pseudoTerminal;
         private bool? _readonlyRootFilesystem;
         private RepositoryCredentials _repositoryCredentials;
+        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
         private List<Secret> _secrets = new List<Secret>();
         private List<SystemControl> _systemControls = new List<SystemControl>();
         private List<Ulimit> _ulimits = new List<Ulimit>();
@@ -974,6 +975,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetRepositoryCredentials()
         {
             return this._repositoryCredentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRequirements. 
+        /// <para>
+        /// The type and amount of a resource to assign to a container. The only supported resource
+        /// is a GPU.
+        /// </para>
+        /// </summary>
+        public List<ResourceRequirement> ResourceRequirements
+        {
+            get { return this._resourceRequirements; }
+            set { this._resourceRequirements = value; }
+        }
+
+        // Check to see if ResourceRequirements property is set
+        internal bool IsSetResourceRequirements()
+        {
+            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
         }
 
         /// <summary>

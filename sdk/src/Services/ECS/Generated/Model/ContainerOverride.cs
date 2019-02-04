@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private int? _memory;
         private int? _memoryReservation;
         private string _name;
+        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -154,6 +155,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRequirements. 
+        /// <para>
+        /// The type and amount of a resource to assign to a container, instead of the default
+        /// value from the task definition. The only supported resource is a GPU.
+        /// </para>
+        /// </summary>
+        public List<ResourceRequirement> ResourceRequirements
+        {
+            get { return this._resourceRequirements; }
+            set { this._resourceRequirements = value; }
+        }
+
+        // Check to see if ResourceRequirements property is set
+        internal bool IsSetResourceRequirements()
+        {
+            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
         }
 
     }
