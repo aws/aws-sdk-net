@@ -64,13 +64,36 @@ namespace Amazon.SecurityToken.SAML
             string roleArn = null;
             string principalArn = null;
 
+            var swappedPrincipalAndRoleArns = string.Empty;
+            if (!string.IsNullOrEmpty(principalAndRoleArns))
+            {
+                var roleComponents = principalAndRoleArns.Split(',');
+                if(roleComponents.Count() != 2)
+                {
+                    throw new ArgumentException("Unknown or invalid principal and role arns format.");
+                }
+
+                swappedPrincipalAndRoleArns = roleComponents.Last() + "," + roleComponents.First();
+            }
+
             foreach (var s in RoleSet.Values)
             {
-                if (s.Equals(principalAndRoleArns, StringComparison.OrdinalIgnoreCase))
+                if (s.Equals(principalAndRoleArns, StringComparison.OrdinalIgnoreCase) || s.Equals(swappedPrincipalAndRoleArns, StringComparison.OrdinalIgnoreCase))
                 {
                     var roleComponents = s.Split(',');
-                    principalArn = roleComponents.First();
-                    roleArn = roleComponents.Last();
+                    if (IsSamlProvider(roleComponents.First()))
+                    {
+                        //Backwards compatible format -- arn:...:saml-provider/SAML,arn:...:role/RoleName
+                        principalArn = roleComponents.First();
+                        roleArn = roleComponents.Last();
+                    }
+                    else
+                    {
+                        //Documented format -- arn:...:role/RoleName,arn:...:saml-provider/SAML
+                        roleArn = roleComponents.First();
+                        principalArn = roleComponents.Last();                        
+                    }
+                    
                     break;
                 }
             }
@@ -141,16 +164,19 @@ namespace Amazon.SecurityToken.SAML
                         var chunks = roleNode.InnerText.Split(new[] { ',' }, 3);
                         var samlRole = chunks[0] + ',' + chunks[1];
                         if (!seenRoles.Contains(samlRole))
-                        {
-                            // It is possible to configure the same role name across different accounts
-                            // so we much take account number into consideration to get the friendly name
-                            // to avoid duplicate keys
-                            var roleNameStart = chunks[1].LastIndexOf("::", StringComparison.Ordinal);
-                            string roleName;
-                            if (roleNameStart >= 0)
-                                roleName = chunks[1].Substring(roleNameStart + 2);
+                        {                            
+                            var roleName = string.Empty;                            
+                            if (IsSamlProvider(chunks[1]))
+                            {
+                                //Documented format -- arn:...:role/RoleName,arn:...:saml-provider/SAML
+                                roleName = ExtractRoleName(chunks[0]);
+                            }
                             else
-                                roleName = chunks[1];
+                            {
+                                //Backwards compatible format -- arn:...:saml-provider/SAML,arn:...:role/RoleName
+                                roleName = ExtractRoleName(chunks[1]);                                
+                            }
+                            
                             discoveredRoles.Add(roleName, samlRole);
 
                             seenRoles.Add(samlRole);
@@ -161,5 +187,27 @@ namespace Amazon.SecurityToken.SAML
 
             return discoveredRoles;
         }
+
+        private static bool IsSamlProvider(string chunk)
+        {
+            return chunk.IndexOf(":saml-provider", StringComparison.OrdinalIgnoreCase) != -1;
+        }
+
+        private static string ExtractRoleName(string chunk)
+        {
+            // It is possible to configure the same role name across different accounts
+            // so we must take account number into consideration to get the friendly name
+            // to avoid duplicate keys
+
+            //Example chunk format: arn:aws:iam::account-number:role/role-name1
+            var roleNameStart = chunk.LastIndexOf("::", StringComparison.Ordinal);
+            string roleName;
+            if (roleNameStart >= 0)
+                roleName = chunk.Substring(roleNameStart + 2);
+            else
+                roleName = chunk;
+
+            return roleName;
+        }                
     }
 }
