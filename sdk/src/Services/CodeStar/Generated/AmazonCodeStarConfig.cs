@@ -32,7 +32,7 @@ namespace Amazon.CodeStar
     public partial class AmazonCodeStarConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.3.28");
+            InternalSDKUtils.BuildUserAgentString("3.3.3.29");
 
         private string _userAgent = UserAgentString;
 

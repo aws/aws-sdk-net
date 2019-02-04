@@ -32,7 +32,7 @@ namespace Amazon.DLM
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.1.20");
+            InternalSDKUtils.BuildUserAgentString("3.3.1.21");
 
         private string _userAgent = UserAgentString;
 

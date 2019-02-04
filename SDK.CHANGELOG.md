@@ -1,3 +1,15 @@
+### 3.3.448.1 (2019-02-04 17:02 UTC)
+* S3 (3.3.31.15)
+	* Update region constants.
+* SecurityToken (3.3.4.50)
+	* Fix to support documented role,saml-provider format.
+* SimpleNotificationService (3.3.3.18)
+	* Parse SNS subscription message correctly.
+* Core 3.3.31.7
+	* Fix clock skew caching when the ClientConfig endpoint is different from the request endpoint.
+Update region constants.
+	* All services packages updated to require new Core
+
 ### 3.3.448.0 (2019-01-25 22:30 UTC)
 * CodeCommit (3.3.7.0)
 	* The PutFile API will now throw new exception FilePathConflictsWithSubmodulePathException when a submodule exists at the input file path; PutFile API will also throw FolderContentSizeLimitExceededException when the total size of any folder on the path exceeds the limit as a result of the operation.
