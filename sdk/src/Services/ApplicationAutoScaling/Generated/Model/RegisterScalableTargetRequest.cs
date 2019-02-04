@@ -30,16 +30,19 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Container for the parameters to the RegisterScalableTarget operation.
     /// Registers or updates a scalable target. A scalable target is a resource that Application
-    /// Auto Scaling can scale out or scale in. After you have registered a scalable target,
-    /// you can use this operation to update the minimum and maximum values for its scalable
-    /// dimension.
+    /// Auto Scaling can scale in and scale out. Each scalable target has a resource ID, scalable
+    /// dimension, and namespace, as well as values for minimum and maximum capacity. 
     /// 
     ///  
     /// <para>
-    /// After you register a scalable target, you can create and apply scaling policies using
-    /// <a>PutScalingPolicy</a>. You can view the scaling policies for a service namespace
-    /// using <a>DescribeScalableTargets</a>. If you no longer need a scalable target, you
-    /// can deregister it using <a>DeregisterScalableTarget</a>.
+    /// After you register a scalable target, you do not need to register it again to use
+    /// other Application Auto Scaling operations. To see which resources have been registered,
+    /// use <a>DescribeScalableTargets</a>. You can also view the scaling policies for a service
+    /// namespace using <a>DescribeScalableTargets</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you no longer need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
     /// </para>
     /// </summary>
     public partial class RegisterScalableTargetRequest : AmazonApplicationAutoScalingRequest
@@ -55,7 +58,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// The maximum value to scale to in response to a scale out event. This parameter is
-        /// required if you are registering a scalable target.
+        /// required to register a scalable target.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -74,7 +77,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property MinCapacity. 
         /// <para>
         /// The minimum value to scale to in response to a scale in event. This parameter is required
-        /// if you are registering a scalable target.
+        /// to register a scalable target.
         /// </para>
         /// </summary>
         public int MinCapacity
@@ -139,7 +142,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Custom resources are not supported with a resource type. This parameter must specify
         /// the <code>OutputValue</code> from the CloudFormation template stack used to access
-        /// the resources. The unique identifier is defined by the service provider.
+        /// the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -159,7 +164,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// Application Auto Scaling creates a service-linked role that grants it permissions
-        /// to modify the scalable target on your behalf. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/application/userguide/application-autoscaling-service-linked-roles.html">Service-Linked
+        /// to modify the scalable target on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
         /// Roles for Application Auto Scaling</a>.
         /// </para>
         ///  
@@ -229,7 +234,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
-        /// DB cluster. Available for Aurora MySQL-compatible edition.
+        /// DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible
+        /// edition.
         /// </para>
         ///  </li> <li> 
         /// <para>

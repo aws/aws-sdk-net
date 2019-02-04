@@ -56,40 +56,40 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon ECS services. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+    /// Amazon ECS services. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
     /// Auto Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EC2 Spot fleets. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic
+    /// Amazon EC2 Spot fleets. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic
     /// Scaling for Spot Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EMR clusters. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
+    /// Amazon EMR clusters. For more information, see <a href="https://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
     /// Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AppStream 2.0 fleets. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet
+    /// AppStream 2.0 fleets. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet
     /// Auto Scaling for Amazon AppStream 2.0</a> in the <i>Amazon AppStream 2.0 Developer
     /// Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Provisioned read and write capacity for Amazon DynamoDB tables and global secondary
-    /// indexes. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing
+    /// indexes. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing
     /// Throughput Capacity Automatically with DynamoDB Auto Scaling</a> in the <i>Amazon
     /// DynamoDB Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Aurora Replicas. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using
+    /// Amazon Aurora Replicas. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html">Using
     /// Amazon Aurora Auto Scaling with Aurora Replicas</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SageMaker endpoint variants. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically
+    /// Amazon SageMaker endpoint variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically
     /// Scaling Amazon SageMaker Models</a>.
     /// </para>
     ///  </li> <li> 
@@ -100,14 +100,8 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To learn more about Application Auto Scaling, see the <a href="http://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
-    /// Auto Scaling User Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To configure automatic scaling for multiple resources across multiple services, use
-    /// AWS Auto Scaling to create a scaling plan for your application. For more information,
-    /// see the <a href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+    /// To learn more about Application Auto Scaling, including information about granting
+    /// IAM users required permissions for Application Auto Scaling actions, see the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
     /// Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Represents a target tracking scaling policy configuration.
+    /// Represents a target tracking scaling policy configuration to use with Application
+    /// Auto Scaling.
     /// </summary>
     public partial class TargetTrackingScalingPolicyConfiguration
     {

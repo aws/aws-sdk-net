@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Configures a predefined metric for a target tracking policy.
+    /// Configures a predefined metric for a target tracking policy to use with Application
+    /// Auto Scaling.
     /// </summary>
     public partial class PredefinedMetricSpecification
     {

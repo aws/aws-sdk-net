@@ -35,8 +35,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
     /// dimension. A scheduled action applies to the scalable target identified by those three
-    /// attributes. You cannot create a scheduled action until you register the scalable target
-    /// using <a>RegisterScalableTarget</a>.
+    /// attributes. You cannot create a scheduled action until you have registered the resource
+    /// as a scalable target using <a>RegisterScalableTarget</a>. 
     /// </para>
     ///  
     /// <para>
@@ -129,7 +129,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Custom resources are not supported with a resource type. This parameter must specify
         /// the <code>OutputValue</code> from the CloudFormation template stack used to access
-        /// the resources. The unique identifier is defined by the service provider.
+        /// the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,7 +196,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
-        /// DB cluster. Available for Aurora MySQL-compatible edition.
+        /// DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible
+        /// edition.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -248,16 +251,15 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-        /// 
+        /// At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code> 
+        /// Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cron expressions - <code>cron(<i>fields</i>)</code> 
+        /// Cron expressions - "<code>cron(<i>fields</i>)</code>"
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -271,7 +273,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about cron expressions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// For more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
