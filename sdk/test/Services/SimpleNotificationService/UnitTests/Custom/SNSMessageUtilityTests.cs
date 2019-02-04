@@ -6,7 +6,7 @@ using Amazon.SimpleNotificationService.Util;
 namespace AWSSDK_DotNet35.UnitTests
 {
     // Temporarily disabling failing test, need to make less brittle and move to integ tests.
-    //[TestClass]
+    [TestClass]
     [TestCategory("SimpleNotificationService")]
     public class SNSMessageUtilityTests
     {
@@ -51,8 +51,27 @@ namespace AWSSDK_DotNet35.UnitTests
 "  \"SigningCertURL\" : \"https://sns.us-east-1.amazonaws.com/SimpleNotificationService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\"" +
 "}";
 
+
+        [TestMethod]
+        public void HandleMixedCaseKeys()
+        {
+            var value = "arn:aws:sns:us-east-1:123456789012:MyTopic";
+            var expectedCase = 
+"{" +
+"  \"TopicArn\" : \"" + value + "\"," +
+"  \"SigningCertURL\" : \"https://sns.us-east-1.amazonaws.com/SimpleNotificationService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\"" +
+"}";
+
+            var message = Message.ParseMessage(expectedCase);
+            Assert.AreEqual(value, message.TopicArn);
+
+            var differentCase = expectedCase.Replace("TopicArn", "TopicARN");
+            message = Message.ParseMessage(differentCase);
+            Assert.AreEqual(value, message.TopicArn);
+        }
+
         // Disable tests since sample data cert no longer exists
-//        [TestMethod]
+        //        [TestMethod]
         public void SubscriptionFormatTest()
         {
             var message = Message.ParseMessage(SUBSCRIPTION_EXAMPLE);

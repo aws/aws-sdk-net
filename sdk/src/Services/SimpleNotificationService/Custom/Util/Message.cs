@@ -63,6 +63,12 @@ namespace Amazon.SimpleNotificationService.Util
                 {
                     if (jsonData[fieldName] != null && jsonData[fieldName].IsString)
                         return (string)jsonData[fieldName];
+
+                    // Check to see if the field can be found with a different case.
+                    var anyCaseKey = jsonData.PropertyNames.FirstOrDefault(x => string.Equals(x, fieldName, StringComparison.OrdinalIgnoreCase));
+                    if (!string.IsNullOrEmpty(anyCaseKey) && jsonData[anyCaseKey].IsString)
+                        return (string)jsonData[anyCaseKey];
+
                     return null;
                 });
 
