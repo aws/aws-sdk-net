@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RAM")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Access Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Access Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Access Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Resource Access Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Resource Access Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

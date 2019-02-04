@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DocDB")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
