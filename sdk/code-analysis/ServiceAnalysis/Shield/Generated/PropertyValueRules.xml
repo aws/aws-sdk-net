@@ -55,6 +55,12 @@
     <pattern>[a-zA-Z0-9\\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Shield.Model.DescribeProtectionRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Shield.Model.DisassociateDRTLogBucketRequest.LogBucket</property>
     <min>3</min>
     <max>63</max>

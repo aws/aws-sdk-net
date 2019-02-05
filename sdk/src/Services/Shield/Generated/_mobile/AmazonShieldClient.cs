@@ -44,7 +44,7 @@ namespace Amazon.Shield
     /// who need detailed information about the AWS Shield Advanced API actions, data types,
     /// and errors. For detailed information about AWS WAF and AWS Shield Advanced features
     /// and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a
-    /// href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield
+    /// href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield
     /// Developer Guide</a>.
     /// </para>
     /// </summary>

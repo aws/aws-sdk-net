@@ -44,7 +44,7 @@ namespace Amazon.Shield
     /// who need detailed information about the AWS Shield Advanced API actions, data types,
     /// and errors. For detailed information about AWS WAF and AWS Shield Advanced features
     /// and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a
-    /// href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield
+    /// href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield
     /// Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -444,8 +444,8 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon
-        /// CloudFront distribution, Elastic Load Balancing load balancer, Elastic IP Address,
-        /// or an Amazon Route 53 hosted zone.
+        /// CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator
+        /// accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
         /// 
         ///  
         /// <para>
@@ -702,7 +702,8 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the DescribeAttack service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedException">
-        /// 
+        /// Exception that indicates the specified <code>AttackId</code> does not exist, or the
+        /// requester does not have the appropriate permissions to access the <code>AttackId</code>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
@@ -846,6 +847,9 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
         /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.

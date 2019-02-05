@@ -74,6 +74,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProtectionId);
                 }
 
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

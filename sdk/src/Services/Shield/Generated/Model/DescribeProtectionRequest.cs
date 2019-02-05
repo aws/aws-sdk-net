@@ -34,11 +34,14 @@ namespace Amazon.Shield.Model
     public partial class DescribeProtectionRequest : AmazonShieldRequest
     {
         private string _protectionId;
+        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property ProtectionId. 
         /// <para>
-        /// The unique identifier (ID) for the <a>Protection</a> object that is described.
+        /// The unique identifier (ID) for the <a>Protection</a> object that is described. When
+        /// submitting the <code>DescribeProtection</code> request you must provide either the
+        /// <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
         /// </para>
         /// </summary>
         public string ProtectionId
@@ -51,6 +54,27 @@ namespace Amazon.Shield.Model
         internal bool IsSetProtectionId()
         {
             return this._protectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object
+        /// that is described. When submitting the <code>DescribeProtection</code> request you
+        /// must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }
