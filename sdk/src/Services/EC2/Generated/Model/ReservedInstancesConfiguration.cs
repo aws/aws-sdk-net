@@ -61,6 +61,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of modified Reserved Instances.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is a required field for a request.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int InstanceCount
         {

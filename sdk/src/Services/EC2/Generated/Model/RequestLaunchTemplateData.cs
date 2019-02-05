@@ -88,7 +88,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationSpecification. 
         /// <para>
-        /// The Capacity Reservation targeting option.
+        /// The Capacity Reservation targeting option. If you do not specify this parameter, the
+        /// instance's Capacity Reservation preference defaults to <code>open</code>, which enables
+        /// it to run in any open Capacity Reservation that has matching attributes (instance
+        /// type, platform, Availability Zone).
         /// </para>
         /// </summary>
         public LaunchTemplateCapacityReservationSpecificationRequest CapacityReservationSpecification

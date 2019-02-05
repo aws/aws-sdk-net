@@ -29,11 +29,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes an instance's Capacity Reservation targeting option. You can specify only
-    /// one option at a time. Use the <code>CapacityReservationPreference</code> parameter
-    /// to configure the instance to run as an On-Demand Instance or to run in any <code>open</code>
-    /// Capacity Reservation that has matching attributes (instance type, platform, Availability
-    /// Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target
-    /// a specific Capacity Reservation.
+    /// one parameter at a time. If you specify <code>CapacityReservationPreference</code>
+    /// and <code>CapacityReservationTarget</code>, the request fails.
+    /// 
+    ///  
+    /// <para>
+    /// Use the <code>CapacityReservationPreference</code> parameter to configure the instance
+    /// to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation
+    /// that has matching attributes (instance type, platform, Availability Zone). Use the
+    /// <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity
+    /// Reservation.
+    /// </para>
     /// </summary>
     public partial class CapacityReservationSpecification
     {

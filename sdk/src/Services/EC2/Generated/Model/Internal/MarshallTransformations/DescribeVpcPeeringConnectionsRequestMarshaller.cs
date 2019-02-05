@@ -79,6 +79,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetMaxResults())
+                {
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetVpcPeeringConnectionIds())
                 {
                     int publicRequestlistValueIndex = 1;

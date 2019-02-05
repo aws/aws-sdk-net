@@ -47,13 +47,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>association.transit-gateway-route-table-id</code> - The ID of the route table
-        /// for the transit gateway.
+        ///  <code>association.state</code> - The state of the association (<code>associating</code>
+        /// | <code>associated</code> | <code>disassociating</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association.state</code> - The state of the association (<code>associating</code>
-        /// | <code>associated</code> | <code>disassociating</code>).
+        ///  <code>association.transit-gateway-route-table-id</code> - The ID of the route table
+        /// for the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-owner</code> - The ID of the AWS account that owns the resource.
+        ///  <code>resource-owner-id</code> - The ID of the AWS account that owns the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
-        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
+        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-owner</code> - The ID of the AWS account that owns the transit
+        ///  <code>transit-gateway-owner-id</code> - The ID of the AWS account that owns the transit
         /// gateway.
         /// </para>
         ///  </li> </ul>

@@ -46,10 +46,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>options.propagation-default-route-table-id</code> - The ID of the default propagation
         /// route table.
         /// </para>
@@ -92,18 +88,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>
-        /// | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
+        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code>
-        /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

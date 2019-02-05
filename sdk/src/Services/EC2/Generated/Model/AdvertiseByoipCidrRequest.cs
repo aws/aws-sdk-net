@@ -61,7 +61,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// The IPv4 address range, in CIDR notation.
+        /// The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned.
+        /// You can't advertise only a portion of the provisioned range.
         /// </para>
         /// </summary>
         public string Cidr

@@ -2600,8 +2600,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -4615,8 +4615,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -4650,8 +4650,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

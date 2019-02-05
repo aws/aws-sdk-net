@@ -1747,8 +1747,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
@@ -3032,8 +3032,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5728,8 +5728,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method.</param>
@@ -5790,8 +5790,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
@@ -5852,8 +5852,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
@@ -9176,8 +9176,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -9193,8 +9193,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
@@ -14639,8 +14639,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -14656,8 +14656,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
@@ -14716,8 +14716,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -14733,8 +14733,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-        /// Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>

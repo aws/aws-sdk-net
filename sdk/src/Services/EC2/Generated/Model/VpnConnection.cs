@@ -50,8 +50,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN
         /// connection. A value of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS
-        /// Managed VPN Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string Category

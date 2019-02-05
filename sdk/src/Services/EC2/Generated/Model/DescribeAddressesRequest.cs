@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIps. 
         /// <para>
-        /// [EC2-Classic] One or more Elastic IP addresses.
+        /// One or more Elastic IP addresses.
         /// </para>
         ///  
         /// <para>

@@ -44,21 +44,48 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>transit-gateway-route-state</code> - The state of the route (<code>active</code>
-        /// | <code>blackhole</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
+        ///  <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway
         /// attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
+        ///  <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code>
+        /// | <code>vpn</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route-search.exact-match</code> - The exact match of the specified filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route-search.longest-prefix-match</code> - The longest prefix that matches
+        /// the route.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route-search.subnet-of-match</code> - The routes with a subnet that match the
+        /// specified CIDR filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass
+        /// the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your
+        /// route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns
+        /// 10.0.1.0/29.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
+        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
