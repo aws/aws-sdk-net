@@ -201,7 +201,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have
+        ///  <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have
         /// valid results. Wait for an <code>AVAILABLE</code> status before performing operations.
         /// </para>
         ///  </li> <li> 
@@ -213,9 +213,16 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR</code> - An unexpected error occurred, the provisioned product exists
+        ///  <code>ERROR</code> - An unexpected error occurred. The provisioned product exists
         /// but the stack is not running. For example, CloudFormation received a parameter value
         /// that was not valid and could not launch the stack.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed
+        /// to provision a new product, but resources have not yet been created. After reviewing
+        /// the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code>
+        /// status before performing operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
