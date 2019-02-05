@@ -1,3 +1,11 @@
+### 3.3.450.0 (2019-02-05 22:07 UTC)
+* EC2 (3.3.81.0)
+	* ec2.DescribeVpcPeeringConnections pagination support
+* ServiceCatalog (3.3.13.20)
+	* Service Catalog Documentation Update for ProvisionedProductDetail
+* Shield (3.3.5.0)
+	* The DescribeProtection request now accepts resource ARN as valid parameter.
+
 ### 3.3.449.0 (2019-02-04 22:36 UTC)
 * ApplicationAutoScaling (3.3.10.45)
 	* Documentation updates for application-autoscaling

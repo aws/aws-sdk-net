@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.449.0",
+    "ProductVersion" : "3.3.450.0",
     "CoreVersion"    : "3.3.31.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.80.4",
+            "Version" : "3.3.81.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.13.19",
+            "Version" : "3.3.13.20",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -673,7 +673,7 @@
             "InPreview"               : false
         },
         "Shield"                          : {
-            "Version" : "3.3.4.29",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
