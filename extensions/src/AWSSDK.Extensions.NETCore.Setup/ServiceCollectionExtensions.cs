@@ -16,11 +16,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Amazon;
 using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 using Amazon.Extensions.NETCore.Setup;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -41,6 +42,40 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, AWSOptions options)
         {
             collection.Add(new ServiceDescriptor(typeof(AWSOptions), options));
+
+            // Set initial logging configuration on AWSConfigs
+            AWSConfigs.LoggingConfig.LogTo = options.LogTo;
+
+            return collection;
+        }
+
+        /// <summary>
+        /// Fetches the AWSOptions object from the <paramref name="configuration"/> and adds it
+        /// to the dependency injection framework providing information that will be used to construct Amazon service clients.
+        /// Also registers an options monitor to react to changes made to the <paramref name="configuration"/>.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="configuration"></param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, IConfiguration configuration)
+        {
+            var options = configuration.GetAWSOptions();
+            return collection.AddDefaultAWSOptions(options, configuration);
+        }
+
+        /// <summary>
+        /// Adds the AWSOptions object to the dependency injection framework providing information
+        /// that will be used to construct Amazon service clients.
+        /// Also registers an options monitor to react to changes made to the <paramref name="configuration"/>.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="options">The default AWS options used to construct AWS service clients with.</param>
+        /// <param name="configuration"></param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, AWSOptions options, IConfiguration configuration)
+        {
+            collection.AddDefaultAWSOptions(options);
+            collection.Add(new ServiceDescriptor(typeof(AWSOptionsMonitor), new AWSOptionsMonitor(configuration, options)));
             return collection;
         }
 

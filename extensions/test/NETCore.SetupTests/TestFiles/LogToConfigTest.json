@@ -1,0 +1,5 @@
+﻿{
+  "AWS": {
+    "LogTo": "Console"
+  }
+}
