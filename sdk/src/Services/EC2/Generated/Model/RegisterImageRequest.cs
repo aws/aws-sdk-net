@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the RegisterImage operation.
     /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
     /// before you can launch an instance from the AMI. For more information about creating
-    /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
+    /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
     /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  <note> 
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
     /// from a snapshot of a root device volume. You specify the snapshot using the block
-    /// device mapping. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
+    /// device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
     /// a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  

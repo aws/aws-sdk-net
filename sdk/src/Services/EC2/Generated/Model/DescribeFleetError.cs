@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error code that indicates why the instance could not be launched. For more information
-        /// about error codes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+        /// about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
         /// Codes</a>.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// The error message that describes why the instance could not be launched. For more
-        /// information about error messages, see ee <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+        /// information about error messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
         /// Codes</a>.
         /// </para>
         /// </summary>

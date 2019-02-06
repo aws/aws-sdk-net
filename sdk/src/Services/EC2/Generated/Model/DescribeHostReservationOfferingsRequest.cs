@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// that may not match the instance family and Region of your Dedicated Hosts. When purchasing
     /// an offering, ensure that the instance family and Region of the offering matches that
     /// of the Dedicated Hosts with which it is to be associated. For more information about
-    /// supported instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+    /// supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
     /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
     /// </para>
     /// </summary>

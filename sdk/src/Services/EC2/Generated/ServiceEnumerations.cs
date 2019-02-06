@@ -1013,6 +1013,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform LinuxUNIX = new CapacityReservationInstancePlatform("Linux/UNIX");
         /// <summary>
+        /// Constant LinuxWithSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform LinuxWithSQLServerEnterprise = new CapacityReservationInstancePlatform("Linux with SQL Server Enterprise");
+        /// <summary>
+        /// Constant LinuxWithSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform LinuxWithSQLServerStandard = new CapacityReservationInstancePlatform("Linux with SQL Server Standard");
+        /// <summary>
+        /// Constant LinuxWithSQLServerWeb for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform LinuxWithSQLServerWeb = new CapacityReservationInstancePlatform("Linux with SQL Server Web");
+        /// <summary>
         /// Constant RedHatEnterpriseLinux for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform RedHatEnterpriseLinux = new CapacityReservationInstancePlatform("Red Hat Enterprise Linux");

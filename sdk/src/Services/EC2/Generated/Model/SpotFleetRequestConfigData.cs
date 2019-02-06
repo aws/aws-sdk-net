@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// your listings. This helps to avoid duplicate listings. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// Idempotency</a>.
         /// </para>
         /// </summary>

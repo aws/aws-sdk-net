@@ -30,12 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportVolume operation.
     /// Creates an import volume task using metadata from the specified disk image.For more
-    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
     /// Disks to Amazon EBS</a>.
     /// 
     ///  
     /// <para>
-    /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+    /// For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
     /// Import Manifest</a>.
     /// </para>
     /// </summary>

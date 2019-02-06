@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ReplaceNetworkAclAssociation operation.
     /// Changes which network ACL a subnet is associated with. By default when you create
     /// a subnet, it's automatically associated with the default network ACL. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+    /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
     /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// 
     ///  

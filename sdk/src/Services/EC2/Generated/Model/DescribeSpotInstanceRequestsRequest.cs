@@ -211,7 +211,7 @@ namespace Amazon.EC2.Model
         ///  <code>state</code> - The state of the Spot Instance request (<code>open</code> |
         /// <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>).
         /// Spot request status information can help you track your Amazon EC2 Spot Instance requests.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
         /// Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  </li> <li> 

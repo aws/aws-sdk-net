@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// volume. For General Purpose SSD volumes, this represents the baseline performance
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
         /// For more information about General Purpose SSD baseline performance, I/O credits,
-        /// and bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// and bursting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// for <code>io1</code> volumes in most regions. Maximum <code>io1</code>IOPS of 64,000
         /// is guaranteed only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
         /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

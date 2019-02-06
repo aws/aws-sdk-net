@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVpcEndpointConnectionNotification operation.
     /// Creates a connection notification for a specified VPC endpoint or VPC endpoint service.
     /// A connection notification notifies you of specific endpoint events. You must create
-    /// an SNS topic to receive notifications. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create
+    /// an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create
     /// a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
     /// 
     ///  
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
         /// to Ensure Idempotency</a>.
         /// </para>
         /// </summary>

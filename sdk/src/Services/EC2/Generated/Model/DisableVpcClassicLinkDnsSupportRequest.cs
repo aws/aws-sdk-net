@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DisableVpcClassicLinkDnsSupport operation.
     /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
     /// public IP addresses when addressed between a linked EC2-Classic instance and instances
-    /// in the VPC to which it's linked. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+    /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DisableVpcClassicLinkDnsSupportRequest : AmazonEC2Request
