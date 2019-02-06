@@ -53,7 +53,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         public static T CreateClient()
         {
-            return new T();
+            var c = new T();
+            SetEndpoint(c, "http://localhost:8000");
+            return c;
         }
 
         public static ServiceResponseCounter CountServiceResponses()

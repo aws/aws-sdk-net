@@ -1034,7 +1034,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(query, currentConfig);
         }
 
-        private IAsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
+        private AsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
         {
             return new AsyncSearch<T>(this, contextSearch);
         }
