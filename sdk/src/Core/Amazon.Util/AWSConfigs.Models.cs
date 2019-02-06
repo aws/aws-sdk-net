@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Amazon.Runtime;
 
 namespace Amazon.Util
 {
@@ -119,6 +120,11 @@ namespace Amazon.Util
         /// A custom formatter added through Configuration
         /// </summary>
         public Amazon.Runtime.IMetricsFormatter LogMetricsCustomFormatter { get; set; }
+
+        /// <summary>
+        /// A custom logger to be used when LogTo includes "Custom"
+        /// </summary>
+        public BaseLogger CustomLogger { get; set; }
 
         internal LoggingConfig()
         {

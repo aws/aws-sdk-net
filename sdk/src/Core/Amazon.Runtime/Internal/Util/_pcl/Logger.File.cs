@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    internal class InternalFileLogger : InternalLogger
+    internal class InternalFileLogger : BaseLogger
     {
 		enum LogLevel
 		{

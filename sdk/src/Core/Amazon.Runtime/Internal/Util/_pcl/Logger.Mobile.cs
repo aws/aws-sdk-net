@@ -30,7 +30,7 @@ namespace Amazon.Runtime.Internal.Util
     /// Logger wrapper for Console.WriteLine()
     /// </summary>
     [Obsolete("Use InternalConsoleLogger instead")]
-    internal class MobileLogger : InternalLogger
+    internal class MobileLogger : BaseLogger
     {
         private const string InfoMsg = "[AWSSDK INFO] {0}";
         private const string DebugMsg = "[AWSSDK DEBUG] {0}";

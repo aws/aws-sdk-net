@@ -31,16 +31,16 @@ namespace Amazon.Runtime.Internal.Util
     public class Logger : ILogger
     {
         private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
-        private List<InternalLogger> loggers;
+        private List<BaseLogger> loggers;
         private static Logger emptyLogger = new Logger();
 
         private Logger()
         {
-            loggers = new List<InternalLogger>();
+            loggers = new List<BaseLogger>();
         }
         private Logger(Type type)
         {
-            loggers = new List<InternalLogger>();
+            loggers = new List<BaseLogger>();
 
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal.Util
         private void ConfigureLoggers()
         {
             LoggingOptions logging = AWSConfigs.LoggingConfig.LogTo;
-            foreach (InternalLogger il in loggers)
+            foreach (BaseLogger il in loggers)
             {
                 if (il is InternalLog4netLogger)
                     il.IsEnabled = (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net;
@@ -94,6 +94,13 @@ namespace Amazon.Runtime.Internal.Util
                     il.IsEnabled = (logging & LoggingOptions.File) == LoggingOptions.File;
 #endif
 
+            }
+
+            BaseLogger customLogger = AWSConfigs.LoggingConfig.CustomLogger;
+            if ((logging & LoggingOptions.Custom) == LoggingOptions.Custom)
+            {
+                customLogger.IsEnabled = true;
+                loggers.Add(customLogger);
             }
         }
 
@@ -131,7 +138,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void Flush()
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (BaseLogger logger in loggers)
             {
                 logger.Flush();
             }
@@ -139,7 +146,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void Error(Exception exception, string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (BaseLogger logger in loggers)
             {
                 if (logger.IsEnabled && logger.IsErrorEnabled)
                     logger.Error(exception, messageFormat, args);
@@ -148,7 +155,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void Debug(Exception exception, string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (BaseLogger logger in loggers)
             {
                 if (logger.IsEnabled && logger.IsDebugEnabled)
                     logger.Debug(exception, messageFormat, args);
@@ -157,7 +164,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void DebugFormat(string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (BaseLogger logger in loggers)
             {
                 if (logger.IsEnabled && logger.IsDebugEnabled)
                     logger.DebugFormat(messageFormat, args);
@@ -166,7 +173,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void InfoFormat(string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (BaseLogger logger in loggers)
             {
                 if (logger.IsEnabled && logger.IsInfoEnabled)
                     logger.InfoFormat(messageFormat, args);
@@ -176,75 +183,4 @@ namespace Amazon.Runtime.Internal.Util
         #endregion
 
     }
-
-    /// <summary>
-    /// Abstract logger class, base for any custom/specific loggers.
-    /// </summary>
-    internal abstract class InternalLogger
-    {
-        public Type DeclaringType { get; private set; }
-
-        public bool IsEnabled { get; set; }
-
-        public InternalLogger(Type declaringType)
-        {
-            DeclaringType = declaringType;
-            IsEnabled = true;
-        }
-
-        #region Logging methods
-
-        /// <summary>
-        /// Flushes the logger contents.
-        /// </summary>
-        public abstract void Flush();
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsErrorEnabled property.
-        /// </summary>
-        public virtual bool IsErrorEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsDebugEnabled property.
-        /// </summary>
-        public virtual bool IsDebugEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsInfoEnabled property.
-        /// </summary>
-        public virtual bool IsInfoEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net Error method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public abstract void Error(Exception exception, string messageFormat, params object[] args);
-
-        /// <summary>
-        /// Simple wrapper around the log4net Debug method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public abstract void Debug(Exception exception, string messageFormat, params object[] args);
-
-        /// <summary>
-        /// Simple wrapper around the log4net DebugFormat method.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="arguments"></param>
-        public abstract void DebugFormat(string message, params object[] arguments);
-
-        /// <summary>
-        /// Simple wrapper around the log4net InfoFormat method.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="arguments"></param>
-        public abstract void InfoFormat(string message, params object[] arguments);
-
-        #endregion
-    }
-
 }
