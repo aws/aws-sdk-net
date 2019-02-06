@@ -108,6 +108,13 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="bucketName"></param>
         /// <returns></returns>
         Task<bool> DoesS3BucketExistAsync(string bucketName);
+        
+        /// <summary>
+        /// Check to see if the bucket exists over HTTPS.
+        /// </summary>
+        /// <param name="bucketName"></param>
+        /// <returns></returns>
+        Task<bool> DoesS3BucketExistV2Async(string bucketName);
 #endif
     }
 }

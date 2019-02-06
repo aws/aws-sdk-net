@@ -137,6 +137,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.DeletesAsync(System.String,System.Collections.Generic.IEnumerable`1<System.String>,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.Threading.CancellationToken)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.EnsureBucketExistsAsync(System.String)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.DoesS3BucketExistAsync(System.String)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.DoesS3BucketExistV2Async(System.String)")]
 
 // Calling overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.V4ClientSection.#.ctor(System.Xml.Linq.XElement)")]

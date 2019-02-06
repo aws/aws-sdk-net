@@ -152,6 +152,11 @@ namespace Amazon.S3
         {
             return Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistAsync(this, bucketName);
         }
+        
+        Task<bool> ICoreAmazonS3.DoesS3BucketExistV2Async(string bucketName)
+        {
+            return Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async(this, bucketName);
+        }
         #endregion
     }
 }
