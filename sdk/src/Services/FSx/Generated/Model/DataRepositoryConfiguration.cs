@@ -40,11 +40,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ExportPath. 
         /// <para>
-        /// The Amazon S3 commit path to use for storing new and changed Lustre file system files
-        /// as part of the archive operation from the file system to Amazon S3. The value is <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>.
-        /// The timestamp is presented in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
-        /// Files are archived to a different prefix in the Amazon S3 bucket, preventing input
-        /// data from being overwritten.
+        /// The export path to the Amazon S3 bucket (and prefix) that you are using to store new
+        /// and changed Lustre file system files in S3.
         /// </para>
         /// </summary>
         public string ExportPath

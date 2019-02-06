@@ -45,6 +45,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExportPath())
+            {
+                context.Writer.WritePropertyName("ExportPath");
+                context.Writer.Write(requestObject.ExportPath);
+            }
+
             if(requestObject.IsSetImportedFileChunkSize())
             {
                 context.Writer.WritePropertyName("ImportedFileChunkSize");

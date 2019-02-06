@@ -194,7 +194,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The IDs of the elastic network interface from which a specific file system is accessible.
         /// The elastic network interface is automatically created in the same VPC that the Amazon
-        /// FSx file system was created in. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+        /// FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
         /// Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> 
         /// </para>
         ///  
@@ -293,7 +293,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to associate with the file system. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

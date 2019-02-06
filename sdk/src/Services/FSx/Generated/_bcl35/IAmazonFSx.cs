@@ -197,6 +197,9 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidExportPathException">
+        /// The path provided for data repository export isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidImportPathException">
         /// The path provided for data repository import isn't valid.
         /// </exception>
@@ -379,6 +382,10 @@ namespace Amazon.FSx
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
         /// 
         /// <returns>The response from the DeleteBackup service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BackupInProgressException">
+        /// Another backup is already under way. Wait for completion before initiating additional
+        /// backups of this file system.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.BackupNotFoundException">
         /// No Amazon FSx backups were found based upon the supplied parameters.
         /// </exception>
