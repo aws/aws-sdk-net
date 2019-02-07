@@ -1,3 +1,9 @@
+### 3.3.451.0 (2019-02-06 23:18 UTC)
+* EC2 (3.3.82.0)
+	* Add Linux with SQL Server Standard, Linux with SQL Server Web, and Linux with SQL Server Enterprise to the list of allowed instance platforms for On-Demand Capacity Reservations.
+* FSx (3.3.1.0)
+	* New optional ExportPath parameter added to the CreateFileSystemLustreConfiguration object for user-defined export paths. Used with the CreateFileSystem action when creating an Amazon FSx for Lustre file system.
+
 ### 3.3.450.0 (2019-02-05 22:07 UTC)
 * EC2 (3.3.81.0)
 	* ec2.DescribeVpcPeeringConnections pagination support
