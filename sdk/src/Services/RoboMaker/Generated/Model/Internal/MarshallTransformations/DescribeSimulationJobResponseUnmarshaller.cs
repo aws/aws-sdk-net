@@ -75,6 +75,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.FailureCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iamRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -127,6 +133,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vpcConfig", targetDepth))

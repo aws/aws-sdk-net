@@ -554,6 +554,18 @@ namespace Amazon.RoboMaker
         /// Constant SubnetIpLimitExceeded for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode SubnetIpLimitExceeded = new SimulationJobErrorCode("SubnetIpLimitExceeded");
+        /// <summary>
+        /// Constant WrongRegionRobotApplication for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode WrongRegionRobotApplication = new SimulationJobErrorCode("WrongRegionRobotApplication");
+        /// <summary>
+        /// Constant WrongRegionS3Output for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode WrongRegionS3Output = new SimulationJobErrorCode("WrongRegionS3Output");
+        /// <summary>
+        /// Constant WrongRegionSimulationApplication for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode WrongRegionSimulationApplication = new SimulationJobErrorCode("WrongRegionSimulationApplication");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

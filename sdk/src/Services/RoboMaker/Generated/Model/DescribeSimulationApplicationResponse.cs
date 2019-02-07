@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker.Model
         private RobotSoftwareSuite _robotSoftwareSuite;
         private SimulationSoftwareSuite _simulationSoftwareSuite;
         private List<Source> _sources = new List<Source>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
 
         /// <summary>
@@ -185,6 +186,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetSources()
         {
             return this._sources != null && this._sources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of all tags added to the specified simulation application.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

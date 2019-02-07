@@ -29,7 +29,15 @@ namespace Amazon.RoboMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeploymentJob operation.
-    /// Creates a deployment job.
+    /// Deploys a specific version of a robot application to robots in a fleet.
+    /// 
+    ///  
+    /// <para>
+    /// The robot application must have a numbered <code>applicationVersion</code> for consistency
+    /// reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
+    /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+    /// a Robot Application Version</a>. 
+    /// </para>
     /// </summary>
     public partial class CreateDeploymentJobRequest : AmazonRoboMakerRequest
     {
@@ -37,6 +45,7 @@ namespace Amazon.RoboMaker.Model
         private List<DeploymentApplicationConfig> _deploymentApplicationConfigs = new List<DeploymentApplicationConfig>();
         private DeploymentConfig _deploymentConfig;
         private string _fleet;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -109,6 +118,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetFleet()
         {
             return this._fleet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains tag keys and tag values that are attached to the deployment job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

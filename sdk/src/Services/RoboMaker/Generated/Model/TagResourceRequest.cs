@@ -28,73 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
-    /// This is the response object from the CreateFleet operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds or edits tags for a AWS RoboMaker resource.
+    /// 
+    ///  
+    /// <para>
+    /// Each tag consists of a tag key and a tag value. Tag keys and tag values are both required,
+    /// but tag values can be empty strings. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+    /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. 
+    /// </para>
     /// </summary>
-    public partial class CreateFleetResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonRoboMakerRequest
     {
-        private string _arn;
-        private DateTime? _createdAt;
-        private string _name;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the fleet.
+        /// The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.
         /// </para>
         /// </summary>
-        public string Arn
+        public string ResourceArn
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The time, in milliseconds since the epoch, when the fleet was created.
-        /// </para>
-        /// </summary>
-        public DateTime CreatedAt
-        {
-            get { return this._createdAt.GetValueOrDefault(); }
-            set { this._createdAt = value; }
-        }
-
-        // Check to see if CreatedAt property is set
-        internal bool IsSetCreatedAt()
-        {
-            return this._createdAt.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the fleet.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of all tags added to the fleet.
+        /// A map that contains tag keys and tag values that are attached to the resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

@@ -39,7 +39,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The application.
+        /// The Amazon Resource Name (ARN) of the robot application.
         /// </para>
         /// </summary>
         public string Application
@@ -75,7 +75,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property LaunchConfig. 
         /// <para>
-        /// The launch configuration, usually <code>roslaunch</code>.
+        /// The launch configuration.
         /// </para>
         /// </summary>
         public DeploymentLaunchConfig LaunchConfig

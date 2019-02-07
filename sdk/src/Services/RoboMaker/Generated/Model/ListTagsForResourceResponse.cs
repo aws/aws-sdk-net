@@ -28,36 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet, a logical group of robots running the same robot application.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateFleetRequest : AmazonRoboMakerRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the fleet.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map that contains tag keys and tag values that are attached to the fleet.
+        /// The list of all tags added to the specified resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

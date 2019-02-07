@@ -39,6 +39,7 @@ namespace Amazon.RoboMaker.Model
         private DateTime? _lastDeploymentTime;
         private string _name;
         private List<Robot> _robots = new List<Robot>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -164,6 +165,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetRobots()
         {
             return this._robots != null && this._robots.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of all tags added to the specified fleet.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

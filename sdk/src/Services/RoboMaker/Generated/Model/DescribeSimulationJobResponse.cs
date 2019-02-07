@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
         private string _clientRequestToken;
         private FailureBehavior _failureBehavior;
         private SimulationJobErrorCode _failureCode;
+        private string _failureReason;
         private string _iamRole;
         private DateTime? _lastUpdatedAt;
         private long? _maxJobDurationInSeconds;
@@ -45,6 +46,7 @@ namespace Amazon.RoboMaker.Model
         private List<SimulationApplicationConfig> _simulationApplications = new List<SimulationApplicationConfig>();
         private long? _simulationTimeMillis;
         private SimulationJobStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VPCConfigResponse _vpcConfig;
 
         /// <summary>
@@ -109,59 +111,59 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  <dl> <dt>InternalServiceError</dt> <dd> 
         /// <para>
-        /// Internal service error
+        /// Internal service error.
         /// </para>
         ///  </dd> <dt>RobotApplicationCrash</dt> <dd> 
         /// <para>
-        /// Robot application exited abnormally (segfault, etc.)
+        /// Robot application exited abnormally.
         /// </para>
         ///  </dd> <dt>SimulationApplicationCrash</dt> <dd> 
         /// <para>
-        ///  Simulation application exited abnormally (segfault, etc.)
+        ///  Simulation application exited abnormally.
         /// </para>
         ///  </dd> <dt>BadPermissionsRobotApplication</dt> <dd> 
         /// <para>
-        /// Robot application bundle could not be downloaded
+        /// Robot application bundle could not be downloaded.
         /// </para>
         ///  </dd> <dt>BadPermissionsSimulationApplication</dt> <dd> 
         /// <para>
-        /// Simulation application bundle could not be downloaded
+        /// Simulation application bundle could not be downloaded.
         /// </para>
         ///  </dd> <dt>BadPermissionsS3Output</dt> <dd> 
         /// <para>
-        /// Unable to publish outputs to customer-provided S3 bucket
+        /// Unable to publish outputs to customer-provided S3 bucket.
         /// </para>
         ///  </dd> <dt>BadPermissionsCloudwatchLogs</dt> <dd> 
         /// <para>
-        /// Unable to publish logs to customer-provided CloudWatch Logs resource
+        /// Unable to publish logs to customer-provided CloudWatch Logs resource.
         /// </para>
         ///  </dd> <dt>SubnetIpLimitExceeded</dt> <dd> 
         /// <para>
-        /// Subnet IP limit exceeded
+        /// Subnet IP limit exceeded.
         /// </para>
         ///  </dd> <dt>ENILimitExceeded</dt> <dd> 
         /// <para>
-        /// ENI limit exceeded
+        /// ENI limit exceeded.
         /// </para>
         ///  </dd> <dt>BadPermissionsUserCredentials</dt> <dd> 
         /// <para>
-        /// Unable to use the Role provided
+        /// Unable to use the Role provided.
         /// </para>
         ///  </dd> <dt>InvalidBundleRobotApplication</dt> <dd> 
         /// <para>
-        /// Robot bundle cannot be extracted (invalid format, bundling error, etc.)
+        /// Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
         /// </para>
         ///  </dd> <dt>InvalidBundleSimulationApplication</dt> <dd> 
         /// <para>
-        /// Simulation bundle cannot be extracted (invalid format, bundling error, etc.)
+        /// Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
         /// </para>
         ///  </dd> <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> 
         /// <para>
-        /// Etag for RobotApplication does not match value during version creation
+        /// Etag for RobotApplication does not match value during version creation.
         /// </para>
         ///  </dd> <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> 
         /// <para>
-        /// Etag for SimulationApplication does not match value during version creation
+        /// Etag for SimulationApplication does not match value during version creation.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -175,6 +177,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetFailureCode()
         {
             return this._failureCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// Details about why the simulation job failed. For more information about troubleshooting,
+        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -339,6 +360,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of all tags added to the specified simulation job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

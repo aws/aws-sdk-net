@@ -36,6 +36,7 @@ namespace Amazon.RoboMaker.Model
         private string _clientRequestToken;
         private FailureBehavior _failureBehavior;
         private SimulationJobErrorCode _failureCode;
+        private string _failureReason;
         private string _iamRole;
         private DateTime? _lastUpdatedAt;
         private long? _maxJobDurationInSeconds;
@@ -45,6 +46,7 @@ namespace Amazon.RoboMaker.Model
         private List<SimulationApplicationConfig> _simulationApplications = new List<SimulationApplicationConfig>();
         private long? _simulationTimeMillis;
         private SimulationJobStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VPCConfigResponse _vpcConfig;
 
         /// <summary>
@@ -126,6 +128,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetFailureCode()
         {
             return this._failureCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason why the simulation job failed.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -292,6 +312,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains tag keys and tag values that are attached to the simulation job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker.Model
         private string _failureReason;
         private string _fleet;
         private DeploymentStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -116,8 +117,65 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// The failure code of the deployment job if it failed.
+        /// The failure code of the simulation job if it failed:
         /// </para>
+        ///  <dl> <dt>BadPermissionError</dt> <dd> 
+        /// <para>
+        /// AWS Greengrass requires a service-level role permission to access other services.
+        /// The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+        /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. 
+        /// </para>
+        ///  </dd> <dt>ExtractingBundleFailure</dt> <dd> 
+        /// <para>
+        /// The robot application could not be extracted from the bundle.
+        /// </para>
+        ///  </dd> <dt>FailureThresholdBreached</dt> <dd> 
+        /// <para>
+        /// The percentage of robots that could not be updated exceeded the percentage set for
+        /// the deployment.
+        /// </para>
+        ///  </dd> <dt>GreengrassDeploymentFailed</dt> <dd> 
+        /// <para>
+        /// The robot application could not be deployed to the robot.
+        /// </para>
+        ///  </dd> <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> 
+        /// <para>
+        /// The AWS Greengrass group or version associated with a robot is missing.
+        /// </para>
+        ///  </dd> <dt>InternalServerError</dt> <dd> 
+        /// <para>
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details.
+        /// </para>
+        ///  </dd> <dt>MissingRobotApplicationArchitecture</dt> <dd> 
+        /// <para>
+        /// The robot application does not have a source that matches the architecture of the
+        /// robot.
+        /// </para>
+        ///  </dd> <dt>MissingRobotDeploymentResource</dt> <dd> 
+        /// <para>
+        /// One or more of the resources specified for the robot application are missing. For
+        /// example, does the robot application have the correct launch package and launch file?
+        /// </para>
+        ///  </dd> <dt>PostLaunchFileFailure</dt> <dd> 
+        /// <para>
+        /// The post-launch script failed.
+        /// </para>
+        ///  </dd> <dt>PreLaunchFileFailure</dt> <dd> 
+        /// <para>
+        /// The pre-launch script failed.
+        /// </para>
+        ///  </dd> <dt>ResourceNotFound</dt> <dd> 
+        /// <para>
+        /// One or more deployment resources are missing. For example, do robot application source
+        /// bundles still exist? 
+        /// </para>
+        ///  </dd> <dt>RobotDeploymentNoResponse</dt> <dd> 
+        /// <para>
+        /// There is no response from the robot. It might not be powered on or connected to the
+        /// internet.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public DeploymentJobErrorCode FailureCode
         {
@@ -183,6 +241,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of all tags added to the deployment job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

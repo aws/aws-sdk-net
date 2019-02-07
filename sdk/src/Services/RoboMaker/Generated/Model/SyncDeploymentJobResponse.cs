@@ -116,8 +116,65 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// The failure code if the job fails.
+        /// The failure code if the job fails:
         /// </para>
+        ///  <dl> <dt>InternalServiceError</dt> <dd> 
+        /// <para>
+        /// Internal service error.
+        /// </para>
+        ///  </dd> <dt>RobotApplicationCrash</dt> <dd> 
+        /// <para>
+        /// Robot application exited abnormally.
+        /// </para>
+        ///  </dd> <dt>SimulationApplicationCrash</dt> <dd> 
+        /// <para>
+        ///  Simulation application exited abnormally.
+        /// </para>
+        ///  </dd> <dt>BadPermissionsRobotApplication</dt> <dd> 
+        /// <para>
+        /// Robot application bundle could not be downloaded.
+        /// </para>
+        ///  </dd> <dt>BadPermissionsSimulationApplication</dt> <dd> 
+        /// <para>
+        /// Simulation application bundle could not be downloaded.
+        /// </para>
+        ///  </dd> <dt>BadPermissionsS3Output</dt> <dd> 
+        /// <para>
+        /// Unable to publish outputs to customer-provided S3 bucket.
+        /// </para>
+        ///  </dd> <dt>BadPermissionsCloudwatchLogs</dt> <dd> 
+        /// <para>
+        /// Unable to publish logs to customer-provided CloudWatch Logs resource.
+        /// </para>
+        ///  </dd> <dt>SubnetIpLimitExceeded</dt> <dd> 
+        /// <para>
+        /// Subnet IP limit exceeded.
+        /// </para>
+        ///  </dd> <dt>ENILimitExceeded</dt> <dd> 
+        /// <para>
+        /// ENI limit exceeded.
+        /// </para>
+        ///  </dd> <dt>BadPermissionsUserCredentials</dt> <dd> 
+        /// <para>
+        /// Unable to use the Role provided.
+        /// </para>
+        ///  </dd> <dt>InvalidBundleRobotApplication</dt> <dd> 
+        /// <para>
+        /// Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+        /// </para>
+        ///  </dd> <dt>InvalidBundleSimulationApplication</dt> <dd> 
+        /// <para>
+        /// Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+        /// </para>
+        ///  </dd> <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> 
+        /// <para>
+        /// Etag for RobotApplication does not match value during version creation.
+        /// </para>
+        ///  </dd> <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> 
+        /// <para>
+        /// Etag for SimulationApplication does not match value during version creation.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public DeploymentJobErrorCode FailureCode
         {

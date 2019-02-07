@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker.Model
         private OutputLocation _outputLocation;
         private List<RobotApplicationConfig> _robotApplications = new List<RobotApplicationConfig>();
         private List<SimulationApplicationConfig> _simulationApplications = new List<SimulationApplicationConfig>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VPCConfig _vpcConfig;
 
         /// <summary>
@@ -91,10 +92,9 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The IAM role that allows the simulation instance to call the AWS APIs that are specified
-        /// in its associated policies on your behalf. This is how credentials are passed in to
-        /// your simulation job. See how to <a href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-        /// AWS security credentials for your application</a>. 
+        /// The IAM role name that allows the simulation instance to call the AWS APIs that are
+        /// specified in its associated policies on your behalf. This is how credentials are passed
+        /// in to your simulation job. 
         /// </para>
         /// </summary>
         public string IamRole
@@ -181,6 +181,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetSimulationApplications()
         {
             return this._simulationApplications != null && this._simulationApplications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains tag keys and tag values that are attached to the simulation job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

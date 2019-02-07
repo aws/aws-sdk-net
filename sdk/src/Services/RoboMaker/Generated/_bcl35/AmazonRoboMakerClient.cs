@@ -373,13 +373,21 @@ namespace Amazon.RoboMaker
         #region  CreateDeploymentJob
 
         /// <summary>
-        /// Creates a deployment job.
+        /// Deploys a specific version of a robot application to robots in a fleet.
+        /// 
+        ///  
+        /// <para>
+        /// The robot application must have a numbered <code>applicationVersion</code> for consistency
+        /// reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
+        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+        /// a Robot Application Version</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentJob service method.</param>
         /// 
         /// <returns>The response from the CreateDeploymentJob service method, as returned by RoboMaker.</returns>
         /// <exception cref="Amazon.RoboMaker.Model.ConcurrentDeploymentException">
-        /// 
+        /// The failure percentage threshold percentage was met.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
         /// The request uses the same client token as a previous, but non-identical request. Do
@@ -536,7 +544,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -611,7 +619,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -758,7 +766,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -2080,6 +2088,73 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists all tags on a AWS RoboMaker resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterRobot
 
         /// <summary>
@@ -2232,7 +2307,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>The response from the SyncDeploymentJob service method, as returned by RoboMaker.</returns>
         /// <exception cref="Amazon.RoboMaker.Model.ConcurrentDeploymentException">
-        /// 
+        /// The failure percentage threshold percentage was met.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
         /// The request uses the same client token as a previous, but non-identical request. Do
@@ -2297,6 +2372,158 @@ namespace Amazon.RoboMaker
         public virtual SyncDeploymentJobResponse EndSyncDeploymentJob(IAsyncResult asyncResult)
         {
             return EndInvoke<SyncDeploymentJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds or edits tags for a AWS RoboMaker resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a tag key and a tag value. Tag keys and tag values are both required,
+        /// but tag values can be empty strings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from the specified AWS RoboMaker resource.
+        /// 
+        ///  
+        /// <para>
+        /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
+        /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+        /// <code>TagResource</code> </a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonRoboMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from RoboMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

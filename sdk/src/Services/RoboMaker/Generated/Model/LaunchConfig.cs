@@ -57,7 +57,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property LaunchFile. 
         /// <para>
-        /// The launch file.
+        /// The launch file name.
         /// </para>
         /// </summary>
         public string LaunchFile

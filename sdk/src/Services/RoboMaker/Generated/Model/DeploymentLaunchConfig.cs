@@ -41,7 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// An array of key/value pairs specifying environment variables for the deployment application.
+        /// An array of key/value pairs specifying environment variables for the robot application
         /// </para>
         /// </summary>
         public Dictionary<string, string> EnvironmentVariables
@@ -59,7 +59,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property LaunchFile. 
         /// <para>
-        /// The deployment launch file.
+        /// The launch file name.
         /// </para>
         /// </summary>
         public string LaunchFile
@@ -95,8 +95,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property PostLaunchFile. 
         /// <para>
-        /// The deployment post-launch file. This file will be executed after the deployment launch
-        /// file.
+        /// The deployment post-launch file. This file will be executed after the launch file.
         /// </para>
         /// </summary>
         public string PostLaunchFile
@@ -114,8 +113,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property PreLaunchFile. 
         /// <para>
-        /// The deployment pre-launch file. This file will be executed prior to the deployment
-        /// launch file.
+        /// The deployment pre-launch file. This file will be executed prior to the launch file.
         /// </para>
         /// </summary>
         public string PreLaunchFile

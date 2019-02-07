@@ -558,6 +558,12 @@
     <pattern>[a-zA-Z0-9_.\-\/+=]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.RegisterRobotRequest.Fleet</property>
     <min>1</min>
     <max>1224</max>
@@ -607,6 +613,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SyncDeploymentJobResponse.Fleet</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1224</max>
     <pattern>arn:.*</pattern>
@@ -693,7 +711,7 @@
     <property>Amazon.RoboMaker.Model.DeploymentApplicationConfig.ApplicationVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(\$LATEST)|[0-9]*</pattern>
+    <pattern>[0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DeploymentConfig.ConcurrentDeploymentPercentage</property>

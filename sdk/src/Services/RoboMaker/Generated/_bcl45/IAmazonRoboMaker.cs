@@ -121,13 +121,21 @@ namespace Amazon.RoboMaker
 
 
         /// <summary>
-        /// Creates a deployment job.
+        /// Deploys a specific version of a robot application to robots in a fleet.
+        /// 
+        ///  
+        /// <para>
+        /// The robot application must have a numbered <code>applicationVersion</code> for consistency
+        /// reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
+        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+        /// a Robot Application Version</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentJob service method.</param>
         /// 
         /// <returns>The response from the CreateDeploymentJob service method, as returned by RoboMaker.</returns>
         /// <exception cref="Amazon.RoboMaker.Model.ConcurrentDeploymentException">
-        /// 
+        /// The failure percentage threshold percentage was met.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
         /// The request uses the same client token as a previous, but non-identical request. Do
@@ -230,7 +238,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -278,7 +286,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -371,7 +379,7 @@ namespace Amazon.RoboMaker
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ResourceAlreadyExistsException">
-        /// The specified resource already exists
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
@@ -1152,6 +1160,46 @@ namespace Amazon.RoboMaker
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags on a AWS RoboMaker resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterRobot
 
 
@@ -1251,7 +1299,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>The response from the SyncDeploymentJob service method, as returned by RoboMaker.</returns>
         /// <exception cref="Amazon.RoboMaker.Model.ConcurrentDeploymentException">
-        /// 
+        /// The failure percentage threshold percentage was met.
         /// </exception>
         /// <exception cref="Amazon.RoboMaker.Model.IdempotentParameterMismatchException">
         /// The request uses the same client token as a previous, but non-identical request. Do
@@ -1289,6 +1337,104 @@ namespace Amazon.RoboMaker
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
         Task<SyncDeploymentJobResponse> SyncDeploymentJobAsync(SyncDeploymentJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or edits tags for a AWS RoboMaker resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a tag key and a tag value. Tag keys and tag values are both required,
+        /// but tag values can be empty strings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified AWS RoboMaker resource.
+        /// 
+        ///  
+        /// <para>
+        /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
+        /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+        /// <code>TagResource</code> </a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by RoboMaker.</returns>
+        /// <exception cref="Amazon.RoboMaker.Model.InternalServerException">
+        /// AWS RoboMaker experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.InvalidParameterException">
+        /// A parameter specified in a request is not valid, is unsupported, or cannot be used.
+        /// The returned message provides an explanation of the error value.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RoboMaker.Model.ThrottlingException">
+        /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
