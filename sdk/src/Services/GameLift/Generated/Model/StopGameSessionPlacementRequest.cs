@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// placement, provide the placement ID values. If successful, the placement is moved
     /// to <code>CANCELLED</code> status.
     /// 
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 

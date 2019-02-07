@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a>
     /// request, or if access to resources is temporarily affected.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

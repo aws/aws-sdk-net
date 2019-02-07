@@ -34,10 +34,6 @@ namespace Amazon.GameLift.Model
     /// fleet, provide an updated routing strategy. If successful, the updated alias record
     /// is returned.
     /// 
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

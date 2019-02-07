@@ -30,10 +30,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Routing configuration for a fleet alias.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

@@ -34,10 +34,6 @@ namespace Amazon.GameLift.Model
     /// of sequential pages. If successful, a collection of event log entries matching the
     /// request are returned.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

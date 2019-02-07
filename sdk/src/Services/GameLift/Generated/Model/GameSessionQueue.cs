@@ -50,11 +50,7 @@ namespace Amazon.GameLift.Model
     /// preventing game sessions from being placed where any individual player is reporting
     /// latency higher than a policy's maximum.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
-    ///  <ul> <li> 
+    ///  </li> </ul> <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 
     /// </para>
@@ -103,7 +99,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueArn. 
         /// <para>
-        /// Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// </para>
         /// </summary>

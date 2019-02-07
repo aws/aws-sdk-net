@@ -37,10 +37,6 @@ namespace Amazon.GameLift.Model
     /// To get alias properties, specify the alias ID. If successful, the requested alias
     /// record is returned.
     /// </para>
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

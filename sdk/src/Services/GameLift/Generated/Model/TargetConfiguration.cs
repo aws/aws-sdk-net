@@ -34,10 +34,6 @@ namespace Amazon.GameLift.Model
     /// the metric returns to the target value. The target configuration specifies settings
     /// as needed for the target based policy, including the target value. 
     /// 
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 

@@ -36,11 +36,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Fleet records are not listed in any particular order.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
-    ///  <ul> <li> 
+    ///  </note> <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 
     /// </para>

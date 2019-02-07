@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// the metadata, specify the build ID to update and provide the new values. If successful,
     /// a build object containing the updated metadata is returned.
     /// 
-    ///  
-    /// <para>
-    /// Build-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> 

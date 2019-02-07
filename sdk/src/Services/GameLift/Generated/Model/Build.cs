@@ -30,10 +30,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Properties describing a game build.
     /// 
-    ///  
-    /// <para>
-    /// Build-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> 

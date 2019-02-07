@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// has already been used to create a peering connection, call <a>DeleteVpcPeeringConnection</a>
     /// to remove the connection. 
     /// 
-    ///  
-    /// <para>
-    /// VPC peering connection operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateVpcPeeringAuthorization</a> 
@@ -91,9 +87,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PeerVpcId. 
         /// <para>
         /// Unique identifier for a VPC with resources to be accessed by your Amazon GameLift
-        /// fleet. The VPC must be in the same region where your fleet is deployed. To get VPC
-        /// information, including IDs, use the Virtual Private Cloud service tools, including
-        /// the VPC Dashboard in the AWS Management Console.
+        /// fleet. The VPC must be in the same region where your fleet is deployed. Look up a
+        /// VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in
+        /// the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
         public string PeerVpcId

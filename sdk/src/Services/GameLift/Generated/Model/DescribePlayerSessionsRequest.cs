@@ -47,10 +47,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
-    ///  
-    /// <para>
-    /// Player-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreatePlayerSession</a> 

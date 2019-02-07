@@ -36,7 +36,16 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// Operations related to match configurations and rule sets include:
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+    /// a Rule Set</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -65,6 +74,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>ValidateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingRuleSet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -96,8 +109,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// Unique identifier for a matchmaking rule set. This name is used to identify the rule
-        /// set associated with a matchmaking configuration.
+        /// List of one or more matchmaking rule set names to retrieve details for. (Note: The
+        /// rule set name is different from the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
         public List<string> Names

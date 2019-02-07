@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// operation returns all VPC peering authorizations and requests for peering. This includes
     /// those initiated and received by this account. 
     /// 
-    ///  
-    /// <para>
-    /// VPC peering connection operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateVpcPeeringAuthorization</a> 

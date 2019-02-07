@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// configuration name. A matchmaking configuration cannot be deleted if it is being used
     /// in any active matchmaking tickets.
     /// 
-    ///  
-    /// <para>
-    /// Operations related to match configurations and rule sets include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateMatchmakingConfiguration</a> 
@@ -64,6 +60,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>ValidateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingRuleSet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

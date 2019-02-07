@@ -31,10 +31,6 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the ResolveAlias operation.
     /// Retrieves the fleet ID that a specified alias is currently pointing to.
     /// 
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

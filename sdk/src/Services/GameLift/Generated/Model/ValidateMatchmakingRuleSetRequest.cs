@@ -30,12 +30,21 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the ValidateMatchmakingRuleSet operation.
     /// Validates the syntax of a matchmaking rule or rule set. This operation checks that
-    /// the rule set uses syntactically correct JSON and that it conforms to allowed property
-    /// expressions. To validate syntax, provide a rule set string.
+    /// the rule set is using syntactically correct JSON and that it conforms to allowed property
+    /// expressions. To validate syntax, provide a rule set JSON string.
     /// 
     ///  
     /// <para>
-    /// Operations related to match configurations and rule sets include:
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+    /// a Rule Set</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -64,6 +73,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>ValidateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingRuleSet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

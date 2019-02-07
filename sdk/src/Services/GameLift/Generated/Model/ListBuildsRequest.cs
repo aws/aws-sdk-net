@@ -38,11 +38,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Build records are not listed in any particular order.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Build-related operations include:
-    /// </para>
-    ///  <ul> <li> 
+    ///  </note> <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> 
     /// </para>

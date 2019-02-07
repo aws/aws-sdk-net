@@ -36,10 +36,6 @@ namespace Amazon.GameLift.Model
     /// for the requested fleet ID. If the requested fleet has been deleted, the result set
     /// is empty.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

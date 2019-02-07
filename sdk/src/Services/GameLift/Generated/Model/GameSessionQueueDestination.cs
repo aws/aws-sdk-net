@@ -32,10 +32,6 @@ namespace Amazon.GameLift.Model
     /// are fulfilled by starting a new game session on any destination configured for a queue.
     /// 
     /// 
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

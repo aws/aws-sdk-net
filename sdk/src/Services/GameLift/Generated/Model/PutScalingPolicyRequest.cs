@@ -53,7 +53,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Learn more about how to work with auto-scaling in <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+    /// Learn more about how to work with auto-scaling in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
     /// Up Fleet Automatic Scaling</a>.
     /// </para>
     ///  
@@ -131,10 +131,6 @@ namespace Amazon.GameLift.Model
     /// are automatically in force as soon as they're successfully created. If the fleet's
     /// auto-scaling actions are temporarily suspended, the new policy will be in force once
     /// the fleet actions are restarted.
-    /// </para>
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -251,7 +247,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.
-        /// For detailed descriptions of fleet metrics, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+        /// For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
         /// Amazon GameLift with Amazon CloudWatch</a>. 
         /// </para>
         ///  <ul> <li> 

@@ -34,10 +34,6 @@ namespace Amazon.GameLift.Model
     /// and provide the new settings. When updating destinations, provide a complete list
     /// of destinations. 
     /// 
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

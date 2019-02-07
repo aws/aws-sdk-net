@@ -34,10 +34,6 @@ namespace Amazon.GameLift.Model
     /// the cap. Latency policies are only enforced when the placement request contains player
     /// latency information.
     /// 
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

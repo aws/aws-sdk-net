@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// The maximum number of instances for a fleet is determined by the fleet's instance
     /// type.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

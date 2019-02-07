@@ -31,10 +31,6 @@ namespace Amazon.GameLift.Model
     /// Current status of fleet utilization, including the number of game and player sessions
     /// being hosted.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

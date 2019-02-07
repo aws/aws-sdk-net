@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
     /// player or a group of players who want to play together. FlexMatch finds additional
     /// players as needed to fill the match. Match type, rules, and the queue used to place
     /// a new game session are defined in a <code>MatchmakingConfiguration</code>. For complete
-    /// information on setting up and using FlexMatch, see the topic <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+    /// information on setting up and using FlexMatch, see the topic <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
     /// Adding FlexMatch to Your Game</a>.
     /// 
     ///  
@@ -108,11 +108,7 @@ namespace Amazon.GameLift.Model
     /// is added to the matchmaking tickets. Matched players can use the connection information
     /// to join the game. 
     /// </para>
-    ///  </li> </ol> 
-    /// <para>
-    /// Matchmaking-related operations include:
-    /// </para>
-    ///  <ul> <li> 
+    ///  </li> </ol> <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> 
     /// </para>

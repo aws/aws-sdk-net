@@ -30,29 +30,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Represents the returned data in response to a request action.
     /// </summary>
-    public partial class GetGameSessionLogUrlResponse : AmazonWebServiceResponse
+    public partial class DeleteMatchmakingRuleSetResponse : AmazonWebServiceResponse
     {
-        private string _preSignedUrl;
-
-        /// <summary>
-        /// Gets and sets the property PreSignedUrl. 
-        /// <para>
-        /// Location of the requested game session logs, available for download. This URL is valid
-        /// for 15 minutes, after which S3 will reject any download request using this URL. You
-        /// can request a new URL any time within the 14-day period that the logs are retained.
-        /// </para>
-        /// </summary>
-        public string PreSignedUrl
-        {
-            get { return this._preSignedUrl; }
-            set { this._preSignedUrl = value; }
-        }
-
-        // Check to see if PreSignedUrl property is set
-        internal bool IsSetPreSignedUrl()
-        {
-            return this._preSignedUrl != null;
-        }
 
     }
 }

@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// operation, specify the ticket ID. If successful, work on the ticket is stopped, and
     /// the ticket status is changed to <code>CANCELLED</code>.
     /// 
-    ///  
-    /// <para>
-    /// Matchmaking-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> 

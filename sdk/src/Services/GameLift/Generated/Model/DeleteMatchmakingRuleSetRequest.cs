@@ -28,38 +28,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteGameSessionQueue operation.
-    /// Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a>
-    /// requests that reference this queue will fail. To delete a queue, specify the queue
-    /// name.
+    /// Container for the parameters to the DeleteMatchmakingRuleSet operation.
+    /// Deletes an existing matchmaking rule set. To delete the rule set, provide the rule
+    /// set name. Rule sets cannot be deleted if they are currently being used by a matchmaking
+    /// configuration. 
     /// 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+    /// a Rule Set</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingConfiguration</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionQueues</a> 
+    ///  <a>DescribeMatchmakingConfigurations</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateGameSessionQueue</a> 
+    ///  <a>UpdateMatchmakingConfiguration</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteGameSessionQueue</a> 
+    ///  <a>DeleteMatchmakingConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMatchmakingRuleSets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ValidateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingRuleSet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class DeleteGameSessionQueueRequest : AmazonGameLiftRequest
+    public partial class DeleteMatchmakingRuleSetRequest : AmazonGameLiftRequest
     {
         private string _name;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with game session queue. Queue names must be
-        /// unique within each region.
+        /// Unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name
+        /// is different from the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
         public string Name

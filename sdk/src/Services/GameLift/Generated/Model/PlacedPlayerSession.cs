@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// full details on a player session, call <a>DescribePlayerSessions</a> with the player
     /// session ID.
     /// 
-    ///  
-    /// <para>
-    /// Player-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreatePlayerSession</a> 

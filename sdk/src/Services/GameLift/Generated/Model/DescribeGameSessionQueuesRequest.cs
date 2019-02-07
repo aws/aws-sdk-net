@@ -35,10 +35,6 @@ namespace Amazon.GameLift.Model
     /// When specifying a list of queues, objects are returned only for queues that currently
     /// exist in the region.
     /// 
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

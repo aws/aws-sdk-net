@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// to access a server process using the deleted alias receive an error. To delete an
     /// alias, specify the alias ID to be deleted.
     /// 
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

@@ -51,10 +51,6 @@ namespace Amazon.GameLift.Model
     /// processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code>
     /// parameter for each <code> <a>ServerProcess</a> </code> object in the run-time configuration.
     /// </para>
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

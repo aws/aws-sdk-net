@@ -40,10 +40,6 @@ namespace Amazon.GameLift.Model
     /// includes both active and pending connections. Active connections identify the IpV4
     /// CIDR block that the VPC uses to connect. 
     /// </para>
-    ///  
-    /// <para>
-    /// VPC peering connection operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateVpcPeeringAuthorization</a> 

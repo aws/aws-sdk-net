@@ -239,6 +239,12 @@
     <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteMatchmakingRuleSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.FleetId</property>
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>

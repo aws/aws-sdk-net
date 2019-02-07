@@ -49,10 +49,6 @@ namespace Amazon.GameLift.Model
     /// are applied gradually as existing processes shut down and new processes are launched
     /// in Amazon GameLift's normal process recycling activity.
     /// </para>
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

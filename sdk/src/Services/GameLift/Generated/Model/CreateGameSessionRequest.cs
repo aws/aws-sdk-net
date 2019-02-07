@@ -71,10 +71,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 
@@ -192,7 +188,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom properties for a game session, formatted as key:value pairs. These properties
         /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -213,7 +209,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom game session properties, formatted as a single string value. This data
         /// is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>

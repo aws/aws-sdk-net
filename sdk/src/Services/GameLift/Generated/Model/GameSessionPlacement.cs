@@ -93,7 +93,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom properties for a game session, formatted as key:value pairs. These properties
         /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -135,7 +135,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom game session properties, formatted as a single string value. This data
         /// is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -253,7 +253,7 @@ namespace Amazon.GameLift.Model
         /// Information on the matchmaking process for this game. Data is in JSON syntax, formatted
         /// as a string. It identifies the matchmaking configuration used to create the match,
         /// and contains data on all players assigned to the match, including player attributes
-        /// and team assignments. For more details on matchmaker data, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+        /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
         /// Data</a>.
         /// </para>
         /// </summary>

@@ -42,10 +42,6 @@ namespace Amazon.GameLift.Model
     /// pagination parameters to retrieve results as a set of sequential pages. If successful,
     /// a <a>GameSessionDetail</a> object is returned for each session matching the request.
     /// </para>
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 

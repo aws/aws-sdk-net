@@ -40,10 +40,6 @@ namespace Amazon.GameLift.Model
     /// never stopped, this operation will have no effect. You can view a fleet's stopped
     /// actions using <a>DescribeFleetAttributes</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 

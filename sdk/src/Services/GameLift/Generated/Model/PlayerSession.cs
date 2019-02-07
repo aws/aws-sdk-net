@@ -41,10 +41,6 @@ namespace Amazon.GameLift.Model
     /// Once the session ends, the player session object is retained for 30 days and then
     /// removed.
     /// </para>
-    ///  
-    /// <para>
-    /// Player-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreatePlayerSession</a> 

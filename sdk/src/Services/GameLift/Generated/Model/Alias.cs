@@ -30,10 +30,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Properties describing a fleet alias.
     /// 
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// configuration tells Amazon GameLift how to launch server processes on instances in
     /// the fleet.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

@@ -51,10 +51,6 @@ namespace Amazon.GameLift.Model
     /// reference when creating a game session. You can reassign an alias to another fleet
     /// by calling <code>UpdateAlias</code>.
     /// </para>
-    ///  
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 

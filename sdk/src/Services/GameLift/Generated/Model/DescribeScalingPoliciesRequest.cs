@@ -45,10 +45,6 @@ namespace Amazon.GameLift.Model
     /// To see whether a fleet's scaling policies are in force or suspended, call <a>DescribeFleetAttributes</a>
     /// and check the stopped actions.
     /// </para>
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 

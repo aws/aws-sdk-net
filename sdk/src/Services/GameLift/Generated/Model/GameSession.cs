@@ -41,10 +41,6 @@ namespace Amazon.GameLift.Model
     /// you can reuse idempotency token values after this time. Game session logs are retained
     /// for 14 days.
     /// </para>
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 
@@ -185,7 +181,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom properties for a game session, formatted as key:value pairs. These properties
         /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>). You can search for active game sessions based on this custom
         /// data with <a>SearchGameSessions</a>.
         /// </para>
@@ -207,7 +203,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom game session properties, formatted as a single string value. This data
         /// is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -268,7 +264,7 @@ namespace Amazon.GameLift.Model
         /// Information about the matchmaking process that was used to create the game session.
         /// It is in JSON syntax, formatted as a string. In addition the matchmaking configuration
         /// used, it contains data on all players assigned to the match, including player attributes
-        /// and team assignments. For more details on matchmaker data, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+        /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
         /// Data</a>. Matchmaker data is useful when requesting match backfills, and is updated
         /// whenever new players are added during a successful backfill (see <a>StartMatchBackfill</a>).
         /// 

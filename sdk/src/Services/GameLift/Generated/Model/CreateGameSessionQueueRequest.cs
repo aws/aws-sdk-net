@@ -64,10 +64,6 @@ namespace Amazon.GameLift.Model
     /// To create a new queue, provide a name, timeout value, a list of destinations and,
     /// if desired, a set of latency policies. If successful, a new queue object is returned.
     /// </para>
-    ///  
-    /// <para>
-    /// Queue-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSessionQueue</a> 

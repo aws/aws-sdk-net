@@ -36,10 +36,6 @@ namespace Amazon.GameLift.Model
     /// the game session ID and the values you want to change. If successful, an updated <a>GameSession</a>
     /// object is returned. 
     /// 
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 

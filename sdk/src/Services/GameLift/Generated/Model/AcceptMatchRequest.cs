@@ -57,10 +57,6 @@ namespace Amazon.GameLift.Model
     /// and processing is terminated. A new matchmaking request for these players can be submitted
     /// as needed. 
     /// </para>
-    ///  
-    /// <para>
-    /// Matchmaking-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> 

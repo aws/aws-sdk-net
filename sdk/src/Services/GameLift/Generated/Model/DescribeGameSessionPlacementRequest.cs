@@ -33,10 +33,6 @@ namespace Amazon.GameLift.Model
     /// game session placement details, specify the placement ID. If successful, a <a>GameSessionPlacement</a>
     /// object is returned.
     /// 
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 

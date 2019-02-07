@@ -45,10 +45,6 @@ namespace Amazon.GameLift.Model
     /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
     /// in the upper right corner).
     /// </para>
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

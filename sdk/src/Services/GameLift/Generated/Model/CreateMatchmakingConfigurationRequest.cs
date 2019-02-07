@@ -57,14 +57,10 @@ namespace Amazon.GameLift.Model
     /// of matchmaking tickets: (1) polling ticket status with <a>DescribeMatchmaking</a>;
     /// or (2) receiving notifications with Amazon Simple Notification Service (SNS). To use
     /// notifications, you first need to set up an SNS topic to receive the notifications,
-    /// and provide the topic ARN in the matchmaking configuration (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+    /// and provide the topic ARN in the matchmaking configuration (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
     /// Setting up Notifications for Matchmaking</a>). Since notifications promise only "best
     /// effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if no notifications
     /// are received within 30 seconds.
-    /// </para>
-    ///  
-    /// <para>
-    /// Operations related to match configurations and rule sets include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -93,6 +89,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>ValidateMatchmakingRuleSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteMatchmakingRuleSet</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -211,7 +211,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom properties for a game session, formatted as key:value pairs. These properties
         /// are passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>). This information is added to the new <a>GameSession</a> object
         /// that is created for a successful match. 
         /// </para>
@@ -233,7 +233,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of custom game session properties, formatted as a single string value. This data
         /// is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>). This information is added to the new <a>GameSession</a> object
         /// that is created for a successful match.
         /// </para>
@@ -253,7 +253,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
-        /// Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// These queues are used when placing game sessions for matches that are created with
         /// this matchmaking configuration. Queues can be located in any region.

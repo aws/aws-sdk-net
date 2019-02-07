@@ -40,10 +40,6 @@ namespace Amazon.GameLift.Model
     /// used to manage the Amazon GameLift fleets. Identify the connection to delete by the
     /// connection ID and fleet ID. If successful, the connection is removed. 
     /// </para>
-    ///  
-    /// <para>
-    /// VPC peering connection operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateVpcPeeringAuthorization</a> 

@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// servers on your fleet to communicate directly with other AWS resources. You can peer
     /// with VPCs in any AWS account that you have access to, including the account that you
     /// use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different
-    /// regions. For more information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+    /// regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
     /// Peering with Amazon GameLift Fleets</a>.
     /// 
     ///  
@@ -55,10 +55,6 @@ namespace Amazon.GameLift.Model
     /// request is created. You can use continuous polling to track the request's status using
     /// <a>DescribeVpcPeeringConnections</a>, or by monitoring fleet events for success or
     /// failure using <a>DescribeFleetEvents</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// VPC peering connection operations include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -135,9 +131,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PeerVpcId. 
         /// <para>
         /// Unique identifier for a VPC with resources to be accessed by your Amazon GameLift
-        /// fleet. The VPC must be in the same region where your fleet is deployed. To get VPC
-        /// information, including IDs, use the Virtual Private Cloud service tools, including
-        /// the VPC Dashboard in the AWS Management Console.
+        /// fleet. The VPC must be in the same region where your fleet is deployed. Look up a
+        /// VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in
+        /// the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
         public string PeerVpcId

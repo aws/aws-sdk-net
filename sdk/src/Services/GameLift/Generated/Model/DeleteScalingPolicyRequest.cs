@@ -38,10 +38,6 @@ namespace Amazon.GameLift.Model
     /// To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation
     /// suspends all policies for the fleet.
     /// </para>
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 

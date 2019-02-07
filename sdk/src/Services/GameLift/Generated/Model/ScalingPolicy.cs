@@ -31,10 +31,6 @@ namespace Amazon.GameLift.Model
     /// Rule that controls how a fleet is scaled. Scaling policies are uniquely identified
     /// by the combination of name and fleet ID.
     /// 
-    ///  
-    /// <para>
-    /// Operations related to fleet capacity scaling include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 
@@ -150,7 +146,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.
-        /// For detailed descriptions of fleet metrics, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+        /// For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
         /// Amazon GameLift with Amazon CloudWatch</a>. 
         /// </para>
         ///  <ul> <li> 

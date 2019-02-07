@@ -96,10 +96,6 @@ namespace Amazon.GameLift.Model
     /// search feature finds only game sessions that are in <code>ACTIVE</code> status. To
     /// locate games in statuses other than active, use <a>DescribeGameSessionDetails</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// Game-session-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateGameSession</a> 

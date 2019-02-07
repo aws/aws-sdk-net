@@ -37,11 +37,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Returned aliases are not listed in any particular order.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Alias-related operations include:
-    /// </para>
-    ///  <ul> <li> 
+    ///  </note> <ul> <li> 
     /// <para>
     ///  <a>CreateAlias</a> 
     /// </para>

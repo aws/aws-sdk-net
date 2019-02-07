@@ -30,10 +30,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// General properties describing a fleet.
     /// 
-    ///  
-    /// <para>
-    /// Fleet-related operations include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 
@@ -268,7 +264,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Location of default log files. When a server process is shut down, Amazon GameLift
         /// captures and stores any log files in this location. These logs are in addition to
-        /// game session logs; see more on game session logs in the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+        /// game session logs; see more on game session logs in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
         /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon
         /// GameLift automatically uploads logs that are stored on each instance at <code>C:\game\logs</code>
         /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift
