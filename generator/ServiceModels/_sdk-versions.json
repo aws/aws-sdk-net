@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.451.0",
+    "ProductVersion" : "3.3.452.0",
     "CoreVersion"    : "3.3.31.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.10.32",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.12.47",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.15.1",
+            "Version" : "3.3.16.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -1241,7 +1241,7 @@
             "InPreview"               : false
         },
         "RoboMaker"                       : {
-            "Version" : "3.3.0.16",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"

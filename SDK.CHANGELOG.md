@@ -1,3 +1,13 @@
+### 3.3.452.0 (2019-02-07 21:38 UTC)
+* Elasticsearch (3.3.11.0)
+	* Feature: Support for three Availability Zone deployments
+* GameLift (3.3.13.0)
+	* This release delivers a new API action for deleting unused matchmaking rule sets. More details are available at https://aws.amazon.com/releasenotes/?tag=releasenotes%23keywords%23amazon-gamelift.
+* MediaLive (3.3.16.0)
+	* This release adds tagging of channels, inputs, and input security groups.
+* RoboMaker (3.3.1.0)
+	* Added support for tagging and tag-based access control for AWS RoboMaker resources. Also, DescribeSimulationJob now includes a new failureReason field to help debug simulation job failures
+
 ### 3.3.451.0 (2019-02-06 23:18 UTC)
 * EC2 (3.3.82.0)
 	* Add Linux with SQL Server Standard, Linux with SQL Server Web, and Linux with SQL Server Enterprise to the list of allowed instance platforms for On-Demand Capacity Reservations.
