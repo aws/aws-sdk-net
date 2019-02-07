@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateInputSecurityGroup Request Marshaller
+    /// CreateTags Request Marshaller
     /// </summary>       
-    public class UpdateInputSecurityGroupRequestMarshaller : IMarshaller<IRequest, UpdateInputSecurityGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateTagsRequestMarshaller : IMarshaller<IRequest, CreateTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateInputSecurityGroupRequest)input);
+            return this.Marshall((CreateTagsRequest)input);
         }
 
         /// <summary>
@@ -52,17 +52,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateInputSecurityGroupRequest publicRequest)
+        public IRequest Marshall(CreateTagsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/prod/inputSecurityGroups/{inputSecurityGroupId}";
-            if (!publicRequest.IsSetInputSecurityGroupId())
-                throw new AmazonMediaLiveException("Request object does not have required field InputSecurityGroupId set");
-            uriResourcePath = uriResourcePath.Replace("{inputSecurityGroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InputSecurityGroupId));
+            string uriResourcePath = "/prod/tags/{resource-arn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonMediaLiveException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -83,22 +83,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWhitelistRules())
-                {
-                    context.Writer.WritePropertyName("whitelistRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWhitelistRulesListValue in publicRequest.WhitelistRules)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputWhitelistRuleCidrMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWhitelistRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -108,9 +92,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateInputSecurityGroupRequestMarshaller _instance = new UpdateInputSecurityGroupRequestMarshaller();        
+        private static CreateTagsRequestMarshaller _instance = new CreateTagsRequestMarshaller();        
 
-        internal static UpdateInputSecurityGroupRequestMarshaller GetInstance()
+        internal static CreateTagsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +102,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateInputSecurityGroupRequestMarshaller Instance
+        public static CreateTagsRequestMarshaller Instance
         {
             get
             {

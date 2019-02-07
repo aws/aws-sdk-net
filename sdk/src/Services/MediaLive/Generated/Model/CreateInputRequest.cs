@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private string _requestId;
         private string _roleArn;
         private List<InputSourceRequest> _sources = new List<InputSourceRequest>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private InputType _type;
 
         /// <summary>
@@ -154,6 +155,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSources()
         {
             return this._sources != null && this._sources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private int? _pipelinesRunningCount;
         private string _roleArn;
         private ChannelState _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. The unique arn of the channel.
@@ -228,6 +229,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

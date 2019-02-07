@@ -375,6 +375,39 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateTags
+
+        internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags">REST API Reference for CreateTags Operation</seealso>
+        public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteChannel
 
         internal virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
@@ -503,6 +536,39 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DeleteReservationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTags
+
+        internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
+        public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -866,6 +932,39 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListReservationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private List<string> _securityGroups = new List<string>();
         private List<InputSource> _sources = new List<InputSource>();
         private InputState _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private InputType _type;
 
         /// <summary>
@@ -197,6 +198,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

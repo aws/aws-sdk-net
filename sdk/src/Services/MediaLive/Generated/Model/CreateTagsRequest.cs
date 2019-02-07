@@ -28,33 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateInputSecurityGroup operation.
-    /// Update an Input Security Group's Whilelists.
+    /// Container for the parameters to the CreateTags operation.
+    /// Create tags for a resource
     /// </summary>
-    public partial class UpdateInputSecurityGroupRequest : AmazonMediaLiveRequest
+    public partial class CreateTagsRequest : AmazonMediaLiveRequest
     {
-        private string _inputSecurityGroupId;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<InputWhitelistRuleCidr> _whitelistRules = new List<InputWhitelistRuleCidr>();
 
         /// <summary>
-        /// Gets and sets the property InputSecurityGroupId. The id of the Input Security Group
-        /// to update.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
-        public string InputSecurityGroupId
+        public string ResourceArn
         {
-            get { return this._inputSecurityGroupId; }
-            set { this._inputSecurityGroupId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if InputSecurityGroupId property is set
-        internal bool IsSetInputSecurityGroupId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._inputSecurityGroupId != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// Gets and sets the property Tags.
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -66,21 +64,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property WhitelistRules. List of IPv4 CIDR addresses to whitelist
-        /// </summary>
-        public List<InputWhitelistRuleCidr> WhitelistRules
-        {
-            get { return this._whitelistRules; }
-            set { this._whitelistRules = value; }
-        }
-
-        // Check to see if WhitelistRules property is set
-        internal bool IsSetWhitelistRules()
-        {
-            return this._whitelistRules != null && this._whitelistRules.Count > 0; 
         }
 
     }
