@@ -38,6 +38,7 @@ namespace Amazon.Elasticsearch.Model
         private ESPartitionInstanceType _dedicatedMasterType;
         private int? _instanceCount;
         private ESPartitionInstanceType _instanceType;
+        private ZoneAwarenessConfig _zoneAwarenessConfig;
         private bool? _zoneAwarenessEnabled;
 
         /// <summary>
@@ -129,6 +130,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneAwarenessConfig. 
+        /// <para>
+        /// Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+        /// </para>
+        /// </summary>
+        public ZoneAwarenessConfig ZoneAwarenessConfig
+        {
+            get { return this._zoneAwarenessConfig; }
+            set { this._zoneAwarenessConfig = value; }
+        }
+
+        // Check to see if ZoneAwarenessConfig property is set
+        internal bool IsSetZoneAwarenessConfig()
+        {
+            return this._zoneAwarenessConfig != null;
         }
 
         /// <summary>

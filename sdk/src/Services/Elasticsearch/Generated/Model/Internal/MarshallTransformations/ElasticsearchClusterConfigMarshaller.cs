@@ -75,6 +75,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetZoneAwarenessConfig())
+            {
+                context.Writer.WritePropertyName("ZoneAwarenessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ZoneAwarenessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ZoneAwarenessConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetZoneAwarenessEnabled())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessEnabled");

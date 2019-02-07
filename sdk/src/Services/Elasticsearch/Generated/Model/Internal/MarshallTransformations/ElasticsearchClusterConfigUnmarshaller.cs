@@ -94,6 +94,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ZoneAwarenessConfig", targetDepth))
+                {
+                    var unmarshaller = ZoneAwarenessConfigUnmarshaller.Instance;
+                    unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ZoneAwarenessEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
