@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.452.0",
+    "ProductVersion" : "3.3.453.0",
     "CoreVersion"    : "3.3.31.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.22.0",
+            "Version" : "3.3.23.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -545,7 +545,7 @@
             "InPreview"               : false
         },
         "ApplicationDiscoveryService"     : {
-            "Version" : "3.3.6.4",
+            "Version" : "3.3.6.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.1.21",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.7"

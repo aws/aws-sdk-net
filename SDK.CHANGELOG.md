@@ -1,3 +1,11 @@
+### 3.3.453.0 (2019-02-08 22:10 UTC)
+* ApplicationDiscoveryService (3.3.6.5)
+	* Documentation updates for the AWS Application Discovery Service.
+* DLM (3.3.2.0)
+	* This release is to correct the timestamp format to ISO8601 for the DateCreated and DateModified files in the GetLifecyclePolicy response object.
+* ECS (3.3.23.0)
+	* Amazon ECS introduces the PutAccountSettingDefault API, an API that allows a user to set the default ARN/ID format opt-in status for all the roles and users in the account. Previously, setting the account's default opt-in status required the use of the root user with the PutAccountSetting API.
+
 ### 3.3.452.0 (2019-02-07 21:38 UTC)
 * Elasticsearch (3.3.11.0)
 	* Feature: Support for three Availability Zone deployments
