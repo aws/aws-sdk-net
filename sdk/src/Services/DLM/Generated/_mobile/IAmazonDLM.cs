@@ -40,7 +40,7 @@ namespace Amazon.DLM
     ///  
     /// <para>
     /// Amazon DLM supports Amazon EBS volumes and snapshots. For information about using
-    /// Amazon DLM with Amazon EBS, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
+    /// Amazon DLM with Amazon EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
     /// the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
