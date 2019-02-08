@@ -232,6 +232,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
         /// Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must
+        /// sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string StatusDetail
