@@ -134,7 +134,7 @@ namespace Amazon.ECS
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
         /// run your service behind a load balancer. The load balancer distributes traffic across
-        /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+        /// the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
         /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1125,7 +1125,7 @@ namespace Amazon.ECS
         /// <summary>
         /// Returns a list of container instances in a specified cluster. You can filter the results
         /// of a <code>ListContainerInstances</code> operation with cluster query language statements
-        /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerInstances service method.</param>
@@ -1472,10 +1472,16 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM
-        /// role, or the root user for an account. You can specify whether the new ARN and resource
-        /// ID format are enabled for new resources that are created. Enabling this setting is
-        /// required to use new Amazon ECS features such as resource tagging.
+        /// Modifies the ARN and resource ID format of a resource type for a specified IAM user,
+        /// IAM role, or the root user for an account. If the account setting for the root user
+        /// is changed, it sets the default setting for all of the IAM users and roles for which
+        /// no individual account setting has been set. The opt-in and opt-out account setting
+        /// can be set for each Amazon ECS resource separately. The ARN and resource ID format
+        /// of a resource will be defined by the opt-in status of the IAM user or role that created
+        /// the resource. Enabling this setting is required to use new Amazon ECS features such
+        /// as resource tagging. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+        /// Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
         /// 
@@ -1522,6 +1528,59 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  PutAccountSettingDefault
+
+
+        /// <summary>
+        /// Modifies the ARN and resource ID format of a resource type for all IAM users on an
+        /// account for which no individual account setting has been set. Enabling this setting
+        /// is required to use new Amazon ECS features such as resource tagging.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountSettingDefault service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
+        PutAccountSettingDefaultResponse PutAccountSettingDefault(PutAccountSettingDefaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountSettingDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountSettingDefault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
+        IAsyncResult BeginPutAccountSettingDefault(PutAccountSettingDefaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountSettingDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountSettingDefault.</param>
+        /// 
+        /// <returns>Returns a  PutAccountSettingDefaultResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
+        PutAccountSettingDefaultResponse EndPutAccountSettingDefault(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAttributes
 
 
@@ -1529,7 +1588,7 @@ namespace Amazon.ECS
         /// Create or update an attribute on an Amazon ECS resource. If the attribute does not
         /// exist, it is created. If the attribute exists, its value is replaced with the specified
         /// value. To delete an attribute, use <a>DeleteAttributes</a>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
@@ -1590,7 +1649,7 @@ namespace Amazon.ECS
         /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
         /// Optionally, you can add data volumes to your containers with the <code>volumes</code>
         /// parameter. For more information about task definition parameters and defaults, see
-        /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// 
         ///  
@@ -1598,7 +1657,7 @@ namespace Amazon.ECS
         /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
         /// When you specify an IAM role for a task, its containers can then use the latest versions
         /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
-        /// in the IAM policy associated with the role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// in the IAM policy associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1668,7 +1727,7 @@ namespace Amazon.ECS
         /// <para>
         /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
         /// places tasks using placement constraints and placement strategies. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1779,7 +1838,7 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1851,7 +1910,7 @@ namespace Amazon.ECS
         /// <para>
         /// The default 30-second timeout can be configured on the Amazon ECS container agent
         /// with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -2039,7 +2098,7 @@ namespace Amazon.ECS
         /// <para>
         ///  <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon
         /// Linux with the <code>ecs-init</code> service installed and running. For help updating
-        /// the Amazon ECS container agent on other operating systems, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+        /// the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
         /// Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>

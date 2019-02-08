@@ -59,8 +59,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// The security groups associated with the task or service. If you do not specify a security
-        /// group, the default security group for the VPC is used. There is a limit of five security
-        /// groups able to be specified per <code>AwsVpcConfiguration</code>.
+        /// group, the default security group for the VPC is used. There is a limit of 5 security
+        /// groups that can be specified per <code>AwsVpcConfiguration</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -83,8 +83,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The subnets associated with the task or service. There is a limit of 16 subnets able
-        /// to be specified per <code>AwsVpcConfiguration</code>.
+        /// The subnets associated with the task or service. There is a limit of 16 subnets that
+        /// can be specified per <code>AwsVpcConfiguration</code>.
         /// </para>
         ///  <note> 
         /// <para>

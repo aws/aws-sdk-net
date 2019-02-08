@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// The log driver to use for the container. The valid values listed for this parameter
         /// are log drivers that the Amazon ECS container agent can communicate with by default.
         /// If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
-        /// For more information about using the <code>awslogs</code> driver, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+        /// For more information about using the <code>awslogs</code> driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
         /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 

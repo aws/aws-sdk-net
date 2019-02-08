@@ -130,7 +130,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LaunchType. 
         /// <para>
         /// The launch type the tasks in the task set are using. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -209,7 +209,7 @@ namespace Amazon.ECS.Model
         /// The platform version on which the tasks in the task set are running. A platform version
         /// is only specified for tasks using the Fargate launch type. If one is not specified,
         /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>

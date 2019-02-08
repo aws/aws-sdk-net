@@ -28,40 +28,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The type and amount of a resource to assign to a container. The only supported resource
-    /// is a GPU. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
-    /// with GPUs on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+    /// Container for the parameters to the PutAccountSettingDefault operation.
+    /// Modifies the ARN and resource ID format of a resource type for all IAM users on an
+    /// account for which no individual account setting has been set. Enabling this setting
+    /// is required to use new Amazon ECS features such as resource tagging.
     /// </summary>
-    public partial class ResourceRequirement
+    public partial class PutAccountSettingDefaultRequest : AmazonECSRequest
     {
-        private ResourceType _type;
+        private SettingName _name;
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The type of resource to assign to a container. The only supported value is <code>GPU</code>.
+        /// The resource type to enable the new format for. If <code>serviceLongArnFormat</code>
+        /// is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code>
+        /// is specified, the ARN and resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code>
+        /// is specified, the ARN and resource ID for your Amazon ECS container instances are
+        /// affected.
         /// </para>
         /// </summary>
-        public ResourceType Type
+        public SettingName Name
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._type != null;
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve
-        /// for the container. The number of GPUs reserved for all containers in a task should
-        /// not exceed the number of available GPUs on the container instance the task is launched
-        /// on.
+        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>
+        /// and <code>disabled</code>.
         /// </para>
         /// </summary>
         public string Value

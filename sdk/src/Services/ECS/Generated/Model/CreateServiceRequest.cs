@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind a load balancer. The load balancer distributes traffic across
-    /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+    /// the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
     /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -294,7 +294,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which to run your service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The launch type on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -443,7 +443,7 @@ namespace Amazon.ECS.Model
         /// The platform version on which your tasks in the service are running. A platform version
         /// is only specified for tasks using the Fargate launch type. If one is not specified,
         /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -505,7 +505,7 @@ namespace Amazon.ECS.Model
         /// specify the full role ARN (this is recommended) or prefix the role name with the path.
         /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
         /// then you would specify <code>/foo/bar</code> as the role name. For more information,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
         /// Names and Paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

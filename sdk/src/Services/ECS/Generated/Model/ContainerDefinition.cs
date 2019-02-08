@@ -76,6 +76,8 @@ namespace Amazon.ECS.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+        /// If there are multiple arguments, each argument should be a separated string in the
+        /// array.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -298,7 +300,7 @@ namespace Amazon.ECS.Model
         /// The Amazon ECS container agent running on a container instance must register with
         /// the <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
         /// environment variables before containers placed on that instance can use these security
-        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -390,7 +392,7 @@ namespace Amazon.ECS.Model
         /// All tasks must have at least one essential container. If you have an application that
         /// is composed of multiple containers, you should group containers that are used for
         /// a common purpose into components, and separate the different components into multiple
-        /// task definitions. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+        /// task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
         /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -664,7 +666,7 @@ namespace Amazon.ECS.Model
         /// The Amazon ECS container agent running on a container instance must register the logging
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
-        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -999,7 +1001,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Secrets. 
         /// <para>
-        /// The secrets to pass to the container.
+        /// The secrets to pass to the container. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> Secrets

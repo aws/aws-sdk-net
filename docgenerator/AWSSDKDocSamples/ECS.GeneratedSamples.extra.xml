@@ -59,6 +59,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteAccountSettingRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteAccountSettingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the account setting for your user for the specified resource type.
+                </para>
+                <code
+                    title="To delete your account setting"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-the-account-setting-for-your-user-account-1549524548115" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteAccountSettingRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteAccountSettingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the account setting for a specific IAM user or IAM role for the specified resource type. Only the root user can view or modify the account settings for another user.
+                </para>
+                <code
+                    title="To delete the account settings for a specific IAM user or IAM role"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-the-account-setting-for-a-specific-iam-user-or-iam-role-1549524612917" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.DeleteCluster(Amazon.ECS.Model.DeleteClusterRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.DeleteCluster(Amazon.ECS.Model.DeleteClusterRequest)" />
             <member name="T:Amazon.ECS.Model.DeleteClusterRequest" />
@@ -206,6 +244,44 @@
                     title="To describe a task"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="a90b0cde-f965-4946-b55e-cfd8cc54e827" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListAccountSettingsRequest" />
+            <member name="T:Amazon.ECS.Model.ListAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example displays the effective account settings for your account.
+                </para>
+                <code
+                    title="To view your effective account settings"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-view-your-account-settings-1549524118170" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListAccountSettingsRequest" />
+            <member name="T:Amazon.ECS.Model.ListAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example displays the effective account settings for the specified user or role.
+                </para>
+                <code
+                    title="To view the effective account settings for a specific IAM user or IAM role"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-view-the-account-settings-for-a-specific-iam-user-or-iam-role-1549524237932" />
             </example>
         </value>
     </doc>
@@ -396,6 +472,63 @@
                     title="To list the tasks on a particular container instance"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="024bf3b7-9cbb-44e3-848f-9d074e1fecce" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutAccountSetting(Amazon.ECS.Model.PutAccountSettingRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutAccountSetting(Amazon.ECS.Model.PutAccountSettingRequest)" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingRequest" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies your account settings to opt in to the new ARN and resource ID format for Amazon ECS services. If you’re using this command as the root user, then changes apply to the entire AWS account, unless an IAM user or role explicitly overrides these settings for themselves.
+                </para>
+                <code
+                    title="To modify your account settings"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-modify-the-account-settings-for-your-iam-user-account-1549523130939" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutAccountSetting(Amazon.ECS.Model.PutAccountSettingRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutAccountSetting(Amazon.ECS.Model.PutAccountSettingRequest)" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingRequest" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the account setting for a specific IAM user or IAM role to opt in to the new ARN and resource ID format for Amazon ECS container instances. If you’re using this command as the root user, then changes apply to the entire AWS account, unless an IAM user or role explicitly overrides these settings for themselves.
+                </para>
+                <code
+                    title="To modify the account settings for a specific IAM user or IAM role"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-modify-the-account-settings-for-a-specific-iam-user-or-iam-role-1549523518390" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutAccountSettingDefault(Amazon.ECS.Model.PutAccountSettingDefaultRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutAccountSettingDefault(Amazon.ECS.Model.PutAccountSettingDefaultRequest)" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingDefaultRequest" />
+            <member name="T:Amazon.ECS.Model.PutAccountSettingDefaultResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the default account setting for the specified resource for all IAM users or roles on an account. These changes apply to the entire AWS account, unless an IAM user or role explicitly overrides these settings for themselves.
+                </para>
+                <code
+                    title="To modify the default account settings for all IAM users or roles on an account"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-modify-the-default-account-settings-for-all-iam-users-or-roles-on-your-account-1549523794603" />
             </example>
         </value>
     </doc>

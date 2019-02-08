@@ -29,7 +29,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// An object representing a constraint on task placement. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+    /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
     /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class PlacementConstraint
@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A cluster query language expression to apply to the constraint. You cannot specify
         /// an expression if the constraint type is <code>distinctInstance</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

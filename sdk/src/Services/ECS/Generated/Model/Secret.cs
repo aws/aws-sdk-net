@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the secret to expose to your container.
+    /// An object representing the secret to expose to your container. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+    /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class Secret
     {
@@ -56,9 +58,19 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ValueFrom. 
         /// <para>
-        /// The secret to expose to the container. Supported values are either the full ARN or
-        /// the name of the parameter in the AWS Systems Manager Parameter Store. 
+        /// The secret to expose to the container. If your task is using the EC2 launch type,
+        /// then supported values are either the full ARN of the AWS Secrets Manager secret or
+        /// the full ARN of the parameter in the AWS Systems Manager Parameter Store. If your
+        /// task is using the Fargate launch type, then the only supported value is the full ARN
+        /// of the parameter in the AWS Systems Manager Parameter Store.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the AWS Systems Manager Parameter Store parameter exists in the same Region as
+        /// the task you are launching, then you can use either the full ARN or name of the parameter.
+        /// If the parameter exists in a different Region, then the full ARN must be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ValueFrom
         {

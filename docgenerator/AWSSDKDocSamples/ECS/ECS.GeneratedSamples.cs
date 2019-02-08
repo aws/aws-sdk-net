@@ -66,6 +66,35 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDeleteAccountSetting()
+        {
+            #region to-delete-the-account-setting-for-your-user-account-1549524548115
+
+            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
+            {
+                Name = "serviceLongArnFormat"
+            });
+
+            Setting setting = response.Setting;
+
+            #endregion
+        }
+
+        public void ECSDeleteAccountSetting()
+        {
+            #region to-delete-the-account-setting-for-a-specific-iam-user-or-iam-role-1549524612917
+
+            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
+            {
+                Name = "containerInstanceLongArnFormat",
+                PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
+            });
+
+            Setting setting = response.Setting;
+
+            #endregion
+        }
+
         public void ECSDeleteCluster()
         {
             #region to-delete-an-empty-cluster-1472512705352
@@ -187,6 +216,35 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<Failure> failures = response.Failures;
             List<Task> tasks = response.Tasks;
+
+            #endregion
+        }
+
+        public void ECSListAccountSettings()
+        {
+            #region to-view-your-account-settings-1549524118170
+
+            var response = client.ListAccountSettings(new ListAccountSettingsRequest 
+            {
+                EffectiveSettings = true
+            });
+
+            List<Setting> settings = response.Settings;
+
+            #endregion
+        }
+
+        public void ECSListAccountSettings()
+        {
+            #region to-view-the-account-settings-for-a-specific-iam-user-or-iam-role-1549524237932
+
+            var response = client.ListAccountSettings(new ListAccountSettingsRequest 
+            {
+                EffectiveSettings = true,
+                PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
+            });
+
+            List<Setting> settings = response.Settings;
 
             #endregion
         }
@@ -324,6 +382,52 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             List<string> taskArns = response.TaskArns;
+
+            #endregion
+        }
+
+        public void ECSPutAccountSetting()
+        {
+            #region to-modify-the-account-settings-for-your-iam-user-account-1549523130939
+
+            var response = client.PutAccountSetting(new PutAccountSettingRequest 
+            {
+                Name = "serviceLongArnFormat",
+                Value = "enabled"
+            });
+
+            Setting setting = response.Setting;
+
+            #endregion
+        }
+
+        public void ECSPutAccountSetting()
+        {
+            #region to-modify-the-account-settings-for-a-specific-iam-user-or-iam-role-1549523518390
+
+            var response = client.PutAccountSetting(new PutAccountSettingRequest 
+            {
+                Name = "containerInstanceLongArnFormat",
+                Value = "enabled",
+                PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
+            });
+
+            Setting setting = response.Setting;
+
+            #endregion
+        }
+
+        public void ECSPutAccountSettingDefault()
+        {
+            #region to-modify-the-default-account-settings-for-all-iam-users-or-roles-on-your-account-1549523794603
+
+            var response = client.PutAccountSettingDefault(new PutAccountSettingDefaultRequest 
+            {
+                Name = "serviceLongArnFormat",
+                Value = "enabled"
+            });
+
+            Setting setting = response.Setting;
 
             #endregion
         }

@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the ListContainerInstances operation.
     /// Returns a list of container instances in a specified cluster. You can filter the results
     /// of a <code>ListContainerInstances</code> operation with cluster query language statements
-    /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+    /// inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
     /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class ListContainerInstancesRequest : AmazonECSRequest
@@ -65,7 +65,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// You can filter the results of a <code>ListContainerInstances</code> operation with
-        /// cluster query language statements. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

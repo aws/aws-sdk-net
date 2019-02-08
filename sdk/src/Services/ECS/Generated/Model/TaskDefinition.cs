@@ -53,7 +53,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Compatibilities. 
         /// <para>
-        /// The launch type to use with your task. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The launch type to use with your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of container definitions in JSON format that describe the different containers
         /// that make up your task. For more information about container definition parameters
-        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -504,7 +504,7 @@ namespace Amazon.ECS.Model
         /// IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option
         /// is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must
         /// also run some configuration code in order to take advantage of the feature. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
         /// IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -532,7 +532,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about volume definition parameters and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
+        /// For more information about volume definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

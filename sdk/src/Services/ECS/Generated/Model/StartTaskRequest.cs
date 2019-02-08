@@ -35,7 +35,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
     /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>

@@ -1023,6 +1023,39 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  PutAccountSettingDefault
+
+        internal virtual PutAccountSettingDefaultResponse PutAccountSettingDefault(PutAccountSettingDefaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountSettingDefaultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountSettingDefault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
+        public virtual Task<PutAccountSettingDefaultResponse> PutAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAccountSettingDefaultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutAttributes
 
         internal virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
