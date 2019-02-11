@@ -554,6 +554,25 @@ namespace Amazon.S3.Util
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<bool> DoesS3BucketExistAsync(IAmazonS3 s3Client, string bucketName)
         {
+            return (await DoesS3BucketExistInternalAsync(s3Client, bucketName, Protocol.HTTP));
+        }
+#endif
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Determines whether an S3 bucket exists or not.
+        /// This is done by:
+        /// 1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
+        /// well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
+        /// (which is one week).
+        /// 2. Making a HEAD request to the Url
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket to check.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <param name="protocol">Protocol to utilize.</param>
+        /// <returns></returns>
+        private static async System.Threading.Tasks.Task<bool> DoesS3BucketExistInternalAsync(IAmazonS3 s3Client, string bucketName, Protocol protocol)
+        {
             if (s3Client == null)
             {
                 throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
@@ -569,7 +588,7 @@ namespace Amazon.S3.Util
                 BucketName = bucketName,
                 Expires = s3Client.Config.CorrectedUtcNow.ToLocalTime().AddDays(1),
                 Verb = HttpVerb.HEAD,
-                Protocol = Protocol.HTTP
+                Protocol = protocol
             };
 
             var url = s3Client.GetPreSignedURL(request);
@@ -630,65 +649,7 @@ namespace Amazon.S3.Util
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<bool> DoesS3BucketExistV2Async(IAmazonS3 s3Client, string bucketName)
         {
-            if (s3Client == null)
-            {
-                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
-            }
-
-            if (String.IsNullOrEmpty(bucketName))
-            {
-                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
-            }
-
-            var request = new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Expires = s3Client.Config.CorrectedUtcNow.ToLocalTime().AddDays(1),
-                Verb = HttpVerb.HEAD,
-                Protocol = Protocol.HTTPS
-            };
-
-            var url = s3Client.GetPreSignedURL(request);
-            var uri = new Uri(url);
-
-            var httpRequest = WebRequest.Create(uri) as HttpWebRequest;
-            httpRequest.Method = "HEAD";
-            var concreteClient = s3Client as AmazonS3Client;
-            if (concreteClient != null)
-            {
-
-                concreteClient.ConfigureProxy(httpRequest);
-            }
-
-            try
-            {
-#if PCL
-                var result = httpRequest.BeginGetResponse(null, null);
-                using (var httpResponse = httpRequest.EndGetResponse(result) as HttpWebResponse)
-#else 
-                using (var httpResponse = await httpRequest.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)
-#endif          
-                {
-                    // If all went well, the bucket was found!
-                    return true;
-                }
-            }
-            catch (WebException we)
-            {
-                using (var errorResponse = we.Response as HttpWebResponse)
-                {
-                    if (errorResponse != null)
-                    {
-                        var code = errorResponse.StatusCode;
-                        return code != HttpStatusCode.NotFound &&
-                            code != HttpStatusCode.BadRequest;
-                    }
-
-                    // The Error Response is null which is indicative of either
-                    // a bad request or some other problem
-                    return false;
-                }
-            }
+            return (await DoesS3BucketExistInternalAsync(s3Client, bucketName, Protocol.HTTPS));
         }
 #endif
     }
