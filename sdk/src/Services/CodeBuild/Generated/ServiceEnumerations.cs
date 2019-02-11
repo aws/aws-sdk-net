@@ -1147,4 +1147,66 @@ namespace Amazon.CodeBuild
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type WebhookFilterType.
+    /// </summary>
+    public class WebhookFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTOR_ACCOUNT_ID for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType ACTOR_ACCOUNT_ID = new WebhookFilterType("ACTOR_ACCOUNT_ID");
+        /// <summary>
+        /// Constant BASE_REF for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType BASE_REF = new WebhookFilterType("BASE_REF");
+        /// <summary>
+        /// Constant EVENT for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType EVENT = new WebhookFilterType("EVENT");
+        /// <summary>
+        /// Constant FILE_PATH for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType FILE_PATH = new WebhookFilterType("FILE_PATH");
+        /// <summary>
+        /// Constant HEAD_REF for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType HEAD_REF = new WebhookFilterType("HEAD_REF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebhookFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookFilterType FindValue(string value)
+        {
+            return FindValue<WebhookFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

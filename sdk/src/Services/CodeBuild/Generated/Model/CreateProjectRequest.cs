@@ -128,7 +128,12 @@ namespace Amazon.CodeBuild.Model
         /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
         /// encrypting the build output artifacts.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// service role has permission to that key. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
         /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).

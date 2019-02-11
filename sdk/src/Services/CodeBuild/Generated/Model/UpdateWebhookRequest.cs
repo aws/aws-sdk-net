@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
     public partial class UpdateWebhookRequest : AmazonCodeBuildRequest
     {
         private string _branchFilter;
+        private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
         private string _projectName;
         private bool? _rotateSecret;
 
@@ -50,6 +51,12 @@ namespace Amazon.CodeBuild.Model
         /// webhook is triggered. If the name of a branch matches the regular expression, then
         /// it is built. If <code>branchFilter</code> is empty, then all branches are built.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string BranchFilter
         {
@@ -61,6 +68,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBranchFilter()
         {
             return this._branchFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterGroups. 
+        /// <para>
+        ///  An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook
+        /// event can trigger a build. A filter group must pcontain at least one <code>EVENT</code>
+        /// <code>WebhookFilter</code>. 
+        /// </para>
+        /// </summary>
+        public List<List<WebhookFilter>> FilterGroups
+        {
+            get { return this._filterGroups; }
+            set { this._filterGroups = value; }
+        }
+
+        // Check to see if FilterGroups property is set
+        internal bool IsSetFilterGroups()
+        {
+            return this._filterGroups != null && this._filterGroups.Count > 0; 
         }
 
         /// <summary>

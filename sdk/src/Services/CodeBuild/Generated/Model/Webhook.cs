@@ -34,6 +34,7 @@ namespace Amazon.CodeBuild.Model
     public partial class Webhook
     {
         private string _branchFilter;
+        private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
         private DateTime? _lastModifiedSecret;
         private string _payloadUrl;
         private string _secret;
@@ -46,6 +47,12 @@ namespace Amazon.CodeBuild.Model
         /// webhook is triggered. If the name of a branch matches the regular expression, then
         /// it is built. If <code>branchFilter</code> is empty, then all branches are built.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string BranchFilter
         {
@@ -57,6 +64,31 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBranchFilter()
         {
             return this._branchFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterGroups. 
+        /// <para>
+        ///  An array of arrays of <code>WebhookFilter</code> objects used to determine which
+        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
+        /// specify <code>EVENT</code> as its <code>type</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For a build to be triggered, at least one filter group in the <code>filterGroups</code>
+        /// array must pass. For a filter group to pass, each of its filters must pass. 
+        /// </para>
+        /// </summary>
+        public List<List<WebhookFilter>> FilterGroups
+        {
+            get { return this._filterGroups; }
+            set { this._filterGroups = value; }
+        }
+
+        // Check to see if FilterGroups property is set
+        internal bool IsSetFilterGroups()
+        {
+            return this._filterGroups != null && this._filterGroups.Count > 0; 
         }
 
         /// <summary>

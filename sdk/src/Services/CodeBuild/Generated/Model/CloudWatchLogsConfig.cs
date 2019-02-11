@@ -40,7 +40,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         ///  The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
         /// with Log Groups and Log Streams</a>. 
         /// </para>
         /// </summary>
@@ -88,7 +88,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         ///  The prefix of the stream name of the Amazon CloudWatch Logs. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
         /// with Log Groups and Log Streams</a>. 
         /// </para>
         /// </summary>

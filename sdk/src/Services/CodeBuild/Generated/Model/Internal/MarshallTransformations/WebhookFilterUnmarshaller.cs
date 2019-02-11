@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Webhook Object
+    /// Response Unmarshaller for WebhookFilter Object
     /// </summary>  
-    public class WebhookUnmarshaller : IUnmarshaller<Webhook, XmlUnmarshallerContext>, IUnmarshaller<Webhook, JsonUnmarshallerContext>
+    public class WebhookFilterUnmarshaller : IUnmarshaller<WebhookFilter, XmlUnmarshallerContext>, IUnmarshaller<WebhookFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Webhook IUnmarshaller<Webhook, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WebhookFilter IUnmarshaller<WebhookFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Webhook Unmarshall(JsonUnmarshallerContext context)
+        public WebhookFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Webhook unmarshalledObject = new Webhook();
+            WebhookFilter unmarshalledObject = new WebhookFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("branchFilter", targetDepth))
+                if (context.TestExpression("excludeMatchedPattern", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExcludeMatchedPattern = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pattern", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BranchFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("filterGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<List<WebhookFilter>, ListUnmarshaller<WebhookFilter, WebhookFilterUnmarshaller>>(new ListUnmarshaller<WebhookFilter, WebhookFilterUnmarshaller>(WebhookFilterUnmarshaller.Instance));
-                    unmarshalledObject.FilterGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastModifiedSecret", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("payloadUrl", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PayloadUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("secret", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Secret = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
 
 
-        private static WebhookUnmarshaller _instance = new WebhookUnmarshaller();        
+        private static WebhookFilterUnmarshaller _instance = new WebhookFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WebhookUnmarshaller Instance
+        public static WebhookFilterUnmarshaller Instance
         {
             get
             {

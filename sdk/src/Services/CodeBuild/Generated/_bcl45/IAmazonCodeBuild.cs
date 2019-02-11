@@ -286,7 +286,7 @@ namespace Amazon.CodeBuild
         /// billing is on a per-build basis, you are billed for both builds. Therefore, if you
         /// are using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild.
         /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
-        /// 5 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+        /// 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
         /// a Build Project's Settings</a>.
         /// </para>
         ///  </important>

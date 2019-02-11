@@ -74,6 +74,27 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BranchFilter);
                 }
 
+                if(publicRequest.IsSetFilterGroups())
+                {
+                    context.Writer.WritePropertyName("filterGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFilterGroupsListValue in publicRequest.FilterGroups)
+                    {
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFilterGroupsListValueListValue in publicRequestFilterGroupsListValue)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WebhookFilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFilterGroupsListValueListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");

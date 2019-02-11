@@ -41,8 +41,8 @@ namespace Amazon.CodeBuild.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information, see <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private
-    /// Registry with AWS Secrets Manager Samle for AWS CodeBuild</a>. 
+    ///  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private
+    /// Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. 
     /// </para>
     /// </summary>
     public partial class RegistryCredential
