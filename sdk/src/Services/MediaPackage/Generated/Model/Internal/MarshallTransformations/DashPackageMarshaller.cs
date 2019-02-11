@@ -56,6 +56,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetManifestLayout())
+            {
+                context.Writer.WritePropertyName("manifestLayout");
+                context.Writer.Write(requestObject.ManifestLayout);
+            }
+
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("manifestWindowSeconds");
@@ -95,6 +101,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
                 context.Writer.Write(requestObject.SegmentDurationSeconds);
+            }
+
+            if(requestObject.IsSetSegmentTemplateFormat())
+            {
+                context.Writer.WritePropertyName("segmentTemplateFormat");
+                context.Writer.Write(requestObject.SegmentTemplateFormat);
             }
 
             if(requestObject.IsSetStreamSelection())

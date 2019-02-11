@@ -70,6 +70,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manifestLayout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("segmentTemplateFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SegmentTemplateFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("streamSelection", targetDepth))

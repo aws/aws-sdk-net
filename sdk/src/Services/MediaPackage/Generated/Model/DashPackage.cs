@@ -33,12 +33,14 @@ namespace Amazon.MediaPackage.Model
     public partial class DashPackage
     {
         private DashEncryption _encryption;
+        private ManifestLayout _manifestLayout;
         private int? _manifestWindowSeconds;
         private int? _minBufferTimeSeconds;
         private int? _minUpdatePeriodSeconds;
         private List<string> _periodTriggers = new List<string>();
         private Profile _profile;
         private int? _segmentDurationSeconds;
+        private SegmentTemplateFormat _segmentTemplateFormat;
         private StreamSelection _streamSelection;
         private int? _suggestedPresentationDelaySeconds;
 
@@ -55,6 +57,24 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestLayout. Determines the position of some tags in
+        /// the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate
+        /// and ContentProtection are included in each Representation.  When set to COMPACT, duplicate
+        /// elements are combined and presented at the AdaptationSet level.
+        /// </summary>
+        public ManifestLayout ManifestLayout
+        {
+            get { return this._manifestLayout; }
+            set { this._manifestLayout = value; }
+        }
+
+        // Check to see if ManifestLayout property is set
+        internal bool IsSetManifestLayout()
+        {
+            return this._manifestLayout != null;
         }
 
         /// <summary>
@@ -155,6 +175,25 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetSegmentDurationSeconds()
         {
             return this._segmentDurationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentTemplateFormat. Determines the type of SegmentTimeline
+        /// included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE,
+        /// a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When
+        /// set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+        /// $Time$ media URLs.
+        /// </summary>
+        public SegmentTemplateFormat SegmentTemplateFormat
+        {
+            get { return this._segmentTemplateFormat; }
+            set { this._segmentTemplateFormat = value; }
+        }
+
+        // Check to see if SegmentTemplateFormat property is set
+        internal bool IsSetSegmentTemplateFormat()
+        {
+            return this._segmentTemplateFormat != null;
         }
 
         /// <summary>
