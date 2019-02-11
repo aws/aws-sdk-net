@@ -44,7 +44,7 @@ namespace Amazon.AppStream.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+    /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
     /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -74,13 +74,12 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to associate. A tag is a key-value pair (the value is optional). For example,
-        /// <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>.
-        /// 
+        /// The tags to associate. A tag is a key-value pair, and the value is optional. For example,
+        /// Environment=Test. If you do not specify a value, Environment=. 
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value, we set the value to an empty string.
+        /// If you do not specify a value, the value is set to an empty string.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

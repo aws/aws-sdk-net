@@ -81,7 +81,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SessionContext. 
         /// <para>
-        /// The session context. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+        /// The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
         /// Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>

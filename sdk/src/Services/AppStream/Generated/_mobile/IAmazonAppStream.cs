@@ -33,11 +33,11 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and
-    /// syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a
-    /// fully managed application streaming service. You centrally manage your desktop applications
-    /// on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
-    /// the AWS resources required to host and run your applications, scales automatically,
+    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions
+    /// and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0
+    /// is a fully managed application streaming service. You centrally manage your desktop
+    /// applications on AppStream 2.0 and securely deliver them to any computer. AppStream
+    /// 2.0 manages the AWS resources required to host and run your applications, scales automatically,
     /// and provides access to your users on demand.
     /// </para>
     ///  

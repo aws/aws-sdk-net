@@ -29,10 +29,10 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSessions operation.
-    /// Retrieves a list that describes the streaming sessions for a specified stack and fleet.
-    /// If a UserId is provided for the stack and fleet, only streaming sessions for that
-    /// user are described. If an authentication type is not provided, the default is to authenticate
-    /// users using a streaming URL.
+    /// Retrieves a list that describes the active streaming sessions for a specified stack
+    /// and fleet. If a value for <code>UserId</code> is provided for the stack and fleet,
+    /// only streaming sessions for that user are described. If an authentication type is
+    /// not provided, the default is to authenticate users using a streaming URL.
     /// </summary>
     public partial class DescribeSessionsRequest : AmazonAppStreamRequest
     {
@@ -47,8 +47,9 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property AuthenticationType. 
         /// <para>
         /// The authentication method. Specify <code>API</code> for a user authenticated using
-        /// a streaming URL or <code>SAML</code> for a SAML federated user. The default is to
-        /// authenticate users using a streaming URL.
+        /// a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or <code>USERPOOL</code>
+        /// for a user in the AppStream 2.0 user pool. The default is to authenticate users using
+        /// a streaming URL.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType

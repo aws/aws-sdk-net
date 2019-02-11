@@ -37,11 +37,11 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and
-    /// syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a
-    /// fully managed application streaming service. You centrally manage your desktop applications
-    /// on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
-    /// the AWS resources required to host and run your applications, scales automatically,
+    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions
+    /// and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0
+    /// is a fully managed application streaming service. You centrally manage your desktop
+    /// applications on AppStream 2.0 and securely deliver them to any computer. AppStream
+    /// 2.0 manages the AWS resources required to host and run your applications, scales automatically,
     /// and provides access to your users on demand.
     /// </para>
     ///  
@@ -1776,10 +1776,10 @@ namespace Amazon.AppStream
         #region  DescribeSessions
 
         /// <summary>
-        /// Retrieves a list that describes the streaming sessions for a specified stack and fleet.
-        /// If a UserId is provided for the stack and fleet, only streaming sessions for that
-        /// user are described. If an authentication type is not provided, the default is to authenticate
-        /// users using a streaming URL.
+        /// Retrieves a list that describes the active streaming sessions for a specified stack
+        /// and fleet. If a value for <code>UserId</code> is provided for the stack and fleet,
+        /// only streaming sessions for that user are described. If an authentication type is
+        /// not provided, the default is to authenticate users using a streaming URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
@@ -2373,7 +2373,7 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2710,7 +2710,7 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2784,7 +2784,7 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
