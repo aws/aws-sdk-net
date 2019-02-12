@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddLayerVersionPermission operation.
-    /// Adds permissions to the resource-based policy of a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
     /// Lambda layer</a>. Use this action to grant layer usage permission to other accounts.
     /// You can grant permission to a single account, all AWS accounts, or all accounts in
     /// an organization.

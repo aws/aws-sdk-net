@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
-    /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+    /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
     /// for a Lambda function version. Use aliases to provide clients with a function identifier
     /// that you can update to invoke a different version.
     /// 
@@ -69,7 +69,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -142,7 +142,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.
         /// </para>
         /// </summary>

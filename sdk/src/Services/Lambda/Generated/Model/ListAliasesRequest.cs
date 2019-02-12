@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Returns a list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+    /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
     /// for a Lambda function.
     /// </summary>
     public partial class ListAliasesRequest : AmazonLambdaRequest
@@ -42,7 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -97,8 +97,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.
+        /// Specify the pagination token that's returned by a previous request to retrieve the
+        /// next page of results.
         /// </para>
         /// </summary>
         public string Marker

@@ -38,8 +38,8 @@ namespace Amazon.Lambda
     ///  
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-    /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// additional information. For the service overview, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// is AWS Lambda</a>, and for information about how the service works, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </para>
     /// </summary>
@@ -309,9 +309,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns information about function or function version, with a link to download the
-        /// deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details specific to that version are returned.
+        /// Returns information about the function or function version, with a link to download
+        /// the deployment package that's valid for 10 minutes. If you specify a function version,
+        /// only details that are specific to that version are returned.
         /// </summary>
         /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
@@ -355,7 +355,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a the version-specific settings of a Lambda function or version. The output
+        /// Returns the version-specific settings of a Lambda function or version. The output
         /// includes only options that can vary between versions of a function. To modify these
         /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 

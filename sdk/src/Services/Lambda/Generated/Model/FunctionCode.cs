@@ -41,8 +41,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An Amazon S3 bucket in the same region as your function. The bucket can be in a different
-        /// AWS account.
+        /// An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in
+        /// a different AWS account.
         /// </para>
         /// </summary>
         public string S3Bucket

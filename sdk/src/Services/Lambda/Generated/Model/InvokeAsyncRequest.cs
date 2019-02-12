@@ -84,7 +84,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvokeArgsStream. 
         /// <para>
-        /// JSON that you want to provide to your Lambda function as input.
+        /// The JSON that you want to provide to your Lambda function as input.
         /// </para>
         /// </summary>
         public Stream InvokeArgsStream

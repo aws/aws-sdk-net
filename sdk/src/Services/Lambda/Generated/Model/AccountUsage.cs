@@ -56,7 +56,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TotalCodeSize. 
         /// <para>
-        /// The amount of storage space, in bytes, in use by deployment packages and layer archives.
+        /// The amount of storage space, in bytes, that's being used by deployment packages and
+        /// layer archives.
         /// </para>
         /// </summary>
         public long TotalCodeSize

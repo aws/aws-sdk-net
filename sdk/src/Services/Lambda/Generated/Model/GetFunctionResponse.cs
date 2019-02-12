@@ -58,7 +58,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Concurrency. 
         /// <para>
-        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
         /// concurrency</a>.
         /// </para>
         /// </summary>
@@ -95,7 +95,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

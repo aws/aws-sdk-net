@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishLayerVersion operation.
-    /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
     /// Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
     /// with the same version name, a new version is created.
     /// 
@@ -49,7 +49,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CompatibleRuntimes. 
         /// <para>
-        /// A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+        /// A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
         /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
         /// </para>
         /// </summary>

@@ -29,15 +29,15 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishVersion operation.
-    /// Creates a <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
+    /// Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
     /// from the current code and configuration of a function. Use versions to create a snapshot
     /// of your function code and configuration that doesn't change.
     /// 
     ///  
     /// <para>
-    /// AWS Lambda does not publish a version if the function's configuration and code hasn't
+    /// AWS Lambda doesn't publish a version if the function's configuration and code haven't
     /// changed since the last version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a>
-    /// to update the function prior to publishing a version.
+    /// to update the function before publishing a version.
     /// </para>
     ///  
     /// <para>
@@ -54,9 +54,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSha256. 
         /// <para>
-        /// Only publish a version if the hash matches the value specified. Use this option to
-        /// avoid publishing a version if the function code has changed since you last updated
-        /// it. You can get the hash for the version you uploaded from the output of <a>UpdateFunctionCode</a>.
+        /// Only publish a version if the hash value matches the value that's specified. Use this
+        /// option to avoid publishing a version if the function code has changed since you last
+        /// updated it. You can get the hash for the version that you uploaded from the output
+        /// of <a>UpdateFunctionCode</a>.
         /// </para>
         /// </summary>
         public string CodeSha256
@@ -74,8 +75,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Specify a description for the version to override the description in the function
-        /// configuration.
+        /// A description for the version to override the description in the function configuration.
         /// </para>
         /// </summary>
         public string Description
@@ -93,7 +93,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -130,9 +130,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the function if the revision ID matches the ID specified. Use this option
-        /// to avoid publishing a version if the function configuration has changed since you
-        /// last updated it.
+        /// Only update the function if the revision ID matches the ID that's specified. Use this
+        /// option to avoid publishing a version if the function configuration has changed since
+        /// you last updated it.
         /// </para>
         /// </summary>
         public string RevisionId

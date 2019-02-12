@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error messages for environment variables that could not be applied.
+        /// Error messages for environment variables that couldn't be applied.
         /// </para>
         /// </summary>
         public EnvironmentError Error

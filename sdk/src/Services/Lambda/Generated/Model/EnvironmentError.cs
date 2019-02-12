@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Error messages for environment variables that could not be applied.
+    /// Error messages for environment variables that couldn't be applied.
     /// </summary>
     public partial class EnvironmentError
     {

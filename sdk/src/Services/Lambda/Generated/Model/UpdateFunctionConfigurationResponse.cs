@@ -74,7 +74,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSize. 
         /// <para>
-        /// The size of the function's deployment package in bytes.
+        /// The size of the function's deployment package, in bytes.
         /// </para>
         /// </summary>
         public long CodeSize
@@ -182,7 +182,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Handler. 
         /// <para>
-        /// The function Lambda calls to begin executing your function.
+        /// The function that Lambda calls to begin executing your function.
         /// </para>
         /// </summary>
         public string Handler
@@ -200,8 +200,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The KMS key used to encrypt the function's environment variables. Only returned if
-        /// you've configured a customer managed CMK.
+        /// The KMS key that's used to encrypt the function's environment variables. This key
+        /// is only returned if you've configured a customer-managed CMK.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -238,8 +238,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a> 
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// layers</a>.
         /// </para>
         /// </summary>
         public List<Layer> Layers
@@ -275,7 +275,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The memory allocated to the function
+        /// The memory that's allocated to the function.
         /// </para>
         /// </summary>
         public int MemorySize
@@ -293,7 +293,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Represents the latest updated revision of the function or alias.
+        /// The latest updated revision of the function or alias.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -347,7 +347,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The amount of time that Lambda allows a function to run before terminating it.
+        /// The amount of time that Lambda allows a function to run before stopping it.
         /// </para>
         /// </summary>
         public int Timeout

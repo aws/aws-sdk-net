@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Provides configuration information about a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+    /// Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class UpdateAliasResponse : AmazonWebServiceResponse
     {
@@ -132,7 +132,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.
         /// </para>
         /// </summary>

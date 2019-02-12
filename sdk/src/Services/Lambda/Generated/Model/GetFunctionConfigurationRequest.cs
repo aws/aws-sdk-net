@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFunctionConfiguration operation.
-    /// Returns a the version-specific settings of a Lambda function or version. The output
+    /// Returns the version-specific settings of a Lambda function or version. The output
     /// includes only options that can vary between versions of a function. To modify these
     /// settings, use <a>UpdateFunctionConfiguration</a>.
     /// 

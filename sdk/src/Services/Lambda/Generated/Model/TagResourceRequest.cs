@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
-    /// a function.
+    /// Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
+    /// to a function.
     /// </summary>
     public partial class TagResourceRequest : AmazonLambdaRequest
     {

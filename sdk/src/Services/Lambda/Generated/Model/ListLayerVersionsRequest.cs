@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLayerVersions operation.
-    /// Lists the versions of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-    /// Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+    /// Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+    /// Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
     /// identifier</a> to list only versions that indicate that they're compatible with that
     /// runtime.
     /// </summary>

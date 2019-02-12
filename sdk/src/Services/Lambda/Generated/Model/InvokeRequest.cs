@@ -29,24 +29,24 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a Lambda function. You can invoke a function synchronously and wait for the
-    /// response, or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
+    /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
+    /// response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
     /// to <code>Event</code>.
     /// 
     ///  
     /// <para>
     /// For synchronous invocation, details about the function response, including errors,
     /// are included in the response body and headers. For either invocation type, you can
-    /// find more information in the <a href="http://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
-    /// log</a> and <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
+    /// find more information in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+    /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
     /// To record function errors for asynchronous invocations, configure your function with
-    /// a <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+    /// a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
     /// </para>
     ///  
     /// <para>
-    /// The status code in the API response does not reflect function errors. Error codes
-    /// are reserved for errors that prevent your function from executing, such as permissions
-    /// errors, <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
+    /// The status code in the API response doesn't reflect function errors. Error codes are
+    /// reserved for errors that prevent your function from executing, such as permissions
+    /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
     /// or issues with your function's code and configuration. For example, Lambda returns
     /// <code>TooManyRequestsException</code> if executing the function would cause you to
     /// exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
@@ -54,7 +54,7 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// For functions with a long timeout, your client may be disconnected during synchronous
+    /// For functions with a long timeout, your client might be disconnected during synchronous
     /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
     /// proxy, or operating system to allow for long connections with timeout or keep-alive
     /// settings.
@@ -145,8 +145,8 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple
-        /// times to the function's dead-letter queue (if configured). The API response only includes
-        /// a status code.
+        /// times to the function's dead-letter queue (if it's configured). The API response only
+        /// includes a status code.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -188,7 +188,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property PayloadStream. 
         /// <para>
-        /// JSON that you want to provide to your Lambda function as input.
+        /// The JSON that you want to provide to your Lambda function as input.
         /// </para>
         /// </summary>
         public MemoryStream PayloadStream

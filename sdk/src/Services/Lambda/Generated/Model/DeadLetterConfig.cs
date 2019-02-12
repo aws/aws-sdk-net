@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>
+    /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>
     /// for failed asynchronous invocations.
     /// </summary>
     public partial class DeadLetterConfig

@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AccountLimit. 
         /// <para>
-        /// Limits related to concurrency and code storage.
+        /// Limits that are related to concurrency and code storage.
         /// </para>
         /// </summary>
         public AccountLimit AccountLimit

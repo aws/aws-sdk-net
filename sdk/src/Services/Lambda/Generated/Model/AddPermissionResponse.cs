@@ -37,7 +37,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Statement. 
         /// <para>
-        /// The permission statement added to the function policy.
+        /// The permission statement that's added to the function policy.
         /// </para>
         /// </summary>
         public string Statement

@@ -66,8 +66,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.
+        /// Specify the pagination token that's returned by a previous request to retrieve the
+        /// next page of results.
         /// </para>
         /// </summary>
         public string Marker
@@ -85,7 +85,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterRegion. 
         /// <para>
-        /// For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code>
+        /// For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code>
         /// or <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
         /// </para>
         /// </summary>

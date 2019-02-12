@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// Revokes function use permission from an AWS service or another account. You can get
+    /// Revokes function-use permission from an AWS service or another account. You can get
     /// the ID of the statement from the output of <a>GetPolicy</a>.
     /// </summary>
     public partial class RemovePermissionRequest : AmazonLambdaRequest
@@ -99,8 +99,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the policy if the revision ID matches the ID specified. Use this option
-        /// to avoid modifying a policy that has changed since you last read it.
+        /// Only update the policy if the revision ID matches the ID that's specified. Use this
+        /// option to avoid modifying a policy that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId

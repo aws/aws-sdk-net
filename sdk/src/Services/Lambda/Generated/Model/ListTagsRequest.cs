@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Returns a function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+    /// Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
     /// You can also view tags with <a>GetFunction</a>.
     /// </summary>
     public partial class ListTagsRequest : AmazonLambdaRequest

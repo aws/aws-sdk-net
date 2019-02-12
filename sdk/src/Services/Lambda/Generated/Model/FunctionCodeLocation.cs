@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A pre-signed URL that you can use to download the deployment package.
+        /// A presigned URL that you can use to download the deployment package.
         /// </para>
         /// </summary>
         public string Location
@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RepositoryType. 
         /// <para>
-        /// The service hosting the file.
+        /// The service that's hosting the file.
         /// </para>
         /// </summary>
         public string RepositoryType

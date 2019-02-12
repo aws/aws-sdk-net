@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Limits related to concurrency and code storage. All file and storage sizes are in
-    /// bytes.
+    /// Limits that are related to concurrency and code storage. All file and storage sizes
+    /// are in bytes.
     /// </summary>
     public partial class AccountLimit
     {
@@ -42,7 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeUnzipped. 
         /// <para>
-        /// The maximum size of your function's code and layers when extracted.
+        /// The maximum size of your function's code and layers when they're extracted.
         /// </para>
         /// </summary>
         public long CodeSizeUnzipped
@@ -60,8 +60,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSizeZipped. 
         /// <para>
-        /// The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use
-        /// Amazon S3 for larger files.
+        /// The maximum size of a deployment package when it's uploaded directly to AWS Lambda.
+        /// Use Amazon S3 for larger files.
         /// </para>
         /// </summary>
         public long CodeSizeZipped
@@ -116,8 +116,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UnreservedConcurrentExecutions. 
         /// <para>
-        /// The maximum number of simultaneous function executions, less the concurrency reserved
-        /// for individual functions with <a>PutFunctionConcurrency</a>.
+        /// The maximum number of simultaneous function executions, minus the capacity that's
+        /// reserved for individual functions with <a>PutFunctionConcurrency</a>.
         /// </para>
         /// </summary>
         public int UnreservedConcurrentExecutions

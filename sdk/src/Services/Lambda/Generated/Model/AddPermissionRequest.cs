@@ -47,7 +47,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// This action adds a statement to a resource-based permission policy for the function.
-    /// For more information about function policies, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
+    /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
     /// Function Policies</a>. 
     /// </para>
     /// </summary>
@@ -180,8 +180,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the policy if the revision ID matches the ID specified. Use this option
-        /// to avoid modifying a policy that has changed since you last read it.
+        /// Only update the policy if the revision ID matches the ID that's specified. Use this
+        /// option to avoid modifying a policy that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -199,11 +199,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code>
-        /// to grant permission to resources owned by another account (e.g. all of an account's
-        /// Amazon S3 buckets). Or use together with <code>SourceArn</code> to ensure that the
-        /// resource is owned by the specified account. For example, an Amazon S3 bucket could
-        /// be deleted by its owner and recreated by another account.
+        /// For AWS services, the ID of the account that owns the resource. Use this instead of
+        /// <code>SourceArn</code> to grant permission to resources that are owned by another
+        /// account (for example, all of an account's Amazon S3 buckets). Or use it together with
+        /// <code>SourceArn</code> to ensure that the resource is owned by the specified account.
+        /// For example, an Amazon S3 bucket could be deleted by its owner and recreated by another
+        /// account.
         /// </para>
         /// </summary>
         public string SourceAccount

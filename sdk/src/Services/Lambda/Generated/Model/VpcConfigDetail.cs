@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The VPC security groups and subnets attached to a Lambda function.
+    /// The VPC security groups and subnets that are attached to a Lambda function.
     /// </summary>
     public partial class VpcConfigDetail
     {

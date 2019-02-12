@@ -38,17 +38,17 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
     /// Lambda with Amazon Kinesis</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
     /// with Amazon SQS</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
     /// with Amazon DynamoDB</a> 
     /// </para>
     ///  </li> </ul>

@@ -36,8 +36,8 @@ namespace Amazon.Lambda
     ///  
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-    /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// additional information. For the service overview, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// is AWS Lambda</a>, and for information about how the service works, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </para>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Adds permissions to the resource-based policy of a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a>. Use this action to grant layer usage permission to other accounts.
         /// You can grant permission to a single account, all AWS accounts, or all accounts in
         /// an organization.
@@ -142,7 +142,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This action adds a statement to a resource-based permission policy for the function.
-        /// For more information about function policies, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
+        /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
         /// Function Policies</a>. 
         /// </para>
         /// </summary>
@@ -210,7 +210,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
         /// for a Lambda function version. Use aliases to provide clients with a function identifier
         /// that you can update to invoke a different version.
         /// 
@@ -286,17 +286,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
         /// Lambda with Amazon Kinesis</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
         /// with Amazon SQS</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
         /// with Amazon DynamoDB</a> 
         /// </para>
         ///  </li> </ul>
@@ -357,17 +357,18 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a Lambda function. To create a function, you need a <a href="http://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
-        /// package</a> and an <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
+        /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+        /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package contains your function code. The execution role grants
-        /// the function permission to use AWS services such as Amazon CloudWatch Logs for log
+        /// the function permission to use AWS services, such as Amazon CloudWatch Logs for log
         /// streaming and AWS X-Ray for request tracing.
         /// 
         ///  
         /// <para>
         /// A function has an unpublished version, and can have published versions and aliases.
-        /// A published version is a snapshot of your function code and configuration that can
-        /// not be changed. An alias is a named resource that maps to a version, and can be changed
+        /// The unpublished version changes when you update your function's code and configuration.
+        /// A published version is a snapshot of your function code and configuration that can't
+        /// be changed. An alias is a named resource that maps to a version, and can be changed
         /// to map to a different version. Use the <code>Publish</code> parameter to create version
         /// <code>1</code> of your function from its initial configuration.
         /// </para>
@@ -376,12 +377,12 @@ namespace Amazon.Lambda
         /// The other parameters let you configure version-specific and function-level settings.
         /// You can modify version-specific settings later with <a>UpdateFunctionConfiguration</a>.
         /// Function-level settings apply to both the unpublished and published versions of the
-        /// function and include tags (<a>TagResource</a>) and per-function concurrency limits
+        /// function, and include tags (<a>TagResource</a>) and per-function concurrency limits
         /// (<a>PutFunctionConcurrency</a>).
         /// </para>
         ///  
         /// <para>
-        /// If another account or a AWS service invokes your function, use <a>AddPermission</a>
+        /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
         /// to grant permission by creating a resource-based IAM policy. You can grant permissions
         /// at the function level, on a version, or on an alias.
         /// </para>
@@ -390,7 +391,7 @@ namespace Amazon.Lambda
         /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
         /// to events in other AWS services, create an event source mapping (<a>CreateEventSourceMapping</a>),
         /// or configure a function trigger in the other service. For more information, see <a
-        /// href="http://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
         /// Functions</a>.
         /// </para>
         /// </summary>
@@ -398,7 +399,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -453,7 +454,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
@@ -504,7 +505,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes an <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
+        /// Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
         /// source mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping service method.</param>
@@ -721,7 +722,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a>. Deleted versions can no longer be viewed or added to functions.
         /// To avoid breaking functions, a copy of the version remains in Lambda until no functions
         /// refer to it.
@@ -770,8 +771,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Retrieves details about your account's <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a>
-        /// and usage in a region.
+        /// Retrieves details about your account's <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a>
+        /// and usage in an AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// 
@@ -817,7 +818,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns details about a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
         /// 
@@ -928,9 +929,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns information about function or function version, with a link to download the
-        /// deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details specific to that version are returned.
+        /// Returns information about the function or function version, with a link to download
+        /// the deployment package that's valid for 10 minutes. If you specify a function version,
+        /// only details that are specific to that version are returned.
         /// </summary>
         /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
@@ -954,9 +955,9 @@ namespace Amazon.Lambda
         GetFunctionResponse GetFunction(string functionName);
 
         /// <summary>
-        /// Returns information about function or function version, with a link to download the
-        /// deployment package that's valid for 10 minutes. If you specify a function version,
-        /// only details specific to that version are returned.
+        /// Returns information about the function or function version, with a link to download
+        /// the deployment package that's valid for 10 minutes. If you specify a function version,
+        /// only details that are specific to that version are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// 
@@ -1011,7 +1012,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a the version-specific settings of a Lambda function or version. The output
+        /// Returns the version-specific settings of a Lambda function or version. The output
         /// includes only options that can vary between versions of a function. To modify these
         /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 
@@ -1042,7 +1043,7 @@ namespace Amazon.Lambda
         GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName);
 
         /// <summary>
-        /// Returns a the version-specific settings of a Lambda function or version. The output
+        /// Returns the version-specific settings of a Lambda function or version. The output
         /// includes only options that can vary between versions of a function. To modify these
         /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 
@@ -1104,7 +1105,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns information about a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLayerVersion service method.</param>
@@ -1160,7 +1161,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns the permission policy for a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a>. For more information, see <a>AddLayerVersionPermission</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionPolicy service method.</param>
@@ -1216,7 +1217,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns the <a href="http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+        /// Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
         /// IAM policy</a> for a function, version, or alias.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
@@ -1272,24 +1273,24 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Invokes a Lambda function. You can invoke a function synchronously and wait for the
-        /// response, or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
+        /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
+        /// response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
         /// to <code>Event</code>.
         /// 
         ///  
         /// <para>
         /// For synchronous invocation, details about the function response, including errors,
         /// are included in the response body and headers. For either invocation type, you can
-        /// find more information in the <a href="http://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
-        /// log</a> and <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
+        /// find more information in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+        /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
         /// To record function errors for asynchronous invocations, configure your function with
-        /// a <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+        /// a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
         /// </para>
         ///  
         /// <para>
-        /// The status code in the API response does not reflect function errors. Error codes
-        /// are reserved for errors that prevent your function from executing, such as permissions
-        /// errors, <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
+        /// The status code in the API response doesn't reflect function errors. Error codes are
+        /// reserved for errors that prevent your function from executing, such as permissions
+        /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
         /// or issues with your function's code and configuration. For example, Lambda returns
         /// <code>TooManyRequestsException</code> if executing the function would cause you to
         /// exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
@@ -1297,7 +1298,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// For functions with a long timeout, your client may be disconnected during synchronous
+        /// For functions with a long timeout, your client might be disconnected during synchronous
         /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
         /// proxy, or operating system to allow for long connections with timeout or keep-alive
         /// settings.
@@ -1364,7 +1365,7 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1481,7 +1482,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
         /// for a Lambda function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
@@ -1677,9 +1678,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layers</a> and shows information about the latest version of each. Specify
-        /// a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+        /// a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
         /// identifier</a> to list only layers that indicate that they're compatible with that
         /// runtime.
         /// </summary>
@@ -1732,8 +1733,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists the versions of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-        /// Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+        /// Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
         /// identifier</a> to list only versions that indicate that they're compatible with that
         /// runtime.
         /// </summary>
@@ -1790,7 +1791,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+        /// Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
         /// You can also view tags with <a>GetFunction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
@@ -1846,7 +1847,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
         /// with the version-specific configuration of each.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
@@ -1902,7 +1903,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
         /// with the same version name, a new version is created.
         /// 
@@ -1915,7 +1916,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -1967,15 +1968,15 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
+        /// Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
         /// from the current code and configuration of a function. Use versions to create a snapshot
         /// of your function code and configuration that doesn't change.
         /// 
         ///  
         /// <para>
-        /// AWS Lambda does not publish a version if the function's configuration and code hasn't
+        /// AWS Lambda doesn't publish a version if the function's configuration and code haven't
         /// changed since the last version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a>
-        /// to update the function prior to publishing a version.
+        /// to update the function before publishing a version.
         /// </para>
         ///  
         /// <para>
@@ -1986,7 +1987,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -2049,7 +2050,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Concurrency settings apply to the function as a whole, including all published versions
-        /// and the unpublished version. Reserving concurrency both guarantees that your function
+        /// and the unpublished version. Reserving concurrency both ensures that your function
         /// has capacity to process the specified number of events simultaneously, and prevents
         /// it from scaling beyond that level. Use <a>GetFunction</a> to see the current setting
         /// for a function.
@@ -2059,7 +2060,7 @@ namespace Amazon.Lambda
         /// Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve
         /// concurrency for as many functions as you like, as long as you leave at least 100 simultaneous
         /// executions unreserved for functions that aren't configured with a per-function limit.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
         /// Concurrency</a>.
         /// </para>
         /// </summary>
@@ -2116,7 +2117,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Removes a statement from the permissions policy for a version of an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
         /// Lambda layer</a>. For more information, see <a>AddLayerVersionPermission</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveLayerVersionPermission service method.</param>
@@ -2177,7 +2178,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Revokes function use permission from an AWS service or another account. You can get
+        /// Revokes function-use permission from an AWS service or another account. You can get
         /// the ID of the statement from the output of <a>GetPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
@@ -2238,8 +2239,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Adds <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
-        /// a function.
+        /// Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
+        /// to a function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2294,7 +2295,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Removes <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
+        /// Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
         /// from a function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -2350,7 +2351,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates the configuration of a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
@@ -2478,7 +2479,7 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// The function's code is locked when you publish a version. You cannot modify the code
+        /// The function's code is locked when you publish a version. You can't modify the code
         /// of a published version, only the unpublished version.
         /// </para>
         /// </summary>
@@ -2486,7 +2487,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -2548,7 +2549,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// These settings can vary between versions of a function and are locked when you publish
-        /// a version. You cannot modify the configuration of a published version, only the unpublished
+        /// a version. You can't modify the configuration of a published version, only the unpublished
         /// version.
         /// </para>
         ///  

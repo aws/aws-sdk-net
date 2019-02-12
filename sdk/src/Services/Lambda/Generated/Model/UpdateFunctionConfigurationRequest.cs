@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// These settings can vary between versions of a function and are locked when you publish
-    /// a version. You cannot modify the configuration of a published version, only the unpublished
+    /// a version. You can't modify the configuration of a published version, only the unpublished
     /// version.
     /// </para>
     ///  
@@ -64,7 +64,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// A dead letter queue configuration that specifies the queue or topic where Lambda sends
-        /// asynchronous events when they fail processing. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead
+        /// asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead
         /// Letter Queues</a>.
         /// </para>
         /// </summary>
@@ -83,8 +83,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A short user-defined function description. AWS Lambda does not use this value. Assign
-        /// a meaningful description as you see fit.
+        /// A description of the function.
         /// </para>
         /// </summary>
         public string Description
@@ -102,7 +101,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The parent object that contains your environment's configuration settings.
+        /// Environment variables that are accessible from function code during execution.
         /// </para>
         /// </summary>
         public Environment Environment
@@ -157,8 +156,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Handler. 
         /// <para>
-        /// The function that Lambda calls to begin executing your function. For Node.js, it is
-        /// the <code>module-name.export</code> value in your function. 
+        /// The name of the method within your code that Lambda calls to execute your function.
+        /// The format includes the file name. It can also include namespaces and other qualifiers,
+        /// depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
+        /// Model</a>.
         /// </para>
         /// </summary>
         public string Handler
@@ -176,9 +177,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
-        /// variables. If you elect to use the AWS Lambda default service key, pass in an empty
-        /// string ("") for this parameter.
+        /// The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your
+        /// function's environment variables. If it's not provided, AWS Lambda uses a default
+        /// service key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -196,8 +197,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-        /// layers</a> to add to the function's execution environment.
+        /// A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+        /// layers</a> to add to the function's execution environment. Specify each layer by its
+        /// ARN, including the version.
         /// </para>
         /// </summary>
         public List<string> Layers
@@ -215,11 +217,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory, in MB, your Lambda function is given. AWS Lambda uses this memory
-        /// size to infer the amount of CPU allocated to your function. Your function use-case
-        /// determines your CPU and memory requirements. For example, a database operation might
-        /// need less memory compared to an image processing function. The default value is 128
-        /// MB. The value must be a multiple of 64 MB.
+        /// The amount of memory that your function has access to. Increasing the function's memory
+        /// also increases its CPU allocation. The default value is 128 MB. The value must be
+        /// a multiple of 64 MB.
         /// </para>
         /// </summary>
         public int MemorySize
@@ -237,8 +237,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the function if the revision ID matches the ID specified. Use this option
-        /// to avoid modifying a function that has changed since you last read it.
+        /// Only update the function if the revision ID matches the ID that's specified. Use this
+        /// option to avoid modifying a function that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -256,8 +256,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes
-        /// your function.
+        /// The Amazon Resource Name (ARN) of the function's execution role.
         /// </para>
         /// </summary>
         public string Role
@@ -275,7 +274,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime version for the function.
+        /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
         /// </para>
         /// </summary>
         public Runtime Runtime
@@ -293,8 +292,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The amount of time that Lambda allows a function to run before terminating it. The
-        /// default is 3 seconds. The maximum allowed value is 900 seconds.
+        /// The amount of time that Lambda allows a function to run before stopping it. The default
+        /// is 3 seconds. The maximum allowed value is 900 seconds.
         /// </para>
         /// </summary>
         public int Timeout
@@ -331,7 +330,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// Specify security groups and subnets in a VPC to which your Lambda function needs access.
+        /// For network connectivity to AWS resources in a VPC, specify a list of security groups
+        /// and subnets in the VPC. When you connect a function to a VPC, it can only access resources
+        /// and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+        /// Settings</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

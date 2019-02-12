@@ -86,8 +86,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Specify a version to delete. You cannot delete a version that is referenced by an
-        /// alias.
+        /// Specify a version to delete. You can't delete a version that's referenced by an alias.
         /// </para>
         /// </summary>
         public string Qualifier

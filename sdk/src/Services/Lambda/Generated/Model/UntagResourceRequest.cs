@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
+    /// Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
     /// from a function.
     /// </summary>
     public partial class UntagResourceRequest : AmazonLambdaRequest

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A Lambda function alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic
-    /// shifting</a> configuration.
+    /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a>
+    /// configuration of a Lambda function alias.
     /// </summary>
     public partial class AliasRoutingConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AdditionalVersionWeights. 
         /// <para>
-        /// The name of the second alias, and the percentage of traffic that is routed to it.
+        /// The name of the second alias, and the percentage of traffic that's routed to it.
         /// </para>
         /// </summary>
         public Dictionary<string, double> AdditionalVersionWeights

@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Updates the configuration of a Lambda function <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+    /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
     /// </summary>
     public partial class UpdateAliasRequest : AmazonLambdaRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -134,8 +134,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the alias if the revision ID matches the ID specified. Use this option
-        /// to avoid modifying an alias that has changed since you last read it.
+        /// Only update the alias if the revision ID matches the ID that's specified. Use this
+        /// option to avoid modifying an alias that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -153,7 +153,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RoutingConfig. 
         /// <para>
-        /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+        /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
         /// configuration</a> of the alias.
         /// </para>
         /// </summary>

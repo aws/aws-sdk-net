@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// The function's code is locked when you publish a version. You cannot modify the code
+    /// The function's code is locked when you publish a version. You can't modify the code
     /// of a published version, only the unpublished version.
     /// </para>
     /// </summary>
@@ -126,8 +126,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// Only update the function if the revision ID matches the ID specified. Use this option
-        /// to avoid modifying a function that has changed since you last read it.
+        /// Only update the function if the revision ID matches the ID that's specified. Use this
+        /// option to avoid modifying a function that has changed since you last read it.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -145,8 +145,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An Amazon S3 bucket in the same region as your function. The bucket can be in a different
-        /// AWS account.
+        /// An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in
+        /// a different AWS account.
         /// </para>
         /// </summary>
         public string S3Bucket
