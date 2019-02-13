@@ -5,6 +5,7 @@
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
+        <CopyLastReleasedUnityBits Condition="'$(CopyLastReleasedUnityBits)'==''">false</CopyLastReleasedUnityBits>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
@@ -169,13 +170,13 @@
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-assemblies">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-last-released-unity-bits;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-last-released-unity-bits;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -226,6 +227,12 @@
     <MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
       Targets="Clean;Build"
       Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+  </Target>
+
+  <Target Name="copy-last-released-unity-bits" DependsOnTargets="build-tools" Condition="$(CopyLastReleasedUnityBits) And Exists('$(InternalBuildTools)\references.targets')=='true'">
+    <Message Text="Copy the last released Unity bits"/>
+    <CopyUnityFilesTask DllPath="C:\AWS\build-archives\last-release\sdk.zip"
+        DeploymentFolder="..\deployment" />  		
   </Target>
 
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-smoke-tests;run-unit-tests;run-integ-tests;run-CSM-tests;test-backward-compatibility" />
