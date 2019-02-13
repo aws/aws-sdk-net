@@ -1,3 +1,12 @@
+### 3.3.454.1 (2019-02-12 23:14 UTC)
+* Lambda (3.3.19.17)
+	* Documentation updates for AWS Lambda
+* Core 3.3.31.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.454.0 (2019-02-11 23:08 UTC)
 * AppStream (3.3.21.0)
 	* This update enables customers to find the start time, max expiration time, and connection status associated with AppStream streaming session.
