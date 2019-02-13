@@ -142,7 +142,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A face ID, <code>faceId</code>, assigned by the service for each face that's detected
+    /// A face ID, <code>FaceId</code>, assigned by the service for each face that's detected
     /// and stored.
     /// </para>
     ///  </li> <li> 
@@ -251,6 +251,12 @@ namespace Amazon.Rekognition.Model
         /// The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
         /// call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
         public Image Image

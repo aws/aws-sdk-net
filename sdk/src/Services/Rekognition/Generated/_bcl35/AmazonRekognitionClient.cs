@@ -2418,7 +2418,7 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A face ID, <code>faceId</code>, assigned by the service for each face that's detected
+        /// A face ID, <code>FaceId</code>, assigned by the service for each face that's detected
         /// and stored.
         /// </para>
         ///  </li> <li> 

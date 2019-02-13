@@ -63,6 +63,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.ModerationLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModerationModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModerationModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

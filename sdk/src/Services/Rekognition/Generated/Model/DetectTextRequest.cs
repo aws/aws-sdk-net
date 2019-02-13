@@ -84,6 +84,12 @@ namespace Amazon.Rekognition.Model
         /// The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS
         /// CLI to call Amazon Rekognition operations, you can't pass image bytes. 
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// in the Amazon Rekognition developer guide.
+        /// </para>
         /// </summary>
         public Image Image
         {

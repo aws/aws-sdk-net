@@ -34,6 +34,7 @@ namespace Amazon.Rekognition.Model
     {
         private VideoJobStatus _jobStatus;
         private List<ContentModerationDetection> _moderationLabels = new List<ContentModerationDetection>();
+        private string _moderationModelVersion;
         private string _nextToken;
         private string _statusMessage;
         private VideoMetadata _videoMetadata;
@@ -72,6 +73,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetModerationLabels()
         {
             return this._moderationLabels != null && this._moderationLabels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModerationModelVersion. 
+        /// <para>
+        /// Version number of the moderation detection model that was used to detect unsafe content.
+        /// </para>
+        /// </summary>
+        public string ModerationModelVersion
+        {
+            get { return this._moderationModelVersion; }
+            set { this._moderationModelVersion = value; }
+        }
+
+        // Check to see if ModerationModelVersion property is set
+        internal bool IsSetModerationModelVersion()
+        {
+            return this._moderationModelVersion != null;
         }
 
         /// <summary>
