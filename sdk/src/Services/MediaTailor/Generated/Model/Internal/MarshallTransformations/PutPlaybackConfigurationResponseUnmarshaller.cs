@@ -81,6 +81,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlaybackConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlaybackConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlaybackEndpointPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlateAdUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TranscodeProfileName", targetDepth))

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutPlaybackConfiguration Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class PutPlaybackConfigurationRequestMarshaller : IMarshaller<IRequest, PutPlaybackConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutPlaybackConfigurationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,60 +52,23 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutPlaybackConfigurationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/playbackConfiguration";
+            string uriResourcePath = "/tags/{ResourceArn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonMediaTailorException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{ResourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdDecisionServerUrl())
-                {
-                    context.Writer.WritePropertyName("AdDecisionServerUrl");
-                    context.Writer.Write(publicRequest.AdDecisionServerUrl);
-                }
-
-                if(publicRequest.IsSetCdnConfiguration())
-                {
-                    context.Writer.WritePropertyName("CdnConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CdnConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CdnConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDashConfiguration())
-                {
-                    context.Writer.WritePropertyName("DashConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DashConfigurationForPutMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DashConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSlateAdUrl())
-                {
-                    context.Writer.WritePropertyName("SlateAdUrl");
-                    context.Writer.Write(publicRequest.SlateAdUrl);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -120,18 +83,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTranscodeProfileName())
-                {
-                    context.Writer.WritePropertyName("TranscodeProfileName");
-                    context.Writer.Write(publicRequest.TranscodeProfileName);
-                }
-
-                if(publicRequest.IsSetVideoContentSourceUrl())
-                {
-                    context.Writer.WritePropertyName("VideoContentSourceUrl");
-                    context.Writer.Write(publicRequest.VideoContentSourceUrl);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -141,9 +92,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutPlaybackConfigurationRequestMarshaller _instance = new PutPlaybackConfigurationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static PutPlaybackConfigurationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +102,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutPlaybackConfigurationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

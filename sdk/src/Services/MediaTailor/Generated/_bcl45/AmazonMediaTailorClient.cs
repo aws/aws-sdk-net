@@ -250,7 +250,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes the configuration for the specified name.
+        /// Deletes the playback configuration for the specified name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackConfiguration service method.</param>
         /// 
@@ -290,7 +290,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns the configuration for the specified name.
+        /// Returns the playback configuration for the specified name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackConfiguration service method.</param>
         /// 
@@ -330,11 +330,11 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns a list of the configurations defined in AWS Elemental MediaTailor. You can
-        /// specify a max number of configurations to return at a time. The default max is 50.
-        /// Results are returned in pagefuls. If AWS Elemental MediaTailor has more configurations
-        /// than the specified max, it provides parameters in the response that you can use to
-        /// retrieve the next pageful.
+        /// Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
+        /// You can specify a maximum number of configurations to return at a time. The default
+        /// maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
+        /// than the specified maximum, it provides parameters in the response that you can use
+        /// to retrieve the next pageful.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaybackConfigurations service method.</param>
         /// 
@@ -370,11 +370,54 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of the tags assigned to the specified playback configuration resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by MediaTailor.</returns>
+        /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
+        /// Invalid request parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutPlaybackConfiguration
 
 
         /// <summary>
-        /// Adds a new configuration to AWS Elemental MediaTailor.
+        /// Adds a new playback configuration to AWS Elemental MediaTailor.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPlaybackConfiguration service method.</param>
         /// 
@@ -406,6 +449,94 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutPlaybackConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds tags to the specified playback configuration resource. You can specify one or
+        /// more tags to add.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by MediaTailor.</returns>
+        /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
+        /// Invalid request parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from the specified playback configuration resource. You can specify one
+        /// or more tags to remove.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by MediaTailor.</returns>
+        /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
+        /// Invalid request parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

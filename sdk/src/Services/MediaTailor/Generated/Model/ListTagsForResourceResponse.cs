@@ -28,34 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The configuration for DASH PUT operations.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class DashConfigurationForPut
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _mpdLocation;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property MpdLocation. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The setting that controls whether MediaTailor includes the Location tag in DASH manifests.
-        /// MediaTailor populates the Location tag with the URL for manifest update requests,
-        /// to be used by players that don't support sticky redirects. Disable this if you have
-        /// CDN routing rules set up for accessing MediaTailor manifests and you are either using
-        /// client-side reporting or your players support sticky HTTP redirects. Valid values
-        /// are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the
-        /// tag and is the default value. 
+        /// A comma-separated list of tag key:value pairs. For example:  { "Key1": "Value1", "Key2":
+        /// "Value2" } 
         /// </para>
         /// </summary>
-        public string MpdLocation
+        public Dictionary<string, string> Tags
         {
-            get { return this._mpdLocation; }
-            set { this._mpdLocation = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if MpdLocation property is set
-        internal bool IsSetMpdLocation()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._mpdLocation != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

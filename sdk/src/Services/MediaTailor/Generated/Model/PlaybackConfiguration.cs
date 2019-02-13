@@ -34,8 +34,15 @@ namespace Amazon.MediaTailor.Model
     {
         private string _adDecisionServerUrl;
         private CdnConfiguration _cdnConfiguration;
+        private DashConfiguration _dashConfiguration;
+        private HlsConfiguration _hlsConfiguration;
         private string _name;
+        private string _playbackConfigurationArn;
+        private string _playbackEndpointPrefix;
+        private string _sessionInitializationEndpointPrefix;
         private string _slateAdUrl;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _transcodeProfileName;
         private string _videoContentSourceUrl;
 
         /// <summary>
@@ -44,7 +51,7 @@ namespace Amazon.MediaTailor.Model
         /// The URL for the ad decision server (ADS). This includes the specification of static
         /// parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes
         /// player-specific and session-specific parameters as needed when calling the ADS. Alternately,
-        /// for testing, you can provide a static VAST URL. The maximum length is 25000 characters.
+        /// for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.
         /// </para>
         /// </summary>
         public string AdDecisionServerUrl
@@ -79,9 +86,45 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DashConfiguration. 
+        /// <para>
+        /// The configuration for DASH content. 
+        /// </para>
+        /// </summary>
+        public DashConfiguration DashConfiguration
+        {
+            get { return this._dashConfiguration; }
+            set { this._dashConfiguration = value; }
+        }
+
+        // Check to see if DashConfiguration property is set
+        internal bool IsSetDashConfiguration()
+        {
+            return this._dashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsConfiguration. 
+        /// <para>
+        /// The configuration for HLS content. 
+        /// </para>
+        /// </summary>
+        public HlsConfiguration HlsConfiguration
+        {
+            get { return this._hlsConfiguration; }
+            set { this._hlsConfiguration = value; }
+        }
+
+        // Check to see if HlsConfiguration property is set
+        internal bool IsSetHlsConfiguration()
+        {
+            return this._hlsConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the configuration.
+        /// The identifier for the playback configuration.
         /// </para>
         /// </summary>
         public string Name
@@ -97,12 +140,68 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlaybackConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the playback configuration. 
+        /// </para>
+        /// </summary>
+        public string PlaybackConfigurationArn
+        {
+            get { return this._playbackConfigurationArn; }
+            set { this._playbackConfigurationArn = value; }
+        }
+
+        // Check to see if PlaybackConfigurationArn property is set
+        internal bool IsSetPlaybackConfigurationArn()
+        {
+            return this._playbackConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlaybackEndpointPrefix. 
+        /// <para>
+        /// The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
+        /// This session will use server-side reporting. 
+        /// </para>
+        /// </summary>
+        public string PlaybackEndpointPrefix
+        {
+            get { return this._playbackEndpointPrefix; }
+            set { this._playbackEndpointPrefix = value; }
+        }
+
+        // Check to see if PlaybackEndpointPrefix property is set
+        internal bool IsSetPlaybackEndpointPrefix()
+        {
+            return this._playbackEndpointPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionInitializationEndpointPrefix. 
+        /// <para>
+        /// The URL that the player uses to initialize a session that uses client-side reporting.
+        /// 
+        /// </para>
+        /// </summary>
+        public string SessionInitializationEndpointPrefix
+        {
+            get { return this._sessionInitializationEndpointPrefix; }
+            set { this._sessionInitializationEndpointPrefix = value; }
+        }
+
+        // Check to see if SessionInitializationEndpointPrefix property is set
+        internal bool IsSetSessionInitializationEndpointPrefix()
+        {
+            return this._sessionInitializationEndpointPrefix != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SlateAdUrl. 
         /// <para>
-        /// URL for a high-quality video asset to transcode and use to fill in time that's not
-        /// used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content.
-        /// Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate
-        /// is required because AWS Elemental MediaTailor provides it in the slots designated
+        /// The URL for a high-quality video asset to transcode and use to fill in time that's
+        /// not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media
+        /// content. Configuring the slate is optional for non-VPAID playback configurations.
+        /// For VPAID, the slate is required because MediaTailor provides it in the slots designated
         /// for dynamic ad content. The slate must be a high-quality asset that contains both
         /// audio and video. 
         /// </para>
@@ -117,6 +216,44 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetSlateAdUrl()
         {
             return this._slateAdUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the playback configuration. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TranscodeProfileName. 
+        /// <para>
+        /// The name that is used to associate this playback configuration with a custom transcode
+        /// profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this
+        /// only if you have already set up custom profiles with the help of AWS Support.
+        /// </para>
+        /// </summary>
+        public string TranscodeProfileName
+        {
+            get { return this._transcodeProfileName; }
+            set { this._transcodeProfileName = value; }
+        }
+
+        // Check to see if TranscodeProfileName property is set
+        internal bool IsSetTranscodeProfileName()
+        {
+            return this._transcodeProfileName != null;
         }
 
         /// <summary>

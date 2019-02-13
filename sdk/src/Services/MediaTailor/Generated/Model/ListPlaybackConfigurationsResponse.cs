@@ -38,8 +38,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Array of playback configurations. This may be all of the available configurations
-        /// or a subset, depending on the settings you provide and on the total number of configurations
+        /// Array of playback configurations. This might be all the available configurations or
+        /// a subset, depending on the settings that you provide and the total number of configurations
         /// stored. 
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token returned by the GET list request when results overrun the meximum
+        /// Pagination token returned by the GET list request when results exceed the maximum
         /// allowed. Use the token to fetch the next page of results.
         /// </para>
         /// </summary>

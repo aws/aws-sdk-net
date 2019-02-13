@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePlaybackConfiguration operation.
-    /// Deletes the playback configuration for the specified name.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class DeletePlaybackConfigurationRequest : AmazonMediaTailorRequest
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private string _name;
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The identifier for the playback configuration.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
 
     }
 }

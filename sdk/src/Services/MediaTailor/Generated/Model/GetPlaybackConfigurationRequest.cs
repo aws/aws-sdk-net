@@ -29,7 +29,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlaybackConfiguration operation.
-    /// Returns the configuration for the specified name.
+    /// Returns the playback configuration for the specified name.
     /// </summary>
     public partial class GetPlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the configuration.
+        /// The identifier for the playback configuration.
         /// </para>
         /// </summary>
         public string Name

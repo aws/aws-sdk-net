@@ -76,16 +76,58 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.CdnConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DashConfiguration", targetDepth))
+                {
+                    var unmarshaller = DashConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DashConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HlsConfiguration", targetDepth))
+                {
+                    var unmarshaller = HlsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlaybackConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlaybackConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PlaybackEndpointPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlaybackEndpointPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SessionInitializationEndpointPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SessionInitializationEndpointPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SlateAdUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlateAdUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TranscodeProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TranscodeProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VideoContentSourceUrl", targetDepth))
