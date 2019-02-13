@@ -36,11 +36,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    ///  When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code>
-    /// parameter to limit the number of descriptions in a response. If more file system descriptions
-    /// remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response.
-    /// In this case, you should send a subsequent request with the <code>Marker</code> request
-    /// parameter set to the value of <code>NextMarker</code>. 
+    /// When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code>
+    /// parameter to limit the number of descriptions in a response. Currently, this number
+    /// is automatically set to 10. If more file system descriptions remain, Amazon EFS returns
+    /// a <code>NextMarker</code>, an opaque token, in the response. In this case, you should
+    /// send a subsequent request with the <code>Marker</code> request parameter set to the
+    /// value of <code>NextMarker</code>. 
     /// </para>
     ///  
     /// <para>
@@ -49,11 +50,6 @@ namespace Amazon.ElasticFileSystem.Model
     /// the <code>Marker</code> and then the operation continues to call it with the <code>Marker</code>
     /// parameter set to the value of the <code>NextMarker</code> from the previous response
     /// until the response has no <code>NextMarker</code>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The implementation may return fewer than <code>MaxItems</code> file system descriptions
-    /// while still including a <code>NextMarker</code> value. 
     /// </para>
     ///  
     /// <para>
@@ -135,9 +131,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// (Optional) Specifies the maximum number of file systems to return in the response
-        /// (integer). This parameter value must be greater than 0. The number of items that Amazon
-        /// EFS returns is the minimum of the <code>MaxItems</code> parameter specified in the
-        /// request and the service's internal maximum number of items per page. 
+        /// (integer). Currently, this number is automatically set to 10. 
         /// </para>
         /// </summary>
         public int MaxItems

@@ -28,48 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// A tag is a key-value pair. Allowed characters: letters, white space, and numbers,
-    /// representable in UTF-8, and the following characters:<code> + - = . _ : /</code>
+    /// This is the response object from the DescribeLifecycleConfiguration operation.
     /// </summary>
-    public partial class Tag
+    public partial class DescribeLifecycleConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private List<LifecyclePolicy> _lifecyclePolicies = new List<LifecyclePolicy>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property LifecyclePolicies. 
         /// <para>
-        /// Tag key (String). The key can't start with <code>aws:</code>.
+        /// An array of lifecycle management policies. Currently, EFS supports a maximum of one
+        /// policy per file system.
         /// </para>
         /// </summary>
-        public string Key
+        public List<LifecyclePolicy> LifecyclePolicies
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._lifecyclePolicies; }
+            set { this._lifecyclePolicies = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if LifecyclePolicies property is set
+        internal bool IsSetLifecyclePolicies()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Value of the tag key.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._lifecyclePolicies != null && this._lifecyclePolicies.Count > 0; 
         }
 
     }

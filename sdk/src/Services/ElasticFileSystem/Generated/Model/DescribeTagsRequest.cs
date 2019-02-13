@@ -100,8 +100,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// (Optional) Maximum number of file system tags to return in the response. It must be
-        /// an integer with a value greater than zero.
+        /// (Optional) Maximum number of file system tags to return in the response. Currently,
+        /// this number is automatically set to 10.
         /// </para>
         /// </summary>
         public int MaxItems

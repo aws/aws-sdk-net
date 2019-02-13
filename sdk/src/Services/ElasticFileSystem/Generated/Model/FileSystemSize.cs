@@ -40,6 +40,8 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private DateTime? _timestamp;
         private long? _value;
+        private long? _valueInIA;
+        private long? _valueInStandard;
 
         /// <summary>
         /// Gets and sets the property Timestamp. 
@@ -76,6 +78,43 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetValue()
         {
             return this._value.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueInIA. 
+        /// <para>
+        /// The latest known metered size (in bytes) of data stored in the Infrequent Access storage
+        /// class.
+        /// </para>
+        /// </summary>
+        public long ValueInIA
+        {
+            get { return this._valueInIA.GetValueOrDefault(); }
+            set { this._valueInIA = value; }
+        }
+
+        // Check to see if ValueInIA property is set
+        internal bool IsSetValueInIA()
+        {
+            return this._valueInIA.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueInStandard. 
+        /// <para>
+        /// The latest known metered size (in bytes) of data stored in the Standard storage class.
+        /// </para>
+        /// </summary>
+        public long ValueInStandard
+        {
+            get { return this._valueInStandard.GetValueOrDefault(); }
+            set { this._valueInStandard = value; }
+        }
+
+        // Check to see if ValueInStandard property is set
+        internal bool IsSetValueInStandard()
+        {
+            return this._valueInStandard.HasValue; 
         }
 
     }

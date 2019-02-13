@@ -28,48 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// A tag is a key-value pair. Allowed characters: letters, white space, and numbers,
-    /// representable in UTF-8, and the following characters:<code> + - = . _ : /</code>
+    /// Describes a policy used by EFS lifecycle management to transition files to the Infrequent
+    /// Access (IA) storage class.
     /// </summary>
-    public partial class Tag
+    public partial class LifecyclePolicy
     {
-        private string _key;
-        private string _value;
+        private TransitionToIARules _transitionToIA;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property TransitionToIA. 
         /// <para>
-        /// Tag key (String). The key can't start with <code>aws:</code>.
+        /// A value that indicates how long it takes to transition to the IA storage class. Currently,
+        /// the only possible value is <code>AFTER_30_DAYS</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AFTER_30_DAYS</code> indicates files that have not been read from or written
+        /// to for 30 days are transitioned from the Standard storage class to the IA storage
+        /// class. Metadata operations such as listing the contents of a directory don't count
+        /// as a file access event.
         /// </para>
         /// </summary>
-        public string Key
+        public TransitionToIARules TransitionToIA
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._transitionToIA; }
+            set { this._transitionToIA = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if TransitionToIA property is set
+        internal bool IsSetTransitionToIA()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Value of the tag key.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._transitionToIA != null;
         }
 
     }

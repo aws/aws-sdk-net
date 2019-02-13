@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileSystemSize Object
+    /// Response Unmarshaller for LifecyclePolicy Object
     /// </summary>  
-    public class FileSystemSizeUnmarshaller : IUnmarshaller<FileSystemSize, XmlUnmarshallerContext>, IUnmarshaller<FileSystemSize, JsonUnmarshallerContext>
+    public class LifecyclePolicyUnmarshaller : IUnmarshaller<LifecyclePolicy, XmlUnmarshallerContext>, IUnmarshaller<LifecyclePolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FileSystemSize IUnmarshaller<FileSystemSize, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LifecyclePolicy IUnmarshaller<LifecyclePolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FileSystemSize Unmarshall(JsonUnmarshallerContext context)
+        public LifecyclePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FileSystemSize unmarshalledObject = new FileSystemSize();
+            LifecyclePolicy unmarshalledObject = new LifecyclePolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("TransitionToIA", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValueInIA", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ValueInIA = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValueInStandard", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ValueInStandard = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitionToIA = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileSystemSizeUnmarshaller _instance = new FileSystemSizeUnmarshaller();        
+        private static LifecyclePolicyUnmarshaller _instance = new LifecyclePolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileSystemSizeUnmarshaller Instance
+        public static LifecyclePolicyUnmarshaller Instance
         {
             get
             {

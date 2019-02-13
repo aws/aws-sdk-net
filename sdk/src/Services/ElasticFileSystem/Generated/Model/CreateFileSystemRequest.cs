@@ -86,7 +86,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// After the file system is fully created, Amazon EFS sets its lifecycle state to <code>available</code>,
     /// at which point you can create one or more mount targets for the file system in your
     /// VPC. For more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS
-    /// file system on an EC2 instances in your VPC via the mount target. For more information,
+    /// file system on an EC2 instances in your VPC by using the mount target. For more information,
     /// see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
     /// How it Works</a>. 
     /// </para>

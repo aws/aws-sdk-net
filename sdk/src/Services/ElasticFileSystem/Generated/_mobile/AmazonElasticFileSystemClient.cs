@@ -329,7 +329,7 @@ namespace Amazon.ElasticFileSystem
         /// After the file system is fully created, Amazon EFS sets its lifecycle state to <code>available</code>,
         /// at which point you can create one or more mount targets for the file system in your
         /// VPC. For more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS
-        /// file system on an EC2 instances in your VPC via the mount target. For more information,
+        /// file system on an EC2 instances in your VPC by using the mount target. For more information,
         /// see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
         /// How it Works</a>. 
         /// </para>
@@ -571,13 +571,13 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
-        /// This operation forcibly breaks any mounts of the file system via the mount target
+        /// This operation forcibly breaks any mounts of the file system by using the mount target
         /// that is being deleted, which might disrupt instances or applications using those mounts.
         /// To avoid applications getting cut off abruptly, you might consider unmounting any
         /// mounts of the mount target, if feasible. The operation also deletes the associated
-        /// network interface. Uncommitted writes may be lost, but breaking a mount target using
+        /// network interface. Uncommitted writes might be lost, but breaking a mount target using
         /// this operation does not corrupt the file system itself. The file system you created
-        /// remains. You can mount an EC2 instance in your VPC via another mount target.
+        /// remains. You can mount an EC2 instance in your VPC by using another mount target.
         /// </para>
         ///  
         /// <para>
@@ -717,6 +717,39 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFileSystemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLifecycleConfiguration
+
+        internal virtual DescribeLifecycleConfigurationResponse DescribeLifecycleConfiguration(DescribeLifecycleConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLifecycleConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLifecycleConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">REST API Reference for DescribeLifecycleConfiguration Operation</seealso>
+        public virtual Task<DescribeLifecycleConfigurationResponse> DescribeLifecycleConfigurationAsync(DescribeLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -976,6 +1009,39 @@ namespace Amazon.ElasticFileSystem
             options.ResponseUnmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyMountTargetSecurityGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutLifecycleConfiguration
+
+        internal virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutLifecycleConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
+        public virtual Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLifecycleConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
