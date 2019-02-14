@@ -54,7 +54,7 @@ namespace Amazon.KinesisVideo
         /// </para>
         ///  
         /// <para>
-        /// For information about how the service works, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
+        /// For information about how the service works, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
         /// it Works</a>. 
         /// </para>
         ///  
@@ -83,6 +83,10 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
         /// The stream is currently not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
+        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
+        /// video streams support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         CreateStreamResponse CreateStream(CreateStreamRequest request);
@@ -145,6 +149,11 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
+        /// The stream version that you specified is not the latest version. To get the latest
+        /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         DeleteStreamResponse DeleteStream(DeleteStreamRequest request);
@@ -349,7 +358,7 @@ namespace Amazon.KinesisVideo
         /// Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is
         /// optional) that you can define and assign to AWS resources. If you specify a tag that
         /// already exists, the tag value is replaced with the value that you specify in the request.
-        /// For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// 
         /// 
@@ -515,7 +524,7 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
         /// The stream version that you specified is not the latest version. To get the latest
-        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
         /// API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
@@ -579,7 +588,7 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
         /// The stream version that you specified is not the latest version. To get the latest
-        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
         /// API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>

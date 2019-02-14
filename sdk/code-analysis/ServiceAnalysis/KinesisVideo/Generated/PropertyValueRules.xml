@@ -19,7 +19,7 @@
     <property>Amazon.KinesisVideo.Model.CreateStreamRequest.MediaType</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w\-\.\+]+/[\w\-\.\+]+</pattern>
+    <pattern>[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.CreateStreamRequest.StreamName</property>
@@ -168,7 +168,7 @@
     <property>Amazon.KinesisVideo.Model.UpdateStreamRequest.MediaType</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w\-\.\+]+/[\w\-\.\+]+</pattern>
+    <pattern>[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateStreamRequest.StreamARN</property>
@@ -201,7 +201,7 @@
     <property>Amazon.KinesisVideo.Model.StreamInfo.MediaType</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w\-\.\+]+/[\w\-\.\+]+</pattern>
+    <pattern>[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.StreamInfo.StreamARN</property>

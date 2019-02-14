@@ -93,6 +93,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property DataRetentionChangeInHours. 
         /// <para>
         /// The retention period, in hours. The value you specify replaces the current value.
+        /// The maximum value for this parameter is 87600 (ten years).
         /// </para>
         /// </summary>
         public int DataRetentionChangeInHours
