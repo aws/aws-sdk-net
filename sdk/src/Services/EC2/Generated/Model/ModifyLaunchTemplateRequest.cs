@@ -47,6 +47,10 @@ namespace Amazon.EC2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// Idempotency</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraint: Maximum 128 ASCII characters.
+        /// </para>
         /// </summary>
         public string ClientToken
         {

@@ -102,6 +102,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the
+        /// EBS volume is encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>description</code> - The description of the image (provided during image creation).
         /// </para>
         ///  </li> <li> 

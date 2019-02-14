@@ -514,6 +514,10 @@ namespace Amazon.EC2.Model
         /// this option and the option to assign specific IPv6 addresses in the same request.
         /// You can specify this option if you've specified a minimum number of instances to launch.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
+        /// </para>
         /// </summary>
         public int Ipv6AddressCount
         {
@@ -534,6 +538,10 @@ namespace Amazon.EC2.Model
         /// with the primary network interface. You cannot specify this option and the option
         /// to assign a number of IPv6 addresses in the same request. You cannot specify this
         /// option if you've specified a minimum number of instances to launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         /// </summary>
         public List<InstanceIpv6Address> Ipv6Addresses
@@ -713,6 +721,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more network interfaces.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
+        /// </para>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
         {
@@ -756,6 +768,10 @@ namespace Amazon.EC2.Model
         /// if you've specified the option to designate a private IP address as the primary IP
         /// address in a network interface specification. You cannot specify this option if you're
         /// launching more than one instance in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -804,6 +820,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Default: Amazon EC2 uses the default security group.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
+        /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -822,6 +842,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC,
         /// you must use security group IDs instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         ///  
         /// <para>
@@ -844,6 +868,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SubnetId. 
         /// <para>
         /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         /// </summary>
         public string SubnetId

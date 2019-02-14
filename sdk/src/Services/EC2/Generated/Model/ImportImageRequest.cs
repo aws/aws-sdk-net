@@ -254,7 +254,24 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AWS</code> | <code>BYOL</code> 
+        /// Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Auto</code> - Detects the source-system operating system (OS) and applies the
+        /// appropriate license.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BYOL</code> - Retains the source-system license, if appropriate.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default value: <code>Auto</code> 
         /// </para>
         /// </summary>
         public string LicenseType

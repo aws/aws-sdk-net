@@ -41,9 +41,11 @@ namespace Amazon.EC2.Model
         private string _deletionTime;
         private string _description;
         private string _dnsName;
+        private List<string> _dnsServers = new List<string>();
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
+        private List<Tag> _tags = new List<Tag>();
         private TransportProtocol _transportProtocol;
         private VpnProtocol _vpnProtocol;
 
@@ -54,6 +56,7 @@ namespace Amazon.EC2.Model
         /// a VPC.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element.")]
         public List<AssociatedTargetNetwork> AssociatedTargetNetworks
         {
             get { return this._associatedTargetNetworks; }
@@ -159,9 +162,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeletionTime. 
         /// <para>
-        /// The date and time the Client VPN endpoint was deleted, if applicable. Information
-        /// about deleted Client VPN endpoints is retained for 24 hours, unless a new Client VPN
-        /// is created with the same name.
+        /// The date and time the Client VPN endpoint was deleted, if applicable.
         /// </para>
         /// </summary>
         public string DeletionTime
@@ -197,7 +198,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name to be used by clients when establishing a connection.
+        /// The DNS name to be used by clients when connecting to the Client VPN endpoint.
         /// </para>
         /// </summary>
         public string DnsName
@@ -210,6 +211,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsName()
         {
             return this._dnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsServers. 
+        /// <para>
+        /// Information about the DNS servers to be used for DNS resolution. 
+        /// </para>
+        /// </summary>
+        public List<string> DnsServers
+        {
+            get { return this._dnsServers; }
+            set { this._dnsServers = value; }
+        }
+
+        // Check to see if DnsServers property is set
+        internal bool IsSetDnsServers()
+        {
+            return this._dnsServers != null && this._dnsServers.Count > 0; 
         }
 
         /// <summary>
@@ -233,7 +252,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SplitTunnel. 
         /// <para>
-        ///  <b>Indicates whether VPN split tunneling is supported.</b> 
+        /// Indicates whether VPN split tunneling is supported.
         /// </para>
         /// </summary>
         public bool SplitTunnel
@@ -264,6 +283,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
