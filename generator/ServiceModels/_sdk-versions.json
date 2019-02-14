@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.455.0",
+    "ProductVersion" : "3.3.456.0",
     "CoreVersion"    : "3.3.31.9",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.82.2",
+            "Version" : "3.3.83.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -969,7 +969,7 @@
             "InPreview"               : false
         },
         "KinesisVideo"                    : {
-            "Version" : "3.3.1.45",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
