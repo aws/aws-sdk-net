@@ -1,3 +1,16 @@
+### 3.3.455.0 (2019-02-13 23:09 UTC)
+* ElasticFileSystem (3.3.3.0)
+	* Customers can now use the EFS Infrequent Access (IA) storage class to more cost-effectively store larger amounts of data in their file systems. EFS IA is cost-optimized storage for files that are not accessed every day. You can create a new file system and enable Lifecycle Management to automatically move files that have not been accessed for 30 days from the Standard storage class to the IA storage class.
+* MediaTailor (3.3.4.0)
+	* This release adds support for tagging AWS Elemental MediaTailor resources.
+* Rekognition (3.3.15.0)
+	* GetContentModeration now returns the version of the moderation detection model used to detect unsafe content.
+* Core 3.3.31.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.454.1 (2019-02-12 23:14 UTC)
 * Lambda (3.3.19.17)
 	* Documentation updates for AWS Lambda

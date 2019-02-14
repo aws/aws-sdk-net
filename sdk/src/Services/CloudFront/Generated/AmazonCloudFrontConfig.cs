@@ -32,7 +32,7 @@ namespace Amazon.CloudFront
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.11.17");
+            InternalSDKUtils.BuildUserAgentString("3.3.11.18");
 
         private string _userAgent = UserAgentString;
 
