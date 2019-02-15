@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property AccountType. 
         /// <para>
         /// The Amazon Chime account type. For more information about different account types,
-        /// see <a href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+        /// see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
         /// Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
         /// </para>
         /// </summary>

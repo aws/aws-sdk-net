@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Settings related to the Amazon Chime account. This includes settings that start or
     /// stop remote control of shared screens, or start or stop the dial-out option in the
-    /// Amazon Chime web application. For more information about these settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
+    /// Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
     /// the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </summary>
     public partial class AccountSettings
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property EnableDialOut. 
         /// <para>
         /// Setting that allows meeting participants to choose the <b>Call me at a phone number</b>
-        /// option. For more information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+        /// option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
         /// a Meeting without the Amazon Chime App</a>.
         /// </para>
         /// </summary>

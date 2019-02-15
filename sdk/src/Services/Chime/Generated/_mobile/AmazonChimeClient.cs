@@ -60,16 +60,16 @@ namespace Amazon.Chime
     ///  </dd> <dt>Using the AWS CLI</dt> <dd> 
     /// <para>
     /// Use your access keys with the AWS CLI to make API calls. For information about setting
-    /// up the AWS CLI, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
+    /// up the AWS CLI, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
     /// the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User Guide</i>.
-    /// For a list of available Amazon Chime commands, see the <a href="http://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
+    /// For a list of available Amazon Chime commands, see the <a href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
     /// Chime commands</a> in the <i>AWS CLI Command Reference</i>.
     /// </para>
     ///  </dd> <dt>Using REST API</dt> <dd> 
     /// <para>
     /// If you use REST to make API calls, you must authenticate your request by providing
     /// a signature. Amazon Chime supports signature version 4. For more information, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     ///  
@@ -80,7 +80,7 @@ namespace Amazon.Chime
     ///  </dd> </dl> 
     /// <para>
     /// Administrative permissions are controlled using AWS Identity and Access Management
-    /// (IAM). For more information, see <a href="http://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
+    /// (IAM). For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
     /// Access to the Amazon Chime Console</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </para>
     /// </summary>

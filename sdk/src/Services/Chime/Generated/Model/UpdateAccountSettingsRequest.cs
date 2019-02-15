@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the UpdateAccountSettings operation.
     /// Updates the settings for the specified Amazon Chime account. You can update settings
     /// for remote control of shared screens, or for the dial-out option. For more information
-    /// about these settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
+    /// about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
     /// the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonChimeRequest
