@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.456.0",
+    "ProductVersion" : "3.3.456.1",
     "CoreVersion"    : "3.3.31.9",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1025,7 +1025,7 @@
             "InPreview"               : false
         },
         "ServiceDiscovery"                : {
-            "Version" : "3.3.3.18",
+            "Version" : "3.3.3.19",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1057,7 +1057,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.3.4.16",
+            "Version" : "3.3.4.17",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1089,7 +1089,7 @@
             "InPreview"               : false
         },
         "IoTAnalytics"                    : {
-            "Version" : "3.3.7.11",
+            "Version" : "3.3.7.12",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1105,7 +1105,7 @@
             "InPreview"               : false
         },
         "IoT1ClickProjects"               : {
-            "Version" : "3.3.0.49",
+            "Version" : "3.3.0.50",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.2.2",
+            "Version" : "3.3.2.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1161,7 +1161,7 @@
             "InPreview"               : false
         },
         "Signer"                          : {
-            "Version" : "3.3.0.40",
+            "Version" : "3.3.0.41",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1169,7 +1169,7 @@
             "InPreview"               : false
         },
         "Chime"                           : {
-            "Version" : "3.3.1.21",
+            "Version" : "3.3.1.22",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1193,7 +1193,7 @@
             "InPreview"               : false
         },
         "S3Control"                       : {
-            "Version" : "3.3.0.19",
+            "Version" : "3.3.0.20",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1201,7 +1201,7 @@
             "InPreview"               : false
         },
         "RAM"                             : {
-            "Version" : "3.3.0.19",
+            "Version" : "3.3.0.20",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
@@ -1353,7 +1353,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.3.0.8",
+            "Version" : "3.3.0.9",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.9"
