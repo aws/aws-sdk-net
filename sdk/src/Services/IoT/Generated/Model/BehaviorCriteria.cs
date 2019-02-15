@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
         /// The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (<code>value</code>).
+        /// (containing a <code>value</code>.
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
@@ -58,8 +58,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// Use this to specify the period of time over which the behavior is evaluated, for those
+        /// Use this to specify the time duration over which the behavior is evaluated, for those
         /// criteria which have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+        /// 
         /// </para>
         /// </summary>
         public int DurationSeconds

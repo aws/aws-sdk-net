@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was last updated.
+        /// The time, in seconds since the epoch, when the job execution was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueuedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was queued.
+        /// The time, in seconds since the epoch, when the job execution was queued.
         /// </para>
         /// </summary>
         public DateTime QueuedAt
@@ -97,7 +97,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution started.
+        /// The time, in seconds since the epoch, when the job execution started.
         /// </para>
         /// </summary>
         public DateTime StartedAt

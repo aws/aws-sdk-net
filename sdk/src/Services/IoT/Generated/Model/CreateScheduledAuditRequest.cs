@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private DayOfWeek _dayOfWeek;
         private AuditFrequency _frequency;
         private string _scheduledAuditName;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _targetCheckNames = new List<string>();
 
         /// <summary>
@@ -115,6 +116,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetScheduledAuditName()
         {
             return this._scheduledAuditName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the scheduled audit.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

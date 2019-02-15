@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CompletedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job completed.
+        /// The time, in seconds since the epoch, when the job completed.
         /// </para>
         /// </summary>
         public DateTime CompletedAt
@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job was created.
+        /// The time, in seconds since the epoch, when the job was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -116,7 +116,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job was last updated.
+        /// The time, in seconds since the epoch, when the job was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt

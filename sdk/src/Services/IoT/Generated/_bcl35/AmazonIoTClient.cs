@@ -46,12 +46,12 @@ namespace Amazon.IoT
     /// </para>
     ///  
     /// <para>
-    /// For more information about how AWS IoT works, see the <a href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
+    /// For more information about how AWS IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
     /// Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use the credentials provider for AWS IoT, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
+    /// For information about how to use the credentials provider for AWS IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
     /// Direct Calls to AWS Services</a>.
     /// </para>
     /// </summary>
@@ -2814,7 +2814,7 @@ namespace Amazon.IoT
         /// 
         ///  <note> 
         /// <para>
-        /// This is a control plane operation. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+        /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
         ///  </note>
@@ -2896,7 +2896,7 @@ namespace Amazon.IoT
         /// 
         ///  <note> 
         /// <para>
-        /// This is a control plane operation. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+        /// This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
         /// for information about authorizing control plane actions.
         /// </para>
         ///  </note>
@@ -9045,7 +9045,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the policies attached to the specified principal. If you use an Cognito identity,
-        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
         /// Identity format</a>.
         /// 
         ///  
@@ -9086,7 +9086,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the policies attached to the specified principal. If you use an Cognito identity,
-        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
         /// Identity format</a>.
         /// 
         ///  

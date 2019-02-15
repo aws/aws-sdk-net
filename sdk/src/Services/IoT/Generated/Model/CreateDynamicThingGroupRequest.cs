@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+        /// See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
         /// Syntax</a> for information about query string syntax.
         /// </para>
         /// </summary>
