@@ -1,3 +1,16 @@
+### 3.3.457.0 (2019-02-15 19:19 UTC)
+* ApplicationAutoScaling (3.3.11.0)
+	* Documentation updates for Application Auto Scaling
+* Chime (3.3.1.23)
+	* Documentation updates for Amazon Chime
+* IoT (3.3.24.0)
+	* In this release, IoT Device Defender introduces support for tagging Scheduled Audit resources.
+* Core 3.3.31.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.456.1 (2019-02-15 03:41 UTC)
 * Chime (3.3.1.22)
 	* Package description update.
