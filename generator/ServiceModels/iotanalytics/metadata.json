@@ -1,5 +1,5 @@
 {
   "active": true,
-  "synopsis": "New Service temporary synopsis, please replace it.",
+  "synopsis": "AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.",
   "generate-client-constructors": true
 }

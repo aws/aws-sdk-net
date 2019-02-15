@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DLM")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Data Lifecycle Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Data Lifecycle Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Data Lifecycle Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Data Lifecycle Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Data Lifecycle Manager. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

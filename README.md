@@ -120,7 +120,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
 	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform.
 * [AWSSDK.Chime](https://www.nuget.org/packages/AWSSDK.Chime/)
-	* New Service temporary synopsis, please replace it.
+	* The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudDirectory](https://www.nuget.org/packages/AWSSDK.CloudDirectory/)
@@ -168,7 +168,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 * [AWSSDK.Connect](https://www.nuget.org/packages/AWSSDK.Connect/)
-	* New Service temporary synopsis, please replace it.
+	* Amazon Connect is a self-service, cloud-based contact center service that makes it easy for any business to deliver better customer service at lower cost.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
 	* The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences.
 * [AWSSDK.CostExplorer](https://www.nuget.org/packages/AWSSDK.CostExplorer/)
@@ -188,9 +188,9 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.DirectoryService](https://www.nuget.org/packages/AWSSDK.DirectoryService/)
 	* AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud.
 * [AWSSDK.DLM](https://www.nuget.org/packages/AWSSDK.DLM/)
-	* New Service temporary synopsis, please replace it.
+	* Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.
 * [AWSSDK.DocDB](https://www.nuget.org/packages/AWSSDK.DocDB/)
-	* New Service temporary synopsis, please replace it.
+	* Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.
 * [AWSSDK.DynamoDBv2](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/)
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)
@@ -244,9 +244,9 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
 	* AWS IoT 1-Click makes it easy for customers to incorporate simple ready-to-use IoT devices into their workflows. These devices can trigger AWS Lambda functions that implement business logic. In order to build applications using AWS IoT 1-Click devices, programmers can use the AWS IoT 1-Click Devices API and the AWS IoT 1-Click Projects API. Learn more at https://aws.amazon.com/documentation/iot-1-click/
 * [AWSSDK.IoT1ClickProjects](https://www.nuget.org/packages/AWSSDK.IoT1ClickProjects/)
-	* New Service temporary synopsis, please replace it.
+	* AWS IoT 1-Click makes it easy for customers to incorporate simple ready-to-use IoT devices into their workflows. These devices can trigger AWS Lambda functions that implement business logic. In order to build applications using AWS IoT 1-Click devices, programmers can use the AWS IoT 1-Click Devices API and the AWS IoT 1-Click Projects API. Learn more at https://aws.amazon.com/documentation/iot-1-click/
 * [AWSSDK.IoTAnalytics](https://www.nuget.org/packages/AWSSDK.IoTAnalytics/)
-	* New Service temporary synopsis, please replace it.
+	* AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.
 * [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
 	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
@@ -332,7 +332,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.QuickSight](https://www.nuget.org/packages/AWSSDK.QuickSight/)
 	* Amazon QuickSight is a fully managed, serverless, cloud business intelligence system that allows you to extend data and insights to every user in your organization. The first release of APIs for Amazon QuickSight introduces embedding and user/group management capabilities. The get-dashboard-embed-url API allows you to obtain an authenticated dashboard URL that can be embedded in application domains whitelisted for QuickSight dashboard embedding. User APIs allow you to programmatically expand and manage your QuickSight deployments while group APIs allow easier permissions management for resources within QuickSight.
 * [AWSSDK.RAM](https://www.nuget.org/packages/AWSSDK.RAM/)
-	* New Service temporary synopsis, please replace it.
+	* AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.
 * [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)
 	* Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.
 * [AWSSDK.RDSDataService](https://www.nuget.org/packages/AWSSDK.RDSDataService/)
@@ -356,7 +356,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.S3](https://www.nuget.org/packages/AWSSDK.S3/)
 	* Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
 * [AWSSDK.S3Control](https://www.nuget.org/packages/AWSSDK.S3Control/)
-	* New Service temporary synopsis, please replace it.
+	* Add support for new S3 Block Public Access account-level APIs. The Block Public Access settings allow account owners to prevent public access to S3 data via bucket/object ACLs or bucket policies.
 * [AWSSDK.SageMaker](https://www.nuget.org/packages/AWSSDK.SageMaker/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SageMakerRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerRuntime/)
@@ -374,11 +374,11 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.ServiceCatalog](https://www.nuget.org/packages/AWSSDK.ServiceCatalog/)
 	* AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
 * [AWSSDK.ServiceDiscovery](https://www.nuget.org/packages/AWSSDK.ServiceDiscovery/)
-	* New Service temporary synopsis, please replace it.
+	* AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that your microservice applications run in. When an instance of the service becomes available, you can call the AWS Cloud Map API to register the instance with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to eight healthy records.
 * [AWSSDK.Shield](https://www.nuget.org/packages/AWSSDK.Shield/)
 	* AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team.
 * [AWSSDK.Signer](https://www.nuget.org/packages/AWSSDK.Signer/)
-	* New Service temporary synopsis, please replace it.
+	* With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).
 * [AWSSDK.SimpleDB](https://www.nuget.org/packages/AWSSDK.SimpleDB/)
 	* Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.
 * [AWSSDK.SimpleEmail](https://www.nuget.org/packages/AWSSDK.SimpleEmail/)

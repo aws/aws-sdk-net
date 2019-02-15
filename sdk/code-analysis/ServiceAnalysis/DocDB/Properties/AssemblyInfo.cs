@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DocDB")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DocumentDB with MongoDB compatibility. New Service temporary synopsis, please replace it.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
