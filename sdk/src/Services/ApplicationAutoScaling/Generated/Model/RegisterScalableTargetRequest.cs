@@ -30,7 +30,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <summary>
     /// Container for the parameters to the RegisterScalableTarget operation.
     /// Registers or updates a scalable target. A scalable target is a resource that Application
-    /// Auto Scaling can scale in and scale out. Each scalable target has a resource ID, scalable
+    /// Auto Scaling can scale out and scale in. Each scalable target has a resource ID, scalable
     /// dimension, and namespace, as well as values for minimum and maximum capacity. 
     /// 
     ///  
@@ -57,7 +57,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value to scale to in response to a scale out event. This parameter is
+        /// The maximum value to scale to in response to a scale-out event. This parameter is
         /// required to register a scalable target.
         /// </para>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value to scale to in response to a scale in event. This parameter is required
+        /// The minimum value to scale to in response to a scale-in event. This parameter is required
         /// to register a scalable target.
         /// </para>
         /// </summary>

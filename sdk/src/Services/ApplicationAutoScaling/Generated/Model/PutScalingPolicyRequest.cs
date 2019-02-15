@@ -48,6 +48,23 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>.
     /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Multiple scaling policies can be in force at the same time for the same scalable target.
+    /// You can have one or more target tracking scaling policies, one or more step scaling
+    /// policies, or both. However, there is a chance that multiple policies could conflict,
+    /// instructing the scalable target to scale out or in at the same time. Application Auto
+    /// Scaling gives precedence to the policy that provides the largest capacity for both
+    /// scale in and scale out. For example, if one policy increases capacity by 3, another
+    /// policy increases capacity by 200 percent, and the current capacity is 10, Application
+    /// Auto Scaling uses the policy with the highest calculated capacity (200% of 10 = 20)
+    /// and scales out to 30. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Learn more about how to work with scaling policies in the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+    /// Auto Scaling User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonApplicationAutoScalingRequest
     {
@@ -292,7 +309,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingScalingPolicyConfiguration. 
         /// <para>
-        /// A target tracking policy.
+        /// A target tracking scaling policy. Includes support for predefined or customized metrics.
         /// </para>
         ///  
         /// <para>

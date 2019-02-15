@@ -61,7 +61,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value to scale to in response to a scale out event.
+        /// The maximum value to scale to in response to a scale-out event.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -79,7 +79,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value to scale to in response to a scale in event.
+        /// The minimum value to scale to in response to a scale-in event.
         /// </para>
         /// </summary>
         public int MinCapacity

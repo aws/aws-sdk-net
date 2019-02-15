@@ -318,7 +318,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingScalingPolicyConfiguration. 
         /// <para>
-        /// A target tracking policy.
+        /// A target tracking scaling policy.
         /// </para>
         /// </summary>
         public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration

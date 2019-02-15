@@ -797,6 +797,23 @@ namespace Amazon.ApplicationAutoScaling
         /// You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>.
         /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Multiple scaling policies can be in force at the same time for the same scalable target.
+        /// You can have one or more target tracking scaling policies, one or more step scaling
+        /// policies, or both. However, there is a chance that multiple policies could conflict,
+        /// instructing the scalable target to scale out or in at the same time. Application Auto
+        /// Scaling gives precedence to the policy that provides the largest capacity for both
+        /// scale in and scale out. For example, if one policy increases capacity by 3, another
+        /// policy increases capacity by 200 percent, and the current capacity is 10, Application
+        /// Auto Scaling uses the policy with the highest calculated capacity (200% of 10 = 20)
+        /// and scales out to 30. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Learn more about how to work with scaling policies in the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+        /// Auto Scaling User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
@@ -885,6 +902,11 @@ namespace Amazon.ApplicationAutoScaling
         /// You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are
         /// no longer using a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Learn more about how to work with scheduled actions in the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+        /// Auto Scaling User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledAction service method.</param>
         /// 
@@ -947,7 +969,7 @@ namespace Amazon.ApplicationAutoScaling
 
         /// <summary>
         /// Registers or updates a scalable target. A scalable target is a resource that Application
-        /// Auto Scaling can scale in and scale out. Each scalable target has a resource ID, scalable
+        /// Auto Scaling can scale out and scale in. Each scalable target has a resource ID, scalable
         /// dimension, and namespace, as well as values for minimum and maximum capacity. 
         /// 
         ///  
