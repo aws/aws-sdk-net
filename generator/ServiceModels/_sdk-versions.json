@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.457.0",
+    "ProductVersion" : "3.3.458.0",
     "CoreVersion"    : "3.3.31.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -793,7 +793,7 @@
             "InPreview"               : false
         },
         "Athena"                          : {
-            "Version" : "3.3.1.35",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.2.47",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"

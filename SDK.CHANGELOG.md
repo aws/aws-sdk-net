@@ -1,3 +1,9 @@
+### 3.3.458.0 (2019-02-18 19:04 UTC)
+* Athena (3.3.2.0)
+	* This release adds support for Workgroups to Amazon Athena. Use Workgroups to isolate users, teams, applications or workloads in the same account, control costs by setting up query limits and creating Amazon SNS alarms, and publish query-related metrics to Amazon CloudWatch. 
+* SecretsManager (3.3.3.0)
+	* This release increases the maximum allowed size of SecretString or SecretBinary from 4KB to 7KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs.
+
 ### 3.3.457.0 (2019-02-15 19:19 UTC)
 * ApplicationAutoScaling (3.3.11.0)
 	* Documentation updates for Application Auto Scaling
