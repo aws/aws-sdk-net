@@ -29,7 +29,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the StopQueryExecution operation.
-    /// Stops a query execution.
+    /// Stops a query execution. Requires you to have access to the workgroup in which the
+    /// query ran.
     /// 
     ///  
     /// <para>

@@ -63,9 +63,9 @@ namespace Amazon.Athena.Model
         /// by Athena and is reserved for future use. <code>RUNNING</code> indicates that the
         /// query has been submitted to the service, and Athena will execute the query as soon
         /// as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-        /// without error. <code>FAILED</code> indicates that the query experienced an error and
-        /// did not complete processing.<code>CANCELLED</code> indicates that user input interrupted
-        /// query execution. 
+        /// without errors. <code>FAILED</code> indicates that the query experienced an error
+        /// and did not complete processing. <code>CANCELLED</code> indicates that a user input
+        /// interrupted query execution. 
         /// </para>
         /// </summary>
         public QueryExecutionState State

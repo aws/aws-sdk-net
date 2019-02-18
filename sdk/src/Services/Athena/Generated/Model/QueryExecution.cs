@@ -39,6 +39,7 @@ namespace Amazon.Athena.Model
         private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
+        private string _workGroup;
 
         /// <summary>
         /// Gets and sets the property Query. 
@@ -98,7 +99,9 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
         /// The location in Amazon S3 where query results were stored and the encryption option,
-        /// if any, used for query results.
+        /// if any, used for query results. These are known as "client-side settings". If workgroup
+        /// settings override client-side settings, then the query uses the location for the query
+        /// results and the encryption configuration that are specified for the workgroup.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration
@@ -171,6 +174,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkGroup. 
+        /// <para>
+        /// The name of the workgroup in which the query ran.
+        /// </para>
+        /// </summary>
+        public string WorkGroup
+        {
+            get { return this._workGroup; }
+            set { this._workGroup = value; }
+        }
+
+        // Check to see if WorkGroup property is set
+        internal bool IsSetWorkGroup()
+        {
+            return this._workGroup != null;
         }
 
     }

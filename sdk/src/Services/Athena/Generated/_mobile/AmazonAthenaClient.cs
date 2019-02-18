@@ -361,6 +361,39 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreateWorkGroup
+
+        internal virtual CreateWorkGroupResponse CreateWorkGroup(CreateWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
+        public virtual Task<CreateWorkGroupResponse> CreateWorkGroupAsync(CreateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNamedQuery
 
         internal virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
@@ -390,6 +423,39 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNamedQueryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkGroup
+
+        internal virtual DeleteWorkGroupResponse DeleteWorkGroup(DeleteWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
+        public virtual Task<DeleteWorkGroupResponse> DeleteWorkGroupAsync(DeleteWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -493,6 +559,39 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetWorkGroup
+
+        internal virtual GetWorkGroupResponse GetWorkGroup(GetWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
+        public virtual Task<GetWorkGroupResponse> GetWorkGroupAsync(GetWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNamedQueries
 
         internal virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
@@ -559,6 +658,39 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListWorkGroups
+
+        internal virtual ListWorkGroupsResponse ListWorkGroups(ListWorkGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
+        public virtual Task<ListWorkGroupsResponse> ListWorkGroupsAsync(ListWorkGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartQueryExecution
 
         internal virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
@@ -621,6 +753,39 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopQueryExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkGroup
+
+        internal virtual UpdateWorkGroupResponse UpdateWorkGroup(UpdateWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
+        public virtual Task<UpdateWorkGroupResponse> UpdateWorkGroupAsync(UpdateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

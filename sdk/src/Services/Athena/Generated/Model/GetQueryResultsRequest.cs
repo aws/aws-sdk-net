@@ -29,9 +29,9 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the GetQueryResults operation.
-    /// Returns the results of a single query execution specified by <code>QueryExecutionId</code>.
-    /// This request does not execute the query but returns results. Use <a>StartQueryExecution</a>
-    /// to run a query.
+    /// Returns the results of a single query execution specified by <code>QueryExecutionId</code>
+    /// if you have access to the workgroup in which the query ran. This request does not
+    /// execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonAthenaRequest
     {

@@ -29,7 +29,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the StartQueryExecution operation.
-    /// Runs (executes) the SQL query statements contained in the <code>Query</code> string.
+    /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
+    /// have access to the workgroup in which the query ran.
     /// 
     ///  
     /// <para>
@@ -43,6 +44,7 @@ namespace Amazon.Athena.Model
         private QueryExecutionContext _queryExecutionContext;
         private string _queryString;
         private ResultConfiguration _resultConfiguration;
+        private string _workGroup;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -112,6 +114,9 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
         /// Specifies information about where and how to save the results of the query execution.
+        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
+        /// This affects the query results location. The workgroup settings override is specified
+        /// in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration
@@ -124,6 +129,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultConfiguration()
         {
             return this._resultConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkGroup. 
+        /// <para>
+        /// The name of the workgroup in which the query is being started.
+        /// </para>
+        /// </summary>
+        public string WorkGroup
+        {
+            get { return this._workGroup; }
+            set { this._workGroup = value; }
+        }
+
+        // Check to see if WorkGroup property is set
+        internal bool IsSetWorkGroup()
+        {
+            return this._workGroup != null;
         }
 
     }

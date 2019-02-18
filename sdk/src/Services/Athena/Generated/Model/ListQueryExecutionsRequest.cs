@@ -29,7 +29,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueryExecutions operation.
-    /// Provides a list of all available query execution IDs.
+    /// Provides a list of available query execution IDs for the queries in the specified
+    /// workgroup. Requires you to have access to the workgroup in which the queries ran.
     /// 
     ///  
     /// <para>
@@ -41,6 +42,7 @@ namespace Amazon.Athena.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _workGroup;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -76,6 +78,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkGroup. 
+        /// <para>
+        /// The name of the workgroup from which queries are being returned.
+        /// </para>
+        /// </summary>
+        public string WorkGroup
+        {
+            get { return this._workGroup; }
+            set { this._workGroup = value; }
+        }
+
+        // Check to see if WorkGroup property is set
+        internal bool IsSetWorkGroup()
+        {
+            return this._workGroup != null;
         }
 
     }

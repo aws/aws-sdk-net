@@ -262,12 +262,13 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Returns the details of a single named query or a list of up to 50 queries, which you
-        /// provide as an array of query ID strings. Use <a>ListNamedQueries</a> to get the list
-        /// of named query IDs. If information could not be retrieved for a submitted query ID,
-        /// information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>.
-        /// Named queries are different from executed queries. Use <a>BatchGetQueryExecution</a>
-        /// to get details about each unique query execution, and <a>ListQueryExecutions</a> to
-        /// get a list of query execution IDs.
+        /// provide as an array of query ID strings. Requires you to have access to the workgroup
+        /// in which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the list
+        /// of named query IDs in the specified workgroup. If information could not be retrieved
+        /// for a submitted query ID, information about the query ID submitted is listed under
+        /// <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use <a>BatchGetQueryExecutionInput</a>
+        /// to get details about each unique query execution, and <a>ListQueryExecutionsInput</a>
+        /// to get a list of query execution IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetNamedQuery service method.</param>
         /// 
@@ -315,9 +316,10 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Returns the details of a single query execution or a list of up to 50 query executions,
-        /// which you provide as an array of query execution ID strings. To get a list of query
-        /// execution IDs, use <a>ListQueryExecutions</a>. Query executions are different from
-        /// named (saved) queries. Use <a>BatchGetNamedQuery</a> to get details about named queries.
+        /// which you provide as an array of query execution ID strings. Requires you to have
+        /// access to the workgroup in which the queries ran. To get a list of query execution
+        /// IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from named
+        /// (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetQueryExecution service method.</param>
         /// 
@@ -364,7 +366,8 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Creates a named query.
+        /// Creates a named query in the specified workgroup. Requires that you have access to
+        /// the workgroup.
         /// 
         ///  
         /// <para>
@@ -413,11 +416,59 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  CreateWorkGroup
+
+
+        /// <summary>
+        /// Creates a workgroup with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkGroup service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
+        public virtual CreateWorkGroupResponse CreateWorkGroup(CreateWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
+        public virtual Task<CreateWorkGroupResponse> CreateWorkGroupAsync(CreateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNamedQuery
 
 
         /// <summary>
-        /// Deletes a named query.
+        /// Deletes the named query if you have access to the workgroup in which the query was
+        /// saved.
         /// 
         ///  
         /// <para>
@@ -466,11 +517,59 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  DeleteWorkGroup
+
+
+        /// <summary>
+        /// Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkGroup service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
+        public virtual DeleteWorkGroupResponse DeleteWorkGroup(DeleteWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
+        public virtual Task<DeleteWorkGroupResponse> DeleteWorkGroupAsync(DeleteWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetNamedQuery
 
 
         /// <summary>
-        /// Returns information about a single query.
+        /// Returns information about a single query. Requires that you have access to the workgroup
+        /// in which the query was saved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNamedQuery service method.</param>
         /// 
@@ -517,8 +616,9 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Returns information about a single execution of a query. Each time a query executes,
-        /// information about the query execution is saved with a unique ID.
+        /// Returns information about a single execution of a query if you have access to the
+        /// workgroup in which the query ran. Each time a query executes, information about the
+        /// query execution is saved with a unique ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryExecution service method.</param>
         /// 
@@ -565,9 +665,9 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Returns the results of a single query execution specified by <code>QueryExecutionId</code>.
-        /// This request does not execute the query but returns results. Use <a>StartQueryExecution</a>
-        /// to run a query.
+        /// Returns the results of a single query execution specified by <code>QueryExecutionId</code>
+        /// if you have access to the workgroup in which the query ran. This request does not
+        /// execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
         /// 
@@ -610,11 +710,59 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetWorkGroup
+
+
+        /// <summary>
+        /// Returns information about the workgroup with the speficied name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkGroup service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
+        public virtual GetWorkGroupResponse GetWorkGroup(GetWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
+        public virtual Task<GetWorkGroupResponse> GetWorkGroupAsync(GetWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNamedQueries
 
 
         /// <summary>
-        /// Provides a list of all available query IDs.
+        /// Provides a list of available query IDs only for queries saved in the specified workgroup.
+        /// Requires that you have access to the workgroup.
         /// 
         ///  
         /// <para>
@@ -667,7 +815,8 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Provides a list of all available query execution IDs.
+        /// Provides a list of available query execution IDs for the queries in the specified
+        /// workgroup. Requires you to have access to the workgroup in which the queries ran.
         /// 
         ///  
         /// <para>
@@ -716,11 +865,59 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  ListWorkGroups
+
+
+        /// <summary>
+        /// Lists available workgroups for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkGroups service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
+        public virtual ListWorkGroupsResponse ListWorkGroups(ListWorkGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
+        public virtual Task<ListWorkGroupsResponse> ListWorkGroupsAsync(ListWorkGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListWorkGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartQueryExecution
 
 
         /// <summary>
-        /// Runs (executes) the SQL query statements contained in the <code>Query</code> string.
+        /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
+        /// have access to the workgroup in which the query ran.
         /// 
         ///  
         /// <para>
@@ -739,8 +936,7 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
-        /// Indicates that the request was throttled and includes the reason for throttling, for
-        /// example, the limit of concurrent queries has been exceeded.
+        /// Indicates that the request was throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
@@ -777,7 +973,8 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Stops a query execution.
+        /// Stops a query execution. Requires you to have access to the workgroup in which the
+        /// query ran.
         /// 
         ///  
         /// <para>
@@ -822,6 +1019,53 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopQueryExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkGroup
+
+
+        /// <summary>
+        /// Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkGroup service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
+        public virtual UpdateWorkGroupResponse UpdateWorkGroup(UpdateWorkGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
+        public virtual Task<UpdateWorkGroupResponse> UpdateWorkGroupAsync(UpdateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateWorkGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

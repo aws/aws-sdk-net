@@ -29,7 +29,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNamedQuery operation.
-    /// Deletes a named query.
+    /// Deletes the named query if you have access to the workgroup in which the query was
+    /// saved.
     /// 
     ///  
     /// <para>

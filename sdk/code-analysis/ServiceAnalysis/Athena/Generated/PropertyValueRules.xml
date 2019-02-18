@@ -8,7 +8,7 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.CreateNamedQueryRequest.Database</property>
     <min>1</min>
-    <max>32</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.CreateNamedQueryRequest.Description</property>
@@ -26,9 +26,40 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNamedQueryRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateWorkGroupRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateWorkGroupRequest.Name</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.DeleteWorkGroupRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetQueryResultsRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetQueryResultsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetQueryResultsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetWorkGroupRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListNamedQueriesRequest.MaxResults</property>
@@ -36,9 +67,52 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.ListNamedQueriesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNamedQueriesRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListNamedQueriesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.ListQueryExecutionsRequest.MaxResults</property>
     <min>0</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListQueryExecutionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListQueryExecutionsRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListQueryExecutionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListWorkGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListWorkGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListWorkGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.StartQueryExecutionRequest.ClientRequestToken</property>
@@ -51,6 +125,19 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.StartQueryExecutionRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateWorkGroupRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateWorkGroupRequest.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.InvalidRequestException.AthenaErrorCode</property>
     <min>1</min>
     <max>256</max>
@@ -58,7 +145,7 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.Database</property>
     <min>1</min>
-    <max>32</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.Description</property>
@@ -76,14 +163,22 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.NamedQuery.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.QueryExecution.Query</property>
     <min>1</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.QueryExecution.WorkGroup</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.QueryExecutionContext.Database</property>
     <min>1</min>
-    <max>32</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UnprocessedNamedQueryId.ErrorCode</property>
@@ -94,5 +189,31 @@
     <property>Amazon.Athena.Model.UnprocessedQueryExecutionId.ErrorCode</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroup.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroup.Name</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfiguration.BytesScannedCutoffPerQuery</property>
+    <min>10000000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupConfigurationUpdates.BytesScannedCutoffPerQuery</property>
+    <min>10000000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.WorkGroupSummary.Name</property>
+    <pattern>[a-zA-z0-9._-]{1,128}</pattern>
   </property-value-rule>
 </property-value-rules>
