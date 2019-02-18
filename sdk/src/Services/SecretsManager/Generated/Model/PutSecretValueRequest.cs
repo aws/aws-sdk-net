@@ -272,7 +272,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// For storing multiple values, we recommend that you use a JSON text string argument
         /// and specify key/value pairs. For information on how to format a JSON parameter for
-        /// the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
         /// </para>
         ///  
