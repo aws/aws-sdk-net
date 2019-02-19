@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _schedule;
         private string _scheduleTimezone;
         private string _startDate;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AllowUnassociatedTargets. 
@@ -238,6 +239,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStartDate()
         {
             return this._startDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment. For example, you might
+        /// want to tag a Maintenance Window to identify the type of tasks it will run, the types
+        /// of targets, and the environment it will run in. In this case, you could specify the
+        /// following key name/value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=TaskType,Value=AgentUpdate</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=OS,Value=Windows</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Environment,Value=Production</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

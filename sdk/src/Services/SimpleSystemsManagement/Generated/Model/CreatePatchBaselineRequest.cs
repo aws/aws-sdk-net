@@ -52,6 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _rejectedPatches = new List<string>();
         private PatchAction _rejectedPatchesAction;
         private List<PatchSource> _sources = new List<PatchSource>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ApprovalRules. 
@@ -301,6 +302,41 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSources()
         {
             return this._sources != null && this._sources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment. For example, you might
+        /// want to tag a patch baseline to identify the severity level of patches it specifies
+        /// and the operating system family it applies to. In this case, you could specify the
+        /// following key name/value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=PatchSeverity,Value=Critical</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=OS,Value=Windows</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

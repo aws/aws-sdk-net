@@ -81,8 +81,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Specify the association version to retrieve. To view the latest version, either specify
         /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of
-        /// all associations for an instance, use ListInstanceAssociations. To get a list of versions
-        /// for a specific association, use ListAssociationVersions. 
+        /// all associations for an instance, use <a>ListAssociations</a>. To get a list of versions
+        /// for a specific association, use <a>ListAssociationVersions</a>. 
         /// </para>
         /// </summary>
         public string AssociationVersion

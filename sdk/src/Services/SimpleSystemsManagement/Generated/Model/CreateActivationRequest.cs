@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _expirationDate;
         private string _iamRole;
         private int? _registrationLimit;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DefaultInstanceName. 
@@ -145,6 +146,51 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRegistrationLimit()
         {
             return this._registrationLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment. For example, you might
+        /// want to tag an activation to identify which servers or virtual machines (VMs) in your
+        /// on-premises environment you intend to activate. In this case, you could specify the
+        /// following key name/value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=OS,Value=Windows</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=Environment,Value=Production</code> 
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// When you install SSM Agent on your on-premises servers and VMs, you specify an activation
+        /// ID and code. When you specify the activation ID and code, tags assigned to the activation
+        /// are automatically applied to the on-premises servers or VMs.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You can't add tags to or delete tags from an existing activation. You can tag your
+        /// on-premises servers and VMs after they connect to Systems Manager for the first time
+        /// and are assigned a managed instance ID. This means they are listed in the AWS Systems
+        /// Manager console with an ID that is prefixed with "mi-". For information about how
+        /// to add tags to your managed instances, see <a>AddTagsToResource</a>. For information
+        /// about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

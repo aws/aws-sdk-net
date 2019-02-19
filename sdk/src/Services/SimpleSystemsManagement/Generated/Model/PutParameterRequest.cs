@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _keyId;
         private string _name;
         private bool? _overwrite;
+        private List<Tag> _tags = new List<Tag>();
         private ParameterType _type;
         private string _value;
 
@@ -199,6 +200,46 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOverwrite()
         {
             return this._overwrite.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment. For example, you might
+        /// want to tag a Systems Manager parameter to identify the type of resource to which
+        /// it applies, the environment, or the type of configuration data referenced by the parameter.
+        /// In this case, you could specify the following key name/value pairs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Key=Resource,Value=S3bucket</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=OS,Value=Windows</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Key=ParameterType,Value=LicenseKey</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
+        /// action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
