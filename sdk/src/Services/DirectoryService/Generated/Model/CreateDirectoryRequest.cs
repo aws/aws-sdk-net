@@ -46,6 +46,7 @@ namespace Amazon.DirectoryService.Model
         private string _password;
         private string _shortName;
         private DirectorySize _size;
+        private List<Tag> _tags = new List<Tag>();
         private DirectoryVpcSettings _vpcSettings;
 
         /// <summary>
@@ -138,6 +139,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetSize()
         {
             return this._size != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the Simple AD directory.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
