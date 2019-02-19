@@ -51,10 +51,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComparisonOperator);
             }
 
+            if(requestObject.IsSetConsecutiveDatapointsToAlarm())
+            {
+                context.Writer.WritePropertyName("consecutiveDatapointsToAlarm");
+                context.Writer.Write(requestObject.ConsecutiveDatapointsToAlarm);
+            }
+
+            if(requestObject.IsSetConsecutiveDatapointsToClear())
+            {
+                context.Writer.WritePropertyName("consecutiveDatapointsToClear");
+                context.Writer.Write(requestObject.ConsecutiveDatapointsToClear);
+            }
+
             if(requestObject.IsSetDurationSeconds())
             {
                 context.Writer.WritePropertyName("durationSeconds");
                 context.Writer.Write(requestObject.DurationSeconds);
+            }
+
+            if(requestObject.IsSetStatisticalThreshold())
+            {
+                context.Writer.WritePropertyName("statisticalThreshold");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StatisticalThresholdMarshaller.Instance;
+                marshaller.Marshall(requestObject.StatisticalThreshold, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetValue())

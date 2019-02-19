@@ -70,10 +70,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("consecutiveDatapointsToAlarm", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConsecutiveDatapointsToAlarm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("consecutiveDatapointsToClear", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConsecutiveDatapointsToClear = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("durationSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statisticalThreshold", targetDepth))
+                {
+                    var unmarshaller = StatisticalThresholdUnmarshaller.Instance;
+                    unmarshalledObject.StatisticalThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("value", targetDepth))

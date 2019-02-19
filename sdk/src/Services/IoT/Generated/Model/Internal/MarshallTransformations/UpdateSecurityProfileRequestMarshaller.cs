@@ -72,6 +72,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalMetricsToRetain())
+                {
+                    context.Writer.WritePropertyName("additionalMetricsToRetain");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalMetricsToRetainListValue in publicRequest.AdditionalMetricsToRetain)
+                    {
+                            context.Writer.Write(publicRequestAdditionalMetricsToRetainListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAlertTargets())
                 {
                     context.Writer.WritePropertyName("alertTargets");
@@ -105,6 +116,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDeleteAdditionalMetricsToRetain())
+                {
+                    context.Writer.WritePropertyName("deleteAdditionalMetricsToRetain");
+                    context.Writer.Write(publicRequest.DeleteAdditionalMetricsToRetain);
+                }
+
+                if(publicRequest.IsSetDeleteAlertTargets())
+                {
+                    context.Writer.WritePropertyName("deleteAlertTargets");
+                    context.Writer.Write(publicRequest.DeleteAlertTargets);
+                }
+
+                if(publicRequest.IsSetDeleteBehaviors())
+                {
+                    context.Writer.WritePropertyName("deleteBehaviors");
+                    context.Writer.Write(publicRequest.DeleteBehaviors);
                 }
 
                 if(publicRequest.IsSetSecurityProfileDescription())

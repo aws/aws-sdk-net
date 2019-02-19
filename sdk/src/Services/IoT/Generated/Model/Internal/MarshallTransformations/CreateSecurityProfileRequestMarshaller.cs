@@ -69,6 +69,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalMetricsToRetain())
+                {
+                    context.Writer.WritePropertyName("additionalMetricsToRetain");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalMetricsToRetainListValue in publicRequest.AdditionalMetricsToRetain)
+                    {
+                            context.Writer.Write(publicRequestAdditionalMetricsToRetainListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAlertTargets())
                 {
                     context.Writer.WritePropertyName("alertTargets");

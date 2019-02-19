@@ -32,6 +32,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class UpdateSecurityProfileResponse : AmazonWebServiceResponse
     {
+        private List<string> _additionalMetricsToRetain = new List<string>();
         private Dictionary<string, AlertTarget> _alertTargets = new Dictionary<string, AlertTarget>();
         private List<Behavior> _behaviors = new List<Behavior>();
         private DateTime? _creationDate;
@@ -40,6 +41,26 @@ namespace Amazon.IoT.Model
         private string _securityProfileDescription;
         private string _securityProfileName;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMetricsToRetain. 
+        /// <para>
+        /// A list of metrics whose data is retained (stored). By default, data is retained for
+        /// any metric used in the security profile's <code>behaviors</code> but it is also retained
+        /// for any metric specified here.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalMetricsToRetain
+        {
+            get { return this._additionalMetricsToRetain; }
+            set { this._additionalMetricsToRetain = value; }
+        }
+
+        // Check to see if AdditionalMetricsToRetain property is set
+        internal bool IsSetAdditionalMetricsToRetain()
+        {
+            return this._additionalMetricsToRetain != null && this._additionalMetricsToRetain.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AlertTargets. 

@@ -29,7 +29,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrincipalThings operation.
-    /// Lists the things associated with the specified principal.
+    /// Lists the things associated with the specified principal. A principal can be X.509
+    /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+    /// identities.
     /// </summary>
     public partial class ListPrincipalThingsRequest : AmazonIoTRequest
     {

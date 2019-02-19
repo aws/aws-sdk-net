@@ -476,7 +476,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Attaches the specified principal to the specified thing.
+        /// Attaches the specified principal to the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">The principal, such as a certificate or other credential.</param>
@@ -504,7 +506,9 @@ namespace Amazon.IoT
         AttachThingPrincipalResponse AttachThingPrincipal(string thingName, string principal);
 
         /// <summary>
-        /// Attaches the specified principal to the specified thing.
+        /// Attaches the specified principal to the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachThingPrincipal service method.</param>
         /// 
@@ -532,7 +536,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Attaches the specified principal to the specified thing.
+        /// Attaches the specified principal to the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">The principal, such as a certificate or other credential.</param>
@@ -5127,7 +5133,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Detaches the specified principal from the specified thing.
+        /// Detaches the specified principal from the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// 
         ///  <note> 
         /// <para>
@@ -5161,7 +5169,9 @@ namespace Amazon.IoT
         DetachThingPrincipalResponse DetachThingPrincipal(string thingName, string principal);
 
         /// <summary>
-        /// Detaches the specified principal from the specified thing.
+        /// Detaches the specified principal from the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// 
         ///  <note> 
         /// <para>
@@ -5195,7 +5205,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Detaches the specified principal from the specified thing.
+        /// Detaches the specified principal from the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// 
         ///  <note> 
         /// <para>
@@ -6978,7 +6990,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the things associated with the specified principal.
+        /// Lists the things associated with the specified principal. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// 
@@ -7005,7 +7019,9 @@ namespace Amazon.IoT
         ListPrincipalThingsResponse ListPrincipalThings(string principal);
 
         /// <summary>
-        /// Lists the things associated with the specified principal.
+        /// Lists the things associated with the specified principal. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalThings service method.</param>
         /// 
@@ -7033,7 +7049,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the things associated with the specified principal.
+        /// Lists the things associated with the specified principal. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// <param name="cancellationToken">
@@ -7476,7 +7494,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the principals associated with the specified thing.
+        /// Lists the principals associated with the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// 
@@ -7503,7 +7523,9 @@ namespace Amazon.IoT
         ListThingPrincipalsResponse ListThingPrincipals(string thingName);
 
         /// <summary>
-        /// Lists the principals associated with the specified thing.
+        /// Lists the principals associated with the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThingPrincipals service method.</param>
         /// 
@@ -7531,7 +7553,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the principals associated with the specified thing.
+        /// Lists the principals associated with the specified thing. A principal can be X.509
+        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+        /// identities.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="cancellationToken">

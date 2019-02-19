@@ -33,14 +33,17 @@ namespace Amazon.IoT.Model
     public partial class BehaviorCriteria
     {
         private ComparisonOperator _comparisonOperator;
+        private int? _consecutiveDatapointsToAlarm;
+        private int? _consecutiveDatapointsToClear;
         private int? _durationSeconds;
+        private StatisticalThreshold _statisticalThreshold;
         private MetricValue _value;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
         /// The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (containing a <code>value</code>.
+        /// (containing a <code>value</code> or <code>statisticalThreshold</code>).
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
@@ -56,11 +59,53 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConsecutiveDatapointsToAlarm. 
+        /// <para>
+        /// If a device is in violation of the behavior for the specified number of consecutive
+        /// datapoints, an alarm occurs. If not specified, the default is 1.
+        /// </para>
+        /// </summary>
+        public int ConsecutiveDatapointsToAlarm
+        {
+            get { return this._consecutiveDatapointsToAlarm.GetValueOrDefault(); }
+            set { this._consecutiveDatapointsToAlarm = value; }
+        }
+
+        // Check to see if ConsecutiveDatapointsToAlarm property is set
+        internal bool IsSetConsecutiveDatapointsToAlarm()
+        {
+            return this._consecutiveDatapointsToAlarm.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsecutiveDatapointsToClear. 
+        /// <para>
+        /// If an alarm has occurred and the offending device is no longer in violation of the
+        /// behavior for the specified number of consecutive datapoints, the alarm is cleared.
+        /// If not specified, the default is 1.
+        /// </para>
+        /// </summary>
+        public int ConsecutiveDatapointsToClear
+        {
+            get { return this._consecutiveDatapointsToClear.GetValueOrDefault(); }
+            set { this._consecutiveDatapointsToClear = value; }
+        }
+
+        // Check to see if ConsecutiveDatapointsToClear property is set
+        internal bool IsSetConsecutiveDatapointsToClear()
+        {
+            return this._consecutiveDatapointsToClear.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// Use this to specify the time duration over which the behavior is evaluated, for those
         /// criteria which have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
-        /// 
+        /// For a <code>statisticalThreshhold</code> metric comparison, measurements from all
+        /// devices are accumulated over this time duration before being used to calculate percentiles,
+        /// and later, measurements from an individual device are also accumulated over this time
+        /// duration before being given a percentile rank.
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -73,6 +118,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDurationSeconds()
         {
             return this._durationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatisticalThreshold. 
+        /// <para>
+        /// A statistical ranking (percentile) which indicates a threshold value by which a behavior
+        /// is determined to be in compliance or in violation of the behavior.
+        /// </para>
+        /// </summary>
+        public StatisticalThreshold StatisticalThreshold
+        {
+            get { return this._statisticalThreshold; }
+            set { this._statisticalThreshold = value; }
+        }
+
+        // Check to see if StatisticalThreshold property is set
+        internal bool IsSetStatisticalThreshold()
+        {
+            return this._statisticalThreshold != null;
         }
 
         /// <summary>

@@ -29,7 +29,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachThingPrincipal operation.
-    /// Detaches the specified principal from the specified thing.
+    /// Detaches the specified principal from the specified thing. A principal can be X.509
+    /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
+    /// identities.
     /// 
     ///  <note> 
     /// <para>

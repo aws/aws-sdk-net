@@ -33,11 +33,35 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class UpdateSecurityProfileRequest : AmazonIoTRequest
     {
+        private List<string> _additionalMetricsToRetain = new List<string>();
         private Dictionary<string, AlertTarget> _alertTargets = new Dictionary<string, AlertTarget>();
         private List<Behavior> _behaviors = new List<Behavior>();
+        private bool? _deleteAdditionalMetricsToRetain;
+        private bool? _deleteAlertTargets;
+        private bool? _deleteBehaviors;
         private long? _expectedVersion;
         private string _securityProfileDescription;
         private string _securityProfileName;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMetricsToRetain. 
+        /// <para>
+        /// A list of metrics whose data is retained (stored). By default, data is retained for
+        /// any metric used in the profile's <code>behaviors</code> but it is also retained for
+        /// any metric specified here.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalMetricsToRetain
+        {
+            get { return this._additionalMetricsToRetain; }
+            set { this._additionalMetricsToRetain = value; }
+        }
+
+        // Check to see if AdditionalMetricsToRetain property is set
+        internal bool IsSetAdditionalMetricsToRetain()
+        {
+            return this._additionalMetricsToRetain != null && this._additionalMetricsToRetain.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AlertTargets. 
@@ -73,6 +97,64 @@ namespace Amazon.IoT.Model
         internal bool IsSetBehaviors()
         {
             return this._behaviors != null && this._behaviors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteAdditionalMetricsToRetain. 
+        /// <para>
+        /// If true, delete all <code>additionalMetricsToRetain</code> defined for this security
+        /// profile. If any <code>additionalMetricsToRetain</code> are defined in the current
+        /// invocation an exception occurs.
+        /// </para>
+        /// </summary>
+        public bool DeleteAdditionalMetricsToRetain
+        {
+            get { return this._deleteAdditionalMetricsToRetain.GetValueOrDefault(); }
+            set { this._deleteAdditionalMetricsToRetain = value; }
+        }
+
+        // Check to see if DeleteAdditionalMetricsToRetain property is set
+        internal bool IsSetDeleteAdditionalMetricsToRetain()
+        {
+            return this._deleteAdditionalMetricsToRetain.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteAlertTargets. 
+        /// <para>
+        /// If true, delete all <code>alertTargets</code> defined for this security profile. If
+        /// any <code>alertTargets</code> are defined in the current invocation an exception occurs.
+        /// </para>
+        /// </summary>
+        public bool DeleteAlertTargets
+        {
+            get { return this._deleteAlertTargets.GetValueOrDefault(); }
+            set { this._deleteAlertTargets = value; }
+        }
+
+        // Check to see if DeleteAlertTargets property is set
+        internal bool IsSetDeleteAlertTargets()
+        {
+            return this._deleteAlertTargets.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteBehaviors. 
+        /// <para>
+        /// If true, delete all <code>behaviors</code> defined for this security profile. If any
+        /// <code>behaviors</code> are defined in the current invocation an exception occurs.
+        /// </para>
+        /// </summary>
+        public bool DeleteBehaviors
+        {
+            get { return this._deleteBehaviors.GetValueOrDefault(); }
+            set { this._deleteBehaviors = value; }
+        }
+
+        // Check to see if DeleteBehaviors property is set
+        internal bool IsSetDeleteBehaviors()
+        {
+            return this._deleteBehaviors.HasValue; 
         }
 
         /// <summary>
