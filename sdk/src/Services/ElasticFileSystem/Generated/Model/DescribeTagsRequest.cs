@@ -31,7 +31,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the DescribeTags operation.
     /// Returns the tags associated with a file system. The order of tags returned in the
     /// response of one <code>DescribeTags</code> call and the order of tags returned across
-    /// the responses of a multi-call iteration (when using pagination) is unspecified. 
+    /// the responses of a multiple-call iteration (when using pagination) is unspecified.
+    /// 
     /// 
     ///  
     /// <para>
@@ -53,7 +54,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DescribeTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">ID of the file system whose tag set you want to retrieve.</param>
+        /// <param name="fileSystemId">The ID of the file system whose tag set you want to retrieve.</param>
         public DescribeTagsRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
@@ -62,7 +63,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// ID of the file system whose tag set you want to retrieve.
+        /// The ID of the file system whose tag set you want to retrieve.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -80,7 +81,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code>
+        /// (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code>
         /// operation (String). If present, it specifies to continue the list from where the previous
         /// call left off.
         /// </para>
@@ -100,7 +101,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// (Optional) Maximum number of file system tags to return in the response. Currently,
+        /// (Optional) The maximum number of file system tags to return in the response. Currently,
         /// this number is automatically set to 10.
         /// </para>
         /// </summary>

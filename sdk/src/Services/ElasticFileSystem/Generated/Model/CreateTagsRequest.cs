@@ -49,7 +49,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// ID of the file system whose tags you want to modify (String). This operation modifies
+        /// The ID of the file system whose tags you want to modify (String). This operation modifies
         /// the tags only, not the file system.
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
+        /// An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
         /// pair. 
         /// </para>
         /// </summary>

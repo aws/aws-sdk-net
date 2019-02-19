@@ -19,7 +19,13 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
             var response = client.CreateFileSystem(new CreateFileSystemRequest 
             {
                 CreationToken = "tokenstring",
-                PerformanceMode = "generalPurpose"
+                PerformanceMode = "generalPurpose",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "Name",
+                        Value = "MyFileSystem"
+                    }
+                }
             });
 
             DateTime creationTime = response.CreationTime;
@@ -30,6 +36,7 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
             string ownerId = response.OwnerId;
             string performanceMode = response.PerformanceMode;
             FileSystemSize sizeInBytes = response.SizeInBytes;
+            List<Tag> tags = response.Tags;
 
             #endregion
         }

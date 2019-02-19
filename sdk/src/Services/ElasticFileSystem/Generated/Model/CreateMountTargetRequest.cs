@@ -39,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// file system. If you have multiple subnets in an Availability Zone, you create a mount
     /// target in one of the subnets. EC2 instances do not need to be in the same subnet as
     /// the mount target in order to access their file system. For more information, see <a
-    /// href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How
+    /// href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How
     /// it Works</a>. 
     /// </para>
     ///  
@@ -72,7 +72,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// in an EC2 instance. You can also use the mount target's DNS name when mounting the
     /// file system. The EC2 instance on which you mount the file system by using the mount
     /// target can resolve the mount target's DNS name to its IP address. For more information,
-    /// see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
+    /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
     /// it Works: Implementation Overview</a>. 
     /// </para>
     ///  
@@ -149,8 +149,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// mount target created in another Availability Zone. For more information, see <a href="http://aws.amazon.com/efs/">Amazon
     /// EFS</a>. In addition, by always using a mount target local to the instance's Availability
     /// Zone, you eliminate a partial failure scenario. If the Availability Zone in which
-    /// your mount target is created goes down, then you won't be able to access your file
-    /// system through that mount target. 
+    /// your mount target is created goes down, then you can't access your file system through
+    /// that mount target. 
     /// </para>
     ///  
     /// <para>
@@ -188,7 +188,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// ID of the file system for which to create the mount target.
+        /// The ID of the file system for which to create the mount target.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -243,7 +243,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// ID of the subnet to add the mount target in.
+        /// The ID of the subnet to add the mount target in.
         /// </para>
         /// </summary>
         public string SubnetId

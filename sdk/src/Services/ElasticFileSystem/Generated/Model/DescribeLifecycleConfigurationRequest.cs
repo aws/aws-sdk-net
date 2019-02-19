@@ -31,9 +31,9 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the DescribeLifecycleConfiguration operation.
     /// Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon
     /// EFS file system. EFS lifecycle management uses the <code>LifecycleConfiguration</code>
-    /// to identify which files to move to the EFS Infrequent Access (IA) storage class. For
-    /// a file system without a <code>LifecycleConfiguration</code>, the call returns an empty
-    /// array in the response.
+    /// object to identify which files to move to the EFS Infrequent Access (IA) storage class.
+    /// For a file system without a <code>LifecycleConfiguration</code> object, the call returns
+    /// an empty array in the response.
     /// 
     ///  
     /// <para>

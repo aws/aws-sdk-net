@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Description of the file system.
+    /// A description of the file system.
     /// </summary>
     public partial class CreateFileSystemResponse : AmazonWebServiceResponse
     {
@@ -44,12 +44,13 @@ namespace Amazon.ElasticFileSystem.Model
         private PerformanceMode _performanceMode;
         private double? _provisionedThroughputInMibps;
         private FileSystemSize _sizeInBytes;
+        private List<Tag> _tags = new List<Tag>();
         private ThroughputMode _throughputMode;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+        /// The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -67,7 +68,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property CreationToken. 
         /// <para>
-        /// Opaque string specified in the request.
+        /// The opaque string specified in the request.
         /// </para>
         /// </summary>
         public string CreationToken
@@ -103,7 +104,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// ID of the file system, assigned by Amazon EFS.
+        /// The ID of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -140,7 +141,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property LifeCycleState. 
         /// <para>
-        /// Lifecycle phase of the file system.
+        /// The lifecycle phase of the file system.
         /// </para>
         /// </summary>
         public LifeCycleState LifeCycleState
@@ -159,8 +160,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// You can add tags to a file system, including a <code>Name</code> tag. For more information,
-        /// see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS
-        /// returns the value in this field. 
+        /// see <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon
+        /// EFS returns the value in this field. 
         /// </para>
         /// </summary>
         public string Name
@@ -178,8 +179,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NumberOfMountTargets. 
         /// <para>
-        /// Current number of mount targets that the file system has. For more information, see
-        /// <a>CreateMountTarget</a>.
+        /// The current number of mount targets that the file system has. For more information,
+        /// see <a>CreateMountTarget</a>.
         /// </para>
         /// </summary>
         public int NumberOfMountTargets
@@ -197,8 +198,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// AWS account that created the file system. If the file system was created by an IAM
-        /// user, the parent account to which the user belongs is the owner.
+        /// The AWS account that created the file system. If the file system was created by an
+        /// IAM user, the parent account to which the user belongs is the owner.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -216,7 +217,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property PerformanceMode. 
         /// <para>
-        /// The <code>PerformanceMode</code> of the file system.
+        /// The performance mode of the file system.
         /// </para>
         /// </summary>
         public PerformanceMode PerformanceMode
@@ -236,7 +237,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// The throughput, measured in MiB/s, that you want to provision for a file system. The
         /// limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
-        /// AWS Support. For more information, see <a href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+        /// AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
         /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
         /// </para>
         /// </summary>
@@ -255,8 +256,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SizeInBytes. 
         /// <para>
-        /// Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
-        /// field, and the time at which that size was determined in its <code>Timestamp</code>
+        /// The latest known metered size (in bytes) of data stored in the file system, in its
+        /// <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code>
         /// field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z.
         /// The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot
         /// of the file system, but it is eventually consistent when there are no writes to the
@@ -275,6 +276,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetSizeInBytes()
         {
             return this._sizeInBytes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the file system, presented as an array of <code>Tag</code>
+        /// objects.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -38,8 +38,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property TransitionToIA. 
         /// <para>
-        /// A value that indicates how long it takes to transition to the IA storage class. Currently,
-        /// the only possible value is <code>AFTER_30_DAYS</code>.
+        /// A value that indicates how long it takes to transition files to the IA storage class.
+        /// Currently, the only valid value is <code>AFTER_30_DAYS</code>.
         /// </para>
         ///  
         /// <para>

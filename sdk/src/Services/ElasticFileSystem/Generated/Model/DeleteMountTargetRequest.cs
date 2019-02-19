@@ -79,7 +79,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DeleteMountTargetRequest with the parameterized properties
         /// </summary>
-        /// <param name="mountTargetId">ID of the mount target to delete (String).</param>
+        /// <param name="mountTargetId">The ID of the mount target to delete (String).</param>
         public DeleteMountTargetRequest(string mountTargetId)
         {
             _mountTargetId = mountTargetId;
@@ -88,7 +88,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargetId. 
         /// <para>
-        /// ID of the mount target to delete (String).
+        /// The ID of the mount target to delete (String).
         /// </para>
         /// </summary>
         public string MountTargetId

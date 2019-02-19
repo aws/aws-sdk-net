@@ -39,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystems. 
         /// <para>
-        /// Array of file system descriptions.
+        /// An array of file system descriptions.
         /// </para>
         /// </summary>
         public List<FileSystemDescription> FileSystems

@@ -65,7 +65,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DeleteFileSystemRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">ID of the file system you want to delete.</param>
+        /// <param name="fileSystemId">The ID of the file system you want to delete.</param>
         public DeleteFileSystemRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
@@ -74,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// ID of the file system you want to delete.
+        /// The ID of the file system you want to delete.
         /// </para>
         /// </summary>
         public string FileSystemId

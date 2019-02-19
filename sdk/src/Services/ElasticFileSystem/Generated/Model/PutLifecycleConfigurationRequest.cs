@@ -30,19 +30,19 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Container for the parameters to the PutLifecycleConfiguration operation.
     /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
-    /// object. A <code>LifecycleConfiguration</code> defines when files in an Amazon EFS
-    /// file system are automatically transitioned to the lower-cost EFS Infrequent Access
+    /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
+    /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
     /// (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files in
     /// a file system.
     /// 
     ///  
     /// <para>
     /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
-    /// all files in the file system. If a <code>LifecycleConfiguration</code> already exists
-    /// for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies
-    /// the existing configuration. A <code>PutLifecycleConfiguration</code> call with an
-    /// empty <code>LifecyclePolicies</code> array in the request body deletes any existing
-    /// <code>LifecycleConfiguration</code> and disables lifecycle management.
+    /// all files in the file system. If a <code>LifecycleConfiguration</code> object already
+    /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
+    /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
+    /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
+    /// existing <code>LifecycleConfiguration</code> and disables lifecycle management.
     /// </para>
     ///  <note> 
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <para>
     /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
     /// define when files are moved to the IA storage class. The array can contain only one
-    /// <code>"TransitionToIA": "AFTER_30_DAYS"</code> <code>LifecyclePolicy</code> object.
+    /// <code>"TransitionToIA": "AFTER_30_DAYS"</code> <code>LifecyclePolicy</code> item.
     /// </para>
     ///  </li> </ul> 
     /// <para>
