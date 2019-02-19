@@ -1,3 +1,13 @@
+### 3.3.459.0 (2019-02-19 19:08 UTC)
+* DirectoryService (3.3.9.0)
+	* This release adds support for tags during directory creation (CreateDirectory, CreateMicrosoftAd, ConnectDirectory).
+* ElasticFileSystem (3.3.4.0)
+	* Amazon EFS now supports adding tags to file system resources as part of the CreateFileSystem API . Using this capability, customers can now more easily enforce tag-based authorization for EFS file system resources.
+* IoT (3.3.25.0)
+	* AWS IoT - AWS IoT Device Defender adds support for configuring behaviors in a security profile with statistical thresholds. Device Defender also adds support for configuring multiple data-point evaluations before a violation is either created or cleared.
+* SimpleSystemsManagement (3.3.39.0)
+	* AWS Systems Manager now supports adding tags when creating Activations, Patch Baselines, Documents, Parameters, and Maintenance Windows
+
 ### 3.3.458.0 (2019-02-18 19:04 UTC)
 * Athena (3.3.2.0)
 	* This release adds support for Workgroups to Amazon Athena. Use Workgroups to isolate users, teams, applications or workloads in the same account, control costs by setting up query limits and creating Amazon SNS alarms, and publish query-related metrics to Amazon CloudWatch. 

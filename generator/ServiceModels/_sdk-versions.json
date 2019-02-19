@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.458.0",
+    "ProductVersion" : "3.3.459.0",
     "CoreVersion"    : "3.3.31.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.38.7",
+            "Version" : "3.3.39.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"
@@ -393,7 +393,7 @@
             "InPreview"               : false
         },
         "DirectoryService"          : {
-            "Version" : "3.3.8.36",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.3.1",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.24.0",
+            "Version" : "3.3.25.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.10"
