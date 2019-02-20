@@ -1,3 +1,16 @@
+### 3.3.460.0 (2019-02-20 19:09 UTC)
+* CodeCommit (3.3.9.0)
+	* This release adds an API for adding / updating / deleting / copying / moving / setting file modes for one or more files directly to an AWS CodeCommit repository without requiring a Git client.
+* DirectConnect (3.3.10.0)
+	* Documentation updates for AWS Direct Connect
+* MediaLive (3.3.17.0)
+	* This release adds support for VPC inputs, allowing you to push content from your Amazon VPC directly to MediaLive.
+* Core 3.3.31.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.459.0 (2019-02-19 19:08 UTC)
 * DirectoryService (3.3.9.0)
 	* This release adds support for tags during directory creation (CreateDirectory, CreateMicrosoftAd, ConnectDirectory).
