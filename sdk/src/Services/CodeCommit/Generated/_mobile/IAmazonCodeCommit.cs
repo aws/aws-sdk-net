@@ -129,6 +129,10 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a>CreateCommit</a>, which creates a commit for changes to a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
     /// object within a repository.
     /// </para>
@@ -287,6 +291,23 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCommit
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCommit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCommit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">REST API Reference for CreateCommit Operation</seealso>
+        Task<CreateCommitResponse> CreateCommitAsync(CreateCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

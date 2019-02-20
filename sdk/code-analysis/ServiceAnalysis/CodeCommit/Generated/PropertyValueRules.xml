@@ -12,6 +12,17 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateCommitRequest.BranchName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.CreateCommitRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreatePullRequestRequest.Description</property>
     <max>10240</max>
   </property-value-rule>
@@ -290,6 +301,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.PutFileEntry.FileContent</property>
+    <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.RepositoryMetadata.DefaultBranch</property>
