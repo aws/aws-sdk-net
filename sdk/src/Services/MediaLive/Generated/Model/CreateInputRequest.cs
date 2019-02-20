@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private List<InputSourceRequest> _sources = new List<InputSourceRequest>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private InputType _type;
+        private InputVpcRequest _vpc;
 
         /// <summary>
         /// Gets and sets the property Destinations. Destination settings for PUSH type inputs.
@@ -185,6 +186,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vpc.
+        /// </summary>
+        public InputVpcRequest Vpc
+        {
+            get { return this._vpc; }
+            set { this._vpc = value; }
+        }
+
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
+        {
+            return this._vpc != null;
         }
 
     }

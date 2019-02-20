@@ -168,6 +168,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
+                if(publicRequest.IsSetVpc())
+                {
+                    context.Writer.WritePropertyName("vpc");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputVpcRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Vpc, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

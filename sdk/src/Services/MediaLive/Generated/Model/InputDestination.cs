@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
         private string _ip;
         private string _port;
         private string _url;
+        private InputDestinationVpc _vpc;
 
         /// <summary>
         /// Gets and sets the property Ip. The system-generated static IP address of endpoint.It
@@ -81,6 +82,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetUrl()
         {
             return this._url != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vpc.
+        /// </summary>
+        public InputDestinationVpc Vpc
+        {
+            get { return this._vpc; }
+            set { this._vpc = value; }
+        }
+
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
+        {
+            return this._vpc != null;
         }
 
     }

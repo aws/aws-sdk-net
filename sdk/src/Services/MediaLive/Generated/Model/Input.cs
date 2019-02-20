@@ -155,8 +155,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. A list of IDs for all the security groups
-        /// attached to the input.
+        /// Gets and sets the property SecurityGroups. A list of IDs for all the Input Security
+        /// Groups attached to the input.
         /// </summary>
         public List<string> SecurityGroups
         {

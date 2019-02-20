@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputDestination Object
+    /// Response Unmarshaller for InputDestinationVpc Object
     /// </summary>  
-    public class InputDestinationUnmarshaller : IUnmarshaller<InputDestination, XmlUnmarshallerContext>, IUnmarshaller<InputDestination, JsonUnmarshallerContext>
+    public class InputDestinationVpcUnmarshaller : IUnmarshaller<InputDestinationVpc, XmlUnmarshallerContext>, IUnmarshaller<InputDestinationVpc, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputDestination IUnmarshaller<InputDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InputDestinationVpc IUnmarshaller<InputDestinationVpc, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InputDestination Unmarshall(JsonUnmarshallerContext context)
+        public InputDestinationVpc Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InputDestination unmarshalledObject = new InputDestination();
+            InputDestinationVpc unmarshalledObject = new InputDestinationVpc();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ip", targetDepth))
+                if (context.TestExpression("availabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ip = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("networkInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vpc", targetDepth))
-                {
-                    var unmarshaller = InputDestinationVpcUnmarshaller.Instance;
-                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputDestinationUnmarshaller _instance = new InputDestinationUnmarshaller();        
+        private static InputDestinationVpcUnmarshaller _instance = new InputDestinationVpcUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputDestinationUnmarshaller Instance
+        public static InputDestinationVpcUnmarshaller Instance
         {
             get
             {
