@@ -65,6 +65,10 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         ///  <code>deleted</code>: The interconnect is deleted.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The state of the interconnect is not available.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public InterconnectState InterconnectState

@@ -243,6 +243,10 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         ///  <code>deleted</code>: The LAG is deleted.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The state of the LAG is not available.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public LagState LagState

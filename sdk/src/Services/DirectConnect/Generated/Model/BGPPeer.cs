@@ -207,7 +207,7 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unknown</code>: The BGP peer status is unknown.
+        ///  <code>unknown</code>: The BGP peer status is not available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

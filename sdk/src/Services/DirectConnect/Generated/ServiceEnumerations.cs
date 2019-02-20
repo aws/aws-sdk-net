@@ -147,6 +147,10 @@ namespace Amazon.DirectConnect
         /// </summary>
         public static readonly BGPStatus Down = new BGPStatus("down");
         /// <summary>
+        /// Constant Unknown for BGPStatus
+        /// </summary>
+        public static readonly BGPStatus Unknown = new BGPStatus("unknown");
+        /// <summary>
         /// Constant Up for BGPStatus
         /// </summary>
         public static readonly BGPStatus Up = new BGPStatus("up");
@@ -224,6 +228,10 @@ namespace Amazon.DirectConnect
         /// Constant Requested for ConnectionState
         /// </summary>
         public static readonly ConnectionState Requested = new ConnectionState("requested");
+        /// <summary>
+        /// Constant Unknown for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState Unknown = new ConnectionState("unknown");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -518,6 +526,10 @@ namespace Amazon.DirectConnect
         /// Constant Requested for InterconnectState
         /// </summary>
         public static readonly InterconnectState Requested = new InterconnectState("requested");
+        /// <summary>
+        /// Constant Unknown for InterconnectState
+        /// </summary>
+        public static readonly InterconnectState Unknown = new InterconnectState("unknown");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -584,6 +596,10 @@ namespace Amazon.DirectConnect
         /// Constant Requested for LagState
         /// </summary>
         public static readonly LagState Requested = new LagState("requested");
+        /// <summary>
+        /// Constant Unknown for LagState
+        /// </summary>
+        public static readonly LagState Unknown = new LagState("unknown");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -700,6 +716,10 @@ namespace Amazon.DirectConnect
         /// Constant Rejected for VirtualInterfaceState
         /// </summary>
         public static readonly VirtualInterfaceState Rejected = new VirtualInterfaceState("rejected");
+        /// <summary>
+        /// Constant Unknown for VirtualInterfaceState
+        /// </summary>
+        public static readonly VirtualInterfaceState Unknown = new VirtualInterfaceState("unknown");
         /// <summary>
         /// Constant Verifying for VirtualInterfaceState
         /// </summary>

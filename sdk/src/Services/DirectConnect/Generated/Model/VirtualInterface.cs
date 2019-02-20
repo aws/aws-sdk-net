@@ -464,6 +464,10 @@ namespace Amazon.DirectConnect.Model
         /// by the virtual interface owner, the virtual interface enters the <code>Rejected</code>
         /// state.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The state of the virtual interface is not available.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public VirtualInterfaceState VirtualInterfaceState

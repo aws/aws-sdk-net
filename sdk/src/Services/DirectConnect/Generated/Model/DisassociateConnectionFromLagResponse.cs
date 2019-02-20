@@ -180,6 +180,10 @@ namespace Amazon.DirectConnect.Model
         ///  <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters
         /// the <code>rejected</code> state if it is deleted by the customer.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The state of the connection is not available.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ConnectionState ConnectionState
