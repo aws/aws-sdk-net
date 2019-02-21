@@ -151,10 +151,6 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  
         /// <para>
-        /// Example valid values include "video/h264" and "video/h264,audio/aac".
-        /// </para>
-        ///  
-        /// <para>
         /// This parameter is optional; the default value is <code>null</code> (or empty in JSON).
         /// </para>
         /// </summary>
