@@ -47,8 +47,14 @@ namespace Amazon.CloudWatch.Model
     /// structures in the array. The 20 structures can include as many as 10 structures that
     /// contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10
     /// structures that contain the <code>Expression</code> parameter to perform a math expression.
+    /// Of those <code>Expression</code> structures, one must have <code>True</code> as the
+    /// value for <code>ReturnData</code>. The result of this expression is the value the
+    /// alarm watches.
+    /// </para>
+    ///  
+    /// <para>
     /// Any expression used in a <code>PutMetricAlarm</code> operation must return a single
-    /// time series. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+    /// time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
     /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     ///  
@@ -73,7 +79,7 @@ namespace Amazon.CloudWatch.Model
         /// a math expression. This expression can use the <code>Id</code> of the other metrics
         /// to refer to those metrics, and can also use the <code>Id</code> of other expressions
         /// to use the result of those expressions. For more information about metric math expressions,
-        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
         /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  

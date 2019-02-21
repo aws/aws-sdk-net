@@ -103,8 +103,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
-        /// 
+        ///  <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> 
         /// </para>
         ///  
         /// <para>

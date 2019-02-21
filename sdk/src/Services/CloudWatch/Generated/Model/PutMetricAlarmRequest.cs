@@ -93,7 +93,7 @@ namespace Amazon.CloudWatch.Model
     /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
     /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
     /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
-    /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
     /// service-linked role</a>.
     /// </para>
     /// </summary>
@@ -148,8 +148,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
-        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+        /// | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+        /// | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
         /// </code> 
         /// </para>
         ///  
@@ -232,7 +233,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The number of datapoints that must be breaching to trigger the alarm. This is used
         /// only if you are setting an "M out of N" alarm. In that case, this value is the M.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
         /// an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
@@ -273,7 +274,7 @@ namespace Amazon.CloudWatch.Model
         /// alarm state does not change during periods with too few data points to be statistically
         /// significant. If you specify <code>evaluate</code> or omit this parameter, the alarm
         /// is always evaluated and possibly changes state no matter how many data points are
-        /// available. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+        /// available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
         /// CloudWatch Alarms and Low Data Samples</a>.
         /// </para>
         ///  
@@ -349,8 +350,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
-        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+        /// | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+        /// | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
         /// </code> 
         /// </para>
         ///  
@@ -404,6 +406,12 @@ namespace Amazon.CloudWatch.Model
         /// An array of <code>MetricDataQuery</code> structures that enable you to create an alarm
         /// based on the result of a metric math expression. Each item in the <code>Metrics</code>
         /// array either retrieves a metric or performs a math expression.
+        /// </para>
+        ///  
+        /// <para>
+        /// One item in the <code>Metrics</code> array is the expression that the alarm watches.
+        /// You designate this expression by setting <code>ReturnValue</code> to true for this
+        /// object in the array. For more information, see <a>MetricDataQuery</a>.
         /// </para>
         ///  
         /// <para>
@@ -558,7 +566,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         ///  Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code>
         /// is omitted, the default behavior of <code>missing</code> is used. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
         /// How CloudWatch Alarms Treats Missing Data</a>.
         /// </para>
         ///  
