@@ -39,7 +39,7 @@ namespace Amazon.KinesisVideoMedia.Model
     ///  </li> <li> 
     /// <para>
     /// Identify a specific chunk. You can identify a specific chunk either by providing a
-    /// fragment number or time stamp (server or producer). 
+    /// fragment number or timestamp (server or producer). 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -118,7 +118,7 @@ namespace Amazon.KinesisVideoMedia.Model
         ///  </li> <li> 
         /// <para>
         /// PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with the chunk containing a fragment
-        /// with the specified producer or server time stamp. You specify the time stamp by adding
+        /// with the specified producer or server timestamp. You specify the timestamp by adding
         /// <code>StartTimestamp</code>.
         /// </para>
         ///  </li> <li> 
@@ -147,10 +147,9 @@ namespace Amazon.KinesisVideoMedia.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// A time stamp value. This value is required if you choose the PRODUCER_TIMESTAMP or
+        /// A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or
         /// the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code>
-        /// API then starts with the chunk containing the fragment that has the specified time
-        /// stamp.
+        /// API then starts with the chunk containing the fragment that has the specified timestamp.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

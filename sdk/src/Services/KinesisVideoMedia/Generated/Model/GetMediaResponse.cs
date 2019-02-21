@@ -79,11 +79,11 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+        /// AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+        /// AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 4502 - Validation error on the Stream's KMS key
+        /// 4502 - Validation error on the stream's KMS key
         /// </para>
         ///  </li> <li> 
         /// <para>
