@@ -25,6 +25,56 @@ namespace Amazon.KinesisVideoArchivedMedia
 {
 
     /// <summary>
+    /// Constants used for properties of type ContainerFormat.
+    /// </summary>
+    public class ContainerFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRAGMENTED_MP4 for ContainerFormat
+        /// </summary>
+        public static readonly ContainerFormat FRAGMENTED_MP4 = new ContainerFormat("FRAGMENTED_MP4");
+        /// <summary>
+        /// Constant MPEG_TS for ContainerFormat
+        /// </summary>
+        public static readonly ContainerFormat MPEG_TS = new ContainerFormat("MPEG_TS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFormat FindValue(string value)
+        {
+            return FindValue<ContainerFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiscontinuityMode.
     /// </summary>
     public class DiscontinuityMode : ConstantClass
@@ -68,6 +118,56 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DiscontinuityMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DisplayFragmentTimestamp.
+    /// </summary>
+    public class DisplayFragmentTimestamp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS for DisplayFragmentTimestamp
+        /// </summary>
+        public static readonly DisplayFragmentTimestamp ALWAYS = new DisplayFragmentTimestamp("ALWAYS");
+        /// <summary>
+        /// Constant NEVER for DisplayFragmentTimestamp
+        /// </summary>
+        public static readonly DisplayFragmentTimestamp NEVER = new DisplayFragmentTimestamp("NEVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DisplayFragmentTimestamp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisplayFragmentTimestamp FindValue(string value)
+        {
+            return FindValue<DisplayFragmentTimestamp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisplayFragmentTimestamp(string value)
         {
             return FindValue(value);
         }

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// Contains the range of time stamps for the requested media, and the source of the time
-    /// stamps.
+    /// Contains the range of timestamps for the requested media, and the source of the timestamps.
     /// </summary>
     public partial class HLSFragmentSelector
     {
@@ -39,24 +38,24 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property FragmentSelectorType. 
         /// <para>
-        /// The source of the time stamps for the requested media.
+        /// The source of the timestamps for the requested media.
         /// </para>
         ///  
         /// <para>
         /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
         /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>, the
-        /// first fragment ingested with a producer time stamp within the specified <a>FragmentSelector$TimestampRange</a>
-        /// is included in the media playlist. In addition, the fragments with producer time stamps
+        /// first fragment ingested with a producer timestamp within the specified <a>FragmentSelector$TimestampRange</a>
+        /// is included in the media playlist. In addition, the fragments with producer timestamps
         /// within the <code>TimestampRange</code> ingested immediately following the first fragment
         /// (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a> value)
         /// are included. 
         /// </para>
         ///  
         /// <para>
-        /// Fragments that have duplicate producer time stamps are deduplicated. This means that
-        /// if producers are producing a stream of fragments with producer time stamps that are
+        /// Fragments that have duplicate producer timestamps are deduplicated. This means that
+        /// if producers are producing a stream of fragments with producer timestamps that are
         /// approximately equal to the true clock time, the HLS media playlists will contain all
-        /// of the fragments within the requested time stamp range. If some fragments are ingested
+        /// of the fragments within the requested timestamp range. If some fragments are ingested
         /// within the same time range and very different points in time, only the oldest ingested
         /// collection of fragments are returned.
         /// </para>
@@ -64,9 +63,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
         /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>, the producer
-        /// time stamps are used in the MP4 fragments and for deduplication. But the most recently
-        /// ingested fragments based on server time stamps are included in the HLS media playlist.
-        /// This means that even if fragments ingested in the past have producer time stamps with
+        /// timestamps are used in the MP4 fragments and for deduplication. But the most recently
+        /// ingested fragments based on server timestamps are included in the HLS media playlist.
+        /// This means that even if fragments ingested in the past have producer timestamps with
         /// values now, they are not included in the HLS media playlist.
         /// </para>
         ///  
@@ -89,7 +88,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property TimestampRange. 
         /// <para>
-        /// The start and end of the time stamp range for the requested media.
+        /// The start and end of the timestamp range for the requested media.
         /// </para>
         ///  
         /// <para>

@@ -29,8 +29,23 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFragments operation.
-    /// Returns a list of <a>Fragment</a> objects from the specified stream and start location
-    /// within the archived data.
+    /// Returns a list of <a>Fragment</a> objects from the specified stream and timestamp
+    /// range within the archived data.
+    /// 
+    ///  
+    /// <para>
+    /// Listing fragments is eventually consistent. This means that even if the producer receives
+    /// an acknowledgment that a fragment is persisted, the result might not be returned immediately
+    /// from a request to <code>ListFragments</code>. However, results are typically available
+    /// in less than one second.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then
+    /// send the <code>ListFragments</code> requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
+    /// parameter</a>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListFragmentsRequest : AmazonKinesisVideoArchivedMediaRequest
     {
@@ -42,8 +57,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property FragmentSelector. 
         /// <para>
-        /// Describes the time stamp range and time stamp origin for the range of fragments to
-        /// return.
+        /// Describes the timestamp range and timestamp origin for the range of fragments to return.
         /// </para>
         /// </summary>
         public FragmentSelector FragmentSelector

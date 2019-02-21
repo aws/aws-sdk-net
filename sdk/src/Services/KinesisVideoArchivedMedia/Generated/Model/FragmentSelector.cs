@@ -28,7 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// Describes the time stamp range and time stamp origin of a range of fragments.
+    /// Describes the timestamp range and timestamp origin of a range of fragments.
+    /// 
+    ///  
+    /// <para>
+    /// Only fragments with a start timestamp greater than or equal to the given start time
+    /// and less than or equal to the end time are returned. For example, if a stream contains
+    /// fragments with the following start timestamps: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 00:00:00
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 00:00:02
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 00:00:04
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 00:00:06
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  A fragment selector range with a start time of 00:00:01 and end time of 00:00:04
+    /// would return the fragments with start times of 00:00:02 and 00:00:04. 
+    /// </para>
     /// </summary>
     public partial class FragmentSelector
     {
@@ -38,7 +66,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property FragmentSelectorType. 
         /// <para>
-        /// The origin of the time stamps to use (Server or Producer).
+        /// The origin of the timestamps to use (Server or Producer).
         /// </para>
         /// </summary>
         public FragmentSelectorType FragmentSelectorType
@@ -56,7 +84,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property TimestampRange. 
         /// <para>
-        /// The range of time stamps to return.
+        /// The range of timestamps to return.
         /// </para>
         /// </summary>
         public TimestampRange TimestampRange

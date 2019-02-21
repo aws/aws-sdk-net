@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// The start and end of the time stamp range for the requested media.
+    /// The start and end of the timestamp range for the requested media.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The end of the time stamp range for the requested media. This value must be within
+        /// The end of the timestamp range for the requested media. This value must be within
         /// 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
         /// <code>StartTimestamp</code> value.
         /// </para>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  <note> 
         /// <para>
         /// This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
-        /// time stamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
+        /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
         /// value and continue past it are included in the session.
         /// </para>
         ///  </note>
@@ -87,7 +87,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// The start of the time stamp range for the requested media.
+        /// The start of the timestamp range for the requested media.
         /// </para>
         ///  
         /// <para>

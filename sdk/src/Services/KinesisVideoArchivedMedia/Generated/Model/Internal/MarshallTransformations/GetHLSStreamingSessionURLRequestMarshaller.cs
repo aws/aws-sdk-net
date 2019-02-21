@@ -66,10 +66,22 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContainerFormat())
+                {
+                    context.Writer.WritePropertyName("ContainerFormat");
+                    context.Writer.Write(publicRequest.ContainerFormat);
+                }
+
                 if(publicRequest.IsSetDiscontinuityMode())
                 {
                     context.Writer.WritePropertyName("DiscontinuityMode");
                     context.Writer.Write(publicRequest.DiscontinuityMode);
+                }
+
+                if(publicRequest.IsSetDisplayFragmentTimestamp())
+                {
+                    context.Writer.WritePropertyName("DisplayFragmentTimestamp");
+                    context.Writer.Write(publicRequest.DisplayFragmentTimestamp);
                 }
 
                 if(publicRequest.IsSetExpires())

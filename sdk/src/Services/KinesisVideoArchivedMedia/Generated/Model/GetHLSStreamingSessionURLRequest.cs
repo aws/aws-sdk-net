@@ -43,7 +43,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The media type must be <code>video/h264</code>.
+    /// The media must contain h.264 encoded video and, optionally, AAC encoded audio. Specifically,
+    /// the codec id of track 1 should be <code>V_MPEG/ISO/AVC</code>. Optionally, the codec
+    /// id of track 2 should be <code>A_AAC</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -51,11 +53,17 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The fragments must contain codec private data in the AVC (Advanced Video Coding) for
-    /// H.264 format (<a href="https://www.iso.org/standard/55980.html">MPEG-4 specification
-    /// ISO/IEC 14496-15</a>). For information about adapting stream data to a given format,
-    /// see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/latest/dg/producer-reference-nal.html">NAL
+    /// The video track of each fragment must contain codec private data in the Advanced Video
+    /// Coding (AVC) for H.264 format (<a href="https://www.iso.org/standard/55980.html">MPEG-4
+    /// specification ISO/IEC 14496-15</a>). For information about adapting stream data to
+    /// a given format, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
     /// Adaptation Flags</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The audio track (if present) of each fragment must contain codec private data in the
+    /// AAC format (<a href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+    /// 13818-7</a>).
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -93,7 +101,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <para>
     /// The media that is made available through the playlist consists only of the requested
     /// stream, time range, and format. No other media data (such as frames outside the requested
-    /// window or alternate bit rates) is made available.
+    /// window or alternate bitrates) is made available.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,8 +109,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// to a media player that supports the HLS protocol. Kinesis Video Streams makes the
     /// HLS media playlist, initialization fragment, and media fragments available through
     /// the master playlist URL. The initialization fragment contains the codec private data
-    /// for the stream, and other data needed to set up the video decoder and renderer. The
-    /// media fragments contain H.264-encoded video frames and time stamps.
+    /// for the stream, and other data needed to set up the video or audio decoder and renderer.
+    /// The media fragments contain H.264-encoded video frames or AAC-encoded audio samples.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -112,8 +120,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>GetHLSMasterPlaylist:</b> Retrieves an HLS master playlist, which contains a URL
-    /// for the <code>GetHLSMediaPlaylist</code> action, and additional metadata for the media
-    /// player, including estimated bit rate and resolution.
+    /// for the <code>GetHLSMediaPlaylist</code> action for each track, and additional metadata
+    /// for the media player, including estimated bitrate and resolution.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -125,7 +133,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// or <code>ON_DEMAND</code>. The HLS media playlist is typically static for sessions
     /// with a <code>PlaybackType</code> of <code>ON_DEMAND</code>. The HLS media playlist
     /// is continually updated with new fragments for sessions with a <code>PlaybackType</code>
-    /// of <code>LIVE</code>.
+    /// of <code>LIVE</code>. There is a distinct HLS media playlist for the video track and
+    /// the audio track (if applicable) that contains MP4 media URLs for the specific track.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -137,25 +147,44 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  
     /// <para>
     /// The initialization fragment does not correspond to a fragment in a Kinesis video stream.
-    /// It contains only the codec private data for the stream, which the media player needs
-    /// to decode video frames.
+    /// It contains only the codec private data for the stream and respective track, which
+    /// the media player needs to decode the media frames.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments contain
     /// the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their child atoms, containing
-    /// the encoded fragment's video frames and their time stamps. 
+    /// the encoded fragment's media frames and their timestamps. 
     /// </para>
     ///  <note> 
     /// <para>
     /// After the first media fragment is made available in a streaming session, any fragments
-    /// that don't contain the same codec private data are excluded in the HLS media playlist.
-    /// Therefore, the codec private data does not change between fragments in a session.
+    /// that don't contain the same codec private data cause an error to be returned when
+    /// those different media fragments are loaded. Therefore, the codec private data should
+    /// not change between fragments in a session. This also means that the session fails
+    /// if the fragments in a stream change from having only video to having both audio and
+    /// video.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Data retrieved with this action is billable. See <a href="aws.amazon.comkinesis/video-streams/pricing/">Pricing</a>
+    /// Data retrieved with this action is billable. See <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a>
     /// for details.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>GetTSFragment:</b> Retrieves MPEG TS fragments containing both initialization
+    /// and media data for all tracks in the stream.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API is used instead
+    /// of <code>GetMP4InitFragment</code> and <code>GetMP4MediaFragment</code> to retrieve
+    /// stream media.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Data retrieved with this action is billable. For more information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis
+    /// Video Streams pricing</a>.
     /// </para>
     ///  </li> </ul> </li> </ol> <note> 
     /// <para>
@@ -194,13 +223,43 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </summary>
     public partial class GetHLSStreamingSessionURLRequest : AmazonKinesisVideoArchivedMediaRequest
     {
+        private ContainerFormat _containerFormat;
         private DiscontinuityMode _discontinuityMode;
+        private DisplayFragmentTimestamp _displayFragmentTimestamp;
         private int? _expires;
         private HLSFragmentSelector _hlsFragmentSelector;
         private long? _maxMediaPlaylistFragmentResults;
         private PlaybackMode _playbackMode;
         private string _streamARN;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property ContainerFormat. 
+        /// <para>
+        /// Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+        /// container format packages the media into MP4 fragments (fMP4 or CMAF). This is the
+        /// recommended packaging because there is minimal packaging overhead. The other container
+        /// format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was
+        /// released and is sometimes the only supported packaging on older HLS players. MPEG
+        /// TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires
+        /// 5-25 percent more bandwidth and cost than fMP4.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>FRAGMENTED_MP4</code>.
+        /// </para>
+        /// </summary>
+        public ContainerFormat ContainerFormat
+        {
+            get { return this._containerFormat; }
+            set { this._containerFormat = value; }
+        }
+
+        // Check to see if ContainerFormat property is set
+        internal bool IsSetContainerFormat()
+        {
+            return this._containerFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DiscontinuityMode. 
@@ -211,16 +270,16 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// Media players typically build a timeline of media content to play, based on the time
-        /// stamps of each fragment. This means that if there is any overlap between fragments
-        /// (as is typical if <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the
-        /// media player timeline has small gaps between fragments in some places, and overwrites
-        /// frames in other places. When there are discontinuity flags between fragments, the
-        /// media player is expected to reset the timeline, resulting in the fragment being played
-        /// immediately after the previous fragment. We recommend that you always have discontinuity
-        /// flags between fragments if the fragment time stamps are not accurate or if fragments
-        /// might be missing. You should not place discontinuity flags between fragments for the
-        /// player timeline to accurately map to the producer time stamps.
+        /// Media players typically build a timeline of media content to play, based on the timestamps
+        /// of each fragment. This means that if there is any overlap between fragments (as is
+        /// typical if <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media
+        /// player timeline has small gaps between fragments in some places, and overwrites frames
+        /// in other places. When there are discontinuity flags between fragments, the media player
+        /// is expected to reset the timeline, resulting in the fragment being played immediately
+        /// after the previous fragment. We recommend that you always have discontinuity flags
+        /// between fragments if the fragment timestamps are not accurate or if fragments might
+        /// be missing. You should not place discontinuity flags between fragments for the player
+        /// timeline to accurately map to the producer timestamps.
         /// </para>
         /// </summary>
         public DiscontinuityMode DiscontinuityMode
@@ -233,6 +292,36 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         internal bool IsSetDiscontinuityMode()
         {
             return this._discontinuityMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayFragmentTimestamp. 
+        /// <para>
+        /// Specifies when the fragment start timestamps should be included in the HLS media playlist.
+        /// Typically, media players report the playhead position as a time relative to the start
+        /// of the first fragment in the playback session. However, when the start timestamps
+        /// are included in the HLS media playlist, some media players might report the current
+        /// playhead as an absolute time based on the fragment timestamps. This can be useful
+        /// for creating a playback experience that shows viewers the wall-clock time of the media.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>,
+        /// the timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a>
+        /// is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+        /// 
+        /// </para>
+        /// </summary>
+        public DisplayFragmentTimestamp DisplayFragmentTimestamp
+        {
+            get { return this._displayFragmentTimestamp; }
+            set { this._displayFragmentTimestamp = value; }
+        }
+
+        // Check to see if DisplayFragmentTimestamp property is set
+        internal bool IsSetDisplayFragmentTimestamp()
+        {
+            return this._displayFragmentTimestamp != null;
         }
 
         /// <summary>
@@ -267,7 +356,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property HLSFragmentSelector. 
         /// <para>
-        /// The time range of the requested fragment, and the source of the time stamps.
+        /// The time range of the requested fragment, and the source of the timestamps.
         /// </para>
         ///  
         /// <para>
@@ -373,10 +462,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  </li> </ul> 
         /// <para>
         /// In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
-        /// and if there are multiple fragments with the same start time stamp, the fragment that
+        /// and if there are multiple fragments with the same start timestamp, the fragment that
         /// has the larger fragment number (that is, the newer fragment) is included in the HLS
         /// media playlist. The other fragments are not included. Fragments that have different
-        /// time stamps but have overlapping durations are still included in the HLS media playlist.
+        /// timestamps but have overlapping durations are still included in the HLS media playlist.
         /// This can lead to unexpected behavior in the media player.
         /// </para>
         ///  

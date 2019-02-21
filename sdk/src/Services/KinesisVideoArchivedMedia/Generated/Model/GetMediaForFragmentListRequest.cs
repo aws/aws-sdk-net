@@ -32,7 +32,14 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// Gets media for a list of fragments (specified by fragment number) from the archived
     /// data in an Amazon Kinesis video stream.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then
+    /// send the <code>GetMediaForFragmentList</code> requests to this endpoint using the
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.
+    /// 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The following limits apply when using the <code>GetMediaForFragmentList</code> API:
     /// </para>

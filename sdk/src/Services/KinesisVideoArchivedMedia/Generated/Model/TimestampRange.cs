@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// The range of time stamps for which to return fragments.
+    /// The range of timestamps for which to return fragments.
     /// </summary>
     public partial class TimestampRange
     {
@@ -38,7 +38,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The ending time stamp in the range of time stamps for which to return fragments.
+        /// The ending timestamp in the range of timestamps for which to return fragments.
         /// </para>
         /// </summary>
         public DateTime EndTimestamp
@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// The starting time stamp in the range of time stamps for which to return fragments.
+        /// The starting timestamp in the range of timestamps for which to return fragments.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

@@ -96,7 +96,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property ProducerTimestamp. 
         /// <para>
-        /// The time stamp from the producer corresponding to the fragment.
+        /// The timestamp from the producer corresponding to the fragment.
         /// </para>
         /// </summary>
         public DateTime ProducerTimestamp
@@ -114,7 +114,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property ServerTimestamp. 
         /// <para>
-        /// The time stamp from the AWS server corresponding to the fragment.
+        /// The timestamp from the AWS server corresponding to the fragment.
         /// </para>
         /// </summary>
         public DateTime ServerTimestamp
