@@ -710,7 +710,7 @@ namespace Amazon.WorkDocs
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+        /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
         /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1764,7 +1764,7 @@ namespace Amazon.WorkDocs
         ///  
         /// <para>
         /// This action requires an authentication token. To get an authentication token, register
-        /// an application with Amazon WorkDocs. For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+        /// an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
         /// and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
         /// </para>
         /// </summary>

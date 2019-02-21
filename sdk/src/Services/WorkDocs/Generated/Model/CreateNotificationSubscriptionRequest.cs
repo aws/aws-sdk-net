@@ -34,7 +34,7 @@ namespace Amazon.WorkDocs.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+    /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
     /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.WorkDocs.Model
         /// Gets and sets the property Endpoint. 
         /// <para>
         /// The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with "https://".
+        /// is a URL that begins with <code>https</code>.
         /// </para>
         /// </summary>
         public string Endpoint
