@@ -38,7 +38,7 @@ namespace Amazon.Organizations
     ///  
     /// <para>
     /// This guide provides descriptions of the Organizations API. For more information about
-    /// using this service, see the <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS
+    /// using this service, see the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS
     /// Organizations User Guide</a>.
     /// </para>
     ///  
@@ -65,7 +65,7 @@ namespace Amazon.Organizations
     /// We recommend that you use the AWS SDKs to make programmatic API calls to Organizations.
     /// However, you also can use the Organizations Query API to make direct calls to the
     /// Organizations web service. To learn more about the Organizations Query API, see <a
-    /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
+    /// href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
     /// Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports
     /// GET and POST requests for all actions. That is, the API does not require you to use
     /// GET for some actions and POST for others. However, GET requests are subject to the
@@ -89,7 +89,7 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// To sign requests, we recommend that you use <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// To sign requests, we recommend that you use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>. If you have an existing application that uses Signature Version 2,
     /// you do not have to update it to use Signature Version 4. However, some operations
     /// now require Signature Version 4. The documentation for operations that require version
@@ -156,7 +156,7 @@ namespace Amazon.Organizations
     /// <para>
     /// For the various SDKs used to call the APIs, see the documentation for the SDK of interest
     /// to learn how to direct the requests to a specific endpoint. For more information,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
     /// and Endpoints</a> in the <i>AWS General Reference</i>. 
     /// </para>
     ///  
@@ -182,10 +182,10 @@ namespace Amazon.Organizations
     /// your AWS account and delivers log files to an Amazon S3 bucket. By using information
     /// collected by AWS CloudTrail, you can determine which requests were successfully made
     /// to Organizations, who made the request, when it was made, and so on. For more about
-    /// AWS Organizations and its support for AWS CloudTrail, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration">Logging
+    /// AWS Organizations and its support for AWS CloudTrail, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration">Logging
     /// AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User
     /// Guide</i>. To learn more about CloudTrail, including how to turn it on and find your
-    /// log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
+    /// log files, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
     /// CloudTrail User Guide</a>.
     /// </para>
     /// </summary>
@@ -226,10 +226,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// For more information about invitations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
+        /// For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
         /// an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// For more information about requests to enable all features in the organization, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
         /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -244,7 +244,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
@@ -433,6 +433,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">REST API Reference for AcceptHandshake Operation</seealso>
         AcceptHandshakeResponse AcceptHandshake(AcceptHandshakeRequest request);
@@ -493,17 +499,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// SCPs essentially are permission "filters". When you attach one SCP to a higher level
-        /// root or OU, and you also attach a different SCP to a child OU or to an account, the
-        /// child policy can further restrict only the permissions that pass through the parent
-        /// filter and are available to the child. An SCP that is attached to a child cannot grant
-        /// a permission that is not already granted by the parent. For example, imagine that
-        /// the parent SCP allows permissions A, B, C, D, and E. The child SCP allows C, D, E,
-        /// F, and G. The result is that the accounts affected by the child SCP are allowed to
-        /// use only C, D, and E. They cannot use A or B because they were filtered out by the
-        /// child OU. They also cannot use F and G because they were filtered out by the parent
-        /// OU. They cannot be granted back by the child SCP; child SCPs can only filter the permissions
-        /// they receive from the parent SCP.
+        /// SCPs are JSON policies that specify the maximum permissions for an organization or
+        /// organizational unit (OU). When you attach one SCP to a higher level root or OU, and
+        /// you also attach a different SCP to a child OU or to an account, the child policy can
+        /// further restrict only the permissions that pass through the parent filter and are
+        /// available to the child. An SCP that is attached to a child cannot grant a permission
+        /// that is not already granted by the parent. For example, imagine that the parent SCP
+        /// allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
+        /// result is that the accounts affected by the child SCP are allowed to use only C, D,
+        /// and E. They cannot use A or B because they were filtered out by the child OU. They
+        /// also cannot use F and G because they were filtered out by the parent OU. They cannot
+        /// be granted back by the child SCP; child SCPs can only filter the permissions they
+        /// receive from the parent SCP.
         /// </para>
         ///  
         /// <para>
@@ -515,7 +522,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Organizations policies permissions work, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
+        /// For more information about how Organizations policies permissions work, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
         /// Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -529,7 +536,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -769,7 +776,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
         /// The specified policy type isn't currently enabled in this root. You can't attach policies
         /// of the specified type to entities in a root until you enable that type in the root.
-        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
         /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -782,6 +789,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         AttachPolicyResponse AttachPolicy(AttachPolicyRequest request);
@@ -840,7 +853,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
@@ -959,6 +972,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">REST API Reference for CancelHandshake Operation</seealso>
         CancelHandshakeResponse CancelHandshake(CancelHandshakeRequest request);
@@ -1011,7 +1030,8 @@ namespace Amazon.Organizations
         /// <para>
         /// Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information
         /// on using AWS CloudTrail with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-        /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
         /// </para>
         ///  </li> </ul>  
         /// <para>
@@ -1035,8 +1055,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating accounts, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
-        /// an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
+        /// an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
@@ -1063,10 +1084,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using CreateAccount to create multiple temporary accounts is not recommended. You
-        /// can only close an account from the Billing and Cost Management Console, and you must
-        /// be signed in as the root user. For information on the requirements and process for
-        /// closing an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// Using CreateAccount to create multiple temporary accounts isn't recommended. You can
+        /// only close an account from the Billing and Cost Management Console, and you must be
+        /// signed in as the root user. For information on the requirements and process for closing
+        /// an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// an AWS Account</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -1076,7 +1097,7 @@ namespace Amazon.Organizations
         /// enabled. If you enable it, IAM users and roles that have appropriate permissions can
         /// view billing information for the account. If you disable it, only the account root
         /// user can access billing information. For information about how to disable this switch
-        /// for an account, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+        /// for an account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
         /// Access to Your Billing Information and Tools</a>.
         /// </para>
         ///  </note>
@@ -1087,7 +1108,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1331,6 +1352,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">REST API Reference for CreateAccount Operation</seealso>
         CreateAccountResponse CreateAccount(CreateAccountRequest request);
@@ -1368,7 +1395,7 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Creates an AWS organization. The account whose user is calling the CreateOrganization
-        /// operation automatically becomes the <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+        /// operation automatically becomes the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
         /// account</a> of the new organization.
         /// 
         ///  
@@ -1393,7 +1420,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
@@ -1636,6 +1663,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request);
@@ -1680,7 +1713,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// For more information about OUs, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
+        /// For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
         /// Organizational Units</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  
@@ -1694,7 +1727,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1938,6 +1971,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">REST API Reference for CreateOrganizationalUnit Operation</seealso>
         CreateOrganizationalUnitResponse CreateOrganizationalUnit(CreateOrganizationalUnitRequest request);
@@ -1979,7 +2018,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// For more information about policies and their use, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
+        /// For more information about policies and their use, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
         /// Organization Policies</a>.
         /// </para>
         ///  
@@ -1993,7 +2032,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2230,13 +2269,13 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.MalformedPolicyDocumentException">
         /// The provided policy document doesn't meet the requirements of the specified policy
         /// type. For example, the syntax might be incorrect. For details about service control
-        /// policy syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+        /// policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
         /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotAvailableForOrganizationException">
         /// You can't use the specified policy type with the feature set currently enabled for
         /// this organization. For example, you can enable SCPs only after you enable all features
-        /// in the organization. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
+        /// in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
         /// and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -2246,6 +2285,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse CreatePolicy(CreatePolicyRequest request);
@@ -2304,7 +2349,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
@@ -2423,6 +2468,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">REST API Reference for DeclineHandshake Operation</seealso>
         DeclineHandshakeResponse DeclineHandshake(DeclineHandshakeRequest request);
@@ -2468,7 +2519,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2583,6 +2634,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
         DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request);
@@ -2633,7 +2690,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2751,6 +2808,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">REST API Reference for DeleteOrganizationalUnit Operation</seealso>
         DeleteOrganizationalUnitResponse DeleteOrganizationalUnit(DeleteOrganizationalUnitRequest request);
@@ -2801,7 +2864,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2919,6 +2982,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
@@ -2968,7 +3037,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -3080,6 +3149,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         DescribeAccountResponse DescribeAccount(DescribeAccountRequest request);
@@ -3129,7 +3204,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3240,6 +3315,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">REST API Reference for DescribeCreateAccountStatus Operation</seealso>
         DescribeCreateAccountStatusResponse DescribeCreateAccountStatus(DescribeCreateAccountStatusRequest request);
@@ -3296,7 +3377,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
@@ -3406,6 +3487,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">REST API Reference for DescribeHandshake Operation</seealso>
         DescribeHandshakeResponse DescribeHandshake(DescribeHandshakeRequest request);
@@ -3462,7 +3549,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3480,6 +3567,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request);
@@ -3529,7 +3622,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3639,6 +3732,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">REST API Reference for DescribeOrganizationalUnit Operation</seealso>
         DescribeOrganizationalUnitResponse DescribeOrganizationalUnit(DescribeOrganizationalUnitRequest request);
@@ -3688,7 +3787,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3798,6 +3897,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">REST API Reference for DescribePolicy Operation</seealso>
         DescribePolicyResponse DescribePolicy(DescribePolicyRequest request);
@@ -3843,11 +3948,11 @@ namespace Amazon.Organizations
         ///  <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
         /// you want to replace the default <code>FullAWSAccess</code> policy with one that limits
         /// the permissions that can be delegated, then you must attach the replacement policy
-        /// before you can remove the default one. This is the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
+        /// before you can remove the default one. This is the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
         /// If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
         /// attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override
         /// the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any
-        /// other attached SCP), then you are using the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
+        /// other attached SCP), then you are using the authorization strategy of <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
         /// 
         /// </para>
         ///  
@@ -3861,7 +3966,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -4108,6 +4213,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         DetachPolicyResponse DetachPolicy(DetachPolicyRequest request);
@@ -4185,7 +4296,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -4423,6 +4534,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">REST API Reference for DisableAWSServiceAccess Operation</seealso>
         DisableAWSServiceAccessResponse DisableAWSServiceAccess(DisableAWSServiceAccessRequest request);
@@ -4484,7 +4601,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -4718,7 +4835,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
         /// The specified policy type isn't currently enabled in this root. You can't attach policies
         /// of the specified type to entities in a root until you enable that type in the root.
-        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
         /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
@@ -4731,6 +4848,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">REST API Reference for DisablePolicyType Operation</seealso>
         DisablePolicyTypeResponse DisablePolicyType(DisablePolicyTypeRequest request);
@@ -4771,7 +4894,7 @@ namespace Amazon.Organizations
         /// that can restrict the services and actions that can be called in each account. Until
         /// you enable all features, you have access only to consolidated billing, and you can't
         /// use any of the advanced account administration features that AWS Organizations supports.
-        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
         /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// 
         ///  <important> 
@@ -4813,7 +4936,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -4985,6 +5108,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
         EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request);
@@ -5055,7 +5184,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -5293,6 +5422,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">REST API Reference for EnableAWSServiceAccess Operation</seealso>
         EnableAWSServiceAccessResponse EnableAWSServiceAccess(EnableAWSServiceAccessRequest request);
@@ -5354,7 +5489,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -5591,7 +5726,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotAvailableForOrganizationException">
         /// You can't use the specified policy type with the feature set currently enabled for
         /// this organization. For example, you can enable SCPs only after you enable all features
-        /// in the organization. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
+        /// in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
         /// and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
@@ -5604,6 +5739,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">REST API Reference for EnablePolicyType Operation</seealso>
         EnablePolicyTypeResponse EnablePolicyType(EnablePolicyTypeRequest request);
@@ -5672,7 +5813,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountOwnerNotVerifiedException">
@@ -5863,6 +6004,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">REST API Reference for InviteAccountToOrganization Operation</seealso>
         InviteAccountToOrganizationResponse InviteAccountToOrganization(InviteAccountToOrganizationRequest request);
@@ -5943,7 +6090,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -6191,6 +6338,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">REST API Reference for LeaveOrganization Operation</seealso>
         LeaveOrganizationResponse LeaveOrganization(LeaveOrganizationRequest request);
@@ -6249,7 +6402,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -6356,6 +6509,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         ListAccountsResponse ListAccounts(ListAccountsRequest request);
@@ -6417,7 +6576,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -6527,6 +6686,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">REST API Reference for ListAccountsForParent Operation</seealso>
         ListAccountsForParentResponse ListAccountsForParent(ListAccountsForParentRequest request);
@@ -6584,7 +6749,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -6818,6 +6983,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">REST API Reference for ListAWSServiceAccessForOrganization Operation</seealso>
         ListAWSServiceAccessForOrganizationResponse ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request);
@@ -6877,7 +7048,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -6987,6 +7158,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">REST API Reference for ListChildren Operation</seealso>
         ListChildrenResponse ListChildren(ListChildrenRequest request);
@@ -7045,7 +7222,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -7152,6 +7329,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">REST API Reference for ListCreateAccountStatus Operation</seealso>
         ListCreateAccountStatusResponse ListCreateAccountStatus(ListCreateAccountStatusRequest request);
@@ -7216,7 +7399,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
@@ -7323,6 +7506,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">REST API Reference for ListHandshakesForAccount Operation</seealso>
         ListHandshakesForAccountResponse ListHandshakesForAccount(ListHandshakesForAccountRequest request);
@@ -7389,7 +7578,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -7500,6 +7689,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">REST API Reference for ListHandshakesForOrganization Operation</seealso>
         ListHandshakesForOrganizationResponse ListHandshakesForOrganization(ListHandshakesForOrganizationRequest request);
@@ -7557,7 +7752,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -7667,6 +7862,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">REST API Reference for ListOrganizationalUnitsForParent Operation</seealso>
         ListOrganizationalUnitsForParentResponse ListOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request);
@@ -7731,7 +7932,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -7842,6 +8043,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">REST API Reference for ListParents Operation</seealso>
         ListParentsResponse ListParents(ListParentsRequest request);
@@ -7899,7 +8106,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -8006,6 +8213,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request);
@@ -8065,7 +8278,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -8175,6 +8388,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">REST API Reference for ListPoliciesForTarget Operation</seealso>
         ListPoliciesForTargetResponse ListPoliciesForTarget(ListPoliciesForTargetRequest request);
@@ -8241,7 +8460,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -8348,6 +8567,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">REST API Reference for ListRoots Operation</seealso>
         ListRootsResponse ListRoots(ListRootsRequest request);
@@ -8406,7 +8631,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -8516,6 +8741,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">REST API Reference for ListTargetsForPolicy Operation</seealso>
         ListTargetsForPolicyResponse ListTargetsForPolicy(ListTargetsForPolicyRequest request);
@@ -8566,7 +8797,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -8692,6 +8923,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">REST API Reference for MoveAccount Operation</seealso>
         MoveAccountResponse MoveAccount(MoveAccountRequest request);
@@ -8765,7 +9002,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -9013,6 +9250,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">REST API Reference for RemoveAccountFromOrganization Operation</seealso>
         RemoveAccountFromOrganizationResponse RemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest request);
@@ -9064,7 +9307,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -9181,6 +9424,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">REST API Reference for UpdateOrganizationalUnit Operation</seealso>
         UpdateOrganizationalUnitResponse UpdateOrganizationalUnit(UpdateOrganizationalUnitRequest request);
@@ -9232,7 +9481,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -9469,7 +9718,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.MalformedPolicyDocumentException">
         /// The provided policy document doesn't meet the requirements of the specified policy
         /// type. For example, the syntax might be incorrect. For details about service control
-        /// policy syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+        /// policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
         /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
@@ -9482,6 +9731,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
+        /// 
+        ///  
+        /// <para>
+        /// For information on limits that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits
+        /// of AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
         UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request);
