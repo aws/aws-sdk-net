@@ -49,7 +49,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
-        ///  An array containing all of the information required to call a customer-supplied authentication
+        /// An array containing all of the information required to call a customer-supplied authentication
         /// API. This parameter is not required when the <code>IdentityProviderType</code> value
         /// of server that is created uses the <code>SERVICE_MANAGED</code> authentication method.
         /// </para>

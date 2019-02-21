@@ -55,7 +55,13 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When you can get additional results from the <code>ListTagsForResource</code> call,
+        /// a <code>NextToken</code> parameter is returned in the output. You can then pass in
+        /// a subsequent command the <code>NextToken</code> parameter to continue listing additional
+        /// tags.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -111,12 +111,12 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListServersRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListServersResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.Arn</property>
@@ -131,7 +131,7 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.Arn</property>
@@ -141,7 +141,7 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersRequest.MaxResults</property>
@@ -151,7 +151,7 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersRequest.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersRequest.ServerId</property>
@@ -160,7 +160,7 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersResponse.NextToken</property>
     <min>1</min>
-    <max>256</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListUsersResponse.ServerId</property>
