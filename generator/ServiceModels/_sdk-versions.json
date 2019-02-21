@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.460.0",
+    "ProductVersion" : "3.3.461.0",
     "CoreVersion"    : "3.3.31.11",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -77,7 +77,7 @@
             "InPreview"               : false
         },
         "CloudWatch"        : {
-            "Version" : "3.3.10.20",
+            "Version" : "3.3.10.21",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.21.4",
+            "Version" : "3.3.22.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -745,7 +745,7 @@
             "InPreview"               : false
         },
         "Organizations"                   : {
-            "Version" : "3.3.9.39",
+            "Version" : "3.3.9.40",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -753,7 +753,7 @@
             "InPreview"               : false
         },
         "WorkDocs"                        : {
-            "Version" : "3.3.7.20",
+            "Version" : "3.3.7.21",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -969,7 +969,7 @@
             "InPreview"               : false
         },
         "KinesisVideo"                    : {
-            "Version" : "3.3.2.2",
+            "Version" : "3.3.2.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -977,7 +977,7 @@
             "InPreview"               : false
         },
         "KinesisVideoMedia"               : {
-            "Version" : "3.3.0.56",
+            "Version" : "3.3.0.57",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -985,7 +985,7 @@
             "InPreview"               : false
         },
         "KinesisVideoArchivedMedia"       : {
-            "Version" : "3.3.1.47",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -1257,7 +1257,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.3.0.20",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"

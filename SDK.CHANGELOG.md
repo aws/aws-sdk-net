@@ -1,3 +1,21 @@
+### 3.3.461.0 (2019-02-21 19:19 UTC)
+* CloudWatch (3.3.10.21)
+	* Documentation updates for monitoring
+* CodeBuild (3.3.22.0)
+	* Add support for CodeBuild local caching feature
+* KinesisVideo (3.3.2.3)
+	* Documentation updates for Kinesis Video Streams
+* KinesisVideoArchivedMedia (3.3.2.0)
+	* In this release, HLS playback of KVS streams can be configured to output MPEG TS fragments using the ContainerFormat parameter. HLS playback of KVS streams can also be configured to include the EXT-X-PROGRAM-DATE-TIME field using the DisplayFragmentTimestamp parameter.
+* KinesisVideoMedia (3.3.0.57)
+	* Documentation updates for Kinesis Video Streams
+* Organizations (3.3.9.40)
+	* Documentation updates for organizations
+* Transfer (3.3.1.0)
+	* Bug fix: increased the max length allowed for request parameter NextToken when paginating List operations
+* WorkDocs (3.3.7.21)
+	* Documentation updates for workdocs
+
 ### 3.3.460.0 (2019-02-20 19:09 UTC)
 * CodeCommit (3.3.9.0)
 	* This release adds an API for adding / updating / deleting / copying / moving / setting file modes for one or more files directly to an AWS CodeCommit repository without requiring a Git client.

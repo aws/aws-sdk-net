@@ -32,7 +32,7 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.9.39");
+            InternalSDKUtils.BuildUserAgentString("3.3.9.40");
 
         private string _userAgent = UserAgentString;
 
