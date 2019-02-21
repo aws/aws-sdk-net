@@ -70,6 +70,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Modes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -33,6 +33,7 @@ namespace Amazon.CodeBuild.Model
     public partial class ProjectCache
     {
         private string _location;
+        private List<string> _modes = new List<string>();
         private CacheType _type;
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_CACHE</code>: This value is ignored.
+        ///  <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -63,6 +64,77 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Modes. 
+        /// <para>
+        ///  If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more
+        /// local cache modes at the same time. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary
+        /// sources. After the cache is created, subsequent builds pull only the change between
+        /// commits. This mode is a good choice for projects with a clean working directory and
+        /// a source that is a large Git repository. If your project does not use a Git repository
+        /// (GitHub, GitHub Enterprise, or Bitbucket) and you choose this option, then it is ignored.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode
+        /// is a good choice for projects that build or pull large Docker images. It can prevent
+        /// the performance hit that would be caused by pulling large Docker images down from
+        /// the network. 
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  You can only use a Docker layer cache in the Linux enviornment. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The <code>privileged</code> flag must be set so that your project has the necessary
+        /// Docker privileges. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  You should consider the security implications before using a Docker layer cache.
+        /// 
+        /// </para>
+        ///  </li> </ul> </note> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec
+        /// file. This mode is a good choice if your build scenario does not match one that works
+        /// well with one of the other three local cache modes. If you use a custom cache: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Only directories can be specified for caching. You cannot specify individual files.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Symlinks are used to reference cached directories. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Cached directories are linked to your build before it downloads its project sources.
+        /// Cached items are overriden if a source item has the same name. Directories are specified
+        /// using cache paths in the buildspec file. 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        public List<string> Modes
+        {
+            get { return this._modes; }
+            set { this._modes = value; }
+        }
+
+        // Check to see if Modes property is set
+        internal bool IsSetModes()
+        {
+            return this._modes != null && this._modes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of cache used by the build project. Valid values include:
@@ -74,6 +146,11 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>S3</code>: The build project reads and writes from and to S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOCAL</code>: The build project stores a cache locally on a build host that
+        /// is only available to that build host.
         /// </para>
         ///  </li> </ul>
         /// </summary>

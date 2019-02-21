@@ -51,6 +51,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Location);
             }
 
+            if(requestObject.IsSetModes())
+            {
+                context.Writer.WritePropertyName("modes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectModesListValue in requestObject.Modes)
+                {
+                        context.Writer.Write(requestObjectModesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
