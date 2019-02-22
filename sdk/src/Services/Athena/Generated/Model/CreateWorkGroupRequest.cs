@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
         private WorkGroupConfiguration _configuration;
         private string _description;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -94,6 +95,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags, separated by commas, that you want to attach to the workgroup as
+        /// you create it.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

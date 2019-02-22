@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWorkGroup operation.
-    /// Returns information about the workgroup with the specified name.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class GetWorkGroupRequest : AmazonAthenaRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _workGroup;
-
-        /// <summary>
-        /// Gets and sets the property WorkGroup. 
-        /// <para>
-        /// The name of the workgroup.
-        /// </para>
-        /// </summary>
-        public string WorkGroup
-        {
-            get { return this._workGroup; }
-            set { this._workGroup = value; }
-        }
-
-        // Check to see if WorkGroup property is set
-        internal bool IsSetWorkGroup()
-        {
-            return this._workGroup != null;
-        }
 
     }
 }

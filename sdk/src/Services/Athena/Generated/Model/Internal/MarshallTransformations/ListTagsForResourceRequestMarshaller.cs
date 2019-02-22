@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWorkGroup Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateWorkGroupRequestMarshaller : IMarshaller<IRequest, CreateWorkGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWorkGroupRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWorkGroupRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Athena");
-            string target = "AmazonAthena.CreateWorkGroup";
+            string target = "AmazonAthena.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-18";            
@@ -68,43 +68,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguration())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("Configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WorkGroupConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
         
@@ -116,9 +95,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateWorkGroupRequestMarshaller _instance = new CreateWorkGroupRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateWorkGroupRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +105,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkGroupRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {
