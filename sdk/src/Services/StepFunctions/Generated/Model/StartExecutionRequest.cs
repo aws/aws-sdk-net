@@ -78,8 +78,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the execution. This name must be unique for your AWS account and region
-        /// for 90 days. For more information, see <a href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+        /// The name of the execution. This name must be unique for your AWS account, region,
+        /// and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
         /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
         /// Guide</i>.
         /// </para>

@@ -35,16 +35,24 @@ namespace Amazon.StepFunctions.Model
     /// <code>SendTask*</code> API actions. This function lets Step Functions know the existence
     /// of your activity and returns an identifier for use in a state machine and when polling
     /// from the activity.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateActivityRequest : AmazonStepFunctionsRequest
     {
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the activity to create. This name must be unique for your AWS account
-        /// and region for 90 days. For more information, see <a href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+        /// and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
         /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
         /// Guide</i>.
         /// </para>
@@ -84,6 +92,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags to add to a resource.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

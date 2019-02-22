@@ -41,7 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The Amazon States Language definition of the state machine. See <a href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
         /// States Language</a>.
         /// </para>
         /// </summary>

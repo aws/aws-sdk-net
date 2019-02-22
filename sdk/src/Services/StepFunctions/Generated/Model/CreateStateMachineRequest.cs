@@ -33,17 +33,25 @@ namespace Amazon.StepFunctions.Model
     /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
     /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
     /// machines are specified using a JSON-based, structured language.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateStateMachineRequest : AmazonStepFunctionsRequest
     {
         private string _definition;
         private string _name;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The Amazon States Language definition of the state machine. See <a href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
         /// States Language</a>.
         /// </para>
         /// </summary>
@@ -118,6 +126,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be added when creating a state machine.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

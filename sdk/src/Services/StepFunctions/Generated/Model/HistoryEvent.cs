@@ -395,7 +395,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskFailedEventDetails.
+        /// Gets and sets the property TaskFailedEventDetails. 
+        /// <para>
+        /// Contains details about the failure of a task.
+        /// </para>
         /// </summary>
         public TaskFailedEventDetails TaskFailedEventDetails
         {
@@ -410,7 +413,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskScheduledEventDetails.
+        /// Gets and sets the property TaskScheduledEventDetails. 
+        /// <para>
+        /// Contains details about a task that was scheduled.
+        /// </para>
         /// </summary>
         public TaskScheduledEventDetails TaskScheduledEventDetails
         {
@@ -425,7 +431,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskStartedEventDetails.
+        /// Gets and sets the property TaskStartedEventDetails. 
+        /// <para>
+        /// Contains details about a task that was started.
+        /// </para>
         /// </summary>
         public TaskStartedEventDetails TaskStartedEventDetails
         {
@@ -440,7 +449,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskStartFailedEventDetails.
+        /// Gets and sets the property TaskStartFailedEventDetails. 
+        /// <para>
+        /// Contains details about a task that failed to start.
+        /// </para>
         /// </summary>
         public TaskStartFailedEventDetails TaskStartFailedEventDetails
         {
@@ -455,7 +467,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskSubmitFailedEventDetails.
+        /// Gets and sets the property TaskSubmitFailedEventDetails. 
+        /// <para>
+        /// Contains details about a task that where the submit failed.
+        /// </para>
         /// </summary>
         public TaskSubmitFailedEventDetails TaskSubmitFailedEventDetails
         {
@@ -470,7 +485,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskSubmittedEventDetails.
+        /// Gets and sets the property TaskSubmittedEventDetails. 
+        /// <para>
+        /// Contains details about a submitted task.
+        /// </para>
         /// </summary>
         public TaskSubmittedEventDetails TaskSubmittedEventDetails
         {
@@ -485,7 +503,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskSucceededEventDetails.
+        /// Gets and sets the property TaskSucceededEventDetails. 
+        /// <para>
+        /// Contains details about a task that succeeded.
+        /// </para>
         /// </summary>
         public TaskSucceededEventDetails TaskSucceededEventDetails
         {
@@ -500,7 +521,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskTimedOutEventDetails.
+        /// Gets and sets the property TaskTimedOutEventDetails. 
+        /// <para>
+        /// Contains details about a task that timed out.
+        /// </para>
         /// </summary>
         public TaskTimedOutEventDetails TaskTimedOutEventDetails
         {

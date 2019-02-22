@@ -44,7 +44,7 @@ namespace Amazon.StepFunctions.Model
     ///  
     /// <para>
     /// Polling with <code>GetActivityTask</code> can cause latency in some implementations.
-    /// See <a href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
+    /// See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
     /// Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.
     /// </para>
     ///  </important>

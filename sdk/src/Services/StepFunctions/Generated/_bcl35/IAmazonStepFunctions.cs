@@ -50,8 +50,8 @@ namespace Amazon.StepFunctions
     /// is available at any scale. You can run tasks on AWS, your own servers, or any system
     /// that has access to AWS. You can access and use Step Functions using the console, the
     /// AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
-    /// href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions
-    /// Developer Guide</a> </i>.
+    /// href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step
+    /// Functions Developer Guide</a> </i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonStepFunctions : IAmazonService, IDisposable
@@ -68,6 +68,13 @@ namespace Amazon.StepFunctions
         /// <code>SendTask*</code> API actions. This function lets Step Functions know the existence
         /// of your activity and returns an identifier for use in a state machine and when polling
         /// from the activity.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is eventually consistent. The results are best effort and may not reflect
+        /// very recent updates and changes.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivity service method.</param>
         /// 
@@ -78,6 +85,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
+        /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
+        /// Limits Topic</a> in the AWS Step Functions Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         CreateActivityResponse CreateActivity(CreateActivityRequest request);
@@ -118,6 +129,13 @@ namespace Amazon.StepFunctions
         /// do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code>
         /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
         /// machines are specified using a JSON-based, structured language.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is eventually consistent. The results are best effort and may not reflect
+        /// very recent updates and changes.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStateMachine service method.</param>
         /// 
@@ -141,6 +159,10 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineLimitExceededException">
         /// The maximum number of state machines has been reached. Existing state machines must
         /// be deleted before a new state machine can be created.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
+        /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
+        /// Limits Topic</a> in the AWS Step Functions Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request);
@@ -498,7 +520,7 @@ namespace Amazon.StepFunctions
         ///  
         /// <para>
         /// Polling with <code>GetActivityTask</code> can cause latency in some implementations.
-        /// See <a href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
+        /// See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
         /// Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.
         /// </para>
         ///  </important>
@@ -1143,7 +1165,7 @@ namespace Amazon.StepFunctions
         /// Could not fine the referenced resource. Only state machine and activity ARNs are supported.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
-        /// You've exceeded the number of tags allowed for a resource. See the <a href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
+        /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
         /// Limits Topic</a> in the AWS Step Functions Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">REST API Reference for TagResource Operation</seealso>
