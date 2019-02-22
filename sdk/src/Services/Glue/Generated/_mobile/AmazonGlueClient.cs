@@ -411,6 +411,105 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetCrawlers
+
+        internal virtual BatchGetCrawlersResponse BatchGetCrawlers(BatchGetCrawlersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCrawlersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCrawlers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">REST API Reference for BatchGetCrawlers Operation</seealso>
+        public virtual Task<BatchGetCrawlersResponse> BatchGetCrawlersAsync(BatchGetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetDevEndpoints
+
+        internal virtual BatchGetDevEndpointsResponse BatchGetDevEndpoints(BatchGetDevEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDevEndpointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDevEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">REST API Reference for BatchGetDevEndpoints Operation</seealso>
+        public virtual Task<BatchGetDevEndpointsResponse> BatchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDevEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetJobs
+
+        internal virtual BatchGetJobsResponse BatchGetJobs(BatchGetJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetJobs">REST API Reference for BatchGetJobs Operation</seealso>
+        public virtual Task<BatchGetJobsResponse> BatchGetJobsAsync(BatchGetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetPartition
 
         internal virtual BatchGetPartitionResponse BatchGetPartition(BatchGetPartitionRequest request)
@@ -440,6 +539,39 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetPartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetTriggers
+
+        internal virtual BatchGetTriggersResponse BatchGetTriggers(BatchGetTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTriggersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTriggers">REST API Reference for BatchGetTriggers Operation</seealso>
+        public virtual Task<BatchGetTriggersResponse> BatchGetTriggersAsync(BatchGetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetTriggersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2259,6 +2391,39 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetTags
+
+        internal virtual GetTagsResponse GetTags(GetTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTags">REST API Reference for GetTags Operation</seealso>
+        public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTrigger
 
         internal virtual GetTriggerResponse GetTrigger(GetTriggerRequest request)
@@ -2420,6 +2585,138 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportCatalogToGlueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCrawlers
+
+        internal virtual ListCrawlersResponse ListCrawlers(ListCrawlersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrawlersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrawlers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawlers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">REST API Reference for ListCrawlers Operation</seealso>
+        public virtual Task<ListCrawlersResponse> ListCrawlersAsync(ListCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDevEndpoints
+
+        internal virtual ListDevEndpointsResponse ListDevEndpoints(ListDevEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDevEndpointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
+        public virtual Task<ListDevEndpointsResponse> ListDevEndpointsAsync(ListDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDevEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobs
+
+        internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTriggers
+
+        internal virtual ListTriggersResponse ListTriggers(ListTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListTriggersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        public virtual Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTriggersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2750,6 +3047,72 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StopTriggerResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

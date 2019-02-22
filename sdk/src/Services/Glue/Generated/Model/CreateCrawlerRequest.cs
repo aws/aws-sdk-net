@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private string _schedule;
         private SchemaChangePolicy _schemaChangePolicy;
         private string _tablePrefix;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private CrawlerTargets _targets;
 
         /// <summary>
@@ -231,6 +232,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetTablePrefix()
         {
             return this._tablePrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to use with this crawler request. You may use tags to limit access to the
+        /// crawler. For more information about tags in AWS Glue, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// Tags in AWS Glue</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

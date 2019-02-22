@@ -518,6 +518,161 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetCrawlers
+
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of crawler names. After calling
+        /// the <code>ListCrawlers</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions to based on tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCrawlers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">REST API Reference for BatchGetCrawlers Operation</seealso>
+        public virtual BatchGetCrawlersResponse BatchGetCrawlers(BatchGetCrawlersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCrawlersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCrawlers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">REST API Reference for BatchGetCrawlers Operation</seealso>
+        public virtual Task<BatchGetCrawlersResponse> BatchGetCrawlersAsync(BatchGetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetDevEndpoints
+
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of DevEndpoint names. After calling
+        /// the <code>ListDevEndpoints</code> operation, you can call this operation to access
+        /// the data to which you have been granted permissions. This operation supports all IAM
+        /// permissions, including permission conditions that uses tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDevEndpoints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">REST API Reference for BatchGetDevEndpoints Operation</seealso>
+        public virtual BatchGetDevEndpointsResponse BatchGetDevEndpoints(BatchGetDevEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDevEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDevEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">REST API Reference for BatchGetDevEndpoints Operation</seealso>
+        public virtual Task<BatchGetDevEndpointsResponse> BatchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetDevEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetJobs
+
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of job names. After calling the
+        /// <code>ListJobs</code> operation, you can call this operation to access the data to
+        /// which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJobs service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetJobs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetJobs">REST API Reference for BatchGetJobs Operation</seealso>
+        public virtual BatchGetJobsResponse BatchGetJobs(BatchGetJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetJobs">REST API Reference for BatchGetJobs Operation</seealso>
+        public virtual Task<BatchGetJobsResponse> BatchGetJobsAsync(BatchGetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetPartition
 
 
@@ -569,6 +724,58 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchGetPartitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetTriggers
+
+
+        /// <summary>
+        /// Returns a list of resource metadata for a given list of trigger names. After calling
+        /// the <code>ListTriggers</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTriggers service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetTriggers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTriggers">REST API Reference for BatchGetTriggers Operation</seealso>
+        public virtual BatchGetTriggersResponse BatchGetTriggers(BatchGetTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTriggersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTriggers">REST API Reference for BatchGetTriggers Operation</seealso>
+        public virtual Task<BatchGetTriggersResponse> BatchGetTriggersAsync(BatchGetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetTriggersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3502,6 +3709,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetTags
+
+
+        /// <summary>
+        /// Retrieves a list of tags associated with a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
+        /// 
+        /// <returns>The response from the GetTags service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTags">REST API Reference for GetTags Operation</seealso>
+        public virtual GetTagsResponse GetTags(GetTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTagsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTags">REST API Reference for GetTags Operation</seealso>
+        public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTrigger
 
 
@@ -3762,11 +4021,246 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListCrawlers
+
+
+        /// <summary>
+        /// Retrieves the names of all crawler resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
+        /// 
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawlers service method.</param>
+        /// 
+        /// <returns>The response from the ListCrawlers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">REST API Reference for ListCrawlers Operation</seealso>
+        public virtual ListCrawlersResponse ListCrawlers(ListCrawlersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrawlersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrawlers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawlers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">REST API Reference for ListCrawlers Operation</seealso>
+        public virtual Task<ListCrawlersResponse> ListCrawlersAsync(ListCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDevEndpoints
+
+
+        /// <summary>
+        /// Retrieves the names of all DevEndpoint resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
+        /// 
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListDevEndpoints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
+        public virtual ListDevEndpointsResponse ListDevEndpoints(ListDevEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDevEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
+        public virtual Task<ListDevEndpointsResponse> ListDevEndpointsAsync(ListDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDevEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobs
+
+
+        /// <summary>
+        /// Retrieves the names of all job resources in this AWS account, or the resources with
+        /// the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
+        /// 
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTriggers
+
+
+        /// <summary>
+        /// Retrieves the names of all trigger resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
+        /// 
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
+        /// 
+        /// <returns>The response from the ListTriggers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        public virtual ListTriggersResponse ListTriggers(ListTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListTriggersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        public virtual Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTriggersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutDataCatalogEncryptionSettings
 
 
         /// <summary>
-        /// Sets the security configuration for a specified catalog. Once the configuration has
+        /// Sets the security configuration for a specified catalog. After the configuration has
         /// been set, the specified encryption is applied to every catalog write thereafter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings service method.</param>
@@ -4298,6 +4792,113 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StopTriggerResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
+        /// Glue, you can tag only certain resources. For information about what resources you
+        /// can tag, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// Tags in AWS Glue</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

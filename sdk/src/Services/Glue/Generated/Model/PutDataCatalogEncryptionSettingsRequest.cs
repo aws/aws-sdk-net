@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDataCatalogEncryptionSettings operation.
-    /// Sets the security configuration for a specified catalog. Once the configuration has
+    /// Sets the security configuration for a specified catalog. After the configuration has
     /// been set, the specified encryption is applied to every catalog write thereafter.
     /// </summary>
     public partial class PutDataCatalogEncryptionSettingsRequest : AmazonGlueRequest
@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog for which to set the security configuration. If none is
-        /// supplied, the AWS account ID is used by default.
+        /// provided, the AWS account ID is used by default.
         /// </para>
         /// </summary>
         public string CatalogId

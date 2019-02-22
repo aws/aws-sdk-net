@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private string _securityConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property EndpointName. 
@@ -241,6 +242,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint.
+        /// For more information about tags in AWS Glue, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// Tags in AWS Glue</a> in the developer guide.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

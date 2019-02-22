@@ -70,12 +70,12 @@ namespace Amazon.Glue.Model
         /// <para>
         ///  <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection
         /// by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption
-        /// settings, this field stores the key you designate to encrypt the password.
+        /// settings, this field stores the encrypted password.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the
-        /// JDBC driver to use.
+        ///  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains
+        /// the JDBC driver to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -104,8 +104,8 @@ namespace Amazon.Glue.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether
-        /// SSL with hostname matching will be enforced for the JDBC connection on the client.
-        /// The default is false.
+        /// Secure Sockets Layer (SSL) with hostname matching will be enforced for the JDBC connection
+        /// on the client. The default is false.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -142,7 +142,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time this connection definition was created.
+        /// The time that this connection definition was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -160,7 +160,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the connection.
+        /// The description of the connection.
         /// </para>
         /// </summary>
         public string Description
@@ -178,7 +178,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedBy. 
         /// <para>
-        /// The user, group or role that last updated this connection definition.
+        /// The user, group, or role that last updated this connection definition.
         /// </para>
         /// </summary>
         public string LastUpdatedBy
@@ -196,7 +196,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time this connection definition was updated.
+        /// The last time that this connection definition was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -250,8 +250,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PhysicalConnectionRequirements. 
         /// <para>
-        /// A map of physical connection requirements, such as VPC and SecurityGroup, needed for
-        /// making this connection successfully.
+        /// A map of physical connection requirements, such as virtual private cloud (VPC) and
+        /// <code>SecurityGroup</code>, that are needed to make this connection successfully.
         /// </para>
         /// </summary>
         public PhysicalConnectionRequirements PhysicalConnectionRequirements

@@ -113,7 +113,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values of the partition.
+        /// The values of the partition. Although this parameter is not required by the SDK, you
+        /// must specify this parameter for a valid input.
         /// </para>
         /// </summary>
         public List<string> Values

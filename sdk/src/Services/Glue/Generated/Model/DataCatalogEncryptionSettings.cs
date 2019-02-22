@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionPasswordEncryption. 
         /// <para>
-        /// When password protection is enabled, the Data Catalog uses a customer-provided key
-        /// to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code>
+        /// When connection password protection is enabled, the Data Catalog uses a customer-provided
+        /// key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code>
         /// and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties.
         /// You can enable catalog encryption or only password encryption.
         /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EncryptionAtRest. 
         /// <para>
-        /// Specifies encryption-at-rest configuration for the Data Catalog.
+        /// Specifies the encryption-at-rest configuration for the Data Catalog.
         /// </para>
         /// </summary>
         public EncryptionAtRest EncryptionAtRest

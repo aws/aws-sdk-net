@@ -41,7 +41,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// Arguments to be passed to the job run.
+        /// The job arguments used when this trigger fires. For this job run, they replace the
+        /// default arguments set in the job definition itself.
         /// </para>
         ///  
         /// <para>

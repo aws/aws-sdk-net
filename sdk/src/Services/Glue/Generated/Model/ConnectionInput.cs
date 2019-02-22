@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A structure used to specify a connection to create or update.
+    /// A structure that is used to specify a connection to create or update.
     /// </summary>
     public partial class ConnectionInput
     {
@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the connection.
+        /// The description of the connection.
         /// </para>
         /// </summary>
         public string Description
@@ -132,8 +132,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PhysicalConnectionRequirements. 
         /// <para>
-        /// A map of physical connection requirements, such as VPC and SecurityGroup, needed for
-        /// making this connection successfully.
+        /// A map of physical connection requirements, such as virtual private cloud (VPC) and
+        /// <code>SecurityGroup</code>, that are needed to successfully make this connection.
         /// </para>
         /// </summary>
         public PhysicalConnectionRequirements PhysicalConnectionRequirements

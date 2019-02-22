@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies encryption-at-rest configuration for the Data Catalog.
+    /// Specifies the encryption-at-rest configuration for the Data Catalog.
     /// </summary>
     public partial class EncryptionAtRest
     {

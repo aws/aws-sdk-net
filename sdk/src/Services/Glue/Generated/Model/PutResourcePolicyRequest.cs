@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PolicyHashCondition. 
         /// <para>
-        /// This is the hash value returned when the previous policy was set using PutResourcePolicy.
+        /// The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>.
         /// Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter
         /// if no previous policy has been set.
         /// </para>
