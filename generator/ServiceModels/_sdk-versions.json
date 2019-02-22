@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.461.0",
+    "ProductVersion" : "3.3.462.0",
     "CoreVersion"    : "3.3.31.11",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -633,7 +633,7 @@
             "InPreview"               : false
         },
         "StepFunctions"                   : {
-            "Version" : "3.3.4.14",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -793,7 +793,7 @@
             "InPreview"               : false
         },
         "Athena"                          : {
-            "Version" : "3.3.2.1",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.17.8",
+            "Version" : "3.3.18.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
@@ -1017,7 +1017,7 @@
             "InPreview"               : false
         },
         "Cloud9"                          : {
-            "Version" : "3.3.0.57",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.11"
