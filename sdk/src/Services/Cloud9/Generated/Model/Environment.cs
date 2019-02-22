@@ -35,6 +35,7 @@ namespace Amazon.Cloud9.Model
         private string _arn;
         private string _description;
         private string _id;
+        private EnvironmentLifecycle _lifecycle;
         private string _name;
         private string _ownerArn;
         private EnvironmentType _type;
@@ -91,6 +92,24 @@ namespace Amazon.Cloud9.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lifecycle. 
+        /// <para>
+        /// The state of the environment in its creation or deletion lifecycle.
+        /// </para>
+        /// </summary>
+        public EnvironmentLifecycle Lifecycle
+        {
+            get { return this._lifecycle; }
+            set { this._lifecycle = value; }
+        }
+
+        // Check to see if Lifecycle property is set
+        internal bool IsSetLifecycle()
+        {
+            return this._lifecycle != null;
         }
 
         /// <summary>

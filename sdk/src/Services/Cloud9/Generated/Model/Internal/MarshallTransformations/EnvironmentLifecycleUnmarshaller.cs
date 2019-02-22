@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Environment Object
+    /// Response Unmarshaller for EnvironmentLifecycle Object
     /// </summary>  
-    public class EnvironmentUnmarshaller : IUnmarshaller<Environment, XmlUnmarshallerContext>, IUnmarshaller<Environment, JsonUnmarshallerContext>
+    public class EnvironmentLifecycleUnmarshaller : IUnmarshaller<EnvironmentLifecycle, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentLifecycle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Environment IUnmarshaller<Environment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnvironmentLifecycle IUnmarshaller<EnvironmentLifecycle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Environment Unmarshall(JsonUnmarshallerContext context)
+        public EnvironmentLifecycle Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Environment unmarshalledObject = new Environment();
+            EnvironmentLifecycle unmarshalledObject = new EnvironmentLifecycle();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("failureResource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureResource = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lifecycle", targetDepth))
-                {
-                    var unmarshaller = EnvironmentLifecycleUnmarshaller.Instance;
-                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ownerArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         }
 
 
-        private static EnvironmentUnmarshaller _instance = new EnvironmentUnmarshaller();        
+        private static EnvironmentLifecycleUnmarshaller _instance = new EnvironmentLifecycleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnvironmentUnmarshaller Instance
+        public static EnvironmentLifecycleUnmarshaller Instance
         {
             get
             {
