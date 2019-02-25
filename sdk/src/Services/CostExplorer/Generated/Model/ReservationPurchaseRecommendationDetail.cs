@@ -53,7 +53,10 @@ namespace Amazon.CostExplorer.Model
         private string _upfrontCost;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account that this RI recommendation is for.
+        /// </para>
         /// </summary>
         public string AccountId
         {

@@ -265,7 +265,15 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics.
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The measurement that you want your reservation coverage reported in.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You
+        /// can use multiple values in a request.
+        /// </para>
         /// </summary>
         public List<string> Metrics
         {
