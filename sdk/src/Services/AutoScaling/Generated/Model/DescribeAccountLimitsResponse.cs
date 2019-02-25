@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxNumberOfAutoScalingGroups. 
         /// <para>
-        /// The maximum number of groups allowed for your AWS account. The default limit is 20
+        /// The maximum number of groups allowed for your AWS account. The default limit is 200
         /// per region.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MaxNumberOfLaunchConfigurations. 
         /// <para>
         /// The maximum number of launch configurations allowed for your AWS account. The default
-        /// limit is 100 per region.
+        /// limit is 200 per region.
         /// </para>
         /// </summary>
         public int MaxNumberOfLaunchConfigurations

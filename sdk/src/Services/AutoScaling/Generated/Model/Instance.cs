@@ -157,6 +157,11 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         public bool ProtectedFromScaleIn
         {

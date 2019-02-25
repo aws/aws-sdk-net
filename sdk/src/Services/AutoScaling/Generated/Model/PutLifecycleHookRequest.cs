@@ -69,14 +69,13 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Auto
-    /// Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+    /// EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
-    /// Scaling group, the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-    /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+    /// Scaling group, the call fails.
     /// </para>
     /// </summary>
     public partial class PutLifecycleHookRequest : AmazonAutoScalingRequest

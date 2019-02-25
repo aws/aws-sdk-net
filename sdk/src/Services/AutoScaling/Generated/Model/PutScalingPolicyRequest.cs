@@ -32,13 +32,6 @@ namespace Amazon.AutoScaling.Model
     /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
     /// use the existing policy name and set the parameters to change. Any existing parameter
     /// not changed in an update to an existing policy is not changed in this update request.
-    /// 
-    ///  
-    /// <para>
-    /// If you exceed your maximum limit of step adjustments, which by default is 20 per region,
-    /// the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-    /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
-    /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonAutoScalingRequest
     {

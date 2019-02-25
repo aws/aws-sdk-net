@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Configures a customized metric for a target tracking policy.
+    /// Configures a customized metric for a target tracking policy to use with Amazon EC2
+    /// Auto Scaling.
     /// </summary>
     public partial class CustomizedMetricSpecification
     {

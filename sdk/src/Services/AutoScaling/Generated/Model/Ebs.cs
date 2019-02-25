@@ -65,7 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// snapshots are automatically encrypted. There is no way to create an encrypted volume
         /// from an unencrypted snapshot or an unencrypted volume from an encrypted snapshot.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -150,7 +150,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property VolumeType. 
         /// <para>
         /// The volume type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>

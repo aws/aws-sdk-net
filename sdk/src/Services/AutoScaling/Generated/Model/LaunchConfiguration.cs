@@ -94,7 +94,8 @@ namespace Amazon.AutoScaling.Model
         /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter
         /// can only be used if you are launching EC2-Classic instances. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+        /// EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string ClassicLinkVPCId
@@ -115,7 +116,8 @@ namespace Amazon.AutoScaling.Model
         /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
         /// This parameter is required if you specify a ClassicLink-enabled VPC, and cannot be
         /// used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+        /// EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups

@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation detaches only Classic Load Balancers. If you have Application Load
-    /// Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+    /// Balancers or Network Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
     /// </para>
     ///  
     /// <para>

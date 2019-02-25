@@ -35,8 +35,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// If you exceed your maximum limit of launch configurations, the call fails. For information
     /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
-    /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+    /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// One or more mappings that specify how block devices are exposed to the instance. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -123,7 +123,8 @@ namespace Amazon.AutoScaling.Model
         /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter
         /// is supported only if you are launching EC2-Classic instances. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+        /// EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string ClassicLinkVPCId
@@ -144,7 +145,8 @@ namespace Amazon.AutoScaling.Model
         /// The IDs of one or more security groups for the specified ClassicLink-enabled VPC.
         /// This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
         /// otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+        /// EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups
@@ -167,7 +169,7 @@ namespace Amazon.AutoScaling.Model
         /// EBS and an optimized configuration stack to provide optimal I/O performance. This
         /// optimization is not available with all instance types. Additional usage charges apply.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-        /// EBS-Optimized Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -193,9 +195,9 @@ namespace Amazon.AutoScaling.Model
         /// EC2 instances launched with an IAM role automatically have AWS security credentials
         /// available. You can use IAM roles with Amazon EC2 Auto Scaling to automatically enable
         /// applications running on your EC2 instances to securely access other AWS resources.
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Launch
-        /// Auto Scaling Instances with an IAM Role</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
+        /// an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string IamInstanceProfile
@@ -222,7 +224,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-        /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string ImageId
@@ -303,7 +305,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For information about available instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
+        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> 
         /// </para>
         /// </summary>
         public string InstanceType
@@ -340,7 +342,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property KeyName. 
         /// <para>
         /// The name of the key pair. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-        /// EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string KeyName
@@ -440,7 +442,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// If your instances are launched in EC2-Classic, you can either specify security group
         /// names or the security group IDs. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2 Security Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>
@@ -488,7 +490,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The user data to make available to the launched EC2 instances. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string UserData

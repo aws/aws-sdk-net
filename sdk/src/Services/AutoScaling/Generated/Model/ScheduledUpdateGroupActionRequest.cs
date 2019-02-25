@@ -123,8 +123,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurring schedule for the action, in Unix cron syntax format. For more information
-        /// about this format, see <a href="http://crontab.org">Crontab</a>.
+        /// The recurring schedule for the action, in Unix cron syntax format. This format consists
+        /// of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+        /// [Day_of_Week]. For more information about this format, see <a href="http://crontab.org">Crontab</a>.
         /// </para>
         /// </summary>
         public string Recurrence

@@ -355,6 +355,11 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether newly launched instances are protected from termination by Auto
         /// Scaling when scaling in.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         public bool NewInstancesProtectedFromScaleIn
         {
@@ -373,7 +378,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the placement group into which to launch your instances, if any. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string PlacementGroup

@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerTargetGroups operation.
-    /// Attaches one or more target groups to the specified Auto Scaling group.
+    /// Attaches one or more target groups to the specified Auto Scaling group. 
     /// 
     ///  
     /// <para>
@@ -38,7 +38,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attach
+    /// With Application Load Balancers and Network Load Balancers, instances are registered
+    /// as targets with a target group. With Classic Load Balancers, instances are registered
+    /// with the load balancer. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
     /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
     /// Guide</i>.
     /// </para>

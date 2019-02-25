@@ -40,8 +40,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
-        /// The names of the Auto Scaling groups. You can specify up to <code>MaxRecords</code>
-        /// names. If you omit this parameter, all Auto Scaling groups are described.
+        /// The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters.
+        /// By default, you can only specify up to 50 names. You can optionally increase this
+        /// limit using the <code>MaxRecords</code> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, all Auto Scaling groups are described.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames
@@ -60,7 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of items to return with this call. The default value is 50 and
-        /// the maximum value is 100.
+        /// the maximum value is 100. 
         /// </para>
         /// </summary>
         public int MaxRecords

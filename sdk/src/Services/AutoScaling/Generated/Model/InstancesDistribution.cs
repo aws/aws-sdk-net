@@ -174,8 +174,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotMaxPrice. 
         /// <para>
         /// The maximum price per unit hour that you are willing to pay for a Spot Instance. If
-        /// you leave this value blank (which is the default), the maximum Spot price is set at
-        /// the On-Demand price. 
+        /// you leave the value of this parameter blank (which is the default), the maximum Spot
+        /// price is set at the On-Demand price.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a value that you previously set, include the parameter but leave the value
+        /// blank.
         /// </para>
         /// </summary>
         public string SpotMaxPrice

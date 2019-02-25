@@ -35,8 +35,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
     /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
-    /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+    /// EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -295,12 +295,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-        /// instead.
+        /// One or more Classic Load Balancers. To specify an Application Load Balancer or a Network
+        /// Load Balancer, use <code>TargetGroupARNs</code> instead.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
         /// a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.
         /// </para>
@@ -378,6 +378,12 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether newly launched instances are protected from termination by Auto
         /// Scaling when scaling in.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about preventing instances from terminating on scale in, see
+        /// <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         public bool NewInstancesProtectedFromScaleIn
         {
@@ -396,7 +402,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the placement group into which to launch your instances, if any. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string PlacementGroup
@@ -482,8 +488,8 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-        /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
-        /// User Guide</i>.
+        /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
