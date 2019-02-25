@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net45</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL35;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -17,12 +17,13 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
-    <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
     <NoWarn>CS1591</NoWarn>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>	
+	<OutputPath>bin\$(Configuration)\net35</OutputPath>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup>    
+    <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
   </ItemGroup>
