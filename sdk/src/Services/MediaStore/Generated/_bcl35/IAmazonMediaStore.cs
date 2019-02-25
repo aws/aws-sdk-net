@@ -253,7 +253,8 @@ namespace Amazon.MediaStore
 
 
         /// <summary>
-        /// Removes an object lifecycle policy from a container.
+        /// Removes an object lifecycle policy from a container. It takes up to 20 minutes for
+        /// the change to take effect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// 
@@ -650,6 +651,11 @@ namespace Amazon.MediaStore
         /// add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
         /// the first applicable rule listed.
         /// </para>
+        ///  
+        /// <para>
+        /// To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin
+        /// Resource Sharing (CORS) in AWS Elemental MediaStore</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy service method.</param>
         /// 
@@ -700,6 +706,13 @@ namespace Amazon.MediaStore
         /// <summary>
         /// Writes an object lifecycle policy to a container. If the container already has an
         /// object lifecycle policy, the service replaces the existing policy with the new policy.
+        /// It takes up to 20 minutes for the change to take effect.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components
+        /// of an Object Lifecycle Policy</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
         /// 
@@ -741,6 +754,108 @@ namespace Amazon.MediaStore
         /// <returns>Returns a  PutLifecyclePolicyResult from MediaStore.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         PutLifecyclePolicyResponse EndPutLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartAccessLogging
+
+
+        /// <summary>
+        /// Starts access logging on the specified container. When you enable access logging on
+        /// a container, MediaStore delivers access logs for objects stored in that container
+        /// to Amazon CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging service method.</param>
+        /// 
+        /// <returns>The response from the StartAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        StartAccessLoggingResponse StartAccessLogging(StartAccessLoggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging operation on AmazonMediaStoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAccessLogging
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        IAsyncResult BeginStartAccessLogging(StartAccessLoggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAccessLogging.</param>
+        /// 
+        /// <returns>Returns a  StartAccessLoggingResult from MediaStore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        StartAccessLoggingResponse EndStartAccessLogging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopAccessLogging
+
+
+        /// <summary>
+        /// Stops access logging on the specified container. When you stop access logging on a
+        /// container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access
+        /// logs are not saved and are not retrievable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging service method.</param>
+        /// 
+        /// <returns>The response from the StopAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        StopAccessLoggingResponse StopAccessLogging(StopAccessLoggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging operation on AmazonMediaStoreClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAccessLogging
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        IAsyncResult BeginStopAccessLogging(StopAccessLoggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAccessLogging.</param>
+        /// 
+        /// <returns>Returns a  StopAccessLoggingResult from MediaStore.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        StopAccessLoggingResponse EndStopAccessLogging(IAsyncResult asyncResult);
 
         #endregion
         

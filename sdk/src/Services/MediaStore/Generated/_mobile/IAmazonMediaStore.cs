@@ -257,6 +257,40 @@ namespace Amazon.MediaStore
         Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region  StartAccessLogging
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        Task<StartAccessLoggingResponse> StartAccessLoggingAsync(StartAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopAccessLogging
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        Task<StopAccessLoggingResponse> StopAccessLoggingAsync(StopAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
     }
 }

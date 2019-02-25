@@ -33,11 +33,34 @@ namespace Amazon.MediaStore.Model
     /// </summary>
     public partial class Container
     {
+        private bool? _accessLoggingEnabled;
         private string _arn;
         private DateTime? _creationTime;
         private string _endpoint;
         private string _name;
         private ContainerStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AccessLoggingEnabled. 
+        /// <para>
+        /// The state of access logging on the container. This value is <code>false</code> by
+        /// default, indicating that AWS Elemental MediaStore does not send access logs to Amazon
+        /// CloudWatch Logs. When you enable access logging on the container, MediaStore changes
+        /// this value to <code>true</code>, indicating that the service delivers access logs
+        /// for objects stored in that container to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public bool AccessLoggingEnabled
+        {
+            get { return this._accessLoggingEnabled.GetValueOrDefault(); }
+            set { this._accessLoggingEnabled = value; }
+        }
+
+        // Check to see if AccessLoggingEnabled property is set
+        internal bool IsSetAccessLoggingEnabled()
+        {
+            return this._accessLoggingEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ARN. 

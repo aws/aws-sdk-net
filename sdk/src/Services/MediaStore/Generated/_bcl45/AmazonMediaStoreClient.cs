@@ -456,7 +456,8 @@ namespace Amazon.MediaStore
 
 
         /// <summary>
-        /// Removes an object lifecycle policy from a container.
+        /// Removes an object lifecycle policy from a container. It takes up to 20 minutes for
+        /// the change to take effect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// 
@@ -853,6 +854,11 @@ namespace Amazon.MediaStore
         /// add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
         /// the first applicable rule listed.
         /// </para>
+        ///  
+        /// <para>
+        /// To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin
+        /// Resource Sharing (CORS) in AWS Elemental MediaStore</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy service method.</param>
         /// 
@@ -903,6 +909,13 @@ namespace Amazon.MediaStore
         /// <summary>
         /// Writes an object lifecycle policy to a container. If the container already has an
         /// object lifecycle policy, the service replaces the existing policy with the new policy.
+        /// It takes up to 20 minutes for the change to take effect.
+        /// 
+        ///  
+        /// <para>
+        /// For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components
+        /// of an Object Lifecycle Policy</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
         /// 
@@ -943,6 +956,108 @@ namespace Amazon.MediaStore
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutLifecyclePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAccessLogging
+
+
+        /// <summary>
+        /// Starts access logging on the specified container. When you enable access logging on
+        /// a container, MediaStore delivers access logs for objects stored in that container
+        /// to Amazon CloudWatch Logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging service method.</param>
+        /// 
+        /// <returns>The response from the StartAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        public virtual StartAccessLoggingResponse StartAccessLogging(StartAccessLoggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<StartAccessLoggingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        public virtual Task<StartAccessLoggingResponse> StartAccessLoggingAsync(StartAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAccessLoggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAccessLogging
+
+
+        /// <summary>
+        /// Stops access logging on the specified container. When you stop access logging on a
+        /// container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access
+        /// logs are not saved and are not retrievable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging service method.</param>
+        /// 
+        /// <returns>The response from the StopAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        public virtual StopAccessLoggingResponse StopAccessLogging(StopAccessLoggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<StopAccessLoggingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        public virtual Task<StopAccessLoggingResponse> StopAccessLoggingAsync(StopAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAccessLoggingResponse>(request, options, cancellationToken);
         }
 
         #endregion

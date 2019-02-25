@@ -42,6 +42,11 @@ namespace Amazon.MediaStore.Model
     /// add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
     /// the first applicable rule listed.
     /// </para>
+    ///  
+    /// <para>
+    /// To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin
+    /// Resource Sharing (CORS) in AWS Elemental MediaStore</a>.
+    /// </para>
     /// </summary>
     public partial class PutCorsPolicyRequest : AmazonMediaStoreRequest
     {

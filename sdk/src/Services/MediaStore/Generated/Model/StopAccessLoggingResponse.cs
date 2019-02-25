@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Removes an object lifecycle policy from a container. It takes up to 20 minutes for
-    /// the change to take effect.
+    /// This is the response object from the StopAccessLogging operation.
     /// </summary>
-    public partial class DeleteLifecyclePolicyRequest : AmazonMediaStoreRequest
+    public partial class StopAccessLoggingResponse : AmazonWebServiceResponse
     {
-        private string _containerName;
-
-        /// <summary>
-        /// Gets and sets the property ContainerName. 
-        /// <para>
-        /// The name of the container that holds the object lifecycle policy.
-        /// </para>
-        /// </summary>
-        public string ContainerName
-        {
-            get { return this._containerName; }
-            set { this._containerName = value; }
-        }
-
-        // Check to see if ContainerName property is set
-        internal bool IsSetContainerName()
-        {
-            return this._containerName != null;
-        }
 
     }
 }

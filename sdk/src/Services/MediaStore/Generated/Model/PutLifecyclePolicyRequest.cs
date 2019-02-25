@@ -31,6 +31,13 @@ namespace Amazon.MediaStore.Model
     /// Container for the parameters to the PutLifecyclePolicy operation.
     /// Writes an object lifecycle policy to a container. If the container already has an
     /// object lifecycle policy, the service replaces the existing policy with the new policy.
+    /// It takes up to 20 minutes for the change to take effect.
+    /// 
+    ///  
+    /// <para>
+    /// For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components
+    /// of an Object Lifecycle Policy</a>.
+    /// </para>
     /// </summary>
     public partial class PutLifecyclePolicyRequest : AmazonMediaStoreRequest
     {

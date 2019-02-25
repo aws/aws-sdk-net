@@ -673,5 +673,71 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  StartAccessLogging
+
+        internal virtual StartAccessLoggingResponse StartAccessLogging(StartAccessLoggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<StartAccessLoggingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
+        public virtual Task<StartAccessLoggingResponse> StartAccessLoggingAsync(StartAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAccessLoggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAccessLogging
+
+        internal virtual StopAccessLoggingResponse StopAccessLogging(StopAccessLoggingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
+
+            return Invoke<StopAccessLoggingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAccessLogging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
+        public virtual Task<StopAccessLoggingResponse> StopAccessLoggingAsync(StopAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopAccessLoggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

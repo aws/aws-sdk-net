@@ -74,13 +74,13 @@
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersRequest.NextToken</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
     <pattern>[0-9A-Za-z=/+]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersResponse.NextToken</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
     <pattern>[0-9A-Za-z=/+]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -112,6 +112,18 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.StartAccessLoggingRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.StopAccessLoggingRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.ARN</property>

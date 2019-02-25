@@ -28,18 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Removes an object lifecycle policy from a container. It takes up to 20 minutes for
-    /// the change to take effect.
+    /// Container for the parameters to the StartAccessLogging operation.
+    /// Starts access logging on the specified container. When you enable access logging on
+    /// a container, MediaStore delivers access logs for objects stored in that container
+    /// to Amazon CloudWatch Logs.
     /// </summary>
-    public partial class DeleteLifecyclePolicyRequest : AmazonMediaStoreRequest
+    public partial class StartAccessLoggingRequest : AmazonMediaStoreRequest
     {
         private string _containerName;
 
         /// <summary>
         /// Gets and sets the property ContainerName. 
         /// <para>
-        /// The name of the container that holds the object lifecycle policy.
+        /// The name of the container that you want to start access logging on.
         /// </para>
         /// </summary>
         public string ContainerName
