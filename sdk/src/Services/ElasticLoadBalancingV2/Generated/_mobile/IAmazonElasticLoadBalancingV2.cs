@@ -59,7 +59,7 @@ namespace Amazon.ElasticLoadBalancingV2
     /// <para>
     /// A Classic Load Balancer makes routing and load balancing decisions either at the transport
     /// layer (TCP/SSL) or the application layer (HTTP/HTTPS), and supports either EC2-Classic
-    /// or a VPC. For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+    /// or a VPC. For more information, see the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
     /// Load Balancing User Guide</a>.
     /// </para>
     ///  

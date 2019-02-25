@@ -47,15 +47,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
-        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following attributes are supported by only Application Load Balancers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         ///  <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
         /// </para>
@@ -72,6 +63,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// for the access logs.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by only Application Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
         /// valid range is 1-4000 seconds. The default is 60 seconds.

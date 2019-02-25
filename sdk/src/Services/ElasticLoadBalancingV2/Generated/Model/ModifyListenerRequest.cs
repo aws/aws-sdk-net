@@ -177,7 +177,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property SslPolicy. 
         /// <para>
         /// [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers
-        /// are supported. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+        /// are supported. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
         /// Policies</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>

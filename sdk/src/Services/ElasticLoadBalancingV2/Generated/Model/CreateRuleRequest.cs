@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Rules are evaluated in priority order, from the lowest value to the highest value.
     /// When the conditions for a rule are met, its actions are performed. If the conditions
     /// for no rules are met, the actions for the default rule are performed. For more information,
-    /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+    /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
     /// Rules</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     ///  

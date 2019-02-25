@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _sessionCookieName;
         private long? _sessionTimeout;
         private string _tokenEndpoint;
+        private bool? _useExistingClientSecret;
         private string _userInfoEndpoint;
 
         /// <summary>
@@ -104,7 +105,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property ClientSecret. 
         /// <para>
-        /// The OAuth 2.0 client secret.
+        /// The OAuth 2.0 client secret. This parameter is required if you are creating a rule.
+        /// If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code>
+        /// to true.
         /// </para>
         /// </summary>
         public string ClientSecret
@@ -247,6 +250,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTokenEndpoint()
         {
             return this._tokenEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseExistingClientSecret. 
+        /// <para>
+        /// Indicates whether to use the existing client secret when modifying a rule. If you
+        /// are creating a rule, you can omit this parameter or set it to false.
+        /// </para>
+        /// </summary>
+        public bool UseExistingClientSecret
+        {
+            get { return this._useExistingClientSecret.GetValueOrDefault(); }
+            set { this._useExistingClientSecret = value; }
+        }
+
+        // Check to see if UseExistingClientSecret property is set
+        internal bool IsSetUseExistingClientSecret()
+        {
+            return this._useExistingClientSecret.HasValue; 
         }
 
         /// <summary>
