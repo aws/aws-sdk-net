@@ -43,9 +43,18 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	}
 	if(this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
 	{
+		if(this.Config.ServiceModel.Type != ServiceType.Rest_Json)
+		{
 #>
 			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion#>";
 <#
+		}
+		else
+		{
+#>
+			request.Headers["Content-Type"] = "application/json";
+<#
+		}
 	}
 #>
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion#>";            

@@ -55,7 +55,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateThingShadowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
             request.HttpMethod = "POST";
 

@@ -55,7 +55,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartNextPendingJobExecutionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTJobsDataPlane");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-29";            
             request.HttpMethod = "PUT";
 

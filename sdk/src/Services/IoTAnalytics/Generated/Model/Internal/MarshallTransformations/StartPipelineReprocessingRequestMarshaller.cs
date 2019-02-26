@@ -55,7 +55,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartPipelineReprocessingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTAnalytics");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
             request.HttpMethod = "POST";
 

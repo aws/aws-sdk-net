@@ -55,7 +55,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListIncomingTypedLinksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudDirectory");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
             request.HttpMethod = "POST";
 

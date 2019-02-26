@@ -55,7 +55,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public IRequest Marshall(ModifyMountTargetSecurityGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
             request.HttpMethod = "PUT";
 

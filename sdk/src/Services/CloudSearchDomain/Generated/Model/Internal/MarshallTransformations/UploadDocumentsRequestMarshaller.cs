@@ -55,7 +55,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public IRequest Marshall(UploadDocumentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";            
             request.HttpMethod = "POST";
 

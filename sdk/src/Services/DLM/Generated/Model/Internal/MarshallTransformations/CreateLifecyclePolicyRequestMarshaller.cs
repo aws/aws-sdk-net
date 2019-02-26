@@ -55,7 +55,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateLifecyclePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DLM");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
             request.HttpMethod = "POST";
 

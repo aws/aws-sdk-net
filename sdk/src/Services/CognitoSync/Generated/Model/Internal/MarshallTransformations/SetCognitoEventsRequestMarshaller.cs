@@ -55,7 +55,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public IRequest Marshall(SetCognitoEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
             request.HttpMethod = "POST";
 

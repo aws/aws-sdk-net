@@ -55,7 +55,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateThreatIntelSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
             request.HttpMethod = "POST";
 

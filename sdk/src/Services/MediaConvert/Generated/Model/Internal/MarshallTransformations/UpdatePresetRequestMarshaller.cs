@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdatePresetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConvert");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
             request.HttpMethod = "PUT";
 

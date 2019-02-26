@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateAliasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
             request.HttpMethod = "PUT";
 

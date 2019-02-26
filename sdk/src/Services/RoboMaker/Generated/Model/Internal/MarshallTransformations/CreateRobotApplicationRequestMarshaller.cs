@@ -55,7 +55,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateRobotApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RoboMaker");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";            
             request.HttpMethod = "POST";
 

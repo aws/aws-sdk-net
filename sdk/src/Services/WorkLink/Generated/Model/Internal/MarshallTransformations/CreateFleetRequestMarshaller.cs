@@ -55,7 +55,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateFleetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkLink");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";            
             request.HttpMethod = "POST";
 

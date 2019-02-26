@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public IRequest Marshall(UploadMultipartPartRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
             request.HttpMethod = "PUT";
 

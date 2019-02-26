@@ -55,7 +55,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateConfigurationSetEventDestinationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoice");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
             request.HttpMethod = "POST";
 

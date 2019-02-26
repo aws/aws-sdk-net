@@ -55,7 +55,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateClusterVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
             request.HttpMethod = "POST";
 

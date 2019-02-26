@@ -55,7 +55,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         public IRequest Marshall(GetMediaForFragmentListRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoArchivedMedia");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";            
             request.HttpMethod = "POST";
 

@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
             request.HttpMethod = "PUT";
 

@@ -55,7 +55,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartSpeechSynthesisTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Polly");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
             request.HttpMethod = "POST";
 

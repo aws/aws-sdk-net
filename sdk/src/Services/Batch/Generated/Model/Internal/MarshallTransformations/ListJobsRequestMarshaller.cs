@@ -55,7 +55,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListJobsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Batch");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-08-10";            
             request.HttpMethod = "POST";
 

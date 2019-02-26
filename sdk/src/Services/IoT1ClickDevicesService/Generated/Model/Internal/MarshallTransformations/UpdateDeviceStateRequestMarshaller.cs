@@ -55,7 +55,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDeviceStateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickDevicesService");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "PUT";
 

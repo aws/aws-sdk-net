@@ -55,7 +55,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateApplicationSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
             request.HttpMethod = "PUT";
 
