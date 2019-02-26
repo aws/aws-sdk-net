@@ -226,6 +226,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.RateMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scte35Esam", targetDepth))
+                {
+                    var unmarshaller = M2tsScte35EsamUnmarshaller.Instance;
+                    unmarshalledObject.Scte35Esam = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35Pid", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

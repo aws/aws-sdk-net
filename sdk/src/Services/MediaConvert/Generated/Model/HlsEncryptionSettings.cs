@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
         private string _constantInitializationVector;
         private HlsEncryptionType _encryptionMethod;
         private HlsInitializationVectorInManifest _initializationVectorInManifest;
+        private HlsOfflineEncrypted _offlineEncrypted;
         private SpekeKeyProvider _spekeKeyProvider;
         private StaticKeyProvider _staticKeyProvider;
         private HlsKeyProviderType _type;
@@ -84,6 +85,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInitializationVectorInManifest()
         {
             return this._initializationVectorInManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfflineEncrypted.
+        /// </summary>
+        public HlsOfflineEncrypted OfflineEncrypted
+        {
+            get { return this._offlineEncrypted; }
+            set { this._offlineEncrypted = value; }
+        }
+
+        // Check to see if OfflineEncrypted property is set
+        internal bool IsSetOfflineEncrypted()
+        {
+            return this._offlineEncrypted != null;
         }
 
         /// <summary>

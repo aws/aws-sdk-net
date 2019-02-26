@@ -118,6 +118,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusUpdateIntervalInSecs", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StatusUpdateIntervalInSecs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

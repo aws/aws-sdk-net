@@ -28,26 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelJob operation.
-    /// Permanently cancel a job. Once you have canceled a job, you can't start it again.
+    /// ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
     /// </summary>
-    public partial class CancelJobRequest : AmazonMediaConvertRequest
+    public partial class EsamManifestConfirmConditionNotification
     {
-        private string _id;
+        private string _mccXml;
 
         /// <summary>
-        /// Gets and sets the property Id. The Job ID of the job to be cancelled.
+        /// Gets and sets the property MccXml. Provide your ESAM ManifestConfirmConditionNotification
+        /// XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025.
+        /// The transcoder will use the Manifest Conditioning instructions in the message that
+        /// you supply.
         /// </summary>
-        public string Id
+        public string MccXml
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._mccXml; }
+            set { this._mccXml = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if MccXml property is set
+        internal bool IsSetMccXml()
         {
-            return this._id != null;
+            return this._mccXml != null;
         }
 
     }

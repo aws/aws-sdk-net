@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VideoSelector Marshaller
+    /// EsamSettings Marshaller
     /// </summary>       
-    public class VideoSelectorMarshaller : IRequestMarshaller<VideoSelector, JsonMarshallerContext> 
+    public class EsamSettingsMarshaller : IRequestMarshaller<EsamSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,47 +43,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VideoSelector requestObject, JsonMarshallerContext context)
+        public void Marshall(EsamSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetColorSpace())
+            if(requestObject.IsSetManifestConfirmConditionNotification())
             {
-                context.Writer.WritePropertyName("colorSpace");
-                context.Writer.Write(requestObject.ColorSpace);
-            }
-
-            if(requestObject.IsSetColorSpaceUsage())
-            {
-                context.Writer.WritePropertyName("colorSpaceUsage");
-                context.Writer.Write(requestObject.ColorSpaceUsage);
-            }
-
-            if(requestObject.IsSetHdr10Metadata())
-            {
-                context.Writer.WritePropertyName("hdr10Metadata");
+                context.Writer.WritePropertyName("manifestConfirmConditionNotification");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = Hdr10MetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.Hdr10Metadata, context);
+                var marshaller = EsamManifestConfirmConditionNotificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManifestConfirmConditionNotification, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPid())
+            if(requestObject.IsSetResponseSignalPreroll())
             {
-                context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid);
+                context.Writer.WritePropertyName("responseSignalPreroll");
+                context.Writer.Write(requestObject.ResponseSignalPreroll);
             }
 
-            if(requestObject.IsSetProgramNumber())
+            if(requestObject.IsSetSignalProcessingNotification())
             {
-                context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber);
-            }
+                context.Writer.WritePropertyName("signalProcessingNotification");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetRotate())
-            {
-                context.Writer.WritePropertyName("rotate");
-                context.Writer.Write(requestObject.Rotate);
+                var marshaller = EsamSignalProcessingNotificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SignalProcessingNotification, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -91,7 +78,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static VideoSelectorMarshaller Instance = new VideoSelectorMarshaller();
+        public readonly static EsamSettingsMarshaller Instance = new EsamSettingsMarshaller();
 
     }
 }

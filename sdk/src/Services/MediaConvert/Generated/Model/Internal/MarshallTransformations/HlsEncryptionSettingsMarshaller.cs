@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InitializationVectorInManifest);
             }
 
+            if(requestObject.IsSetOfflineEncrypted())
+            {
+                context.Writer.WritePropertyName("offlineEncrypted");
+                context.Writer.Write(requestObject.OfflineEncrypted);
+            }
+
             if(requestObject.IsSetSpekeKeyProvider())
             {
                 context.Writer.WritePropertyName("spekeKeyProvider");

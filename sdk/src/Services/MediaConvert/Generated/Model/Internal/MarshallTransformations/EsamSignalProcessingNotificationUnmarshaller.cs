@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoSelector Object
+    /// Response Unmarshaller for EsamSignalProcessingNotification Object
     /// </summary>  
-    public class VideoSelectorUnmarshaller : IUnmarshaller<VideoSelector, XmlUnmarshallerContext>, IUnmarshaller<VideoSelector, JsonUnmarshallerContext>
+    public class EsamSignalProcessingNotificationUnmarshaller : IUnmarshaller<EsamSignalProcessingNotification, XmlUnmarshallerContext>, IUnmarshaller<EsamSignalProcessingNotification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoSelector IUnmarshaller<VideoSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EsamSignalProcessingNotification IUnmarshaller<EsamSignalProcessingNotification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,21 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoSelector Unmarshall(JsonUnmarshallerContext context)
+        public EsamSignalProcessingNotification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoSelector unmarshalledObject = new VideoSelector();
+            EsamSignalProcessingNotification unmarshalledObject = new EsamSignalProcessingNotification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("colorSpace", targetDepth))
+                if (context.TestExpression("sccXml", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("colorSpaceUsage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hdr10Metadata", targetDepth))
-                {
-                    var unmarshaller = Hdr10MetadataUnmarshaller.Instance;
-                    unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pid", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Pid = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("programNumber", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rotate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rotate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SccXml = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoSelectorUnmarshaller _instance = new VideoSelectorUnmarshaller();        
+        private static EsamSignalProcessingNotificationUnmarshaller _instance = new EsamSignalProcessingNotificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoSelectorUnmarshaller Instance
+        public static EsamSignalProcessingNotificationUnmarshaller Instance
         {
             get
             {

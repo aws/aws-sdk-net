@@ -315,8 +315,7 @@ namespace Amazon.MediaConvert
         #region  CancelJob
 
         /// <summary>
-        /// Permanently remove a job from a queue. Once you have canceled a job, you can't start
-        /// it again. You can't delete a running job.
+        /// Permanently cancel a job. Once you have canceled a job, you can't start it again.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 

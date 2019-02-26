@@ -28,7 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for M2TS Container.
+    /// MPEG-2 TS container settings. These apply to outputs in a File output group when the
+    /// output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets,
+    /// data is organized by the program map table (PMT). Each transport stream program contains
+    /// subsets of data, including audio, video, and metadata. Each of these subsets of data
+    /// has a numerical label called a packet identifier (PID). Each transport stream program
+    /// corresponds to one MediaConvert output. The PMT lists the types of data in a program
+    /// along with their PID. Downstream systems and players use the program map table to
+    /// look up the PID for each type of data it accesses and then uses the PIDs to locate
+    /// specific data within the asset.
     /// </summary>
     public partial class M2tsSettings
     {
@@ -59,6 +67,7 @@ namespace Amazon.MediaConvert.Model
         private int? _privateMetadataPid;
         private int? _programNumber;
         private M2tsRateMode _rateMode;
+        private M2tsScte35Esam _scte35Esam;
         private int? _scte35Pid;
         private M2tsScte35Source _scte35Source;
         private M2tsSegmentationMarkers _segmentationMarkers;
@@ -100,9 +109,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AudioPids. Packet Identifier (PID) of the elementary audio
-        /// stream(s) in the transport stream. Multiple values are accepted, and can be entered
-        /// in ranges and/or by comma separation.
+        /// Gets and sets the property AudioPids. Specify the packet identifiers (PIDs) for any
+        /// elementary audio streams you include in this output. Specify multiple PIDs as a JSON
+        /// array. Default is the range 482-492.
         /// </summary>
         public List<int> AudioPids
         {
@@ -117,8 +126,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. The output bitrate of the transport stream in
-        /// bits per second. Setting to 0 lets the muxer automatically determine the appropriate
+        /// Gets and sets the property Bitrate. Specify the output bitrate of the transport stream
+        /// in bits per second. Setting to 0 lets the muxer automatically determine the appropriate
         /// bitrate. Other common values are 3750000, 7500000, and 15000000.
         /// </summary>
         public int Bitrate
@@ -179,9 +188,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbSubPids. Packet Identifier (PID) for input source DVB
-        /// Subtitle data to this output. Multiple values are accepted, and can be entered in
-        /// ranges and/or by comma separation.
+        /// Gets and sets the property DvbSubPids. Specify the packet identifiers (PIDs) for DVB
+        /// subtitle data included in this output. Specify multiple PIDs as a JSON array. Default
+        /// is the range 460-479.
         /// </summary>
         public List<int> DvbSubPids
         {
@@ -211,8 +220,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbTeletextPid. Packet Identifier (PID) for input source
-        /// DVB Teletext data to this output.
+        /// Gets and sets the property DvbTeletextPid. Specify the packet identifier (PID) for
+        /// DVB teletext data you include in this output. Default is 499.
         /// </summary>
         public int DvbTeletextPid
         {
@@ -272,7 +281,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ForceTsVideoEbpOrder.
+        /// Gets and sets the property ForceTsVideoEbpOrder. Keep the default value (DEFAULT)
+        /// unless you know that your audio EBP markers are incorrectly appearing before your
+        /// video EBP markers. To correct this problem, set this value to Force (FORCE).
         /// </summary>
         public M2tsForceTsVideoEbpOrder ForceTsVideoEbpOrder
         {
@@ -287,8 +298,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FragmentTime. The length in seconds of each fragment. Only
-        /// used with EBP markers.
+        /// Gets and sets the property FragmentTime. The length, in seconds, of each fragment.
+        /// Only used with EBP markers.
         /// </summary>
         public double FragmentTime
         {
@@ -303,8 +314,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxPcrInterval. Maximum time in milliseconds between Program
-        /// Clock References (PCRs) inserted into the transport stream.
+        /// Gets and sets the property MaxPcrInterval. Specify the maximum time, in milliseconds,
+        /// between Program Clock References (PCRs) inserted into the transport stream.
         /// </summary>
         public int MaxPcrInterval
         {
@@ -402,9 +413,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PcrPid. Packet Identifier (PID) of the Program Clock Reference
-        /// (PCR) in the transport stream. When no value is given, the encoder will assign the
-        /// same value as the Video PID.
+        /// Gets and sets the property PcrPid. Specify the packet identifier (PID) for the program
+        /// clock reference (PCR) in this output. If you do not specify a value, the service will
+        /// use the value for Video PID (VideoPid).
         /// </summary>
         public int PcrPid
         {
@@ -419,8 +430,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PmtInterval. The number of milliseconds between instances
-        /// of this table in the output transport stream.
+        /// Gets and sets the property PmtInterval. Specify the number of milliseconds between
+        /// instances of the program map table (PMT) in the output transport stream.
         /// </summary>
         public int PmtInterval
         {
@@ -435,8 +446,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PmtPid. Packet Identifier (PID) for the Program Map Table
-        /// (PMT) in the transport stream.
+        /// Gets and sets the property PmtPid. Specify the packet identifier (PID) for the program
+        /// map table (PMT) itself. Default is 480.
         /// </summary>
         public int PmtPid
         {
@@ -451,8 +462,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateMetadataPid. Packet Identifier (PID) of the private
-        /// metadata stream in the transport stream.
+        /// Gets and sets the property PrivateMetadataPid. Specify the packet identifier (PID)
+        /// of the private metadata stream. Default is 503.
         /// </summary>
         public int PrivateMetadataPid
         {
@@ -467,8 +478,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramNumber. The value of the program number field in
-        /// the Program Map Table.
+        /// Gets and sets the property ProgramNumber. Use Program number (programNumber) to specify
+        /// the program number used in the program map table (PMT) for this output. Default is
+        /// 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+        /// used for organizing data.
         /// </summary>
         public int ProgramNumber
         {
@@ -498,8 +511,25 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35Pid. Packet Identifier (PID) of the SCTE-35 stream
-        /// in the transport stream.
+        /// Gets and sets the property Scte35Esam. Include this in your job settings to put SCTE-35
+        /// markers in your HLS and transport stream outputs at the insertion points that you
+        /// specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+        /// </summary>
+        public M2tsScte35Esam Scte35Esam
+        {
+            get { return this._scte35Esam; }
+            set { this._scte35Esam = value; }
+        }
+
+        // Check to see if Scte35Esam property is set
+        internal bool IsSetScte35Esam()
+        {
+            return this._scte35Esam != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35Pid. Specify the packet identifier (PID) of the SCTE-35
+        /// stream in the transport stream.
         /// </summary>
         public int Scte35Pid
         {
@@ -559,8 +589,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentationTime. The length in seconds of each segment.
-        /// Required unless markers is set to _none_.
+        /// Gets and sets the property SegmentationTime. Specify the length, in seconds, of each
+        /// segment. Required unless markers is set to _none_.
         /// </summary>
         public double SegmentationTime
         {
@@ -575,8 +605,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
-        /// metadata stream in the transport stream.
+        /// Gets and sets the property TimedMetadataPid. Specify the packet identifier (PID) for
+        /// timed metadata in this output. Default is 502.
         /// </summary>
         public int TimedMetadataPid
         {
@@ -591,8 +621,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransportStreamId. The value of the transport stream ID
-        /// field in the Program Map Table.
+        /// Gets and sets the property TransportStreamId. Specify the ID for the transport stream
+        /// itself in the program map table for this output. Transport stream IDs and program
+        /// map tables are parts of MPEG-2 transport stream containers, used for organizing data.
         /// </summary>
         public int TransportStreamId
         {
@@ -607,8 +638,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoPid. Packet Identifier (PID) of the elementary video
-        /// stream in the transport stream.
+        /// Gets and sets the property VideoPid. Specify the packet identifier (PID) of the elementary
+        /// video stream in the transport stream.
         /// </summary>
         public int VideoPid
         {

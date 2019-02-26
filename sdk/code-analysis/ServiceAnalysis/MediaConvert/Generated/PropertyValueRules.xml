@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateJobRequest.StatusUpdateIntervalInSecs</property>
+    <min>10</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateJobTemplateRequest.StatusUpdateIntervalInSecs</property>
+    <min>10</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -19,6 +29,11 @@
     <property>Amazon.MediaConvert.Model.ListQueuesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.StatusUpdateIntervalInSecs</property>
+    <min>10</min>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.Bitrate</property>
@@ -365,6 +380,19 @@
     <property>Amazon.MediaConvert.Model.EmbeddedSourceSettings.Source608TrackNumber</property>
     <min>1</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.EsamManifestConfirmConditionNotification.MccXml</property>
+    <pattern>^\s*&lt;(.|\n)*ManifestConfirmConditionNotification(.|\n)*&gt;\s*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.EsamSettings.ResponseSignalPreroll</property>
+    <min>0</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.EsamSignalProcessingNotification.SccXml</property>
+    <pattern>^\s*&lt;(.|\n)*SignalProcessingNotification(.|\n)*&gt;\s*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FileGroupSettings.Destination</property>
@@ -779,14 +807,29 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Job.StatusUpdateIntervalInSecs</property>
+    <min>10</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobSettings.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.JobTemplate.StatusUpdateIntervalInSecs</property>
+    <min>10</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobTemplateSettings.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M2tsScte35Esam.Scte35EsamPid</property>
+    <min>32</min>
+    <max>8182</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.M2tsSettings.AudioFramesPerPes</property>

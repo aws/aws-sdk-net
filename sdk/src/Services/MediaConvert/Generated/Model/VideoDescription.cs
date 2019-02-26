@@ -64,7 +64,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AntiAlias.
+        /// Gets and sets the property AntiAlias. You no longer need to specify the anti-alias
+        /// filter. It's now automatically applied to all outputs. This property is deprecated.
         /// </summary>
         public AntiAlias AntiAlias
         {
@@ -224,11 +225,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sharpness. Use Sharpness (Sharpness)setting to specify
+        /// Gets and sets the property Sharpness. Use Sharpness (Sharpness) setting to specify
         /// the strength of anti-aliasing. This setting changes the width of the anti-alias filter
         /// kernel used for scaling. Sharpness only applies if your output resolution is different
-        /// from your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is
-        /// the softest setting, 100 the sharpest, and 50 recommended for most content.
+        /// from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended
+        /// for most content.
         /// </summary>
         public int Sharpness
         {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoSelector Object
+    /// Response Unmarshaller for EsamSettings Object
     /// </summary>  
-    public class VideoSelectorUnmarshaller : IUnmarshaller<VideoSelector, XmlUnmarshallerContext>, IUnmarshaller<VideoSelector, JsonUnmarshallerContext>
+    public class EsamSettingsUnmarshaller : IUnmarshaller<EsamSettings, XmlUnmarshallerContext>, IUnmarshaller<EsamSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VideoSelector IUnmarshaller<VideoSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EsamSettings IUnmarshaller<EsamSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VideoSelector Unmarshall(JsonUnmarshallerContext context)
+        public EsamSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VideoSelector unmarshalledObject = new VideoSelector();
+            EsamSettings unmarshalledObject = new EsamSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("colorSpace", targetDepth))
+                if (context.TestExpression("manifestConfirmConditionNotification", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EsamManifestConfirmConditionNotificationUnmarshaller.Instance;
+                    unmarshalledObject.ManifestConfirmConditionNotification = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("colorSpaceUsage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hdr10Metadata", targetDepth))
-                {
-                    var unmarshaller = Hdr10MetadataUnmarshaller.Instance;
-                    unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pid", targetDepth))
+                if (context.TestExpression("responseSignalPreroll", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Pid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResponseSignalPreroll = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("programNumber", targetDepth))
+                if (context.TestExpression("signalProcessingNotification", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rotate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Rotate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EsamSignalProcessingNotificationUnmarshaller.Instance;
+                    unmarshalledObject.SignalProcessingNotification = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoSelectorUnmarshaller _instance = new VideoSelectorUnmarshaller();        
+        private static EsamSettingsUnmarshaller _instance = new EsamSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoSelectorUnmarshaller Instance
+        public static EsamSettingsUnmarshaller Instance
         {
             get
             {

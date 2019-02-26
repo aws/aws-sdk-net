@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         private string _role;
         private JobSettings _settings;
         private JobStatus _status;
+        private long? _statusUpdateIntervalInSecs;
         private Timing _timing;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
@@ -249,6 +250,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusUpdateIntervalInSecs. Specify how often MediaConvert
+        /// sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds,
+        /// between status updates. MediaConvert sends an update at this interval from the time
+        /// the service begins processing your job to the time it completes the transcode or encounters
+        /// an error.
+        /// </summary>
+        public long StatusUpdateIntervalInSecs
+        {
+            get { return this._statusUpdateIntervalInSecs.GetValueOrDefault(); }
+            set { this._statusUpdateIntervalInSecs = value; }
+        }
+
+        // Check to see if StatusUpdateIntervalInSecs property is set
+        internal bool IsSetStatusUpdateIntervalInSecs()
+        {
+            return this._statusUpdateIntervalInSecs.HasValue; 
         }
 
         /// <summary>

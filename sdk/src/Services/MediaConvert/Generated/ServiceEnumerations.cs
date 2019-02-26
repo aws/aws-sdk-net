@@ -7741,6 +7741,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type HlsOfflineEncrypted.
+    /// </summary>
+    public class HlsOfflineEncrypted : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for HlsOfflineEncrypted
+        /// </summary>
+        public static readonly HlsOfflineEncrypted DISABLED = new HlsOfflineEncrypted("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for HlsOfflineEncrypted
+        /// </summary>
+        public static readonly HlsOfflineEncrypted ENABLED = new HlsOfflineEncrypted("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsOfflineEncrypted(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsOfflineEncrypted FindValue(string value)
+        {
+            return FindValue<HlsOfflineEncrypted>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsOfflineEncrypted(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsOutputSelection.
     /// </summary>
     public class HlsOutputSelection : ConstantClass
@@ -8192,6 +8242,68 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputPsiControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputRotate.
+    /// </summary>
+    public class InputRotate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for InputRotate
+        /// </summary>
+        public static readonly InputRotate AUTO = new InputRotate("AUTO");
+        /// <summary>
+        /// Constant DEGREE_0 for InputRotate
+        /// </summary>
+        public static readonly InputRotate DEGREE_0 = new InputRotate("DEGREE_0");
+        /// <summary>
+        /// Constant DEGREES_180 for InputRotate
+        /// </summary>
+        public static readonly InputRotate DEGREES_180 = new InputRotate("DEGREES_180");
+        /// <summary>
+        /// Constant DEGREES_270 for InputRotate
+        /// </summary>
+        public static readonly InputRotate DEGREES_270 = new InputRotate("DEGREES_270");
+        /// <summary>
+        /// Constant DEGREES_90 for InputRotate
+        /// </summary>
+        public static readonly InputRotate DEGREES_90 = new InputRotate("DEGREES_90");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputRotate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputRotate FindValue(string value)
+        {
+            return FindValue<InputRotate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputRotate(string value)
         {
             return FindValue(value);
         }

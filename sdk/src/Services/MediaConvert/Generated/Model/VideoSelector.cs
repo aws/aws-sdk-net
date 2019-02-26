@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private Hdr10Metadata _hdr10Metadata;
         private int? _pid;
         private int? _programNumber;
+        private InputRotate _rotate;
 
         /// <summary>
         /// Gets and sets the property ColorSpace.
@@ -115,6 +116,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProgramNumber()
         {
             return this._programNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rotate.
+        /// </summary>
+        public InputRotate Rotate
+        {
+            get { return this._rotate; }
+            set { this._rotate = value; }
+        }
+
+        // Check to see if Rotate property is set
+        internal bool IsSetRotate()
+        {
+            return this._rotate != null;
         }
 
     }

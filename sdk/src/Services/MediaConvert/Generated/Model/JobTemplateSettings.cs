@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
+        private EsamSettings _esam;
         private List<InputTemplate> _inputs = new List<InputTemplate>();
         private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
@@ -73,6 +74,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAvailBlanking()
         {
             return this._availBlanking != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Esam. Settings for Event Signaling And Messaging (ESAM).
+        /// </summary>
+        public EsamSettings Esam
+        {
+            get { return this._esam; }
+            set { this._esam = value; }
+        }
+
+        // Check to see if Esam property is set
+        internal bool IsSetEsam()
+        {
+            return this._esam != null;
         }
 
         /// <summary>
