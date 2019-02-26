@@ -43,6 +43,7 @@ namespace Amazon.Pinpoint.Model
         private Schedule _schedule;
         private string _segmentId;
         private int? _segmentVersion;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _treatmentDescription;
         private string _treatmentName;
 
@@ -214,6 +215,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSegmentVersion()
         {
             return this._segmentVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The Tags for the campaign.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

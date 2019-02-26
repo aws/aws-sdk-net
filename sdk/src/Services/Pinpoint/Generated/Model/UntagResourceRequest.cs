@@ -28,42 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Application Request.
+    /// Container for the parameters to the UntagResource operation.
+    /// 
     /// </summary>
-    public partial class CreateApplicationRequest
+    public partial class UntagResourceRequest : AmazonPinpointRequest
     {
-        private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Name. The display name of the application. Used in the
-        /// Amazon Pinpoint console.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
-        public string Name
+        public string ResourceArn
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._name != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. The Tags for the app.
+        /// Gets and sets the property TagKeys. The key(s) of tag to be deleted
         /// </summary>
-        public Dictionary<string, string> Tags
+        public List<string> TagKeys
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

@@ -28,62 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Application Response.
+    /// 
     /// </summary>
-    public partial class ApplicationResponse
+    public partial class TagsModel
     {
-        private string _arn;
-        private string _id;
-        private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Arn. The arn for the application.
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. The unique application ID.
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. The display name of the application.
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. The Tags for the application.
+        /// Gets and sets the property Tags.
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -28,42 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Application Request.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateApplicationRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private TagsModel _tagsModel;
 
         /// <summary>
-        /// Gets and sets the property Name. The display name of the application. Used in the
-        /// Amazon Pinpoint console.
+        /// Gets and sets the property TagsModel.
         /// </summary>
-        public string Name
+        public TagsModel TagsModel
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._tagsModel; }
+            set { this._tagsModel = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if TagsModel property is set
+        internal bool IsSetTagsModel()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. The Tags for the app.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tagsModel != null;
         }
 
     }

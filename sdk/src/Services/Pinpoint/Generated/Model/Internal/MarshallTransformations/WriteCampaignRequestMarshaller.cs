@@ -141,6 +141,20 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SegmentVersion);
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
+                {
+                    context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTreatmentDescription())
             {
                 context.Writer.WritePropertyName("TreatmentDescription");

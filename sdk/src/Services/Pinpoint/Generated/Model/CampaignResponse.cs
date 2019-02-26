@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private List<TreatmentResource> _additionalTreatments = new List<TreatmentResource>();
         private string _applicationId;
+        private string _arn;
         private string _creationDate;
         private CampaignState _defaultState;
         private string _description;
@@ -49,6 +50,7 @@ namespace Amazon.Pinpoint.Model
         private string _segmentId;
         private int? _segmentVersion;
         private CampaignState _state;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _treatmentDescription;
         private string _treatmentName;
         private int? _version;
@@ -83,6 +85,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. The arn for the campaign.
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
@@ -316,6 +333,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The Tags for the campaign.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

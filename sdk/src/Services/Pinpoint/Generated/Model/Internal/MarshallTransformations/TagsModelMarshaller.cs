@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WriteSegmentRequest Marshaller
+    /// TagsModel Marshaller
     /// </summary>       
-    public class WriteSegmentRequestMarshaller : IRequestMarshaller<WriteSegmentRequest, JsonMarshallerContext> 
+    public class TagsModelMarshaller : IRequestMarshaller<TagsModel, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WriteSegmentRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(TagsModel requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDimensions())
-            {
-                context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SegmentDimensionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Dimensions, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetSegmentGroups())
-            {
-                context.Writer.WritePropertyName("SegmentGroups");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SegmentGroupListMarshaller.Instance;
-                marshaller.Marshall(requestObject.SegmentGroups, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
@@ -92,7 +64,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static WriteSegmentRequestMarshaller Instance = new WriteSegmentRequestMarshaller();
+        public readonly static TagsModelMarshaller Instance = new TagsModelMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationResponse Object
+    /// Response Unmarshaller for TagsModel Object
     /// </summary>  
-    public class ApplicationResponseUnmarshaller : IUnmarshaller<ApplicationResponse, XmlUnmarshallerContext>, IUnmarshaller<ApplicationResponse, JsonUnmarshallerContext>
+    public class TagsModelUnmarshaller : IUnmarshaller<TagsModel, XmlUnmarshallerContext>, IUnmarshaller<TagsModel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApplicationResponse IUnmarshaller<ApplicationResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TagsModel IUnmarshaller<TagsModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,35 +53,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationResponse Unmarshall(JsonUnmarshallerContext context)
+        public TagsModel Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationResponse unmarshalledObject = new ApplicationResponse();
+            TagsModel unmarshalledObject = new TagsModel();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -94,12 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationResponseUnmarshaller _instance = new ApplicationResponseUnmarshaller();        
+        private static TagsModelUnmarshaller _instance = new TagsModelUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationResponseUnmarshaller Instance
+        public static TagsModelUnmarshaller Instance
         {
             get
             {

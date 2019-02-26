@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class SegmentResponse
     {
         private string _applicationId;
+        private string _arn;
         private string _creationDate;
         private SegmentDimensions _dimensions;
         private string _id;
@@ -41,6 +42,7 @@ namespace Amazon.Pinpoint.Model
         private string _name;
         private SegmentGroupList _segmentGroups;
         private SegmentType _segmentType;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _version;
 
         /// <summary>
@@ -57,6 +59,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. The arn for the segment.
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
@@ -185,6 +202,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSegmentType()
         {
             return this._segmentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The Tags for the segment.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

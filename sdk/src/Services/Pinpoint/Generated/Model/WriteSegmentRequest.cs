@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
         private SegmentDimensions _dimensions;
         private string _name;
         private SegmentGroupList _segmentGroups;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Dimensions. The segment dimensions attributes.
@@ -82,6 +83,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSegmentGroups()
         {
             return this._segmentGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The Tags for the segments.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
