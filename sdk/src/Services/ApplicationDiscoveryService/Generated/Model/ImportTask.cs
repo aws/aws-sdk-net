@@ -121,7 +121,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <para>
         /// If some records failed to be imported we recommend that you correct the records in
         /// the failed entries file and then imports that failed entries file. This prevents you
-        /// frmo having to correct and update the larger original file and attempt importing it
+        /// from having to correct and update the larger original file and attempt importing it
         /// again.
         /// </para>
         /// </summary>

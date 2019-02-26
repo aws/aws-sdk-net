@@ -29,13 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportConfigurations operation.
-    /// <code>DescribeExportConfigurations</code> is deprecated.
-    /// 
-    ///  
-    /// <para>
-    /// Use instead <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-    /// <code>DescribeExportTasks</code> </a>.
-    /// </para>
+    /// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>,
+    /// instead.
     /// </summary>
     public partial class DescribeExportConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
