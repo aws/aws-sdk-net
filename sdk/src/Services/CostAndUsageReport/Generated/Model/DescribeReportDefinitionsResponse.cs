@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Response of DescribeReportDefinitions
+    /// If the action is successful, the service sends back an HTTP 200 response.
     /// </summary>
     public partial class DescribeReportDefinitionsResponse : AmazonWebServiceResponse
     {
@@ -51,7 +51,10 @@ namespace Amazon.CostAndUsageReport.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReportDefinitions.
+        /// Gets and sets the property ReportDefinitions. 
+        /// <para>
+        /// A list of AWS Cost and Usage reports owned by the account.
+        /// </para>
         /// </summary>
         public List<ReportDefinition> ReportDefinitions
         {

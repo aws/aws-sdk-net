@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Response of PutReportDefinition
+    /// If the action is successful, the service sends back an HTTP 200 response with an empty
+    /// HTTP body.
     /// </summary>
     public partial class PutReportDefinitionResponse : AmazonWebServiceResponse
     {

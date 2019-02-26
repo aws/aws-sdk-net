@@ -31,6 +31,10 @@ namespace Amazon.CostAndUsageReport
     {
 
         /// <summary>
+        /// Constant ATHENA for AdditionalArtifact
+        /// </summary>
+        public static readonly AdditionalArtifact ATHENA = new AdditionalArtifact("ATHENA");
+        /// <summary>
         /// Constant QUICKSIGHT for AdditionalArtifact
         /// </summary>
         public static readonly AdditionalArtifact QUICKSIGHT = new AdditionalArtifact("QUICKSIGHT");
@@ -85,6 +89,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion ApNortheast1 = new AWSRegion("ap-northeast-1");
         /// <summary>
+        /// Constant ApNortheast3 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApNortheast3 = new AWSRegion("ap-northeast-3");
+        /// <summary>
         /// Constant ApSoutheast1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApSoutheast1 = new AWSRegion("ap-southeast-1");
@@ -96,6 +104,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant EuCentral1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuCentral1 = new AWSRegion("eu-central-1");
+        /// <summary>
+        /// Constant EuNorth1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuNorth1 = new AWSRegion("eu-north-1");
         /// <summary>
         /// Constant EuWest1 for AWSRegion
         /// </summary>
@@ -159,6 +171,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly CompressionFormat GZIP = new CompressionFormat("GZIP");
         /// <summary>
+        /// Constant Parquet for CompressionFormat
+        /// </summary>
+        public static readonly CompressionFormat Parquet = new CompressionFormat("Parquet");
+        /// <summary>
         /// Constant ZIP for CompressionFormat
         /// </summary>
         public static readonly CompressionFormat ZIP = new CompressionFormat("ZIP");
@@ -205,6 +221,10 @@ namespace Amazon.CostAndUsageReport
     {
 
         /// <summary>
+        /// Constant Parquet for ReportFormat
+        /// </summary>
+        public static readonly ReportFormat Parquet = new ReportFormat("Parquet");
+        /// <summary>
         /// Constant TextORcsv for ReportFormat
         /// </summary>
         public static readonly ReportFormat TextORcsv = new ReportFormat("textORcsv");
@@ -238,6 +258,56 @@ namespace Amazon.CostAndUsageReport
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportVersioning.
+    /// </summary>
+    public class ReportVersioning : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_NEW_REPORT for ReportVersioning
+        /// </summary>
+        public static readonly ReportVersioning CREATE_NEW_REPORT = new ReportVersioning("CREATE_NEW_REPORT");
+        /// <summary>
+        /// Constant OVERWRITE_REPORT for ReportVersioning
+        /// </summary>
+        public static readonly ReportVersioning OVERWRITE_REPORT = new ReportVersioning("OVERWRITE_REPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportVersioning(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportVersioning FindValue(string value)
+        {
+            return FindValue<ReportVersioning>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportVersioning(string value)
         {
             return FindValue(value);
         }

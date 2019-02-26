@@ -29,14 +29,18 @@ namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
     /// Container for the parameters to the PutReportDefinition operation.
-    /// Create a new report definition
+    /// Creates a new report using the description that you provide.
     /// </summary>
     public partial class PutReportDefinitionRequest : AmazonCostAndUsageReportRequest
     {
         private ReportDefinition _reportDefinition;
 
         /// <summary>
-        /// Gets and sets the property ReportDefinition.
+        /// Gets and sets the property ReportDefinition. 
+        /// <para>
+        /// Represents the output of the PutReportDefinition operation. The content consists of
+        /// the detailed metadata and data file information. 
+        /// </para>
         /// </summary>
         public ReportDefinition ReportDefinition
         {

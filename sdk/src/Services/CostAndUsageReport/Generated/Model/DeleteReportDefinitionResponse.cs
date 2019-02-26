@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Response of DeleteReportDefinition
+    /// If the action is successful, the service sends back an HTTP 200 response.
     /// </summary>
     public partial class DeleteReportDefinitionResponse : AmazonWebServiceResponse
     {

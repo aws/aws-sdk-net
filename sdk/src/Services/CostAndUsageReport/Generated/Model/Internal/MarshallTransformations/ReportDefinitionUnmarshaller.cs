@@ -88,10 +88,22 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RefreshClosedReports", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RefreshClosedReports = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReportName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReportName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportVersioning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReportVersioning = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3Bucket", targetDepth))

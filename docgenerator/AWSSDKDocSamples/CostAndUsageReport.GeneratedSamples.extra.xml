@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CostAndUsageReport.IAmazonCostAndUsageReport.DeleteReportDefinition(Amazon.CostAndUsageReport.Model.DeleteReportDefinitionRequest)" />
+            <member name="M:Amazon.CostAndUsageReport.AmazonCostAndUsageReportClient.DeleteReportDefinition(Amazon.CostAndUsageReport.Model.DeleteReportDefinitionRequest)" />
+            <member name="T:Amazon.CostAndUsageReport.Model.DeleteReportDefinitionRequest" />
+            <member name="T:Amazon.CostAndUsageReport.Model.DeleteReportDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the AWS Cost and Usage report named ExampleReport.
+                </para>
+                <code
+                    title="To delete the AWS Cost and Usage report named ExampleReport."
+                    source=".\AWSSDKDocSamples\CostAndUsageReport\CostAndUsageReport.GeneratedSamples.cs"
+                    region="to-delete-a-report" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CostAndUsageReport.IAmazonCostAndUsageReport.DescribeReportDefinitions(Amazon.CostAndUsageReport.Model.DescribeReportDefinitionsRequest)" />
+            <member name="M:Amazon.CostAndUsageReport.AmazonCostAndUsageReportClient.DescribeReportDefinitions(Amazon.CostAndUsageReport.Model.DescribeReportDefinitionsRequest)" />
+            <member name="T:Amazon.CostAndUsageReport.Model.DescribeReportDefinitionsRequest" />
+            <member name="T:Amazon.CostAndUsageReport.Model.DescribeReportDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the AWS Cost and Usage reports for the account.
+                </para>
+                <code
+                    title="To list the AWS Cost and Usage reports for the account."
+                    source=".\AWSSDKDocSamples\CostAndUsageReport\CostAndUsageReport.GeneratedSamples.cs"
+                    region="to-retrieve-report-definitions" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CostAndUsageReport.IAmazonCostAndUsageReport.PutReportDefinition(Amazon.CostAndUsageReport.Model.PutReportDefinitionRequest)" />
+            <member name="M:Amazon.CostAndUsageReport.AmazonCostAndUsageReportClient.PutReportDefinition(Amazon.CostAndUsageReport.Model.PutReportDefinitionRequest)" />
+            <member name="T:Amazon.CostAndUsageReport.Model.PutReportDefinitionRequest" />
+            <member name="T:Amazon.CostAndUsageReport.Model.PutReportDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a AWS Cost and Usage report named ExampleReport.
+                </para>
+                <code
+                    title="To create a report named ExampleReport."
+                    source=".\AWSSDKDocSamples\CostAndUsageReport\CostAndUsageReport.GeneratedSamples.cs"
+                    region="to-create-a-report-definitions" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -29,7 +29,7 @@ namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReportDefinitions operation.
-    /// Describe a list of report definitions owned by the account
+    /// Lists the AWS Cost and Usage reports available to this account.
     /// </summary>
     public partial class DescribeReportDefinitionsRequest : AmazonCostAndUsageReportRequest
     {

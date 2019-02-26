@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// The definition of AWS Cost and Usage Report. Customer can specify the report name,
-    /// time unit, report format, compression format, S3 bucket and additional artifacts and
-    /// schema elements in the definition.
+    /// The definition of AWS Cost and Usage Report. You can specify the report name, time
+    /// unit, report format, compression format, S3 bucket, additional artifacts, and schema
+    /// elements in the definition.
     /// </summary>
     public partial class ReportDefinition
     {
@@ -38,14 +38,19 @@ namespace Amazon.CostAndUsageReport.Model
         private List<string> _additionalSchemaElements = new List<string>();
         private CompressionFormat _compression;
         private ReportFormat _format;
+        private bool? _refreshClosedReports;
         private string _reportName;
+        private ReportVersioning _reportVersioning;
         private string _s3Bucket;
         private string _s3Prefix;
         private AWSRegion _s3Region;
         private TimeUnit _timeUnit;
 
         /// <summary>
-        /// Gets and sets the property AdditionalArtifacts.
+        /// Gets and sets the property AdditionalArtifacts. 
+        /// <para>
+        /// A list of manifests that you want Amazon Web Services to create for this report.
+        /// </para>
         /// </summary>
         public List<string> AdditionalArtifacts
         {
@@ -60,7 +65,11 @@ namespace Amazon.CostAndUsageReport.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AdditionalSchemaElements.
+        /// Gets and sets the property AdditionalSchemaElements. 
+        /// <para>
+        /// A list of strings that indicate additional content that Amazon Web Services includes
+        /// in the report, such as individual resource IDs. 
+        /// </para>
         /// </summary>
         public List<string> AdditionalSchemaElements
         {
@@ -105,6 +114,26 @@ namespace Amazon.CostAndUsageReport.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RefreshClosedReports. 
+        /// <para>
+        /// Whether you want Amazon Web Services to update your reports after they have been finalized
+        /// if Amazon Web Services detects charges related to previous months. These charges can
+        /// include refunds, credits, or support fees.
+        /// </para>
+        /// </summary>
+        public bool RefreshClosedReports
+        {
+            get { return this._refreshClosedReports.GetValueOrDefault(); }
+            set { this._refreshClosedReports = value; }
+        }
+
+        // Check to see if RefreshClosedReports property is set
+        internal bool IsSetRefreshClosedReports()
+        {
+            return this._refreshClosedReports.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReportName.
         /// </summary>
         public string ReportName
@@ -117,6 +146,25 @@ namespace Amazon.CostAndUsageReport.Model
         internal bool IsSetReportName()
         {
             return this._reportName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportVersioning. 
+        /// <para>
+        /// Whether you want Amazon Web Services to overwrite the previous version of each report
+        /// or to deliver the report in addition to the previous versions.
+        /// </para>
+        /// </summary>
+        public ReportVersioning ReportVersioning
+        {
+            get { return this._reportVersioning; }
+            set { this._reportVersioning = value; }
+        }
+
+        // Check to see if ReportVersioning property is set
+        internal bool IsSetReportVersioning()
+        {
+            return this._reportVersioning != null;
         }
 
         /// <summary>

@@ -79,10 +79,22 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Format);
             }
 
+            if(requestObject.IsSetRefreshClosedReports())
+            {
+                context.Writer.WritePropertyName("RefreshClosedReports");
+                context.Writer.Write(requestObject.RefreshClosedReports);
+            }
+
             if(requestObject.IsSetReportName())
             {
                 context.Writer.WritePropertyName("ReportName");
                 context.Writer.Write(requestObject.ReportName);
+            }
+
+            if(requestObject.IsSetReportVersioning())
+            {
+                context.Writer.WritePropertyName("ReportVersioning");
+                context.Writer.Write(requestObject.ReportVersioning);
             }
 
             if(requestObject.IsSetS3Bucket())
