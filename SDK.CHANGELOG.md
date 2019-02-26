@@ -1,3 +1,24 @@
+### 3.3.464.0 (2019-02-26 19:09 UTC)
+* ApplicationDiscoveryService (3.3.6.10)
+	* Documentation updates for discovery
+* CostAndUsageReport (3.3.1.0)
+	* Adding support for Athena and new report preferences to the Cost and Usage Report API.
+* MediaConvert (3.3.12.0)
+	* AWS Elemental MediaConvert SDK has added several features including support for: auto-rotation or user-specified rotation of 0, 90, 180, or 270 degrees; multiple output groups with DRM; ESAM XML documents to specify ad insertion points; Offline Apple HLS FairPlay content protection. 
+* OpsWorksCM (3.3.6.40)
+	* Documentation updates for opsworkscm
+* Organizations (3.3.9.41)
+	* Documentation updates for AWS Organizations
+* Pinpoint (3.3.13.0)
+	* This release adds support for the Amazon Resource Groups Tagging API to Amazon Pinpoint, which means that you can now add and manage tags for Amazon Pinpoint projects (apps), campaigns, and segments. A tag is a label that you optionally define and associate with Amazon Pinpoint resource. Tags can help you categorize and manage these types of resources in different ways, such as by purpose, owner, environment, or other criteria. For example, you can use tags to apply policies or automation, or to identify resources that are subject to certain compliance requirements. A project, campaign, or segment can have as many as 50 tags. For more information about using and managing tags in Amazon Pinpoint, see the Amazon Pinpoint Developer Guide at https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html. For more information about the Amazon Resource Group Tagging API, see the Amazon Resource Group Tagging API Reference at https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html.
+* ResourceGroups (3.3.3.23)
+	* Documentation updates for Resource Groups API; updating description of Tag API.
+* Core 3.3.31.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.463.0 (2019-02-25 19:10 UTC)
 * AutoScaling (3.3.9.0)
 	* Added support for passing an empty SpotMaxPrice parameter to remove a value previously set when updating an Amazon EC2 Auto Scaling group.
