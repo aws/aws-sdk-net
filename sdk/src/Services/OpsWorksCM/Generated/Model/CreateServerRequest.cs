@@ -197,10 +197,9 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored
-        /// by AWS OpsWorks for Chef Automate. This private key is required to access the Chef
-        /// API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response.
-        /// 
+        ///  <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding
+        /// private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, a
+        /// private key is generated and returned in the response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -218,6 +217,17 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         ///  <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a
         /// password must use ASCII characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository
+        /// (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k
+        /// remote opens TCP port 8170.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+        /// add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -490,7 +500,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about supported Amazon EC2 platforms, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>.
         /// </para>
         /// </summary>
