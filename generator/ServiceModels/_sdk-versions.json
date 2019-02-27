@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.464.0",
+    "ProductVersion" : "3.3.464.1",
     "CoreVersion"    : "3.3.31.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -433,7 +433,7 @@
             "InPreview"               : false
         },
         "WAF"                       : {
-            "Version" : "3.3.7.17",
+            "Version" : "3.3.7.18",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -697,7 +697,7 @@
             "InPreview"               : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.7.17",
+            "Version" : "3.3.7.18",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
