@@ -50,8 +50,8 @@ namespace Amazon.WAF.Model
     ///  </li> </ul> 
     /// <para>
     /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
-    /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
-    /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128. For more information
+    /// about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>.
     /// </para>
     ///  
@@ -113,7 +113,7 @@ namespace Amazon.WAF.Model
     ///  
     /// <para>
     /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-    /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+    /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
     /// Guide</a>.
     /// </para>
     /// </summary>

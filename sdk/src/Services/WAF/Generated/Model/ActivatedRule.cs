@@ -119,7 +119,7 @@ namespace Amazon.WAF.Model
         ///  <ol> <li> 
         /// <para>
         /// Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For
-        /// more information about the logs, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
         /// Web ACL Traffic Information</a>.
         /// </para>
         ///  </li> <li> 
