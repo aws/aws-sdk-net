@@ -32,10 +32,10 @@ namespace Amazon.WAFRegional
     /// This is the <i>AWS WAF Regional API Reference</i> for using AWS WAF with Elastic Load
     /// Balancing (ELB) Application Load Balancers. The AWS WAF actions and data types listed
     /// in the reference are available for protecting Application Load Balancers. You can
-    /// use these actions and data types by means of the endpoints listed in <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS
+    /// use these actions and data types by means of the endpoints listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS
     /// Regions and Endpoints</a>. This guide is for developers who need detailed information
     /// about the AWS WAF API actions, data types, and errors. For detailed information about
-    /// AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+    /// AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.
     /// </summary>
     public partial interface IAmazonWAFRegional : IAmazonService, IDisposable
@@ -185,7 +185,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -255,7 +255,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -300,7 +300,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -369,7 +369,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -443,7 +443,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -512,7 +512,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -587,7 +587,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -657,7 +657,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -701,7 +701,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -770,7 +770,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -911,7 +911,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -976,7 +976,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1053,7 +1053,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1069,7 +1069,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1142,7 +1142,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1158,7 +1158,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1258,7 +1258,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1325,7 +1325,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1394,7 +1394,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1459,7 +1459,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1525,7 +1525,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1541,7 +1541,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1617,7 +1617,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1686,7 +1686,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1759,7 +1759,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1829,7 +1829,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -1871,7 +1871,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -1940,7 +1940,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -2030,7 +2030,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information about how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+        /// For more information about how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
         /// WAF Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -2099,7 +2099,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -2171,7 +2171,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -2240,7 +2240,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
@@ -4543,7 +4543,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: Propagation is complete.
+        ///  <code>INSYNC</code>: Propagation is complete.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4576,7 +4576,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: Propagation is complete.
+        ///  <code>INSYNC</code>: Propagation is complete.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6554,6 +6554,12 @@ namespace Amazon.WAFRegional
         /// <para>
         /// Create an Amazon Kinesis Data Firehose . 
         /// </para>
+        ///  
+        /// <para>
+        /// Create the data firehose with a PUT source and in the region that you are operating.
+        /// However, if you are capturing logs for Amazon CloudFront, always create the firehose
+        /// in US East (N. Virginia). 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
@@ -6563,7 +6569,7 @@ namespace Amazon.WAFRegional
         /// <para>
         /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
         /// request, AWS WAF will create a service linked role with the necessary permissions
-        /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
         /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -6829,7 +6835,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -6927,7 +6933,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -7024,7 +7030,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -7120,7 +7126,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -7236,7 +7242,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -7332,7 +7338,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -7438,8 +7444,8 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
-        /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
-        /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128. For more information
+        /// about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
@@ -7501,7 +7507,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -7599,7 +7605,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -7674,8 +7680,8 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
-        /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
-        /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128. For more information
+        /// about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
@@ -7737,7 +7743,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -7833,7 +7839,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8075,7 +8081,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8213,7 +8219,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -8263,7 +8269,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8389,7 +8395,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -8440,7 +8446,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8567,7 +8573,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -8665,7 +8671,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8775,7 +8781,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -8871,7 +8877,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -8997,7 +9003,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -9089,7 +9095,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -9223,7 +9229,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -9319,7 +9325,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -9458,7 +9464,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -9556,7 +9562,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -9650,7 +9656,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -9746,7 +9752,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -9901,7 +9907,7 @@ namespace Amazon.WAFRegional
         ///  
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -9997,7 +10003,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">
@@ -10138,7 +10144,7 @@ namespace Amazon.WAFRegional
         ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
-        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
@@ -10234,7 +10240,7 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentContainerException">

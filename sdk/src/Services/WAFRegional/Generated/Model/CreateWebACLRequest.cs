@@ -77,7 +77,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// For more information about how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+    /// For more information about how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.
     /// </para>
     /// </summary>

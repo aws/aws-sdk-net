@@ -44,7 +44,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>IN_SYNC</code>: Propagation is complete.
+    ///  <code>INSYNC</code>: Propagation is complete.
     /// </para>
     ///  </li> </ul>
     /// </summary>
