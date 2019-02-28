@@ -28,13 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteApiMapping operation.
-    /// Deletes an API mapping.
+    /// Represents an API mapping.
     /// </summary>
-    public partial class DeleteApiMappingRequest : AmazonApiGatewayV2Request
+    public partial class ApiMapping
     {
+        private string _apiId;
         private string _apiMappingId;
-        private string _domainName;
+        private string _apiMappingKey;
+        private string _stage;
+
+        /// <summary>
+        /// Gets and sets the property ApiId. 
+        /// <para>
+        /// The API identifier.
+        /// </para>
+        /// </summary>
+        public string ApiId
+        {
+            get { return this._apiId; }
+            set { this._apiId = value; }
+        }
+
+        // Check to see if ApiId property is set
+        internal bool IsSetApiId()
+        {
+            return this._apiId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApiMappingId. 
@@ -55,21 +74,39 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property ApiMappingKey. 
         /// <para>
-        /// The domain name.
+        /// The API mapping key.
         /// </para>
         /// </summary>
-        public string DomainName
+        public string ApiMappingKey
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._apiMappingKey; }
+            set { this._apiMappingKey = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if ApiMappingKey property is set
+        internal bool IsSetApiMappingKey()
         {
-            return this._domainName != null;
+            return this._apiMappingKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stage. 
+        /// <para>
+        /// The API stage.
+        /// </para>
+        /// </summary>
+        public string Stage
+        {
+            get { return this._stage; }
+            set { this._stage = value; }
+        }
+
+        // Check to see if Stage property is set
+        internal bool IsSetStage()
+        {
+            return this._stage != null;
         }
 
     }

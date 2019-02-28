@@ -69,8 +69,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The identifier of the VpcLink used for the integration when the connectionType is
-        /// VPC_LINK; otherwise undefined.
+        /// The connection ID.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -88,10 +87,8 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The type of the network connection to the integration endpoint. The valid value is
-        /// INTERNET for connections through the public routable internet or VPC_LINK for private
-        /// connections between API Gateway and a network load balancer in a VPC. The default
-        /// value is INTERNET.
+        /// The type of the network connection to the integration endpoint. Currently the only
+        /// valid value is INTERNET, for connections through the public routable internet.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -218,15 +215,13 @@ namespace Amazon.ApiGatewayV2.Model
         /// </para>
         /// 
         /// <para>
-        ///  HTTP: for integrating the route or method request with an HTTP endpoint, including
-        /// a private HTTP endpoint within a VPC. This integration is also referred to as the
-        /// HTTP custom integration.
+        ///  HTTP: for integrating the route or method request with an HTTP endpoint. This integration
+        /// is also referred to as HTTP custom integration.
         /// </para>
         /// 
         /// <para>
-        ///  HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including
-        /// a private HTTP endpoint within a VPC, with the client request passed through as-is.
-        /// This is also referred to as HTTP proxy integration.
+        ///  HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the
+        /// client request passed through as-is. This is also referred to as HTTP proxy integration.
         /// </para>
         /// 
         /// <para>
@@ -249,29 +244,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property IntegrationUri. 
         /// <para>
-        /// Specifies the Uniform Resource Identifier (URI) of the integration endpoint.
-        /// </para>
-        /// 
-        /// <para>
-        /// For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S)
-        /// URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-        /// specification</a>, for either standard integration, where connectionType is not VPC_LINK,
-        /// or private integration, where connectionType is VPC_LINK. For a private HTTP integration,
-        /// the URI is not used for routing.
-        /// </para>
-        /// 
-        /// <para>
-        /// For AWS or AWS_PROXY integrations, the URI is of the form arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}.
-        /// Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name
-        /// of the integrated AWS service (e.g., s3); and {subdomain} is a designated subdomain
-        /// supported by certain AWS service for fast host-name lookup. action can be used for
-        /// an AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query
-        /// string. The ensuing {service_api} refers to a supported action {name} plus any required
-        /// input parameters. Alternatively, path can be used for an AWS service path-based API.
-        /// The ensuing service_api refers to the path to an AWS service resource, including the
-        /// region of the integrated AWS service, if applicable. For example, for integration
-        /// with the S3 API of GetObject, the URI can be either arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}
-        /// or arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+        /// For a Lambda proxy integration, this is the URI of the Lambda function.
         /// </para>
         /// </summary>
         public string IntegrationUri

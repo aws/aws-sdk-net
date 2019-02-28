@@ -135,8 +135,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// The Amazon Route 53 Hosted Zone ID of the endpoint. See <a href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-        /// Regions and Endpoints for API Gateway</a>.
+        /// The Amazon Route 53 Hosted Zone ID of the endpoint.
         /// </para>
         /// </summary>
         public string HostedZoneId

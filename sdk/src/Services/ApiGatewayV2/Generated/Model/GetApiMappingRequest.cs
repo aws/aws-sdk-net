@@ -33,27 +33,8 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class GetApiMappingRequest : AmazonApiGatewayV2Request
     {
-        private string _apiId;
         private string _apiMappingId;
         private string _domainName;
-
-        /// <summary>
-        /// Gets and sets the property ApiId. 
-        /// <para>
-        /// The identifier of the API.
-        /// </para>
-        /// </summary>
-        public string ApiId
-        {
-            get { return this._apiId; }
-            set { this._apiId = value; }
-        }
-
-        // Check to see if ApiId property is set
-        internal bool IsSetApiId()
-        {
-            return this._apiId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ApiMappingId. 

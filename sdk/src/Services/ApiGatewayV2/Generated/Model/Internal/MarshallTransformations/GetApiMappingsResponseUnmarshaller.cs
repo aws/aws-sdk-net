@@ -51,28 +51,16 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiId", targetDepth))
+                if (context.TestExpression("items", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApiId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ApiMapping, ApiMappingUnmarshaller>(ApiMappingUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("apiMappingId", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApiMappingId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("apiMappingKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApiMappingKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Stage = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

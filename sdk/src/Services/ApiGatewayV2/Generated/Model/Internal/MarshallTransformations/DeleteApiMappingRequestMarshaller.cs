@@ -65,11 +65,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field DomainName set");
             uriResourcePath = uriResourcePath.Replace("{domainName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
-            
-            if (publicRequest.IsSetApiId())
-                request.Parameters.Add("apiId", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }

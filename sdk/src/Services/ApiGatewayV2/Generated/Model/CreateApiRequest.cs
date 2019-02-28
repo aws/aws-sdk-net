@@ -117,7 +117,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The API protocol: HTTP or WEBSOCKET.
+        /// The API protocol: Currently only WEBSOCKET is supported.
         /// </para>
         /// </summary>
         public ProtocolType ProtocolType

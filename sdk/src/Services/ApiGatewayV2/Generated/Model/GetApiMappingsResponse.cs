@@ -32,81 +32,44 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class GetApiMappingsResponse : AmazonWebServiceResponse
     {
-        private string _apiId;
-        private string _apiMappingId;
-        private string _apiMappingKey;
-        private string _stage;
+        private List<ApiMapping> _items = new List<ApiMapping>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApiId. 
+        /// Gets and sets the property Items. 
         /// <para>
-        /// The API identifier.
+        /// The elements from this collection.
         /// </para>
         /// </summary>
-        public string ApiId
+        public List<ApiMapping> Items
         {
-            get { return this._apiId; }
-            set { this._apiId = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if ApiId property is set
-        internal bool IsSetApiId()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._apiId != null;
+            return this._items != null && this._items.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property ApiMappingId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The API mapping identifier.
+        /// The next page of elements from this collection. Not valid for the last element of
+        /// the collection.
         /// </para>
         /// </summary>
-        public string ApiMappingId
+        public string NextToken
         {
-            get { return this._apiMappingId; }
-            set { this._apiMappingId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ApiMappingId property is set
-        internal bool IsSetApiMappingId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._apiMappingId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ApiMappingKey. 
-        /// <para>
-        /// The API mapping key.
-        /// </para>
-        /// </summary>
-        public string ApiMappingKey
-        {
-            get { return this._apiMappingKey; }
-            set { this._apiMappingKey = value; }
-        }
-
-        // Check to see if ApiMappingKey property is set
-        internal bool IsSetApiMappingKey()
-        {
-            return this._apiMappingKey != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Stage. 
-        /// <para>
-        /// The API stage.
-        /// </para>
-        /// </summary>
-        public string Stage
-        {
-            get { return this._stage; }
-            set { this._stage = value; }
-        }
-
-        // Check to see if Stage property is set
-        internal bool IsSetStage()
-        {
-            return this._stage != null;
+            return this._nextToken != null;
         }
 
     }

@@ -74,10 +74,7 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationResponseId. 
-        /// <para>
-        /// The integration response ID.
-        /// </para>
+        /// Gets and sets the property IntegrationResponseId. The integration response ID.
         /// </summary>
         public string IntegrationResponseId
         {
