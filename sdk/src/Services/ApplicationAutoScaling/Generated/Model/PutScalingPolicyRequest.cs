@@ -102,10 +102,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-        /// Scaling Policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto
-        /// Scaling User Guide</i>.
+        /// see the information about <b>Limits</b> in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
+        /// Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public PolicyType PolicyType
@@ -268,7 +267,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
         /// for a resource provided by your own application or service. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
