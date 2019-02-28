@@ -1,3 +1,13 @@
+### 3.3.465.0 (2019-02-28 20:48 UTC)
+* AlexaForBusiness (3.3.9.0)
+	* This release adds the PutInvitationConfiguration API to configure the user invitation email template with custom attributes, and the GetInvitationConfiguration API to retrieve the configured values.
+* ApiGatewayV2 (3.3.1.0)
+	* Marking certain properties as explicitly required and fixing an issue with the GetApiMappings operation for ApiMapping resources.
+* ApplicationAutoScaling (3.3.11.3)
+	* Documentation updates for application-autoscaling
+* SimpleSystemsManagement (3.3.40.0)
+	* AWS Systems Manager State Manager now supports associations using documents shared by other AWS accounts.
+
 ### 3.3.464.1 (2019-02-27 19:08 UTC)
 * WAF (3.3.7.18)
 	* Documentation updates for waf

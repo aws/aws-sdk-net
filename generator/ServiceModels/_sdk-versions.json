@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.464.1",
+    "ProductVersion" : "3.3.465.0",
     "CoreVersion"    : "3.3.31.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.39.2",
+            "Version" : "3.3.40.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.11.2",
+            "Version" : "3.3.11.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.8.17",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -1345,7 +1345,7 @@
             "InPreview"               : false
         },
         "ApiGatewayV2"                    : {
-            "Version" : "3.3.0.17",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
