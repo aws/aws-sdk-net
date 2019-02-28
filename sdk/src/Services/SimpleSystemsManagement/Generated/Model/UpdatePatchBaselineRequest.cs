@@ -174,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property GlobalFilters. 
         /// <para>
-        /// A set of global filters used to exclude patches from the baseline.
+        /// A set of global filters used to include patches in the baseline.
         /// </para>
         /// </summary>
         public PatchFilterGroup GlobalFilters
