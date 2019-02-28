@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DisassociateSkillFromUsers Request Marshaller
+    /// PutInvitationConfiguration Request Marshaller
     /// </summary>       
-    public class DisassociateSkillFromUsersRequestMarshaller : IMarshaller<IRequest, DisassociateSkillFromUsersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutInvitationConfigurationRequestMarshaller : IMarshaller<IRequest, PutInvitationConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DisassociateSkillFromUsersRequest)input);
+            return this.Marshall((PutInvitationConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DisassociateSkillFromUsersRequest publicRequest)
+        public IRequest Marshall(PutInvitationConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AlexaForBusiness");
-            string target = "AlexaForBusiness.DisassociateSkillFromUsers";
+            string target = "AlexaForBusiness.PutInvitationConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-09";            
@@ -68,10 +68,27 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSkillId())
+                if(publicRequest.IsSetContactEmail())
                 {
-                    context.Writer.WritePropertyName("SkillId");
-                    context.Writer.Write(publicRequest.SkillId);
+                    context.Writer.WritePropertyName("ContactEmail");
+                    context.Writer.Write(publicRequest.ContactEmail);
+                }
+
+                if(publicRequest.IsSetOrganizationName())
+                {
+                    context.Writer.WritePropertyName("OrganizationName");
+                    context.Writer.Write(publicRequest.OrganizationName);
+                }
+
+                if(publicRequest.IsSetPrivateSkillIds())
+                {
+                    context.Writer.WritePropertyName("PrivateSkillIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPrivateSkillIdsListValue in publicRequest.PrivateSkillIds)
+                    {
+                            context.Writer.Write(publicRequestPrivateSkillIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -83,9 +100,9 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DisassociateSkillFromUsersRequestMarshaller _instance = new DisassociateSkillFromUsersRequestMarshaller();        
+        private static PutInvitationConfigurationRequestMarshaller _instance = new PutInvitationConfigurationRequestMarshaller();        
 
-        internal static DisassociateSkillFromUsersRequestMarshaller GetInstance()
+        internal static PutInvitationConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -93,7 +110,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateSkillFromUsersRequestMarshaller Instance
+        public static PutInvitationConfigurationRequestMarshaller Instance
         {
             get
             {

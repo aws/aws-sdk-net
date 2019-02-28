@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateSkillWithUsers operation
+    /// Response Unmarshaller for PutInvitationConfiguration operation
     /// </summary>  
-    public class AssociateSkillWithUsersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutInvitationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateSkillWithUsersResponse response = new AssociateSkillWithUsersResponse();
+            PutInvitationConfigurationResponse response = new PutInvitationConfigurationResponse();
 
 
             return response;
@@ -72,9 +72,9 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             return new AmazonAlexaForBusinessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AssociateSkillWithUsersResponseUnmarshaller _instance = new AssociateSkillWithUsersResponseUnmarshaller();        
+        private static PutInvitationConfigurationResponseUnmarshaller _instance = new PutInvitationConfigurationResponseUnmarshaller();        
 
-        internal static AssociateSkillWithUsersResponseUnmarshaller GetInstance()
+        internal static PutInvitationConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +82,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateSkillWithUsersResponseUnmarshaller Instance
+        public static PutInvitationConfigurationResponseUnmarshaller Instance
         {
             get
             {

@@ -68,12 +68,6 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOrganizationArn())
-                {
-                    context.Writer.WritePropertyName("OrganizationArn");
-                    context.Writer.Write(publicRequest.OrganizationArn);
-                }
-
                 if(publicRequest.IsSetSkillId())
                 {
                     context.Writer.WritePropertyName("SkillId");

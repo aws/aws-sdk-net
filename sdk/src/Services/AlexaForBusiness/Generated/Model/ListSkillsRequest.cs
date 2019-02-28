@@ -63,7 +63,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.
+        /// that the remaining results can be retrieved. Required.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -83,7 +83,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
+        /// results beyond the token, up to the value specified by <code>MaxResults</code>. Required.
         /// </para>
         /// </summary>
         public string NextToken
@@ -101,7 +101,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property SkillGroupArn. 
         /// <para>
-        /// The ARN of the skill group for which to list enabled skills.
+        /// The ARN of the skill group for which to list enabled skills. Required.
         /// </para>
         /// </summary>
         public string SkillGroupArn

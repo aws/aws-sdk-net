@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateSkillWithUsers operation
+    /// Response Unmarshaller for GetInvitationConfiguration operation
     /// </summary>  
-    public class AssociateSkillWithUsersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetInvitationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,31 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateSkillWithUsersResponse response = new AssociateSkillWithUsersResponse();
+            GetInvitationConfigurationResponse response = new GetInvitationConfigurationResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ContactEmail", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ContactEmail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OrganizationName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OrganizationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateSkillIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.PrivateSkillIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,10 +84,6 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
                 return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -72,9 +91,9 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             return new AmazonAlexaForBusinessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AssociateSkillWithUsersResponseUnmarshaller _instance = new AssociateSkillWithUsersResponseUnmarshaller();        
+        private static GetInvitationConfigurationResponseUnmarshaller _instance = new GetInvitationConfigurationResponseUnmarshaller();        
 
-        internal static AssociateSkillWithUsersResponseUnmarshaller GetInstance()
+        internal static GetInvitationConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +101,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateSkillWithUsersResponseUnmarshaller Instance
+        public static GetInvitationConfigurationResponseUnmarshaller Instance
         {
             get
             {

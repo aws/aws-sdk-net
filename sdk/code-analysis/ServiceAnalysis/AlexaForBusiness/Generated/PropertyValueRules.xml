@@ -37,10 +37,6 @@
     <pattern>(^amzn1\.ask\.skill\.[0-9a-f\-]{1,200})|(^amzn1\.echo-sdk-ams\.app\.[0-9a-f\-]{1,200})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AlexaForBusiness.Model.AssociateSkillWithUsersRequest.OrganizationArn</property>
-    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.AssociateSkillWithUsersRequest.SkillId</property>
     <pattern>(^amzn1\.ask\.skill\.[0-9a-f\-]{1,200})|(^amzn1\.echo-sdk-ams\.app\.[0-9a-f\-]{1,200})</pattern>
   </property-value-rule>
@@ -334,10 +330,6 @@
     <pattern>(^amzn1\.ask\.skill\.[0-9a-f\-]{1,200})|(^amzn1\.echo-sdk-ams\.app\.[0-9a-f\-]{1,200})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AlexaForBusiness.Model.DisassociateSkillFromUsersRequest.OrganizationArn</property>
-    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DisassociateSkillFromUsersRequest.SkillId</property>
     <pattern>(^amzn1\.ask\.skill\.[0-9a-f\-]{1,200})|(^amzn1\.echo-sdk-ams\.app\.[0-9a-f\-]{1,200})</pattern>
   </property-value-rule>
@@ -368,6 +360,17 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetDeviceRequest.DeviceArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.ContactEmail</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.OrganizationName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetProfileRequest.ProfileArn</property>
@@ -533,6 +536,17 @@
     <property>Amazon.AlexaForBusiness.Model.ListTagsResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.ContactEmail</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.OrganizationName</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.PutRoomSkillParameterRequest.RoomArn</property>

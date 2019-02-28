@@ -254,7 +254,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ApproveSkill service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits.
@@ -376,7 +376,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateDeviceWithRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
@@ -441,7 +441,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateSkillGroupWithRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
         public virtual AssociateSkillGroupWithRoomResponse AssociateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request)
@@ -498,7 +498,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateSkillWithSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -561,7 +561,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateSkillWithUsers service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
         public virtual AssociateSkillWithUsersResponse AssociateSkillWithUsers(AssociateSkillWithUsersRequest request)
@@ -856,7 +859,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits.
@@ -979,7 +982,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits.
@@ -1039,7 +1042,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateUser service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits.
@@ -1102,7 +1105,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1162,7 +1165,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1279,7 +1282,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1339,7 +1342,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteDevice service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidCertificateAuthorityException">
         /// The Certificate Authority can't issue or revoke a certificate.
@@ -1402,7 +1405,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteProfile service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1462,7 +1465,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1522,7 +1525,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteRoomSkillParameter service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
         public virtual DeleteRoomSkillParameterResponse DeleteRoomSkillParameter(DeleteRoomSkillParameterRequest request)
@@ -1579,7 +1582,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteSkillAuthorization service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1639,7 +1642,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1699,7 +1702,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1815,7 +1818,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateDeviceFromRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
@@ -1876,7 +1879,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateSkillFromSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -1937,7 +1940,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateSkillFromUsers service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
         public virtual DisassociateSkillFromUsersResponse DisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request)
@@ -1995,7 +2001,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateSkillGroupFromRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
         public virtual DisassociateSkillGroupFromRoomResponse DisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request)
@@ -2381,6 +2387,63 @@ namespace Amazon.AlexaForBusiness
         public virtual GetDeviceResponse EndGetDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetInvitationConfiguration
+
+        /// <summary>
+        /// Retrieves the configured values for the user enrollment invitation email template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvitationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetInvitationConfiguration service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        public virtual GetInvitationConfigurationResponse GetInvitationConfiguration(GetInvitationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvitationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvitationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvitationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInvitationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInvitationConfiguration operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvitationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetInvitationConfiguration(GetInvitationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvitationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvitationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInvitationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvitationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetInvitationConfigurationResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        public virtual GetInvitationConfigurationResponse EndGetInvitationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInvitationConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -3111,6 +3174,67 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  PutInvitationConfiguration
+
+        /// <summary>
+        /// Configures the email template for the user enrollment invitation with the specified
+        /// attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInvitationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutInvitationConfiguration service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        public virtual PutInvitationConfigurationResponse PutInvitationConfiguration(PutInvitationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInvitationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInvitationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutInvitationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInvitationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInvitationConfiguration operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInvitationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutInvitationConfiguration(PutInvitationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInvitationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInvitationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutInvitationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutInvitationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutInvitationConfigurationResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        public virtual PutInvitationConfigurationResponse EndPutInvitationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutInvitationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutRoomSkillParameter
 
         /// <summary>
@@ -3121,7 +3245,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the PutRoomSkillParameter service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
         public virtual PutRoomSkillParameterResponse PutRoomSkillParameter(PutRoomSkillParameterRequest request)
@@ -3180,7 +3304,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the PutSkillAuthorization service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.UnauthorizedException">
         /// The caller has no permissions to operate on the resource involved in the API call.
@@ -3241,7 +3365,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the RegisterAVSDevice service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidDeviceException">
         /// The device is in an invalid state.
@@ -3306,7 +3430,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the RejectSkill service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -3424,7 +3548,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the RevokeInvitation service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -3863,7 +3987,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SendInvitation service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidUserStatusException">
         /// The attempt to update a user is invalid due to the user's current status.
@@ -4156,7 +4280,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
         /// The name sent in the request is already in use.
@@ -4220,7 +4344,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -4337,7 +4461,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
@@ -4397,7 +4521,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateDevice service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
@@ -4461,7 +4585,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateProfile service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
         /// The name sent in the request is already in use.
@@ -4584,7 +4708,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
-        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// There is a concurrent modification of resources.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
         /// The name sent in the request is already in use.

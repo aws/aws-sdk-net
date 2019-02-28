@@ -100,7 +100,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurrence of the reports.
+        /// The recurrence of the reports. If this isn't specified, the report will only be delivered
+        /// one time when the API is called. 
         /// </para>
         /// </summary>
         public BusinessReportRecurrence Recurrence
@@ -118,7 +119,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The S3 bucket name of the output reports.
+        /// The S3 bucket name of the output reports. If this isn't specified, the report can
+        /// be retrieved from a download link by calling ListBusinessReportSchedule. 
         /// </para>
         /// </summary>
         public string S3BucketName

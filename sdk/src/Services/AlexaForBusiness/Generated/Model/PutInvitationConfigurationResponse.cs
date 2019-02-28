@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateSkillWithUsers operation.
-    /// Makes a private skill available for enrolled users to enable on their devices.
+    /// This is the response object from the PutInvitationConfiguration operation.
     /// </summary>
-    public partial class AssociateSkillWithUsersRequest : AmazonAlexaForBusinessRequest
+    public partial class PutInvitationConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _skillId;
-
-        /// <summary>
-        /// Gets and sets the property SkillId. 
-        /// <para>
-        /// The private skill ID you want to make available to enrolled users.
-        /// </para>
-        /// </summary>
-        public string SkillId
-        {
-            get { return this._skillId; }
-            set { this._skillId = value; }
-        }
-
-        // Check to see if SkillId property is set
-        internal bool IsSetSkillId()
-        {
-            return this._skillId != null;
-        }
 
     }
 }
