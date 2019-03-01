@@ -1992,7 +1992,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
-        /// copy the snapshot within the same region or from one region to another. You can use
+        /// copy the snapshot within the same Region or from one Region to another. You can use
         /// the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is
         /// copied to the regional endpoint that you send the HTTP request to.
         /// 
@@ -3301,9 +3301,8 @@ namespace Amazon.EC2
         /// 
         ///  <note> 
         /// <para>
-        /// Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved
-        /// Instance Marketplace. Convertible Reserved Instances and Standard Reserved Instances
-        /// with a regional benefit cannot be sold.
+        /// Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace.
+        /// Convertible Reserved Instances cannot be sold.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9663,9 +9662,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-        /// public snapshots available for any AWS account to launch, private snapshots that you
-        /// own, and private snapshots owned by another AWS account but for which you've been
-        /// given explicit create volume permissions.
+        /// public snapshots available for use by any AWS account, private snapshots that you
+        /// own, and private snapshots owned by another AWS account for which you've been given
+        /// explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -9736,9 +9735,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-        /// public snapshots available for any AWS account to launch, private snapshots that you
-        /// own, and private snapshots owned by another AWS account but for which you've been
-        /// given explicit create volume permissions.
+        /// public snapshots available for use by any AWS account, private snapshots that you
+        /// own, and private snapshots owned by another AWS account for which you've been given
+        /// explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -13738,6 +13737,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyInstanceCreditSpecificationResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
         ModifyInstanceCreditSpecificationResponse EndModifyInstanceCreditSpecification(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyInstanceEventStartTime
+
+
+        /// <summary>
+        /// Modifies the start time for a scheduled Amazon EC2 instance event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventStartTime service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceEventStartTime service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
+        ModifyInstanceEventStartTimeResponse ModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceEventStartTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventStartTime operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceEventStartTime
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
+        IAsyncResult BeginModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceEventStartTime operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceEventStartTime.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceEventStartTimeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
+        ModifyInstanceEventStartTimeResponse EndModifyInstanceEventStartTime(IAsyncResult asyncResult);
 
         #endregion
         

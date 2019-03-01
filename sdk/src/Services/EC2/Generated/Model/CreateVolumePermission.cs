@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the user or group to be added or removed from the permissions for a volume.
+    /// Describes the user or group to be added or removed from the list of create volume
+    /// permissions for a volume.
     /// </summary>
     public partial class CreateVolumePermission
     {
@@ -38,8 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The specific group that is to be added or removed from a volume's list of create volume
-        /// permissions.
+        /// The group to be added or removed. The possible value is <code>all</code>.
         /// </para>
         /// </summary>
         public PermissionGroup Group
@@ -57,8 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The specific AWS account ID that is to be added or removed from a volume's list of
-        /// create volume permissions.
+        /// The AWS account ID to be added or removed.
         /// </para>
         /// </summary>
         public string UserId

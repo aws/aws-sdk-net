@@ -70,12 +70,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
-        /// several attempts to launch instances have failed. For more information, see the description
-        /// of the event.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
         /// For more information, see the description of the event.
         /// </para>
@@ -151,6 +145,12 @@ namespace Amazon.EC2.Model
         /// The following are the <code>Information</code> events:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
+        /// several attempts to launch instances have failed. For more information, see the description
+        /// of the event.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>launchSpecUnusable</code> - The price in a launch specification is not valid
         /// because it is below the Spot price or the Spot price is above the On-Demand price.

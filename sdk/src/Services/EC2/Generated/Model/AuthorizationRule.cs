@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <b>Information about an authorization rule.</b>
+    /// Information about an authorization rule.
     /// </summary>
     public partial class AuthorizationRule
     {

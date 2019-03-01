@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about the client certificate used for authentication.
+    /// This is the response object from the ModifyInstanceEventStartTime operation.
     /// </summary>
-    public partial class CertificateAuthentication
+    public partial class ModifyInstanceEventStartTimeResponse : AmazonWebServiceResponse
     {
-        private string _clientRootCertificateChain;
+        private InstanceStatusEvent _event;
 
         /// <summary>
-        /// Gets and sets the property ClientRootCertificateChain. 
-        /// <para>
-        /// The ARN of the client certificate. 
-        /// </para>
+        /// Gets and sets the property Event.
         /// </summary>
-        public string ClientRootCertificateChain
+        public InstanceStatusEvent Event
         {
-            get { return this._clientRootCertificateChain; }
-            set { this._clientRootCertificateChain = value; }
+            get { return this._event; }
+            set { this._event = value; }
         }
 
-        // Check to see if ClientRootCertificateChain property is set
-        internal bool IsSetClientRootCertificateChain()
+        // Check to see if Event property is set
+        internal bool IsSetEvent()
         {
-            return this._clientRootCertificateChain != null;
+            return this._event != null;
         }
 
     }

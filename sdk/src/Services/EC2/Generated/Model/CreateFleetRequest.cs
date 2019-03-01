@@ -276,7 +276,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// At this point, no new EC2 Fleet requests are placed or able to fulfill the request.
-        /// The default end date is 7 days from the current date.
+        /// If no value is specified, the request remains until you cancel it.
         /// </para>
         /// </summary>
         public DateTime ValidUntilUtc
@@ -339,7 +339,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// At this point, no new EC2 Fleet requests are placed or able to fulfill the request.
-        /// The default end date is 7 days from the current date.
+        /// If no value is specified, the request remains until you cancel it.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

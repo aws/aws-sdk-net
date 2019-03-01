@@ -88,12 +88,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>event.instance-event-id</code> - The ID of the event whose date and time you
+        /// are modifying.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>event.not-after</code> - The latest end time for the scheduled event (for example,
         /// <code>2014-09-15T17:15:20.000Z</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>event.not-before</code> - The earliest start time for the scheduled event (for
+        /// example, <code>2014-09-15T17:15:20.000Z</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>event.not-before-deadline</code> - The deadline for starting the event (for
         /// example, <code>2014-09-15T17:15:20.000Z</code>).
         /// </para>
         ///  </li> <li> 

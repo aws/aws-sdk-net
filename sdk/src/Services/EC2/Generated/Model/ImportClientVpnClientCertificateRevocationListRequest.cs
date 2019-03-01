@@ -46,8 +46,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CertificateRevocationList. 
         /// <para>
-        /// The client certificate revocation list file. For more information, see <a href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-        /// a Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+        /// The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
+        /// a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
         /// </para>
         /// </summary>
         public string CertificateRevocationList

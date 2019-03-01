@@ -85,8 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CommonName. 
         /// <para>
-        ///  <b>The common name associated with the client. This is either the name of the client
-        /// certificate, or the Active Directory user name.</b> 
+        /// The common name associated with the client. This is either the name of the client
+        /// certificate, or the Active Directory user name.
         /// </para>
         /// </summary>
         public string CommonName
@@ -248,7 +248,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  <b>The current date and time.</b> 
+        /// The current date and time.
         /// </para>
         /// </summary>
         public string Timestamp

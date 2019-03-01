@@ -306,7 +306,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TransportProtocol. 
         /// <para>
-        ///  <b>The transport protocol used by the Client VPN endpoint.</b> 
+        /// The transport protocol used by the Client VPN endpoint.
         /// </para>
         /// </summary>
         public TransportProtocol TransportProtocol

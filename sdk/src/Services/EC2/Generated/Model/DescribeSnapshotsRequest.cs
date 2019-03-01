@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
     /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-    /// public snapshots available for any AWS account to launch, private snapshots that you
-    /// own, and private snapshots owned by another AWS account but for which you've been
-    /// given explicit create volume permissions.
+    /// public snapshots available for use by any AWS account, private snapshots that you
+    /// own, and private snapshots owned by another AWS account for which you've been given
+    /// explicit create volume permissions.
     /// 
     ///  
     /// <para>
@@ -229,7 +229,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerIds. 
         /// <para>
-        /// Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+        /// Describes the snapshots owned by one or more owners.
         /// </para>
         /// </summary>
         public List<string> OwnerIds
@@ -269,7 +269,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Describes snapshots for which you have launch permissions.
+        /// Default: Describes the snapshots for which you have create volume permissions.
         /// </para>
         /// </summary>
         public List<string> SnapshotIds

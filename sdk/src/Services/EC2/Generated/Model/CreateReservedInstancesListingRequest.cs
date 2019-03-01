@@ -36,9 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved
-    /// Instance Marketplace. Convertible Reserved Instances and Standard Reserved Instances
-    /// with a regional benefit cannot be sold.
+    /// Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace.
+    /// Convertible Reserved Instances cannot be sold.
     /// </para>
     ///  </note> 
     /// <para>

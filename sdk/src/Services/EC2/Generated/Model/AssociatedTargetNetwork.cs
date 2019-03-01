@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        ///  <b>The ID of the subnet.</b> 
+        /// The ID of the subnet.
         /// </para>
         /// </summary>
         public string NetworkId
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        ///  <b>The target network type.</b> 
+        /// The target network type.
         /// </para>
         /// </summary>
         public AssociatedNetworkType NetworkType

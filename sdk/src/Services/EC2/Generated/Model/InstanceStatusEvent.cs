@@ -34,8 +34,10 @@ namespace Amazon.EC2.Model
     {
         private EventCode _code;
         private string _description;
+        private string _instanceEventId;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
+        private DateTime? _notBeforeDeadline;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -80,6 +82,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceEventId. 
+        /// <para>
+        /// The ID of the event.
+        /// </para>
+        /// </summary>
+        public string InstanceEventId
+        {
+            get { return this._instanceEventId; }
+            set { this._instanceEventId = value; }
+        }
+
+        // Check to see if InstanceEventId property is set
+        internal bool IsSetInstanceEventId()
+        {
+            return this._instanceEventId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotAfter. 
         /// <para>
         /// The latest scheduled end time for the event.
@@ -113,6 +133,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNotBefore()
         {
             return this._notBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotBeforeDeadline. 
+        /// <para>
+        /// The deadline for starting the event.
+        /// </para>
+        /// </summary>
+        public DateTime NotBeforeDeadline
+        {
+            get { return this._notBeforeDeadline.GetValueOrDefault(); }
+            set { this._notBeforeDeadline = value; }
+        }
+
+        // Check to see if NotBeforeDeadline property is set
+        internal bool IsSetNotBeforeDeadline()
+        {
+            return this._notBeforeDeadline.HasValue; 
         }
 
     }

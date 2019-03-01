@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <b>Information about a Client VPN endpoint route.</b>
+    /// Information about a Client VPN endpoint route.
     /// </summary>
     public partial class ClientVpnRoute
     {
@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  <b>The route type.</b> 
+        /// The route type.
         /// </para>
         /// </summary>
         public string Type

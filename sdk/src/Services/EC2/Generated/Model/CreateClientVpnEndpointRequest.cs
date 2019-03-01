@@ -186,8 +186,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
-        /// The ARN of the server certificate. For more information, see the <a href="acm/latest/userguide/acm-overview.html">AWS
-        /// Certificate Manager User Guide</a> .
+        /// The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS
+        /// Certificate Manager User Guide</a>.
         /// </para>
         /// </summary>
         public string ServerCertificateArn

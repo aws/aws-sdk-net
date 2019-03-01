@@ -143,8 +143,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The number of I/O operations per second (IOPS) to provision for the volume, with a
-        /// maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions.
-        /// Maximum IOPS of 64,000 is guaranteed only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions.
+        /// Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
         /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -308,7 +308,7 @@ namespace Amazon.EC2.Model
         /// Defaults: If no volume type is specified, the default is <code>standard</code> in
         /// us-east-1, eu-west-1, eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1,
         /// ap-northeast-2, ap-southeast-1, ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1.
-        /// In all other regions, EBS defaults to <code>gp2</code>.
+        /// In all other Regions, EBS defaults to <code>gp2</code>.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

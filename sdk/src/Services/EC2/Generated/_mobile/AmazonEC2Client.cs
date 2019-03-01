@@ -7234,9 +7234,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-        /// public snapshots available for any AWS account to launch, private snapshots that you
-        /// own, and private snapshots owned by another AWS account but for which you've been
-        /// given explicit create volume permissions.
+        /// public snapshots available for use by any AWS account, private snapshots that you
+        /// own, and private snapshots owned by another AWS account for which you've been given
+        /// explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -10294,6 +10294,39 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceCreditSpecificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceEventStartTime
+
+        internal virtual ModifyInstanceEventStartTimeResponse ModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceEventStartTimeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceEventStartTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceEventStartTime operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
+        public virtual Task<ModifyInstanceEventStartTimeResponse> ModifyInstanceEventStartTimeAsync(ModifyInstanceEventStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstanceEventStartTimeResponse>(request, options, cancellationToken);
         }
 
         #endregion

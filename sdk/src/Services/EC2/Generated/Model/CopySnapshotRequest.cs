@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
     /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
-    /// copy the snapshot within the same region or from one region to another. You can use
+    /// copy the snapshot within the same Region or from one Region to another. You can use
     /// the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is
     /// copied to the regional endpoint that you send the HTTP request to.
     /// 
@@ -89,15 +89,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
         /// <para>
-        /// The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot
-        /// copy operation. This parameter is only valid for specifying the destination region
+        /// The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot
+        /// copy operation. This parameter is only valid for specifying the destination Region
         /// in a <code>PresignedUrl</code> parameter, where it is required.
         /// </para>
         ///  
         /// <para>
         /// The snapshot copy is sent to the regional endpoint that you sent the HTTP request
         /// to (for example, <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this
-        /// is specified using the <code>--region</code> parameter or the default region in your
+        /// is specified using the <code>--region</code> parameter or the default Region in your
         /// AWS configuration file.
         /// </para>
         /// </summary>
@@ -227,7 +227,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The ID of the region that contains the snapshot to be copied.
+        /// The ID of the Region that contains the snapshot to be copied.
         /// </para>
         /// </summary>
         public string SourceRegion

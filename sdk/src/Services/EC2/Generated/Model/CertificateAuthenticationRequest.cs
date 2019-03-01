@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <b>Information about the client certificate to be used for authentication.</b>
+    /// Information about the client certificate to be used for authentication.
     /// </summary>
     public partial class CertificateAuthenticationRequest
     {
@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientRootCertificateChainArn. 
         /// <para>
-        ///  <b>The ARN of the client certificate. The certificate must be signed by a certificate
-        /// authority (CA) and it must be provisioned in AWS Certificate Manager (ACM).</b> 
+        /// The ARN of the client certificate. The certificate must be signed by a certificate
+        /// authority (CA) and it must be provisioned in AWS Certificate Manager (ACM).
         /// </para>
         /// </summary>
         public string ClientRootCertificateChainArn

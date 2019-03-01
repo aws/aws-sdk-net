@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceEventId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceEventId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("notAfter", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("notBeforeDeadline", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NotBeforeDeadline = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes modifications to the permissions for a volume.
+    /// Describes modifications to the list of create volume permissions for a volume.
     /// </summary>
     public partial class CreateVolumePermissionModifications
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Add. 
         /// <para>
-        /// Adds a specific AWS account ID or group to a volume's list of create volume permissions.
+        /// Adds the specified AWS account ID or group to the list.
         /// </para>
         /// </summary>
         public List<CreateVolumePermission> Add
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Remove. 
         /// <para>
-        /// Removes a specific AWS account ID or group from a volume's list of create volume permissions.
+        /// Removes the specified AWS account ID or group from the list.
         /// </para>
         /// </summary>
         public List<CreateVolumePermission> Remove
