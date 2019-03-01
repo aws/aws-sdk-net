@@ -1,3 +1,9 @@
+### 3.3.466.0 (2019-03-01 19:41 UTC)
+* AutoScalingPlans (3.3.2.22)
+	* Documentation updates for autoscaling-plans
+* EC2 (3.3.84.0)
+	* This release adds support for modifying instance event start time which allows users to reschedule EC2 events.
+
 ### 3.3.465.0 (2019-02-28 20:48 UTC)
 * AlexaForBusiness (3.3.9.0)
 	* This release adds the PutInvitationConfiguration API to configure the user invitation email template with custom attributes, and the GetInvitationConfiguration API to retrieve the configured values.
