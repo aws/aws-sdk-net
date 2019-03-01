@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Describes a target tracking configuration. Used with <a>ScalingInstruction</a> and
-    /// <a>ScalingPolicy</a>.
+    /// Describes a target tracking configuration to use with AWS Auto Scaling. Used with
+    /// <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.
     /// </summary>
     public partial class TargetTrackingConfiguration
     {
@@ -44,7 +44,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property CustomizedScalingMetricSpecification. 
         /// <para>
-        /// A customized metric.
+        /// A customized metric. You can specify either a predefined metric or a customized metric.
+        /// 
         /// </para>
         /// </summary>
         public CustomizedScalingMetricSpecification CustomizedScalingMetricSpecification
@@ -108,7 +109,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property PredefinedScalingMetricSpecification. 
         /// <para>
-        /// A predefined metric.
+        /// A predefined metric. You can specify either a predefined metric or a customized metric.
         /// </para>
         /// </summary>
         public PredefinedScalingMetricSpecification PredefinedScalingMetricSpecification

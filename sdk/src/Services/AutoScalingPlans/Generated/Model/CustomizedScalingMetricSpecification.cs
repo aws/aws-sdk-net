@@ -33,8 +33,25 @@ namespace Amazon.AutoScalingPlans.Model
     /// 
     ///  
     /// <para>
-    /// For information about terminology, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>.
+    /// To create your customized scaling metric specification:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Add values for each required parameter from CloudWatch. You can use an existing metric,
+    /// or a new metric that you create. To use your own metric, you must first publish the
+    /// metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish
+    /// Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Choose a metric that changes proportionally with capacity. The value of the metric
+    /// should increase or decrease in inverse proportion to the number of capacity units.
+    /// That is, the value of the metric should decrease when capacity increases. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+    /// CloudWatch Concepts</a>. 
     /// </para>
     /// </summary>
     public partial class CustomizedScalingMetricSpecification
@@ -49,6 +66,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property Dimensions. 
         /// <para>
         /// The dimensions of the metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized scaling metric specification.
         /// </para>
         /// </summary>
         public List<MetricDimension> Dimensions

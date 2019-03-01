@@ -36,8 +36,7 @@ namespace Amazon.AutoScalingPlans.Model
     /// For predictive scaling to work with a customized load metric specification, AWS Auto
     /// Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that
     /// CloudWatch computes from metric data. Statistics are calculations used to aggregate
-    /// data over specified time periods. For more information, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
-    /// CloudWatch User Guide</a>. 
+    /// data over specified time periods.
     /// </para>
     ///  
     /// <para>
@@ -53,8 +52,9 @@ namespace Amazon.AutoScalingPlans.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about terminology, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>. 
+    /// For information about terminology, available metrics, or how to publish new metrics,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+    /// CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CustomizedLoadMetricSpecification
@@ -69,6 +69,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property Dimensions. 
         /// <para>
         /// The dimensions of the metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized load metric specification.
         /// </para>
         /// </summary>
         public List<MetricDimension> Dimensions
