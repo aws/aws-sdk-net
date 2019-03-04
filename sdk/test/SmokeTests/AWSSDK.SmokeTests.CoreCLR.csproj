@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -28,11 +28,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.CoreCLR.csproj" />
-    <ProjectReference Include="..\..\src\Services\Cloud9\AWSSDK.Cloud9.CoreCLR.csproj" />
-    <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.CoreCLR.csproj" />
-    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.CoreCLR.csproj" />
-    <ProjectReference Include="..\..\src\Services\TranscribeService\AWSSDK.TranscribeService.CoreCLR.csproj" />
-    <ProjectReference Include="..\..\src\Services\Neptune\AWSSDK.Neptune.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\src\Services\*\*.CoreCLR.csproj" />
   </ItemGroup>
   
   <ItemGroup>

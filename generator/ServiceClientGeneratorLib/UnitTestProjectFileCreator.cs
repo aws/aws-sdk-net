@@ -34,21 +34,28 @@ namespace ServiceClientGenerator
         {
             foreach (var configuration in _configurations)
             {
+                IList<ProjectFileCreator.ProjectReference> commonReferences;
+                IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
                 string projectName;
                 if (_isLegacyProj)
                 {
                     projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
+                    serviceProjectReferences = new List<ProjectFileCreator.ProjectReference>()
+                    {
+                        new ProjectFileCreator.ProjectReference
+                        {
+                            IncludePath = $@"..\..\src\Services\*\*.{configuration.Name}.csproj"
+                        }
+                    };
                 }
                 else
                 {
                     projectName = string.Format("AWSSDK.UnitTests.{0}.{1}.csproj", _serviceName, configuration.Name);
+                    serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
                 }
                     
                 string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
-                IList<ProjectFileCreator.ProjectReference> commonReferences;
-                IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
 
-                serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
                 commonReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
 
                 var session = new Dictionary<string, object>
