@@ -28,44 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateChannel operation.
-    /// Creates a new Channel.
+    /// Container for the parameters to the TagResource operation.
+    /// 
     /// </summary>
-    public partial class CreateChannelRequest : AmazonMediaPackageRequest
+    public partial class TagResourceRequest : AmazonMediaPackageRequest
     {
-        private string _description;
-        private string _id;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Description. A short text description of the Channel.
+        /// Gets and sets the property ResourceArn.
         /// </summary>
-        public string Description
+        public string ResourceArn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. The ID of the Channel. The ID must be unique within
-        /// the region and itcannot be changed after a Channel is created.
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>

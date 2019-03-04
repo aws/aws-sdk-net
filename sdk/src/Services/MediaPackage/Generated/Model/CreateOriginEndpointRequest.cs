@@ -42,6 +42,7 @@ namespace Amazon.MediaPackage.Model
         private string _manifestName;
         private MssPackage _mssPackage;
         private int? _startoverWindowSeconds;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeDelaySeconds;
         private List<string> _whitelist = new List<string>();
 
@@ -183,6 +184,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetStartoverWindowSeconds()
         {
             return this._startoverWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

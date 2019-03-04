@@ -36,6 +36,7 @@ namespace Amazon.MediaPackage.Model
         private string _description;
         private HlsIngest _hlsIngest;
         private string _id;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. The Amazon Resource Name (ARN) assigned to the Channel.
@@ -95,6 +96,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
