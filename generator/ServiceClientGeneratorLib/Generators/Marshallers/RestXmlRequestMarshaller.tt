@@ -110,11 +110,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
 		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
 		foreach(var member in childmembers)
-		{
-			if(member.IsIdempotent)
-			{
-			    throw new Exception("Idempotency Token feature is not supported");
-			}
+		{			
 			if(member.IsStructure)
 			{
 				ProcessStructure(variableName, member, operation.XmlNamespace);				
@@ -124,15 +120,24 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				ProcessList(variableName, member, operation.XmlNamespace);
 			}
 			else if(member.IsMap)
-			{
-				throw new NotImplementedException("Marshalling maps for rest-xml protocol is not implemented.");
+			{				
+				ProcessMap(variableName, member, operation.XmlNamespace);
 			}
 			else
 			{
 #>
 				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
-
+<#+
+				if(member.IsIdempotent)
+				{
+#>
+				else				
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", Guid.NewGuid().ToString());				
+<#+					
+				}
+#>
+<#=""#>
 <#+
 			}
 			
@@ -177,8 +182,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				ProcessList(variableName, member, xmlNamespace);	
 			}
 			else if(member.IsMap)
-			{
-				throw new NotImplementedException("Marshalling maps for rest-xml protocol is not implemented.");
+			{				
+				ProcessMap(variableName, member, xmlNamespace);
 			}
 			else
 			{
@@ -197,7 +202,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
 
 			// Use shape's ListMarshallName if the structure is a list.
-			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName : member.MarshallName;
+			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
 #>				
 				if (<#=variableName#> != null) 
 				{
@@ -231,11 +236,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else
 			{
+				var listMarshallName = member.Shape.ListMarshallName ?? "member";
 				if(member.Shape.ListShape.IsDateTime)
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
-					xmlWriter.WriteStartElement("<#=member.Shape.ListMarshallName#>", "<#=xmlNamespace#>");
+					xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
                     xmlWriter.WriteValue(<#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=listItemVariable#>));
                     xmlWriter.WriteEndElement();
 <#+				
@@ -245,7 +251,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
-					xmlWriter.WriteStartElement("<#=member.Shape.ListMarshallName#>", "<#=xmlNamespace#>");
+					xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
                     xmlWriter.WriteValue(<#=listItemVariable#>);
                     xmlWriter.WriteEndElement();
 <#+				
@@ -256,6 +262,27 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					}			
 					xmlWriter.WriteEndElement();			
 				}
+<#+				
+	}
+
+	void ProcessMap(string variableName, Member member, string xmlNamespace)
+	{				
+#>
+					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
+					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>) 
+					{
+<#+
+			PushIndent("	");						
+#>
+					xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
+					xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp.Key);
+					xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value);
+					xmlWriter.WriteEndElement();
+<#+				
+			PopIndent();			
+#>
+					}			
+					xmlWriter.WriteEndElement();				
 <#+				
 	}
 #>

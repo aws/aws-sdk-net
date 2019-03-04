@@ -51,5 +51,18 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             Assert.IsNotNull(value);
             return value;
         }
+
+        protected override void ValidateMapValue(object mapValue, Member member, JsonData marshalledValue)
+        {
+            var valueShape = member.Shape.ValueShape;
+            if (valueShape.IsStructure || valueShape.IsMap || valueShape.IsList)
+            {
+                //Implement value checks of these other types
+            }            
+            else
+            {
+                Assert.AreEqual(mapValue.ToString(), marshalledValue.ToString());
+            }            
+        }
     }
 }

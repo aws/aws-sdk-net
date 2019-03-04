@@ -42,8 +42,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
 			if(member.Shape.IsList)
 			{
+				var listMarshallName = member.Shape.ListMarshallName ?? "member";
 #>
-					if (context.TestExpression("<#=member.MarshallName#>/<#=member.Shape.ListMarshallName#>", targetDepth))
+					if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						unmarshalledObject.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));

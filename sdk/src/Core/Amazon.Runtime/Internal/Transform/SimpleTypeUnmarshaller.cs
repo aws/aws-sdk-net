@@ -678,12 +678,32 @@ namespace Amazon.Runtime.Internal.Transform
         public DictionaryUnmarshaller(TKeyUnmarshaller kUnmarshaller, TValueUnmarshaller vUnmarshaller)
         {
             KVUnmarshaller = new KeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller>(kUnmarshaller, vUnmarshaller);
+        }                
+
+        public Dictionary<TKey, TValue> Unmarshall(XmlUnmarshallerContext context)
+        {
+            var originalDepth = context.CurrentDepth;
+            var targetDepth = originalDepth + 1;
+
+            // If a dictionary is present in the response, use AlwaysSendDictionary,
+            // so if the response was empty, reusing the object in the request we will
+            // end up sending the same empty collection back.
+            var dictionary = new AlwaysSendDictionary<TKey, TValue>();
+            
+            while (context.Read())
+            {
+                if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    break;
+                }
+
+                var item = KVUnmarshaller.Unmarshall(context);
+                dictionary.Add(item.Key, item.Value);
+            }                        
+            
+            return dictionary;
         }
 
-        Dictionary<TKey, TValue> IUnmarshaller<Dictionary<TKey, TValue>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
         public Dictionary<TKey, TValue> Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read(); // Read { or null

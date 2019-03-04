@@ -698,7 +698,7 @@ namespace ServiceClientGenerator
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey]);
                     var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey]);
 
-                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json || this.model.Type == ServiceType.Rest_Xml)
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else

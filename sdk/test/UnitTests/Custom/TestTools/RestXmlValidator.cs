@@ -50,18 +50,49 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         protected override void ValidateListMember(object item, Shape shape, XElement marshalledListData)
         {
-            Assert.AreEqual(shape.ListMarshallName, marshalledListData.Name.LocalName);
+            Assert.AreEqual(shape.ListMarshallName ?? "member", marshalledListData.Name.LocalName);
             Assert.AreEqual(this.Operation.XmlNamespace, marshalledListData.Name.NamespaceName);
         }
 
         protected override IEnumerable<object> GetMarshalledMapKey(XElement marshalledData)
         {
-            throw new NotImplementedException();
+            var keys = marshalledData.Descendants().Where(e => e.Name.LocalName == "key").Select(e => e.Value);
+            Assert.IsNotNull(keys);
+            return keys;
         }
 
         protected override XElement GetMarshalledMapValue(XElement marshalledData, object key)
         {
-            throw new NotImplementedException();
+            /* Sample format for map entries
+            <entry>
+                <key>key0</key>
+                <value>test-value</value>
+            </entry>
+            <entry>
+                <key>key1</key>
+                <value>test-value</value>
+            </entry>
+            <entry>
+                <key>key2</key>
+                <value>test-value</value>
+            </entry>
+            */
+            var entryElements = marshalledData.Elements().Select(e => e.Elements().ToDictionary(k => k.Name.LocalName));
+            var matchedEntry = entryElements.Single(elementsMap => elementsMap["key"].Value == key.ToString());
+            return matchedEntry["value"];
+        }
+
+        protected override void ValidateMapValue(object mapValue, Member member, XElement marshalledValue)
+        {
+            var valueShape = member.Shape.ValueShape;
+            if (valueShape.IsStructure || valueShape.IsMap || valueShape.IsList)
+            {
+                //Implement value checks of these other types
+            }
+            else
+            {
+                Assert.AreEqual(mapValue.ToString(), marshalledValue.Value);
+            }
         }
     }
 }
