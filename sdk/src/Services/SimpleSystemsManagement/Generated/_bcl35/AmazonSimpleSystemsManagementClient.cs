@@ -5868,6 +5868,86 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetServiceSetting
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
+        /// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back
+        /// to the original value defined by the AWS service team.
+        /// </para>
+        ///  
+        /// <para>
+        /// Query the current service setting for the account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        public virtual GetServiceSettingResponse GetServiceSetting(GetServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceSetting(GetServiceSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceSetting.</param>
+        /// 
+        /// <returns>Returns a  GetServiceSettingResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        public virtual GetServiceSettingResponse EndGetServiceSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceSettingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  LabelParameterVersion
 
         /// <summary>
@@ -7891,6 +7971,90 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResetServiceSetting
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
+        /// current value. Use the <a>UpdateServiceSetting</a> API action to change the default
+        /// setting. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Reset the service setting for the account to the default value as provisioned by the
+        /// AWS service team. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the ResetServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        public virtual ResetServiceSettingResponse ResetServiceSetting(ResetServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<ResetServiceSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetServiceSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        public virtual IAsyncResult BeginResetServiceSetting(ResetServiceSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetServiceSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetServiceSetting.</param>
+        /// 
+        /// <returns>Returns a  ResetServiceSettingResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        public virtual ResetServiceSettingResponse EndResetServiceSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetServiceSettingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ResumeSession
 
         /// <summary>
@@ -9336,6 +9500,89 @@ namespace Amazon.SimpleSystemsManagement
         public virtual UpdatePatchBaselineResponse EndUpdatePatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSetting
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
+        /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to
+        /// the original value defined by the AWS service team.
+        /// </para>
+        ///  
+        /// <para>
+        /// Update the service setting for the account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        public virtual UpdateServiceSettingResponse UpdateServiceSetting(UpdateServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSetting operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        public virtual IAsyncResult BeginUpdateServiceSetting(UpdateServiceSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceSetting.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceSettingResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        public virtual UpdateServiceSettingResponse EndUpdateServiceSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceSettingResponse>(asyncResult);
         }
 
         #endregion

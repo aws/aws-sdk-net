@@ -3171,6 +3171,39 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetServiceSetting
+
+        internal virtual GetServiceSettingResponse GetServiceSetting(GetServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSettingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        public virtual Task<GetServiceSettingResponse> GetServiceSettingAsync(GetServiceSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceSettingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  LabelParameterVersion
 
         internal virtual LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request)
@@ -4151,6 +4184,39 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResetServiceSetting
+
+        internal virtual ResetServiceSettingResponse ResetServiceSetting(ResetServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<ResetServiceSettingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        public virtual Task<ResetServiceSettingResponse> ResetServiceSettingAsync(ResetServiceSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetServiceSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetServiceSettingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ResumeSession
 
         internal virtual ResumeSessionResponse ResumeSession(ResumeSessionRequest request)
@@ -4788,6 +4854,39 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePatchBaselineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSetting
+
+        internal virtual UpdateServiceSettingResponse UpdateServiceSetting(UpdateServiceSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSettingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        public virtual Task<UpdateServiceSettingResponse> UpdateServiceSettingAsync(UpdateServiceSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceSettingResponse>(request, options, cancellationToken);
         }
 
         #endregion

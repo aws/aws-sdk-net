@@ -4123,6 +4123,59 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetServiceSetting
+
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
+        /// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back
+        /// to the original value defined by the AWS service team.
+        /// </para>
+        ///  
+        /// <para>
+        /// Query the current service setting for the account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        GetServiceSettingResponse GetServiceSetting(GetServiceSettingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">REST API Reference for GetServiceSetting Operation</seealso>
+        Task<GetServiceSettingResponse> GetServiceSettingAsync(GetServiceSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  LabelParameterVersion
 
 
@@ -5755,6 +5808,63 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResetServiceSetting
+
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
+        /// current value. Use the <a>UpdateServiceSetting</a> API action to change the default
+        /// setting. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Reset the service setting for the account to the default value as provisioned by the
+        /// AWS service team. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the ResetServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        ResetServiceSettingResponse ResetServiceSetting(ResetServiceSettingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">REST API Reference for ResetServiceSetting Operation</seealso>
+        Task<ResetServiceSettingResponse> ResetServiceSettingAsync(ResetServiceSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ResumeSession
 
 
@@ -6808,6 +6918,62 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateServiceSetting
+
+
+        /// <summary>
+        /// <code>ServiceSetting</code> is an account-level setting for an AWS service. This
+        /// setting defines how a user interacts with or uses a service or a feature of a service.
+        /// For example, if an AWS service charges money to the account based on feature or service
+        /// usage, then the AWS service team might create a default setting of "false". This means
+        /// the user can't use this feature unless they change the setting to "true" and intentionally
+        /// opt in for a paid feature.
+        /// 
+        ///  
+        /// <para>
+        /// Services map a <code>SettingId</code> object to a setting value. AWS services teams
+        /// define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
+        /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
+        /// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
+        /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to
+        /// the original value defined by the AWS service team.
+        /// </para>
+        ///  
+        /// <para>
+        /// Update the service setting for the account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSetting service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSetting service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceSettingNotFoundException">
+        /// The specified service setting was not found. Either the service name or the setting
+        /// has not been provisioned by the AWS service team.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        UpdateServiceSettingResponse UpdateServiceSetting(UpdateServiceSettingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
+        Task<UpdateServiceSettingResponse> UpdateServiceSettingAsync(UpdateServiceSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
