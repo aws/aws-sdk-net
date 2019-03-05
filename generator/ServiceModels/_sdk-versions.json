@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.467.0",
+    "ProductVersion" : "3.3.468.0",
     "CoreVersion"    : "3.3.31.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.12.21",
+            "Version" : "3.3.12.22",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -377,7 +377,7 @@
             "InPreview"               : false
         },
         "StorageGateway"            : {
-            "Version" : "3.3.13.10",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.17.1",
+            "Version" : "3.3.18.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -1370,6 +1370,14 @@
         },
         "WorkLink"                        : {
             "Version" : "3.3.0.8",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.31.12"
+            },
+            "InPreview"               : false
+        },
+        "Textract"                        : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
