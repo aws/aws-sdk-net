@@ -123,18 +123,18 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-    /// Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+    /// User Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
     /// API Reference Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI
-    /// Reference for AWS CodeDeploy</a> 
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS
+    /// CLI Reference for AWS CodeDeploy</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1694,6 +1694,15 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Gets information about a deployment.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  The <code>content</code> property of the <code>appSpecContent</code> object in the
+        /// returned revision is always null. Use <code>GetApplicationRevision</code> and the
+        /// <code>sha256</code> property of the returned <code>appSpecContent</code> object to
+        /// get the content of the deployment’s AppSpec file. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// 

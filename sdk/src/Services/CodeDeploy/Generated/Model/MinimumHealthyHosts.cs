@@ -70,7 +70,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
         /// CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>

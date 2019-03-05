@@ -156,7 +156,7 @@ namespace Amazon.CodeDeploy.Model
         ///  
         /// <para>
         /// For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
         /// with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>
@@ -349,7 +349,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TriggerConfigurations. 
         /// <para>
         /// Information about triggers to create when the deployment group is created. For examples,
-        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
         /// a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>

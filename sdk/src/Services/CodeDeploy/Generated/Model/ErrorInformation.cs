@@ -38,8 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-        /// Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+        /// Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
         /// CodeDeploy User Guide</a>.
         /// </para>
         ///  

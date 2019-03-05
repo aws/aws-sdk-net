@@ -357,7 +357,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TriggerConfigurations. 
         /// <para>
         /// Information about triggers to change when the deployment group is updated. For examples,
-        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
         /// Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>

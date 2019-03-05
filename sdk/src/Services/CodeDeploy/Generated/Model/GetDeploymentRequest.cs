@@ -30,6 +30,15 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the GetDeployment operation.
     /// Gets information about a deployment.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  The <code>content</code> property of the <code>appSpecContent</code> object in the
+    /// returned revision is always null. Use <code>GetApplicationRevision</code> and the
+    /// <code>sha256</code> property of the returned <code>appSpecContent</code> object to
+    /// get the content of the deployment’s AppSpec file. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetDeploymentRequest : AmazonCodeDeployRequest
     {

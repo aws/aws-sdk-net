@@ -116,18 +116,18 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-    /// Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+    /// User Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
     /// API Reference Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI
-    /// Reference for AWS CodeDeploy</a> 
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS
+    /// CLI Reference for AWS CodeDeploy</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
