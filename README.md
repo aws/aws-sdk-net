@@ -397,6 +397,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.
 * [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+* [AWSSDK.Textract](https://www.nuget.org/packages/AWSSDK.Textract/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.TranscribeService](https://www.nuget.org/packages/AWSSDK.TranscribeService/)
 	* Amazon Transcribe Public Preview Release
 * [AWSSDK.Transfer](https://www.nuget.org/packages/AWSSDK.Transfer/)

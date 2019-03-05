@@ -193,6 +193,7 @@
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\StepFunctions\AWSSDK.StepFunctions.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Textract\AWSSDK.Textract.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\TranscribeService\AWSSDK.TranscribeService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Transfer\AWSSDK.Transfer.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Translate\AWSSDK.Translate.Net45.csproj"/>
