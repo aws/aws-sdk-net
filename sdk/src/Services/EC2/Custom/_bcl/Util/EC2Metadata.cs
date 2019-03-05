@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.EC2.Util
 {
@@ -66,6 +67,8 @@ namespace Amazon.EC2.Util
             MAX_RETRIES = 3; 
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
+
+        private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
 
         /// <summary>
         /// The AMI ID used to launch the instance.
@@ -408,6 +411,7 @@ namespace Amazon.EC2.Util
                     request = WebRequest.Create(EC2_METADATA_ROOT + path) as HttpWebRequest;
 
                 request.Timeout = (int)TimeSpan.FromSeconds(5).TotalMilliseconds;
+                request.UserAgent = _userAgent;
 
                 using (var response = request.GetResponse())
                 {

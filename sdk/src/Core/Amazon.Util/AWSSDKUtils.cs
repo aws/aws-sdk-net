@@ -28,6 +28,7 @@ using System.Linq;
 using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 namespace Amazon.Util
 {
@@ -65,6 +66,8 @@ namespace Amazon.Util
 
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
+
+        private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty);
 
         #endregion
 
@@ -989,14 +992,19 @@ namespace Amazon.Util
         {
             return DownloadStringContent(uri, TimeSpan.Zero, proxy);
         }
-
+        
         public static string DownloadStringContent(Uri uri, TimeSpan timeout, IWebProxy proxy)
         {
 #if PCL || CORECLR 
             using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 if (timeout > TimeSpan.Zero)
+                {
                     client.Timeout = timeout;
+                }
+                
+                client.DefaultRequestHeaders.TryAddWithoutValidation(UserAgentHeader, _userAgent);
+                                
                 var content = AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
@@ -1006,8 +1014,14 @@ namespace Amazon.Util
 #else
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
             request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
+
             if (timeout > TimeSpan.Zero)
+            {
                 request.Timeout = (int)timeout.TotalMilliseconds;
+            }
+
+            request.UserAgent = _userAgent;            
+            
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             using (StreamReader reader = new StreamReader(response.GetResponseStream()))
             {
