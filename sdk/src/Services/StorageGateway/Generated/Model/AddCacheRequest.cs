@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the AddCache operation.
     /// Configures one or more gateway local disks as cache for a gateway. This operation
-    /// is only supported in the cached volume, tape and file gateway type (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+    /// is only supported in the cached volume, tape and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
     /// Gateway Concepts</a>).
     /// 
     ///  
@@ -45,7 +45,12 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property DiskIds.
+        /// Gets and sets the property DiskIds. 
+        /// <para>
+        /// An array of strings that identify disks that are to be configured as working storage.
+        /// Each string have a minimum length of 1 and maximum length of 300. You can get the
+        /// disk IDs from the <a>ListLocalDisks</a> API.
+        /// </para>
         /// </summary>
         public List<string> DiskIds
         {

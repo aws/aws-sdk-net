@@ -41,7 +41,10 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property CacheAllocatedInBytes.
+        /// Gets and sets the property CacheAllocatedInBytes. 
+        /// <para>
+        /// The amount of cache in bytes allocated to the a gateway.
+        /// </para>
         /// </summary>
         public long CacheAllocatedInBytes
         {
@@ -56,7 +59,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheDirtyPercentage.
+        /// Gets and sets the property CacheDirtyPercentage. 
+        /// <para>
+        /// The file share's contribution to the overall percentage of the gateway's cache that
+        /// has not been persisted to AWS. The sample is taken at the end of the reporting period.
+        /// </para>
         /// </summary>
         public double CacheDirtyPercentage
         {
@@ -71,7 +78,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheHitPercentage.
+        /// Gets and sets the property CacheHitPercentage. 
+        /// <para>
+        /// Percent of application read operations from the file shares that are served from cache.
+        /// The sample is taken at the end of the reporting period.
+        /// </para>
         /// </summary>
         public double CacheHitPercentage
         {
@@ -101,7 +112,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheUsedPercentage.
+        /// Gets and sets the property CacheUsedPercentage. 
+        /// <para>
+        /// Percent use of the gateway's cache storage. This metric applies only to the gateway-cached
+        /// volume setup. The sample is taken at the end of the reporting period.
+        /// </para>
         /// </summary>
         public double CacheUsedPercentage
         {
@@ -116,7 +131,12 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiskIds.
+        /// Gets and sets the property DiskIds. 
+        /// <para>
+        /// An array of strings that identify disks that are to be configured as working storage.
+        /// Each string have a minimum length of 1 and maximum length of 300. You can get the
+        /// disk IDs from the <a>ListLocalDisks</a> API.
+        /// </para>
         /// </summary>
         public List<string> DiskIds
         {

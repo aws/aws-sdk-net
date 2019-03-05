@@ -37,7 +37,10 @@ namespace Amazon.StorageGateway.Model
         private string _volumeRecoveryPointTime;
 
         /// <summary>
-        /// Gets and sets the property SnapshotId.
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the snapshot.
+        /// </para>
         /// </summary>
         public string SnapshotId
         {
@@ -52,7 +55,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+        /// operation to return to retrieve the TargetARN for specified VolumeARN.
+        /// </para>
         /// </summary>
         public string VolumeARN
         {
@@ -67,7 +74,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeRecoveryPointTime.
+        /// Gets and sets the property VolumeRecoveryPointTime. 
+        /// <para>
+        /// The time the volume was created from the recovery point.
+        /// </para>
         /// </summary>
         public string VolumeRecoveryPointTime
         {

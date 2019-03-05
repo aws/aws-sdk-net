@@ -98,7 +98,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TapeStatus.
+        /// Gets and sets the property TapeStatus. 
+        /// <para>
+        /// The status of the virtual tapes.
+        /// </para>
         /// </summary>
         public string TapeStatus
         {

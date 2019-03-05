@@ -28,7 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the ListVolumes operation.
+    /// A JSON object containing the following fields:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListVolumesOutput$Marker</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListVolumesOutput$VolumeInfos</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListVolumesResponse : AmazonWebServiceResponse
     {
@@ -52,7 +62,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use the marker in your next request to continue pagination of iSCSI volumes. If there
+        /// are no more volumes to list, this field does not appear in the response body.
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -67,7 +81,12 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeInfos.
+        /// Gets and sets the property VolumeInfos. 
+        /// <para>
+        /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume.
+        /// If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty
+        /// array "[]".
+        /// </para>
         /// </summary>
         public List<VolumeInfo> VolumeInfos
         {

@@ -38,13 +38,17 @@ namespace Amazon.StorageGateway.Model
     /// <para>
     /// Storage gateways of all types
     /// </para>
-    ///  </li> </ul> <ul> <li> 
+    ///  </li> <li> 
     /// <para>
     /// Storage Volumes
     /// </para>
-    ///  </li> </ul> <ul> <li> 
+    ///  </li> <li> 
     /// <para>
     /// Virtual Tapes
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// NFS and SMB File Shares
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -84,7 +88,9 @@ namespace Amazon.StorageGateway.Model
         ///  <note> 
         /// <para>
         /// Valid characters for key and value are letters, spaces, and numbers representable
-        /// in UTF-8 format, and the following special characters: + - = . _ : / @.
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
+        /// length of a tag's key is 128 characters, and the maximum length for a tag's value
+        /// is 256.
         /// </para>
         ///  </note>
         /// </summary>

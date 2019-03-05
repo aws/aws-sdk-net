@@ -35,7 +35,10 @@ namespace Amazon.StorageGateway.Model
         private string _volumeARN;
 
         /// <summary>
-        /// Gets and sets the property VolumeARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The volume which snapshot schedule was deleted.
+        /// </para>
         /// </summary>
         public string VolumeARN
         {

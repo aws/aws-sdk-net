@@ -50,6 +50,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _readOnly;
         private bool? _requesterPays;
         private string _role;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
 
         /// <summary>
@@ -321,6 +322,27 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to ten (10) tags assigned to the SMB file share are returned, sorted
+        /// alphabetically by key name. Every tag is a key-value pair. For a gateway with more
+        /// than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+        /// API.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -60,7 +60,12 @@ namespace Amazon.StorageGateway.Model
         private string _volumeARN;
 
         /// <summary>
-        /// Gets and sets the property SnapshotDescription.
+        /// Gets and sets the property SnapshotDescription. 
+        /// <para>
+        /// Textual description of the snapshot that appears in the Amazon EC2 console, Elastic
+        /// Block Store snapshots panel in the <b>Description</b> field, and in the AWS Storage
+        /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field
+        /// </para>
         /// </summary>
         public string SnapshotDescription
         {
@@ -75,7 +80,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+        /// operation to return to retrieve the TargetARN for specified VolumeARN.
+        /// </para>
         /// </summary>
         public string VolumeARN
         {

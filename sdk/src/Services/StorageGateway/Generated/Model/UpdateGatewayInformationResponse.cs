@@ -51,7 +51,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayName.
+        /// Gets and sets the property GatewayName. 
+        /// <para>
+        /// The name you configured for your gateway.
+        /// </para>
         /// </summary>
         public string GatewayName
         {

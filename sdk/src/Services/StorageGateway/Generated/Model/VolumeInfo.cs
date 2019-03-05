@@ -107,7 +107,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeAttachmentStatus.
+        /// Gets and sets the property VolumeAttachmentStatus. 
+        /// <para>
+        /// One of the VolumeStatus values that indicates the state of the storage volume. 
+        /// </para>
         /// </summary>
         public string VolumeAttachmentStatus
         {
@@ -167,7 +170,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeType.
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// One of the VolumeType enumeration values describing the type of the volume.
+        /// </para>
         /// </summary>
         public string VolumeType
         {

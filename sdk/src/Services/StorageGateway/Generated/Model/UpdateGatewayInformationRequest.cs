@@ -78,7 +78,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayTimezone.
+        /// Gets and sets the property GatewayTimezone. 
+        /// <para>
+        /// A value that indicates the time zone of the gateway.
+        /// </para>
         /// </summary>
         public string GatewayTimezone
         {

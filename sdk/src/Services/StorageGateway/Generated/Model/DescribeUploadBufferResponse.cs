@@ -38,7 +38,13 @@ namespace Amazon.StorageGateway.Model
         private long? _uploadBufferUsedInBytes;
 
         /// <summary>
-        /// Gets and sets the property DiskIds.
+        /// Gets and sets the property DiskIds. 
+        /// <para>
+        /// An array of the gateway's local disk IDs that are configured as working storage. Each
+        /// local disk ID is specified as a string (minimum length of 1 and maximum length of
+        /// 300). If no local disks are configured as working storage, then the DiskIds array
+        /// is empty.
+        /// </para>
         /// </summary>
         public List<string> DiskIds
         {
@@ -68,7 +74,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UploadBufferAllocatedInBytes.
+        /// Gets and sets the property UploadBufferAllocatedInBytes. 
+        /// <para>
+        /// The total number of bytes allocated in the gateway's as upload buffer.
+        /// </para>
         /// </summary>
         public long UploadBufferAllocatedInBytes
         {
@@ -83,7 +92,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UploadBufferUsedInBytes.
+        /// Gets and sets the property UploadBufferUsedInBytes. 
+        /// <para>
+        /// The total number of bytes being used in the gateway's upload buffer.
+        /// </para>
         /// </summary>
         public long UploadBufferUsedInBytes
         {

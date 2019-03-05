@@ -36,7 +36,15 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property Disks.
+        /// Gets and sets the property Disks. 
+        /// <para>
+        /// A JSON object containing the following fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>ListLocalDisksOutput$Disks</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Disk> Disks
         {

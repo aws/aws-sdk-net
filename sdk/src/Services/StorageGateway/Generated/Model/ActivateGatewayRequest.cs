@@ -49,6 +49,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayTimezone;
         private string _gatewayType;
         private string _mediumChangerType;
+        private List<Tag> _tags = new List<Tag>();
         private string _tapeDriveType;
 
         /// <summary>
@@ -103,14 +104,13 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the region where you want to store your data. The gateway region
         /// specified must be the same region as the region in your <code>Host</code> header in
         /// the request. For more information about available regions and endpoints for AWS Storage
-        /// Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+        /// Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
         /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-        /// "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2",
-        /// "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
+        ///  Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+        /// Storage Gateway Regions and Endpoints</a> in the AWS General Reference. 
         /// </para>
         /// </summary>
         public string GatewayRegion
@@ -192,6 +192,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetMediumChangerType()
         {
             return this._mediumChangerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to ten (10) tags assigned to the gateway may be specified. Every tag
+        /// is a key-value pair.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
+        /// length of a tag's key is 128 characters, and the maximum length for a tag's value
+        /// is 256.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

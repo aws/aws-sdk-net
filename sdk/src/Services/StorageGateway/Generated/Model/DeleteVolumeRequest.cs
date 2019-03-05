@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
     /// you are deleting. You should also make sure there is no snapshot in progress. You
     /// can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on the
     /// volume you are deleting and check the snapshot status. For more information, go to
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
     /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
     /// </para>
     ///  

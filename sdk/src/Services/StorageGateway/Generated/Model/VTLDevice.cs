@@ -76,7 +76,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VTLDeviceProductIdentifier.
+        /// Gets and sets the property VTLDeviceProductIdentifier. 
+        /// <para>
+        /// Specifies the model number of device that the VTL device emulates.
+        /// </para>
         /// </summary>
         public string VTLDeviceProductIdentifier
         {
@@ -91,7 +94,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VTLDeviceType.
+        /// Gets and sets the property VTLDeviceType. 
+        /// <para>
+        /// Specifies the type of device that the VTL device emulates.
+        /// </para>
         /// </summary>
         public string VTLDeviceType
         {
@@ -106,7 +112,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VTLDeviceVendor.
+        /// Gets and sets the property VTLDeviceVendor. 
+        /// <para>
+        /// Specifies the vendor of the device that the VTL device object emulates.
+        /// </para>
         /// </summary>
         public string VTLDeviceVendor
         {

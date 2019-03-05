@@ -64,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _requesterPays;
         private string _role;
         private string _squash;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientList. 
@@ -342,6 +343,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetSquash()
         {
             return this._squash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is
+        /// a key-value pair.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
+        /// length of a tag's key is 128 characters, and the maximum length for a tag's value
+        /// is 256.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

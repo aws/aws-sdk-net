@@ -51,7 +51,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeRecoveryPointInfos.
+        /// Gets and sets the property VolumeRecoveryPointInfos. 
+        /// <para>
+        /// An array of <a>VolumeRecoveryPointInfo</a> objects.
+        /// </para>
         /// </summary>
         public List<VolumeRecoveryPointInfo> VolumeRecoveryPointInfos
         {

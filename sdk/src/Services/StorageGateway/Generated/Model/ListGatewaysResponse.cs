@@ -36,7 +36,10 @@ namespace Amazon.StorageGateway.Model
         private string _marker;
 
         /// <summary>
-        /// Gets and sets the property Gateways.
+        /// Gets and sets the property Gateways. 
+        /// <para>
+        /// An array of <a>GatewayInfo</a> objects.
+        /// </para>
         /// </summary>
         public List<GatewayInfo> Gateways
         {
@@ -51,7 +54,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use the marker in your next request to fetch the next set of gateways in the list.
+        /// If there are no more gateways to list, this field does not appear in the response.
+        /// </para>
         /// </summary>
         public string Marker
         {

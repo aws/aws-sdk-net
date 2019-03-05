@@ -46,7 +46,12 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property DiskIds.
+        /// Gets and sets the property DiskIds. 
+        /// <para>
+        /// An array of strings that identify disks that are to be configured as working storage.
+        /// Each string have a minimum length of 1 and maximum length of 300. You can get the
+        /// disk IDs from the <a>ListLocalDisks</a> API.
+        /// </para>
         /// </summary>
         public List<string> DiskIds
         {

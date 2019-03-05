@@ -162,7 +162,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -211,7 +211,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -256,7 +256,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -324,7 +324,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -363,7 +363,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapesRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -384,7 +384,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1187,7 +1187,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1212,7 +1212,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1262,7 +1262,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1429,7 +1429,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1479,7 +1479,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1494,7 +1494,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1549,7 +1549,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1571,7 +1571,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.KMSKey</property>
-    <min>20</min>
+    <min>7</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>

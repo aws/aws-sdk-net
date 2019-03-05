@@ -104,6 +104,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MediumChangerType);
                 }
 
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTapeDriveType())
                 {
                     context.Writer.WritePropertyName("TapeDriveType");

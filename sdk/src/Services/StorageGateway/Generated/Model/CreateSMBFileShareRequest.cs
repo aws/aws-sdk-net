@@ -39,7 +39,7 @@ namespace Amazon.StorageGateway.Model
     /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
     /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
     /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
-    /// activate it. For information about how to activate AWS STS, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// activate it. For information about how to activate AWS STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
     /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
     /// User Guide.</i> 
     /// </para>
@@ -64,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _readOnly;
         private bool? _requesterPays;
         private string _role;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
 
         /// <summary>
@@ -318,6 +319,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is
+        /// a key-value pair.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
+        /// length of a tag's key is 128 characters, and the maximum length for a tag's value
+        /// is 256.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
