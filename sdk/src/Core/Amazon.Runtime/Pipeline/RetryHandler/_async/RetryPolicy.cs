@@ -42,14 +42,15 @@ namespace Amazon.Runtime
             bool canRetry = !RetryLimitReached(executionContext) && CanRetry(executionContext);
             if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
-                if ((IsClockskew(executionContext, exception)) || await RetryForExceptionAsync(executionContext, exception))
+                var isClockSkewError = IsClockskew(executionContext, exception);
+                if (isClockSkewError || await RetryForExceptionAsync(executionContext, exception))
                 {
                     executionContext.RequestContext.IsLastExceptionRetryable = true;
                     if (!canRetry)
                     {
                         return false;
                     }
-                    return OnRetry(executionContext);
+                    return OnRetry(executionContext, isClockSkewError);
                 }
             }
             return false;

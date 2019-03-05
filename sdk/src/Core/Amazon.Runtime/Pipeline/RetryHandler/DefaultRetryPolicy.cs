@@ -175,8 +175,7 @@ namespace Amazon.Runtime.Internal
         {
             return RetryForExceptionSync(exception, executionContext);
         }
-
-
+        
         /// <summary>
         /// Virtual method that gets called when a retry request is initiated. If retry throttling is
         /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
@@ -186,9 +185,22 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override bool OnRetry(IExecutionContext executionContext)
         {
-            if (executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity != null)
+            return OnRetry(executionContext, false);
+        }
+
+        /// <summary>
+        /// Virtual method that gets called when a retry request is initiated. If retry throttling is
+        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// If retry throttling is disabled, true is returned.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <param name="bypassAcquireCapacity">true to bypass any attempt to acquire capacity on a retry</param>
+        public override bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity)
+        {
+            if (!bypassAcquireCapacity && executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity != null)
             {
-                return (_capacityManagerInstance.TryAcquireCapacity(_retryCapacity));
+                return _capacityManagerInstance.TryAcquireCapacity(_retryCapacity);                
             }
             else
             {

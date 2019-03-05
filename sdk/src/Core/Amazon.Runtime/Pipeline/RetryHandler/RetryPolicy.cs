@@ -57,7 +57,8 @@ namespace Amazon.Runtime
             // 115 ms was added(because of GetPreSignedUrl and Http HEAD requests).
             if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
-                if (IsClockskew(executionContext, exception) || RetryForException(executionContext, exception))
+                var isClockSkewError = IsClockskew(executionContext, exception);
+                if (isClockSkewError || RetryForException(executionContext, exception))
                 {
                     executionContext.RequestContext.IsLastExceptionRetryable = true;
                     // If CSM is enabled but canRetry was false, we should not retry the request.
@@ -66,7 +67,7 @@ namespace Amazon.Runtime
                     {
                         return false;
                     }
-                    return OnRetry(executionContext);
+                    return OnRetry(executionContext, isClockSkewError);
                 }
             }
             return false;
@@ -133,17 +134,30 @@ namespace Amazon.Runtime
         {
             
         }
-
+        
+        /// <summary>
+         /// Virtual method that gets called before a retry request is initiated. The value 
+         /// returned is True by default(retry throttling feature is disabled).
+         /// </summary>
+         /// <param name="executionContext">The execution context which contains both the
+         /// requests and response context.</param>
+         public virtual bool OnRetry(IExecutionContext executionContext)
+         {
+             return true;
+         }
+         
         /// <summary>
         /// Virtual method that gets called before a retry request is initiated. The value 
         /// returned is True by default(retry throttling feature is disabled).
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
-        public virtual bool OnRetry(IExecutionContext executionContext)
+        /// <param name="bypassAcquireCapacity">true to bypass any attempt to acquire capacity on a retry</param>
+        public virtual bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity)
         {
             return true;
         }
+
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
         {
             var clientConfig = executionContext.RequestContext.ClientConfig;
