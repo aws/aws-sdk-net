@@ -76,6 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputSwitchSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pauseStateSettings", targetDepth))
+                {
+                    var unmarshaller = PauseStateScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.PauseStateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35ReturnToNetworkSettings", targetDepth))
                 {
                     var unmarshaller = Scte35ReturnToNetworkScheduleActionSettingsUnmarshaller.Instance;

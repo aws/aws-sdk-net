@@ -358,8 +358,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeepSegments. If mode is "live", the number of TS segments
-        /// to retain in the destination directory. If mode is "vod", this parameter has no effect.
+        /// Gets and sets the property KeepSegments. Applies only if Mode field is LIVE. Specifies
+        /// the number of media segments (.ts files) to retain in the destination directory.
         /// </summary>
         public int KeepSegments
         {
@@ -490,9 +490,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputSelection. Generates the .m3u8 playlist file for
-        /// this HLS output group. The segmentsOnly option will output segments without the .m3u8
-        /// file.
+        /// Gets and sets the property OutputSelection. MANIFESTSANDSEGMENTS: Generates manifests
+        /// (master manifest, if applicable, and media manifests) for this output group.SEGMENTSONLY:
+        /// Does not generate any manifests for this output group.
         /// </summary>
         public HlsOutputSelection OutputSelection
         {
@@ -670,10 +670,12 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TsFileMode. When set to "singleFile", emits the program
-        /// as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags to index segment
-        /// for playback. Playback of VOD mode content during event is not guaranteed due to HTTP
-        /// server caching.
+        /// Gets and sets the property TsFileMode. SEGMENTEDFILES: Emit the program as segments
+        /// - multiple .ts media files.SINGLEFILE: Applies only if Mode field is VOD. Emit the
+        /// program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags
+        /// to index segments for playback. A typical use for this value is when sending the output
+        /// to AWS Elemental MediaConvert, which can accept only a single media file. Playback
+        /// while the channel is running is not guaranteed due to HTTP server caching.
         /// </summary>
         public HlsTsFileMode TsFileMode
         {

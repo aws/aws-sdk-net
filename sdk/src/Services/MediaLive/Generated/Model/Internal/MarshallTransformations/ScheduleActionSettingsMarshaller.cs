@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPauseStateSettings())
+            {
+                context.Writer.WritePropertyName("pauseStateSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PauseStateScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PauseStateSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScte35ReturnToNetworkSettings())
             {
                 context.Writer.WritePropertyName("scte35ReturnToNetworkSettings");

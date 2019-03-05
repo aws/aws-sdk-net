@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     {
         private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
+        private PauseStateScheduleActionSettings _pauseStateSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
         private Scte35SpliceInsertScheduleActionSettings _scte35SpliceInsertSettings;
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
@@ -41,7 +42,7 @@ namespace Amazon.MediaLive.Model
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
 
         /// <summary>
-        /// Gets and sets the property HlsTimedMetadataSettings. Settings to emit HLS metadata
+        /// Gets and sets the property HlsTimedMetadataSettings. Action to insert HLS metadata
         /// </summary>
         public HlsTimedMetadataScheduleActionSettings HlsTimedMetadataSettings
         {
@@ -56,7 +57,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputSwitchSettings. Settings to switch an input
+        /// Gets and sets the property InputSwitchSettings. Action to switch the input
         /// </summary>
         public InputSwitchScheduleActionSettings InputSwitchSettings
         {
@@ -71,8 +72,24 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35ReturnToNetworkSettings. Settings for SCTE-35 return_to_network
-        /// message
+        /// Gets and sets the property PauseStateSettings. Action to pause or unpause one or both
+        /// channel pipelines
+        /// </summary>
+        public PauseStateScheduleActionSettings PauseStateSettings
+        {
+            get { return this._pauseStateSettings; }
+            set { this._pauseStateSettings = value; }
+        }
+
+        // Check to see if PauseStateSettings property is set
+        internal bool IsSetPauseStateSettings()
+        {
+            return this._pauseStateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35ReturnToNetworkSettings. Action to insert SCTE-35
+        /// return_to_network message
         /// </summary>
         public Scte35ReturnToNetworkScheduleActionSettings Scte35ReturnToNetworkSettings
         {
@@ -87,7 +104,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35SpliceInsertSettings. Settings for SCTE-35 splice_insert
+        /// Gets and sets the property Scte35SpliceInsertSettings. Action to insert SCTE-35 splice_insert
         /// message
         /// </summary>
         public Scte35SpliceInsertScheduleActionSettings Scte35SpliceInsertSettings
@@ -103,7 +120,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35TimeSignalSettings. Settings for SCTE-35 time_signal
+        /// Gets and sets the property Scte35TimeSignalSettings. Action to insert SCTE-35 time_signal
         /// message
         /// </summary>
         public Scte35TimeSignalScheduleActionSettings Scte35TimeSignalSettings
@@ -119,7 +136,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticImageActivateSettings. Settings to activate a static
+        /// Gets and sets the property StaticImageActivateSettings. Action to activate a static
         /// image overlay
         /// </summary>
         public StaticImageActivateScheduleActionSettings StaticImageActivateSettings
@@ -135,8 +152,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticImageDeactivateSettings. Settings to deactivate a
-        /// static image overlay
+        /// Gets and sets the property StaticImageDeactivateSettings. Action to deactivate a static
+        /// image overlay
         /// </summary>
         public StaticImageDeactivateScheduleActionSettings StaticImageDeactivateSettings
         {
