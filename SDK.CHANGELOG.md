@@ -1,3 +1,8 @@
+### 3.3.470.0 (2019-03-06 22:12 UTC)
+* Core 3.3.32.0
+	* Upgrades for XML service generation of maps and idempotency tokens; Implement the Standard IMDS Request Header; Bypass using capacity for clock skew errors; Fix to find resource when running from service project; Switch rest-json based service's content-type to application/json; Use wildcard for test project references
+	* All services packages updated to require new Core
+
 ### 3.3.469.0 (2019-03-06 20:13 UTC)
 * DirectConnect (3.3.11.0)
 	* Exposed a new available port speeds field in the DescribeLocation api call.
