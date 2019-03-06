@@ -1,3 +1,11 @@
+### 3.3.469.0 (2019-03-06 20:13 UTC)
+* DirectConnect (3.3.11.0)
+	* Exposed a new available port speeds field in the DescribeLocation api call.
+* EC2 (3.3.85.0)
+	* This release adds pagination support for ec2.DescribeVpcs, ec2.DescribeInternetGateways and ec2.DescribeNetworkAcls APIs
+* ElasticFileSystem (3.3.4.3)
+	* Documentation updates for elasticfilesystem adding new examples for EFS Lifecycle Management feature.
+
 ### 3.3.468.0 (2019-03-05 21:51 UTC)
 * CodeDeploy (3.3.12.22)
 	* Documentation updates for codedeploy

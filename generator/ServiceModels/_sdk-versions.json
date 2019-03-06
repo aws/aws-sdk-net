@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.468.0",
+    "ProductVersion" : "3.3.469.0",
     "CoreVersion"    : "3.3.31.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -135,7 +135,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.10.1",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.84.0",
+            "Version" : "3.3.85.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.4.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.31.12"
