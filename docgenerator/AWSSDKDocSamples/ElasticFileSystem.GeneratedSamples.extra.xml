@@ -135,6 +135,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeLifecycleConfiguration(Amazon.ElasticFileSystem.Model.DescribeLifecycleConfigurationRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeLifecycleConfiguration(Amazon.ElasticFileSystem.Model.DescribeLifecycleConfigurationRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeLifecycleConfigurationRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.DescribeLifecycleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes a file system's LifecycleConfiguration. EFS lifecycle management uses the LifecycleConfiguration object to identify which files to move to the EFS Infrequent Access (IA) storage class. 
+                </para>
+                <code
+                    title="To describe the lifecycle configuration for a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="to-describe-the-lifecycle-configuration-for-a-file-system-1551200664502" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.DescribeMountTargets(Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest)" />
             <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.DescribeMountTargets(Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest)" />
             <member name="T:Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest" />
@@ -206,6 +225,25 @@
                     title="To modify the security groups associated with a mount target for a file system"
                     source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
                     region="to-modify-the-security-groups-associated-with-a-mount-target-for-a-file-system-1481850772562" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticFileSystem.IAmazonElasticFileSystem.PutLifecycleConfiguration(Amazon.ElasticFileSystem.Model.PutLifecycleConfigurationRequest)" />
+            <member name="M:Amazon.ElasticFileSystem.AmazonElasticFileSystemClient.PutLifecycleConfiguration(Amazon.ElasticFileSystem.Model.PutLifecycleConfigurationRequest)" />
+            <member name="T:Amazon.ElasticFileSystem.Model.PutLifecycleConfigurationRequest" />
+            <member name="T:Amazon.ElasticFileSystem.Model.PutLifecycleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation enables lifecycle management on a file system by creating a new LifecycleConfiguration object. A LifecycleConfiguration object defines when files in an Amazon EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access (IA) storage class. A LifecycleConfiguration applies to all files in a file system.
+                </para>
+                <code
+                    title="Creates a new lifecycleconfiguration object for a file system"
+                    source=".\AWSSDKDocSamples\ElasticFileSystem\ElasticFileSystem.GeneratedSamples.cs"
+                    region="creates-a-new-lifecycleconfiguration-object-for-a-file-system-1551201594692" />
             </example>
         </value>
     </doc>

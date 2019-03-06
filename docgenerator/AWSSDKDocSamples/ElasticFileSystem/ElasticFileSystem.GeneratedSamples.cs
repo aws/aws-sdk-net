@@ -136,6 +136,20 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
             #endregion
         }
 
+        public void ElasticFileSystemDescribeLifecycleConfiguration()
+        {
+            #region to-describe-the-lifecycle-configuration-for-a-file-system-1551200664502
+
+            var response = client.DescribeLifecycleConfiguration(new DescribeLifecycleConfigurationRequest 
+            {
+                FileSystemId = "fs-01234567"
+            });
+
+            List<LifecyclePolicy> lifecyclePolicies = response.LifecyclePolicies;
+
+            #endregion
+        }
+
         public void ElasticFileSystemDescribeMountTargets()
         {
             #region to-describe-the-mount-targets-for-a-file-system-1481849958584
@@ -190,6 +204,23 @@ namespace AWSSDKDocSamples.Amazon.ElasticFileSystem.Generated
                 }
             });
 
+
+            #endregion
+        }
+
+        public void ElasticFileSystemPutLifecycleConfiguration()
+        {
+            #region creates-a-new-lifecycleconfiguration-object-for-a-file-system-1551201594692
+
+            var response = client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest 
+            {
+                FileSystemId = "fs-01234567",
+                LifecyclePolicies = new List<LifecyclePolicy> {
+                    new LifecyclePolicy { TransitionToIA = "AFTER_30_DAYS" }
+                }
+            });
+
+            List<LifecyclePolicy> lifecyclePolicies = response.LifecyclePolicies;
 
             #endregion
         }
