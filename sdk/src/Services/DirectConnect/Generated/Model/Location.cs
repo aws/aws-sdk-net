@@ -32,9 +32,28 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class Location
     {
+        private List<string> _availablePortSpeeds = new List<string>();
         private string _locationCode;
         private string _locationName;
         private string _region;
+
+        /// <summary>
+        /// Gets and sets the property AvailablePortSpeeds. 
+        /// <para>
+        /// The available port speeds for the location.
+        /// </para>
+        /// </summary>
+        public List<string> AvailablePortSpeeds
+        {
+            get { return this._availablePortSpeeds; }
+            set { this._availablePortSpeeds = value; }
+        }
+
+        // Check to see if AvailablePortSpeeds property is set
+        internal bool IsSetAvailablePortSpeeds()
+        {
+            return this._availablePortSpeeds != null && this._availablePortSpeeds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property LocationCode. 

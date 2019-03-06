@@ -94,8 +94,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property InterconnectId. 
         /// <para>
-        /// The ID of the interconnect on which the connection will be provisioned. For example,
-        /// dxcon-456abc78.
+        /// The ID of the interconnect on which the connection will be provisioned.
         /// </para>
         /// </summary>
         public string InterconnectId

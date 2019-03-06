@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the connection. For example, dxcon-abc123.
+        /// The ID of the connection.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -76,7 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property LagId. 
         /// <para>
-        /// The ID of the LAG with which to associate the connection. For example, dxlag-abc123.
+        /// The ID of the LAG with which to associate the connection.
         /// </para>
         /// </summary>
         public string LagId
