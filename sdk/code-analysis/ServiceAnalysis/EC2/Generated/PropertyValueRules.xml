@@ -153,10 +153,20 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInternetGatewaysRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkAclsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribePublicIpv4PoolsRequest.MaxResults</property>
@@ -215,6 +225,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcPeeringConnectionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>

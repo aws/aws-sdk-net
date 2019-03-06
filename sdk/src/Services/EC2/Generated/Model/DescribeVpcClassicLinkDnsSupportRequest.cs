@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this request. The request returns a token
-        /// that you can specify in a subsequent call to get the next set of results.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -64,8 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of items to return. (You received this token from a prior
-        /// call.)
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

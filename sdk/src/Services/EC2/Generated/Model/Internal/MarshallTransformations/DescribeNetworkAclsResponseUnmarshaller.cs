@@ -62,6 +62,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.NetworkAcls.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("nextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 
