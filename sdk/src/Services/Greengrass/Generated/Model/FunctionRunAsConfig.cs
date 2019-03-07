@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Specifies the user and/or group whose permissions are used when running the Lambda
-    /// function. You can specify one or both values to override the default values (ggc_user/ggc_group).
-    /// We recommend that you avoid running as root unless absolutely necessary to minimize
-    /// the risk of unintended changes or malicious attacks. To run as root, you must set
-    /// IsolationMode to NoContainer and you must update config.json in greengrass-root/config
-    /// to set allowFunctionsToRunAsRoot to yes.
+    /// Specifies the user and group whose permissions are used when running the Lambda function.
+    /// You can specify one or both values to override the default values. We recommend that
+    /// you avoid running as root unless absolutely necessary to minimize the risk of unintended
+    /// changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer''
+    /// and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot''
+    /// to ''yes''.
     /// </summary>
     public partial class FunctionRunAsConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.Greengrass.Model
         private int? _uid;
 
         /// <summary>
-        /// Gets and sets the property Gid. The Group ID whose permissions are used to run a Lambda
+        /// Gets and sets the property Gid. The group ID whose permissions are used to run a Lambda
         /// function.
         /// </summary>
         public int Gid
@@ -57,7 +57,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Uid. The User ID whose permissions are used to run a Lambda
+        /// Gets and sets the property Uid. The user ID whose permissions are used to run a Lambda
         /// function.
         /// </summary>
         public int Uid

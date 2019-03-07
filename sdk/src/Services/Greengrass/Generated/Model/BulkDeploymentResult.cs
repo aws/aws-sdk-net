@@ -89,7 +89,7 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property DeploymentStatus. The current status of the group deployment:
-        /// ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+        /// ''InProgress'', ''Building'', ''Success'', or ''Failure''.
         /// </summary>
         public string DeploymentStatus
         {

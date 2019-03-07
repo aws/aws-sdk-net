@@ -70,6 +70,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsolationMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RunAs", targetDepth))
+                {
+                    var unmarshaller = FunctionRunAsConfigUnmarshaller.Instance;
+                    unmarshalledObject.RunAs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

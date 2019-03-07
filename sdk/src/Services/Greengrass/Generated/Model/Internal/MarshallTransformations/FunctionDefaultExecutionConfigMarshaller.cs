@@ -51,6 +51,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IsolationMode);
             }
 
+            if(requestObject.IsSetRunAs())
+            {
+                context.Writer.WritePropertyName("RunAs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FunctionRunAsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.RunAs, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

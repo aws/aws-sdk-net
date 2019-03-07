@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Configuration that defines the default containerization used for when running Lambda
-    /// functions in the group. Individual Lambda functions can be override this setting.
+    /// Configuration information that specifies how a Lambda function runs.
     /// </summary>
     public partial class FunctionDefaultExecutionConfig
     {
         private FunctionIsolationMode _isolationMode;
+        private FunctionRunAsConfig _runAs;
 
         /// <summary>
         /// Gets and sets the property IsolationMode.
@@ -48,6 +48,21 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetIsolationMode()
         {
             return this._isolationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunAs.
+        /// </summary>
+        public FunctionRunAsConfig RunAs
+        {
+            get { return this._runAs; }
+            set { this._runAs = value; }
+        }
+
+        // Check to see if RunAs property is set
+        internal bool IsSetRunAs()
+        {
+            return this._runAs != null;
         }
 
     }

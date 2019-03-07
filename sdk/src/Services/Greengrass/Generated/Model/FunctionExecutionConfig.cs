@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Configuration information that specifies how the Lambda function runs.
+    /// Configuration information that specifies how a Lambda function runs.
     /// </summary>
     public partial class FunctionExecutionConfig
     {

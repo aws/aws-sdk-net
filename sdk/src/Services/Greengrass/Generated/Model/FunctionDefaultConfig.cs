@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Default configuration that will apply to all Lambda functions in the group.
+    /// The default configuration that applies to all Lambda functions in the group. Individual
+    /// Lambda functions can override these settings.
     /// </summary>
     public partial class FunctionDefaultConfig
     {

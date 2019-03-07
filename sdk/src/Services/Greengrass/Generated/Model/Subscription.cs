@@ -72,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subject. The subject of the message.
+        /// Gets and sets the property Subject. The MQTT topic used to route the message.
         /// </summary>
         public string Subject
         {
