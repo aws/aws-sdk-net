@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputDestination Object
+    /// Response Unmarshaller for MediaPackageGroupSettings Object
     /// </summary>  
-    public class OutputDestinationUnmarshaller : IUnmarshaller<OutputDestination, XmlUnmarshallerContext>, IUnmarshaller<OutputDestination, JsonUnmarshallerContext>
+    public class MediaPackageGroupSettingsUnmarshaller : IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputDestination IUnmarshaller<OutputDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MediaPackageGroupSettings IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputDestination Unmarshall(JsonUnmarshallerContext context)
+        public MediaPackageGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputDestination unmarshalledObject = new OutputDestination();
+            MediaPackageGroupSettings unmarshalledObject = new MediaPackageGroupSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("destination", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediaPackageSettings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MediaPackageOutputDestinationSettings, MediaPackageOutputDestinationSettingsUnmarshaller>(MediaPackageOutputDestinationSettingsUnmarshaller.Instance);
-                    unmarshalledObject.MediaPackageSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("settings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<OutputDestinationSettings, OutputDestinationSettingsUnmarshaller>(OutputDestinationSettingsUnmarshaller.Instance);
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OutputLocationRefUnmarshaller.Instance;
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputDestinationUnmarshaller _instance = new OutputDestinationUnmarshaller();        
+        private static MediaPackageGroupSettingsUnmarshaller _instance = new MediaPackageGroupSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputDestinationUnmarshaller Instance
+        public static MediaPackageGroupSettingsUnmarshaller Instance
         {
             get
             {

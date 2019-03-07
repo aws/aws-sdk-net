@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMediaPackageOutputSettings())
+            {
+                context.Writer.WritePropertyName("mediaPackageOutputSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MediaPackageOutputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaPackageOutputSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMsSmoothOutputSettings())
             {
                 context.Writer.WritePropertyName("msSmoothOutputSettings");

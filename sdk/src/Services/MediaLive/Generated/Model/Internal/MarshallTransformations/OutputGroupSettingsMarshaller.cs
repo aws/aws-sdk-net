@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMediaPackageGroupSettings())
+            {
+                context.Writer.WritePropertyName("mediaPackageGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MediaPackageGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaPackageGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMsSmoothGroupSettings())
             {
                 context.Writer.WritePropertyName("msSmoothGroupSettings");

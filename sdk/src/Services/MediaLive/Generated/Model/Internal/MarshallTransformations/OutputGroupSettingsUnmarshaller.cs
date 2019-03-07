@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsGroupSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaPackageGroupSettings", targetDepth))
+                {
+                    var unmarshaller = MediaPackageGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediaPackageGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("msSmoothGroupSettings", targetDepth))
                 {
                     var unmarshaller = MsSmoothGroupSettingsUnmarshaller.Instance;

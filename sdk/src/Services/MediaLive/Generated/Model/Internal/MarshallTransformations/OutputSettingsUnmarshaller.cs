@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsOutputSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaPackageOutputSettings", targetDepth))
+                {
+                    var unmarshaller = MediaPackageOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediaPackageOutputSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("msSmoothOutputSettings", targetDepth))
                 {
                     var unmarshaller = MsSmoothOutputSettingsUnmarshaller.Instance;

@@ -272,8 +272,12 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IFrameOnlyPlaylists. If enabled, writes out I-Frame only
-        /// playlists in addition to media playlists.
+        /// Gets and sets the property IFrameOnlyPlaylists. DISABLED: Do not create an I-frame-only
+        /// manifest, but do create the master and media manifests (according to the Output Selection
+        /// field).STANDARD: Create an I-frame-only manifest for each output that contains video,
+        /// as well as the other manifests (according to the Output Selection field). The I-frame
+        /// manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one
+        /// or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
         /// </summary>
         public IFrameOnlyPlaylistType IFrameOnlyPlaylists
         {
@@ -288,9 +292,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexNSegments. If mode is "live", the number of segments
-        /// to retain in the manifest (.m3u8) file. This number must be less than or equal to
-        /// keepSegments. If mode is "vod", this parameter has no effect.
+        /// Gets and sets the property IndexNSegments. Applies only if Mode field is LIVE. Specifies
+        /// the maximum number of segments in the media manifest file. After this maximum, older
+        /// segments are removed from the media manifest. This number must be less than or equal
+        /// to the Keep Segments field.
         /// </summary>
         public int IndexNSegments
         {
@@ -541,8 +546,16 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedundantManifest. When set to "enabled", includes the
-        /// media playlists from both pipelines in the master manifest (.m3u8) file.
+        /// Gets and sets the property RedundantManifest. ENABLED: The master manifest (.m3u8
+        /// file) for each pipeline includes information about both pipelines: first its own media
+        /// files, then the media files of the other pipeline. This feature allows playout device
+        /// that support stale manifest detection to switch from one manifest to the other, when
+        /// the current manifest seems to be stale. There are still two destinations and two master
+        /// manifests, but both master manifests reference the media files from both pipelines.DISABLED:
+        /// The master manifest (.m3u8 file) for each pipeline includes information about its
+        /// own pipeline only.For an HLS output group with MediaPackage as the destination, the
+        /// DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves
+        /// to players so a redundant manifest from MediaLive is irrelevant.
         /// </summary>
         public HlsRedundantManifest RedundantManifest
         {
