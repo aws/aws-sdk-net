@@ -41,7 +41,20 @@ namespace Amazon.GameLift.Model
     /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
     /// exceeds this limit, the request fails and the error message includes the maximum allowed.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+    /// Working with Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 
     /// </para>

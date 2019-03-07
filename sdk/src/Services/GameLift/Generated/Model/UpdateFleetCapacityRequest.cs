@@ -50,6 +50,19 @@ namespace Amazon.GameLift.Model
     /// If the desired instance count is higher than the instance type's limit, the "Limit
     /// Exceeded" exception occurs.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+    /// Working with Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

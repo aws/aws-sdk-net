@@ -39,6 +39,40 @@ namespace Amazon.GameLift.Model
     /// request. If successful, a new set of credentials are returned, along with the S3 storage
     /// location associated with the build ID.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+    /// Your Game</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RequestUploadCredentialsRequest : AmazonGameLiftRequest
     {

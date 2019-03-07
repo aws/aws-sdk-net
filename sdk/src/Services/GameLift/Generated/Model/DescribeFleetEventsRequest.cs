@@ -34,6 +34,19 @@ namespace Amazon.GameLift.Model
     /// of sequential pages. If successful, a collection of event log entries matching the
     /// request are returned.
     /// 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+    /// Working with Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

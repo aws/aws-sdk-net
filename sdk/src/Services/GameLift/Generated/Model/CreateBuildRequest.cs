@@ -36,15 +36,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Game server binaries must be combined into a <code>.zip</code> file for use with Amazon
-    /// GameLift. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-    /// Your Game</a> for more information. 
+    /// GameLift. 
     /// </para>
     ///  <important> 
     /// <para>
     /// To create new builds quickly and easily, use the AWS CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
     /// </b>. This helper command uploads your build and creates a new build record in one
-    /// step, and automatically handles the necessary permissions. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
-    /// Upload Build Files to Amazon GameLift</a> for more help.
+    /// step, and automatically handles the necessary permissions. 
     /// </para>
     ///  </important> 
     /// <para>
@@ -54,11 +52,10 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     /// Store a build file in an Amazon S3 bucket under your own AWS account. To use this
-    /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. See <a
-    /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
-    /// Create a Build with Files in Amazon S3</a> for detailed help. To create a new build
-    /// record using files in your Amazon S3 bucket, call <code>CreateBuild</code> and specify
-    /// a build name, operating system, and the storage location of your game build.
+    /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. To create
+    /// a new build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
+    /// and specify a build name, operating system, and the storage location of your game
+    /// build.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -75,6 +72,24 @@ namespace Amazon.GameLift.Model
     /// places it in <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to
     /// check the status of your build. A build must be in <code>READY</code> status before
     /// it can be used to create fleets.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+    /// Your Game</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+    /// Create a Build with Files in Amazon S3</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

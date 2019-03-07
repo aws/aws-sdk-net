@@ -943,15 +943,13 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Game server binaries must be combined into a <code>.zip</code> file for use with Amazon
-        /// GameLift. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-        /// Your Game</a> for more information. 
+        /// GameLift. 
         /// </para>
         ///  <important> 
         /// <para>
         /// To create new builds quickly and easily, use the AWS CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
         /// </b>. This helper command uploads your build and creates a new build record in one
-        /// step, and automatically handles the necessary permissions. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
-        /// Upload Build Files to Amazon GameLift</a> for more help.
+        /// step, and automatically handles the necessary permissions. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -961,11 +959,10 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// Store a build file in an Amazon S3 bucket under your own AWS account. To use this
-        /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. See <a
-        /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
-        /// Create a Build with Files in Amazon S3</a> for detailed help. To create a new build
-        /// record using files in your Amazon S3 bucket, call <code>CreateBuild</code> and specify
-        /// a build name, operating system, and the storage location of your game build.
+        /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. To create
+        /// a new build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
+        /// and specify a build name, operating system, and the storage location of your game
+        /// build.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -982,6 +979,24 @@ namespace Amazon.GameLift
         /// places it in <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to
         /// check the status of your build. A build must be in <code>READY</code> status before
         /// it can be used to create fleets.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+        /// Create a Build with Files in Amazon S3</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1113,7 +1128,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// See Amazon GameLift Developer Guide topics in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
         /// Working with Fleets</a>.
         /// </para>
         ///  
@@ -2804,6 +2819,19 @@ namespace Amazon.GameLift
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -2862,6 +2890,19 @@ namespace Amazon.GameLift
         /// To delete a build, specify its ID. Deleting a build does not affect the status of
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2923,6 +2964,19 @@ namespace Amazon.GameLift
         /// To delete a build, specify its ID. Deleting a build does not affect the status of
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3007,6 +3061,19 @@ namespace Amazon.GameLift
         /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3125,6 +3192,19 @@ namespace Amazon.GameLift
         /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3245,6 +3325,19 @@ namespace Amazon.GameLift
         /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4146,6 +4239,19 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To request a build record, specify a build ID. If
         /// successful, an object containing the build properties is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -4199,6 +4305,19 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To request a build record, specify a build ID. If
         /// successful, an object containing the build properties is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -4254,6 +4373,19 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To request a build record, specify a build ID. If
         /// successful, an object containing the build properties is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -4345,6 +4477,19 @@ namespace Amazon.GameLift
         /// Service limits vary depending on region. Available regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4463,6 +4608,19 @@ namespace Amazon.GameLift
         /// Service limits vary depending on region. Available regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4583,6 +4741,19 @@ namespace Amazon.GameLift
         /// Service limits vary depending on region. Available regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4724,7 +4895,20 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
         /// </para>
@@ -4868,7 +5052,20 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
         /// </para>
@@ -5004,6 +5201,19 @@ namespace Amazon.GameLift
         /// of sequential pages. If successful, a collection of event log entries matching the
         /// request are returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -5142,6 +5352,19 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -5255,6 +5478,19 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -5370,6 +5606,19 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -5514,7 +5763,20 @@ namespace Amazon.GameLift
         /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
         /// exceeds this limit, the request fails and the error message includes the maximum allowed.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
         /// </para>
@@ -6505,6 +6767,19 @@ namespace Amazon.GameLift
         /// configuration tells Amazon GameLift how to launch server processes on instances in
         /// the fleet.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -7352,7 +7627,20 @@ namespace Amazon.GameLift
         /// <para>
         /// Build records are not listed in any particular order.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
         /// </para>
@@ -7430,7 +7718,20 @@ namespace Amazon.GameLift
         /// <para>
         /// Fleet records are not listed in any particular order.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
         /// </para>
@@ -7769,6 +8070,40 @@ namespace Amazon.GameLift
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// 
@@ -7808,6 +8143,40 @@ namespace Amazon.GameLift
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestUploadCredentials service method.</param>
         /// 
@@ -7849,6 +8218,40 @@ namespace Amazon.GameLift
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// <param name="cancellationToken">
@@ -8297,13 +8700,54 @@ namespace Amazon.GameLift
         /// never stopped, this operation will have no effect. You can view a fleet's stopped
         /// actions using <a>DescribeFleetAttributes</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8311,19 +8755,27 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Manage scaling policies:
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        ///  <a>UpdateFleetAttributes</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        ///  <a>UpdateFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -8820,6 +9272,96 @@ namespace Amazon.GameLift
         /// Changes to the fleet's capacity must be done manually using <a>UpdateFleetCapacity</a>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListFleets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Describe fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetUtilization</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetEvents</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Update fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>UpdateFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetPortSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopFleetActions service method.</param>
         /// 
@@ -9140,6 +9682,19 @@ namespace Amazon.GameLift
         /// the metadata, specify the build ID to update and provide the new values. If successful,
         /// a build object containing the updated metadata is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -9219,6 +9774,19 @@ namespace Amazon.GameLift
         /// specify the fleet ID and the property values that you want to change. If successful,
         /// the fleet ID for the updated fleet is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -9383,6 +9951,19 @@ namespace Amazon.GameLift
         /// If the desired instance count is higher than the instance type's limit, the "Limit
         /// Exceeded" exception occurs.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -9533,6 +10114,19 @@ namespace Amazon.GameLift
         /// match existing fleet permissions. If successful, the fleet ID for the updated fleet
         /// is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -9972,6 +10566,19 @@ namespace Amazon.GameLift
         /// the current run-time configuration. As a result, the run-time configuration changes
         /// are applied gradually as existing processes shut down and new processes are launched
         /// in Amazon GameLift's normal process recycling activity.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

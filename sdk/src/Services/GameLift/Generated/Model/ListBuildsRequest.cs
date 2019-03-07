@@ -38,7 +38,20 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Build records are not listed in any particular order.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+    /// Working with Builds</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> 
     /// </para>

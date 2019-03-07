@@ -33,6 +33,19 @@ namespace Amazon.GameLift.Model
     /// specify the fleet ID and the property values that you want to change. If successful,
     /// the fleet ID for the updated fleet is returned.
     /// 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+    /// Working with Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateFleet</a> 

@@ -37,6 +37,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateFleetRequest.InstanceRoleArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.Name</property>
     <min>1</min>
     <max>1024</max>
@@ -1034,6 +1038,10 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.FleetId</property>
     <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.FleetAttributes.InstanceRoleArn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.Name</property>

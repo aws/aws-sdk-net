@@ -1429,6 +1429,19 @@ namespace Amazon.GameLift
         /// any active fleets using the build, but you can no longer create new fleets with the
         /// deleted build.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -1522,6 +1535,19 @@ namespace Amazon.GameLift
         /// <para>
         /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
         /// you can no longer use that fleet.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1968,6 +1994,19 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To request a build record, specify a build ID. If
         /// successful, an object containing the build properties is returned.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
+        /// Working with Builds</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateBuild</a> 
@@ -2069,6 +2108,19 @@ namespace Amazon.GameLift
         /// Service limits vary depending on region. Available regions for Amazon GameLift can
         /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
         /// in the upper right corner).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2314,6 +2366,19 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+        /// Working with Fleets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>CreateFleet</a> 
@@ -3209,6 +3274,40 @@ namespace Amazon.GameLift
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListBuilds</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateBuild</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteBuild</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// <param name="cancellationToken">

@@ -40,13 +40,54 @@ namespace Amazon.GameLift.Model
     /// never stopped, this operation will have no effect. You can view a fleet's stopped
     /// actions using <a>DescribeFleetAttributes</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+    /// Working with Fleets</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -54,19 +95,27 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Manage scaling policies:
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> (auto-scaling)
+    ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+    ///  <a>UpdateFleetCapacity</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> (auto-scaling)
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>

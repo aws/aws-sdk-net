@@ -116,6 +116,7 @@ namespace Amazon.GameLift.Model
         private string _fleetArn;
         private string _fleetId;
         private FleetType _fleetType;
+        private string _instanceRoleArn;
         private EC2InstanceType _instanceType;
         private List<string> _logPaths = new List<string>();
         private List<string> _metricGroups = new List<string>();
@@ -237,6 +238,30 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetType()
         {
             return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRoleArn. 
+        /// <para>
+        /// Unique identifier for an AWS IAM role that manages access to your AWS services. Any
+        /// application that runs on an instance in this fleet can assume the role, including
+        /// install scripts, server processs, daemons (background processes). Create a role or
+        /// look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
+        /// in the AWS Management Console. Learn more about using on-box credentials for your
+        /// game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Access external resources from a game server</a>.
+        /// </para>
+        /// </summary>
+        public string InstanceRoleArn
+        {
+            get { return this._instanceRoleArn; }
+            set { this._instanceRoleArn = value; }
+        }
+
+        // Check to see if InstanceRoleArn property is set
+        internal bool IsSetInstanceRoleArn()
+        {
+            return this._instanceRoleArn != null;
         }
 
         /// <summary>
