@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,6 +30,12 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Container for the parameters to the DeleteVirtualNode operation.
     /// Deletes an existing virtual node.
+    /// 
+    ///          
+    /// <para>
+    /// You must delete any virtual services that list a virtual node as a service provider
+    ///         before you can delete the virtual node itself.
+    /// </para>
     /// </summary>
     public partial class DeleteVirtualNodeRequest : AmazonAppMeshRequest
     {
@@ -39,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to delete the virtual node.
+        /// The name of the service mesh to delete the virtual node in.
         /// </para>
         /// </summary>
         public string MeshName

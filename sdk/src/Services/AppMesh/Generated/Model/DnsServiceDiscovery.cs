@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// The DNS service discovery information for your virtual node.
+    /// An object representing the DNS service discovery information for your virtual    
+    ///     node.
     /// </summary>
     public partial class DnsServiceDiscovery
     {
-        private string _serviceName;
+        private string _hostname;
 
         /// <summary>
-        /// Gets and sets the property ServiceName. 
+        /// Gets and sets the property Hostname. 
         /// <para>
-        /// The DNS service name for your virtual node.
+        /// Specifies the DNS service discovery hostname for the virtual node. 
         /// </para>
         /// </summary>
-        public string ServiceName
+        public string Hostname
         {
-            get { return this._serviceName; }
-            set { this._serviceName = value; }
+            get { return this._hostname; }
+            set { this._hostname = value; }
         }
 
-        // Check to see if ServiceName property is set
-        internal bool IsSetServiceName()
+        // Check to see if Hostname property is set
+        internal bool IsSetHostname()
         {
-            return this._serviceName != null;
+            return this._hostname != null;
         }
 
     }

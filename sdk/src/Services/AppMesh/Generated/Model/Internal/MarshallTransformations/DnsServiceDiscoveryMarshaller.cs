@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,10 +45,10 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DnsServiceDiscovery requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetServiceName())
+            if(requestObject.IsSetHostname())
             {
-                context.Writer.WritePropertyName("serviceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WritePropertyName("hostname");
+                context.Writer.Write(requestObject.Hostname);
             }
 
         }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object representing a virtual node listener port mapping.
+    /// An object representing a virtual node or virtual router listener port mapping.
     /// </summary>
     public partial class PortMapping
     {

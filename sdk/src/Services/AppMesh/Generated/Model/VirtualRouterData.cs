@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which the virtual router resides.
+        /// The name of the service mesh that the virtual router resides in.
         /// </para>
         /// </summary>
         public string MeshName

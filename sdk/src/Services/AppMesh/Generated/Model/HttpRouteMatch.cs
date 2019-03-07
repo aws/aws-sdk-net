@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,12 +38,12 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Specifies the path with which to match requests. This parameter must always start
-        /// with            <code>/</code>, which by itself matches all requests to the virtual
-        /// router service name.         You can also match for path-based routing of requests.
-        /// For example, if your virtual router         service name is <code>my-service.local</code>,
-        /// and you want the route to match requests to            <code>my-service.local/metrics</code>,
-        /// then your prefix should be         <code>/metrics</code>.
+        /// Specifies the path to match requests with. This parameter must always start with 
+        ///           <code>/</code>, which by itself matches all requests to the virtual router
+        /// service name.         You can also match for path-based routing of requests. For example,
+        /// if your virtual router         service name is <code>my-service.local</code> and you
+        /// want the route to match requests to            <code>my-service.local/metrics</code>,
+        /// your prefix should be         <code>/metrics</code>.
         /// </para>
         /// </summary>
         public string Prefix

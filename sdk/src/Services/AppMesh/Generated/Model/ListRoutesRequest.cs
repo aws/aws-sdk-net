@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,13 +41,13 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of mesh results returned by <code>ListRoutes</code> in paginated
-        ///         output. When this parameter is used, <code>ListRoutes</code> only returns
-        ///            <code>limit</code> results in a single page along with a <code>nextToken</code>
-        /// response         element. The remaining results of the initial request can be seen
-        /// by sending another            <code>ListRoutes</code> request with the returned <code>nextToken</code>
-        /// value. This         value can be between 1 and 100. If this parameter is not     
-        ///    used, then <code>ListRoutes</code> returns up to 100 results and a            <code>nextToken</code>
+        /// The maximum number of results returned by <code>ListRoutes</code> in paginated output.
+        ///         When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
+        ///         results in a single page along with a <code>nextToken</code> response element.
+        /// You can see the         remaining results of the initial request by sending another
+        ///            <code>ListRoutes</code> request with the returned <code>nextToken</code>
+        /// value. This         value can be between 1 and 100. If you don't use this parameter,
+        ///         <code>ListRoutes</code> returns up to 100 results and a            <code>nextToken</code>
         /// value if applicable.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property VirtualRouterName. 
         /// <para>
-        /// The name of the virtual router in which to list routes.
+        /// The name of the virtual router to list routes in.
         /// </para>
         /// </summary>
         public string VirtualRouterName

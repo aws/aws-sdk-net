@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -64,10 +64,10 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("serviceNames", targetDepth))
+                if (context.TestExpression("listeners", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ServiceNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<VirtualRouterListener, VirtualRouterListenerUnmarshaller>(VirtualRouterListenerUnmarshaller.Instance);
+                    unmarshalledObject.Listeners = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

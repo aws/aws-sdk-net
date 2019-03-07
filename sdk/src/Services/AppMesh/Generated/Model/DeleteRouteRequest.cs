@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to delete the route.
+        /// The name of the service mesh to delete the route in.
         /// </para>
         /// </summary>
         public string MeshName
@@ -76,7 +76,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property VirtualRouterName. 
         /// <para>
-        /// The name of the virtual router in which to delete the route.
+        /// The name of the virtual router to delete the route in.
         /// </para>
         /// </summary>
         public string VirtualRouterName

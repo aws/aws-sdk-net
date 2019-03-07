@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -80,8 +80,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The destination path for the health check request. This is only required if the  
-        ///       specified protocol is HTTP; if the protocol is TCP, then this parameter is ignored.
+        /// The destination path for the health check request. This is required only if the  
+        ///       specified protocol is HTTP. If the protocol is TCP, this parameter is ignored.
         /// </para>
         /// </summary>
         public string Path

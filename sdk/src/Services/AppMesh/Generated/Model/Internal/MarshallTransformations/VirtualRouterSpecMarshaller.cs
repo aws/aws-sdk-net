@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,13 +45,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualRouterSpec requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetServiceNames())
+            if(requestObject.IsSetListeners())
             {
-                context.Writer.WritePropertyName("serviceNames");
+                context.Writer.WritePropertyName("listeners");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectServiceNamesListValue in requestObject.ServiceNames)
+                foreach(var requestObjectListenersListValue in requestObject.Listeners)
                 {
-                        context.Writer.Write(requestObjectServiceNamesListValue);
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VirtualRouterListenerMarshaller.Instance;
+                    marshaller.Marshall(requestObjectListenersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }

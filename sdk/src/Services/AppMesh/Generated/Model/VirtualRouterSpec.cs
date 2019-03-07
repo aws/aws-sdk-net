@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,24 +32,25 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualRouterSpec
     {
-        private List<string> _serviceNames = new List<string>();
+        private List<VirtualRouterListener> _listeners = new List<VirtualRouterListener>();
 
         /// <summary>
-        /// Gets and sets the property ServiceNames. 
+        /// Gets and sets the property Listeners. 
         /// <para>
-        /// The service mesh service names to associate with the virtual router.
+        /// The listeners that the virtual router is expected to receive inbound traffic from.
+        /// Currently only one listener is supported per virtual router.
         /// </para>
         /// </summary>
-        public List<string> ServiceNames
+        public List<VirtualRouterListener> Listeners
         {
-            get { return this._serviceNames; }
-            set { this._serviceNames = value; }
+            get { return this._listeners; }
+            set { this._listeners = value; }
         }
 
-        // Check to see if ServiceNames property is set
-        internal bool IsSetServiceNames()
+        // Check to see if Listeners property is set
+        internal bool IsSetListeners()
         {
-            return this._serviceNames != null && this._serviceNames.Count > 0; 
+            return this._listeners != null && this._listeners.Count > 0; 
         }
 
     }

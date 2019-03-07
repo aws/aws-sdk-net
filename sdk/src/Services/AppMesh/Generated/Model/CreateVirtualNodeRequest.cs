@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace Amazon.AppMesh.Model
     /// <para>
     /// A virtual node acts as logical pointer to a particular task group, such as an Amazon
     /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
-    /// must specify the         DNS service discovery name for your task group.
+    /// must specify the         DNS service discovery hostname for your task group.
     /// </para>
     ///          
     /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 
 
@@ -57,8 +57,8 @@ namespace Amazon.AppMesh
     /// Amazon EKS, or Kubernetes on AWS. For            more information about service discovery
     /// on Amazon ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// Discovery</a> in the               <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// Kubernetes <code>kube-dns</code> is supported.            For more information, see
-    /// <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
+    /// Kubernetes <code>kube-dns</code> and               <code>coredns</code> are supported.
+    /// For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
     ///               for Services and Pods</a> in the Kubernetes documentation.
     /// </para>
     ///          </note>
@@ -287,7 +287,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         public virtual Task<CreateMeshResponse> CreateMeshAsync(CreateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -320,7 +320,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -353,7 +353,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         public virtual Task<CreateVirtualNodeResponse> CreateVirtualNodeAsync(CreateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -386,7 +386,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         public virtual Task<CreateVirtualRouterResponse> CreateVirtualRouterAsync(CreateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -394,6 +394,39 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVirtualRouterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVirtualService
+
+        internal virtual CreateVirtualServiceResponse CreateVirtualService(CreateVirtualServiceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualServiceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVirtualServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVirtualService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">REST API Reference for CreateVirtualService Operation</seealso>
+        public virtual Task<CreateVirtualServiceResponse> CreateVirtualServiceAsync(CreateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVirtualServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVirtualServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -419,7 +452,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         public virtual Task<DeleteMeshResponse> DeleteMeshAsync(DeleteMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -452,7 +485,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -485,7 +518,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         public virtual Task<DeleteVirtualNodeResponse> DeleteVirtualNodeAsync(DeleteVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -518,7 +551,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         public virtual Task<DeleteVirtualRouterResponse> DeleteVirtualRouterAsync(DeleteVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -526,6 +559,39 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVirtualRouterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVirtualService
+
+        internal virtual DeleteVirtualServiceResponse DeleteVirtualService(DeleteVirtualServiceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualServiceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVirtualServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVirtualService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService">REST API Reference for DeleteVirtualService Operation</seealso>
+        public virtual Task<DeleteVirtualServiceResponse> DeleteVirtualServiceAsync(DeleteVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVirtualServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVirtualServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -551,7 +617,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         public virtual Task<DescribeMeshResponse> DescribeMeshAsync(DescribeMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -584,7 +650,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         public virtual Task<DescribeRouteResponse> DescribeRouteAsync(DescribeRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -617,7 +683,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         public virtual Task<DescribeVirtualNodeResponse> DescribeVirtualNodeAsync(DescribeVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -650,7 +716,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         public virtual Task<DescribeVirtualRouterResponse> DescribeVirtualRouterAsync(DescribeVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -658,6 +724,39 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVirtualRouterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVirtualService
+
+        internal virtual DescribeVirtualServiceResponse DescribeVirtualService(DescribeVirtualServiceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualServiceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVirtualServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVirtualService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService">REST API Reference for DescribeVirtualService Operation</seealso>
+        public virtual Task<DescribeVirtualServiceResponse> DescribeVirtualServiceAsync(DescribeVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVirtualServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVirtualServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -683,7 +782,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         public virtual Task<ListMeshesResponse> ListMeshesAsync(ListMeshesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -716,7 +815,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual Task<ListRoutesResponse> ListRoutesAsync(ListRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -749,7 +848,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         public virtual Task<ListVirtualNodesResponse> ListVirtualNodesAsync(ListVirtualNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -782,7 +881,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         public virtual Task<ListVirtualRoutersResponse> ListVirtualRoutersAsync(ListVirtualRoutersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -790,6 +889,39 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVirtualRoutersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVirtualServices
+
+        internal virtual ListVirtualServicesResponse ListVirtualServices(ListVirtualServicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualServicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVirtualServicesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVirtualServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualServices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices">REST API Reference for ListVirtualServices Operation</seealso>
+        public virtual Task<ListVirtualServicesResponse> ListVirtualServicesAsync(ListVirtualServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVirtualServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVirtualServicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVirtualServicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -815,7 +947,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -848,7 +980,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         public virtual Task<UpdateVirtualNodeResponse> UpdateVirtualNodeAsync(UpdateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -881,7 +1013,7 @@ namespace Amazon.AppMesh
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         public virtual Task<UpdateVirtualRouterResponse> UpdateVirtualRouterAsync(UpdateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -889,6 +1021,39 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateVirtualRouterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVirtualService
+
+        internal virtual UpdateVirtualServiceResponse UpdateVirtualService(UpdateVirtualServiceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualServiceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVirtualServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVirtualService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualService operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService">REST API Reference for UpdateVirtualService Operation</seealso>
+        public virtual Task<UpdateVirtualServiceResponse> UpdateVirtualServiceAsync(UpdateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualServiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVirtualServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion

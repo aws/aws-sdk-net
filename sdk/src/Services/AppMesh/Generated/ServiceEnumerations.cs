@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 
 using System;
@@ -284,6 +284,60 @@ namespace Amazon.AppMesh
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VirtualRouterStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VirtualServiceStatusCode.
+    /// </summary>
+    public class VirtualServiceStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VirtualServiceStatusCode
+        /// </summary>
+        public static readonly VirtualServiceStatusCode ACTIVE = new VirtualServiceStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for VirtualServiceStatusCode
+        /// </summary>
+        public static readonly VirtualServiceStatusCode DELETED = new VirtualServiceStatusCode("DELETED");
+        /// <summary>
+        /// Constant INACTIVE for VirtualServiceStatusCode
+        /// </summary>
+        public static readonly VirtualServiceStatusCode INACTIVE = new VirtualServiceStatusCode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VirtualServiceStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VirtualServiceStatusCode FindValue(string value)
+        {
+            return FindValue<VirtualServiceStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VirtualServiceStatusCode(string value)
         {
             return FindValue(value);
         }

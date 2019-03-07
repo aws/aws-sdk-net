@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,14 +40,14 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of mesh results returned by <code>ListVirtualRouters</code> in
-        ///         paginated output. When this parameter is used, <code>ListVirtualRouters</code>
-        /// only returns         <code>limit</code> results in a single page along with a <code>nextToken</code>
-        ///         response element. The remaining results of the initial request can be seen
-        /// by sending         another <code>ListVirtualRouters</code> request with the returned
-        /// <code>nextToken</code>         value. This value can be between 1 and 100. If this
-        ///         parameter is not used, then <code>ListVirtualRouters</code> returns up to
-        ///         100 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
+        ///         output. When you use this parameter, <code>ListVirtualRouters</code> returns
+        /// only            <code>limit</code> results in a single page along with a <code>nextToken</code>
+        /// response         element. You can see the remaining results of the initial request
+        ///  by sending another            <code>ListVirtualRouters</code> request with the returned
+        /// <code>nextToken</code> value.         This value can be between 1 and 100. If you
+        /// don't use this parameter,          <code>ListVirtualRouters</code> returns up to 100
+        /// results and         a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
         public int Limit
@@ -65,7 +65,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to list virtual routers.
+        /// The name of the service mesh to list virtual routers in.
         /// </para>
         /// </summary>
         public string MeshName

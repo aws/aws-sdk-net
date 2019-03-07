@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,6 +31,11 @@ namespace Amazon.AppMesh.Model
     /// Container for the parameters to the CreateVirtualRouter operation.
     /// Creates a new virtual router within a service mesh.
     /// 
+    ///          
+    /// <para>
+    /// Any inbound traffic that your virtual router expects should be specified as a    
+    ///        <code>listener</code>. 
+    /// </para>
     ///          
     /// <para>
     /// Virtual routers handle traffic for one or more service names within your mesh. After
@@ -67,7 +72,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to create the virtual router.
+        /// The name of the service mesh to create the virtual router in.
         /// </para>
         /// </summary>
         public string MeshName

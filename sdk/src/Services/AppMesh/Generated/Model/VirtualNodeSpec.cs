@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,17 +32,17 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualNodeSpec
     {
-        private List<string> _backends = new List<string>();
+        private List<Backend> _backends = new List<Backend>();
         private List<Listener> _listeners = new List<Listener>();
         private ServiceDiscovery _serviceDiscovery;
 
         /// <summary>
         /// Gets and sets the property Backends. 
         /// <para>
-        /// The backends to which the virtual node is expected to send outbound traffic.
+        /// The backends that the virtual node is expected to send outbound traffic to.
         /// </para>
         /// </summary>
-        public List<string> Backends
+        public List<Backend> Backends
         {
             get { return this._backends; }
             set { this._backends = value; }
@@ -57,7 +57,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        /// The listeners from which the virtual node is expected to receive inbound traffic.
+        /// The listeners that the virtual node is expected to receive inbound traffic from. Currently
+        /// only one listener is supported per virtual node.
         /// </para>
         /// </summary>
         public List<Listener> Listeners

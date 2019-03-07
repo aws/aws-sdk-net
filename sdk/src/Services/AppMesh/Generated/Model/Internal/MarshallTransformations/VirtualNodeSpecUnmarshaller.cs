@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -66,7 +66,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("backends", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<Backend, BackendUnmarshaller>(BackendUnmarshaller.Instance);
                     unmarshalledObject.Backends = unmarshaller.Unmarshall(context);
                     continue;
                 }

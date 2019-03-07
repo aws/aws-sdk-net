@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayStart();
                 foreach(var requestObjectBackendsListValue in requestObject.Backends)
                 {
-                        context.Writer.Write(requestObjectBackendsListValue);
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BackendMarshaller.Instance;
+                    marshaller.Marshall(requestObjectBackendsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }

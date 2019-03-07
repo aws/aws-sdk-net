@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,8 +34,9 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// After you create your service mesh, you can create virtual nodes, virtual routers,
-    /// and         routes to distribute traffic between the applications in your mesh.
+    /// After you create your service mesh, you can create virtual services, virtual nodes,
+    ///         virtual routers, and routes to distribute traffic between the applications
+    /// in your         mesh.
     /// </para>
     /// </summary>
     public partial class CreateMeshRequest : AmazonAppMeshRequest

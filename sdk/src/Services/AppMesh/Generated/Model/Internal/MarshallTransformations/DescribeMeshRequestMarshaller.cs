@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,10 +55,10 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeMeshRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppMesh");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/meshes/{meshName}";
+            string uriResourcePath = "/v20190125/meshes/{meshName}";
             if (!publicRequest.IsSetMeshName())
                 throw new AmazonAppMeshException("Request object does not have required field MeshName set");
             uriResourcePath = uriResourcePath.Replace("{meshName}", StringUtils.FromStringWithSlashEncoding(publicRequest.MeshName));

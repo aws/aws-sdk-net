@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the appmesh-2018-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property WeightedTargets. 
         /// <para>
         /// The targets that traffic is routed to when a request matches the route. You can specify
-        ///         one or more targets and their relative weights with which to distribute traffic.
+        ///         one or more targets and their relative weights to distribute traffic with.
         /// </para>
         /// </summary>
         public List<WeightedTarget> WeightedTargets
