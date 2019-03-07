@@ -35,6 +35,8 @@ namespace Amazon.ECS
     /// <summary>
     /// Implementation for accessing ECS
     ///
+    /// Amazon Elastic Container Service 
+    /// <para>
     /// Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container
     /// management service that makes it easy to run, stop, and manage Docker containers on
     /// a cluster. You can host your cluster on a serverless infrastructure that is managed
@@ -43,7 +45,7 @@ namespace Amazon.ECS
     /// (Amazon EC2) instances that you manage by using the EC2 launch type. For more information
     /// about launch types, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
     /// ECS Launch Types</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon ECS lets you launch and stop container-based applications with simple API calls,

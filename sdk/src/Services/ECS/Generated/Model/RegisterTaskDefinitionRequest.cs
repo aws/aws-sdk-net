@@ -66,6 +66,7 @@ namespace Amazon.ECS.Model
         private NetworkMode _networkMode;
         private PidMode _pidMode;
         private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
+        private ProxyConfiguration _proxyConfiguration;
         private List<string> _requiresCompatibilities = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _taskRoleArn;
@@ -432,6 +433,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlacementConstraints()
         {
             return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration.
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>

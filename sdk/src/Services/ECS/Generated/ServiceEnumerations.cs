@@ -291,6 +291,64 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerCondition.
+    /// </summary>
+    public class ContainerCondition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ContainerCondition
+        /// </summary>
+        public static readonly ContainerCondition COMPLETE = new ContainerCondition("COMPLETE");
+        /// <summary>
+        /// Constant HEALTHY for ContainerCondition
+        /// </summary>
+        public static readonly ContainerCondition HEALTHY = new ContainerCondition("HEALTHY");
+        /// <summary>
+        /// Constant START for ContainerCondition
+        /// </summary>
+        public static readonly ContainerCondition START = new ContainerCondition("START");
+        /// <summary>
+        /// Constant SUCCESS for ContainerCondition
+        /// </summary>
+        public static readonly ContainerCondition SUCCESS = new ContainerCondition("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerCondition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerCondition FindValue(string value)
+        {
+            return FindValue<ContainerCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerInstanceField.
     /// </summary>
     public class ContainerInstanceField : ConstantClass
@@ -1074,6 +1132,52 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PropagateTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProxyConfigurationType.
+    /// </summary>
+    public class ProxyConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPMESH for ProxyConfigurationType
+        /// </summary>
+        public static readonly ProxyConfigurationType APPMESH = new ProxyConfigurationType("APPMESH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProxyConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyConfigurationType FindValue(string value)
+        {
+            return FindValue<ProxyConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyConfigurationType(string value)
         {
             return FindValue(value);
         }

@@ -62,6 +62,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Cpu);
             }
 
+            if(requestObject.IsSetDependsOn())
+            {
+                context.Writer.WritePropertyName("dependsOn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDependsOnListValue in requestObject.DependsOn)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContainerDependencyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDependsOnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDisableNetworking())
             {
                 context.Writer.WritePropertyName("disableNetworking");
@@ -335,6 +351,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStartTimeout())
+            {
+                context.Writer.WritePropertyName("startTimeout");
+                context.Writer.Write(requestObject.StartTimeout);
+            }
+
+            if(requestObject.IsSetStopTimeout())
+            {
+                context.Writer.WritePropertyName("stopTimeout");
+                context.Writer.Write(requestObject.StopTimeout);
             }
 
             if(requestObject.IsSetSystemControls())

@@ -142,6 +142,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetProxyConfiguration())
+                {
+                    context.Writer.WritePropertyName("proxyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProxyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRequiresCompatibilities())
                 {
                     context.Writer.WritePropertyName("requiresCompatibilities");

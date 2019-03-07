@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dependsOn", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);
+                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("disableNetworking", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -236,6 +242,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
                     unmarshalledObject.Secrets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stopTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StopTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("systemControls", targetDepth))

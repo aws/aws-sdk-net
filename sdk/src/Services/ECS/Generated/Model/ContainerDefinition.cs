@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
     {
         private List<string> _command = new List<string>();
         private int? _cpu;
+        private List<ContainerDependency> _dependsOn = new List<ContainerDependency>();
         private bool? _disableNetworking;
         private List<string> _dnsSearchDomains = new List<string>();
         private List<string> _dnsServers = new List<string>();
@@ -62,6 +63,8 @@ namespace Amazon.ECS.Model
         private RepositoryCredentials _repositoryCredentials;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
         private List<Secret> _secrets = new List<Secret>();
+        private int? _startTimeout;
+        private int? _stopTimeout;
         private List<SystemControl> _systemControls = new List<SystemControl>();
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
@@ -174,6 +177,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DependsOn. 
+        /// <para>
+        /// The dependencies defined for container startup. A container can contain multiple dependencies.
+        /// </para>
+        /// </summary>
+        public List<ContainerDependency> DependsOn
+        {
+            get { return this._dependsOn; }
+            set { this._dependsOn = value; }
+        }
+
+        // Check to see if DependsOn property is set
+        internal bool IsSetDependsOn()
+        {
+            return this._dependsOn != null && this._dependsOn.Count > 0; 
         }
 
         /// <summary>
@@ -1018,6 +1039,57 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartTimeout. 
+        /// <para>
+        /// Time duration to wait before giving up on starting the container.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>startTimeout</code> value for the container will take precedence over the
+        /// <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter,
+        /// if used.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int StartTimeout
+        {
+            get { return this._startTimeout.GetValueOrDefault(); }
+            set { this._startTimeout = value; }
+        }
+
+        // Check to see if StartTimeout property is set
+        internal bool IsSetStartTimeout()
+        {
+            return this._startTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopTimeout. 
+        /// <para>
+        /// Time duration to wait before the container is forcefully killed if it does not exit
+        /// normally on its own.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>stopTimeout</code> value for the container will take precedence over the
+        /// <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if
+        /// used.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int StopTimeout
+        {
+            get { return this._stopTimeout.GetValueOrDefault(); }
+            set { this._stopTimeout = value; }
+        }
+
+        // Check to see if StopTimeout property is set
+        internal bool IsSetStopTimeout()
+        {
+            return this._stopTimeout.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SystemControls. 
         /// <para>
         /// A list of namespaced kernel parameters to set in the container. This parameter maps
@@ -1083,13 +1155,42 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user name to use inside the container. This parameter maps to <code>User</code>
+        /// The username to use inside the container. This parameter maps to <code>User</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// This following formats can be used. If specifying a UID or GID, it must be specified
+        /// as a positive integer.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>user</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>user:group</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>uid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>uid:gid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>user:gid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>uid:group</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// This parameter is not supported for Windows containers.
         /// </para>
