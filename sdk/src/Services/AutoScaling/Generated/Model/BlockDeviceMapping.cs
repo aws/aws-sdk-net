@@ -41,7 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DeviceName. 
         /// <para>
         /// The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or
-        /// <code>xvdh</code>).
+        /// <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+        /// Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string DeviceName

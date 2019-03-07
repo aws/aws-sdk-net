@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
         /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -107,7 +107,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -260,8 +260,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if the policy type is <code>SimpleScaling</code> and not
-        /// supported otherwise.
+        /// Conditional: This parameter is required if the policy type is <code>SimpleScaling</code>
+        /// and not supported otherwise.
         /// </para>
         /// </summary>
         public int ScalingAdjustment
@@ -283,8 +283,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if the policy type is <code>StepScaling</code> and not
-        /// supported otherwise.
+        /// Conditional: This parameter is required if the policy type is <code>StepScaling</code>
+        /// and not supported otherwise.
         /// </para>
         /// </summary>
         public List<StepAdjustment> StepAdjustments
@@ -302,11 +302,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingConfiguration. 
         /// <para>
-        /// A target tracking policy.
+        /// A target tracking scaling policy. Includes support for predefined or customized metrics.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if the policy type is <code>TargetTrackingScaling</code>
+        /// Conditional: This parameter is required if the policy type is <code>TargetTrackingScaling</code>
         /// and not supported otherwise.
         /// </para>
         /// </summary>

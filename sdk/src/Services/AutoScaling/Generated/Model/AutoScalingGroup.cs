@@ -352,13 +352,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
-        /// Indicates whether newly launched instances are protected from termination by Auto
-        /// Scaling when scaling in.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Indicates whether newly launched instances are protected from termination by Amazon
+        /// EC2 Auto Scaling when scaling in.
         /// </para>
         /// </summary>
         public bool NewInstancesProtectedFromScaleIn
@@ -376,9 +371,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of the placement group into which to launch your instances, if any. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The name of the placement group into which to launch your instances, if any.
         /// </para>
         /// </summary>
         public string PlacementGroup
@@ -506,11 +499,6 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
         /// One or more subnet IDs, if applicable, separated by commas.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-        /// ensure that the Availability Zones of the subnets match the values for <code>AvailabilityZones</code>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
-    /// Deletes the specified Auto Scaling policy.
+    /// Deletes the specified scaling policy.
     /// 
     ///  
     /// <para>

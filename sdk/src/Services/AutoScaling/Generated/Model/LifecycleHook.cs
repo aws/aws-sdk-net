@@ -29,13 +29,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform
-    /// an action whenever it launches instances or whenever it terminates instances.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
-    /// EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    /// </para>
+    /// an action whenever it launches instances or whenever it terminates instances. Used
+    /// in response to <a>DescribeLifecycleHooks</a>.
     /// </summary>
     public partial class LifecycleHook
     {
@@ -71,8 +66,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultResult. 
         /// <para>
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
-        /// elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code>
-        /// and <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
+        /// elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code>
+        /// and <code>ABANDON</code>.
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -111,8 +106,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
-        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the default action.
-        /// You can prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
+        /// you specified in the <code>DefaultResult</code> parameter.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -176,8 +171,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationMetadata. 
         /// <para>
-        /// Additional information that you want to include any time Amazon EC2 Auto Scaling sends
-        /// a message to the notification target.
+        /// Additional information that is included any time Amazon EC2 Auto Scaling sends a message
+        /// to the notification target.
         /// </para>
         /// </summary>
         public string NotificationMetadata

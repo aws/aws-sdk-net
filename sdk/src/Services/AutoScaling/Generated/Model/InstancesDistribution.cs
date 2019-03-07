@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The only valid value is <code>prioritized</code>, which is also the default value.
-        /// This strategy uses the order of instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a>
+        /// This strategy uses the order of instance type overrides for the <a>LaunchTemplate</a>
         /// to define the launch priority of each instance type. The first instance type in the
         /// array is prioritized higher than the last. If all your On-Demand capacity cannot be
         /// fulfilled using your highest priority instance, then the Auto Scaling groups launches
@@ -81,9 +81,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is 0. If you leave this parameter set to 0, On-Demand Instances
-        /// are launched as a percentage of the Auto Scaling group's desired capacity, per the
-        /// <b>OnDemandPercentageAboveBaseCapacity</b> setting.
+        /// The default value is <code>0</code>. If you leave this parameter set to <code>0</code>,
+        /// On-Demand Instances are launched as a percentage of the Auto Scaling group's desired
+        /// capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
         /// </para>
         /// </summary>
         public int OnDemandBaseCapacity
@@ -102,12 +102,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// Controls the percentages of On-Demand Instances and Spot Instances for your additional
-        /// capacity beyond <b>OnDemandBaseCapacity</b>. 
+        /// capacity beyond <code>OnDemandBaseCapacity</code>.
         /// </para>
         ///  
         /// <para>
-        /// The range is 0–100. The default value is 100. If you leave this parameter set to 100,
-        /// the percentages are 100% for On-Demand Instances and 0% for Spot Instances. 
+        /// The range is 0–100. The default value is <code>100</code>. If you leave this parameter
+        /// set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
+        /// Spot Instances. 
         /// </para>
         /// </summary>
         public int OnDemandPercentageAboveBaseCapacity
@@ -150,7 +151,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotInstancePools. 
         /// <para>
         /// The number of Spot pools to use to allocate your Spot capacity. The Spot pools are
-        /// determined from the different instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a>.
+        /// determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>.
         /// 
         /// </para>
         ///  

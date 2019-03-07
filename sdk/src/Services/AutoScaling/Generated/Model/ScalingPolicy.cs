@@ -51,7 +51,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AdjustmentType. 
         /// <para>
         /// The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted.
-        /// Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+        /// The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+        /// <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
         public string AdjustmentType
@@ -143,7 +144,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricAggregationType. 
         /// <para>
-        /// The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+        /// The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
         /// <code>Maximum</code>, and <code>Average</code>.
         /// </para>
         /// </summary>
@@ -237,7 +238,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+        /// The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
         /// </para>
         /// </summary>
         public string PolicyType
@@ -292,7 +293,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingConfiguration. 
         /// <para>
-        /// A target tracking policy.
+        /// A target tracking scaling policy.
         /// </para>
         /// </summary>
         public TargetTrackingConfiguration TargetTrackingConfiguration

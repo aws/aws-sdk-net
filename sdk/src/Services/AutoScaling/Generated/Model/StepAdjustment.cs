@@ -29,7 +29,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes an adjustment based on the difference between the value of the aggregated
-    /// CloudWatch metric and the breach threshold that you've defined for the alarm.
+    /// CloudWatch metric and the breach threshold that you've defined for the alarm. Used
+    /// in combination with <a>PutScalingPolicy</a>.
     /// 
     ///  
     /// <para>

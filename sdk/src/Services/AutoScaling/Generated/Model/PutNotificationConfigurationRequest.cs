@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
     /// Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
     /// </para>

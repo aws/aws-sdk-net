@@ -155,8 +155,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// The lifecycle state for the instance.
         /// </para>
         /// </summary>
         public string LifecycleState
@@ -176,11 +175,6 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool ProtectedFromScaleIn

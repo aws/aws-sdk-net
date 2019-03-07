@@ -28,13 +28,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform
-    /// an action whenever it launches instances or whenever it terminates instances.
+    /// Describes a lifecycle hook. Used in combination with <a>CreateAutoScalingGroup</a>.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+    /// A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance
+    /// when the instance launches (before it is put into service) or as the instance terminates
+    /// (before it is fully terminated).
+    /// </para>
+    ///  
+    /// <para>
+    /// This step is a part of the procedure for creating a lifecycle hook for an Auto Scaling
+    /// group:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
+    /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// (Optional) Create a notification target and an IAM role. The target can be either
+    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling
+    /// to publish lifecycle notifications to the target.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Create the lifecycle hook. Specify whether the hook is used when the instances
+    /// launch or terminate.</b> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you need more time, record the lifecycle action heartbeat to keep the instance
+    /// in a pending state using using <a>RecordLifecycleActionHeartbeat</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you finish before the timeout period ends, complete the lifecycle action using
+    /// <a>CompleteLifecycleAction</a>.
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
     /// EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
+    /// You can modify an existing lifecycle hook or create new lifecycle hooks using <a>PutLifecycleHook</a>.
+    /// If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
     /// </para>
     /// </summary>
     public partial class LifecycleHookSpecification
@@ -52,7 +94,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
         /// elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code>
-        /// and <code>ABANDON</code>.
+        /// and <code>ABANDON</code>. The default value is <code>ABANDON</code>.
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -71,8 +113,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
-        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the default action.
-        /// You can prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
+        /// you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle
+        /// hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -109,7 +155,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
         /// The state of the EC2 instance to which you want to attach the lifecycle hook. The
-        /// possible values are:
+        /// valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -176,7 +222,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target.
+        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.
         /// </para>
         /// </summary>
         public string RoleARN

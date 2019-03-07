@@ -38,8 +38,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use when requesting the next set of items. If there are no additional
-        /// items to return, the string is empty.
+        /// A string that indicates that the response contains more items than can be returned
+        /// in a single response. To receive additional items, specify this string for the <code>NextToken</code>
+        /// value when requesting the next set of items. This value is null when there are no
+        /// more items to return.
         /// </para>
         /// </summary>
         public string NextToken
