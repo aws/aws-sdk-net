@@ -30,6 +30,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBClusterEndpoints operation.
     /// Returns information about endpoints for an Amazon Aurora DB cluster.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDBClusterEndpointsRequest : AmazonRDSRequest
     {

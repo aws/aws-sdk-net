@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// For an overview on tagging Amazon RDS resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
+    /// For an overview on tagging Amazon RDS resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
     /// Amazon RDS Resources</a>.
     /// </para>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon RDS resource that the tags are added to. This value is an Amazon Resource
-        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+        /// Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>

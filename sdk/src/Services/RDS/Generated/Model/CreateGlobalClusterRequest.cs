@@ -42,6 +42,11 @@ namespace Amazon.RDS.Model
     /// during the create operation, and this cluster becomes the primary cluster of the global
     /// database. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateGlobalClusterRequest : AmazonRDSRequest
     {

@@ -84,10 +84,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+    /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
     /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-    /// Version 4 Signing Process</a>.
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+    /// Signature Version 4 Signing Process</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -110,14 +110,19 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-    /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
+    /// to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
     /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonRDSRequest
     {
@@ -229,10 +234,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+        /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
         /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-        /// Version 4 Signing Process</a>.
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+        /// Signature Version 4 Signing Process</a>.
         /// </para>
         /// </summary>
         public string PreSignedUrl
@@ -272,7 +277,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// If the source snapshot is in a different AWS Region than the copy, specify a valid
-        /// DB cluster snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+        /// DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
         /// Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  </li> </ul> 

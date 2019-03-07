@@ -116,6 +116,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CustomEndpoints/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

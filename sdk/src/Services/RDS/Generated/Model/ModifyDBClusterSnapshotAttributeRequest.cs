@@ -51,6 +51,11 @@ namespace Amazon.RDS.Model
     /// or whether a manual DB cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
     /// API action.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifyDBClusterSnapshotAttributeRequest : AmazonRDSRequest
     {

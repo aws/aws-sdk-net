@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+    /// You can see a list of the event categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
     /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
     /// action.
     /// </para>
@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EventCategories. 
         /// <para>
         ///  A list of event categories for a SourceType that you want to subscribe to. You can
-        /// see a list of the categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+        /// see a list of the categories for a given SourceType in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
         /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
         /// action. 
         /// </para>

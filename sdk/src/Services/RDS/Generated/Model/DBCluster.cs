@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
+        private bool? _copyTagsToSnapshot;
         private List<string> _customEndpoints = new List<string>();
         private string _databaseName;
         private string _dbClusterArn;
@@ -207,7 +208,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
         /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
@@ -277,6 +278,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetClusterCreateTime()
         {
             return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -510,7 +529,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Log types vary by DB engine. For information about the log types for each DB engine,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
         /// RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         /// </summary>
@@ -635,7 +654,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
         /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>

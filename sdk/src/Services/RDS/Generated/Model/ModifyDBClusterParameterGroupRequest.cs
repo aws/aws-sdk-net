@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
     ///  <note> 
@@ -57,7 +57,11 @@ namespace Amazon.RDS.Model
     /// RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
     /// DB cluster parameter group has been created or modified.
     /// </para>
-    ///  </important>
+    ///  </important> <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifyDBClusterParameterGroupRequest : AmazonRDSRequest
     {

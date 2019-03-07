@@ -30,7 +30,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteGlobalCluster operation.
     /// Deletes a global database cluster. The primary and secondary clusters must already
-    /// be detached or destroyed first.
+    /// be detached or destroyed first. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteGlobalClusterRequest : AmazonRDSRequest
     {

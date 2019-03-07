@@ -46,17 +46,21 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+    /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
     /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  <important> 
     /// <para>
     /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
     /// connections that prevent Aurora Serverless from finding a scaling point might be dropped.
-    /// For more information about scaling points, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+    /// For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
     /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
-    ///  </important>
+    ///  </important> <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifyCurrentDBClusterCapacityRequest : AmazonRDSRequest
     {

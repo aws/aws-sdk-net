@@ -267,6 +267,19 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>public</code> - Return all DB snapshots that have been marked as public.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about AWS Backup, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+        /// <i>AWS Backup Developer Guide.</i> </a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>awsbackup</code> type does not apply to Aurora.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual

@@ -30,6 +30,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the PromoteReadReplicaDBCluster operation.
     /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action only applies to Aurora DB clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PromoteReadReplicaDBClusterRequest : AmazonRDSRequest
     {

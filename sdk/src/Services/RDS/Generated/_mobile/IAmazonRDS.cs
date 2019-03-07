@@ -70,22 +70,22 @@ namespace Amazon.RDS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For the alphabetical list of API actions, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
+    /// For the alphabetical list of API actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
     /// Actions</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For the alphabetical list of data types, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
+    /// For the alphabetical list of data types, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
     /// Types</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a list of common query parameters, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
+    /// For a list of common query parameters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
     /// Parameters</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For descriptions of the error codes, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
+    /// For descriptions of the error codes, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
     /// Errors</a>.
     /// </para>
     ///  </li> </ul> 
@@ -94,12 +94,12 @@ namespace Amazon.RDS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For a summary of the Amazon RDS interfaces, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
+    /// For a summary of the Amazon RDS interfaces, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
     /// RDS Interfaces</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For more information about how to use the Query API, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
+    /// For more information about how to use the Query API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
     /// the Query API</a>.
     /// </para>
     ///  </li> </ul>
@@ -1234,7 +1234,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
-        /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
         /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// <param name="cancellationToken">

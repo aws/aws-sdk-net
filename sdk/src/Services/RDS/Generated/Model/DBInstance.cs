@@ -229,6 +229,16 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
+        /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
+        /// information, see <a>DBCluster</a>.
+        /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
         {
@@ -477,7 +487,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates if the DB instance has deletion protection enabled. The database can't be
-        /// deleted when this value is set to true. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// deleted when this value is set to true. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -519,7 +529,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Log types vary by DB engine. For information about the log types for each DB engine,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
         /// RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
@@ -984,7 +994,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that specifies the order in which an Aurora Replica is promoted to the primary
         /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
         /// </para>

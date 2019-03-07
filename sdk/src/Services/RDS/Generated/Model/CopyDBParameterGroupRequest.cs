@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBParameterGroupIdentifier. 
         /// <para>
         ///  The identifier or ARN for the source DB parameter group. For information about creating
-        /// an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+        /// an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. 
         /// </para>
         ///  
