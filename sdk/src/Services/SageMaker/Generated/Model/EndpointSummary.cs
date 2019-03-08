@@ -113,7 +113,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated
-        /// or deleted or re-scaled until it has completed. This mainenance operation does not
+        /// or deleted or re-scaled until it has completed. This maintenance operation does not
         /// change any customer-specified values such as VPC config, KMS encryption, model, instance
         /// type, or instance count.
         /// </para>

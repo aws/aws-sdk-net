@@ -31,7 +31,7 @@ namespace Amazon.SageMaker
     /// <summary>
     /// Interface for accessing SageMaker
     ///
-    /// Definition of the public APIs exposed by SageMaker
+    /// Provides APIs for creating and managing Amazon SageMaker resources.
     /// </summary>
     public partial interface IAmazonSageMaker : IAmazonService, IDisposable
     {

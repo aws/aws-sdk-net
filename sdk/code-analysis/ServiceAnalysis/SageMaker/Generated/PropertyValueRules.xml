@@ -3,6 +3,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AddTagsRequest.ResourceArn</property>
     <max>256</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateAlgorithmRequest.AlgorithmDescription</property>
@@ -64,6 +65,7 @@
     <property>Amazon.SageMaker.Model.CreateEndpointResponse.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEndpointConfigRequest.EndpointConfigName</property>
@@ -73,11 +75,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEndpointConfigRequest.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEndpointConfigResponse.EndpointConfigArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
@@ -133,6 +137,7 @@
     <property>Amazon.SageMaker.Model.CreateModelResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelPackageRequest.ModelPackageDescription</property>
@@ -160,6 +165,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.LifecycleConfigName</property>
@@ -180,6 +186,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.SubnetId</property>
     <max>32</max>
+    <pattern>[-0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.VolumeSizeInGB</property>
@@ -254,6 +261,7 @@
     <property>Amazon.SageMaker.Model.CreateWorkteamRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateWorkteamRequest.WorkteamName</property>
@@ -312,6 +320,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteTagsRequest.ResourceArn</property>
     <max>256</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteWorkteamRequest.WorkteamName</property>
@@ -340,6 +349,11 @@
     <property>Amazon.SageMaker.Model.DescribeAlgorithmResponse.AlgorithmName</property>
     <min>1</min>
     <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAlgorithmResponse.ProductId</property>
+    <max>256</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -396,6 +410,7 @@
     <property>Amazon.SageMaker.Model.DescribeEndpointResponse.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEndpointResponse.EndpointConfigName</property>
@@ -420,6 +435,7 @@
     <property>Amazon.SageMaker.Model.DescribeEndpointConfigResponse.EndpointConfigArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEndpointConfigResponse.EndpointConfigName</property>
@@ -429,6 +445,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEndpointConfigResponse.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
@@ -464,6 +481,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeLabelingJobResponse.JobReferenceCode</property>
     <min>1</min>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeLabelingJobResponse.LabelAttributeName</property>
@@ -508,6 +526,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelResponse.ModelName</property>
@@ -555,6 +574,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.NotebookInstanceArn</property>
@@ -579,6 +599,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.SubnetId</property>
     <max>32</max>
+    <pattern>[-0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.VolumeSizeInGB</property>
@@ -699,10 +720,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListAlgorithmsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListAlgorithmsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCodeRepositoriesRequest.MaxResults</property>
@@ -717,10 +740,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCodeRepositoriesRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCodeRepositoriesResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCompilationJobsRequest.MaxResults</property>
@@ -735,10 +760,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCompilationJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCompilationJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointConfigsRequest.MaxResults</property>
@@ -753,10 +780,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointConfigsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointConfigsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointsRequest.MaxResults</property>
@@ -771,10 +800,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsRequest.MaxResults</property>
@@ -789,10 +820,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsRequest.MaxResults</property>
@@ -807,15 +840,18 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsForWorkteamRequest.JobReferenceCodeContains</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsForWorkteamRequest.MaxResults</property>
@@ -825,6 +861,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsForWorkteamRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsForWorkteamRequest.WorkteamArn</property>
@@ -834,6 +871,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListLabelingJobsForWorkteamResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelPackagesRequest.MaxResults</property>
@@ -848,10 +886,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelPackagesRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelPackagesResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelsRequest.MaxResults</property>
@@ -866,10 +906,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstanceLifecycleConfigsRequest.MaxResults</property>
@@ -884,10 +926,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstanceLifecycleConfigsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstanceLifecycleConfigsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstancesRequest.AdditionalCodeRepositoryEquals</property>
@@ -913,6 +957,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstancesRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstancesRequest.NotebookInstanceLifecycleConfigNameContains</property>
@@ -922,6 +967,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstancesResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListSubscribedWorkteamsRequest.MaxResults</property>
@@ -937,10 +983,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListSubscribedWorkteamsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListSubscribedWorkteamsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTagsRequest.MaxResults</property>
@@ -949,14 +997,17 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTagsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTagsRequest.ResourceArn</property>
     <max>256</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTagsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsRequest.MaxResults</property>
@@ -971,10 +1022,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
@@ -990,10 +1043,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTransformJobsRequest.MaxResults</property>
@@ -1008,10 +1063,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTransformJobsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListTransformJobsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListWorkteamsRequest.MaxResults</property>
@@ -1027,10 +1084,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListWorkteamsRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListWorkteamsResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RenderUiTemplateRequest.RoleArn</property>
@@ -1046,15 +1105,18 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SearchRequest.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SearchRequest.SortBy</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SearchResponse.NextToken</property>
     <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StartNotebookInstanceRequest.NotebookInstanceName</property>
@@ -1122,6 +1184,7 @@
     <property>Amazon.SageMaker.Model.UpdateEndpointResponse.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateEndpointWeightsAndCapacitiesRequest.EndpointName</property>
@@ -1132,6 +1195,7 @@
     <property>Amazon.SageMaker.Model.UpdateEndpointWeightsAndCapacitiesResponse.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.DefaultCodeRepository</property>
@@ -1169,6 +1233,7 @@
     <property>Amazon.SageMaker.Model.UpdateWorkteamRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateWorkteamRequest.WorkteamName</property>
@@ -1185,6 +1250,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmSpecification.TrainingImage</property>
     <max>255</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AlgorithmStatusItem.Name</property>
@@ -1229,6 +1295,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CategoricalParameterRange.Name</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Channel.ChannelName</property>
@@ -1239,6 +1306,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Channel.ContentType</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ChannelSpecification.Description</property>
@@ -1316,22 +1384,27 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRange.MaxValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRange.MinValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRange.Name</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRangeSpecification.MaxValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContinuousParameterRangeSpecification.MinValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeployedImage.ResolvedImage</property>
@@ -1360,6 +1433,7 @@
     <property>Amazon.SageMaker.Model.EndpointConfigSummary.EndpointConfigArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EndpointConfigSummary.EndpointConfigName</property>
@@ -1370,6 +1444,7 @@
     <property>Amazon.SageMaker.Model.EndpointSummary.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EndpointSummary.EndpointName</property>
@@ -1380,21 +1455,25 @@
     <property>Amazon.SageMaker.Model.Filter.Name</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Filter.Value</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FinalHyperParameterTuningJobObjectiveMetric.MetricName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GitConfig.Branch</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>[^ ~^:?*\[]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GitConfig.RepositoryUrl</property>
@@ -1430,12 +1509,13 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskAvailabilityLifetimeInSeconds</property>
     <min>1</min>
-    <max>345600</max>
+    <max>864000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskDescription</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.TaskTimeLimitInSeconds</property>
@@ -1462,10 +1542,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterAlgorithmSpecification.TrainingImage</property>
     <max>255</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterSpecification.DefaultValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterSpecification.Description</property>
@@ -1475,6 +1557,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterSpecification.Name</property>
     <max>256</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTrainingJobDefinition.RoleArn</property>
@@ -1507,6 +1590,7 @@
     <property>Amazon.SageMaker.Model.HyperParameterTuningJobObjective.MetricName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningJobSummary.HyperParameterTuningJobArn</property>
@@ -1523,6 +1607,7 @@
     <property>Amazon.SageMaker.Model.InputConfig.DataInputConfig</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InputConfig.S3Uri</property>
@@ -1532,22 +1617,27 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.MaxValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.MinValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.Name</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRangeSpecification.MaxValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRangeSpecification.MinValue</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelCounters.FailedNonRetryableError</property>
@@ -1585,14 +1675,17 @@
     <property>Amazon.SageMaker.Model.LabelingJobAlgorithmsConfig.InitialActiveLearningModelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobAlgorithmsConfig.LabelingJobAlgorithmSpecificationArn</property>
     <max>2048</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobForWorkteamSummary.JobReferenceCode</property>
     <min>1</min>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobForWorkteamSummary.LabelingJobName</property>
@@ -1608,6 +1701,7 @@
     <property>Amazon.SageMaker.Model.LabelingJobOutput.FinalActiveLearningModelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutput.OutputDatasetS3Uri</property>
@@ -1617,6 +1711,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.S3OutputPath</property>
@@ -1626,6 +1721,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobS3DataSource.ManifestS3Uri</property>
@@ -1675,11 +1771,13 @@
     <property>Amazon.SageMaker.Model.MetricData.MetricName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MetricDefinition.Name</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MetricDefinition.Regex</property>
@@ -1710,6 +1808,11 @@
     <property>Amazon.SageMaker.Model.ModelPackageContainerDefinition.ModelDataUrl</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelPackageContainerDefinition.ProductId</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageStatusItem.Name</property>
@@ -1750,6 +1853,7 @@
     <property>Amazon.SageMaker.Model.ModelSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelSummary.ModelName</property>
@@ -1760,6 +1864,7 @@
     <property>Amazon.SageMaker.Model.NestedFilters.NestedPropertyName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.NotebookInstanceLifecycleConfigSummary.NotebookInstanceLifecycleConfigArn</property>
@@ -1774,6 +1879,7 @@
     <property>Amazon.SageMaker.Model.NotebookInstanceLifecycleHook.Content</property>
     <min>1</min>
     <max>16384</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.NotebookInstanceSummary.DefaultCodeRepository</property>
@@ -1815,6 +1921,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputDataConfig.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputDataConfig.S3OutputPath</property>
@@ -1870,16 +1977,19 @@
     <property>Amazon.SageMaker.Model.PropertyNameQuery.PropertyNameHint</property>
     <min>0</min>
     <max>100</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PropertyNameSuggestion.PropertyName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RenderableTask.Input</property>
     <min>2</min>
     <max>128000</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.InstanceCount</property>
@@ -1888,6 +1998,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.VolumeSizeInGB</property>
@@ -1937,11 +2048,13 @@
     <property>Amazon.SageMaker.Model.SubscribedWorkteam.MarketplaceDescription</property>
     <min>1</min>
     <max>200</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SubscribedWorkteam.MarketplaceTitle</property>
     <min>1</min>
     <max>200</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SubscribedWorkteam.WorkteamArn</property>
@@ -2035,6 +2148,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformInput.ContentType</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformJobDefinition.MaxConcurrentTransforms</property>
@@ -2062,10 +2176,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformOutput.Accept</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformOutput.KmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformOutput.S3OutputPath</property>
@@ -2079,6 +2195,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformResources.VolumeKmsKeyId</property>
     <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformS3DataSource.S3Uri</property>
@@ -2094,6 +2211,7 @@
     <property>Amazon.SageMaker.Model.UiTemplate.Content</property>
     <min>1</min>
     <max>128000</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.USD.Cents</property>
@@ -2114,6 +2232,7 @@
     <property>Amazon.SageMaker.Model.Workteam.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Workteam.WorkteamArn</property>

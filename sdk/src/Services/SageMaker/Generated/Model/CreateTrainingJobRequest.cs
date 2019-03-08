@@ -36,8 +36,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// If you choose to host your model using Amazon SageMaker hosting services, you can
     /// use the resulting model artifacts as part of the model. You can also use the artifacts
-    /// in a deep learning service other than Amazon SageMaker, provided that you know how
-    /// to use them for inferences. 
+    /// in a machine learning service other than Amazon SageMaker, provided that you know
+    /// how to use them for inferences. 
     /// </para>
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to influence
     /// the quality of the final model. For a list of hyperparameters for each training algorithm
-    /// provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+    /// provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
     /// 
     /// </para>
     ///  </li> <li> 
@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information about Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+    ///  For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
     /// It Works</a>. 
     /// </para>
     /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The registry path of the Docker image that contains the training algorithm and algorithm-specific
         /// metadata, including the input mode. For more information about algorithms provided
-        /// by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// For information about providing your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+        /// by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
         /// </summary>
@@ -129,9 +129,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
-        /// choose <code>True</code>,. Encryption provides greater security for distributed training,
-        /// but training can take longer because of additional communications between ML compute
-        /// instances.
+        /// choose <code>True</code>. Encryption provides greater security for distributed training,
+        /// but training might take longer. How long it takes depends on the amount of communication
+        /// between compute instances, especially if you use a deep learning algorithm in distributed
+        /// training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect
+        /// Communications Between ML Compute Instances in a Distributed Training Job</a>.
         /// </para>
         /// </summary>
         public bool EnableInterContainerTrafficEncryption
@@ -178,7 +180,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Algorithm-specific parameters that influence the quality of the model. You set hyperparameters
         /// before you start the learning process. For a list of hyperparameters for each training
-        /// algorithm provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  
@@ -291,7 +293,7 @@ namespace Amazon.SageMaker.Model
         /// an S3 bucket, download a Docker image that contains training code, write model artifacts
         /// to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon
         /// CloudWatch. You grant permissions for all of these tasks to an IAM role. For more
-        /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
         ///  <note> 
@@ -344,7 +346,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// 
         /// </para>
@@ -385,7 +387,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that you want your training job to
         /// connect to. Control access to and from your training container by configuring the
-        /// VPC. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
         /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

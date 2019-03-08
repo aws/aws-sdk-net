@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// If you are using your own custom algorithm instead of an algorithm provided by Amazon
         /// SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker
         /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-        /// image path formats. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
         /// </summary>

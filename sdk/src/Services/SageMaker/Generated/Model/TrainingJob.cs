@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     {
         private AlgorithmSpecification _algorithmSpecification;
         private DateTime? _creationTime;
+        private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableNetworkIsolation;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
@@ -91,6 +92,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableInterContainerTrafficEncryption. 
+        /// <para>
+        /// To encrypt all communications between ML compute instances in distributed training,
+        /// choose <code>True</code>. Encryption provides greater security for distributed training,
+        /// but training might take longer. How long it takes depends on the amount of communication
+        /// between compute instances, especially if you use a deep learning algorithm in distributed
+        /// training.
+        /// </para>
+        /// </summary>
+        public bool EnableInterContainerTrafficEncryption
+        {
+            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            set { this._enableInterContainerTrafficEncryption = value; }
+        }
+
+        // Check to see if EnableInterContainerTrafficEncryption property is set
+        internal bool IsSetEnableInterContainerTrafficEncryption()
+        {
+            return this._enableInterContainerTrafficEncryption.HasValue; 
         }
 
         /// <summary>
@@ -423,7 +446,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
@@ -590,7 +613,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VpcConfig. 
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that this training job has access
-        /// to. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
         /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

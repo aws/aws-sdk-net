@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
         private string _roleArn;
+        private RootAccess _rootAccess;
         private int? _volumeSizeInGB;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// An array of up to three Git repositories to associate with the notebook instance.
         /// These can be either the names of Git repositories stored as resources in your account,
         /// or the URL of Git repositories in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-        /// CodeCommit</a> or in any other Git repository.. These repositories are cloned at the
+        /// CodeCommit</a> or in any other Git repository. These repositories are cloned at the
         /// same level as the default repository of your notebook instance. For more information,
         /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
@@ -213,7 +214,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigName. 
         /// <para>
         /// The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
@@ -251,7 +252,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to
-        /// access the notebook instance. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+        /// access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
         ///  <note> 
@@ -271,6 +272,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootAccess. 
+        /// <para>
+        /// Whether root access is enabled or disabled for users of the notebook instance. The
+        /// default value is <code>Enabled</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you set this to <code>Disabled</code>, users don't have root access on the notebook
+        /// instance, but lifecycle configuration scripts still run with root permissions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RootAccess RootAccess
+        {
+            get { return this._rootAccess; }
+            set { this._rootAccess = value; }
+        }
+
+        // Check to see if RootAccess property is set
+        internal bool IsSetRootAccess()
+        {
+            return this._rootAccess != null;
         }
 
         /// <summary>

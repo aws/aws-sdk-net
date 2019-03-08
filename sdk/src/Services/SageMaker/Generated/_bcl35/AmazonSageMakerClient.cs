@@ -35,7 +35,7 @@ namespace Amazon.SageMaker
     /// <summary>
     /// Implementation for accessing SageMaker
     ///
-    /// Definition of the public APIs exposed by SageMaker
+    /// Provides APIs for creating and managing Amazon SageMaker resources.
     /// </summary>
     public partial class AmazonSageMakerClient : AmazonServiceClient, IAmazonSageMaker
     {
@@ -538,7 +538,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
         /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-        /// endpoint configuration with the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+        /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
         /// API. 
         /// 
         ///  <note> 
@@ -559,12 +559,12 @@ namespace Amazon.SageMaker
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
         /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
         /// SageMaker can then process incoming requests for inferences. To check the status of
-        /// an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API.
         /// </para>
         ///  
         /// <para>
-        /// For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
+        /// For an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
         /// 1: Using the K-Means Algorithm Provided by Amazon SageMaker</a>. 
         /// </para>
         ///  
@@ -637,7 +637,7 @@ namespace Amazon.SageMaker
         /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
         /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
         /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-        /// you call the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
         /// API.
         /// 
         ///  <note> 
@@ -1097,7 +1097,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         /// </summary>
@@ -1183,7 +1183,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
@@ -1256,7 +1256,7 @@ namespace Amazon.SageMaker
         /// AWS Identity and Access Management user, group, or role used to access the notebook
         /// instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
         /// condition context key to specify the list of IP addresses that you want to have access
-        /// to the notebook instance. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+        /// to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
         /// Access to a Notebook Instance by IP Address</a>.
         /// </para>
         /// </summary>
@@ -1319,8 +1319,8 @@ namespace Amazon.SageMaker
         /// <para>
         /// If you choose to host your model using Amazon SageMaker hosting services, you can
         /// use the resulting model artifacts as part of the model. You can also use the artifacts
-        /// in a deep learning service other than Amazon SageMaker, provided that you know how
-        /// to use them for inferences. 
+        /// in a machine learning service other than Amazon SageMaker, provided that you know
+        /// how to use them for inferences. 
         /// </para>
         ///  
         /// <para>
@@ -1334,7 +1334,7 @@ namespace Amazon.SageMaker
         /// <para>
         ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to influence
         /// the quality of the final model. For a list of hyperparameters for each training algorithm
-        /// provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -1367,7 +1367,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information about Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        ///  For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         /// </summary>
@@ -1471,7 +1471,7 @@ namespace Amazon.SageMaker
         ///  </li> </ul> 
         /// <para>
         ///  For more information about how batch transformation works Amazon SageMaker, see <a
-        /// href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
         /// Works</a>. 
         /// </para>
         /// </summary>
@@ -1828,7 +1828,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-        /// was created in Amazon SageMaker when you called the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
+        /// was created in Amazon SageMaker when you called the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
         /// API. It does not delete model artifacts, inference code, or the IAM role that you
         /// specified when creating the model.
         /// </summary>
@@ -2753,7 +2753,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
@@ -3587,7 +3587,7 @@ namespace Amazon.SageMaker
         #region  ListModels
 
         /// <summary>
-        /// Lists models created with the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
+        /// Lists models created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModels service method.</param>
@@ -4523,13 +4523,6 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Training algorithms provided by Amazon SageMaker save the intermediate results of
-        /// a model training job. This intermediate data is a valid model artifact. You can use
-        /// the model artifacts that are saved when Amazon SageMaker stops a training job to create
-        /// a model. 
-        /// </para>
-        ///  
-        /// <para>
         /// When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes
         /// the status of the job to <code>Stopping</code>. After Amazon SageMaker stops the job,
         /// it sets the status to <code>Stopped</code>.
@@ -4717,7 +4710,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
         /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-        /// the status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API. 
         /// </para>
         ///  <note> 
@@ -4787,7 +4780,7 @@ namespace Amazon.SageMaker
         /// or capacity of one variant associated with an existing endpoint. When it receives
         /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
         /// updating the endpoint, it sets the status to <code>InService</code>. To check the
-        /// status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>

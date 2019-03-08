@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the CreateEndpoint operation.
     /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
     /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-    /// endpoint configuration with the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+    /// endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
     /// API. 
     /// 
     ///  <note> 
@@ -52,12 +52,12 @@ namespace Amazon.SageMaker.Model
     /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
     /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
     /// SageMaker can then process incoming requests for inferences. To check the status of
-    /// an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
+    /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
     /// API.
     /// </para>
     ///  
     /// <para>
-    /// For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
+    /// For an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
     /// 1: Using the K-Means Algorithm Provided by Amazon SageMaker</a>. 
     /// </para>
     ///  
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// The name of an endpoint configuration. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+        /// The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
         /// 
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
         /// 
         /// </para>

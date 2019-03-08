@@ -52,9 +52,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BatchStrategy. 
         /// <para>
-        ///  If you want to include only one record in a batch, specify <code>SingleRecord</code>..
-        /// If you want batches to contain a maximum of the number of records specified in the
-        /// <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.S
+        /// Specifies the number of records to include in a mini-batch for an HTTP inference request.
+        /// A <i>record</i> <i/> is a single unit of input data that inference can be made on.
+        /// For example, a single line in a CSV file is a record. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
+        /// <code>RecordIO</code>, or <code>TFRecord</code>.
         /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
@@ -88,7 +93,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Environment.
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to set in the Docker container. We support up to 16 key
+        /// and values entries in the map.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Environment
         {
@@ -105,7 +114,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the transform job failed, the reason that it failed.
+        /// If the transform job failed, <code>FailureReason</code> describes why it failed. A
+        /// transform job creates a log file, which includes error messages, and stores it as
+        /// an Amazon S3 object. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+        /// Amazon SageMaker Events with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
         public string FailureReason

@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingInputMode. 
         /// <para>
         /// The input mode used by the algorithm for the training job. For the input modes that
-        /// Amazon SageMaker algorithms support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// Amazon SageMaker algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// </para>
         ///  
         /// <para>

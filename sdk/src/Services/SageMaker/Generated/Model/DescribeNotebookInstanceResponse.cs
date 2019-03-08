@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private string _notebookInstanceName;
         private NotebookInstanceStatus _notebookInstanceStatus;
         private string _roleArn;
+        private RootAccess _rootAccess;
         private List<string> _securityGroups = new List<string>();
         private string _subnetId;
         private string _url;
@@ -144,12 +145,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
         /// Describes whether Amazon SageMaker provides internet access to the notebook instance.
-        /// If this value is set to <i>Disabled, he notebook instance does not have internet access,
-        /// and cannot connect to Amazon SageMaker training and endpoint services</i>.
+        /// If this value is set to <i>Disabled</i>, the notebook instance does not have internet
+        /// access, and cannot connect to Amazon SageMaker training and endpoint services.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
         /// Instances Are Internet-Enabled by Default</a>.
         /// </para>
         /// </summary>
@@ -283,7 +284,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a> 
         /// </para>
         /// </summary>
@@ -351,6 +352,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootAccess. 
+        /// <para>
+        /// Whether root access is enabled or disabled for users of the notebook instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecycle configurations need root access to be able to set up a notebook instance.
+        /// Because of this, lifecycle configurations associated with a notebook instance always
+        /// run with root access even if you disable root access for users.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RootAccess RootAccess
+        {
+            get { return this._rootAccess; }
+            set { this._rootAccess = value; }
+        }
+
+        // Check to see if RootAccess property is set
+        internal bool IsSetRootAccess()
+        {
+            return this._rootAccess != null;
         }
 
         /// <summary>

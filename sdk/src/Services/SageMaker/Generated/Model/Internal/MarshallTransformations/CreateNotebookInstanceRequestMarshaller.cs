@@ -132,6 +132,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetRootAccess())
+                {
+                    context.Writer.WritePropertyName("RootAccess");
+                    context.Writer.Write(publicRequest.RootAccess);
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");

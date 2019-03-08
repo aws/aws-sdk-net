@@ -141,6 +141,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootAccess", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RootAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

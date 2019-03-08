@@ -124,7 +124,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to
         /// access model artifacts and docker image for deployment on ML compute instances or
         /// for batch transform jobs. Deploying on ML compute instances is part of model hosting.
-        /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
         ///  <note> 
@@ -187,7 +187,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// 
         /// </para>
@@ -209,8 +209,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect
         /// to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code>
-        /// is used in hosting services and in batch transform. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
-        /// Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+        /// is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+        /// Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
         /// Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
