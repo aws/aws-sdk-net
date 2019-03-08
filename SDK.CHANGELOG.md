@@ -1,3 +1,11 @@
+### 3.3.472.0 (2019-03-08 21:11 UTC)
+* CodeBuild (3.3.23.0)
+	* CodeBuild also now supports Git Submodules.  CodeBuild now supports opting out of Encryption for S3 Build Logs.  By default these logs are encrypted.
+* S3 (3.3.31.23)
+	* Documentation updates for s3
+* SageMaker (3.3.20.0)
+	* SageMaker notebook instances now support enabling or disabling root access for notebook users. SageMaker Neo now supports rk3399 and rk3288 as compilation target devices.
+
 ### 3.3.471.0 (2019-03-07 19:31 UTC)
 * AppMesh (3.3.1.0)
 	* This release includes a new version of the AWS App Mesh APIs. You can read more about the new APIs here: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html.
