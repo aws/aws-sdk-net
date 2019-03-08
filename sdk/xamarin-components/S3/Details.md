@@ -1,10 +1,3 @@
-Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
-
-
-
-
-
-
 ### AWS Mobile SDK for Xamarin
 
 

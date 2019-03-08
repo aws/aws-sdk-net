@@ -261,9 +261,9 @@ namespace Amazon.S3
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
         /// </para>
         /// </summary>
-        /// <param name="bucketName">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
-        /// <param name="key">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
-        /// <param name="uploadId">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
+        /// <param name="uploadId"><p/></param>
         /// 
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(string bucketName, string key, string uploadId)
@@ -578,7 +578,7 @@ namespace Amazon.S3
         /// Deletes the bucket. All objects (including all object versions and Delete Markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteBucketRequest used to execute the DeleteBucket service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
         public virtual DeleteBucketResponse DeleteBucket(string bucketName)
@@ -850,7 +850,7 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the policy from the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteBucketPolicyRequest used to execute the DeleteBucketPolicy service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(string bucketName)
@@ -968,7 +968,7 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the tags from the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteBucketTaggingRequest used to execute the DeleteBucketTagging service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(string bucketName)
@@ -1033,7 +1033,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation removes the website configuration from the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteBucketWebsiteRequest used to execute the DeleteBucketWebsite service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(string bucketName)
@@ -1098,7 +1098,7 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName)
@@ -1163,7 +1163,7 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the lifecycle configuration from the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteLifecycleConfigurationRequest used to execute the DeleteLifecycleConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName)
@@ -1230,8 +1230,8 @@ namespace Amazon.S3
         /// which becomes the latest version of the object. If there isn't a null version, Amazon
         /// S3 does not remove any objects.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
-        /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
         public virtual DeleteObjectResponse DeleteObject(string bucketName, string key)
@@ -1248,8 +1248,8 @@ namespace Amazon.S3
         /// which becomes the latest version of the object. If there isn't a null version, Amazon
         /// S3 does not remove any objects.
         /// </summary>
-        /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
-        /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -1473,7 +1473,7 @@ namespace Amazon.S3
         /// <summary>
         /// Gets the access control policy for the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetACLRequest used to execute the GetACL service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
         public virtual GetACLResponse GetACL(string bucketName)
@@ -1757,7 +1757,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the region the bucket resides in.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketLocationRequest used to execute the GetBucketLocation service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
         public virtual GetBucketLocationResponse GetBucketLocation(string bucketName)
@@ -1823,7 +1823,7 @@ namespace Amazon.S3
         /// Returns the logging status of a bucket and the permissions users have to view and
         /// modify that status. To use GET, you must be the bucket owner.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketLoggingRequest used to execute the GetBucketLogging service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
         public virtual GetBucketLoggingResponse GetBucketLogging(string bucketName)
@@ -2006,7 +2006,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the policy of a specified bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketPolicyRequest used to execute the GetBucketPolicy service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
         public virtual GetBucketPolicyResponse GetBucketPolicy(string bucketName)
@@ -2174,7 +2174,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the request payment configuration of a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketRequestPaymentRequest used to execute the GetBucketRequestPayment service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(string bucketName)
@@ -2290,7 +2290,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the versioning state of a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketVersioningRequest used to execute the GetBucketVersioning service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
         public virtual GetBucketVersioningResponse GetBucketVersioning(string bucketName)
@@ -2355,7 +2355,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the website configuration for a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketWebsiteRequest used to execute the GetBucketWebsite service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(string bucketName)
@@ -2420,7 +2420,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the CORS configuration for the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(string bucketName)
@@ -2485,7 +2485,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetLifecycleConfigurationRequest used to execute the GetLifecycleConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName)
@@ -2550,8 +2550,8 @@ namespace Amazon.S3
         /// <summary>
         /// Retrieves objects from Amazon S3.
         /// </summary>
-        /// <param name="bucketName">A property of GetObjectRequest used to execute the GetObject service method.</param>
-        /// <param name="key">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
         public virtual GetObjectResponse GetObject(string bucketName, string key)
@@ -2566,8 +2566,8 @@ namespace Amazon.S3
         /// <summary>
         /// Retrieves objects from Amazon S3.
         /// </summary>
-        /// <param name="bucketName">A property of GetObjectRequest used to execute the GetObject service method.</param>
-        /// <param name="key">A property of GetObjectRequest used to execute the GetObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -2741,8 +2741,8 @@ namespace Amazon.S3
         /// itself. This operation is useful if you're only interested in an object's metadata.
         /// To use HEAD, you must have READ access to the object.
         /// </summary>
-        /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
-        /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
         public virtual GetObjectMetadataResponse GetObjectMetadata(string bucketName, string key)
@@ -2759,8 +2759,8 @@ namespace Amazon.S3
         /// itself. This operation is useful if you're only interested in an object's metadata.
         /// To use HEAD, you must have READ access to the object.
         /// </summary>
-        /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
-        /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -2932,8 +2932,8 @@ namespace Amazon.S3
         /// <summary>
         /// Return torrent files from a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetObjectTorrentRequest used to execute the GetObjectTorrent service method.</param>
-        /// <param name="key">A property of GetObjectTorrentRequest used to execute the GetObjectTorrent service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
         public virtual GetObjectTorrentResponse GetObjectTorrent(string bucketName, string key)
@@ -3110,8 +3110,8 @@ namespace Amazon.S3
         /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
         /// </para>
         /// </summary>
-        /// <param name="bucketName">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
-        /// <param name="key">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(string bucketName, string key)
@@ -3399,7 +3399,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation lists in-progress multipart uploads.
         /// </summary>
-        /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(string bucketName)
@@ -3413,7 +3413,7 @@ namespace Amazon.S3
         /// <summary>
         /// This operation lists in-progress multipart uploads.
         /// </summary>
-        /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -3481,7 +3481,7 @@ namespace Amazon.S3
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of ListObjectsRequest used to execute the ListObjects service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         public virtual ListObjectsResponse ListObjects(string bucketName)
@@ -3496,7 +3496,7 @@ namespace Amazon.S3
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of ListObjectsRequest used to execute the ListObjects service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
@@ -3618,8 +3618,8 @@ namespace Amazon.S3
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
-        /// <param name="bucketName">A property of ListPartsRequest used to execute the ListParts service method.</param>
-        /// <param name="key">A property of ListPartsRequest used to execute the ListParts service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
@@ -3687,7 +3687,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of ListVersionsRequest used to execute the ListVersions service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
         public virtual ListVersionsResponse ListVersions(string bucketName)
@@ -3701,7 +3701,7 @@ namespace Amazon.S3
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of ListVersionsRequest used to execute the ListVersions service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
@@ -3819,7 +3819,7 @@ namespace Amazon.S3
         /// <summary>
         /// Creates a new bucket.
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketRequest used to execute the PutBucket service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
         public virtual PutBucketResponse PutBucket(string bucketName)
@@ -4246,7 +4246,7 @@ namespace Amazon.S3
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
@@ -4263,9 +4263,9 @@ namespace Amazon.S3
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
-        /// <param name="contentMD5">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
+        /// <param name="contentMD5"><p/></param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
         public virtual PutBucketPolicyResponse PutBucketPolicy(string bucketName, string policy, string contentMD5)
@@ -4389,8 +4389,8 @@ namespace Amazon.S3
         /// owner (only) to specify that the person requesting the download will be charged for
         /// the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
-        /// <param name="requestPaymentConfiguration">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="requestPaymentConfiguration"><p/></param>
         /// 
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(string bucketName, RequestPaymentConfiguration requestPaymentConfiguration)
@@ -4459,7 +4459,7 @@ namespace Amazon.S3
         /// <summary>
         /// Sets the tags for a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
@@ -4578,8 +4578,8 @@ namespace Amazon.S3
         /// <summary>
         /// Set the website configuration for a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
-        /// <param name="websiteConfiguration">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="websiteConfiguration"><p/></param>
         /// 
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(string bucketName, WebsiteConfiguration websiteConfiguration)
@@ -4645,8 +4645,8 @@ namespace Amazon.S3
         /// <summary>
         /// Sets the CORS configuration for a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
-        /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="configuration"><p/></param>
         /// 
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration)
@@ -4713,7 +4713,7 @@ namespace Amazon.S3
         /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
         /// it replaces it.
         /// </summary>
-        /// <param name="bucketName">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// <param name="bucketName"><p/></param>
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
@@ -5090,8 +5090,8 @@ namespace Amazon.S3
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
-        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key)
@@ -5106,8 +5106,8 @@ namespace Amazon.S3
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
-        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
@@ -5124,9 +5124,9 @@ namespace Amazon.S3
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
-        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="versionId">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
+        /// <param name="versionId"><p/></param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         public virtual RestoreObjectResponse RestoreObject(string bucketName, string key, string versionId)
@@ -5142,9 +5142,9 @@ namespace Amazon.S3
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
-        /// <param name="bucketName">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="key">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
-        /// <param name="versionId">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="bucketName"><p/></param>
+        /// <param name="key"><p/></param>
+        /// <param name="versionId"><p/></param>
         /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
