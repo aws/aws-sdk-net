@@ -214,7 +214,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 catch (AmazonSimpleNotificationServiceException e)
                 {
                     Assert.AreEqual("InvalidParameter", e.ErrorCode);
-                    Assert.IsTrue(e.Message.Contains("parse"));
                 }
                 Assert.IsTrue(gotException, "Failed to get exception about invalid JSON");
 
