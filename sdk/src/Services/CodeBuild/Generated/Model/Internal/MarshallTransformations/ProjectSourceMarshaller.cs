@@ -68,6 +68,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GitCloneDepth);
             }
 
+            if(requestObject.IsSetGitSubmodulesConfig())
+            {
+                context.Writer.WritePropertyName("gitSubmodulesConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GitSubmodulesConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.GitSubmodulesConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInsecureSsl())
             {
                 context.Writer.WritePropertyName("insecureSsl");

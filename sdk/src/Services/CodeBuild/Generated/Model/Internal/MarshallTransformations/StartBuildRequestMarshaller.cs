@@ -136,6 +136,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GitCloneDepthOverride);
                 }
 
+                if(publicRequest.IsSetGitSubmodulesConfigOverride())
+                {
+                    context.Writer.WritePropertyName("gitSubmodulesConfigOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GitSubmodulesConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GitSubmodulesConfigOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdempotencyToken())
                 {
                     context.Writer.WritePropertyName("idempotencyToken");

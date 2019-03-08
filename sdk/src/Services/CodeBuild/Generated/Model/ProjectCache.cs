@@ -74,36 +74,36 @@ namespace Amazon.CodeBuild.Model
         ///  <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary
         /// sources. After the cache is created, subsequent builds pull only the change between
         /// commits. This mode is a good choice for projects with a clean working directory and
-        /// a source that is a large Git repository. If your project does not use a Git repository
-        /// (GitHub, GitHub Enterprise, or Bitbucket) and you choose this option, then it is ignored.
-        /// 
+        /// a source that is a large Git repository. If you choose this option and your project
+        /// does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option
+        /// is ignored. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode
         /// is a good choice for projects that build or pull large Docker images. It can prevent
-        /// the performance hit that would be caused by pulling large Docker images down from
-        /// the network. 
+        /// the performance issues caused by pulling large Docker images down from the network.
+        /// 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  You can only use a Docker layer cache in the Linux enviornment. 
+        ///  You can use a Docker layer cache in the Linux enviornment only. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The <code>privileged</code> flag must be set so that your project has the necessary
-        /// Docker privileges. 
+        ///  The <code>privileged</code> flag must be set so that your project has the required
+        /// Docker permissions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  You should consider the security implications before using a Docker layer cache.
+        ///  You should consider the security implications before you use a Docker layer cache.
         /// 
         /// </para>
         ///  </li> </ul> </note> </li> </ul> <ul> <li> 
         /// <para>
         ///  <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec
-        /// file. This mode is a good choice if your build scenario does not match one that works
-        /// well with one of the other three local cache modes. If you use a custom cache: 
+        /// file. This mode is a good choice if your build scenario is not suited to one of the
+        /// other three local cache modes. If you use a custom cache: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

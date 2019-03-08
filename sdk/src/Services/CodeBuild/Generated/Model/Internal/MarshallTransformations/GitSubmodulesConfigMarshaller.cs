@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3LogsConfig Marshaller
+    /// GitSubmodulesConfig Marshaller
     /// </summary>       
-    public class S3LogsConfigMarshaller : IRequestMarshaller<S3LogsConfig, JsonMarshallerContext> 
+    public class GitSubmodulesConfigMarshaller : IRequestMarshaller<GitSubmodulesConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3LogsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GitSubmodulesConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEncryptionDisabled())
+            if(requestObject.IsSetFetchSubmodules())
             {
-                context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled);
-            }
-
-            if(requestObject.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
-            }
-
-            if(requestObject.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WritePropertyName("fetchSubmodules");
+                context.Writer.Write(requestObject.FetchSubmodules);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3LogsConfigMarshaller Instance = new S3LogsConfigMarshaller();
+        public readonly static GitSubmodulesConfigMarshaller Instance = new GitSubmodulesConfigMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3LogsConfig Object
+    /// Response Unmarshaller for GitSubmodulesConfig Object
     /// </summary>  
-    public class S3LogsConfigUnmarshaller : IUnmarshaller<S3LogsConfig, XmlUnmarshallerContext>, IUnmarshaller<S3LogsConfig, JsonUnmarshallerContext>
+    public class GitSubmodulesConfigUnmarshaller : IUnmarshaller<GitSubmodulesConfig, XmlUnmarshallerContext>, IUnmarshaller<GitSubmodulesConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3LogsConfig IUnmarshaller<S3LogsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GitSubmodulesConfig IUnmarshaller<GitSubmodulesConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3LogsConfig Unmarshall(JsonUnmarshallerContext context)
+        public GitSubmodulesConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3LogsConfig unmarshalledObject = new S3LogsConfig();
+            GitSubmodulesConfig unmarshalledObject = new GitSubmodulesConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("encryptionDisabled", targetDepth))
+                if (context.TestExpression("fetchSubmodules", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionDisabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("location", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FetchSubmodules = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3LogsConfigUnmarshaller _instance = new S3LogsConfigUnmarshaller();        
+        private static GitSubmodulesConfigUnmarshaller _instance = new GitSubmodulesConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3LogsConfigUnmarshaller Instance
+        public static GitSubmodulesConfigUnmarshaller Instance
         {
             get
             {

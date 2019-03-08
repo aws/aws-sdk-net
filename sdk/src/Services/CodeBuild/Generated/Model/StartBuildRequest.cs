@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
         private int? _gitCloneDepthOverride;
+        private GitSubmodulesConfig _gitSubmodulesConfigOverride;
         private string _idempotencyToken;
         private string _imageOverride;
         private ImagePullCredentialsType _imagePullCredentialsTypeOverride;
@@ -210,6 +211,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetGitCloneDepthOverride()
         {
             return this._gitCloneDepthOverride.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitSubmodulesConfigOverride. 
+        /// <para>
+        ///  Information about the Git submodules configuration for this build of an AWS CodeBuild
+        /// build project. 
+        /// </para>
+        /// </summary>
+        public GitSubmodulesConfig GitSubmodulesConfigOverride
+        {
+            get { return this._gitSubmodulesConfigOverride; }
+            set { this._gitSubmodulesConfigOverride = value; }
+        }
+
+        // Check to see if GitSubmodulesConfigOverride property is set
+        internal bool IsSetGitSubmodulesConfigOverride()
+        {
+            return this._gitSubmodulesConfigOverride != null;
         }
 
         /// <summary>

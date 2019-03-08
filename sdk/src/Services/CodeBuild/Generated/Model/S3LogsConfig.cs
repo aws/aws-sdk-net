@@ -32,8 +32,28 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class S3LogsConfig
     {
+        private bool? _encryptionDisabled;
         private string _location;
         private LogsConfigStatusType _status;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionDisabled. 
+        /// <para>
+        ///  Set to true if you do not want your S3 build log output encrypted. By default S3
+        /// build logs are encrypted. 
+        /// </para>
+        /// </summary>
+        public bool EncryptionDisabled
+        {
+            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            set { this._encryptionDisabled = value; }
+        }
+
+        // Check to see if EncryptionDisabled property is set
+        internal bool IsSetEncryptionDisabled()
+        {
+            return this._encryptionDisabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 

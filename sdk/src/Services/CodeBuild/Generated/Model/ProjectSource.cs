@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
         private SourceAuth _auth;
         private string _buildspec;
         private int? _gitCloneDepth;
+        private GitSubmodulesConfig _gitSubmodulesConfig;
         private bool? _insecureSsl;
         private string _location;
         private bool? _reportBuildStatus;
@@ -91,7 +92,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property GitCloneDepth. 
         /// <para>
-        /// Information about the git clone depth for the build project.
+        /// Information about the Git clone depth for the build project.
         /// </para>
         /// </summary>
         public int GitCloneDepth
@@ -104,6 +105,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetGitCloneDepth()
         {
             return this._gitCloneDepth.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitSubmodulesConfig. 
+        /// <para>
+        ///  Information about the Git submodules configuration for the build project. 
+        /// </para>
+        /// </summary>
+        public GitSubmodulesConfig GitSubmodulesConfig
+        {
+            get { return this._gitSubmodulesConfig; }
+            set { this._gitSubmodulesConfig = value; }
+        }
+
+        // Check to see if GitSubmodulesConfig property is set
+        internal bool IsSetGitSubmodulesConfig()
+        {
+            return this._gitSubmodulesConfig != null;
         }
 
         /// <summary>
