@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk
     ///  
     /// <para>
     /// For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
     /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
     /// </para>
     /// </summary>

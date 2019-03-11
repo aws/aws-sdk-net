@@ -113,6 +113,22 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         request.Parameters.Add("SourceConfiguration" + "." + "TemplateName", StringUtils.FromString(publicRequest.SourceConfiguration.TemplateName));
                     }
                 }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    {
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));

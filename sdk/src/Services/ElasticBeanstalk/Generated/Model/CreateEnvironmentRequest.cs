@@ -159,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The name of the group to which the target environment belongs. Specify a group name
         /// only if the environment's name is specified in an environment manifest and not with
-        /// the environment name parameter. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+        /// the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
         /// Manifest (env.yaml)</a> for details.
         /// </para>
         /// </summary>
@@ -241,7 +241,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of current solution stacks, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+        /// For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
         /// Beanstalk Supported Platforms</a>.
         /// </para>
         /// </summary>
@@ -260,7 +260,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// This specifies the tags applied to resources in the environment.
+        /// Specifies the tags applied to resources in the environment.
         /// </para>
         /// </summary>
         public List<Tag> Tags

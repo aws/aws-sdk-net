@@ -128,7 +128,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
+        ///  For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
         /// AWS Elastic Beanstalk User Guide. </a> 
         /// </para>
         ///  

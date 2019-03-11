@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// application. Takes a list of version labels that specify application source bundles
     /// for each of the environments to create or update. The name of each environment and
     /// other required information must be included in the source bundles in an environment
-    /// manifest named <code>env.yaml</code>. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+    /// manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
     /// Environments</a> for details.
     /// </summary>
     public partial class ComposeEnvironmentsRequest : AmazonElasticBeanstalkRequest
@@ -65,7 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The name of the group to which the target environments belong. Specify a group name
         /// only if the environment name defined in each target environment's manifest ends with
-        /// a + (plus) character. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+        /// a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
         /// Manifest (env.yaml)</a> for details.
         /// </para>
         /// </summary>

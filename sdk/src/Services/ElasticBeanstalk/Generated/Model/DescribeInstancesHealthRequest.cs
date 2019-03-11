@@ -30,7 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstancesHealth operation.
     /// Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
-    /// This operation requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+    /// This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
     /// health reporting</a>.
     /// </summary>
     public partial class DescribeInstancesHealthRequest : AmazonElasticBeanstalkRequest

@@ -68,6 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _process;
         private SourceBuildInformation _sourceBuildInformation;
         private S3Location _sourceBundle;
+        private List<Tag> _tags = new List<Tag>();
         private string _versionLabel;
 
         /// <summary>
@@ -240,6 +241,29 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetSourceBundle()
         {
             return this._sourceBundle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specifies the tags applied to the application version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Elastic Beanstalk applies these tags only to the application version. Environments
+        /// that use the application version don't inherit the tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
