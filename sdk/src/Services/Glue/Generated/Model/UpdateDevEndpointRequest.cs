@@ -33,12 +33,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateDevEndpointRequest : AmazonGlueRequest
     {
+        private Dictionary<string, string> _addArguments = new Dictionary<string, string>();
         private List<string> _addPublicKeys = new List<string>();
         private DevEndpointCustomLibraries _customLibraries;
+        private List<string> _deleteArguments = new List<string>();
         private List<string> _deletePublicKeys = new List<string>();
         private string _endpointName;
         private string _publicKey;
         private bool? _updateEtlLibraries;
+
+        /// <summary>
+        /// Gets and sets the property AddArguments. 
+        /// <para>
+        /// The map of arguments to add the map of arguments used to configure the DevEndpoint.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AddArguments
+        {
+            get { return this._addArguments; }
+            set { this._addArguments = value; }
+        }
+
+        // Check to see if AddArguments property is set
+        internal bool IsSetAddArguments()
+        {
+            return this._addArguments != null && this._addArguments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AddPublicKeys. 
@@ -74,6 +94,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetCustomLibraries()
         {
             return this._customLibraries != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteArguments. 
+        /// <para>
+        /// The list of argument keys to be deleted from the map of arguments used to configure
+        /// the DevEndpoint.
+        /// </para>
+        /// </summary>
+        public List<string> DeleteArguments
+        {
+            get { return this._deleteArguments; }
+            set { this._deleteArguments = value; }
+        }
+
+        // Check to see if DeleteArguments property is set
+        internal bool IsSetDeleteArguments()
+        {
+            return this._deleteArguments != null && this._deleteArguments.Count > 0; 
         }
 
         /// <summary>

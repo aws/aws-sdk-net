@@ -32,6 +32,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DevEndpoint
     {
+        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _availabilityZone;
         private DateTime? _createdTimestamp;
         private string _endpointName;
@@ -53,6 +54,28 @@ namespace Amazon.Glue.Model
         private string _vpcId;
         private string _yarnEndpointAddress;
         private int? _zeppelinRemoteSparkInterpreterPort;
+
+        /// <summary>
+        /// Gets and sets the property Arguments. 
+        /// <para>
+        /// A map of arguments used to configure the DevEndpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Arguments
+        {
+            get { return this._arguments; }
+            set { this._arguments = value; }
+        }
+
+        // Check to see if Arguments property is set
+        internal bool IsSetArguments()
+        {
+            return this._arguments != null && this._arguments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 

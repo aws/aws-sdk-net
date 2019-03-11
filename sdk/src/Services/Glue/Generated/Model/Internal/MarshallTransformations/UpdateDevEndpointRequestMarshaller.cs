@@ -68,6 +68,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAddArguments())
+                {
+                    context.Writer.WritePropertyName("AddArguments");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAddArgumentsKvp in publicRequest.AddArguments)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAddArgumentsKvp.Key);
+                        var publicRequestAddArgumentsValue = publicRequestAddArgumentsKvp.Value;
+
+                            context.Writer.Write(publicRequestAddArgumentsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAddPublicKeys())
                 {
                     context.Writer.WritePropertyName("AddPublicKeys");
@@ -88,6 +102,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.CustomLibraries, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDeleteArguments())
+                {
+                    context.Writer.WritePropertyName("DeleteArguments");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDeleteArgumentsListValue in publicRequest.DeleteArguments)
+                    {
+                            context.Writer.Write(publicRequestDeleteArgumentsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetDeletePublicKeys())

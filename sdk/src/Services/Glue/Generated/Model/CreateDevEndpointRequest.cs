@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateDevEndpointRequest : AmazonGlueRequest
     {
+        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _endpointName;
         private string _extraJarsS3Path;
         private string _extraPythonLibsS3Path;
@@ -44,6 +45,24 @@ namespace Amazon.Glue.Model
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Arguments. 
+        /// <para>
+        /// A map of arguments used to configure the DevEndpoint.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Arguments
+        {
+            get { return this._arguments; }
+            set { this._arguments = value; }
+        }
+
+        // Check to see if Arguments property is set
+        internal bool IsSetArguments()
+        {
+            return this._arguments != null && this._arguments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointName. 
