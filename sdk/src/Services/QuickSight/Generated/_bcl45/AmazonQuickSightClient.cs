@@ -669,6 +669,67 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteUserByPrincipalId
+
+
+        /// <summary>
+        /// Deletes a user after locating the user by its principal ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserByPrincipalId service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserByPrincipalId service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters don't have a valid value.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">REST API Reference for DeleteUserByPrincipalId Operation</seealso>
+        public virtual DeleteUserByPrincipalIdResponse DeleteUserByPrincipalId(DeleteUserByPrincipalIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserByPrincipalIdResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserByPrincipalId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserByPrincipalId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">REST API Reference for DeleteUserByPrincipalId Operation</seealso>
+        public virtual Task<DeleteUserByPrincipalIdResponse> DeleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserByPrincipalIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeGroup
 
 

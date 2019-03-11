@@ -414,6 +414,39 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteUserByPrincipalId
+
+        internal virtual DeleteUserByPrincipalIdResponse DeleteUserByPrincipalId(DeleteUserByPrincipalIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserByPrincipalIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserByPrincipalId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserByPrincipalId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">REST API Reference for DeleteUserByPrincipalId Operation</seealso>
+        public virtual Task<DeleteUserByPrincipalIdResponse> DeleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserByPrincipalIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeGroup
 
         internal virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)

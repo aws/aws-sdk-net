@@ -28,75 +28,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups
-    /// to make it easier to manage access and security. Currently, an Amazon QuickSight subscription
-    /// can't contain more than 500 Amazon QuickSight groups.
+    /// Container for the parameters to the DeleteUserByPrincipalId operation.
+    /// Deletes a user after locating the user by its principal ID.
     /// </summary>
-    public partial class Group
+    public partial class DeleteUserByPrincipalIdRequest : AmazonQuickSightRequest
     {
-        private string _arn;
-        private string _description;
-        private string _groupName;
+        private string _awsAccountId;
+        private string _awsNamespace;
         private string _principalId;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the group.
+        /// The ID for the AWS account that the user is in. Currently, you use the ID for the
+        /// AWS account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
-        public string Arn
+        public string AwsAccountId
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if AwsAccountId property is set
+        internal bool IsSetAwsAccountId()
         {
-            return this._arn != null;
+            return this._awsAccountId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Namespace. 
         /// <para>
-        /// The group description.
+        /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
-        public string Description
+        public string Namespace
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GroupName. 
-        /// <para>
-        /// The name of the group.
-        /// </para>
-        /// </summary>
-        public string GroupName
-        {
-            get { return this._groupName; }
-            set { this._groupName = value; }
-        }
-
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
-        {
-            return this._groupName != null;
+            return this._awsNamespace != null;
         }
 
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal ID of the group.
+        /// The principal ID of the user.
         /// </para>
         /// </summary>
         public string PrincipalId

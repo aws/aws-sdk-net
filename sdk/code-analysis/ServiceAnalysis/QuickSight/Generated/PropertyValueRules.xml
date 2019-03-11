@@ -93,6 +93,16 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteUserByPrincipalIdRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteUserByPrincipalIdRequest.Namespace</property>
+    <pattern>default</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeGroupRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -212,6 +222,12 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RegisterUserRequest.Namespace</property>
     <pattern>default</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RegisterUserRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[\w+=.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RegisterUserRequest.UserName</property>

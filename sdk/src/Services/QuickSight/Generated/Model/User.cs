@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private string _email;
         private IdentityType _identityType;
+        private string _principalId;
         private UserRole _role;
         private string _userName;
 
@@ -111,6 +112,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIdentityType()
         {
             return this._identityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The principal ID of the user.
+        /// </para>
+        /// </summary>
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
         }
 
         /// <summary>
