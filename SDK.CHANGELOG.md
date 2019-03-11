@@ -1,3 +1,22 @@
+### 3.3.473.0 (2019-03-11 18:07 UTC)
+* CostExplorer (3.3.11.0)
+	* The only change in this release is to make TimePeriod a required parameter in GetCostAndUsageRequest.
+* ElasticBeanstalk (3.3.13.0)
+	* Elastic Beanstalk added support for tagging, and tag-based access control, of all Elastic Beanstalk resources.
+* Glue (3.3.19.0)
+	* CreateDevEndpoint and UpdateDevEndpoint now support Arguments to configure the DevEndpoint. 
+* IoT (3.3.25.5)
+	* Documentation updates for iot
+* QuickSight (3.3.2.0)
+	* Amazon QuickSight user and group operation results now include group principal IDs and user principal IDs. This release also adds "DeleteUserByPrincipalId", which deletes users given their principal ID. The update also improves role session name validation.
+* Rekognition (3.3.15.6)
+	* Documentation updates for Amazon Rekognition
+* Core 3.3.32.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.472.0 (2019-03-08 21:11 UTC)
 * CodeBuild (3.3.23.0)
 	* CodeBuild also now supports Git Submodules.  CodeBuild now supports opting out of Encryption for S3 Build Logs.  By default these logs are encrypted.
